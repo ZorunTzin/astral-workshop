@@ -1,0 +1,21 @@
+{
+  "bindings": {
+    "GiftedFire": 641,
+    "GiftedFireMissile": 1076,
+    "GiftedLightning": 642,
+    "GiftedLightningMissile": 1077,
+    "GiftedCold": 643,
+    "GiftedColdMissile": 1078,
+    "EnchantedChain": 644,
+    "EnchantedChainMissile": 1079,
+    "EnchantedCold": 645,
+    "EnchantedColdMissile": 1080
+  },
+  "visuals": {
+    "workshop_monster_giftedfire": "fireball",
+    "workshop_monster_giftedlightning": "lightningbolt",
+    "workshop_monster_giftedcold": "icebolt",
+    "workshop_monster_enchantedchain": "chainlightning",
+    "workshop_monster_enchantedcold": "icebolt"
+  }
+}

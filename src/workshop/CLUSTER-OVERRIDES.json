@@ -1,0 +1,1205 @@
+{
+  "Swarm": {
+    "ranks": [
+      {
+        "label": "+10% minion damage / +10% minion maximum life",
+        "effects": [
+          {
+            "code": "ws-pet-damage",
+            "parameter": 0,
+            "minimum": 10,
+            "maximum": 10,
+            "bonus": false
+          },
+          {
+            "code": "ws-pet-life",
+            "parameter": 0,
+            "minimum": 10,
+            "maximum": 10,
+            "bonus": false
+          }
+        ]
+      },
+      {
+        "label": "+10% minion damage / +10% minion maximum life",
+        "effects": [
+          {
+            "code": "ws-pet-damage",
+            "parameter": 0,
+            "minimum": 10,
+            "maximum": 10,
+            "bonus": false
+          },
+          {
+            "code": "ws-pet-life",
+            "parameter": 0,
+            "minimum": 10,
+            "maximum": 10,
+            "bonus": false
+          }
+        ]
+      },
+      {
+        "label": "+10% minion damage / +10% minion maximum life",
+        "effects": [
+          {
+            "code": "ws-pet-damage",
+            "parameter": 0,
+            "minimum": 10,
+            "maximum": 10,
+            "bonus": false
+          },
+          {
+            "code": "ws-pet-life",
+            "parameter": 0,
+            "minimum": 10,
+            "maximum": 10,
+            "bonus": false
+          }
+        ]
+      }
+    ]
+  },
+  "Sightline": {
+    "ranks": [
+      {
+        "label": "+250 Attack Rating",
+        "effects": [
+          {
+            "code": "att",
+            "parameter": 0,
+            "minimum": 250,
+            "maximum": 250,
+            "bonus": false
+          }
+        ]
+      },
+      {
+        "label": "+250 Attack Rating",
+        "effects": [
+          {
+            "code": "att",
+            "parameter": 0,
+            "minimum": 250,
+            "maximum": 250,
+            "bonus": false
+          }
+        ]
+      },
+      {
+        "label": "+250 Attack Rating",
+        "effects": [
+          {
+            "code": "att",
+            "parameter": 0,
+            "minimum": 250,
+            "maximum": 250,
+            "bonus": false
+          }
+        ]
+      },
+      {
+        "label": "+500 Attack Rating / 20% Increased attack speed",
+        "effects": [
+          {
+            "code": "att",
+            "parameter": 0,
+            "minimum": 500,
+            "maximum": 500,
+            "bonus": false
+          },
+          {
+            "code": "swing2",
+            "parameter": 0,
+            "minimum": 20,
+            "maximum": 20,
+            "bonus": true
+          }
+        ]
+      }
+    ]
+  },
+  "Titan": {
+    "ranks": [
+      {
+        "label": "+10 Strength",
+        "effects": [
+          {
+            "code": "str",
+            "parameter": 0,
+            "minimum": 10,
+            "maximum": 10,
+            "bonus": false
+          }
+        ]
+      },
+      {
+        "label": "+10 Strength",
+        "effects": [
+          {
+            "code": "str",
+            "parameter": 0,
+            "minimum": 10,
+            "maximum": 10,
+            "bonus": false
+          }
+        ]
+      },
+      {
+        "label": "+10 Strength",
+        "effects": [
+          {
+            "code": "str",
+            "parameter": 0,
+            "minimum": 10,
+            "maximum": 10,
+            "bonus": false
+          }
+        ]
+      },
+      {
+        "label": "+20 Strength / 10% Strength",
+        "effects": [
+          {
+            "code": "str",
+            "parameter": 0,
+            "minimum": 20,
+            "maximum": 20,
+            "bonus": false
+          },
+          {
+            "code": "str%",
+            "parameter": 0,
+            "minimum": 10,
+            "maximum": 10,
+            "bonus": true
+          }
+        ]
+      }
+    ]
+  },
+  "Ironwall": {
+    "ranks": [
+      {
+        "label": "+500 Defense",
+        "effects": [
+          {
+            "code": "ac",
+            "parameter": 0,
+            "minimum": 500,
+            "maximum": 500,
+            "bonus": false
+          }
+        ]
+      },
+      {
+        "label": "+500 Defense",
+        "effects": [
+          {
+            "code": "ac",
+            "parameter": 0,
+            "minimum": 500,
+            "maximum": 500,
+            "bonus": false
+          }
+        ]
+      },
+      {
+        "label": "+500 Defense",
+        "effects": [
+          {
+            "code": "ac",
+            "parameter": 0,
+            "minimum": 500,
+            "maximum": 500,
+            "bonus": false
+          }
+        ]
+      },
+      {
+        "label": "+1000 Defense / 10% Increased chance of blocking",
+        "effects": [
+          {
+            "code": "ac",
+            "parameter": 0,
+            "minimum": 1000,
+            "maximum": 1000,
+            "bonus": false
+          },
+          {
+            "code": "block",
+            "parameter": 0,
+            "minimum": 10,
+            "maximum": 10,
+            "bonus": true
+          }
+        ]
+      }
+    ]
+  },
+  "Poise": {
+    "ranks": [
+      {
+        "label": "20% Faster hit recovery",
+        "effects": [
+          {
+            "code": "balance2",
+            "parameter": 0,
+            "minimum": 20,
+            "maximum": 20,
+            "bonus": false
+          }
+        ]
+      },
+      {
+        "label": "20% Faster hit recovery",
+        "effects": [
+          {
+            "code": "balance2",
+            "parameter": 0,
+            "minimum": 20,
+            "maximum": 20,
+            "bonus": false
+          }
+        ]
+      },
+      {
+        "label": "20% Faster hit recovery",
+        "effects": [
+          {
+            "code": "balance2",
+            "parameter": 0,
+            "minimum": 20,
+            "maximum": 20,
+            "bonus": false
+          }
+        ]
+      },
+      {
+        "label": "40% Faster hit recovery / 5% Damage reduced",
+        "effects": [
+          {
+            "code": "balance2",
+            "parameter": 0,
+            "minimum": 40,
+            "maximum": 40,
+            "bonus": false
+          },
+          {
+            "code": "red-dmg%",
+            "parameter": 0,
+            "minimum": 5,
+            "maximum": 5,
+            "bonus": true
+          }
+        ]
+      }
+    ]
+  },
+  "Rimeheart": {
+    "keystone_extra": [
+      {
+        "code": "balance2",
+        "parameter": 0,
+        "minimum": 200,
+        "maximum": 200,
+        "bonus": true
+      }
+    ]
+  },
+  "Bastion": {
+    "ranks": [
+      {
+        "label": "12% Increased chance of blocking",
+        "effects": [
+          {
+            "code": "block",
+            "parameter": 0,
+            "minimum": 12,
+            "maximum": 12,
+            "bonus": false
+          }
+        ]
+      },
+      {
+        "label": "12% Increased chance of blocking",
+        "effects": [
+          {
+            "code": "block",
+            "parameter": 0,
+            "minimum": 12,
+            "maximum": 12,
+            "bonus": false
+          }
+        ]
+      },
+      {
+        "label": "12% Increased chance of blocking",
+        "effects": [
+          {
+            "code": "block",
+            "parameter": 0,
+            "minimum": 12,
+            "maximum": 12,
+            "bonus": false
+          }
+        ]
+      },
+      {
+        "label": "25% Increased chance of blocking / 25% Faster block rate",
+        "effects": [
+          {
+            "code": "block",
+            "parameter": 0,
+            "minimum": 25,
+            "maximum": 25,
+            "bonus": false
+          },
+          {
+            "code": "block2",
+            "parameter": 0,
+            "minimum": 25,
+            "maximum": 25,
+            "bonus": true
+          }
+        ]
+      }
+    ]
+  },
+  "Parry": {
+    "ranks": [
+      {
+        "label": "25% Faster block rate",
+        "effects": [
+          {
+            "code": "block2",
+            "parameter": 0,
+            "minimum": 25,
+            "maximum": 25,
+            "bonus": false
+          }
+        ]
+      },
+      {
+        "label": "25% Faster block rate",
+        "effects": [
+          {
+            "code": "block2",
+            "parameter": 0,
+            "minimum": 25,
+            "maximum": 25,
+            "bonus": false
+          }
+        ]
+      },
+      {
+        "label": "25% Faster block rate",
+        "effects": [
+          {
+            "code": "block2",
+            "parameter": 0,
+            "minimum": 25,
+            "maximum": 25,
+            "bonus": false
+          }
+        ]
+      },
+      {
+        "label": "50% Faster block rate / 10% Increased chance of blocking",
+        "effects": [
+          {
+            "code": "block2",
+            "parameter": 0,
+            "minimum": 50,
+            "maximum": 50,
+            "bonus": false
+          },
+          {
+            "code": "block",
+            "parameter": 0,
+            "minimum": 10,
+            "maximum": 10,
+            "bonus": true
+          }
+        ]
+      }
+    ]
+  },
+  "Fortitude": {
+    "ranks": [
+      {
+        "label": "+10 Vitality",
+        "effects": [
+          {
+            "code": "vit",
+            "parameter": 0,
+            "minimum": 10,
+            "maximum": 10,
+            "bonus": false
+          }
+        ]
+      },
+      {
+        "label": "+10 Vitality",
+        "effects": [
+          {
+            "code": "vit",
+            "parameter": 0,
+            "minimum": 10,
+            "maximum": 10,
+            "bonus": false
+          }
+        ]
+      },
+      {
+        "label": "+10 Vitality",
+        "effects": [
+          {
+            "code": "vit",
+            "parameter": 0,
+            "minimum": 10,
+            "maximum": 10,
+            "bonus": false
+          }
+        ]
+      },
+      {
+        "label": "+20 Vitality / 10% Vitality",
+        "effects": [
+          {
+            "code": "vit",
+            "parameter": 0,
+            "minimum": 20,
+            "maximum": 20,
+            "bonus": false
+          },
+          {
+            "code": "vit%",
+            "parameter": 0,
+            "minimum": 10,
+            "maximum": 10,
+            "bonus": true
+          }
+        ]
+      }
+    ]
+  },
+  "Eagle Eye": {
+    "ranks": [
+      {
+        "label": "25% Bonus to Attack Rating",
+        "effects": [
+          {
+            "code": "att%",
+            "parameter": 0,
+            "minimum": 25,
+            "maximum": 25,
+            "bonus": false
+          }
+        ]
+      },
+      {
+        "label": "25% Bonus to Attack Rating",
+        "effects": [
+          {
+            "code": "att%",
+            "parameter": 0,
+            "minimum": 25,
+            "maximum": 25,
+            "bonus": false
+          }
+        ]
+      },
+      {
+        "label": "25% Bonus to Attack Rating",
+        "effects": [
+          {
+            "code": "att%",
+            "parameter": 0,
+            "minimum": 25,
+            "maximum": 25,
+            "bonus": false
+          }
+        ]
+      },
+      {
+        "label": "50% Bonus to Attack Rating / +25 Maximum damage",
+        "effects": [
+          {
+            "code": "att%",
+            "parameter": 0,
+            "minimum": 50,
+            "maximum": 50,
+            "bonus": false
+          },
+          {
+            "code": "dmg-max",
+            "parameter": 0,
+            "minimum": 25,
+            "maximum": 25,
+            "bonus": true
+          }
+        ]
+      }
+    ]
+  },
+  "Pursuit": {
+    "ranks": [
+      {
+        "label": "12% Faster run/walk",
+        "effects": [
+          {
+            "code": "move2",
+            "parameter": 0,
+            "minimum": 12,
+            "maximum": 12,
+            "bonus": false
+          }
+        ]
+      },
+      {
+        "label": "12% Faster run/walk",
+        "effects": [
+          {
+            "code": "move2",
+            "parameter": 0,
+            "minimum": 12,
+            "maximum": 12,
+            "bonus": false
+          }
+        ]
+      },
+      {
+        "label": "12% Faster run/walk",
+        "effects": [
+          {
+            "code": "move2",
+            "parameter": 0,
+            "minimum": 12,
+            "maximum": 12,
+            "bonus": false
+          }
+        ]
+      },
+      {
+        "label": "25% Faster run/walk / 10% Faster hit recovery",
+        "effects": [
+          {
+            "code": "move2",
+            "parameter": 0,
+            "minimum": 25,
+            "maximum": 25,
+            "bonus": false
+          },
+          {
+            "code": "balance2",
+            "parameter": 0,
+            "minimum": 10,
+            "maximum": 10,
+            "bonus": true
+          }
+        ]
+      }
+    ]
+  },
+  "Fang": {
+    "ranks": [
+      {
+        "label": "+15 Minimum damage",
+        "effects": [
+          {
+            "code": "dmg-min",
+            "parameter": 0,
+            "minimum": 15,
+            "maximum": 15,
+            "bonus": false
+          }
+        ]
+      },
+      {
+        "label": "+15 Minimum damage",
+        "effects": [
+          {
+            "code": "dmg-min",
+            "parameter": 0,
+            "minimum": 15,
+            "maximum": 15,
+            "bonus": false
+          }
+        ]
+      },
+      {
+        "label": "+15 Minimum damage",
+        "effects": [
+          {
+            "code": "dmg-min",
+            "parameter": 0,
+            "minimum": 15,
+            "maximum": 15,
+            "bonus": false
+          }
+        ]
+      },
+      {
+        "label": "+30 Minimum damage / +30 Maximum damage",
+        "effects": [
+          {
+            "code": "dmg-min",
+            "parameter": 0,
+            "minimum": 30,
+            "maximum": 30,
+            "bonus": false
+          },
+          {
+            "code": "dmg-max",
+            "parameter": 0,
+            "minimum": 30,
+            "maximum": 30,
+            "bonus": true
+          }
+        ]
+      }
+    ]
+  },
+  "Night Sight": {
+    "ranks": [
+      {
+        "label": "-5% to enemy Physical Resistance",
+        "effects": [
+          {
+            "code": "pierce-dmg",
+            "parameter": 0,
+            "minimum": 5,
+            "maximum": 5,
+            "bonus": false
+          }
+        ]
+      },
+      {
+        "label": "-5% to enemy Physical Resistance",
+        "effects": [
+          {
+            "code": "pierce-dmg",
+            "parameter": 0,
+            "minimum": 5,
+            "maximum": 5,
+            "bonus": false
+          }
+        ]
+      },
+      {
+        "label": "-5% to enemy Physical Resistance",
+        "effects": [
+          {
+            "code": "pierce-dmg",
+            "parameter": 0,
+            "minimum": 5,
+            "maximum": 5,
+            "bonus": false
+          }
+        ]
+      },
+      {
+        "label": "-5% to enemy Physical Resistance / +10% Crushing blow",
+        "effects": [
+          {
+            "code": "pierce-dmg",
+            "parameter": 0,
+            "minimum": 5,
+            "maximum": 5,
+            "bonus": false
+          },
+          {
+            "code": "crush",
+            "parameter": 0,
+            "minimum": 10,
+            "maximum": 10,
+            "bonus": true
+          }
+        ]
+      }
+    ]
+  },
+  "Warden": {
+    "ranks": [
+      {
+        "label": "+12% to Lightning Resistances",
+        "effects": [
+          {
+            "code": "res-ltng",
+            "parameter": 0,
+            "minimum": 12,
+            "maximum": 12,
+            "bonus": false
+          }
+        ]
+      },
+      {
+        "label": "+12% to Fire Resistances",
+        "effects": [
+          {
+            "code": "res-fire",
+            "parameter": 0,
+            "minimum": 12,
+            "maximum": 12,
+            "bonus": false
+          }
+        ]
+      },
+      {
+        "label": "+12% to Cold Resistances",
+        "effects": [
+          {
+            "code": "res-cold",
+            "parameter": 0,
+            "minimum": 12,
+            "maximum": 12,
+            "bonus": false
+          }
+        ]
+      },
+      {
+        "label": "+12% to All Resistances / +1% to maximum All Resistances",
+        "effects": [
+          {
+            "code": "res-all",
+            "parameter": 0,
+            "minimum": 12,
+            "maximum": 12,
+            "bonus": false
+          },
+          {
+            "code": "res-all-max",
+            "parameter": 0,
+            "minimum": 1,
+            "maximum": 1,
+            "bonus": true
+          }
+        ]
+      }
+    ]
+  },
+  "Trail": {
+    "ranks": [
+      {
+        "label": "5% Maximum mana",
+        "effects": [
+          {
+            "code": "mana%",
+            "parameter": 0,
+            "minimum": 5,
+            "maximum": 5,
+            "bonus": false
+          }
+        ]
+      },
+      {
+        "label": "5% Maximum mana",
+        "effects": [
+          {
+            "code": "mana%",
+            "parameter": 0,
+            "minimum": 5,
+            "maximum": 5,
+            "bonus": false
+          }
+        ]
+      },
+      {
+        "label": "5% Maximum mana",
+        "effects": [
+          {
+            "code": "mana%",
+            "parameter": 0,
+            "minimum": 5,
+            "maximum": 5,
+            "bonus": false
+          }
+        ]
+      },
+      {
+        "label": "10% Maximum mana / +5% to All Resistances",
+        "effects": [
+          {
+            "code": "mana%",
+            "parameter": 0,
+            "minimum": 10,
+            "maximum": 10,
+            "bonus": false
+          },
+          {
+            "code": "res-all",
+            "parameter": 0,
+            "minimum": 5,
+            "maximum": 5,
+            "bonus": true
+          }
+        ]
+      }
+    ]
+  },
+  "Tomb": {
+    "ranks": [
+      {
+        "label": "+500 Attack Rating",
+        "effects": [
+          {
+            "code": "att",
+            "parameter": 0,
+            "minimum": 500,
+            "maximum": 500,
+            "bonus": false
+          }
+        ]
+      },
+      {
+        "label": "+500 Attack Rating",
+        "effects": [
+          {
+            "code": "att",
+            "parameter": 0,
+            "minimum": 500,
+            "maximum": 500,
+            "bonus": false
+          }
+        ]
+      },
+      {
+        "label": "+500 Attack Rating",
+        "effects": [
+          {
+            "code": "att",
+            "parameter": 0,
+            "minimum": 500,
+            "maximum": 500,
+            "bonus": false
+          }
+        ]
+      },
+      {
+        "label": "+1000 Attack Rating / 20% Increased attack speed",
+        "effects": [
+          {
+            "code": "att",
+            "parameter": 0,
+            "minimum": 1000,
+            "maximum": 1000,
+            "bonus": false
+          },
+          {
+            "code": "swing2",
+            "parameter": 0,
+            "minimum": 20,
+            "maximum": 20,
+            "bonus": true
+          }
+        ]
+      }
+    ]
+  },
+  "Exorcist": {
+    "ranks": [
+      {
+        "label": "37% Damage to undead",
+        "effects": [
+          {
+            "code": "dmg-undead",
+            "parameter": 0,
+            "minimum": 37,
+            "maximum": 37,
+            "bonus": false
+          }
+        ]
+      },
+      {
+        "label": "37% Damage to undead",
+        "effects": [
+          {
+            "code": "dmg-undead",
+            "parameter": 0,
+            "minimum": 37,
+            "maximum": 37,
+            "bonus": false
+          }
+        ]
+      },
+      {
+        "label": "37% Damage to undead",
+        "effects": [
+          {
+            "code": "dmg-undead",
+            "parameter": 0,
+            "minimum": 37,
+            "maximum": 37,
+            "bonus": false
+          }
+        ]
+      },
+      {
+        "label": "75% Damage to undead / +15 Life after each kill",
+        "effects": [
+          {
+            "code": "dmg-undead",
+            "parameter": 0,
+            "minimum": 75,
+            "maximum": 75,
+            "bonus": false
+          },
+          {
+            "code": "heal-kill",
+            "parameter": 0,
+            "minimum": 15,
+            "maximum": 15,
+            "bonus": true
+          }
+        ]
+      }
+    ]
+  },
+  "Deep Mind": {
+    "ranks": [
+      {
+        "label": "+10 Energy",
+        "effects": [
+          {
+            "code": "enr",
+            "parameter": 0,
+            "minimum": 10,
+            "maximum": 10,
+            "bonus": false
+          }
+        ]
+      },
+      {
+        "label": "+10 Energy",
+        "effects": [
+          {
+            "code": "enr",
+            "parameter": 0,
+            "minimum": 10,
+            "maximum": 10,
+            "bonus": false
+          }
+        ]
+      },
+      {
+        "label": "+10 Energy",
+        "effects": [
+          {
+            "code": "enr",
+            "parameter": 0,
+            "minimum": 10,
+            "maximum": 10,
+            "bonus": false
+          }
+        ]
+      },
+      {
+        "label": "+20 Energy / 10% Energy",
+        "effects": [
+          {
+            "code": "enr",
+            "parameter": 0,
+            "minimum": 20,
+            "maximum": 20,
+            "bonus": false
+          },
+          {
+            "code": "enr%",
+            "parameter": 0,
+            "minimum": 10,
+            "maximum": 10,
+            "bonus": true
+          }
+        ]
+      }
+    ]
+  },
+  "Renewal": {
+    "ranks": [
+      {
+        "label": "50 Replenish Life",
+        "effects": [
+          {
+            "code": "regen",
+            "parameter": 0,
+            "minimum": 50,
+            "maximum": 50,
+            "bonus": false
+          }
+        ]
+      },
+      {
+        "label": "50 Replenish Life",
+        "effects": [
+          {
+            "code": "regen",
+            "parameter": 0,
+            "minimum": 50,
+            "maximum": 50,
+            "bonus": false
+          }
+        ]
+      },
+      {
+        "label": "50 Replenish Life",
+        "effects": [
+          {
+            "code": "regen",
+            "parameter": 0,
+            "minimum": 50,
+            "maximum": 50,
+            "bonus": false
+          }
+        ]
+      },
+      {
+        "label": "+100 Replenish Life / +40 Life",
+        "effects": [
+          {
+            "code": "regen",
+            "parameter": 0,
+            "minimum": 100,
+            "maximum": 100,
+            "bonus": false
+          },
+          {
+            "code": "hp",
+            "parameter": 0,
+            "minimum": 40,
+            "maximum": 40,
+            "bonus": true
+          }
+        ]
+      }
+    ]
+  },
+  "Treasure": {
+    "ranks": [
+      {
+        "label": "+50 Gold find %",
+        "effects": [
+          {
+            "code": "gold%",
+            "parameter": 0,
+            "minimum": 50,
+            "maximum": 50,
+            "bonus": true
+          }
+        ]
+      },
+      {
+        "label": "+50 Gold find %",
+        "effects": [
+          {
+            "code": "gold%",
+            "parameter": 0,
+            "minimum": 50,
+            "maximum": 50,
+            "bonus": true
+          }
+        ]
+      },
+      {
+        "label": "+50 Gold find %",
+        "effects": [
+          {
+            "code": "gold%",
+            "parameter": 0,
+            "minimum": 50,
+            "maximum": 50,
+            "bonus": true
+          }
+        ]
+      },
+      {
+        "label": "+100 Gold find % / +15% magic find",
+        "effects": [
+          {
+            "code": "gold%",
+            "parameter": 0,
+            "minimum": 100,
+            "maximum": 100,
+            "bonus": true
+          },
+          {
+            "code": "mag%",
+            "parameter": 0,
+            "minimum": 15,
+            "maximum": 15,
+            "bonus": true
+          }
+        ]
+      }
+    ]
+  },
+  "Long Reach": {
+    "ranks": [
+      {
+        "label": "+15 Maximum damage",
+        "effects": [
+          {
+            "code": "dmg-max",
+            "parameter": 0,
+            "minimum": 15,
+            "maximum": 15,
+            "bonus": false
+          }
+        ]
+      },
+      {
+        "label": "+15 Maximum damage",
+        "effects": [
+          {
+            "code": "dmg-max",
+            "parameter": 0,
+            "minimum": 15,
+            "maximum": 15,
+            "bonus": false
+          }
+        ]
+      },
+      {
+        "label": "+15 Maximum damage",
+        "effects": [
+          {
+            "code": "dmg-max",
+            "parameter": 0,
+            "minimum": 15,
+            "maximum": 15,
+            "bonus": false
+          }
+        ]
+      },
+      {
+        "label": "+30 Maximum damage / +30 Minimum damage",
+        "effects": [
+          {
+            "code": "dmg-max",
+            "parameter": 0,
+            "minimum": 30,
+            "maximum": 30,
+            "bonus": false
+          },
+          {
+            "code": "dmg-min",
+            "parameter": 0,
+            "minimum": 30,
+            "maximum": 30,
+            "bonus": true
+          }
+        ]
+      }
+    ]
+  },
+  "Battle Cry": {
+    "keystone_extra": [
+      {
+        "code": "oskill",
+        "parameter": "Battle Command",
+        "minimum": 1,
+        "maximum": 1
+      }
+    ]
+  }
+}

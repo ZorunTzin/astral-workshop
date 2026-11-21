@@ -1,0 +1,181 @@
+# RuffnecKk MapSense configuration.
+# Changes made in the MapSense menu are saved here.
+
+schema_version = 19
+
+[general]
+enabled = true
+reveal_map = true
+
+[overlay]
+diagnostic_preview = false
+follow_native_automap = true
+opacity = 1.00
+scale = 1.00
+frame_rate = 60
+
+[monsters]
+enabled = true
+
+[monsters.normal]
+shape = "player_cross"
+color = "#FFFFFFFF"
+size = 18.00
+thickness = 2.00
+
+[monsters.minion]
+shape = "player_cross"
+color = "#FFD43BFF"
+size = 18.00
+thickness = 2.00
+
+[monsters.champion]
+shape = "player_cross"
+color = "#3D8BFFFF"
+size = 20.00
+thickness = 2.00
+
+[monsters.unique]
+shape = "player_cross"
+color = "#FF8A24FF"
+size = 22.00
+thickness = 2.00
+
+[monsters.super_unique_boss]
+shape = "player_cross"
+color = "#FF3B30FF"
+size = 24.00
+thickness = 2.00
+show_names = true
+name_color = "#FFD33DFF"
+name_size = 28.00
+
+[immunities]
+enabled = false
+style = "colored_i"
+indicator_size = 14.00
+halo_thickness = 2.00
+physical = "#D8C39AFF"
+fire = "#F23D1FFF"
+cold = "#33A6FFFF"
+lightning = "#FFE02EFF"
+poison = "#57E03DFF"
+magic = "#C75CFFFF"
+
+[missiles]
+enabled = false
+
+[missiles.fire]
+color = "#FF00007F"
+size = 3.00
+
+[missiles.cold]
+color = "#00D0FF7F"
+size = 3.00
+
+[missiles.lightning]
+color = "#FFFF0046"
+size = 3.00
+
+[missiles.poison]
+color = "#32CD327F"
+size = 3.00
+
+[missiles.physical]
+color = "#CD853F7F"
+size = 3.00
+
+[missiles.magic]
+color = "#FF88007F"
+size = 3.00
+
+[objects]
+enabled = false
+
+[objects.exit_labels]
+enabled = true
+color = "#FFD33DFF"
+size = 28.00
+
+[objects.waypoint_labels]
+enabled = true
+color = "#FFD33DFF"
+size = 28.00
+
+[objects.shrine_labels]
+enabled = true
+color = "#FFD33DFF"
+size = 28.00
+
+[objects.chests]
+enabled = true
+outline_color = "#1450ADFF"
+interior_color = "#B88A2AB0"
+locked_accent_color = "#00FFFFFF"
+trapped_accent_color = "#FF3B30FF"
+size = 36.00
+
+[objects.super_chests]
+enabled = true
+stars_enabled = true
+stars_color = "#FFD33DFF"
+stars_size = 28.00
+
+[objects.armor_racks]
+enabled = true
+color = "#3D8BFFFF"
+size = 36.00
+
+[objects.weapon_racks]
+enabled = true
+color = "#FF8A24FF"
+size = 36.00
+
+[navigation]
+line_thickness = 2.00
+
+[navigation.waypoint]
+enabled = false
+line_mode = "direct"
+color = "#3D8BFFFF"
+
+[navigation.progression]
+enabled = false
+line_mode = "direct"
+color = "#57E03DFF"
+
+[navigation.quests]
+enabled = false
+line_mode = "direct"
+color = "#FF3B30FF"
+
+[navigation.custom_levels]
+enabled = false
+line_mode = "direct"
+color = "#C75CFFFF"
+# Add destinations inside targets = [ ... ], one per line.
+# Choose either an area ID or an English name for each entry:
+#   { level_id = 12 },                 # Pit Level 1
+#   { level_name = "Ancient Tunnels" }, # Keep names inside quotes
+# You can mix ID and name entries; use a comma after each entry.
+# If a name matches several areas, use its level_id instead.
+# Enable Custom Levels in the MapSense menu to show these lines.
+# Save this file and restart D2R after changing the destination list.
+# A line appears when a chosen area is directly connected to your current area.
+targets = [
+  { level_id = 12 },
+  { level_name = "Mausoleum" },
+  { level_name = "Ancient Tunnels" },
+  { level_id = 119 },
+]
+
+[menu]
+theme = "sanctuary_gold"
+interface_scale = "automatic"
+show_launcher = true
+remember_position = true
+position_x = 0.86
+position_y = 0.04
+
+[diagnostics]
+enabled = false

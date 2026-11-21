@@ -1,0 +1,24 @@
+*.idea
+*.iml
+*.bak
+*.png
+.studio/*
+/build/
+
+**/__pycache__/
+src/workshop/*.obj
+src/workshop/*.lib
+src/workshop/*.exp
+d2rloader/plugins/*.lib
+d2rloader/plugins/*.exp
+src/workshop/*.res
+
+# Local archives and spreadsheet dependency junction
+/archive/local/
+/scripts/spreadsheets/node_modules/
+
+# Local clean generator input
+/tools/inputs/*.zip
+
+# Approved Workshop source artwork
+!src/workshop/art/**/*.png

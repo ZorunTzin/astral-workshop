@@ -1,0 +1,140 @@
+{
+  "items": [
+    {
+      "table": "uniqueitems",
+      "item": "Steelclash",
+      "property": "ws-aura-effect",
+      "min": 3,
+      "max": 5
+    },
+    {
+      "table": "uniqueitems",
+      "item": "Twilight Presence",
+      "property": "ws-aura-effect",
+      "min": 6,
+      "max": 10
+    },
+    {
+      "table": "uniqueitems",
+      "item": "Defender of Innocence",
+      "property": "ws-reservation-efficiency",
+      "min": 6,
+      "max": 10
+    },
+    {
+      "table": "uniqueitems",
+      "item": "Ancients' Epiphany",
+      "property": "ws-aura-effect",
+      "min": 10,
+      "max": 15
+    },
+    {
+      "table": "uniqueitems",
+      "item": "Coif of Glory",
+      "property": "res-all-max",
+      "min": 1,
+      "max": 2
+    },
+    {
+      "table": "uniqueitems",
+      "item": "Duskdeep",
+      "property": "res-all-max",
+      "min": 1,
+      "max": 2
+    },
+    {
+      "table": "uniqueitems",
+      "item": "Venom Ward",
+      "property": "res-all-max",
+      "min": 2,
+      "max": 3
+    },
+    {
+      "table": "uniqueitems",
+      "item": "Hawkmail",
+      "property": "res-all-max",
+      "min": 2,
+      "max": 3
+    },
+    {
+      "table": "uniqueitems",
+      "item": "The Ward",
+      "property": "res-all-max",
+      "min": 3,
+      "max": 5
+    },
+    {
+      "table": "setitems",
+      "item": "Milabrega's Orb",
+      "property": "ws-reservation-efficiency",
+      "min": 3,
+      "max": 5
+    },
+    {
+      "table": "setitems",
+      "item": "Milabrega's Rod",
+      "property": "ws-aura-effect",
+      "min": 3,
+      "max": 5
+    },
+    {
+      "table": "setitems",
+      "item": "Greyhawk's Deflector",
+      "property": "ws-aura-effect",
+      "min": 4,
+      "max": 7
+    },
+    {
+      "table": "setitems",
+      "item": "Prayer of Brother Laz",
+      "property": "ws-reservation-efficiency",
+      "min": 6,
+      "max": 10
+    },
+    {
+      "table": "setitems",
+      "item": "Civerb's Ward",
+      "property": "res-all-max",
+      "min": 1,
+      "max": 2
+    },
+    {
+      "table": "setitems",
+      "item": "Isenhart's Case",
+      "property": "res-all-max",
+      "min": 1,
+      "max": 2
+    },
+    {
+      "table": "setitems",
+      "item": "Infernal Cranium",
+      "property": "res-all-max",
+      "min": 1,
+      "max": 2
+    },
+    {
+      "table": "setitems",
+      "item": "Milabrega's Robe",
+      "property": "res-all-max",
+      "min": 2,
+      "max": 3
+    }
+  ],
+  "forges": {
+    "Nadir": [
+      1,
+      2
+    ],
+    "Radiance": [
+      2,
+      3
+    ],
+    "Myth": [
+      3,
+      5
+    ]
+  },
+  "affixBaseMaximum": 5,
+  "magicMaximum": 10,
+  "rareMaximum": 6
+}

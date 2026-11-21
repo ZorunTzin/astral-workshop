@@ -1,0 +1,61 @@
+{
+  "bindings": {
+    "PhysicalSpellStat": 493,
+    "Raven": 646,
+    "PrimalState": 325,
+    "AlphaState": 326,
+    "AvatarState": 327,
+    "Morph": 650,
+    "WolfState": 139,
+    "BearState": 140,
+    "HitMissile": 1088,
+    "SeedMissile": 1089,
+    "IceVisual": 1090,
+    "IceGround": 1091,
+    "AvatarVisual": 1092,
+    "FireVisual": 1093,
+    "CompanionState": 328,
+    "VineState": 329,
+    "SlowState": 330,
+    "SolarState": 331,
+    "OakClass": 424,
+    "Level226": 651,
+    "WolverineClass": 423,
+    "Level236": 652,
+    "BarbsClass": 422,
+    "Level246": 653,
+    "PoisonClass": 425,
+    "Level222": 654,
+    "CarrionClass": 426,
+    "Level231": 655,
+    "SolarClass": 427,
+    "Level241": 656,
+    "PrimalLevel": 647
+  },
+  "auras": [
+    [
+      239,
+      65,
+      325,
+      647,
+      30,
+      4
+    ],
+    [
+      224,
+      65,
+      326,
+      648,
+      25,
+      3
+    ],
+    [
+      221,
+      65,
+      327,
+      649,
+      40,
+      5
+    ]
+  ]
+}

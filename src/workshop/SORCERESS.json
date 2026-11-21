@@ -1,0 +1,21 @@
+{
+  "AvatarState": 311,
+  "QueenState": 312,
+  "MasterState": 313,
+  "FrostClass": 858,
+  "FrostNova": 591,
+  "LevelHelper": 592,
+  "ConflagrationMissile": 1037,
+  "BurnSkill": 587,
+  "BurnMissile": 1038,
+  "GroundMissile": 1039,
+  "FireProc": 588,
+  "ColdProc": 589,
+  "LightningProc": 590,
+  "FireMaker": 1041,
+  "ColdMaker": 1043,
+  "LightningMaker": 1045,
+  "EruptionVisual": 1047,
+  "EruptionVisualSkill": 602,
+  "EruptionHit": 1048
+}

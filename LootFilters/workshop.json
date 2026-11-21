@@ -1,0 +1,151 @@
+{
+  "formatVersion": 1,
+  "title": "Workshop Loot Filter",
+  "author": "Workshop",
+  "version": "0.20.4",
+  "description": "All / Standard / Trials. Preserves currencies, materials, runes, gems, rare/set/unique items and useful bases. Hidden loot is never deleted.",
+  "filterLevels": [
+    {
+      "id": 1,
+      "name": "All items"
+    },
+    {
+      "id": 2,
+      "name": "Standard"
+    },
+    {
+      "id": 3,
+      "name": "Trials"
+    }
+  ],
+  "defaultLevel": 2,
+  "hideUnmatchedItems": false,
+  "rules": [
+    {
+      "itemCodes": [
+        "Wa1",
+        "Wa2",
+        "Wa3",
+        "Wa4",
+        "Wa5",
+        "Wt1",
+        "Wt2",
+        "Wt3",
+        "Wt4",
+        "Wt5",
+        "Woa",
+        "Wob",
+        "Woc",
+        "Wod",
+        "Woe",
+        "Wof",
+        "Wog"
+      ],
+      "location": [
+        "onGround"
+      ],
+      "labelBorder": {
+        "color": [
+          187,
+          102,
+          255,
+          255
+        ],
+        "width": 1
+      }
+    },
+    {
+      "activeInLevels": [
+        2,
+        3
+      ],
+      "location": [
+        "onGround"
+      ],
+      "excludeAreas": [
+        1,
+        40,
+        75,
+        103,
+        109
+      ],
+      "playerStats": [
+        {
+          "stat": 12,
+          "op": ">=",
+          "value": 40
+        }
+      ],
+      "itemCodes": [
+        "hp1",
+        "hp2",
+        "mp1",
+        "mp2",
+        "vps"
+      ],
+      "hide": true
+    },
+    {
+      "activeInLevels": [
+        2,
+        3
+      ],
+      "location": [
+        "onGround"
+      ],
+      "excludeAreas": [
+        1,
+        40,
+        75,
+        103,
+        109
+      ],
+      "playerStats": [
+        {
+          "stat": 12,
+          "op": ">=",
+          "value": 40
+        }
+      ],
+      "itemTypes": [
+        "weap",
+        "armo"
+      ],
+      "quality": "inferior",
+      "hide": true
+    },
+    {
+      "activeInLevels": [
+        3
+      ],
+      "location": [
+        "onGround"
+      ],
+      "excludeAreas": [
+        1,
+        40,
+        75,
+        103,
+        109
+      ],
+      "playerStats": [
+        {
+          "stat": 12,
+          "op": ">=",
+          "value": 40
+        }
+      ],
+      "itemTypes": [
+        "weap",
+        "armo"
+      ],
+      "quality": "normal",
+      "baseTier": 0,
+      "sockets": {
+        "max": 0
+      },
+      "hide": true,
+      "isEthereal": false
+    }
+  ]
+}

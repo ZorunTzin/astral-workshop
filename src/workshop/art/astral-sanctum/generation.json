@@ -1,0 +1,17 @@
+{
+  "tool": "built-in image_gen",
+  "approved_concept": "C / ASTRAL SANCTUM",
+  "reference_file": "exec-936ea131-86f4-4322-b85e-54de0037b845.png",
+  "assets": {
+    "background": "exec-63e5143c-8b32-4be3-85f5-123f4664fe72.png",
+    "normal": "exec-4dda074c-2427-4dd0-be09-399435d066e3.png",
+    "cluster": "exec-28501b73-233c-4e19-9bcf-6a33954faf4f.png",
+    "keystone": "exec-604b35c2-1ac2-41e9-9c02-0f60341d108b.png"
+  },
+  "prompt_set": {
+    "background": "Reproduce the approved upper Astral Sanctum background as a complete wide texture, remove all title text and the entire icon comparison strip; retain the very dark plum nebula, dim stars, faint bronze corner arcs and quiet center. No captions, icons or UI.",
+    "normal": "Reproduce only the approved circular dark iron crescent-and-spark icon, isolated and centered, bold readable lilac glyphs, transparent exterior, opaque plum disc, no text.",
+    "cluster": "Reproduce only the approved bronze circular triskelion seal with four restrained compass accents, transparent exterior, opaque plum disc, no text.",
+    "keystone": "Reproduce only the approved layered iron/bronze circular crescent-and-purple-orb seal, simplified readable details, transparent exterior, opaque plum disc, no text."
+  }
+}

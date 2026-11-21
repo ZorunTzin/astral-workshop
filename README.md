@@ -1,39 +1,53 @@
-# Astral Workshop
+# Reimagined Workshop
 
-### Forge your equipment. Shape your constellation. Take on the Trials.
+Offline Diablo II: Resurrected modding project based on D2R Reimagined.
+The game-ready mod payload remains at the repository root. Development files are separated below.
 
-**Astral Workshop** is an offline mod for **Diablo II: Resurrected**, built on Reimagined. It expands character progression with an independent passive tree, custom equipment forging, reworked classes and wave-based endgame challenges.
+## Current release
 
-Whether you want to refine a familiar build or try a different playstyle, the Workshop gives you more ways to develop your character and equipment.
+Version **0.21.0**: [release notes](docs/RELEASE-0.21.0.md), [Mythical mechanics](src/workshop/mythicals/README.md), [53-item catalog](src/workshop/mythicals/CATALOG.md) and [live compendium](https://astral-workshop-compendium.chattyactor2.chatgpt.site).
 
-## What awaits you
+Uses the separate **ReimaginedWorkshop-v2** save profile; do not copy legacy saves into it.
 
-- **Runeforging** — Explore 220 recipes for custom forged equipment, with modifiers that depend on item rarity.
-- **The Astral tree** — Shape your build through 447 passive nodes and 27 Keystones alongside your class skills.
-- **Class reworks** — Discover redesigned skills, new synergies and additional build options across seven classes.
-- **Astral Trials** — Face escalating enemy waves and boss encounters, and craft Trial Seals to modify your runs.
-- **Loot Filter & Chronicle** — Customize which drops you see and track your Unique, Set and Runeforged collection.
-- **Automatic mod updates** — The Windows launcher checks and installs mod updates before starting the game.
+## Editable tables
 
-## Getting started
+- [Astral skilltree](tables/Astral-Skilltree-0.9.5.xlsx)
+- [Runeword forging](tables/Runenwoerter-Schmieden-Entwurf.xlsx)
 
-1. Have **Diablo II: Resurrected** installed and set up **[D2RLoader](https://d2rloader.net/)** first. D2RLoader is required to launch Astral Workshop.
-2. Visit the **[Astral Workshop website](https://astral-workshop-compendium.chattyactor2.chatgpt.site)** and download the Windows launcher.
-3. Select your D2R installation folder in the launcher settings, then press **Play** to install or update the mod and start the game.
+Edit the workbooks and return the changed file for import. Exporting the skilltree workbook again replaces it with the current generated values.
 
-## Reimagined foundation
+## Folder layout
 
-Astral Workshop builds on **[Reimagined 3.1.0](https://github.com/D2R-Reimagined/d2r-reimagined-mod/tree/4fa2cff22ff94685d5ffaa6a4c2cb7e8d7d3b88f)**, pinned to revision `4fa2cff22ff9`. This link points to the exact upstream snapshot used by the Workshop, rather than a newer, potentially different release.
+| Folder | Contents |
+| --- | --- |
+| `data/` | Game data, localization and visual assets. |
+| `d2rloader/` | Runtime plugins, plugin configuration and required licenses. |
+| `docs/` | Feature documentation, development guide and upstream project information. |
+| `tables/` | Editable Excel files and preserved design drafts. |
+| `src/workshop/` | Native plugin source, generators, balance definitions, tests and pinned dependencies. |
+| `scripts/` | Supported build, installation, deployment and spreadsheet entry points. |
+| `tools/lint/` | Upstream table-validation utility. |
+| `build/` | Generated staging mod, binaries, previews, reports. Ignored by Git. |
+| `archive/` | Superseded tree implementations, historical tools and old workspaces. Large local archives are ignored by Git. |
 
-## Explore the compendium
+`modinfo.json`, `bank.txt`, `Play Workshop.cmd`, `data/` and `d2rloader/` retain their loader paths.
+Use [Play Workshop.cmd](Play%20Workshop.cmd) to start the already installed local Workshop.
 
-The **[Astral Workshop website](https://astral-workshop-compendium.chattyactor2.chatgpt.site)** is the main reference for forge recipes, passive nodes, class skills, endgame systems and update notes. You will also find the latest launcher download there.
+## Development
 
+Run these commands from the repository root:
 
-## Latest release: v0.20.6
+```powershell
+.\scripts\Workshop.ps1 -Action Generate
+.\scripts\Workshop.ps1 -Action Build
+.\scripts\Workshop.ps1 -Action Check
+.\scripts\Workshop.ps1 -Action CheckDeploy
+```
 
-In-game shared stash organizer with page names, favorites, colors and affix search. Sort items in the current shared page, inventory and Cube; successive successful clicks alternate row-first and column-first placement.
+`Generate` rebuilds a clean staging mod from the canonical sources. `Build` compiles the plugins and runs native tests. `Check` validates the generated data. `CheckDeploy` validates the deployment plan without writing files.
 
-[Release notes and downloads](https://github.com/ZorunTzin/astral-workshop/releases/tag/v0.20.6) · [Compendium](https://astral-workshop-compendium.chattyactor2.chatgpt.site)
+To install a tested update, close D2R and run `-Action Deploy`. It backs up changed files under `archive/local/backups/workshop/`. A fresh installation can use [Install-Workshop.ps1](scripts/Install-Workshop.ps1).
 
-The launcher installs mod updates when Play or Check and repair is used. Full corresponding source is included in workshop-source.zip.
+- [Gameplay and feature notes](docs/workshop/README.md)
+- [Detailed structure and workflow](docs/FOLDER-STRUCTURE.md)
+- [Original Reimagined project information](docs/UPSTREAM-README.md)

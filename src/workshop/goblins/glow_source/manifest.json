@@ -1,0 +1,38 @@
+{
+  "aura_fanatic.json": {
+    "source": "data/hd/overlays/paladin/aura_fanatic.json",
+    "sha256": "4934522fd880eaea8f34673b8a4cd964d1e77e3e58617c3528e1255b8a4b3ca6"
+  },
+  "aura_fanatic.particles": {
+    "source": "data/hd/vfx/particles/overlays/paladin/aura_fanatic/aura_fanatic.particles",
+    "sha256": "243bb920ac8e89f09d84110a7fd4ed0696559ac528cfaecd14a6ef81d9cf5602"
+  },
+  "White.texture": {
+    "source": "data/hd/vfx/textures/default/White.texture",
+    "sha256": "e6429d509a73a03f3be716ae09d3b51720869a0e340b2942d759b812c2e0c4dd"
+  },
+  "T_FX_AlphaRemapCurve_blinkfix.texture": {
+    "source": "data/hd/vfx/textures/gradient/T_FX_AlphaRemapCurve_blinkfix.texture",
+    "sha256": "34b772a3bc78cd377fb76f7f6cfd6d184b3931cb8d300c85c07937d6700857eb"
+  },
+  "T_FX_FadedYellow_Gradient.texture": {
+    "source": "data/hd/vfx/textures/gradient/T_FX_FadedYellow_Gradient.texture",
+    "sha256": "7468f997412182653252b1741192e4bbd12da94bb5b0682b98e141de5760b995"
+  },
+  "T_FX_linearGradient_vertical_inverted.texture": {
+    "source": "data/hd/vfx/textures/gradient/T_FX_linearGradient_vertical_inverted.texture",
+    "sha256": "8e4b97620245c720ba0f6e4e776c9e4f0f762e9669297868ba3e42c68501fbbe"
+  },
+  "T_FX_light_pane_02.texture": {
+    "source": "data/hd/vfx/textures/light/T_FX_light_pane_02.texture",
+    "sha256": "912e769708d662f3016bf93318cf0f80bd0b00d67644fdd915e50a90837e800e"
+  },
+  "T_FX_soft_glowcard.texture": {
+    "source": "data/hd/vfx/textures/mask/T_FX_soft_glowcard.texture",
+    "sha256": "294668c6ced022afc86878b1bbdbc16b583b895b1b1b9e3e9bb0d64df66e0c56"
+  },
+  "aurafanatic.dcc": {
+    "source": "data/global/overlays/aurafanatic.dcc",
+    "sha256": "c86ef3afbf71394e1376de0f53792de0f11511ff673530d27e05379ede49a8f3"
+  }
+}

@@ -1,0 +1,5280 @@
+[
+  {
+    "id": 0,
+    "uniqueId": 1485,
+    "key": "WorkshopMythical00",
+    "code": "Y00",
+    "name": "Doomfletch's Prism",
+    "base": "Crusader Bow",
+    "source": "Doomfletch's Prism",
+    "properties": [
+      [
+        "dmg%",
+        "",
+        "100",
+        "200"
+      ],
+      [
+        "dmg-min",
+        "",
+        "50",
+        "100"
+      ],
+      [
+        "dmg-max",
+        "",
+        "100",
+        "150"
+      ],
+      [
+        "swing2",
+        "",
+        "50",
+        "50"
+      ],
+      [
+        "all-stats",
+        "",
+        "30",
+        "50"
+      ],
+      [
+        "hit-skill",
+        "Exploding Arrow",
+        "8",
+        "60"
+      ],
+      [
+        "hit-skill",
+        "Freezing Arrow",
+        "8",
+        "60"
+      ],
+      [
+        "hit-skill",
+        "Lightning Bolt",
+        "8",
+        "60"
+      ],
+      [
+        "allskills",
+        "",
+        "2",
+        "7"
+      ],
+      [
+        "ws-mythical-power",
+        "0",
+        "1",
+        "1"
+      ],
+      [
+        "droponly",
+        "",
+        "1",
+        "1"
+      ]
+    ],
+    "adaptations": [
+      "ESR-only doomfletch-auras replaced by item-specific Workshop powers.",
+      "Fire Enhanced Arrow -> Exploding Arrow",
+      "Cold Enhanced Arrow -> Freezing Arrow",
+      "Lightning Enhanced Arrow -> Lightning Bolt"
+    ]
+  },
+  {
+    "id": 1,
+    "uniqueId": 1486,
+    "key": "WorkshopMythical01",
+    "code": "Y01",
+    "name": "Buriza-Do Kyanon",
+    "base": "Colossus Crossbow",
+    "source": "Mythical Buriza-Do Kyanon",
+    "properties": [
+      [
+        "hit-skill",
+        "Glacial Spike",
+        "5",
+        "60"
+      ],
+      [
+        "pierce-cold",
+        "",
+        "40",
+        "50"
+      ],
+      [
+        "swing2",
+        "",
+        "200",
+        "200"
+      ],
+      [
+        "dmg-norm",
+        "",
+        "50",
+        "100"
+      ],
+      [
+        "dmg%/lvl",
+        "24",
+        "",
+        ""
+      ],
+      [
+        "dmg/lvl",
+        "24",
+        "",
+        ""
+      ],
+      [
+        "hit-skill",
+        "Workshop Sorceress Legacy Frost Nova",
+        "5",
+        "60"
+      ],
+      [
+        "dmg-cold",
+        "255",
+        "2000",
+        "3000"
+      ],
+      [
+        "droponly",
+        "",
+        "1",
+        "1"
+      ]
+    ],
+    "adaptations": [
+      "Blizzard Cannon -> Glacial Spike",
+      "Cold Flash -> Workshop Sorceress Legacy Frost Nova",
+      "ESR-only total-crossbow-bolts replaced by item-specific Workshop powers.",
+      "ESR-only total-crossbow-damage replaced by item-specific Workshop powers.",
+      "ESR-only crossbow-passive replaced by item-specific Workshop powers.",
+      "dmg-cold capped at 255 for existing v2 save field."
+    ]
+  },
+  {
+    "id": 2,
+    "uniqueId": 1487,
+    "key": "WorkshopMythical02",
+    "code": "Y02",
+    "name": "Mjolnir",
+    "base": "Thunder Maul",
+    "source": "Mjolnir",
+    "properties": [
+      [
+        "dmg-ltng",
+        "",
+        "1",
+        "5000"
+      ],
+      [
+        "ease",
+        "",
+        "155",
+        "155"
+      ],
+      [
+        "str",
+        "",
+        "400",
+        "500"
+      ],
+      [
+        "dmg-norm",
+        "",
+        "100",
+        "150"
+      ],
+      [
+        "att-skill",
+        "Fist of the Heavens",
+        "15",
+        "60"
+      ],
+      [
+        "pierce-ltng",
+        "",
+        "40",
+        "50"
+      ],
+      [
+        "hit-skill",
+        "Chain Lightning",
+        "5",
+        "60"
+      ],
+      [
+        "abs-ltng%",
+        "",
+        "8",
+        "10"
+      ],
+      [
+        "move2",
+        "",
+        "80",
+        "100"
+      ],
+      [
+        "droponly",
+        "",
+        "1",
+        "1"
+      ]
+    ],
+    "adaptations": [
+      "Judgement -> Fist of the Heavens",
+      "Mjolnir Chaos Lightning -> Chain Lightning",
+      "ESR-only aura-hidden replaced by item-specific Workshop powers.",
+      "ease capped at 155 for existing v2 save field.",
+      "ease capped at 155 for existing v2 save field."
+    ]
+  },
+  {
+    "id": 3,
+    "uniqueId": 1488,
+    "key": "WorkshopMythical03",
+    "code": "Y03",
+    "name": "Mephisto's Will",
+    "base": "Unearthed Wand",
+    "source": "Mephisto's Will",
+    "properties": [
+      [
+        "pierce-elem",
+        "",
+        "40",
+        "50"
+      ],
+      [
+        "ws-pet-life",
+        "",
+        "20",
+        "30"
+      ],
+      [
+        "ws-pet-life",
+        "",
+        "12",
+        "15"
+      ],
+      [
+        "ws-pet-life",
+        "",
+        "30",
+        "40"
+      ],
+      [
+        "enr",
+        "",
+        "80",
+        "100"
+      ],
+      [
+        "enr%",
+        "",
+        "16",
+        "20"
+      ],
+      [
+        "red-dmg%",
+        "",
+        "15",
+        "20"
+      ],
+      [
+        "red-dmg",
+        "",
+        "50",
+        "60"
+      ],
+      [
+        "allskills",
+        "",
+        "2",
+        "4"
+      ],
+      [
+        "addxp",
+        "",
+        "25",
+        "30"
+      ],
+      [
+        "extra_skelemages",
+        "",
+        "5",
+        "8"
+      ],
+      [
+        "droponly",
+        "",
+        "1",
+        "1"
+      ]
+    ],
+    "adaptations": [
+      "ESR-only skeleton-trade replaced by item-specific Workshop powers.",
+      "pierce-res-all -> pierce-elem",
+      "passive-summ-life -> ws-pet-life",
+      "passive-summ-phys-resist -> ws-pet-life",
+      "passive-summ-elemental-resist -> ws-pet-life",
+      "enepercent -> enr%"
+    ]
+  },
+  {
+    "id": 4,
+    "uniqueId": 1489,
+    "key": "WorkshopMythical04",
+    "code": "Y04",
+    "name": "The Grim Reaper's Harvester",
+    "base": "Thresher",
+    "source": "The Grim Reaper's Harvester",
+    "properties": [
+      [
+        "dmg-norm",
+        "",
+        "100",
+        "150"
+      ],
+      [
+        "oskill",
+        "Corpse Explosion",
+        "60",
+        "60"
+      ],
+      [
+        "dmg%",
+        "",
+        "300",
+        "400"
+      ],
+      [
+        "swing2",
+        "",
+        "60",
+        "75"
+      ],
+      [
+        "res-all",
+        "",
+        "50",
+        "60"
+      ],
+      [
+        "allskills",
+        "",
+        "4",
+        "7"
+      ],
+      [
+        "ws-pet-life",
+        "",
+        "10",
+        "20"
+      ],
+      [
+        "heal-kill",
+        "",
+        "127",
+        "127"
+      ],
+      [
+        "abs-all%",
+        "",
+        "8",
+        "10"
+      ],
+      [
+        "oskill",
+        "Revive",
+        "60",
+        "60"
+      ],
+      [
+        "ws-pet-damage",
+        "",
+        "60",
+        "90"
+      ],
+      [
+        "droponly",
+        "",
+        "1",
+        "1"
+      ]
+    ],
+    "adaptations": [
+      "ESR-only max-skeleton-king replaced by item-specific Workshop powers.",
+      "curse-res -> res-curse-len",
+      "Reap Souls -> Corpse Explosion",
+      "Class-only skill becomes an all-class skill.",
+      "passive-summ-phys-resist -> ws-pet-life",
+      "abs-elem% -> abs-all%",
+      "Property-slot budget: omitted res-curse-len",
+      "heal-kill capped at 127 for existing v2 save field.",
+      "heal-kill capped at 127 for existing v2 save field."
+    ]
+  },
+  {
+    "id": 5,
+    "uniqueId": 1490,
+    "key": "WorkshopMythical05",
+    "code": "Y05",
+    "name": "Aegis of Corruption",
+    "base": "Archon Plate",
+    "source": "Aegis of Corruption",
+    "properties": [
+      [
+        "pierce-elem",
+        "",
+        "20",
+        "30"
+      ],
+      [
+        "allskills",
+        "",
+        "2",
+        "3"
+      ],
+      [
+        "res-all",
+        "",
+        "50",
+        "60"
+      ],
+      [
+        "res-all-max",
+        "",
+        "1",
+        "5"
+      ],
+      [
+        "cast2",
+        "",
+        "20",
+        "30"
+      ],
+      [
+        "vit",
+        "",
+        "80",
+        "100"
+      ],
+      [
+        "mana%",
+        "",
+        "40",
+        "50"
+      ],
+      [
+        "gethit-skill",
+        "Cyclone Armor",
+        "5",
+        "60"
+      ],
+      [
+        "ac",
+        "",
+        "2000",
+        "2037"
+      ],
+      [
+        "gethit-skill",
+        "Cyclone Armor",
+        "5",
+        "60"
+      ],
+      [
+        "droponly",
+        "",
+        "1",
+        "1"
+      ]
+    ],
+    "adaptations": [
+      "ESR-only oskill-hidden replaced by item-specific Workshop powers.",
+      "pierce-res-all -> pierce-elem",
+      "item-skill-cooldown -> cast2",
+      "ac capped at 2037 for existing v2 save field."
+    ]
+  },
+  {
+    "id": 6,
+    "uniqueId": 1491,
+    "key": "WorkshopMythical06",
+    "code": "Y06",
+    "name": "Imperius' Undying Wrath",
+    "base": "Dimensional Shard",
+    "source": "Imperius' Undying Wrath",
+    "properties": [
+      [
+        "pierce-ltng",
+        "",
+        "40",
+        "50"
+      ],
+      [
+        "allskills",
+        "",
+        "2",
+        "4"
+      ],
+      [
+        "cast2",
+        "",
+        "40",
+        "50"
+      ],
+      [
+        "mana%",
+        "",
+        "40",
+        "50"
+      ],
+      [
+        "mana",
+        "",
+        "160",
+        "200"
+      ],
+      [
+        "res-ltng-max",
+        "",
+        "8",
+        "10"
+      ],
+      [
+        "str%",
+        "",
+        "16",
+        "20"
+      ],
+      [
+        "str",
+        "",
+        "50",
+        "65"
+      ],
+      [
+        "move2",
+        "",
+        "80",
+        "100"
+      ],
+      [
+        "gethit-skill",
+        "Thunder Storm",
+        "25",
+        "60"
+      ],
+      [
+        "oskill",
+        "Thunder Storm",
+        "60",
+        "60"
+      ],
+      [
+        "droponly",
+        "",
+        "1",
+        "1"
+      ]
+    ],
+    "adaptations": [
+      "ESR-only takedmg-skill-hidden replaced by item-specific Workshop powers.",
+      "strpercent -> str%"
+    ]
+  },
+  {
+    "id": 7,
+    "uniqueId": 1492,
+    "key": "WorkshopMythical07",
+    "code": "Y07",
+    "name": "Tal Rasha's Final Whisper",
+    "base": "Winged Knife",
+    "source": "Tal Rasha's Final Whisper",
+    "properties": [
+      [
+        "noconsume",
+        "",
+        "100",
+        "100"
+      ],
+      [
+        "hit-skill",
+        "Workshop Mythical Shadow Veil",
+        "1",
+        "1"
+      ],
+      [
+        "hit-skill",
+        "Exploding Arrow",
+        "8",
+        "60"
+      ],
+      [
+        "hit-skill",
+        "Freezing Arrow",
+        "8",
+        "60"
+      ],
+      [
+        "hit-skill",
+        "Lightning Bolt",
+        "8",
+        "60"
+      ],
+      [
+        "swing2",
+        "",
+        "40",
+        "50"
+      ],
+      [
+        "res-all-max",
+        "",
+        "3",
+        "5"
+      ],
+      [
+        "dex%",
+        "",
+        "20",
+        "26"
+      ],
+      [
+        "extra-elem",
+        "",
+        "40",
+        "60"
+      ],
+      [
+        "droponly",
+        "",
+        "1",
+        "1"
+      ]
+    ],
+    "adaptations": [
+      "ESR-only aura-hidden replaced by item-specific Workshop powers.",
+      "Cloak of Shadows -> Workshop Mythical Shadow Veil",
+      "Fire Enhanced Arrow -> Exploding Arrow",
+      "Cold Enhanced Arrow -> Freezing Arrow",
+      "Lightning Enhanced Arrow -> Lightning Bolt",
+      "dexpercent -> dex%",
+      "ESR-only oskill-hidden replaced by item-specific Workshop powers."
+    ]
+  },
+  {
+    "id": 8,
+    "uniqueId": 1493,
+    "key": "WorkshopMythical08",
+    "code": "Y08",
+    "name": "Mephisto's Nightmare",
+    "base": "Phase Blade",
+    "source": "Baal's Vile Whisper",
+    "properties": [
+      [
+        "hit-skill",
+        "Hydra",
+        "15",
+        "60"
+      ],
+      [
+        "pierce-fire",
+        "",
+        "50",
+        "65"
+      ],
+      [
+        "red-dmg%",
+        "",
+        "20",
+        "30"
+      ],
+      [
+        "mana",
+        "",
+        "200",
+        "300"
+      ],
+      [
+        "mana%",
+        "",
+        "40",
+        "50"
+      ],
+      [
+        "hp",
+        "",
+        "200",
+        "300"
+      ],
+      [
+        "res-all-max",
+        "",
+        "4",
+        "7"
+      ],
+      [
+        "swing2",
+        "",
+        "40",
+        "50"
+      ],
+      [
+        "res-all",
+        "",
+        "80",
+        "100"
+      ],
+      [
+        "oskill",
+        "Hydra",
+        "60",
+        "60"
+      ],
+      [
+        "droponly",
+        "",
+        "1",
+        "1"
+      ]
+    ],
+    "adaptations": [
+      "ESR-only oskill-hidden replaced by item-specific Workshop powers.",
+      "Hydra Baal's Vile Whisper -> Hydra"
+    ]
+  },
+  {
+    "id": 9,
+    "uniqueId": 1494,
+    "key": "WorkshopMythical09",
+    "code": "Y09",
+    "name": "Headhunter",
+    "base": "Spiderweb Sash",
+    "source": "Headhunter",
+    "properties": [
+      [
+        "hp",
+        "",
+        "150",
+        "200"
+      ],
+      [
+        "hp%",
+        "",
+        "25",
+        "30"
+      ],
+      [
+        "str",
+        "",
+        "80",
+        "100"
+      ],
+      [
+        "dex",
+        "",
+        "80",
+        "100"
+      ],
+      [
+        "kill-skill",
+        "Workshop Mythical Trophy of Speed",
+        "2",
+        "1"
+      ],
+      [
+        "kill-skill",
+        "Workshop Mythical Trophy of Physical Damage",
+        "2",
+        "1"
+      ],
+      [
+        "kill-skill",
+        "Workshop Mythical Trophy of Spell Damage",
+        "2",
+        "1"
+      ],
+      [
+        "kill-skill",
+        "Workshop Mythical Trophy of Sustenance",
+        "2",
+        "1"
+      ],
+      [
+        "kill-skill",
+        "Workshop Mythical Trophy of Resistances",
+        "2",
+        "1"
+      ],
+      [
+        "kill-skill",
+        "Workshop Mythical Trophy of Stats",
+        "2",
+        "1"
+      ],
+      [
+        "kill-skill",
+        "Workshop Mythical Trophy of All Skills",
+        "2",
+        "1"
+      ],
+      [
+        "droponly",
+        "",
+        "1",
+        "1"
+      ]
+    ],
+    "adaptations": [
+      "Headhunter Speed -> Workshop Mythical Trophy of Speed",
+      "Headhunter Physical Damage -> Workshop Mythical Trophy of Physical Damage",
+      "Headhunter Elemental Damage -> Workshop Mythical Trophy of Spell Damage",
+      "Headhunter Health -> Workshop Mythical Trophy of Sustenance",
+      "Headhunter Resistances -> Workshop Mythical Trophy of Resistances",
+      "Headhunter Stats -> Workshop Mythical Trophy of Stats",
+      "Headhunter Skills -> Workshop Mythical Trophy of All Skills"
+    ]
+  },
+  {
+    "id": 10,
+    "uniqueId": 1495,
+    "key": "WorkshopMythical10",
+    "code": "Y10",
+    "name": "Monkey King's Bar",
+    "base": "Archon Staff",
+    "source": "Monkey King's Bar",
+    "properties": [
+      [
+        "dmg-norm",
+        "",
+        "150",
+        "250"
+      ],
+      [
+        "dmg%",
+        "",
+        "200",
+        "300"
+      ],
+      [
+        "lifesteal",
+        "",
+        "40",
+        "60"
+      ],
+      [
+        "reduce-ac",
+        "",
+        "100",
+        "100"
+      ],
+      [
+        "dex%",
+        "",
+        "26",
+        "33"
+      ],
+      [
+        "move2",
+        "",
+        "25",
+        "50"
+      ],
+      [
+        "dae",
+        "",
+        "15",
+        "25"
+      ],
+      [
+        "oskill",
+        "Leap",
+        "60",
+        "60"
+      ],
+      [
+        "swing2",
+        "",
+        "50",
+        "70"
+      ],
+      [
+        "att-skill",
+        "Ground Stomp",
+        "25",
+        "60"
+      ],
+      [
+        "openwounds",
+        "",
+        "100",
+        "100"
+      ],
+      [
+        "droponly",
+        "",
+        "1",
+        "1"
+      ]
+    ],
+    "adaptations": [
+      "dexpercent -> dex%",
+      "velocitypercent -> move2",
+      "dodge -> dae",
+      "Monkey King Leap -> Leap",
+      "Monkey King Slam -> Ground Stomp",
+      "Bleeding replaced by 100% Open Wounds."
+    ]
+  },
+  {
+    "id": 11,
+    "uniqueId": 1496,
+    "key": "WorkshopMythical11",
+    "code": "Y11",
+    "name": "Inarius' Rod of Infinite Thought",
+    "base": "Caduceus",
+    "source": "Inarius' Rod",
+    "properties": [
+      [
+        "enr%",
+        "",
+        "26",
+        "33"
+      ],
+      [
+        "pierce-elem",
+        "",
+        "30",
+        "40"
+      ],
+      [
+        "skilltab",
+        "10",
+        "2",
+        "4"
+      ],
+      [
+        "res-all-max",
+        "",
+        "4",
+        "8"
+      ],
+      [
+        "light",
+        "",
+        "10",
+        "11"
+      ],
+      [
+        "kill-skill",
+        "Blessed Hammer",
+        "25",
+        "60"
+      ],
+      [
+        "extra-mag",
+        "",
+        "80",
+        "100"
+      ],
+      [
+        "cast2",
+        "",
+        "30",
+        "50"
+      ],
+      [
+        "sock",
+        "",
+        "1",
+        "2"
+      ],
+      [
+        "ws-aura-effect",
+        "",
+        "25",
+        "35"
+      ],
+      [
+        "droponly",
+        "",
+        "1",
+        "1"
+      ]
+    ],
+    "adaptations": [
+      "ESR-only oskill-hidden replaced by item-specific Workshop powers.",
+      "enepercent -> enr%",
+      "pierce-res-all -> pierce-elem",
+      "On-cast proc adapted to on-kill proc, usable by spellcasters.",
+      "extra-mag2 -> extra-mag",
+      "light capped at 11 for existing v2 save field."
+    ]
+  },
+  {
+    "id": 12,
+    "uniqueId": 1497,
+    "key": "WorkshopMythical12",
+    "code": "Y12",
+    "name": "Duriel's Claws of Festering Agony",
+    "base": "Scissors Suwayyah",
+    "source": "Duriel's Claws",
+    "properties": [
+      [
+        "hit-skill",
+        "Glacial Spike",
+        "2",
+        "60"
+      ],
+      [
+        "move2",
+        "",
+        "30",
+        "50"
+      ],
+      [
+        "oskill",
+        "Holy Freeze",
+        "60",
+        "60"
+      ],
+      [
+        "extra-cold",
+        "",
+        "40",
+        "80"
+      ],
+      [
+        "dmg-norm",
+        "",
+        "75",
+        "125"
+      ],
+      [
+        "dmg%/lvl",
+        "16",
+        "",
+        ""
+      ],
+      [
+        "pierce-elem",
+        "",
+        "20",
+        "30"
+      ],
+      [
+        "att-skill",
+        "Royal Strike",
+        "17",
+        "60"
+      ],
+      [
+        "kill-skill",
+        "Fire Ball",
+        "17",
+        "60"
+      ],
+      [
+        "att-skill",
+        "Nova",
+        "17",
+        "60"
+      ],
+      [
+        "droponly",
+        "",
+        "1",
+        "1"
+      ]
+    ],
+    "adaptations": [
+      "Blades of Ice Discharge -> Glacial Spike",
+      "Equipped aura becomes an activatable all-class skill, consistent with Workshop aura rules.",
+      "pierce-res-all -> pierce-elem",
+      "Execute Discharge -> Royal Strike",
+      "Fists of Fire Discharge -> Fire Ball",
+      "Claws of Thunder Discharge -> Nova"
+    ]
+  },
+  {
+    "id": 13,
+    "uniqueId": 1498,
+    "key": "WorkshopMythical13",
+    "code": "Y13",
+    "name": "Rathma's Eternal Reign",
+    "base": "Bone Knife",
+    "source": "Rathma's Eternal Reign",
+    "properties": [
+      [
+        "ws-pet-damage",
+        "",
+        "40",
+        "50"
+      ],
+      [
+        "ws-pet-life",
+        "",
+        "15",
+        "25"
+      ],
+      [
+        "ws-pet-life",
+        "",
+        "20",
+        "30"
+      ],
+      [
+        "allskills",
+        "",
+        "2",
+        "4"
+      ],
+      [
+        "vit%",
+        "",
+        "26",
+        "33"
+      ],
+      [
+        "red-dmg%",
+        "",
+        "15",
+        "20"
+      ],
+      [
+        "oskill",
+        "Teleport",
+        "60",
+        "60"
+      ],
+      [
+        "pierce-pois",
+        "",
+        "40",
+        "50"
+      ],
+      [
+        "all-stats",
+        "",
+        "30",
+        "50"
+      ],
+      [
+        "extra_skelewarriors",
+        "",
+        "3",
+        "5"
+      ],
+      [
+        "droponly",
+        "",
+        "1",
+        "1"
+      ]
+    ],
+    "adaptations": [
+      "ESR-only oskill-hidden replaced by item-specific Workshop powers.",
+      "extra-summ -> ws-pet-damage",
+      "passive-summ-phys-resist -> ws-pet-life",
+      "passive-summ-life -> ws-pet-life",
+      "vitpercent -> vit%"
+    ]
+  },
+  {
+    "id": 14,
+    "uniqueId": 1499,
+    "key": "WorkshopMythical14",
+    "code": "Y14",
+    "name": "Avatar of Nature's Infused Horns",
+    "base": "Dream Spirit",
+    "source": "Avatar of Nature Horns",
+    "properties": [
+      [
+        "ws-pet-damage",
+        "",
+        "20",
+        "30"
+      ],
+      [
+        "ws-pet-life",
+        "",
+        "10",
+        "20"
+      ],
+      [
+        "ws-pet-life",
+        "",
+        "25",
+        "35"
+      ],
+      [
+        "allskills",
+        "",
+        "1",
+        "3"
+      ],
+      [
+        "dex%",
+        "",
+        "26",
+        "33"
+      ],
+      [
+        "move2",
+        "",
+        "80",
+        "100"
+      ],
+      [
+        "gethit-skill",
+        "Workshop Sorceress Legacy Frost Nova",
+        "2",
+        "60"
+      ],
+      [
+        "hp",
+        "",
+        "400",
+        "500"
+      ],
+      [
+        "extra_spirit_wolves",
+        "",
+        "1",
+        "2"
+      ],
+      [
+        "extra_dire_wolves",
+        "",
+        "1",
+        "2"
+      ],
+      [
+        "droponly",
+        "",
+        "1",
+        "1"
+      ]
+    ],
+    "adaptations": [
+      "ESR-only oskill-hidden replaced by item-specific Workshop powers.",
+      "extra-summ -> ws-pet-damage",
+      "passive-summ-phys-resist -> ws-pet-life",
+      "passive-summ-life -> ws-pet-life",
+      "dexpercent -> dex%",
+      "Time Stop -> Workshop Sorceress Legacy Frost Nova",
+      "ESR-only passive-summ-limit replaced by item-specific Workshop powers."
+    ]
+  },
+  {
+    "id": 15,
+    "uniqueId": 1500,
+    "key": "WorkshopMythical15",
+    "code": "Y15",
+    "name": "Natalya's Bloodied Executioner",
+    "base": "Elegant Blade",
+    "source": "Natalya's Bloodied Executioner",
+    "properties": [
+      [
+        "kill-skill",
+        "Dragon Flight",
+        "5",
+        "25"
+      ],
+      [
+        "dmg-norm",
+        "",
+        "125",
+        "150"
+      ],
+      [
+        "dmg%/lvl",
+        "24",
+        "",
+        ""
+      ],
+      [
+        "swing2",
+        "",
+        "30",
+        "50"
+      ],
+      [
+        "dex%",
+        "",
+        "13",
+        "20"
+      ],
+      [
+        "dex",
+        "",
+        "40",
+        "50"
+      ],
+      [
+        "heal-kill",
+        "",
+        "127",
+        "127"
+      ],
+      [
+        "hp%",
+        "",
+        "30",
+        "40"
+      ],
+      [
+        "oskill",
+        "Dragon Flight",
+        "25",
+        "25"
+      ],
+      [
+        "red-dmg",
+        "",
+        "50",
+        "60"
+      ],
+      [
+        "openwounds",
+        "",
+        "100",
+        "100"
+      ],
+      [
+        "droponly",
+        "",
+        "1",
+        "1"
+      ]
+    ],
+    "adaptations": [
+      "Blink Strike -> Dragon Flight",
+      "dexpercent -> dex%",
+      "Blink Strike -> Dragon Flight",
+      "Bleeding replaced by 100% Open Wounds.",
+      "heal-kill capped at 127 for existing v2 save field.",
+      "heal-kill capped at 127 for existing v2 save field."
+    ]
+  },
+  {
+    "id": 16,
+    "uniqueId": 1501,
+    "key": "WorkshopMythical16",
+    "code": "Y16",
+    "name": "Lux Aeterna, Hope of Dawn",
+    "base": "Mighty Scepter",
+    "source": "Lux Aeterna",
+    "properties": [
+      [
+        "oskill",
+        "Starfall",
+        "30",
+        "30"
+      ],
+      [
+        "kill-skill",
+        "Starfall",
+        "25",
+        "30"
+      ],
+      [
+        "extra-mag",
+        "",
+        "50",
+        "65"
+      ],
+      [
+        "allskills",
+        "",
+        "2",
+        "4"
+      ],
+      [
+        "all-stats",
+        "",
+        "30",
+        "40"
+      ],
+      [
+        "stats%",
+        "",
+        "13",
+        "20"
+      ],
+      [
+        "hp",
+        "",
+        "200",
+        "300"
+      ],
+      [
+        "mana",
+        "",
+        "200",
+        "300"
+      ],
+      [
+        "light",
+        "",
+        "11",
+        "11"
+      ],
+      [
+        "oskill",
+        "Redemption",
+        "60",
+        "60"
+      ],
+      [
+        "cast2",
+        "",
+        "40",
+        "50"
+      ],
+      [
+        "droponly",
+        "",
+        "1",
+        "1"
+      ]
+    ],
+    "adaptations": [
+      "On-cast proc adapted to on-kill proc, usable by spellcasters.",
+      "extra-mag2 -> extra-mag",
+      "all-stats-percent -> stats%",
+      "Equipped aura becomes an activatable all-class skill, consistent with Workshop aura rules.",
+      "light capped at 11 for existing v2 save field.",
+      "light capped at 11 for existing v2 save field."
+    ]
+  },
+  {
+    "id": 17,
+    "uniqueId": 1502,
+    "key": "WorkshopMythical17",
+    "code": "Y17",
+    "name": "Tathamet's Awakening - Fire",
+    "base": "Diadem",
+    "source": "Tathamet's Awakening",
+    "properties": [
+      [
+        "fireskill",
+        "",
+        "3",
+        "5"
+      ],
+      [
+        "pierce-fire",
+        "",
+        "20",
+        "30"
+      ],
+      [
+        "oskill",
+        "Fire Mastery",
+        "60",
+        "60"
+      ],
+      [
+        "hp%",
+        "",
+        "30",
+        "50"
+      ],
+      [
+        "abs-fire%",
+        "",
+        "8",
+        "10"
+      ],
+      [
+        "regen",
+        "",
+        "800",
+        "1000"
+      ],
+      [
+        "balance2",
+        "",
+        "40",
+        "50"
+      ],
+      [
+        "oskill",
+        "Nova",
+        "60",
+        "60"
+      ],
+      [
+        "sock",
+        "",
+        "0",
+        "2"
+      ],
+      [
+        "gethit-skill",
+        "Fire Ball",
+        "15",
+        "60"
+      ],
+      [
+        "droponly",
+        "",
+        "1",
+        "1"
+      ]
+    ],
+    "adaptations": [
+      "ESR-only oskill-hidden replaced by item-specific Workshop powers.",
+      "Elemental Nova -> Nova"
+    ]
+  },
+  {
+    "id": 18,
+    "uniqueId": 1503,
+    "key": "WorkshopMythical18",
+    "code": "Y18",
+    "name": "Mythical Highlord's Wrath",
+    "base": "Amulet",
+    "source": "Mythical Highlord's Wrath",
+    "properties": [
+      [
+        "allskills",
+        "",
+        "2",
+        "2"
+      ],
+      [
+        "res-all",
+        "",
+        "30",
+        "50"
+      ],
+      [
+        "red-dmg%",
+        "",
+        "10",
+        "15"
+      ],
+      [
+        "res-mag",
+        "",
+        "10",
+        "15"
+      ],
+      [
+        "regen",
+        "",
+        "800",
+        "1500"
+      ],
+      [
+        "regen-mana",
+        "",
+        "120",
+        "200"
+      ],
+      [
+        "ws-mythical-power",
+        "18",
+        "1",
+        "1"
+      ],
+      [
+        "droponly",
+        "",
+        "1",
+        "1"
+      ]
+    ],
+    "adaptations": [
+      "ESR-only aura-hidden replaced by item-specific Workshop powers."
+    ]
+  },
+  {
+    "id": 19,
+    "uniqueId": 1504,
+    "key": "WorkshopMythical19",
+    "code": "Y19",
+    "name": "The Triune's Harbinger of Apocalypse",
+    "base": "Elder Staff",
+    "source": "The Triune Harbinger",
+    "properties": [
+      [
+        "move2",
+        "",
+        "80",
+        "100"
+      ],
+      [
+        "cast2",
+        "",
+        "40",
+        "50"
+      ],
+      [
+        "regen-mana",
+        "",
+        "200",
+        "255"
+      ],
+      [
+        "mana%",
+        "",
+        "40",
+        "50"
+      ],
+      [
+        "enr",
+        "",
+        "75",
+        "100"
+      ],
+      [
+        "allskills",
+        "",
+        "2",
+        "4"
+      ],
+      [
+        "res-all",
+        "",
+        "50",
+        "75"
+      ],
+      [
+        "extra-elem",
+        "",
+        "30",
+        "40"
+      ],
+      [
+        "pierce-elem",
+        "",
+        "15",
+        "25"
+      ],
+      [
+        "oskill",
+        "Kings Trinity",
+        "30",
+        "30"
+      ],
+      [
+        "oskill",
+        "Frozen Orb",
+        "60",
+        "60"
+      ],
+      [
+        "droponly",
+        "",
+        "1",
+        "1"
+      ]
+    ],
+    "adaptations": [
+      "res-elem -> res-all",
+      "spell-elemental-damage -> extra-elem",
+      "pierce-ele-res -> pierce-elem",
+      "Triumvirate Orb -> Kings Trinity",
+      "regen-mana capped at 255 for existing v2 save field."
+    ]
+  },
+  {
+    "id": 20,
+    "uniqueId": 1505,
+    "key": "WorkshopMythical20",
+    "code": "Y20",
+    "name": "Orion",
+    "base": "Hydra Bow",
+    "source": "Orion",
+    "properties": [
+      [
+        "dmg-max",
+        "",
+        "100",
+        "200"
+      ],
+      [
+        "dmg%/lvl",
+        "24",
+        "",
+        ""
+      ],
+      [
+        "pierce-ltng",
+        "",
+        "20",
+        "30"
+      ],
+      [
+        "att",
+        "",
+        "500",
+        "1000"
+      ],
+      [
+        "dex%",
+        "",
+        "13",
+        "20"
+      ],
+      [
+        "deadly",
+        "",
+        "100",
+        "100"
+      ],
+      [
+        "hit-skill",
+        "Nova",
+        "3",
+        "60"
+      ],
+      [
+        "oskill",
+        "Starfall",
+        "30",
+        "30"
+      ],
+      [
+        "oskill",
+        "Comet",
+        "30",
+        "30"
+      ],
+      [
+        "ws-mythical-power",
+        "20",
+        "1",
+        "1"
+      ],
+      [
+        "droponly",
+        "",
+        "1",
+        "1"
+      ]
+    ],
+    "adaptations": [
+      "ESR-only aura-hidden replaced by item-specific Workshop powers.",
+      "dexpercent -> dex%",
+      "Lightning Flash -> Nova",
+      "Rain of Stars -> Starfall",
+      "Rupture of Stars -> Comet"
+    ]
+  },
+  {
+    "id": 21,
+    "uniqueId": 1506,
+    "key": "WorkshopMythical21",
+    "code": "Y21",
+    "name": "Athulua's Final Hunt",
+    "base": "Matriarchal Javelin",
+    "source": "Athulua Final Hunt",
+    "properties": [
+      [
+        "pierce-elem",
+        "",
+        "20",
+        "30"
+      ],
+      [
+        "swing2",
+        "",
+        "30",
+        "40"
+      ],
+      [
+        "skilltab",
+        "2",
+        "2",
+        "4"
+      ],
+      [
+        "ama",
+        "",
+        "2",
+        "4"
+      ],
+      [
+        "move2",
+        "",
+        "25",
+        "50"
+      ],
+      [
+        "dae",
+        "",
+        "5",
+        "10"
+      ],
+      [
+        "heal-kill",
+        "",
+        "50",
+        "100"
+      ],
+      [
+        "abs-all%",
+        "",
+        "2",
+        "3"
+      ],
+      [
+        "hit-skill",
+        "Inner Sight",
+        "3",
+        "60"
+      ],
+      [
+        "oskill",
+        "Lightning Fury",
+        "60",
+        "60"
+      ],
+      [
+        "droponly",
+        "",
+        "1",
+        "1"
+      ]
+    ],
+    "adaptations": [
+      "ESR-only oskill-hidden replaced by item-specific Workshop powers.",
+      "pierce-res-all -> pierce-elem",
+      "velocitypercent -> move2",
+      "dodge -> dae",
+      "abs-elem% -> abs-all%"
+    ]
+  },
+  {
+    "id": 22,
+    "uniqueId": 1507,
+    "key": "WorkshopMythical22",
+    "code": "Y22",
+    "name": "Rathma's Endlessly Bleeding Spine",
+    "base": "Winged Harpoon",
+    "source": "Rathma Endlessly Bleeding Spine",
+    "properties": [
+      [
+        "hit-skill",
+        "Workshop Mythical Blood Empowerment",
+        "15",
+        "1"
+      ],
+      [
+        "dmg-norm",
+        "",
+        "75",
+        "125"
+      ],
+      [
+        "dmg%",
+        "",
+        "300",
+        "400"
+      ],
+      [
+        "dmg/lvl",
+        "16",
+        "",
+        ""
+      ],
+      [
+        "lifesteal",
+        "",
+        "20",
+        "40"
+      ],
+      [
+        "hit-skill",
+        "Bone Spear",
+        "8",
+        "60"
+      ],
+      [
+        "res-curse-len",
+        "",
+        "40",
+        "50"
+      ],
+      [
+        "hit-skill",
+        "Amplify Damage",
+        "2",
+        "60"
+      ],
+      [
+        "reanimate",
+        "875",
+        "20",
+        "30"
+      ],
+      [
+        "reduce-ac",
+        "",
+        "40",
+        "50"
+      ],
+      [
+        "droponly",
+        "",
+        "1",
+        "1"
+      ]
+    ],
+    "adaptations": [
+      "Blood Empowerment -> Workshop Mythical Blood Empowerment",
+      "Bloody Spear -> Bone Spear",
+      "curse-res -> res-curse-len"
+    ]
+  },
+  {
+    "id": 23,
+    "uniqueId": 1508,
+    "key": "WorkshopMythical23",
+    "code": "Y23",
+    "name": "Yaerius' Celestial Beacon",
+    "base": "Hyperion Javelin",
+    "source": "Yaerius Celestial Beacon",
+    "properties": [
+      [
+        "hit-skill",
+        "Workshop Mythical Celestial Empowerment",
+        "1",
+        "1"
+      ],
+      [
+        "dmg%/lvl",
+        "24",
+        "",
+        ""
+      ],
+      [
+        "dmg/lvl",
+        "24",
+        "",
+        ""
+      ],
+      [
+        "swing2",
+        "",
+        "40",
+        "50"
+      ],
+      [
+        "hit-skill",
+        "Lightning Bolt",
+        "8",
+        "60"
+      ],
+      [
+        "hit-skill",
+        "Exploding Arrow",
+        "8",
+        "60"
+      ],
+      [
+        "pierce-ltng",
+        "",
+        "20",
+        "30"
+      ],
+      [
+        "pierce-fire",
+        "",
+        "20",
+        "30"
+      ],
+      [
+        "att%",
+        "",
+        "200",
+        "400"
+      ],
+      [
+        "dmg-demon",
+        "",
+        "200",
+        "300"
+      ],
+      [
+        "droponly",
+        "",
+        "1",
+        "1"
+      ]
+    ],
+    "adaptations": [
+      "Celestial Empowerment -> Workshop Mythical Celestial Empowerment",
+      "Lightning Enhanced Arrow -> Lightning Bolt",
+      "Fire Enhanced Arrow -> Exploding Arrow",
+      "ESR-only ignore-demon-resist replaced by item-specific Workshop powers."
+    ]
+  },
+  {
+    "id": 24,
+    "uniqueId": 1509,
+    "key": "WorkshopMythical24",
+    "code": "Y24",
+    "name": "Ancient Totem of Scosglen",
+    "base": "Shillelagh",
+    "source": "Ancient Totem of Scosglen",
+    "properties": [
+      [
+        "oskill",
+        "Conviction",
+        "60",
+        "60"
+      ],
+      [
+        "kill-skill",
+        "Fire Ball",
+        "17",
+        "60"
+      ],
+      [
+        "kill-skill",
+        "Twister",
+        "17",
+        "60"
+      ],
+      [
+        "kill-skill",
+        "Glacial Spike",
+        "17",
+        "60"
+      ],
+      [
+        "allskills",
+        "",
+        "2",
+        "4"
+      ],
+      [
+        "res-all",
+        "",
+        "40",
+        "60"
+      ],
+      [
+        "cast2",
+        "",
+        "40",
+        "50"
+      ],
+      [
+        "kill-skill",
+        "Workshop Mythical Time Ward",
+        "100",
+        "1"
+      ],
+      [
+        "mana-kill",
+        "",
+        "40",
+        "60"
+      ],
+      [
+        "droponly",
+        "",
+        "1",
+        "1"
+      ]
+    ],
+    "adaptations": [
+      "ESR-only oskill-hidden replaced by item-specific Workshop powers.",
+      "Equipped aura becomes an activatable all-class skill, consistent with Workshop aura rules.",
+      "Scosglen Resonance -> Conviction",
+      "On-cast proc adapted to on-kill proc, usable by spellcasters.",
+      "Flameburst -> Fire Ball",
+      "On-cast proc adapted to on-kill proc, usable by spellcasters.",
+      "On-cast proc adapted to on-kill proc, usable by spellcasters.",
+      "Frozen Blast -> Glacial Spike",
+      "Time Lapse -> Workshop Mythical Time Ward"
+    ]
+  },
+  {
+    "id": 25,
+    "uniqueId": 1510,
+    "key": "WorkshopMythical25",
+    "code": "Y25",
+    "name": "El'druin, Excalibur of the Light",
+    "base": "Colossus Blade",
+    "source": "Eldruin Excalibur of the Light",
+    "properties": [
+      [
+        "att-skill",
+        "Holy Bolt",
+        "10",
+        "60"
+      ],
+      [
+        "att-skill",
+        "Blessed Hammer",
+        "10",
+        "60"
+      ],
+      [
+        "att-skill",
+        "Fist of the Heavens",
+        "10",
+        "60"
+      ],
+      [
+        "dmg-norm",
+        "",
+        "100",
+        "125"
+      ],
+      [
+        "dmg%",
+        "",
+        "300",
+        "400"
+      ],
+      [
+        "healperhit",
+        "",
+        "1",
+        "2"
+      ],
+      [
+        "red-dmg%",
+        "",
+        "15",
+        "30"
+      ],
+      [
+        "res-mag",
+        "",
+        "15",
+        "30"
+      ],
+      [
+        "swing2",
+        "",
+        "40",
+        "50"
+      ],
+      [
+        "dmg-undead",
+        "",
+        "200",
+        "300"
+      ],
+      [
+        "droponly",
+        "",
+        "1",
+        "1"
+      ]
+    ],
+    "adaptations": [
+      "Holy Bolt Weapon Damage -> Holy Bolt",
+      "Blessed Hammer Weapon Damage -> Blessed Hammer",
+      "Fist of the Heavens Weapon Damage -> Fist of the Heavens",
+      "life-on-striking -> healperhit",
+      "ESR-only aura-hidden replaced by item-specific Workshop powers."
+    ]
+  },
+  {
+    "id": 26,
+    "uniqueId": 1511,
+    "key": "WorkshopMythical26",
+    "code": "Y26",
+    "name": "Orpheus' Pillar of Hope - Poison",
+    "base": "Shillelagh",
+    "source": "Orpheus Pillar of Hope",
+    "properties": [
+      [
+        "gethit-skill",
+        "Workshop Mythical Time Ward",
+        "1",
+        "1"
+      ],
+      [
+        "allskills",
+        "",
+        "0",
+        "8"
+      ],
+      [
+        "cast2",
+        "",
+        "0",
+        "30"
+      ],
+      [
+        "red-dmg",
+        "",
+        "50",
+        "50"
+      ],
+      [
+        "red-mag",
+        "",
+        "50",
+        "50"
+      ],
+      [
+        "hp%",
+        "",
+        "30",
+        "50"
+      ],
+      [
+        "oskill",
+        "Poison Nova",
+        "60",
+        "60"
+      ],
+      [
+        "kill-skill",
+        "Workshop Mythical Underworld Empowerment",
+        "50",
+        "1"
+      ],
+      [
+        "extra-pois",
+        "",
+        "40",
+        "60"
+      ],
+      [
+        "droponly",
+        "",
+        "1",
+        "1"
+      ]
+    ],
+    "adaptations": [
+      "Time Lapse -> Workshop Mythical Time Ward",
+      "item-skill-cooldown -> cast2",
+      "Poison Mastery becomes a spell/physical damage bonus.",
+      "Travel to the Underworld -> Poison Nova",
+      "ESR-only aura-hidden replaced by item-specific Workshop powers.",
+      "Underworld Empowerment -> Workshop Mythical Underworld Empowerment"
+    ]
+  },
+  {
+    "id": 27,
+    "uniqueId": 1512,
+    "key": "WorkshopMythical27",
+    "code": "Y27",
+    "name": "Tsukuyomi's Dying Light",
+    "base": "Colossal Sword",
+    "source": "Tsukuyomi Dying Light",
+    "properties": [
+      [
+        "oskill",
+        "Fade",
+        "60",
+        "60"
+      ],
+      [
+        "att-skill",
+        "Royal Strike",
+        "50",
+        "60"
+      ],
+      [
+        "dmg-max",
+        "",
+        "100",
+        "125"
+      ],
+      [
+        "dmg%",
+        "",
+        "200",
+        "300"
+      ],
+      [
+        "dmg/lvl",
+        "24",
+        "",
+        ""
+      ],
+      [
+        "deadly",
+        "",
+        "30",
+        "50"
+      ],
+      [
+        "oskill",
+        "Dragon Claw",
+        "60",
+        "60"
+      ],
+      [
+        "res-mag",
+        "",
+        "10",
+        "20"
+      ],
+      [
+        "reduce-ac",
+        "",
+        "25",
+        "75"
+      ],
+      [
+        "ws-mythical-power",
+        "27",
+        "1",
+        "1"
+      ],
+      [
+        "droponly",
+        "",
+        "1",
+        "1"
+      ]
+    ],
+    "adaptations": [
+      "Shadow Descent -> Fade",
+      "Execute Discharge -> Royal Strike",
+      "ESR-only aura-hidden replaced by item-specific Workshop powers.",
+      "Dragon Blade -> Dragon Claw",
+      "Class-only skill becomes an all-class skill."
+    ]
+  },
+  {
+    "id": 28,
+    "uniqueId": 1513,
+    "key": "WorkshopMythical28",
+    "code": "Y28",
+    "name": "The Ties That Bind - Fire",
+    "base": "Ring",
+    "source": "The Ties That Bind Fire",
+    "properties": [
+      [
+        "extra-fire",
+        "",
+        "30",
+        "30"
+      ],
+      [
+        "res-fire",
+        "",
+        "50",
+        "50"
+      ],
+      [
+        "dmg-fire",
+        "",
+        "400",
+        "600"
+      ],
+      [
+        "cast2",
+        "",
+        "15",
+        "15"
+      ],
+      [
+        "hp%",
+        "",
+        "30",
+        "30"
+      ],
+      [
+        "ws-mythical-power",
+        "28",
+        "1",
+        "1"
+      ],
+      [
+        "droponly",
+        "",
+        "1",
+        "1"
+      ]
+    ],
+    "adaptations": [
+      "item-skill-cooldown -> cast2",
+      "ESR-only aura-hidden replaced by item-specific Workshop powers.",
+      "ESR-only oskill-hidden replaced by item-specific Workshop powers."
+    ]
+  },
+  {
+    "id": 29,
+    "uniqueId": 1514,
+    "key": "WorkshopMythical29",
+    "code": "Y29",
+    "name": "The Ties That Bind - Cold",
+    "base": "Ring",
+    "source": "The Ties That Bind Cold",
+    "properties": [
+      [
+        "extra-cold",
+        "",
+        "30",
+        "30"
+      ],
+      [
+        "res-cold",
+        "",
+        "50",
+        "50"
+      ],
+      [
+        "dmg-cold",
+        "250",
+        "400",
+        "600"
+      ],
+      [
+        "regen",
+        "",
+        "750",
+        "750"
+      ],
+      [
+        "cast2",
+        "",
+        "25",
+        "25"
+      ],
+      [
+        "ws-mythical-power",
+        "29",
+        "1",
+        "1"
+      ],
+      [
+        "droponly",
+        "",
+        "1",
+        "1"
+      ]
+    ],
+    "adaptations": [
+      "proj-speed -> cast2",
+      "ESR-only aura-hidden replaced by item-specific Workshop powers.",
+      "ESR-only oskill-hidden replaced by item-specific Workshop powers."
+    ]
+  },
+  {
+    "id": 30,
+    "uniqueId": 1515,
+    "key": "WorkshopMythical30",
+    "code": "Y30",
+    "name": "The Ties That Bind - Lightning",
+    "base": "Ring",
+    "source": "The Ties That Bind Lightning",
+    "properties": [
+      [
+        "extra-ltng",
+        "",
+        "30",
+        "30"
+      ],
+      [
+        "res-ltng",
+        "",
+        "50",
+        "50"
+      ],
+      [
+        "dmg-ltng",
+        "",
+        "1",
+        "1000"
+      ],
+      [
+        "ws-myth-speeds",
+        "",
+        "20",
+        "20"
+      ],
+      [
+        "deadly",
+        "",
+        "10",
+        "10"
+      ],
+      [
+        "ws-mythical-power",
+        "30",
+        "1",
+        "1"
+      ],
+      [
+        "droponly",
+        "",
+        "1",
+        "1"
+      ]
+    ],
+    "adaptations": [
+      "crit-dmg -> deadly",
+      "ESR-only aura-hidden replaced by item-specific Workshop powers.",
+      "ESR-only oskill-hidden replaced by item-specific Workshop powers."
+    ]
+  },
+  {
+    "id": 31,
+    "uniqueId": 1516,
+    "key": "WorkshopMythical31",
+    "code": "Y31",
+    "name": "The Ties That Bind - Poison",
+    "base": "Ring",
+    "source": "The Ties That Bind Poison",
+    "properties": [
+      [
+        "extra-pois",
+        "",
+        "30",
+        "30"
+      ],
+      [
+        "res-pois",
+        "",
+        "50",
+        "50"
+      ],
+      [
+        "ws-poison-rate-wide",
+        "",
+        "2048",
+        "2048"
+      ],
+      [
+        "ws-poison-duration-native",
+        "",
+        "25",
+        "25"
+      ],
+      [
+        "ws-wide-flat-unit",
+        "",
+        "1",
+        "1"
+      ],
+      [
+        "healperhit",
+        "",
+        "5",
+        "5"
+      ],
+      [
+        "mana-kill",
+        "",
+        "3",
+        "3"
+      ],
+      [
+        "ws-mythical-power",
+        "31",
+        "1",
+        "1"
+      ],
+      [
+        "droponly",
+        "",
+        "1",
+        "1"
+      ]
+    ],
+    "adaptations": [
+      "Poison preserved through the existing wide-rate save property.",
+      "life-on-striking -> healperhit",
+      "mana-on-striking -> mana-kill",
+      "ESR-only aura-hidden replaced by item-specific Workshop powers.",
+      "ESR-only oskill-hidden replaced by item-specific Workshop powers."
+    ]
+  },
+  {
+    "id": 32,
+    "uniqueId": 1517,
+    "key": "WorkshopMythical32",
+    "code": "Y32",
+    "name": "The Ties That Bind - Magic",
+    "base": "Ring",
+    "source": "The Ties That Bind Magic",
+    "properties": [
+      [
+        "extra-mag",
+        "",
+        "30",
+        "30"
+      ],
+      [
+        "res-mag",
+        "",
+        "15",
+        "15"
+      ],
+      [
+        "dmg-mag",
+        "",
+        "255",
+        "511"
+      ],
+      [
+        "red-mag",
+        "",
+        "60",
+        "60"
+      ],
+      [
+        "light",
+        "",
+        "10",
+        "10"
+      ],
+      [
+        "ws-mythical-power",
+        "32",
+        "1",
+        "1"
+      ],
+      [
+        "droponly",
+        "",
+        "1",
+        "1"
+      ]
+    ],
+    "adaptations": [
+      "extra-mag2 -> extra-mag",
+      "ESR-only aura-hidden replaced by item-specific Workshop powers.",
+      "ESR-only oskill-hidden replaced by item-specific Workshop powers."
+    ]
+  },
+  {
+    "id": 33,
+    "uniqueId": 1518,
+    "key": "WorkshopMythical33",
+    "code": "Y33",
+    "name": "The Ties That Bind - Physical",
+    "base": "Ring",
+    "source": "The Ties That Bind Wind",
+    "properties": [
+      [
+        "dmg2%",
+        "",
+        "30",
+        "30"
+      ],
+      [
+        "red-dmg%",
+        "",
+        "15",
+        "15"
+      ],
+      [
+        "dmg-norm",
+        "",
+        "30",
+        "50"
+      ],
+      [
+        "red-dmg",
+        "",
+        "60",
+        "60"
+      ],
+      [
+        "reduce-ac",
+        "",
+        "25",
+        "25"
+      ],
+      [
+        "ws-mythical-power",
+        "33",
+        "1",
+        "1"
+      ],
+      [
+        "droponly",
+        "",
+        "1",
+        "1"
+      ]
+    ],
+    "adaptations": [
+      "extra-wind -> dmg2%",
+      "ESR-only aura-hidden replaced by item-specific Workshop powers.",
+      "ESR-only oskill-hidden replaced by item-specific Workshop powers."
+    ]
+  },
+  {
+    "id": 34,
+    "uniqueId": 1519,
+    "key": "WorkshopMythical34",
+    "code": "Y34",
+    "name": "The Ties That Bind - Summoning",
+    "base": "Ring",
+    "source": "The Ties That Bind Summon",
+    "properties": [
+      [
+        "ws-pet-damage",
+        "",
+        "30",
+        "30"
+      ],
+      [
+        "ws-pet-life",
+        "",
+        "15",
+        "15"
+      ],
+      [
+        "ws-pet-life",
+        "",
+        "20",
+        "20"
+      ],
+      [
+        "res-curse-len",
+        "",
+        "50",
+        "50"
+      ],
+      [
+        "mana%",
+        "",
+        "30",
+        "30"
+      ],
+      [
+        "regen-mana",
+        "",
+        "150",
+        "150"
+      ],
+      [
+        "ws-mythical-power",
+        "34",
+        "1",
+        "1"
+      ],
+      [
+        "droponly",
+        "",
+        "1",
+        "1"
+      ]
+    ],
+    "adaptations": [
+      "extra-summ -> ws-pet-damage",
+      "passive-summ-phys-resist -> ws-pet-life",
+      "passive-summ-life -> ws-pet-life",
+      "curse-res -> res-curse-len",
+      "ESR-only aura-hidden replaced by item-specific Workshop powers.",
+      "ESR-only oskill-hidden replaced by item-specific Workshop powers."
+    ]
+  },
+  {
+    "id": 35,
+    "uniqueId": 1520,
+    "key": "WorkshopMythical35",
+    "code": "Y35",
+    "name": "Void Crescent of a Thousand Cuts",
+    "base": "Winged Axe",
+    "source": "Void Crescent",
+    "properties": [
+      [
+        "noconsume",
+        "",
+        "100",
+        "100"
+      ],
+      [
+        "hit-skill",
+        "Amplify Damage",
+        "100",
+        "60"
+      ],
+      [
+        "swing2",
+        "",
+        "40",
+        "50"
+      ],
+      [
+        "dmg-norm",
+        "",
+        "150",
+        "200"
+      ],
+      [
+        "dmg%",
+        "",
+        "300",
+        "400"
+      ],
+      [
+        "res-curse-len",
+        "",
+        "40",
+        "50"
+      ],
+      [
+        "lifesteal",
+        "",
+        "20",
+        "30"
+      ],
+      [
+        "att%",
+        "",
+        "150",
+        "200"
+      ],
+      [
+        "hit-skill",
+        "Workshop Madawc Double Throw",
+        "8",
+        "60"
+      ],
+      [
+        "hit-skill",
+        "Bone Spear",
+        "8",
+        "60"
+      ],
+      [
+        "pierce-mag",
+        "",
+        "20",
+        "30"
+      ],
+      [
+        "droponly",
+        "",
+        "1",
+        "1"
+      ]
+    ],
+    "adaptations": [
+      "Spectral Maim -> Amplify Damage",
+      "curse-res -> res-curse-len",
+      "Axe Proc -> Workshop Madawc Double Throw",
+      "Magic Enhanced Axe -> Bone Spear"
+    ]
+  },
+  {
+    "id": 36,
+    "uniqueId": 1521,
+    "key": "WorkshopMythical36",
+    "code": "Y36",
+    "name": "Baal's Vile Whisper",
+    "base": "Flying Knife",
+    "source": "Baal's Vile Whisper Shuriken",
+    "properties": [
+      [
+        "noconsume",
+        "",
+        "100",
+        "100"
+      ],
+      [
+        "hit-skill",
+        "Decrepify",
+        "1",
+        "60"
+      ],
+      [
+        "hit-skill",
+        "Blizzard",
+        "2",
+        "60"
+      ],
+      [
+        "hit-skill",
+        "Glacial Spike",
+        "4",
+        "60"
+      ],
+      [
+        "dmg-cold",
+        "255",
+        "2000",
+        "3000"
+      ],
+      [
+        "dex%",
+        "",
+        "20",
+        "33"
+      ],
+      [
+        "dmg-norm",
+        "",
+        "150",
+        "250"
+      ],
+      [
+        "deadly",
+        "",
+        "127",
+        "127"
+      ],
+      [
+        "extra-cold",
+        "",
+        "20",
+        "35"
+      ],
+      [
+        "droponly",
+        "",
+        "1",
+        "1"
+      ]
+    ],
+    "adaptations": [
+      "Mythical Decrepify -> Decrepify",
+      "Ice Fangs -> Blizzard",
+      "Cold Blast -> Glacial Spike",
+      "ESR-only aura-hidden replaced by item-specific Workshop powers.",
+      "dexpercent -> dex%",
+      "ESR-only has-shuriken replaced by item-specific Workshop powers.",
+      "dmg-cold capped at 255 for existing v2 save field.",
+      "deadly capped at 127 for existing v2 save field.",
+      "deadly capped at 127 for existing v2 save field."
+    ]
+  },
+  {
+    "id": 37,
+    "uniqueId": 1522,
+    "key": "WorkshopMythical37",
+    "code": "Y37",
+    "name": "Orpheus' Pillar of Hope - Magic",
+    "base": "Shillelagh",
+    "source": "Orpheus Pillar of Hope",
+    "properties": [
+      [
+        "gethit-skill",
+        "Workshop Mythical Time Ward",
+        "1",
+        "1"
+      ],
+      [
+        "allskills",
+        "",
+        "0",
+        "8"
+      ],
+      [
+        "cast2",
+        "",
+        "0",
+        "30"
+      ],
+      [
+        "red-dmg",
+        "",
+        "50",
+        "50"
+      ],
+      [
+        "red-mag",
+        "",
+        "50",
+        "50"
+      ],
+      [
+        "hp%",
+        "",
+        "30",
+        "50"
+      ],
+      [
+        "oskill",
+        "Poison Nova",
+        "60",
+        "60"
+      ],
+      [
+        "kill-skill",
+        "Workshop Mythical Underworld Empowerment",
+        "50",
+        "1"
+      ],
+      [
+        "extra-mag",
+        "",
+        "40",
+        "60"
+      ],
+      [
+        "droponly",
+        "",
+        "1",
+        "1"
+      ]
+    ],
+    "adaptations": [
+      "Time Lapse -> Workshop Mythical Time Ward",
+      "item-skill-cooldown -> cast2",
+      "Magic Mastery becomes a spell/physical damage bonus.",
+      "Travel to the Underworld -> Poison Nova",
+      "ESR-only aura-hidden replaced by item-specific Workshop powers.",
+      "Underworld Empowerment -> Workshop Mythical Underworld Empowerment"
+    ]
+  },
+  {
+    "id": 38,
+    "uniqueId": 1523,
+    "key": "WorkshopMythical38",
+    "code": "Y38",
+    "name": "Orpheus' Pillar of Hope - Physical",
+    "base": "Shillelagh",
+    "source": "Orpheus Pillar of Hope",
+    "properties": [
+      [
+        "gethit-skill",
+        "Workshop Mythical Time Ward",
+        "1",
+        "1"
+      ],
+      [
+        "allskills",
+        "",
+        "0",
+        "8"
+      ],
+      [
+        "cast2",
+        "",
+        "0",
+        "30"
+      ],
+      [
+        "red-dmg",
+        "",
+        "50",
+        "50"
+      ],
+      [
+        "red-mag",
+        "",
+        "50",
+        "50"
+      ],
+      [
+        "hp%",
+        "",
+        "30",
+        "50"
+      ],
+      [
+        "oskill",
+        "Poison Nova",
+        "60",
+        "60"
+      ],
+      [
+        "kill-skill",
+        "Workshop Mythical Underworld Empowerment",
+        "50",
+        "1"
+      ],
+      [
+        "dmg2%",
+        "",
+        "40",
+        "60"
+      ],
+      [
+        "droponly",
+        "",
+        "1",
+        "1"
+      ]
+    ],
+    "adaptations": [
+      "Time Lapse -> Workshop Mythical Time Ward",
+      "item-skill-cooldown -> cast2",
+      "Wind Mastery becomes a spell/physical damage bonus.",
+      "Travel to the Underworld -> Poison Nova",
+      "ESR-only aura-hidden replaced by item-specific Workshop powers.",
+      "Underworld Empowerment -> Workshop Mythical Underworld Empowerment"
+    ]
+  },
+  {
+    "id": 39,
+    "uniqueId": 1524,
+    "key": "WorkshopMythical39",
+    "code": "Y39",
+    "name": "Tathamet's Awakening - Cold",
+    "base": "Diadem",
+    "source": "Tathamet's Awakening",
+    "properties": [
+      [
+        "coldskill",
+        "",
+        "3",
+        "5"
+      ],
+      [
+        "pierce-cold",
+        "",
+        "20",
+        "30"
+      ],
+      [
+        "oskill",
+        "Cold Mastery",
+        "60",
+        "60"
+      ],
+      [
+        "cast2",
+        "",
+        "15",
+        "20"
+      ],
+      [
+        "abs-cold%",
+        "",
+        "8",
+        "10"
+      ],
+      [
+        "regen-mana",
+        "",
+        "200",
+        "255"
+      ],
+      [
+        "nofreeze",
+        "",
+        "1",
+        "1"
+      ],
+      [
+        "oskill",
+        "Nova",
+        "60",
+        "60"
+      ],
+      [
+        "sock",
+        "",
+        "0",
+        "2"
+      ],
+      [
+        "gethit-skill",
+        "Frost Nova",
+        "15",
+        "60"
+      ],
+      [
+        "droponly",
+        "",
+        "1",
+        "1"
+      ]
+    ],
+    "adaptations": [
+      "ESR-only oskill-hidden replaced by item-specific Workshop powers.",
+      "item-skill-cooldown -> cast2",
+      "Elemental Nova -> Nova",
+      "regen-mana capped at 255 for existing v2 save field."
+    ]
+  },
+  {
+    "id": 40,
+    "uniqueId": 1525,
+    "key": "WorkshopMythical40",
+    "code": "Y40",
+    "name": "Tathamet's Awakening - Lightning",
+    "base": "Diadem",
+    "source": "Tathamet's Awakening",
+    "properties": [
+      [
+        "lightningskill",
+        "",
+        "3",
+        "5"
+      ],
+      [
+        "pierce-ltng",
+        "",
+        "20",
+        "30"
+      ],
+      [
+        "oskill",
+        "Lightning Mastery",
+        "60",
+        "60"
+      ],
+      [
+        "mana%",
+        "",
+        "30",
+        "50"
+      ],
+      [
+        "abs-ltng%",
+        "",
+        "8",
+        "10"
+      ],
+      [
+        "res-all",
+        "",
+        "40",
+        "60"
+      ],
+      [
+        "dae",
+        "",
+        "5",
+        "10"
+      ],
+      [
+        "oskill",
+        "Nova",
+        "60",
+        "60"
+      ],
+      [
+        "sock",
+        "",
+        "0",
+        "2"
+      ],
+      [
+        "gethit-skill",
+        "Nova",
+        "15",
+        "60"
+      ],
+      [
+        "droponly",
+        "",
+        "1",
+        "1"
+      ]
+    ],
+    "adaptations": [
+      "ESR-only oskill-hidden replaced by item-specific Workshop powers.",
+      "dodge -> dae",
+      "Elemental Nova -> Nova"
+    ]
+  },
+  {
+    "id": 41,
+    "uniqueId": 1526,
+    "key": "WorkshopMythical41",
+    "code": "Y41",
+    "name": "The Soul Engine",
+    "base": "Archon Plate",
+    "source": "The Soul Engine",
+    "properties": [
+      [
+        "pierce-cold",
+        "",
+        "20",
+        "40"
+      ],
+      [
+        "oskill",
+        "Cold Mastery",
+        "60",
+        "60"
+      ],
+      [
+        "kill-skill",
+        "Workshop Sorceress Legacy Frost Nova",
+        "17",
+        "60"
+      ],
+      [
+        "ac%",
+        "",
+        "400",
+        "500"
+      ],
+      [
+        "oskill",
+        "Energy Shield",
+        "60",
+        "60"
+      ],
+      [
+        "oskill",
+        "Hurricane",
+        "60",
+        "60"
+      ],
+      [
+        "cast2",
+        "",
+        "20",
+        "20"
+      ],
+      [
+        "mana%",
+        "",
+        "30",
+        "50"
+      ],
+      [
+        "dae",
+        "",
+        "5",
+        "10"
+      ],
+      [
+        "res-pois",
+        "",
+        "80",
+        "100"
+      ],
+      [
+        "res-pois-len",
+        "",
+        "75",
+        "75"
+      ],
+      [
+        "droponly",
+        "",
+        "1",
+        "1"
+      ]
+    ],
+    "adaptations": [
+      "Cold Surge -> Workshop Sorceress Legacy Frost Nova",
+      "Equipped aura becomes an activatable all-class skill, consistent with Workshop aura rules.",
+      "Energy Shield Aura -> Energy Shield",
+      "ESR-only aura-hidden replaced by item-specific Workshop powers.",
+      "Hypothermia -> Hurricane",
+      "item-skill-cooldown -> cast2",
+      "dodge -> dae"
+    ]
+  },
+  {
+    "id": 42,
+    "uniqueId": 1527,
+    "key": "WorkshopMythical42",
+    "code": "Y42",
+    "name": "Voidforge",
+    "base": "Phase Blade",
+    "source": "Voidforge",
+    "properties": [
+      [
+        "dmg-norm",
+        "",
+        "150",
+        "150"
+      ],
+      [
+        "deadly",
+        "",
+        "20",
+        "30"
+      ],
+      [
+        "hp%",
+        "",
+        "30",
+        "40"
+      ],
+      [
+        "healperhit",
+        "",
+        "8",
+        "10"
+      ],
+      [
+        "mana-kill",
+        "",
+        "4",
+        "5"
+      ],
+      [
+        "swing2",
+        "",
+        "30",
+        "30"
+      ],
+      [
+        "dmg%",
+        "",
+        "250",
+        "500"
+      ],
+      [
+        "dmg-fire",
+        "",
+        "1000",
+        "2000"
+      ],
+      [
+        "dmg-cold",
+        "50",
+        "1000",
+        "2000"
+      ],
+      [
+        "dmg-ltng",
+        "",
+        "1000",
+        "2000"
+      ],
+      [
+        "droponly",
+        "",
+        "1",
+        "1"
+      ]
+    ],
+    "adaptations": [
+      "ESR-only ele-crit-auras replaced by item-specific Workshop powers.",
+      "ESR-only aura-hidden replaced by item-specific Workshop powers.",
+      "crit-dmg -> deadly",
+      "life-on-striking -> healperhit",
+      "mana-on-striking -> mana-kill",
+      "Elemental Fury -> Vengeance"
+    ]
+  },
+  {
+    "id": 43,
+    "uniqueId": 1528,
+    "key": "WorkshopMythical43",
+    "code": "Y43",
+    "name": "Mageblood - Base",
+    "base": "Spiderweb Sash",
+    "source": "SoE Mageblood Base Base",
+    "properties": [
+      [
+        "ac%",
+        "",
+        "150",
+        "200"
+      ],
+      [
+        "red-dmg%",
+        "",
+        "18",
+        "18"
+      ],
+      [
+        "res-all-max",
+        "",
+        "3",
+        "3"
+      ],
+      [
+        "res-all",
+        "",
+        "25",
+        "25"
+      ],
+      [
+        "red-dmg",
+        "",
+        "15",
+        "15"
+      ],
+      [
+        "droponly",
+        "",
+        "1",
+        "1"
+      ]
+    ],
+    "adaptations": [
+      "Maximum physical resistance +3 becomes physical damage reduction +3%; native cap remains unchanged."
+    ]
+  },
+  {
+    "id": 44,
+    "uniqueId": 1529,
+    "key": "WorkshopMythical44",
+    "code": "Y44",
+    "name": "Mageblood - Warding",
+    "base": "Spiderweb Sash",
+    "source": "SoE Mageblood 3 Warding",
+    "properties": [
+      [
+        "res-curse-len",
+        "",
+        "50",
+        "50"
+      ],
+      [
+        "ac%",
+        "",
+        "150",
+        "200"
+      ],
+      [
+        "red-dmg%",
+        "",
+        "18",
+        "18"
+      ],
+      [
+        "res-all-max",
+        "",
+        "3",
+        "3"
+      ],
+      [
+        "res-all",
+        "",
+        "25",
+        "25"
+      ],
+      [
+        "red-dmg",
+        "",
+        "15",
+        "15"
+      ],
+      [
+        "droponly",
+        "",
+        "1",
+        "1"
+      ]
+    ],
+    "adaptations": [
+      "Curse protection contributes 25% reduced curse duration; no separate curse avoidance roll.",
+      "Maximum physical resistance +3 becomes physical damage reduction +3%; native cap remains unchanged.",
+      "Curse protection contributes 25% reduced curse duration; no separate curse avoidance roll."
+    ]
+  },
+  {
+    "id": 45,
+    "uniqueId": 1530,
+    "key": "WorkshopMythical45",
+    "code": "Y45",
+    "name": "Mageblood - Renewal",
+    "base": "Spiderweb Sash",
+    "source": "SoE Mageblood 4 Renewal",
+    "properties": [
+      [
+        "ws-mythical-power",
+        "44",
+        "1",
+        "1"
+      ],
+      [
+        "res-curse-len",
+        "",
+        "50",
+        "50"
+      ],
+      [
+        "ac%",
+        "",
+        "150",
+        "200"
+      ],
+      [
+        "red-dmg%",
+        "",
+        "18",
+        "18"
+      ],
+      [
+        "res-all-max",
+        "",
+        "3",
+        "3"
+      ],
+      [
+        "res-all",
+        "",
+        "25",
+        "25"
+      ],
+      [
+        "red-dmg",
+        "",
+        "15",
+        "15"
+      ],
+      [
+        "nofreeze",
+        "",
+        "1",
+        "1"
+      ],
+      [
+        "res-pois-len",
+        "",
+        "100",
+        "100"
+      ],
+      [
+        "ws-myth-life-regen",
+        "",
+        "10",
+        "10"
+      ],
+      [
+        "ws-myth-mana-percent",
+        "",
+        "15",
+        "15"
+      ],
+      [
+        "droponly",
+        "",
+        "1",
+        "1"
+      ]
+    ],
+    "adaptations": [
+      "Native regeneration: 10% maximum life and 15% maximum mana per second while equipped.",
+      "Curse protection contributes 25% reduced curse duration; no separate curse avoidance roll.",
+      "Maximum physical resistance +3 becomes physical damage reduction +3%; native cap remains unchanged.",
+      "Curse protection contributes 25% reduced curse duration; no separate curse avoidance roll."
+    ]
+  },
+  {
+    "id": 46,
+    "uniqueId": 1531,
+    "key": "WorkshopMythical46",
+    "code": "Y46",
+    "name": "Screams of the Desiccated - Bulwark",
+    "base": "Spiderweb Sash",
+    "source": "SoE Screams of the Desiccated Bulwark",
+    "properties": [
+      [
+        "red-dmg%",
+        "",
+        "25",
+        "25"
+      ],
+      [
+        "droponly",
+        "",
+        "1",
+        "1"
+      ]
+    ],
+    "adaptations": []
+  },
+  {
+    "id": 47,
+    "uniqueId": 1532,
+    "key": "WorkshopMythical47",
+    "code": "Y47",
+    "name": "Screams of the Desiccated - Resistance",
+    "base": "Spiderweb Sash",
+    "source": "SoE Screams of the Desiccated Resistance",
+    "properties": [
+      [
+        "res-all-max",
+        "",
+        "10",
+        "10"
+      ],
+      [
+        "res-all",
+        "",
+        "50",
+        "50"
+      ],
+      [
+        "droponly",
+        "",
+        "1",
+        "1"
+      ]
+    ],
+    "adaptations": []
+  },
+  {
+    "id": 48,
+    "uniqueId": 1533,
+    "key": "WorkshopMythical48",
+    "code": "Y48",
+    "name": "Screams of the Desiccated - Vitality",
+    "base": "Spiderweb Sash",
+    "source": "SoE Screams of the Desiccated Vitality",
+    "properties": [
+      [
+        "mana%",
+        "",
+        "50",
+        "50"
+      ],
+      [
+        "hp%",
+        "",
+        "50",
+        "50"
+      ],
+      [
+        "droponly",
+        "",
+        "1",
+        "1"
+      ]
+    ],
+    "adaptations": [
+      "Global skill area +50% replaced by maximum mana +50%; skill geometry is unchanged."
+    ]
+  },
+  {
+    "id": 49,
+    "uniqueId": 1534,
+    "key": "WorkshopMythical49",
+    "code": "Y49",
+    "name": "Screams of the Desiccated - Renewal",
+    "base": "Spiderweb Sash",
+    "source": "SoE Screams of the Desiccated Renewal",
+    "properties": [
+      [
+        "ws-mythical-power",
+        "43",
+        "1",
+        "1"
+      ],
+      [
+        "ws-myth-life-regen",
+        "",
+        "5",
+        "5"
+      ],
+      [
+        "ws-myth-mana-regen",
+        "",
+        "400",
+        "400"
+      ],
+      [
+        "droponly",
+        "",
+        "1",
+        "1"
+      ]
+    ],
+    "adaptations": [
+      "Native regeneration: 5% maximum life per second and +400% mana regeneration while equipped."
+    ]
+  },
+  {
+    "id": 50,
+    "uniqueId": 1535,
+    "key": "WorkshopMythical50",
+    "code": "Y50",
+    "name": "Screams of the Desiccated - Swiftness",
+    "base": "Spiderweb Sash",
+    "source": "SoE Screams of the Desiccated Swiftness",
+    "properties": [
+      [
+        "swing2",
+        "",
+        "10",
+        "10"
+      ],
+      [
+        "cast2",
+        "",
+        "70",
+        "70"
+      ],
+      [
+        "move2",
+        "",
+        "60",
+        "60"
+      ],
+      [
+        "droponly",
+        "",
+        "1",
+        "1"
+      ]
+    ],
+    "adaptations": [
+      "Action speed becomes +10 attack/cast/run speed.",
+      "Skill frequency +20% becomes cast rate +20%; cooldowns unchanged."
+    ]
+  },
+  {
+    "id": 51,
+    "uniqueId": 1536,
+    "key": "WorkshopMythical51",
+    "code": "Y51",
+    "name": "Screams of the Desiccated - Might",
+    "base": "Spiderweb Sash",
+    "source": "SoE Screams of the Desiccated Might",
+    "properties": [
+      [
+        "dmg2%",
+        "",
+        "200",
+        "200"
+      ],
+      [
+        "att%",
+        "",
+        "200",
+        "200"
+      ],
+      [
+        "droponly",
+        "",
+        "1",
+        "1"
+      ]
+    ],
+    "adaptations": []
+  },
+  {
+    "id": 52,
+    "uniqueId": 1537,
+    "key": "WorkshopMythical52",
+    "code": "Y52",
+    "name": "Screams of the Desiccated - Precision",
+    "base": "Spiderweb Sash",
+    "source": "SoE Screams of the Desiccated Precision",
+    "properties": [
+      [
+        "dmg2%",
+        "",
+        "50",
+        "50"
+      ],
+      [
+        "deadly",
+        "",
+        "50",
+        "50"
+      ],
+      [
+        "att%",
+        "",
+        "100",
+        "100"
+      ],
+      [
+        "droponly",
+        "",
+        "1",
+        "1"
+      ]
+    ],
+    "adaptations": [
+      "Deadly Strike multiplier +50% becomes physical damage +50%.",
+      "Maximum Deadly Strike +10% becomes attack rating +100%; native critical chance cap unchanged."
+    ]
+  },
+  {
+    "id": 53,
+    "uniqueId": 1538,
+    "key": "WorkshopMythical53",
+    "code": "Y53",
+    "name": "Screams of the Desiccated - Skills",
+    "base": "Spiderweb Sash",
+    "source": "SoE Screams of the Desiccated Skills",
+    "properties": [
+      [
+        "allskills",
+        "",
+        "2",
+        "2"
+      ],
+      [
+        "droponly",
+        "",
+        "1",
+        "1"
+      ]
+    ],
+    "adaptations": []
+  },
+  {
+    "id": 54,
+    "uniqueId": 1539,
+    "key": "WorkshopMythical54",
+    "code": "Y54",
+    "name": "Screams of the Desiccated - Arcane",
+    "base": "Spiderweb Sash",
+    "source": "SoE Screams of the Desiccated Arcane",
+    "properties": [
+      [
+        "extra-mag",
+        "",
+        "75",
+        "75"
+      ],
+      [
+        "droponly",
+        "",
+        "1",
+        "1"
+      ]
+    ],
+    "adaptations": []
+  },
+  {
+    "id": 55,
+    "uniqueId": 1540,
+    "key": "WorkshopMythical55",
+    "code": "Y55",
+    "name": "Screams of the Desiccated - Elements",
+    "base": "Spiderweb Sash",
+    "source": "SoE Screams of the Desiccated Elements",
+    "properties": [
+      [
+        "extra-fire",
+        "",
+        "75",
+        "75"
+      ],
+      [
+        "extra-cold",
+        "",
+        "75",
+        "75"
+      ],
+      [
+        "extra-ltng",
+        "",
+        "75",
+        "75"
+      ],
+      [
+        "extra-pois",
+        "",
+        "75",
+        "75"
+      ],
+      [
+        "droponly",
+        "",
+        "1",
+        "1"
+      ]
+    ],
+    "adaptations": []
+  },
+  {
+    "id": 56,
+    "uniqueId": 1541,
+    "key": "WorkshopMythical56",
+    "code": "Y56",
+    "name": "Screams of the Desiccated - Might-Bulwark",
+    "base": "Spiderweb Sash",
+    "source": "SoE Screams of the Desiccated Might-Bulwark",
+    "properties": [
+      [
+        "red-dmg%",
+        "",
+        "25",
+        "25"
+      ],
+      [
+        "ws-aura-effect",
+        "",
+        "20",
+        "20"
+      ],
+      [
+        "dmg2%",
+        "",
+        "200",
+        "200"
+      ],
+      [
+        "att%",
+        "",
+        "200",
+        "200"
+      ],
+      [
+        "droponly",
+        "",
+        "1",
+        "1"
+      ]
+    ],
+    "adaptations": [
+      "Skill buff effect becomes Workshop aura effect +20%; does not amplify every temporary buff."
+    ]
+  },
+  {
+    "id": 57,
+    "uniqueId": 1542,
+    "key": "WorkshopMythical57",
+    "code": "Y57",
+    "name": "Screams of the Desiccated - Might-Resistance",
+    "base": "Spiderweb Sash",
+    "source": "SoE Screams of the Desiccated Might-Resistance",
+    "properties": [
+      [
+        "ws-aura-effect",
+        "",
+        "20",
+        "20"
+      ],
+      [
+        "dmg2%",
+        "",
+        "200",
+        "200"
+      ],
+      [
+        "att%",
+        "",
+        "200",
+        "200"
+      ],
+      [
+        "res-all-max",
+        "",
+        "10",
+        "10"
+      ],
+      [
+        "res-all",
+        "",
+        "50",
+        "50"
+      ],
+      [
+        "droponly",
+        "",
+        "1",
+        "1"
+      ]
+    ],
+    "adaptations": [
+      "Skill buff effect becomes Workshop aura effect +20%; does not amplify every temporary buff."
+    ]
+  },
+  {
+    "id": 58,
+    "uniqueId": 1543,
+    "key": "WorkshopMythical58",
+    "code": "Y58",
+    "name": "Screams of the Desiccated - Might-Vitality",
+    "base": "Spiderweb Sash",
+    "source": "SoE Screams of the Desiccated Might-Vitality",
+    "properties": [
+      [
+        "mana%",
+        "",
+        "50",
+        "50"
+      ],
+      [
+        "ws-aura-effect",
+        "",
+        "20",
+        "20"
+      ],
+      [
+        "dmg2%",
+        "",
+        "200",
+        "200"
+      ],
+      [
+        "att%",
+        "",
+        "200",
+        "200"
+      ],
+      [
+        "hp%",
+        "",
+        "50",
+        "50"
+      ],
+      [
+        "droponly",
+        "",
+        "1",
+        "1"
+      ]
+    ],
+    "adaptations": [
+      "Global skill area +50% replaced by maximum mana +50%; skill geometry is unchanged.",
+      "Skill buff effect becomes Workshop aura effect +20%; does not amplify every temporary buff."
+    ]
+  },
+  {
+    "id": 59,
+    "uniqueId": 1544,
+    "key": "WorkshopMythical59",
+    "code": "Y59",
+    "name": "Screams of the Desiccated - Might-Renewal",
+    "base": "Spiderweb Sash",
+    "source": "SoE Screams of the Desiccated Might-Renewal",
+    "properties": [
+      [
+        "ws-mythical-power",
+        "43",
+        "1",
+        "1"
+      ],
+      [
+        "ws-aura-effect",
+        "",
+        "20",
+        "20"
+      ],
+      [
+        "dmg2%",
+        "",
+        "200",
+        "200"
+      ],
+      [
+        "att%",
+        "",
+        "200",
+        "200"
+      ],
+      [
+        "ws-myth-life-regen",
+        "",
+        "5",
+        "5"
+      ],
+      [
+        "ws-myth-mana-regen",
+        "",
+        "400",
+        "400"
+      ],
+      [
+        "droponly",
+        "",
+        "1",
+        "1"
+      ]
+    ],
+    "adaptations": [
+      "Native regeneration: 5% maximum life per second and +400% mana regeneration while equipped.",
+      "Skill buff effect becomes Workshop aura effect +20%; does not amplify every temporary buff."
+    ]
+  },
+  {
+    "id": 60,
+    "uniqueId": 1545,
+    "key": "WorkshopMythical60",
+    "code": "Y60",
+    "name": "Screams of the Desiccated - Might-Skills",
+    "base": "Spiderweb Sash",
+    "source": "SoE Screams of the Desiccated Might-Skills",
+    "properties": [
+      [
+        "allskills",
+        "",
+        "2",
+        "2"
+      ],
+      [
+        "dmg2%",
+        "",
+        "200",
+        "200"
+      ],
+      [
+        "att%",
+        "",
+        "200",
+        "200"
+      ],
+      [
+        "droponly",
+        "",
+        "1",
+        "1"
+      ]
+    ],
+    "adaptations": []
+  },
+  {
+    "id": 61,
+    "uniqueId": 1546,
+    "key": "WorkshopMythical61",
+    "code": "Y61",
+    "name": "Screams of the Desiccated - Elements-Bulwark",
+    "base": "Spiderweb Sash",
+    "source": "SoE Screams of the Desiccated Elements-Bulwark",
+    "properties": [
+      [
+        "red-dmg%",
+        "",
+        "25",
+        "25"
+      ],
+      [
+        "ws-aura-effect",
+        "",
+        "20",
+        "20"
+      ],
+      [
+        "extra-fire",
+        "",
+        "75",
+        "75"
+      ],
+      [
+        "extra-cold",
+        "",
+        "75",
+        "75"
+      ],
+      [
+        "extra-ltng",
+        "",
+        "75",
+        "75"
+      ],
+      [
+        "extra-pois",
+        "",
+        "75",
+        "75"
+      ],
+      [
+        "droponly",
+        "",
+        "1",
+        "1"
+      ]
+    ],
+    "adaptations": [
+      "Skill buff effect becomes Workshop aura effect +20%; does not amplify every temporary buff."
+    ]
+  },
+  {
+    "id": 62,
+    "uniqueId": 1547,
+    "key": "WorkshopMythical62",
+    "code": "Y62",
+    "name": "Screams of the Desiccated - Elements-Resistance",
+    "base": "Spiderweb Sash",
+    "source": "SoE Screams of the Desiccated Elements-Resistance",
+    "properties": [
+      [
+        "ws-aura-effect",
+        "",
+        "20",
+        "20"
+      ],
+      [
+        "extra-fire",
+        "",
+        "75",
+        "75"
+      ],
+      [
+        "extra-cold",
+        "",
+        "75",
+        "75"
+      ],
+      [
+        "extra-ltng",
+        "",
+        "75",
+        "75"
+      ],
+      [
+        "extra-pois",
+        "",
+        "75",
+        "75"
+      ],
+      [
+        "res-all-max",
+        "",
+        "10",
+        "10"
+      ],
+      [
+        "res-all",
+        "",
+        "50",
+        "50"
+      ],
+      [
+        "droponly",
+        "",
+        "1",
+        "1"
+      ]
+    ],
+    "adaptations": [
+      "Skill buff effect becomes Workshop aura effect +20%; does not amplify every temporary buff."
+    ]
+  },
+  {
+    "id": 63,
+    "uniqueId": 1548,
+    "key": "WorkshopMythical63",
+    "code": "Y63",
+    "name": "Screams of the Desiccated - Elements-Vitality",
+    "base": "Spiderweb Sash",
+    "source": "SoE Screams of the Desiccated Elements-Vitality",
+    "properties": [
+      [
+        "mana%",
+        "",
+        "50",
+        "50"
+      ],
+      [
+        "ws-aura-effect",
+        "",
+        "20",
+        "20"
+      ],
+      [
+        "extra-fire",
+        "",
+        "75",
+        "75"
+      ],
+      [
+        "extra-cold",
+        "",
+        "75",
+        "75"
+      ],
+      [
+        "extra-ltng",
+        "",
+        "75",
+        "75"
+      ],
+      [
+        "extra-pois",
+        "",
+        "75",
+        "75"
+      ],
+      [
+        "hp%",
+        "",
+        "50",
+        "50"
+      ],
+      [
+        "droponly",
+        "",
+        "1",
+        "1"
+      ]
+    ],
+    "adaptations": [
+      "Global skill area +50% replaced by maximum mana +50%; skill geometry is unchanged.",
+      "Skill buff effect becomes Workshop aura effect +20%; does not amplify every temporary buff."
+    ]
+  },
+  {
+    "id": 64,
+    "uniqueId": 1549,
+    "key": "WorkshopMythical64",
+    "code": "Y64",
+    "name": "Screams of the Desiccated - Elements-Renewal",
+    "base": "Spiderweb Sash",
+    "source": "SoE Screams of the Desiccated Elements-Renewal",
+    "properties": [
+      [
+        "ws-mythical-power",
+        "43",
+        "1",
+        "1"
+      ],
+      [
+        "ws-aura-effect",
+        "",
+        "20",
+        "20"
+      ],
+      [
+        "extra-fire",
+        "",
+        "75",
+        "75"
+      ],
+      [
+        "extra-cold",
+        "",
+        "75",
+        "75"
+      ],
+      [
+        "extra-ltng",
+        "",
+        "75",
+        "75"
+      ],
+      [
+        "extra-pois",
+        "",
+        "75",
+        "75"
+      ],
+      [
+        "ws-myth-life-regen",
+        "",
+        "5",
+        "5"
+      ],
+      [
+        "ws-myth-mana-regen",
+        "",
+        "400",
+        "400"
+      ],
+      [
+        "droponly",
+        "",
+        "1",
+        "1"
+      ]
+    ],
+    "adaptations": [
+      "Native regeneration: 5% maximum life per second and +400% mana regeneration while equipped.",
+      "Skill buff effect becomes Workshop aura effect +20%; does not amplify every temporary buff."
+    ]
+  },
+  {
+    "id": 65,
+    "uniqueId": 1550,
+    "key": "WorkshopMythical65",
+    "code": "Y65",
+    "name": "Screams of the Desiccated - Elements-Skills",
+    "base": "Spiderweb Sash",
+    "source": "SoE Screams of the Desiccated Elements-Skills",
+    "properties": [
+      [
+        "allskills",
+        "",
+        "2",
+        "2"
+      ],
+      [
+        "extra-fire",
+        "",
+        "75",
+        "75"
+      ],
+      [
+        "extra-cold",
+        "",
+        "75",
+        "75"
+      ],
+      [
+        "extra-ltng",
+        "",
+        "75",
+        "75"
+      ],
+      [
+        "extra-pois",
+        "",
+        "75",
+        "75"
+      ],
+      [
+        "droponly",
+        "",
+        "1",
+        "1"
+      ]
+    ],
+    "adaptations": []
+  },
+  {
+    "id": 66,
+    "uniqueId": 1551,
+    "key": "WorkshopMythical66",
+    "code": "Y66",
+    "name": "Screams of the Desiccated - Arcane-Bulwark",
+    "base": "Spiderweb Sash",
+    "source": "SoE Screams of the Desiccated Arcane-Bulwark",
+    "properties": [
+      [
+        "red-dmg%",
+        "",
+        "25",
+        "25"
+      ],
+      [
+        "ws-aura-effect",
+        "",
+        "20",
+        "20"
+      ],
+      [
+        "extra-mag",
+        "",
+        "75",
+        "75"
+      ],
+      [
+        "droponly",
+        "",
+        "1",
+        "1"
+      ]
+    ],
+    "adaptations": [
+      "Skill buff effect becomes Workshop aura effect +20%; does not amplify every temporary buff."
+    ]
+  },
+  {
+    "id": 67,
+    "uniqueId": 1552,
+    "key": "WorkshopMythical67",
+    "code": "Y67",
+    "name": "Screams of the Desiccated - Arcane-Resistance",
+    "base": "Spiderweb Sash",
+    "source": "SoE Screams of the Desiccated Arcane-Resistance",
+    "properties": [
+      [
+        "ws-aura-effect",
+        "",
+        "20",
+        "20"
+      ],
+      [
+        "extra-mag",
+        "",
+        "75",
+        "75"
+      ],
+      [
+        "res-all-max",
+        "",
+        "10",
+        "10"
+      ],
+      [
+        "res-all",
+        "",
+        "50",
+        "50"
+      ],
+      [
+        "droponly",
+        "",
+        "1",
+        "1"
+      ]
+    ],
+    "adaptations": [
+      "Skill buff effect becomes Workshop aura effect +20%; does not amplify every temporary buff."
+    ]
+  },
+  {
+    "id": 68,
+    "uniqueId": 1553,
+    "key": "WorkshopMythical68",
+    "code": "Y68",
+    "name": "Screams of the Desiccated - Arcane-Vitality",
+    "base": "Spiderweb Sash",
+    "source": "SoE Screams of the Desiccated Arcane-Vitality",
+    "properties": [
+      [
+        "mana%",
+        "",
+        "50",
+        "50"
+      ],
+      [
+        "ws-aura-effect",
+        "",
+        "20",
+        "20"
+      ],
+      [
+        "extra-mag",
+        "",
+        "75",
+        "75"
+      ],
+      [
+        "hp%",
+        "",
+        "50",
+        "50"
+      ],
+      [
+        "droponly",
+        "",
+        "1",
+        "1"
+      ]
+    ],
+    "adaptations": [
+      "Global skill area +50% replaced by maximum mana +50%; skill geometry is unchanged.",
+      "Skill buff effect becomes Workshop aura effect +20%; does not amplify every temporary buff."
+    ]
+  },
+  {
+    "id": 69,
+    "uniqueId": 1554,
+    "key": "WorkshopMythical69",
+    "code": "Y69",
+    "name": "Screams of the Desiccated - Arcane-Renewal",
+    "base": "Spiderweb Sash",
+    "source": "SoE Screams of the Desiccated Arcane-Renewal",
+    "properties": [
+      [
+        "ws-mythical-power",
+        "43",
+        "1",
+        "1"
+      ],
+      [
+        "ws-aura-effect",
+        "",
+        "20",
+        "20"
+      ],
+      [
+        "extra-mag",
+        "",
+        "75",
+        "75"
+      ],
+      [
+        "ws-myth-life-regen",
+        "",
+        "5",
+        "5"
+      ],
+      [
+        "ws-myth-mana-regen",
+        "",
+        "400",
+        "400"
+      ],
+      [
+        "droponly",
+        "",
+        "1",
+        "1"
+      ]
+    ],
+    "adaptations": [
+      "Native regeneration: 5% maximum life per second and +400% mana regeneration while equipped.",
+      "Skill buff effect becomes Workshop aura effect +20%; does not amplify every temporary buff."
+    ]
+  },
+  {
+    "id": 70,
+    "uniqueId": 1555,
+    "key": "WorkshopMythical70",
+    "code": "Y70",
+    "name": "Screams of the Desiccated - Arcane-Skills",
+    "base": "Spiderweb Sash",
+    "source": "SoE Screams of the Desiccated Arcane-Skills",
+    "properties": [
+      [
+        "allskills",
+        "",
+        "2",
+        "2"
+      ],
+      [
+        "extra-mag",
+        "",
+        "75",
+        "75"
+      ],
+      [
+        "droponly",
+        "",
+        "1",
+        "1"
+      ]
+    ],
+    "adaptations": []
+  },
+  {
+    "id": 71,
+    "uniqueId": 1556,
+    "key": "WorkshopMythical71",
+    "code": "Y71",
+    "name": "Screams of the Desiccated - Precision-Bulwark",
+    "base": "Spiderweb Sash",
+    "source": "SoE Screams of the Desiccated Precision-Bulwark",
+    "properties": [
+      [
+        "red-dmg%",
+        "",
+        "25",
+        "25"
+      ],
+      [
+        "ws-aura-effect",
+        "",
+        "20",
+        "20"
+      ],
+      [
+        "dmg2%",
+        "",
+        "50",
+        "50"
+      ],
+      [
+        "deadly",
+        "",
+        "50",
+        "50"
+      ],
+      [
+        "att%",
+        "",
+        "100",
+        "100"
+      ],
+      [
+        "droponly",
+        "",
+        "1",
+        "1"
+      ]
+    ],
+    "adaptations": [
+      "Skill buff effect becomes Workshop aura effect +20%; does not amplify every temporary buff.",
+      "Deadly Strike multiplier +50% becomes physical damage +50%.",
+      "Maximum Deadly Strike +10% becomes attack rating +100%; native critical chance cap unchanged."
+    ]
+  },
+  {
+    "id": 72,
+    "uniqueId": 1557,
+    "key": "WorkshopMythical72",
+    "code": "Y72",
+    "name": "Screams of the Desiccated - Precision-Resistance",
+    "base": "Spiderweb Sash",
+    "source": "SoE Screams of the Desiccated Precision-Resistance",
+    "properties": [
+      [
+        "ws-aura-effect",
+        "",
+        "20",
+        "20"
+      ],
+      [
+        "dmg2%",
+        "",
+        "50",
+        "50"
+      ],
+      [
+        "deadly",
+        "",
+        "50",
+        "50"
+      ],
+      [
+        "att%",
+        "",
+        "100",
+        "100"
+      ],
+      [
+        "res-all-max",
+        "",
+        "10",
+        "10"
+      ],
+      [
+        "res-all",
+        "",
+        "50",
+        "50"
+      ],
+      [
+        "droponly",
+        "",
+        "1",
+        "1"
+      ]
+    ],
+    "adaptations": [
+      "Skill buff effect becomes Workshop aura effect +20%; does not amplify every temporary buff.",
+      "Deadly Strike multiplier +50% becomes physical damage +50%.",
+      "Maximum Deadly Strike +10% becomes attack rating +100%; native critical chance cap unchanged."
+    ]
+  },
+  {
+    "id": 73,
+    "uniqueId": 1558,
+    "key": "WorkshopMythical73",
+    "code": "Y73",
+    "name": "Screams of the Desiccated - Precision-Vitality",
+    "base": "Spiderweb Sash",
+    "source": "SoE Screams of the Desiccated Precision-Vitality",
+    "properties": [
+      [
+        "mana%",
+        "",
+        "50",
+        "50"
+      ],
+      [
+        "ws-aura-effect",
+        "",
+        "20",
+        "20"
+      ],
+      [
+        "dmg2%",
+        "",
+        "50",
+        "50"
+      ],
+      [
+        "deadly",
+        "",
+        "50",
+        "50"
+      ],
+      [
+        "att%",
+        "",
+        "100",
+        "100"
+      ],
+      [
+        "hp%",
+        "",
+        "50",
+        "50"
+      ],
+      [
+        "droponly",
+        "",
+        "1",
+        "1"
+      ]
+    ],
+    "adaptations": [
+      "Global skill area +50% replaced by maximum mana +50%; skill geometry is unchanged.",
+      "Skill buff effect becomes Workshop aura effect +20%; does not amplify every temporary buff.",
+      "Deadly Strike multiplier +50% becomes physical damage +50%.",
+      "Maximum Deadly Strike +10% becomes attack rating +100%; native critical chance cap unchanged."
+    ]
+  },
+  {
+    "id": 74,
+    "uniqueId": 1559,
+    "key": "WorkshopMythical74",
+    "code": "Y74",
+    "name": "Screams of the Desiccated - Precision-Renewal",
+    "base": "Spiderweb Sash",
+    "source": "SoE Screams of the Desiccated Precision-Renewal",
+    "properties": [
+      [
+        "ws-mythical-power",
+        "43",
+        "1",
+        "1"
+      ],
+      [
+        "ws-aura-effect",
+        "",
+        "20",
+        "20"
+      ],
+      [
+        "dmg2%",
+        "",
+        "50",
+        "50"
+      ],
+      [
+        "deadly",
+        "",
+        "50",
+        "50"
+      ],
+      [
+        "att%",
+        "",
+        "100",
+        "100"
+      ],
+      [
+        "ws-myth-life-regen",
+        "",
+        "5",
+        "5"
+      ],
+      [
+        "ws-myth-mana-regen",
+        "",
+        "400",
+        "400"
+      ],
+      [
+        "droponly",
+        "",
+        "1",
+        "1"
+      ]
+    ],
+    "adaptations": [
+      "Native regeneration: 5% maximum life per second and +400% mana regeneration while equipped.",
+      "Skill buff effect becomes Workshop aura effect +20%; does not amplify every temporary buff.",
+      "Deadly Strike multiplier +50% becomes physical damage +50%.",
+      "Maximum Deadly Strike +10% becomes attack rating +100%; native critical chance cap unchanged."
+    ]
+  },
+  {
+    "id": 75,
+    "uniqueId": 1560,
+    "key": "WorkshopMythical75",
+    "code": "Y75",
+    "name": "Screams of the Desiccated - Precision-Skills",
+    "base": "Spiderweb Sash",
+    "source": "SoE Screams of the Desiccated Precision-Skills",
+    "properties": [
+      [
+        "allskills",
+        "",
+        "2",
+        "2"
+      ],
+      [
+        "dmg2%",
+        "",
+        "50",
+        "50"
+      ],
+      [
+        "deadly",
+        "",
+        "50",
+        "50"
+      ],
+      [
+        "att%",
+        "",
+        "100",
+        "100"
+      ],
+      [
+        "droponly",
+        "",
+        "1",
+        "1"
+      ]
+    ],
+    "adaptations": [
+      "Deadly Strike multiplier +50% becomes physical damage +50%.",
+      "Maximum Deadly Strike +10% becomes attack rating +100%; native critical chance cap unchanged."
+    ]
+  },
+  {
+    "id": 76,
+    "uniqueId": 1561,
+    "key": "WorkshopMythical76",
+    "code": "Y76",
+    "name": "Screams of the Desiccated - Swiftness-Bulwark",
+    "base": "Spiderweb Sash",
+    "source": "SoE Screams of the Desiccated Swiftness-Bulwark",
+    "properties": [
+      [
+        "red-dmg%",
+        "",
+        "25",
+        "25"
+      ],
+      [
+        "swing2",
+        "",
+        "10",
+        "10"
+      ],
+      [
+        "cast2",
+        "",
+        "70",
+        "70"
+      ],
+      [
+        "move2",
+        "",
+        "60",
+        "60"
+      ],
+      [
+        "ws-aura-effect",
+        "",
+        "20",
+        "20"
+      ],
+      [
+        "droponly",
+        "",
+        "1",
+        "1"
+      ]
+    ],
+    "adaptations": [
+      "Action speed becomes +10 attack/cast/run speed.",
+      "Skill buff effect becomes Workshop aura effect +20%; does not amplify every temporary buff.",
+      "Skill frequency +20% becomes cast rate +20%; cooldowns unchanged."
+    ]
+  },
+  {
+    "id": 77,
+    "uniqueId": 1562,
+    "key": "WorkshopMythical77",
+    "code": "Y77",
+    "name": "Screams of the Desiccated - Swiftness-Resistance",
+    "base": "Spiderweb Sash",
+    "source": "SoE Screams of the Desiccated Swiftness-Resistance",
+    "properties": [
+      [
+        "swing2",
+        "",
+        "10",
+        "10"
+      ],
+      [
+        "cast2",
+        "",
+        "70",
+        "70"
+      ],
+      [
+        "move2",
+        "",
+        "60",
+        "60"
+      ],
+      [
+        "ws-aura-effect",
+        "",
+        "20",
+        "20"
+      ],
+      [
+        "res-all-max",
+        "",
+        "10",
+        "10"
+      ],
+      [
+        "res-all",
+        "",
+        "50",
+        "50"
+      ],
+      [
+        "droponly",
+        "",
+        "1",
+        "1"
+      ]
+    ],
+    "adaptations": [
+      "Action speed becomes +10 attack/cast/run speed.",
+      "Skill buff effect becomes Workshop aura effect +20%; does not amplify every temporary buff.",
+      "Skill frequency +20% becomes cast rate +20%; cooldowns unchanged."
+    ]
+  },
+  {
+    "id": 78,
+    "uniqueId": 1563,
+    "key": "WorkshopMythical78",
+    "code": "Y78",
+    "name": "Screams of the Desiccated - Swiftness-Vitality",
+    "base": "Spiderweb Sash",
+    "source": "SoE Screams of the Desiccated Swiftness-Vitality",
+    "properties": [
+      [
+        "swing2",
+        "",
+        "10",
+        "10"
+      ],
+      [
+        "cast2",
+        "",
+        "70",
+        "70"
+      ],
+      [
+        "move2",
+        "",
+        "60",
+        "60"
+      ],
+      [
+        "mana%",
+        "",
+        "50",
+        "50"
+      ],
+      [
+        "ws-aura-effect",
+        "",
+        "20",
+        "20"
+      ],
+      [
+        "hp%",
+        "",
+        "50",
+        "50"
+      ],
+      [
+        "droponly",
+        "",
+        "1",
+        "1"
+      ]
+    ],
+    "adaptations": [
+      "Action speed becomes +10 attack/cast/run speed.",
+      "Global skill area +50% replaced by maximum mana +50%; skill geometry is unchanged.",
+      "Skill buff effect becomes Workshop aura effect +20%; does not amplify every temporary buff.",
+      "Skill frequency +20% becomes cast rate +20%; cooldowns unchanged."
+    ]
+  },
+  {
+    "id": 79,
+    "uniqueId": 1564,
+    "key": "WorkshopMythical79",
+    "code": "Y79",
+    "name": "Screams of the Desiccated - Swiftness-Renewal",
+    "base": "Spiderweb Sash",
+    "source": "SoE Screams of the Desiccated Swiftness-Renewal",
+    "properties": [
+      [
+        "ws-mythical-power",
+        "43",
+        "1",
+        "1"
+      ],
+      [
+        "swing2",
+        "",
+        "10",
+        "10"
+      ],
+      [
+        "cast2",
+        "",
+        "70",
+        "70"
+      ],
+      [
+        "move2",
+        "",
+        "60",
+        "60"
+      ],
+      [
+        "ws-aura-effect",
+        "",
+        "20",
+        "20"
+      ],
+      [
+        "ws-myth-life-regen",
+        "",
+        "5",
+        "5"
+      ],
+      [
+        "ws-myth-mana-regen",
+        "",
+        "400",
+        "400"
+      ],
+      [
+        "droponly",
+        "",
+        "1",
+        "1"
+      ]
+    ],
+    "adaptations": [
+      "Native regeneration: 5% maximum life per second and +400% mana regeneration while equipped.",
+      "Action speed becomes +10 attack/cast/run speed.",
+      "Skill buff effect becomes Workshop aura effect +20%; does not amplify every temporary buff.",
+      "Skill frequency +20% becomes cast rate +20%; cooldowns unchanged."
+    ]
+  },
+  {
+    "id": 80,
+    "uniqueId": 1565,
+    "key": "WorkshopMythical80",
+    "code": "Y80",
+    "name": "Screams of the Desiccated - Swiftness-Skills",
+    "base": "Spiderweb Sash",
+    "source": "SoE Screams of the Desiccated Swiftness-Skills",
+    "properties": [
+      [
+        "swing2",
+        "",
+        "10",
+        "10"
+      ],
+      [
+        "cast2",
+        "",
+        "70",
+        "70"
+      ],
+      [
+        "move2",
+        "",
+        "60",
+        "60"
+      ],
+      [
+        "ws-aura-effect",
+        "",
+        "20",
+        "20"
+      ],
+      [
+        "allskills",
+        "",
+        "2",
+        "2"
+      ],
+      [
+        "droponly",
+        "",
+        "1",
+        "1"
+      ]
+    ],
+    "adaptations": [
+      "Action speed becomes +10 attack/cast/run speed.",
+      "Skill buff effect becomes Workshop aura effect +20%; does not amplify every temporary buff.",
+      "Skill frequency +20% becomes cast rate +20%; cooldowns unchanged."
+    ]
+  }
+]

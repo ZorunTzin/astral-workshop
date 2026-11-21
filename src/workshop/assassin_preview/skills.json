@@ -1,0 +1,87 @@
+{
+  "status": "staged-not-installed",
+  "levelConvention": "L is effective skill level; formulas use base + growth * L (not L-1).",
+  "integration": "No native IDs, hooks, live tables or skill slots have been changed. Tested standalone gameplay engine; native adapter, artwork, tooltips and in-game validation follow after slot selection.",
+  "procPolicy": "Every damaging skill may request on-hit procs on successful native hits. Secondary hits cannot recursively start Afterimage or mark explosions. Proc-generated damage never feeds Death Mark.",
+  "skills": [
+    {
+      "name": "Expose Weakness",
+      "tree": "Shadow Disciplines",
+      "kind": "Passive",
+      "mechanics": "Successful hits against full-life enemies always critically strike. Critical damage bonus: 10 + L percentage points. Native Critical Strike / Deadly Strike must not multiply the same hit twice.",
+      "provisional": []
+    },
+    {
+      "name": "Omnislash",
+      "tree": "Martial Arts",
+      "kind": "Attack",
+      "mechanics": "Randomly jump between nearby enemies, allowing repeated targets. 5 + floor(L/5) hits; 200 + 25L% weapon damage per hit; +200 + 20L% attack rating; 10-second cooldown.",
+      "provisional": [
+        "8-yard search radius; one jump every 5 frames; traversable landing positions required."
+      ]
+    },
+    {
+      "name": "Queen of Blades",
+      "tree": "Traps",
+      "kind": "Reserved buff",
+      "mechanics": "Every second, launch blades at nearby enemies. Each blade: 30 + 5L% weapon damage; +100 + 10L% attack rating. Intended replacement: Blade Shield, not assigned yet.",
+      "provisional": [
+        "15 + 3L mana before reservation efficiency; 8-yard range; up to 3 + floor(L/10) targets, capped at 8."
+      ]
+    },
+    {
+      "name": "ATMG Sentry",
+      "tree": "Traps",
+      "kind": "Sentry",
+      "mechanics": "Fire 8 shots per second. Each shot: 10 + L% weapon damage; +100 + 10L% attack rating. Successful hits can trigger on-hit effects.",
+      "provisional": [
+        "8-yard range; 80 shots per sentry; up to 5 sentries. Overclock consumes the shot budget faster."
+      ]
+    },
+    {
+      "name": "Spiked Ground",
+      "tree": "Traps",
+      "kind": "Reserved buff",
+      "mechanics": "Movement leaves overlapping spike patches. Each patch lasts 3 seconds and hits once per second for 25 + 5L% weapon damage; +100 + 10L% attack rating. Patches stack independently.",
+      "provisional": [
+        "15 + 3L mana before efficiency; one patch per 0.2 seconds while moving; 1-yard patch radius; first hit after 1 second."
+      ]
+    },
+    {
+      "name": "Afterimage",
+      "tree": "Shadow Disciplines",
+      "kind": "Reserved buff",
+      "mechanics": "Successful primary attacks leave an afterimage that strikes the same target after a short delay for 30 + 3L% weapon damage. Afterimages can trigger on-hit effects but cannot spawn further afterimages.",
+      "provisional": [
+        "15 + 3L mana before efficiency; 6-frame delay (0.24 seconds); inherits the initiating attack-rating bonus."
+      ]
+    },
+    {
+      "name": "Death Mark",
+      "tree": "Shadow Disciplines",
+      "kind": "Reserved buff",
+      "mechanics": "Primary successful hits mark a target for 5 seconds. Store the actual damage dealt by the owner and their owned attacks; release 100% of the stored damage as a physical area explosion on expiry or earlier death. Later hits do not refresh the timer. Death Mark explosions do not feed other Death Marks.",
+      "provisional": [
+        "15 + 3L mana before efficiency; 6-yard explosion radius. Marked targets stop collecting when the buff is disabled."
+      ]
+    },
+    {
+      "name": "Gravity Trap",
+      "tree": "Traps",
+      "kind": "Trap",
+      "mechanics": "Periodically pull enemies toward the trap and slow enemies inside its area. Bosses and movement-immune enemies keep their native movement restrictions.",
+      "provisional": [
+        "8-second lifetime; 6-yard radius; pull once per second; movement slow 20 + L%, capped at 60%; strongest overlapping slow wins; up to 5 traps."
+      ]
+    },
+    {
+      "name": "Overclock",
+      "tree": "Traps",
+      "kind": "Reserved buff",
+      "mechanics": "Increase sentry firing speed, consuming available shots faster. Does not accelerate Queen of Blades or Spiked Ground beyond their one-second damage cadence.",
+      "provisional": [
+        "15 + 3L mana before efficiency; +25 + 2L% sentry firing rate."
+      ]
+    }
+  ]
+}

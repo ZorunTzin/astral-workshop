@@ -1,0 +1,59 @@
+{
+  "bindings": {
+    "Blast6": 1058,
+    "Arrow6": 1059,
+    "Blast7": 1060,
+    "Arrow7": 1061,
+    "Blast11": 1062,
+    "Arrow11": 1063,
+    "MultiArrow": 1064,
+    "MultiBolt": 1065,
+    "Return": 1066,
+    "Split0": 1067,
+    "Split1": 1068,
+    "Split2": 1069,
+    "Split3": 1070,
+    "SplitHelper": 638,
+    "PounceLevel": 639,
+    "PounceHit": 1071,
+    "PounceRing": 1072,
+    "PounceVisual": 640,
+    "ChargedBolt": 1073,
+    "LightningStrike": 232,
+    "Toxic": 1075
+  },
+  "auras": [
+    [
+      8,
+      6,
+      321,
+      634,
+      15,
+      3
+    ],
+    [
+      17,
+      6,
+      322,
+      635,
+      15,
+      3
+    ],
+    [
+      18,
+      65,
+      323,
+      636,
+      15,
+      3
+    ],
+    [
+      28,
+      65,
+      324,
+      637,
+      15,
+      3
+    ]
+  ]
+}

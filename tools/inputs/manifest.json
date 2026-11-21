@@ -1,0 +1,6 @@
+{
+  "file": "reimagined-base.zip",
+  "sha256": "adb88c1a51a4775791e21d96d4151c25b5f8b6e03205c51505c297195f7acd65",
+  "purpose": "Clean Reimagined baseline for reproducible Workshop generation",
+  "upstream_commit": "4fa2cff22ff94685d5ffaa6a4c2cb7e8d7d3b88f"
+}

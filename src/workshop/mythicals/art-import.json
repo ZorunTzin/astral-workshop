@@ -1,0 +1,21 @@
+{
+  "source": "Eastern Sun Resurrected, locally installed",
+  "url": "https://easternsunresurrected.com/unique_mythicals.htm",
+  "files": 129,
+  "bytes": 8361220,
+  "modelFallbacks": [
+    {
+      "id": 17,
+      "model": "data/hd/items/armor/circlet/diadem.json"
+    },
+    {
+      "id": 39,
+      "model": "data/hd/items/armor/circlet/diadem.json"
+    },
+    {
+      "id": 40,
+      "model": "data/hd/items/armor/circlet/diadem.json"
+    }
+  ],
+  "namespace": "data/wm; fixed-width dependency paths"
+}

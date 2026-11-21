@@ -1,0 +1,42 @@
+[
+  {
+    "theme": "desert",
+    "biome": "data/hd/env/biome/act2_outdoors.json",
+    "sourceSize": [
+      8,
+      8
+    ],
+    "hd": "data/hd/env/preset/workshop/astral-desert.json",
+    "ds1": "data/global/tiles/workshop/astral-desert.ds1"
+  },
+  {
+    "theme": "jungle",
+    "biome": "data/hd/env/biome/act3_jungle.json",
+    "sourceSize": [
+      32,
+      32
+    ],
+    "hd": "data/hd/env/preset/workshop/astral-jungle.json",
+    "ds1": "data/global/tiles/workshop/astral-jungle.ds1"
+  },
+  {
+    "theme": "infernal",
+    "biome": "data/hd/env/biome/act4_mesa.json",
+    "sourceSize": [
+      16,
+      16
+    ],
+    "hd": "data/hd/env/preset/workshop/astral-infernal.json",
+    "ds1": "data/global/tiles/workshop/astral-infernal.ds1"
+  },
+  {
+    "theme": "frozen",
+    "biome": "data/hd/env/biome/expansion_ruins_snow.json",
+    "sourceSize": [
+      33,
+      12
+    ],
+    "hd": "data/hd/env/preset/workshop/astral-frozen.json",
+    "ds1": "data/global/tiles/workshop/astral-frozen.ds1"
+  }
+]

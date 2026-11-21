@@ -1,0 +1,61 @@
+{
+  "quake_missile": 1025,
+  "rain_skill": 573,
+  "rock_variants": [
+    1028,
+    1029,
+    1030,
+    1031
+  ],
+  "rage_skill": 586,
+  "rock_hit": 1036,
+  "rock_control": 1027,
+  "call": 133,
+  "ancient_classes": [
+    855,
+    856,
+    857
+  ],
+  "helpers": {
+    "127": 574,
+    "128": 575,
+    "129": 576,
+    "135": 577,
+    "145": 578,
+    "148": 579,
+    "153": 580,
+    "131": 581,
+    "140": 582,
+    "133": 583
+  },
+  "states": {
+    "carnage": 301,
+    "feast": 302,
+    "feast_aura": 303,
+    "battle_pull": 304,
+    "bleeding": 305,
+    "impale": 306,
+    "ancient_passives": 307
+  },
+  "pull": 584,
+  "tick_skill": 585,
+  "tick_missile": 1035,
+  "splash": [
+    430,
+    431,
+    432,
+    433,
+    434
+  ],
+  "ancient_attacks": [
+    570,
+    572,
+    571
+  ],
+  "ancient_visuals": [
+    308,
+    309,
+    310
+  ],
+  "redeemed_state": 99
+}

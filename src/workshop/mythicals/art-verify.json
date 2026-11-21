@@ -1,0 +1,5 @@
+{
+  "references": 239,
+  "missing": [],
+  "note": "Native model references resolve through _lod0.model; higher LODs remain engine-managed."
+}

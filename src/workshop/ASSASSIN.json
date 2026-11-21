@@ -1,0 +1,59 @@
+{
+  "bindings": {
+    "ATMGClass": 860,
+    "GravityClass": 859,
+    "EchoClass": 861,
+    "EchoSummon": 633,
+    "SpeedState": 319,
+    "Blink": 613,
+    "Finisher": 614,
+    "HitSkill": 625,
+    "HitMissile": 1051,
+    "GravitySlow": 320,
+    "GravityPlace": 1049,
+    "ATMGPlace": 1050,
+    "QueenVisual": 1052,
+    "ATMGVisual": 1053,
+    "SpikesVisual": 1054,
+    "GravityVisual": 1055,
+    "AfterimageVisual": 1056,
+    "DeathMarkVisual": 1057,
+    "QueenVisualSkill": 626,
+    "ATMGVisualSkill": 627,
+    "SpikesVisualSkill": 628,
+    "GravityVisualSkill": 629,
+    "AfterimageVisualSkill": 630,
+    "DeathMarkVisualSkill": 631
+  },
+  "levels": {
+    "263": 615,
+    "278": 616,
+    "256": 617,
+    "276": 618,
+    "265": 619,
+    "257": 620,
+    "266": 621,
+    "277": 622,
+    "275": 623,
+    "260": 624
+  },
+  "states": {
+    "263": 314,
+    "278": 315,
+    "276": 316,
+    "257": 317,
+    "277": 318
+  },
+  "skills": {
+    "263": "Afterimage",
+    "278": "Death Mark",
+    "256": "Gravity Trap",
+    "276": "Overclock",
+    "265": "Expose Weakness",
+    "257": "Spiked Ground",
+    "266": "ATMG Sentry",
+    "277": "Queen of Blades",
+    "275": "Omnislash",
+    "260": "Dragon Flight"
+  }
+}

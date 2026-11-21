@@ -1,0 +1,7062 @@
+[
+  {
+    "hax": {
+      "asset": "axe/hand_axe"
+    }
+  },
+  {
+    "axe": {
+      "asset": "axe/axe"
+    }
+  },
+  {
+    "2ax": {
+      "asset": "axe/double_axe"
+    }
+  },
+  {
+    "mpi": {
+      "asset": "axe/military_pick"
+    }
+  },
+  {
+    "wax": {
+      "asset": "axe/war_axe"
+    }
+  },
+  {
+    "lax": {
+      "asset": "axe/large_axe"
+    }
+  },
+  {
+    "bax": {
+      "asset": "axe/broad_axe"
+    }
+  },
+  {
+    "btx": {
+      "asset": "axe/battle_axe"
+    }
+  },
+  {
+    "gax": {
+      "asset": "axe/great_axe"
+    }
+  },
+  {
+    "gix": {
+      "asset": "axe/giant_axe"
+    }
+  },
+  {
+    "wnd": {
+      "asset": "wand/wand"
+    }
+  },
+  {
+    "ywn": {
+      "asset": "wand/yew_wand"
+    }
+  },
+  {
+    "bwn": {
+      "asset": "wand/bone_wand"
+    }
+  },
+  {
+    "gwn": {
+      "asset": "wand/grim_wand"
+    }
+  },
+  {
+    "clb": {
+      "asset": "club/club"
+    }
+  },
+  {
+    "scp": {
+      "asset": "scepter/scepter"
+    }
+  },
+  {
+    "gsc": {
+      "asset": "scepter/grand_scepter"
+    }
+  },
+  {
+    "wsp": {
+      "asset": "scepter/war_scepter"
+    }
+  },
+  {
+    "spc": {
+      "asset": "club/spiked_club"
+    }
+  },
+  {
+    "mac": {
+      "asset": "mace/mace"
+    }
+  },
+  {
+    "mst": {
+      "asset": "mace/morning_star"
+    }
+  },
+  {
+    "fla": {
+      "asset": "mace/flail"
+    }
+  },
+  {
+    "whm": {
+      "asset": "hammer/war_hammer"
+    }
+  },
+  {
+    "mau": {
+      "asset": "hammer/maul"
+    }
+  },
+  {
+    "gma": {
+      "asset": "hammer/great_maul"
+    }
+  },
+  {
+    "ssd": {
+      "asset": "sword/short_sword"
+    }
+  },
+  {
+    "scm": {
+      "asset": "sword/scimitar"
+    }
+  },
+  {
+    "sbr": {
+      "asset": "sword/saber"
+    }
+  },
+  {
+    "flc": {
+      "asset": "sword/falchion"
+    }
+  },
+  {
+    "crs": {
+      "asset": "sword/crystal_sword"
+    }
+  },
+  {
+    "bsd": {
+      "asset": "sword/broad_sword"
+    }
+  },
+  {
+    "lsd": {
+      "asset": "sword/long_sword"
+    }
+  },
+  {
+    "wsd": {
+      "asset": "sword/war_sword"
+    }
+  },
+  {
+    "2hs": {
+      "asset": "sword/two_handed_sword"
+    }
+  },
+  {
+    "clm": {
+      "asset": "sword/claymore"
+    }
+  },
+  {
+    "gis": {
+      "asset": "sword/giant_sword"
+    }
+  },
+  {
+    "bsw": {
+      "asset": "sword/bastard_sword"
+    }
+  },
+  {
+    "flb": {
+      "asset": "sword/flamberge"
+    }
+  },
+  {
+    "gsd": {
+      "asset": "sword/great_sword"
+    }
+  },
+  {
+    "dgr": {
+      "asset": "knife/dagger"
+    }
+  },
+  {
+    "dir": {
+      "asset": "knife/dirk"
+    }
+  },
+  {
+    "kri": {
+      "asset": "knife/kriss"
+    }
+  },
+  {
+    "bld": {
+      "asset": "knife/blade"
+    }
+  },
+  {
+    "tkf": {
+      "asset": "knife/throwing_knife"
+    }
+  },
+  {
+    "tax": {
+      "asset": "axe/throwing_axe"
+    }
+  },
+  {
+    "bkf": {
+      "asset": "knife/balanced_knife"
+    }
+  },
+  {
+    "bal": {
+      "asset": "axe/balanced_axe"
+    }
+  },
+  {
+    "jav": {
+      "asset": "javelin/javelin"
+    }
+  },
+  {
+    "pil": {
+      "asset": "javelin/pilum"
+    }
+  },
+  {
+    "ssp": {
+      "asset": "javelin/short_spear"
+    }
+  },
+  {
+    "glv": {
+      "asset": "javelin/glaive"
+    }
+  },
+  {
+    "tsp": {
+      "asset": "javelin/throwing_spear"
+    }
+  },
+  {
+    "spr": {
+      "asset": "spear/spear"
+    }
+  },
+  {
+    "tri": {
+      "asset": "spear/trident"
+    }
+  },
+  {
+    "brn": {
+      "asset": "spear/brandistock"
+    }
+  },
+  {
+    "spt": {
+      "asset": "spear/spetum"
+    }
+  },
+  {
+    "pik": {
+      "asset": "spear/pike"
+    }
+  },
+  {
+    "bar": {
+      "asset": "polearm/bardiche"
+    }
+  },
+  {
+    "vou": {
+      "asset": "polearm/voulge"
+    }
+  },
+  {
+    "scy": {
+      "asset": "polearm/scythe"
+    }
+  },
+  {
+    "pax": {
+      "asset": "polearm/poleaxe"
+    }
+  },
+  {
+    "hal": {
+      "asset": "polearm/halberd"
+    }
+  },
+  {
+    "wsc": {
+      "asset": "polearm/war_scythe"
+    }
+  },
+  {
+    "sst": {
+      "asset": "staff/short_staff"
+    }
+  },
+  {
+    "lst": {
+      "asset": "staff/long_staff"
+    }
+  },
+  {
+    "cst": {
+      "asset": "staff/gnarled_staff"
+    }
+  },
+  {
+    "bst": {
+      "asset": "staff/battle_staff"
+    }
+  },
+  {
+    "wst": {
+      "asset": "staff/war_staff"
+    }
+  },
+  {
+    "sbw": {
+      "asset": "bow/short_bow"
+    }
+  },
+  {
+    "hbw": {
+      "asset": "bow/hunters_bow"
+    }
+  },
+  {
+    "lbw": {
+      "asset": "bow/long_bow"
+    }
+  },
+  {
+    "cbw": {
+      "asset": "bow/composite_bow"
+    }
+  },
+  {
+    "sbb": {
+      "asset": "bow/short_battle_bow"
+    }
+  },
+  {
+    "lbb": {
+      "asset": "bow/long_battle_bow"
+    }
+  },
+  {
+    "swb": {
+      "asset": "bow/short_war_bow"
+    }
+  },
+  {
+    "lwb": {
+      "asset": "bow/long_war_bow"
+    }
+  },
+  {
+    "lxb": {
+      "asset": "bow/light_crossbow"
+    }
+  },
+  {
+    "mxb": {
+      "asset": "bow/crossbow"
+    }
+  },
+  {
+    "hxb": {
+      "asset": "bow/heavy_crossbow"
+    }
+  },
+  {
+    "rxb": {
+      "asset": "bow/repeating_crossbow"
+    }
+  },
+  {
+    "gps": {
+      "asset": "potion/rancid_gas_potion"
+    }
+  },
+  {
+    "ops": {
+      "asset": "potion/oil_potion"
+    }
+  },
+  {
+    "gpm": {
+      "asset": "potion/choking_gas_potion"
+    }
+  },
+  {
+    "opm": {
+      "asset": "potion/exploding_potion"
+    }
+  },
+  {
+    "gpl": {
+      "asset": "potion/strangling_gas_potion"
+    }
+  },
+  {
+    "opl": {
+      "asset": "potion/fulminating_potion"
+    }
+  },
+  {
+    "d33": {
+      "asset": "knife/decoy_dagger"
+    }
+  },
+  {
+    "g33": {
+      "asset": "knife/gidbinn"
+    }
+  },
+  {
+    "leg": {
+      "asset": "club/wirts_leg"
+    }
+  },
+  {
+    "hdm": {
+      "asset": "hammer/horadric_malus"
+    }
+  },
+  {
+    "hfh": {
+      "asset": "hammer/hellforge_hammer"
+    }
+  },
+  {
+    "hst": {
+      "asset": "staff/horadric_staff"
+    }
+  },
+  {
+    "msf": {
+      "asset": "staff/staff_of_the_kings"
+    }
+  },
+  {
+    "9ha": {
+      "asset": "axe/hand_axe"
+    }
+  },
+  {
+    "9ax": {
+      "asset": "axe/axe"
+    }
+  },
+  {
+    "92a": {
+      "asset": "axe/double_axe"
+    }
+  },
+  {
+    "9mp": {
+      "asset": "axe/military_pick"
+    }
+  },
+  {
+    "9wa": {
+      "asset": "axe/war_axe"
+    }
+  },
+  {
+    "9la": {
+      "asset": "axe/large_axe"
+    }
+  },
+  {
+    "9ba": {
+      "asset": "axe/broad_axe"
+    }
+  },
+  {
+    "9bt": {
+      "asset": "axe/battle_axe"
+    }
+  },
+  {
+    "9ga": {
+      "asset": "axe/great_axe"
+    }
+  },
+  {
+    "9gi": {
+      "asset": "axe/giant_axe"
+    }
+  },
+  {
+    "9wn": {
+      "asset": "wand/wand"
+    }
+  },
+  {
+    "9yw": {
+      "asset": "wand/yew_wand"
+    }
+  },
+  {
+    "9bw": {
+      "asset": "wand/bone_wand"
+    }
+  },
+  {
+    "9gw": {
+      "asset": "wand/grim_wand"
+    }
+  },
+  {
+    "9cl": {
+      "asset": "club/club"
+    }
+  },
+  {
+    "9sc": {
+      "asset": "scepter/scepter"
+    }
+  },
+  {
+    "9qs": {
+      "asset": "scepter/grand_scepter"
+    }
+  },
+  {
+    "9ws": {
+      "asset": "scepter/war_scepter"
+    }
+  },
+  {
+    "9sp": {
+      "asset": "club/spiked_club"
+    }
+  },
+  {
+    "9ma": {
+      "asset": "mace/mace"
+    }
+  },
+  {
+    "9mt": {
+      "asset": "mace/morning_star"
+    }
+  },
+  {
+    "9fl": {
+      "asset": "mace/flail"
+    }
+  },
+  {
+    "9wh": {
+      "asset": "hammer/war_hammer"
+    }
+  },
+  {
+    "9m9": {
+      "asset": "hammer/maul"
+    }
+  },
+  {
+    "9gm": {
+      "asset": "hammer/great_maul"
+    }
+  },
+  {
+    "9ss": {
+      "asset": "sword/short_sword"
+    }
+  },
+  {
+    "9sm": {
+      "asset": "sword/scimitar"
+    }
+  },
+  {
+    "9sb": {
+      "asset": "sword/saber"
+    }
+  },
+  {
+    "9fc": {
+      "asset": "sword/falchion"
+    }
+  },
+  {
+    "9cr": {
+      "asset": "sword/crystal_sword"
+    }
+  },
+  {
+    "9bs": {
+      "asset": "sword/broad_sword"
+    }
+  },
+  {
+    "9ls": {
+      "asset": "sword/long_sword"
+    }
+  },
+  {
+    "9wd": {
+      "asset": "sword/war_sword"
+    }
+  },
+  {
+    "92h": {
+      "asset": "sword/two_handed_sword"
+    }
+  },
+  {
+    "9cm": {
+      "asset": "sword/claymore"
+    }
+  },
+  {
+    "9gs": {
+      "asset": "sword/giant_sword"
+    }
+  },
+  {
+    "9b9": {
+      "asset": "sword/bastard_sword"
+    }
+  },
+  {
+    "9fb": {
+      "asset": "sword/flamberge"
+    }
+  },
+  {
+    "9gd": {
+      "asset": "sword/great_sword"
+    }
+  },
+  {
+    "9dg": {
+      "asset": "knife/dagger"
+    }
+  },
+  {
+    "9di": {
+      "asset": "knife/dirk"
+    }
+  },
+  {
+    "9kr": {
+      "asset": "knife/kriss"
+    }
+  },
+  {
+    "9bl": {
+      "asset": "knife/blade"
+    }
+  },
+  {
+    "9tk": {
+      "asset": "knife/throwing_knife"
+    }
+  },
+  {
+    "9ta": {
+      "asset": "axe/throwing_axe"
+    }
+  },
+  {
+    "9bk": {
+      "asset": "knife/balanced_knife"
+    }
+  },
+  {
+    "9b8": {
+      "asset": "axe/balanced_axe"
+    }
+  },
+  {
+    "9ja": {
+      "asset": "javelin/javelin"
+    }
+  },
+  {
+    "9pi": {
+      "asset": "javelin/pilum"
+    }
+  },
+  {
+    "9s9": {
+      "asset": "javelin/short_spear"
+    }
+  },
+  {
+    "9gl": {
+      "asset": "javelin/glaive"
+    }
+  },
+  {
+    "9ts": {
+      "asset": "javelin/throwing_spear"
+    }
+  },
+  {
+    "9sr": {
+      "asset": "spear/spear"
+    }
+  },
+  {
+    "9tr": {
+      "asset": "spear/trident"
+    }
+  },
+  {
+    "9br": {
+      "asset": "spear/brandistock"
+    }
+  },
+  {
+    "9st": {
+      "asset": "spear/spetum"
+    }
+  },
+  {
+    "9p9": {
+      "asset": "spear/pike"
+    }
+  },
+  {
+    "9b7": {
+      "asset": "polearm/bardiche"
+    }
+  },
+  {
+    "9vo": {
+      "asset": "polearm/voulge"
+    }
+  },
+  {
+    "9s8": {
+      "asset": "polearm/scythe"
+    }
+  },
+  {
+    "9pa": {
+      "asset": "polearm/poleaxe"
+    }
+  },
+  {
+    "9h9": {
+      "asset": "polearm/halberd"
+    }
+  },
+  {
+    "9wc": {
+      "asset": "polearm/war_scythe"
+    }
+  },
+  {
+    "8ss": {
+      "asset": "staff/short_staff"
+    }
+  },
+  {
+    "8ls": {
+      "asset": "staff/long_staff"
+    }
+  },
+  {
+    "8cs": {
+      "asset": "staff/gnarled_staff"
+    }
+  },
+  {
+    "8bs": {
+      "asset": "staff/battle_staff"
+    }
+  },
+  {
+    "8ws": {
+      "asset": "staff/war_staff"
+    }
+  },
+  {
+    "8sb": {
+      "asset": "bow/short_bow"
+    }
+  },
+  {
+    "8hb": {
+      "asset": "bow/hunters_bow"
+    }
+  },
+  {
+    "8lb": {
+      "asset": "bow/long_bow"
+    }
+  },
+  {
+    "8cb": {
+      "asset": "bow/composite_bow"
+    }
+  },
+  {
+    "8s8": {
+      "asset": "bow/short_battle_bow"
+    }
+  },
+  {
+    "8l8": {
+      "asset": "bow/long_battle_bow"
+    }
+  },
+  {
+    "8sw": {
+      "asset": "bow/short_war_bow"
+    }
+  },
+  {
+    "8lw": {
+      "asset": "bow/long_war_bow"
+    }
+  },
+  {
+    "8lx": {
+      "asset": "bow/light_crossbow"
+    }
+  },
+  {
+    "8mx": {
+      "asset": "bow/crossbow"
+    }
+  },
+  {
+    "8hx": {
+      "asset": "bow/heavy_crossbow"
+    }
+  },
+  {
+    "8rx": {
+      "asset": "bow/repeating_crossbow"
+    }
+  },
+  {
+    "qf1": {
+      "asset": "mace/khalim_flail"
+    }
+  },
+  {
+    "qf2": {
+      "asset": "mace/super_khalim_flail"
+    }
+  },
+  {
+    "ktr": {
+      "asset": "h2h/katar"
+    }
+  },
+  {
+    "wrb": {
+      "asset": "h2h/katar"
+    }
+  },
+  {
+    "axf": {
+      "asset": "h2h/hatchet_hands"
+    }
+  },
+  {
+    "ces": {
+      "asset": "h2h/hatchet_hands"
+    }
+  },
+  {
+    "clw": {
+      "asset": "h2h/claws"
+    }
+  },
+  {
+    "btl": {
+      "asset": "h2h/claws"
+    }
+  },
+  {
+    "skr": {
+      "asset": "h2h/scissors_katar"
+    }
+  },
+  {
+    "9ar": {
+      "asset": "h2h/katar"
+    }
+  },
+  {
+    "9wb": {
+      "asset": "h2h/katar"
+    }
+  },
+  {
+    "9xf": {
+      "asset": "h2h/hatchet_hands"
+    }
+  },
+  {
+    "9cs": {
+      "asset": "h2h/hatchet_hands"
+    }
+  },
+  {
+    "9lw": {
+      "asset": "h2h/claws"
+    }
+  },
+  {
+    "9tw": {
+      "asset": "h2h/claws"
+    }
+  },
+  {
+    "9qr": {
+      "asset": "h2h/scissors_katar"
+    }
+  },
+  {
+    "7ar": {
+      "asset": "h2h/katar"
+    }
+  },
+  {
+    "7wb": {
+      "asset": "h2h/katar"
+    }
+  },
+  {
+    "7xf": {
+      "asset": "h2h/hatchet_hands"
+    }
+  },
+  {
+    "7cs": {
+      "asset": "h2h/hatchet_hands"
+    }
+  },
+  {
+    "7lw": {
+      "asset": "h2h/claws"
+    }
+  },
+  {
+    "7tw": {
+      "asset": "h2h/claws"
+    }
+  },
+  {
+    "7qr": {
+      "asset": "h2h/scissors_katar"
+    }
+  },
+  {
+    "7ha": {
+      "asset": "axe/hand_axe"
+    }
+  },
+  {
+    "7ax": {
+      "asset": "axe/axe"
+    }
+  },
+  {
+    "72a": {
+      "asset": "axe/double_axe"
+    }
+  },
+  {
+    "7mp": {
+      "asset": "axe/military_pick"
+    }
+  },
+  {
+    "7wa": {
+      "asset": "axe/war_axe"
+    }
+  },
+  {
+    "7la": {
+      "asset": "axe/large_axe"
+    }
+  },
+  {
+    "7ba": {
+      "asset": "axe/broad_axe"
+    }
+  },
+  {
+    "7bt": {
+      "asset": "axe/battle_axe"
+    }
+  },
+  {
+    "7ga": {
+      "asset": "axe/great_axe"
+    }
+  },
+  {
+    "7gi": {
+      "asset": "axe/giant_axe"
+    }
+  },
+  {
+    "7wn": {
+      "asset": "wand/wand"
+    }
+  },
+  {
+    "7yw": {
+      "asset": "wand/yew_wand"
+    }
+  },
+  {
+    "7bw": {
+      "asset": "wand/bone_wand"
+    }
+  },
+  {
+    "7gw": {
+      "asset": "wand/grim_wand"
+    }
+  },
+  {
+    "7cl": {
+      "asset": "club/club"
+    }
+  },
+  {
+    "7sc": {
+      "asset": "scepter/scepter"
+    }
+  },
+  {
+    "7qs": {
+      "asset": "scepter/grand_scepter"
+    }
+  },
+  {
+    "7ws": {
+      "asset": "scepter/war_scepter"
+    }
+  },
+  {
+    "7sp": {
+      "asset": "club/spiked_club"
+    }
+  },
+  {
+    "7ma": {
+      "asset": "mace/mace"
+    }
+  },
+  {
+    "7mt": {
+      "asset": "mace/morning_star"
+    }
+  },
+  {
+    "7fl": {
+      "asset": "mace/flail"
+    }
+  },
+  {
+    "7wh": {
+      "asset": "hammer/war_hammer"
+    }
+  },
+  {
+    "7m7": {
+      "asset": "hammer/maul"
+    }
+  },
+  {
+    "7gm": {
+      "asset": "hammer/great_maul"
+    }
+  },
+  {
+    "7ss": {
+      "asset": "sword/short_sword"
+    }
+  },
+  {
+    "7sm": {
+      "asset": "sword/scimitar"
+    }
+  },
+  {
+    "7sb": {
+      "asset": "sword/saber"
+    }
+  },
+  {
+    "7fc": {
+      "asset": "sword/falchion"
+    }
+  },
+  {
+    "7cr": {
+      "asset": "sword/crystal_sword"
+    }
+  },
+  {
+    "7bs": {
+      "asset": "sword/broad_sword"
+    }
+  },
+  {
+    "7ls": {
+      "asset": "sword/long_sword"
+    }
+  },
+  {
+    "7wd": {
+      "asset": "sword/war_sword"
+    }
+  },
+  {
+    "72h": {
+      "asset": "sword/two_handed_sword"
+    }
+  },
+  {
+    "7cm": {
+      "asset": "sword/claymore"
+    }
+  },
+  {
+    "7gs": {
+      "asset": "sword/giant_sword"
+    }
+  },
+  {
+    "7b7": {
+      "asset": "sword/bastard_sword"
+    }
+  },
+  {
+    "7fb": {
+      "asset": "sword/flamberge"
+    }
+  },
+  {
+    "7gd": {
+      "asset": "sword/great_sword"
+    }
+  },
+  {
+    "7dg": {
+      "asset": "knife/dagger"
+    }
+  },
+  {
+    "7di": {
+      "asset": "knife/dirk"
+    }
+  },
+  {
+    "7kr": {
+      "asset": "knife/kriss"
+    }
+  },
+  {
+    "7bl": {
+      "asset": "knife/blade"
+    }
+  },
+  {
+    "7tk": {
+      "asset": "knife/throwing_knife"
+    }
+  },
+  {
+    "7ta": {
+      "asset": "axe/throwing_axe"
+    }
+  },
+  {
+    "7bk": {
+      "asset": "knife/balanced_knife"
+    }
+  },
+  {
+    "7b8": {
+      "asset": "axe/balanced_axe"
+    }
+  },
+  {
+    "7ja": {
+      "asset": "javelin/javelin"
+    }
+  },
+  {
+    "7pi": {
+      "asset": "javelin/pilum"
+    }
+  },
+  {
+    "7s7": {
+      "asset": "javelin/short_spear"
+    }
+  },
+  {
+    "7gl": {
+      "asset": "javelin/glaive"
+    }
+  },
+  {
+    "7ts": {
+      "asset": "javelin/throwing_spear"
+    }
+  },
+  {
+    "7sr": {
+      "asset": "spear/spear"
+    }
+  },
+  {
+    "7tr": {
+      "asset": "spear/trident"
+    }
+  },
+  {
+    "7br": {
+      "asset": "spear/brandistock"
+    }
+  },
+  {
+    "7st": {
+      "asset": "spear/spetum"
+    }
+  },
+  {
+    "7p7": {
+      "asset": "spear/pike"
+    }
+  },
+  {
+    "7o7": {
+      "asset": "polearm/bardiche"
+    }
+  },
+  {
+    "7vo": {
+      "asset": "polearm/voulge"
+    }
+  },
+  {
+    "7s8": {
+      "asset": "polearm/scythe"
+    }
+  },
+  {
+    "7pa": {
+      "asset": "polearm/poleaxe"
+    }
+  },
+  {
+    "7h7": {
+      "asset": "polearm/halberd"
+    }
+  },
+  {
+    "7wc": {
+      "asset": "polearm/war_scythe"
+    }
+  },
+  {
+    "6ss": {
+      "asset": "staff/short_staff"
+    }
+  },
+  {
+    "6ls": {
+      "asset": "staff/long_staff"
+    }
+  },
+  {
+    "6cs": {
+      "asset": "staff/gnarled_staff"
+    }
+  },
+  {
+    "6bs": {
+      "asset": "staff/battle_staff"
+    }
+  },
+  {
+    "6ws": {
+      "asset": "staff/war_staff"
+    }
+  },
+  {
+    "6sb": {
+      "asset": "bow/short_bow"
+    }
+  },
+  {
+    "6hb": {
+      "asset": "bow/hunters_bow"
+    }
+  },
+  {
+    "6lb": {
+      "asset": "bow/long_bow"
+    }
+  },
+  {
+    "6cb": {
+      "asset": "bow/composite_bow"
+    }
+  },
+  {
+    "6s7": {
+      "asset": "bow/short_battle_bow"
+    }
+  },
+  {
+    "6l7": {
+      "asset": "bow/long_battle_bow"
+    }
+  },
+  {
+    "6sw": {
+      "asset": "bow/short_war_bow"
+    }
+  },
+  {
+    "6lw": {
+      "asset": "bow/long_war_bow"
+    }
+  },
+  {
+    "6lx": {
+      "asset": "bow/light_crossbow"
+    }
+  },
+  {
+    "6mx": {
+      "asset": "bow/crossbow"
+    }
+  },
+  {
+    "6hx": {
+      "asset": "bow/heavy_crossbow"
+    }
+  },
+  {
+    "6rx": {
+      "asset": "bow/repeating_crossbow"
+    }
+  },
+  {
+    "ob1": {
+      "asset": "orb/eagle_orb"
+    }
+  },
+  {
+    "ob2": {
+      "asset": "orb/sacred_globe"
+    }
+  },
+  {
+    "ob3": {
+      "asset": "orb/smoked_sphere"
+    }
+  },
+  {
+    "ob4": {
+      "asset": "orb/clasped_orb"
+    }
+  },
+  {
+    "ob5": {
+      "asset": "orb/dragon_stone"
+    }
+  },
+  {
+    "am1": {
+      "asset": "bow/stag_bow"
+    }
+  },
+  {
+    "am2": {
+      "asset": "bow/reflex_bow"
+    }
+  },
+  {
+    "am3": {
+      "asset": "spear/maiden_spear"
+    }
+  },
+  {
+    "am4": {
+      "asset": "spear/maiden_pike"
+    }
+  },
+  {
+    "am5": {
+      "asset": "javelin/maiden_javelin"
+    }
+  },
+  {
+    "ob6": {
+      "asset": "orb/eagle_orb"
+    }
+  },
+  {
+    "ob7": {
+      "asset": "orb/sacred_globe"
+    }
+  },
+  {
+    "ob8": {
+      "asset": "orb/smoked_sphere"
+    }
+  },
+  {
+    "ob9": {
+      "asset": "orb/clasped_orb"
+    }
+  },
+  {
+    "oba": {
+      "asset": "orb/dragon_stone"
+    }
+  },
+  {
+    "am6": {
+      "asset": "bow/stag_bow"
+    }
+  },
+  {
+    "am7": {
+      "asset": "bow/reflex_bow"
+    }
+  },
+  {
+    "am8": {
+      "asset": "spear/maiden_spear"
+    }
+  },
+  {
+    "am9": {
+      "asset": "spear/maiden_pike"
+    }
+  },
+  {
+    "ama": {
+      "asset": "javelin/maiden_javelin"
+    }
+  },
+  {
+    "obb": {
+      "asset": "orb/eagle_orb"
+    }
+  },
+  {
+    "obc": {
+      "asset": "orb/sacred_globe"
+    }
+  },
+  {
+    "obd": {
+      "asset": "orb/smoked_sphere"
+    }
+  },
+  {
+    "obe": {
+      "asset": "orb/clasped_orb"
+    }
+  },
+  {
+    "obf": {
+      "asset": "orb/dragon_stone"
+    }
+  },
+  {
+    "amb": {
+      "asset": "bow/stag_bow"
+    }
+  },
+  {
+    "amc": {
+      "asset": "bow/reflex_bow"
+    }
+  },
+  {
+    "amd": {
+      "asset": "spear/maiden_spear"
+    }
+  },
+  {
+    "ame": {
+      "asset": "spear/maiden_pike"
+    }
+  },
+  {
+    "amf": {
+      "asset": "javelin/maiden_javelin"
+    }
+  },
+  {
+    "cap": {
+      "asset": "helmet/cap_hat"
+    }
+  },
+  {
+    "skp": {
+      "asset": "helmet/skull_cap"
+    }
+  },
+  {
+    "hlm": {
+      "asset": "helmet/helm"
+    }
+  },
+  {
+    "fhl": {
+      "asset": "helmet/full_helm"
+    }
+  },
+  {
+    "ghm": {
+      "asset": "helmet/great_helm"
+    }
+  },
+  {
+    "crn": {
+      "asset": "helmet/crown"
+    }
+  },
+  {
+    "msk": {
+      "asset": "helmet/mask"
+    }
+  },
+  {
+    "qui": {
+      "asset": "armor/quilted_armor"
+    }
+  },
+  {
+    "lea": {
+      "asset": "armor/leather_armor"
+    }
+  },
+  {
+    "hla": {
+      "asset": "armor/hard_leather_armor"
+    }
+  },
+  {
+    "stu": {
+      "asset": "armor/studded_leather"
+    }
+  },
+  {
+    "rng": {
+      "asset": "armor/ring_mail"
+    }
+  },
+  {
+    "scl": {
+      "asset": "armor/scale_mail"
+    }
+  },
+  {
+    "chn": {
+      "asset": "armor/chain_mail"
+    }
+  },
+  {
+    "brs": {
+      "asset": "armor/breast_plate"
+    }
+  },
+  {
+    "spl": {
+      "asset": "armor/splint_mail"
+    }
+  },
+  {
+    "plt": {
+      "asset": "armor/plate_mail"
+    }
+  },
+  {
+    "fld": {
+      "asset": "armor/field_plate"
+    }
+  },
+  {
+    "gth": {
+      "asset": "armor/gothic_plate"
+    }
+  },
+  {
+    "ful": {
+      "asset": "armor/full_plate_mail"
+    }
+  },
+  {
+    "aar": {
+      "asset": "armor/ancient_armor"
+    }
+  },
+  {
+    "ltp": {
+      "asset": "armor/light_plate"
+    }
+  },
+  {
+    "buc": {
+      "asset": "shield/buckler"
+    }
+  },
+  {
+    "sml": {
+      "asset": "shield/small_shield"
+    }
+  },
+  {
+    "lrg": {
+      "asset": "shield/large_shield"
+    }
+  },
+  {
+    "kit": {
+      "asset": "shield/kite_shield"
+    }
+  },
+  {
+    "tow": {
+      "asset": "shield/tower_shield"
+    }
+  },
+  {
+    "gts": {
+      "asset": "shield/gothic_shield"
+    }
+  },
+  {
+    "lgl": {
+      "asset": "glove/gloves_l"
+    }
+  },
+  {
+    "vgl": {
+      "asset": "glove/heavy_gloves"
+    }
+  },
+  {
+    "mgl": {
+      "asset": "glove/bracers_m"
+    }
+  },
+  {
+    "tgl": {
+      "asset": "glove/light_gauntlets"
+    }
+  },
+  {
+    "hgl": {
+      "asset": "glove/gaunlets_h"
+    }
+  },
+  {
+    "lbt": {
+      "asset": "boot/leather_boots"
+    }
+  },
+  {
+    "vbt": {
+      "asset": "boot/heavy_boots"
+    }
+  },
+  {
+    "mbt": {
+      "asset": "boot/chain_boots"
+    }
+  },
+  {
+    "tbt": {
+      "asset": "boot/light_plate_boots"
+    }
+  },
+  {
+    "hbt": {
+      "asset": "boot/plate_boots"
+    }
+  },
+  {
+    "lbl": {
+      "asset": "belt/sash_l"
+    }
+  },
+  {
+    "vbl": {
+      "asset": "belt/light_belt"
+    }
+  },
+  {
+    "mbl": {
+      "asset": "belt/belt_m"
+    }
+  },
+  {
+    "tbl": {
+      "asset": "belt/heavy_belt"
+    }
+  },
+  {
+    "hbl": {
+      "asset": "belt/girdle_h"
+    }
+  },
+  {
+    "bhm": {
+      "asset": "helmet/bone_helm"
+    }
+  },
+  {
+    "bsh": {
+      "asset": "shield/bone_shield"
+    }
+  },
+  {
+    "spk": {
+      "asset": "shield/spiked_shield"
+    }
+  },
+  {
+    "xap": {
+      "asset": "helmet/cap_hat"
+    }
+  },
+  {
+    "xkp": {
+      "asset": "helmet/skull_cap"
+    }
+  },
+  {
+    "xlm": {
+      "asset": "helmet/helm"
+    }
+  },
+  {
+    "xhl": {
+      "asset": "helmet/full_helm"
+    }
+  },
+  {
+    "xhm": {
+      "asset": "helmet/great_helm"
+    }
+  },
+  {
+    "xrn": {
+      "asset": "helmet/crown"
+    }
+  },
+  {
+    "xsk": {
+      "asset": "helmet/mask"
+    }
+  },
+  {
+    "xui": {
+      "asset": "armor/quilted_armor"
+    }
+  },
+  {
+    "xea": {
+      "asset": "armor/leather_armor"
+    }
+  },
+  {
+    "xla": {
+      "asset": "armor/hard_leather_armor"
+    }
+  },
+  {
+    "xtu": {
+      "asset": "armor/studded_leather"
+    }
+  },
+  {
+    "xng": {
+      "asset": "armor/ring_mail"
+    }
+  },
+  {
+    "xcl": {
+      "asset": "armor/scale_mail"
+    }
+  },
+  {
+    "xhn": {
+      "asset": "armor/chain_mail"
+    }
+  },
+  {
+    "xrs": {
+      "asset": "armor/breast_plate"
+    }
+  },
+  {
+    "xpl": {
+      "asset": "armor/splint_mail"
+    }
+  },
+  {
+    "xlt": {
+      "asset": "armor/plate_mail"
+    }
+  },
+  {
+    "xld": {
+      "asset": "armor/field_plate"
+    }
+  },
+  {
+    "xth": {
+      "asset": "armor/gothic_plate"
+    }
+  },
+  {
+    "xul": {
+      "asset": "armor/full_plate_mail"
+    }
+  },
+  {
+    "xar": {
+      "asset": "armor/ancient_armor"
+    }
+  },
+  {
+    "xtp": {
+      "asset": "armor/light_plate"
+    }
+  },
+  {
+    "xuc": {
+      "asset": "shield/buckler"
+    }
+  },
+  {
+    "xml": {
+      "asset": "shield/small_shield"
+    }
+  },
+  {
+    "xrg": {
+      "asset": "shield/large_shield"
+    }
+  },
+  {
+    "xit": {
+      "asset": "shield/kite_shield"
+    }
+  },
+  {
+    "xow": {
+      "asset": "shield/tower_shield"
+    }
+  },
+  {
+    "xts": {
+      "asset": "shield/gothic_shield"
+    }
+  },
+  {
+    "xlg": {
+      "asset": "glove/gloves_l"
+    }
+  },
+  {
+    "xvg": {
+      "asset": "glove/heavy_gloves"
+    }
+  },
+  {
+    "xmg": {
+      "asset": "glove/bracers_m"
+    }
+  },
+  {
+    "xtg": {
+      "asset": "glove/light_gauntlets"
+    }
+  },
+  {
+    "xhg": {
+      "asset": "glove/gaunlets_h"
+    }
+  },
+  {
+    "xlb": {
+      "asset": "boot/leather_boots"
+    }
+  },
+  {
+    "xvb": {
+      "asset": "boot/heavy_boots"
+    }
+  },
+  {
+    "xmb": {
+      "asset": "boot/chain_boots"
+    }
+  },
+  {
+    "xtb": {
+      "asset": "boot/light_plate_boots"
+    }
+  },
+  {
+    "xhb": {
+      "asset": "boot/plate_boots"
+    }
+  },
+  {
+    "zlb": {
+      "asset": "belt/sash_l"
+    }
+  },
+  {
+    "zvb": {
+      "asset": "belt/light_belt"
+    }
+  },
+  {
+    "zmb": {
+      "asset": "belt/belt_m"
+    }
+  },
+  {
+    "ztb": {
+      "asset": "belt/heavy_belt"
+    }
+  },
+  {
+    "zhb": {
+      "asset": "belt/girdle_h"
+    }
+  },
+  {
+    "xh9": {
+      "asset": "helmet/bone_helm"
+    }
+  },
+  {
+    "xsh": {
+      "asset": "shield/bone_shield"
+    }
+  },
+  {
+    "xpk": {
+      "asset": "shield/spiked_shield"
+    }
+  },
+  {
+    "dr1": {
+      "asset": "pelt/wolf_head"
+    }
+  },
+  {
+    "dr2": {
+      "asset": "pelt/hawk_helm"
+    }
+  },
+  {
+    "dr3": {
+      "asset": "pelt/antlers"
+    }
+  },
+  {
+    "dr4": {
+      "asset": "pelt/falcon_mask"
+    }
+  },
+  {
+    "dr5": {
+      "asset": "pelt/spirit_mask"
+    }
+  },
+  {
+    "ba1": {
+      "asset": "helmet/jawbone_cap"
+    }
+  },
+  {
+    "ba2": {
+      "asset": "helmet/fanged_helm"
+    }
+  },
+  {
+    "ba3": {
+      "asset": "helmet/horned_helm"
+    }
+  },
+  {
+    "ba4": {
+      "asset": "helmet/assault_helmet"
+    }
+  },
+  {
+    "ba5": {
+      "asset": "helmet/avenger_guard"
+    }
+  },
+  {
+    "pa1": {
+      "asset": "shield/targe"
+    }
+  },
+  {
+    "pa2": {
+      "asset": "shield/rondache"
+    }
+  },
+  {
+    "pa3": {
+      "asset": "shield/heraldic_shield"
+    }
+  },
+  {
+    "pa4": {
+      "asset": "shield/aerin_shield"
+    }
+  },
+  {
+    "pa5": {
+      "asset": "shield/crown_shield"
+    }
+  },
+  {
+    "ne1": {
+      "asset": "voodoo_head/preserved_head"
+    }
+  },
+  {
+    "ne2": {
+      "asset": "voodoo_head/zombie_head"
+    }
+  },
+  {
+    "ne3": {
+      "asset": "voodoo_head/unraveller_head"
+    }
+  },
+  {
+    "ne4": {
+      "asset": "voodoo_head/gargoyle_head"
+    }
+  },
+  {
+    "ne5": {
+      "asset": "voodoo_head/demon_head"
+    }
+  },
+  {
+    "ci0": {
+      "asset": "circlet/circlet"
+    }
+  },
+  {
+    "ci1": {
+      "asset": "circlet/coronet"
+    }
+  },
+  {
+    "ci2": {
+      "asset": "circlet/tiara"
+    }
+  },
+  {
+    "ci3": {
+      "asset": "circlet/diadem"
+    }
+  },
+  {
+    "uap": {
+      "asset": "helmet/cap_hat"
+    }
+  },
+  {
+    "ukp": {
+      "asset": "helmet/skull_cap"
+    }
+  },
+  {
+    "ulm": {
+      "asset": "helmet/helm"
+    }
+  },
+  {
+    "uhl": {
+      "asset": "helmet/full_helm"
+    }
+  },
+  {
+    "uhm": {
+      "asset": "helmet/great_helm"
+    }
+  },
+  {
+    "urn": {
+      "asset": "helmet/crown"
+    }
+  },
+  {
+    "usk": {
+      "asset": "helmet/mask"
+    }
+  },
+  {
+    "uui": {
+      "asset": "armor/quilted_armor"
+    }
+  },
+  {
+    "uea": {
+      "asset": "armor/leather_armor"
+    }
+  },
+  {
+    "ula": {
+      "asset": "armor/hard_leather_armor"
+    }
+  },
+  {
+    "utu": {
+      "asset": "armor/studded_leather"
+    }
+  },
+  {
+    "ung": {
+      "asset": "armor/ring_mail"
+    }
+  },
+  {
+    "ucl": {
+      "asset": "armor/scale_mail"
+    }
+  },
+  {
+    "uhn": {
+      "asset": "armor/chain_mail"
+    }
+  },
+  {
+    "urs": {
+      "asset": "armor/breast_plate"
+    }
+  },
+  {
+    "upl": {
+      "asset": "armor/splint_mail"
+    }
+  },
+  {
+    "ult": {
+      "asset": "armor/plate_mail"
+    }
+  },
+  {
+    "uld": {
+      "asset": "armor/field_plate"
+    }
+  },
+  {
+    "uth": {
+      "asset": "armor/gothic_plate"
+    }
+  },
+  {
+    "uul": {
+      "asset": "armor/full_plate_mail"
+    }
+  },
+  {
+    "uar": {
+      "asset": "armor/ancient_armor"
+    }
+  },
+  {
+    "utp": {
+      "asset": "armor/light_plate"
+    }
+  },
+  {
+    "uuc": {
+      "asset": "shield/buckler"
+    }
+  },
+  {
+    "uml": {
+      "asset": "shield/small_shield"
+    }
+  },
+  {
+    "urg": {
+      "asset": "shield/large_shield"
+    }
+  },
+  {
+    "uit": {
+      "asset": "shield/kite_shield"
+    }
+  },
+  {
+    "uow": {
+      "asset": "shield/tower_shield"
+    }
+  },
+  {
+    "uts": {
+      "asset": "shield/gothic_shield"
+    }
+  },
+  {
+    "ulg": {
+      "asset": "glove/gloves_l"
+    }
+  },
+  {
+    "uvg": {
+      "asset": "glove/heavy_gloves"
+    }
+  },
+  {
+    "umg": {
+      "asset": "glove/bracers_m"
+    }
+  },
+  {
+    "utg": {
+      "asset": "glove/light_gauntlets"
+    }
+  },
+  {
+    "uhg": {
+      "asset": "glove/gaunlets_h"
+    }
+  },
+  {
+    "ulb": {
+      "asset": "boot/leather_boots"
+    }
+  },
+  {
+    "uvb": {
+      "asset": "boot/heavy_boots"
+    }
+  },
+  {
+    "umb": {
+      "asset": "boot/chain_boots"
+    }
+  },
+  {
+    "utb": {
+      "asset": "boot/light_plate_boots"
+    }
+  },
+  {
+    "uhb": {
+      "asset": "boot/plate_boots"
+    }
+  },
+  {
+    "ulc": {
+      "asset": "belt/sash_l"
+    }
+  },
+  {
+    "uvc": {
+      "asset": "belt/light_belt"
+    }
+  },
+  {
+    "umc": {
+      "asset": "belt/belt_m"
+    }
+  },
+  {
+    "utc": {
+      "asset": "belt/heavy_belt"
+    }
+  },
+  {
+    "uhc": {
+      "asset": "belt/girdle_h"
+    }
+  },
+  {
+    "uh9": {
+      "asset": "helmet/bone_helm"
+    }
+  },
+  {
+    "ush": {
+      "asset": "shield/bone_shield"
+    }
+  },
+  {
+    "upk": {
+      "asset": "shield/spiked_shield"
+    }
+  },
+  {
+    "dr6": {
+      "asset": "pelt/wolf_head"
+    }
+  },
+  {
+    "dr7": {
+      "asset": "pelt/hawk_helm"
+    }
+  },
+  {
+    "dr8": {
+      "asset": "pelt/antlers"
+    }
+  },
+  {
+    "dr9": {
+      "asset": "pelt/falcon_mask"
+    }
+  },
+  {
+    "dra": {
+      "asset": "pelt/spirit_mask"
+    }
+  },
+  {
+    "ba6": {
+      "asset": "helmet/jawbone_cap"
+    }
+  },
+  {
+    "ba7": {
+      "asset": "helmet/fanged_helm"
+    }
+  },
+  {
+    "ba8": {
+      "asset": "helmet/horned_helm"
+    }
+  },
+  {
+    "ba9": {
+      "asset": "helmet/assault_helmet"
+    }
+  },
+  {
+    "baa": {
+      "asset": "helmet/avenger_guard"
+    }
+  },
+  {
+    "pa6": {
+      "asset": "shield/targe"
+    }
+  },
+  {
+    "pa7": {
+      "asset": "shield/rondache"
+    }
+  },
+  {
+    "pa8": {
+      "asset": "shield/heraldic_shield"
+    }
+  },
+  {
+    "pa9": {
+      "asset": "shield/aerin_shield"
+    }
+  },
+  {
+    "paa": {
+      "asset": "shield/crown_shield"
+    }
+  },
+  {
+    "ne6": {
+      "asset": "voodoo_head/preserved_head"
+    }
+  },
+  {
+    "ne7": {
+      "asset": "voodoo_head/zombie_head"
+    }
+  },
+  {
+    "ne8": {
+      "asset": "voodoo_head/unraveller_head"
+    }
+  },
+  {
+    "ne9": {
+      "asset": "voodoo_head/gargoyle_head"
+    }
+  },
+  {
+    "nea": {
+      "asset": "voodoo_head/demon_head"
+    }
+  },
+  {
+    "drb": {
+      "asset": "pelt/wolf_head"
+    }
+  },
+  {
+    "drc": {
+      "asset": "pelt/hawk_helm"
+    }
+  },
+  {
+    "drd": {
+      "asset": "pelt/antlers"
+    }
+  },
+  {
+    "dre": {
+      "asset": "pelt/falcon_mask"
+    }
+  },
+  {
+    "drf": {
+      "asset": "pelt/spirit_mask"
+    }
+  },
+  {
+    "bab": {
+      "asset": "helmet/jawbone_cap"
+    }
+  },
+  {
+    "bac": {
+      "asset": "helmet/fanged_helm"
+    }
+  },
+  {
+    "bad": {
+      "asset": "helmet/horned_helm"
+    }
+  },
+  {
+    "bae": {
+      "asset": "helmet/assault_helmet"
+    }
+  },
+  {
+    "baf": {
+      "asset": "helmet/avenger_guard"
+    }
+  },
+  {
+    "pab": {
+      "asset": "shield/targe"
+    }
+  },
+  {
+    "pac": {
+      "asset": "shield/rondache"
+    }
+  },
+  {
+    "pad": {
+      "asset": "shield/heraldic_shield"
+    }
+  },
+  {
+    "pae": {
+      "asset": "shield/aerin_shield"
+    }
+  },
+  {
+    "paf": {
+      "asset": "shield/crown_shield"
+    }
+  },
+  {
+    "neb": {
+      "asset": "voodoo_head/preserved_head"
+    }
+  },
+  {
+    "neg": {
+      "asset": "voodoo_head/zombie_head"
+    }
+  },
+  {
+    "ned": {
+      "asset": "voodoo_head/unraveller_head"
+    }
+  },
+  {
+    "nee": {
+      "asset": "voodoo_head/gargoyle_head"
+    }
+  },
+  {
+    "nef": {
+      "asset": "voodoo_head/demon_head"
+    }
+  },
+  {
+    "elx": {
+      "asset": "potion/elixir"
+    }
+  },
+  {
+    "hpo": {
+      "asset": "potion/healing_potion"
+    }
+  },
+  {
+    "mpo": {
+      "asset": "potion/mana_potion"
+    }
+  },
+  {
+    "hpf": {
+      "asset": "potion/full_healing_potion"
+    }
+  },
+  {
+    "mpf": {
+      "asset": "potion/full_mana_potion"
+    }
+  },
+  {
+    "vps": {
+      "asset": "potion/stamina_potion"
+    }
+  },
+  {
+    "yps": {
+      "asset": "potion/antidote_potion"
+    }
+  },
+  {
+    "rvs": {
+      "asset": "potion/rejuv_potion"
+    }
+  },
+  {
+    "rvl": {
+      "asset": "potion/full_rejuv_potion"
+    }
+  },
+  {
+    "wms": {
+      "asset": "potion/thawing_potion"
+    }
+  },
+  {
+    "tbk": {
+      "asset": "book/town_portal_book"
+    }
+  },
+  {
+    "ibk": {
+      "asset": "book/identify_book"
+    }
+  },
+  {
+    "amu": {
+      "asset": "amulet/amulet"
+    }
+  },
+  {
+    "vip": {
+      "asset": "amulet/viper_amulet"
+    }
+  },
+  {
+    "rin": {
+      "asset": "ring/ring"
+    }
+  },
+  {
+    "gld": {
+      "asset": "gold/gold"
+    }
+  },
+  {
+    "bks": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "bkd": {
+      "asset": "scroll/deciphered_bark_scroll"
+    }
+  },
+  {
+    "aqv": {
+      "asset": "quiver/arrows"
+    }
+  },
+  {
+    "z01": {
+      "asset": "quiver/arrows"
+    }
+  },
+  {
+    "tch": {
+      "asset": "torch/torch"
+    }
+  },
+  {
+    "cqv": {
+      "asset": "quiver/bolts"
+    }
+  },
+  {
+    "z02": {
+      "asset": "quiver/bolts"
+    }
+  },
+  {
+    "tsc": {
+      "asset": "scroll/town_portal_scroll"
+    }
+  },
+  {
+    "isc": {
+      "asset": "scroll/identify_scroll"
+    }
+  },
+  {
+    "hrt": {
+      "asset": "body_part/heart"
+    }
+  },
+  {
+    "brz": {
+      "asset": "body_part/brain"
+    }
+  },
+  {
+    "jaw": {
+      "asset": "body_part/jawbone"
+    }
+  },
+  {
+    "eyz": {
+      "asset": "body_part/eye"
+    }
+  },
+  {
+    "hrn": {
+      "asset": "body_part/horn"
+    }
+  },
+  {
+    "tal": {
+      "asset": "body_part/tail"
+    }
+  },
+  {
+    "flg": {
+      "asset": "body_part/flag"
+    }
+  },
+  {
+    "fng": {
+      "asset": "body_part/fang"
+    }
+  },
+  {
+    "qll": {
+      "asset": "body_part/quill"
+    }
+  },
+  {
+    "sol": {
+      "asset": "body_part/soul"
+    }
+  },
+  {
+    "scz": {
+      "asset": "body_part/soul"
+    }
+  },
+  {
+    "spe": {
+      "asset": "body_part/soul"
+    }
+  },
+  {
+    "key": {
+      "asset": "key/skeleton_key"
+    }
+  },
+  {
+    "luv": {
+      "asset": "key/mephisto_key"
+    }
+  },
+  {
+    "xyz": {
+      "asset": "quest/scroll_of_self_resurrect"
+    }
+  },
+  {
+    "j34": {
+      "asset": "quest/jade_figurine"
+    }
+  },
+  {
+    "g34": {
+      "asset": "quest/gold_bird"
+    }
+  },
+  {
+    "bbb": {
+      "asset": "quest/lam_esens_tome"
+    }
+  },
+  {
+    "box": {
+      "asset": "quest/horadric_cube"
+    }
+  },
+  {
+    "tr1": {
+      "asset": "quest/scroll_of_horadric_quest_info"
+    }
+  },
+  {
+    "mss": {
+      "asset": "quest/mephisto_soul_stone"
+    }
+  },
+  {
+    "ass": {
+      "asset": "quest/book_of_skill"
+    }
+  },
+  {
+    "qey": {
+      "asset": "body_part/eye"
+    }
+  },
+  {
+    "qhr": {
+      "asset": "body_part/heart"
+    }
+  },
+  {
+    "qbr": {
+      "asset": "body_part/brain"
+    }
+  },
+  {
+    "ear": {
+      "asset": "body_part/player_ear"
+    }
+  },
+  {
+    "tkg": {
+      "asset": "grabbers/terror_key_grabber"
+    }
+  },
+  {
+    "hkg": {
+      "asset": "grabbers/hate_key_grabber"
+    }
+  },
+  {
+    "dkg": {
+      "asset": "grabbers/destruction_key_grabber"
+    }
+  },
+  {
+    "gcv": {
+      "asset": "gem/chipped_amethyst"
+    }
+  },
+  {
+    "gfv": {
+      "asset": "gem/flawed_amethyst"
+    }
+  },
+  {
+    "gsv": {
+      "asset": "gem/amethyst"
+    }
+  },
+  {
+    "gzv": {
+      "asset": "gem/flawless_amethyst"
+    }
+  },
+  {
+    "gpv": {
+      "asset": "gem/perfect_amethyst"
+    }
+  },
+  {
+    "gcy": {
+      "asset": "gem/chipped_topaz"
+    }
+  },
+  {
+    "gfy": {
+      "asset": "gem/flawed_topaz"
+    }
+  },
+  {
+    "gsy": {
+      "asset": "gem/topaz"
+    }
+  },
+  {
+    "gly": {
+      "asset": "gem/flawless_topaz"
+    }
+  },
+  {
+    "gpy": {
+      "asset": "gem/perfect_topaz"
+    }
+  },
+  {
+    "gcb": {
+      "asset": "gem/chipped_saphire"
+    }
+  },
+  {
+    "gfb": {
+      "asset": "gem/flawed_saphire"
+    }
+  },
+  {
+    "gsb": {
+      "asset": "gem/saphire"
+    }
+  },
+  {
+    "glb": {
+      "asset": "gem/flawless_saphire"
+    }
+  },
+  {
+    "gpb": {
+      "asset": "gem/perfect_saphire"
+    }
+  },
+  {
+    "gcg": {
+      "asset": "gem/chipped_emerald"
+    }
+  },
+  {
+    "gfg": {
+      "asset": "gem/flawed_emerald"
+    }
+  },
+  {
+    "gsg": {
+      "asset": "gem/emerald"
+    }
+  },
+  {
+    "glg": {
+      "asset": "gem/flawless_emerald"
+    }
+  },
+  {
+    "gpg": {
+      "asset": "gem/perfect_emerald"
+    }
+  },
+  {
+    "gcr": {
+      "asset": "gem/chipped_ruby"
+    }
+  },
+  {
+    "gfr": {
+      "asset": "gem/flawed_ruby"
+    }
+  },
+  {
+    "gsr": {
+      "asset": "gem/ruby"
+    }
+  },
+  {
+    "glr": {
+      "asset": "gem/flawless_ruby"
+    }
+  },
+  {
+    "gpr": {
+      "asset": "gem/perfect_ruby"
+    }
+  },
+  {
+    "gcw": {
+      "asset": "gem/chipped_diamond"
+    }
+  },
+  {
+    "gfw": {
+      "asset": "gem/flawed_diamond"
+    }
+  },
+  {
+    "gsw": {
+      "asset": "gem/diamond"
+    }
+  },
+  {
+    "glw": {
+      "asset": "gem/flawless_diamond"
+    }
+  },
+  {
+    "gpw": {
+      "asset": "gem/perfect_diamond"
+    }
+  },
+  {
+    "skc": {
+      "asset": "gem/chipped_skull"
+    }
+  },
+  {
+    "skf": {
+      "asset": "gem/flawed_skull"
+    }
+  },
+  {
+    "sku": {
+      "asset": "gem/skull"
+    }
+  },
+  {
+    "skl": {
+      "asset": "gem/flawless_skull"
+    }
+  },
+  {
+    "skz": {
+      "asset": "gem/perfect_skull"
+    }
+  },
+  {
+    "hp1": {
+      "asset": "potion/lesser_healing_potion"
+    }
+  },
+  {
+    "hp2": {
+      "asset": "potion/light_healing_potion"
+    }
+  },
+  {
+    "hp3": {
+      "asset": "potion/healing_potion2"
+    }
+  },
+  {
+    "hp4": {
+      "asset": "potion/strong_healing_potion"
+    }
+  },
+  {
+    "hp5": {
+      "asset": "potion/greater_healing_potion"
+    }
+  },
+  {
+    "mp1": {
+      "asset": "potion/lesser_mana_potion"
+    }
+  },
+  {
+    "mp2": {
+      "asset": "potion/light_mana_potion"
+    }
+  },
+  {
+    "mp3": {
+      "asset": "potion/mana_potion2"
+    }
+  },
+  {
+    "mp4": {
+      "asset": "potion/strong_mana_potion"
+    }
+  },
+  {
+    "mp5": {
+      "asset": "potion/greater_mana_potion"
+    }
+  },
+  {
+    "hrb": {
+      "asset": "herb/herb"
+    }
+  },
+  {
+    "cm1": {
+      "asset": "charm/charm_small"
+    }
+  },
+  {
+    "cm2": {
+      "asset": "charm/charm_medium"
+    }
+  },
+  {
+    "cm3": {
+      "asset": "charm/charm_large"
+    }
+  },
+  {
+    "cm4": {
+      "asset": "charm/charm_small"
+    }
+  },
+  {
+    "cm5": {
+      "asset": "charm/charm_small"
+    }
+  },
+  {
+    "rps": {
+      "asset": "potion/healing_potion"
+    }
+  },
+  {
+    "rpl": {
+      "asset": "potion/full_healing_potion"
+    }
+  },
+  {
+    "bps": {
+      "asset": "potion/mana_potion"
+    }
+  },
+  {
+    "bpl": {
+      "asset": "potion/full_mana_potion"
+    }
+  },
+  {
+    "r01": {
+      "asset": "rune/el_rune"
+    }
+  },
+  {
+    "s01": {
+      "asset": "rune/el_rune_stacked"
+    }
+  },
+  {
+    "r02": {
+      "asset": "rune/eld_rune"
+    }
+  },
+  {
+    "s02": {
+      "asset": "rune/eld_rune_stacked"
+    }
+  },
+  {
+    "r03": {
+      "asset": "rune/tir_rune"
+    }
+  },
+  {
+    "s03": {
+      "asset": "rune/tir_rune_stacked"
+    }
+  },
+  {
+    "r04": {
+      "asset": "rune/nef_rune"
+    }
+  },
+  {
+    "s04": {
+      "asset": "rune/nef_rune_stacked"
+    }
+  },
+  {
+    "r05": {
+      "asset": "rune/eth_rune"
+    }
+  },
+  {
+    "s05": {
+      "asset": "rune/eth_rune_stacked"
+    }
+  },
+  {
+    "r06": {
+      "asset": "rune/ith_rune"
+    }
+  },
+  {
+    "s06": {
+      "asset": "rune/ith_rune_stacked"
+    }
+  },
+  {
+    "r07": {
+      "asset": "rune/tal_rune"
+    }
+  },
+  {
+    "s07": {
+      "asset": "rune/tal_rune_stacked"
+    }
+  },
+  {
+    "r08": {
+      "asset": "rune/ral_rune"
+    }
+  },
+  {
+    "s08": {
+      "asset": "rune/ral_rune_stacked"
+    }
+  },
+  {
+    "r09": {
+      "asset": "rune/ort_rune"
+    }
+  },
+  {
+    "s09": {
+      "asset": "rune/ort_rune_stacked"
+    }
+  },
+  {
+    "r10": {
+      "asset": "rune/thul_rune"
+    }
+  },
+  {
+    "s10": {
+      "asset": "rune/thul_rune_stacked"
+    }
+  },
+  {
+    "r11": {
+      "asset": "rune/amn_rune"
+    }
+  },
+  {
+    "s11": {
+      "asset": "rune/amn_rune_stacked"
+    }
+  },
+  {
+    "r12": {
+      "asset": "rune/sol_rune"
+    }
+  },
+  {
+    "s12": {
+      "asset": "rune/sol_rune_stacked"
+    }
+  },
+  {
+    "r13": {
+      "asset": "rune/shael_rune"
+    }
+  },
+  {
+    "s13": {
+      "asset": "rune/shael_rune_stacked"
+    }
+  },
+  {
+    "r14": {
+      "asset": "rune/dol_rune"
+    }
+  },
+  {
+    "s14": {
+      "asset": "rune/dol_rune_stacked"
+    }
+  },
+  {
+    "r15": {
+      "asset": "rune/hel_rune"
+    }
+  },
+  {
+    "s15": {
+      "asset": "rune/hel_rune_stacked"
+    }
+  },
+  {
+    "r16": {
+      "asset": "rune/io_rune"
+    }
+  },
+  {
+    "s16": {
+      "asset": "rune/io_rune_stacked"
+    }
+  },
+  {
+    "r17": {
+      "asset": "rune/lum_rune"
+    }
+  },
+  {
+    "s17": {
+      "asset": "rune/lum_rune_stacked"
+    }
+  },
+  {
+    "r18": {
+      "asset": "rune/ko_rune"
+    }
+  },
+  {
+    "s18": {
+      "asset": "rune/ko_rune_stacked"
+    }
+  },
+  {
+    "r19": {
+      "asset": "rune/fal_rune"
+    }
+  },
+  {
+    "s19": {
+      "asset": "rune/fal_rune_stacked"
+    }
+  },
+  {
+    "r20": {
+      "asset": "rune/lem_rune"
+    }
+  },
+  {
+    "s20": {
+      "asset": "rune/lem_rune_stacked"
+    }
+  },
+  {
+    "r21": {
+      "asset": "rune/pul_rune"
+    }
+  },
+  {
+    "s21": {
+      "asset": "rune/pul_rune_stacked"
+    }
+  },
+  {
+    "r22": {
+      "asset": "rune/um_rune"
+    }
+  },
+  {
+    "s22": {
+      "asset": "rune/um_rune_stacked"
+    }
+  },
+  {
+    "r23": {
+      "asset": "rune/mal_rune"
+    }
+  },
+  {
+    "s23": {
+      "asset": "rune/mal_rune_stacked"
+    }
+  },
+  {
+    "r24": {
+      "asset": "rune/ist_rune"
+    }
+  },
+  {
+    "s24": {
+      "asset": "rune/ist_rune_stacked"
+    }
+  },
+  {
+    "r25": {
+      "asset": "rune/gul_rune"
+    }
+  },
+  {
+    "s25": {
+      "asset": "rune/gul_rune_stacked"
+    }
+  },
+  {
+    "r26": {
+      "asset": "rune/vex_rune"
+    }
+  },
+  {
+    "s26": {
+      "asset": "rune/vex_rune_stacked"
+    }
+  },
+  {
+    "r27": {
+      "asset": "rune/ohm_rune"
+    }
+  },
+  {
+    "s27": {
+      "asset": "rune/ohm_rune_stacked"
+    }
+  },
+  {
+    "r28": {
+      "asset": "rune/lo_rune"
+    }
+  },
+  {
+    "s28": {
+      "asset": "rune/lo_rune_stacked"
+    }
+  },
+  {
+    "r29": {
+      "asset": "rune/sur_rune"
+    }
+  },
+  {
+    "s29": {
+      "asset": "rune/sur_rune_stacked"
+    }
+  },
+  {
+    "r30": {
+      "asset": "rune/ber_rune"
+    }
+  },
+  {
+    "s30": {
+      "asset": "rune/ber_rune_stacked"
+    }
+  },
+  {
+    "r31": {
+      "asset": "rune/jah_rune"
+    }
+  },
+  {
+    "s31": {
+      "asset": "rune/jah_rune_stacked"
+    }
+  },
+  {
+    "r32": {
+      "asset": "rune/cham_rune"
+    }
+  },
+  {
+    "s32": {
+      "asset": "rune/cham_rune_stacked"
+    }
+  },
+  {
+    "r33": {
+      "asset": "rune/zod_rune"
+    }
+  },
+  {
+    "s33": {
+      "asset": "rune/zod_rune_stacked"
+    }
+  },
+  {
+    "jew": {
+      "asset": "gem/jewels"
+    }
+  },
+  {
+    "ice": {
+      "asset": "quest/scroll_of_self_resurrect"
+    }
+  },
+  {
+    "0sc": {
+      "asset": "scroll/identify_scroll"
+    }
+  },
+  {
+    "tr2": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "pk1": {
+      "asset": "key/terror_key"
+    }
+  },
+  {
+    "pk2": {
+      "asset": "key/hate_key"
+    }
+  },
+  {
+    "pk3": {
+      "asset": "key/destruction_key"
+    }
+  },
+  {
+    "kch": {
+      "asset": "storage/storage1"
+    }
+  },
+  {
+    "bag": {
+      "asset": "storage/storage2"
+    }
+  },
+  {
+    "stt": {
+      "asset": "grabbers/grabber_tool"
+    }
+  },
+  {
+    "dhn": {
+      "asset": "body_part/fang"
+    }
+  },
+  {
+    "bey": {
+      "asset": "body_part/eye"
+    }
+  },
+  {
+    "mbr": {
+      "asset": "body_part/brain"
+    }
+  },
+  {
+    "toa": {
+      "asset": "quest/token_of_absolution"
+    }
+  },
+  {
+    "tes": {
+      "asset": "quest/twisted_essence_of_suffering"
+    }
+  },
+  {
+    "ceh": {
+      "asset": "quest/charged_essense_of_hatred"
+    }
+  },
+  {
+    "bet": {
+      "asset": "quest/burning_essence_of_terror"
+    }
+  },
+  {
+    "fed": {
+      "asset": "quest/festering_essence_of_destruction"
+    }
+  },
+  {
+    "std": {
+      "asset": "body_part/flag"
+    }
+  },
+  {
+    "ttd": {
+      "asset": "body_part/flag2"
+    }
+  },
+  {
+    "wa1": {
+      "asset": "grimoires/oldbook"
+    }
+  },
+  {
+    "wa2": {
+      "asset": "grimoires/tome_book"
+    }
+  },
+  {
+    "wa3": {
+      "asset": "grimoires/codex"
+    }
+  },
+  {
+    "wa4": {
+      "asset": "grimoires/compendium"
+    }
+  },
+  {
+    "wa5": {
+      "asset": "grimoires/grimoire"
+    }
+  },
+  {
+    "wa6": {
+      "asset": "grimoires/oldbook"
+    }
+  },
+  {
+    "wa7": {
+      "asset": "grimoires/tome_book"
+    }
+  },
+  {
+    "wa8": {
+      "asset": "grimoires/codex"
+    }
+  },
+  {
+    "wa9": {
+      "asset": "grimoires/compendium"
+    }
+  },
+  {
+    "waa": {
+      "asset": "grimoires/grimoire"
+    }
+  },
+  {
+    "wab": {
+      "asset": "grimoires/oldbook"
+    }
+  },
+  {
+    "wac": {
+      "asset": "grimoires/tome_book"
+    }
+  },
+  {
+    "wad": {
+      "asset": "grimoires/codex"
+    }
+  },
+  {
+    "wae": {
+      "asset": "grimoires/compendium"
+    }
+  },
+  {
+    "waf": {
+      "asset": "grimoires/grimoire"
+    }
+  },
+  {
+    "xa1": {
+      "asset": "shard/mote_of_anguish"
+    }
+  },
+  {
+    "xa2": {
+      "asset": "shard/mote_of_pain"
+    }
+  },
+  {
+    "xa3": {
+      "asset": "shard/mote_of_hatred"
+    }
+  },
+  {
+    "xa4": {
+      "asset": "shard/mote_of_terror"
+    }
+  },
+  {
+    "xa5": {
+      "asset": "shard/mote_of_destruction"
+    }
+  },
+  {
+    "ua1": {
+      "asset": "shard/talics_anguish"
+    }
+  },
+  {
+    "ua2": {
+      "asset": "shard/korlics_pain"
+    }
+  },
+  {
+    "ua3": {
+      "asset": "shard/madawcs_ire"
+    }
+  },
+  {
+    "ua4": {
+      "asset": "shard/bulkathos_nightmare"
+    }
+  },
+  {
+    "ua5": {
+      "asset": "shard/worusks_end"
+    }
+  },
+  {
+    "um1": {
+      "asset": "body_part/fragment_cold"
+    }
+  },
+  {
+    "um2": {
+      "asset": "body_part/fragment_magic"
+    }
+  },
+  {
+    "um3": {
+      "asset": "body_part/fragment_lightning"
+    }
+  },
+  {
+    "um4": {
+      "asset": "body_part/fragment_fire"
+    }
+  },
+  {
+    "um5": {
+      "asset": "body_part/fragment_physical"
+    }
+  },
+  {
+    "um6": {
+      "asset": "body_part/fragment_poison"
+    }
+  },
+  {
+    "cjw": {
+      "asset": "gem/jewels"
+    }
+  },
+  {
+    "cs2": {
+      "asset": "charm/charm_sunder"
+    }
+  },
+  {
+    "nrl": {
+      "asset": "body_part/soul"
+    }
+  },
+  {
+    "tws": {
+      "asset": "body_part/spleen"
+    }
+  },
+  {
+    "scs": {
+      "asset": "body_part/spleen"
+    }
+  },
+  {
+    "gmm": {
+      "asset": "gem/perfect_amethyst"
+    }
+  },
+  {
+    "1am": {
+      "asset": "gem/perfect_amethyst_stack"
+    }
+  },
+  {
+    "gmt": {
+      "asset": "gem/perfect_topaz"
+    }
+  },
+  {
+    "1tp": {
+      "asset": "gem/perfect_topaz_stack"
+    }
+  },
+  {
+    "gms": {
+      "asset": "gem/perfect_saphire"
+    }
+  },
+  {
+    "1sa": {
+      "asset": "gem/perfect_saphire_stack"
+    }
+  },
+  {
+    "gme": {
+      "asset": "gem/perfect_emerald"
+    }
+  },
+  {
+    "1em": {
+      "asset": "gem/perfect_emerald_stack"
+    }
+  },
+  {
+    "gmd": {
+      "asset": "gem/perfect_diamond"
+    }
+  },
+  {
+    "1di": {
+      "asset": "gem/perfect_diamond_stack"
+    }
+  },
+  {
+    "gmr": {
+      "asset": "gem/perfect_ruby"
+    }
+  },
+  {
+    "1rb": {
+      "asset": "gem/perfect_ruby_stack"
+    }
+  },
+  {
+    "gmk": {
+      "asset": "gem/perfect_skull"
+    }
+  },
+  {
+    "1sk": {
+      "asset": "gem/perfect_skull_stack"
+    }
+  },
+  {
+    "gmo": {
+      "asset": "gem/perfect_chaos_onyx"
+    }
+  },
+  {
+    "1so": {
+      "asset": "gem/perfect_chaos_onyx_stack"
+    }
+  },
+  {
+    "agr": {
+      "asset": "grabbers/perfect_amethyst_grabber"
+    }
+  },
+  {
+    "tgr": {
+      "asset": "grabbers/perfect_topaz_grabber"
+    }
+  },
+  {
+    "sgr": {
+      "asset": "grabbers/perfect_sapphire_grabber"
+    }
+  },
+  {
+    "egr": {
+      "asset": "grabbers/perfect_emerald_grabber"
+    }
+  },
+  {
+    "mgr": {
+      "asset": "grabbers/perfect_diamond_grabber"
+    }
+  },
+  {
+    "rgr": {
+      "asset": "grabbers/perfect_ruby_grabber"
+    }
+  },
+  {
+    "kgr": {
+      "asset": "grabbers/perfect_skull_grabber"
+    }
+  },
+  {
+    "ogr": {
+      "asset": "grabbers/perfect_chaos_onyx_grabber"
+    }
+  },
+  {
+    "ka3": {
+      "asset": "powerorbs/orbofcorruption"
+    }
+  },
+  {
+    "1ka": {
+      "asset": "powerorbs/orbofcorruption_stacked"
+    }
+  },
+  {
+    "oos": {
+      "asset": "powerorbs/orbofsocketing"
+    }
+  },
+  {
+    "1os": {
+      "asset": "powerorbs/orbofsocketing_stacked"
+    }
+  },
+  {
+    "ooc": {
+      "asset": "powerorbs/orbofconversion"
+    }
+  },
+  {
+    "1oc": {
+      "asset": "powerorbs/orbofconversion_stacked"
+    }
+  },
+  {
+    "ooa": {
+      "asset": "powerorbs/orbofassemblage"
+    }
+  },
+  {
+    "1oa": {
+      "asset": "powerorbs/orbofassemblage_stacked"
+    }
+  },
+  {
+    "ooi": {
+      "asset": "powerorbs/orbofinfusion"
+    }
+  },
+  {
+    "1oi": {
+      "asset": "powerorbs/orbofinfusion_stacked"
+    }
+  },
+  {
+    "ooe": {
+      "asset": "powerorbs/orbofshadows"
+    }
+  },
+  {
+    "1oe": {
+      "asset": "powerorbs/orbofshadows_stacked"
+    }
+  },
+  {
+    "mfp": {
+      "asset": "potion/mfpot1"
+    }
+  },
+  {
+    "xpp": {
+      "asset": "potion/xppot1"
+    }
+  },
+  {
+    "fsp": {
+      "asset": "potion/firesunderpot"
+    }
+  },
+  {
+    "csp": {
+      "asset": "potion/coldsunderpot"
+    }
+  },
+  {
+    "lsp": {
+      "asset": "potion/lightningsunderpot"
+    }
+  },
+  {
+    "psp": {
+      "asset": "potion/poisonsunderpot"
+    }
+  },
+  {
+    "msp": {
+      "asset": "potion/magicsunderpot"
+    }
+  },
+  {
+    "php": {
+      "asset": "potion/physicalsunderpot"
+    }
+  },
+  {
+    "mpa": {
+      "asset": "quest/mephisto_animus"
+    }
+  },
+  {
+    "blc": {
+      "asset": "quest/baal_calamity"
+    }
+  },
+  {
+    "dia": {
+      "asset": "quest/diablo_ire"
+    }
+  },
+  {
+    "rup": {
+      "asset": "grabbers/rune_pliers"
+    }
+  },
+  {
+    "jwp": {
+      "asset": "grabbers/jewel_pliers"
+    }
+  },
+  {
+    "dwd": {
+      "asset": "potion/white_dye"
+    }
+  },
+  {
+    "abd": {
+      "asset": "potion/black_dye"
+    }
+  },
+  {
+    "bdd": {
+      "asset": "potion/blue_dye"
+    }
+  },
+  {
+    "ird": {
+      "asset": "potion/red_dye"
+    }
+  },
+  {
+    "ngd": {
+      "asset": "potion/green_dye"
+    }
+  },
+  {
+    "cyd": {
+      "asset": "potion/yellow_dye"
+    }
+  },
+  {
+    "ryd": {
+      "asset": "potion/purple_dye"
+    }
+  },
+  {
+    "hod": {
+      "asset": "potion/orange_dye"
+    }
+  },
+  {
+    "drm": {
+      "asset": "potion/dye_remover"
+    }
+  },
+  {
+    "1gc": {
+      "asset": "storage/gem_cluster"
+    }
+  },
+  {
+    "cs1": {
+      "asset": "charm/charm_sunder"
+    }
+  },
+  {
+    "oor": {
+      "asset": "powerorbs/orbofrenewal"
+    }
+  },
+  {
+    "1or": {
+      "asset": "powerorbs/orbofrenewal_stacked"
+    }
+  },
+  {
+    "lab": {
+      "asset": "quest/forsaken_token"
+    }
+  },
+  {
+    "r34": {
+      "asset": "rune/brak_rune"
+    }
+  },
+  {
+    "s34": {
+      "asset": "rune/brak_rune_stacked"
+    }
+  },
+  {
+    "r35": {
+      "asset": "rune/zeph_rune"
+    }
+  },
+  {
+    "s35": {
+      "asset": "rune/zeph_rune_stacked"
+    }
+  },
+  {
+    "r36": {
+      "asset": "rune/myr_rune"
+    }
+  },
+  {
+    "s36": {
+      "asset": "rune/myr_rune_stacked"
+    }
+  },
+  {
+    "r37": {
+      "asset": "rune/grit_rune"
+    }
+  },
+  {
+    "s37": {
+      "asset": "rune/grit_rune_stacked"
+    }
+  },
+  {
+    "r38": {
+      "asset": "rune/dem_rune"
+    }
+  },
+  {
+    "s38": {
+      "asset": "rune/dem_rune_stacked"
+    }
+  },
+  {
+    "r39": {
+      "asset": "rune/hev_rune"
+    }
+  },
+  {
+    "s39": {
+      "asset": "rune/hev_rune_stacked"
+    }
+  },
+  {
+    "W000": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W001": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W003": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W005": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W007": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W008": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W009": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W00B": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W00D": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W00F": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W018": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W019": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W01B": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W01D": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W01F": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W028": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W029": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W02B": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W02D": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W02F": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W038": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W039": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W03B": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W03D": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W03F": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W040": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W041": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W043": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W045": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W047": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W048": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W049": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W04B": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W04D": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W04F": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W058": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W059": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W05B": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W05D": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W05F": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W068": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W069": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W06B": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W06D": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W06F": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W078": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W079": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W07B": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W07D": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W07F": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W0C0": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W0C1": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W0C3": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W0C5": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W0C7": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W0C8": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W0C9": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W0CB": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W0CD": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W0CF": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W0D8": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W0D9": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W0DB": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W0DD": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W0DF": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W0E8": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W0E9": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W0EB": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W0ED": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W0EF": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W0F8": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W0F9": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W0FB": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W0FD": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W0FF": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W140": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W141": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W143": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W145": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W147": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W148": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W149": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W14B": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W14D": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W14F": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W158": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W159": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W15B": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W15D": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W15F": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W168": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W169": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W16B": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W16D": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W16F": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W178": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W179": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W17B": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W17D": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W17F": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W1C0": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W1C1": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W1C3": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W1C5": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W1C7": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W1C8": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W1C9": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W1CB": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W1CD": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W1CF": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W1D8": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W1D9": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W1DB": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W1DD": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W1DF": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W1E8": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W1E9": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W1EB": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W1ED": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W1EF": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W1F8": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W1F9": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W1FB": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W1FD": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W1FF": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W203": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W207": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W20B": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W20F": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W21B": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W21F": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W22B": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W22F": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W23B": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W23F": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W243": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W247": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W24B": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W24F": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W25B": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W25F": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W26B": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W26F": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W27B": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W27F": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W2C3": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W2C7": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W2CB": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W2CF": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W2DB": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W2DF": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W2EB": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W2EF": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W2FB": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W2FF": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W343": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W347": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W34B": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W34F": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W35B": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W35F": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W36B": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W36F": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W37B": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W37F": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W3C3": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W3C7": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W3CB": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W3CF": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W3DB": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W3DF": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W3EB": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W3EF": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W3FB": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W3FF": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W418": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W419": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W41B": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W41D": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W41F": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W438": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W439": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W43B": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W43D": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W43F": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W458": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W459": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W45B": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W45D": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W45F": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W478": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W479": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W47B": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W47D": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W47F": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W4D8": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W4D9": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W4DB": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W4DD": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W4DF": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W4F8": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W4F9": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W4FB": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W4FD": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W4FF": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W558": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W559": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W55B": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W55D": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W55F": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W578": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W579": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W57B": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W57D": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W57F": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W5D8": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W5D9": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W5DB": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W5DD": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W5DF": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W5F8": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W5F9": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W5FB": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W5FD": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W5FF": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W8C0": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W8C1": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W8C3": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W8C5": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W8C7": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W8C8": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W8C9": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W8CB": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W8CD": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W8CF": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W8D8": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W8D9": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W8DB": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W8DD": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W8DF": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W8E8": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W8E9": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W8EB": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W8ED": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W8EF": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W8F8": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W8F9": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W8FB": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W8FD": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W8FF": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W9C0": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W9C1": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W9C3": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W9C5": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W9C7": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W9C8": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W9C9": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W9CB": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W9CD": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W9CF": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W9D8": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W9D9": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W9DB": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W9DD": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W9DF": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W9E8": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W9E9": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W9EB": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W9ED": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W9EF": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W9F8": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W9F9": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W9FB": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W9FD": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "W9FF": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "Wpln": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "Wsig": {
+      "asset": "uniquecharm/relic_of_the_ancients"
+    }
+  },
+  {
+    "F000": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F001": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F002": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F003": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F004": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F005": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F006": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F007": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F008": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F009": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F00A": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F00B": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F00C": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F00D": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F00E": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F00F": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F010": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F011": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F012": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F013": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F014": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F015": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F016": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F017": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F018": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F019": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F01A": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F01B": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F01C": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F01D": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F01E": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F01F": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F020": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F021": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F022": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F023": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F024": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F025": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F026": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F027": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F028": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F029": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F02A": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F02B": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F02C": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F02D": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F02E": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F02F": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F030": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F031": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F032": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F033": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F034": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F035": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F036": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F037": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F038": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F039": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F03A": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F03B": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F03C": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F03D": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F03E": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F03F": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F040": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F041": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F042": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F043": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F044": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F045": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F046": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F047": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F048": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F049": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F04A": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F04B": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F04C": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F04D": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F04E": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F04F": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F050": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F051": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F052": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F053": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F054": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F055": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F056": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F057": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F058": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F059": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F05A": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F05B": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F05C": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F05D": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F05E": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F05F": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F060": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "Wlor": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F062": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F063": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F064": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F065": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F066": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F067": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F068": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F069": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F06A": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F06B": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F06C": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F06D": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F06E": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F06F": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F070": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F071": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F072": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F073": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F074": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F075": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F076": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F077": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F078": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F079": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F07A": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F07B": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F07C": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F07D": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F07E": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F07F": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F080": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F081": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F082": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F083": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F084": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F085": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F086": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F087": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F088": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F089": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F08A": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F08B": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F08C": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F08D": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F08E": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F08F": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F090": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F091": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F092": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F093": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F094": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F095": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F096": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F097": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F098": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F099": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F09A": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F09B": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F09C": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F09D": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F09E": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F09F": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F0A0": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F0A1": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F0A2": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F0A3": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F0A4": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F0A5": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F0A6": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F0A7": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F0A8": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F0A9": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F0AA": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F0AB": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F0AC": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F0AD": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F0AE": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "Wstl": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F0B0": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F0B1": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F0B2": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F0B3": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F0B4": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F0B5": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F0B6": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F0B7": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F0B8": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F0B9": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F0BA": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F0BB": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F0BC": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F0BD": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F0BE": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F0BF": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F0C0": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F0C1": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F0C2": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F0C3": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F0C4": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F0C5": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F0C6": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F0C7": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F0C8": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F0C9": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F0CA": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F0CB": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F0CC": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F0CD": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F0CE": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F0CF": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F0D0": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F0D1": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F0D2": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F0D3": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F0D4": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F0D5": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F0D6": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F0D7": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F0D8": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F0D9": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F0DA": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "F0DB": {
+      "asset": "quest/bark_scroll"
+    }
+  },
+  {
+    "Woa": {
+      "asset": "uniquecharm/workshop_trial_awakening"
+    }
+  },
+  {
+    "Wob": {
+      "asset": "uniquecharm/workshop_trial_ascension"
+    }
+  },
+  {
+    "Woc": {
+      "asset": "uniquecharm/workshop_trial_renewal"
+    }
+  },
+  {
+    "Wod": {
+      "asset": "uniquecharm/workshop_trial_augmentation"
+    }
+  },
+  {
+    "Woe": {
+      "asset": "uniquecharm/workshop_trial_purification"
+    }
+  },
+  {
+    "Wof": {
+      "asset": "uniquecharm/workshop_trial_fortune"
+    }
+  },
+  {
+    "Wog": {
+      "asset": "uniquecharm/workshop_trial_corruption"
+    }
+  },
+  {
+    "Wa1": {
+      "asset": "uniquecharm/workshop_trial_seal_forest"
+    }
+  },
+  {
+    "Wt1": {
+      "asset": "uniquecharm/workshop_trial_seal_forest"
+    }
+  },
+  {
+    "Wa2": {
+      "asset": "uniquecharm/workshop_trial_seal_desert"
+    }
+  },
+  {
+    "Wt2": {
+      "asset": "uniquecharm/workshop_trial_seal_desert"
+    }
+  },
+  {
+    "Wa3": {
+      "asset": "uniquecharm/workshop_trial_seal_jungle"
+    }
+  },
+  {
+    "Wt3": {
+      "asset": "uniquecharm/workshop_trial_seal_jungle"
+    }
+  },
+  {
+    "Wa4": {
+      "asset": "uniquecharm/workshop_trial_seal_hell"
+    }
+  },
+  {
+    "Wt4": {
+      "asset": "uniquecharm/workshop_trial_seal_hell"
+    }
+  },
+  {
+    "Wa5": {
+      "asset": "uniquecharm/workshop_trial_seal_frozen"
+    }
+  },
+  {
+    "Wt5": {
+      "asset": "uniquecharm/workshop_trial_seal_frozen"
+    }
+  },
+  {
+    "Wnsk": {
+      "asset": "uniquecharm/workshop_nightmare_legacy"
+    }
+  },
+  {
+    "Wns": {
+      "asset": "uniquecharm/workshop_nightmare_legacy"
+    }
+  },
+  {
+    "Wnl": {
+      "asset": "uniquecharm/workshop_nightmare_legacy"
+    }
+  },
+  {
+    "Y00": {
+      "asset": "bow/workshopmythical00"
+    }
+  },
+  {
+    "Y01": {
+      "asset": "bow/workshopmythical01"
+    }
+  },
+  {
+    "Y02": {
+      "asset": "hammer/workshopmythical02"
+    }
+  },
+  {
+    "Y03": {
+      "asset": "wand/workshopmythical03"
+    }
+  },
+  {
+    "Y04": {
+      "asset": "polearm/workshopmythical04"
+    }
+  },
+  {
+    "Y05": {
+      "asset": "armor/workshopmythical05"
+    }
+  },
+  {
+    "Y06": {
+      "asset": "orb/workshopmythical06"
+    }
+  },
+  {
+    "Y07": {
+      "asset": "knife/workshopmythical07"
+    }
+  },
+  {
+    "Y08": {
+      "asset": "sword/workshopmythical08"
+    }
+  },
+  {
+    "Y09": {
+      "asset": "belt/workshopmythical09"
+    }
+  },
+  {
+    "Y10": {
+      "asset": "staff/workshopmythical10"
+    }
+  },
+  {
+    "Y11": {
+      "asset": "scepter/workshopmythical11"
+    }
+  },
+  {
+    "Y12": {
+      "asset": "h2h/workshopmythical12"
+    }
+  },
+  {
+    "Y13": {
+      "asset": "knife/workshopmythical13"
+    }
+  },
+  {
+    "Y14": {
+      "asset": "pelt/workshopmythical14"
+    }
+  },
+  {
+    "Y15": {
+      "asset": "sword/workshopmythical15"
+    }
+  },
+  {
+    "Y16": {
+      "asset": "scepter/workshopmythical16"
+    }
+  },
+  {
+    "Y17": {
+      "asset": "circlet/workshopmythical17"
+    }
+  },
+  {
+    "Y18": {
+      "asset": "amulet/workshopmythical18"
+    }
+  },
+  {
+    "Y19": {
+      "asset": "staff/workshopmythical19"
+    }
+  },
+  {
+    "Y20": {
+      "asset": "bow/workshopmythical20"
+    }
+  },
+  {
+    "Y21": {
+      "asset": "javelin/workshopmythical21"
+    }
+  },
+  {
+    "Y22": {
+      "asset": "javelin/workshopmythical22"
+    }
+  },
+  {
+    "Y23": {
+      "asset": "javelin/workshopmythical23"
+    }
+  },
+  {
+    "Y24": {
+      "asset": "club/workshopmythical24"
+    }
+  },
+  {
+    "Y25": {
+      "asset": "sword/workshopmythical25"
+    }
+  },
+  {
+    "Y26": {
+      "asset": "staff/workshopmythical26"
+    }
+  },
+  {
+    "Y27": {
+      "asset": "sword/workshopmythical27"
+    }
+  },
+  {
+    "Y28": {
+      "asset": "ring/workshopmythical28"
+    }
+  },
+  {
+    "Y29": {
+      "asset": "ring/workshopmythical29"
+    }
+  },
+  {
+    "Y30": {
+      "asset": "ring/workshopmythical30"
+    }
+  },
+  {
+    "Y31": {
+      "asset": "ring/workshopmythical31"
+    }
+  },
+  {
+    "Y32": {
+      "asset": "ring/workshopmythical32"
+    }
+  },
+  {
+    "Y33": {
+      "asset": "ring/workshopmythical33"
+    }
+  },
+  {
+    "Y34": {
+      "asset": "ring/workshopmythical34"
+    }
+  },
+  {
+    "Y35": {
+      "asset": "axe/workshopmythical35"
+    }
+  },
+  {
+    "Y36": {
+      "asset": "knife/workshopmythical36"
+    }
+  },
+  {
+    "Y37": {
+      "asset": "staff/workshopmythical37"
+    }
+  },
+  {
+    "Y38": {
+      "asset": "staff/workshopmythical38"
+    }
+  },
+  {
+    "Y39": {
+      "asset": "circlet/workshopmythical39"
+    }
+  },
+  {
+    "Y40": {
+      "asset": "circlet/workshopmythical40"
+    }
+  },
+  {
+    "Y41": {
+      "asset": "armor/workshopmythical41"
+    }
+  },
+  {
+    "Y42": {
+      "asset": "sword/workshopmythical42"
+    }
+  },
+  {
+    "Y43": {
+      "asset": "belt/workshopmythical43"
+    }
+  },
+  {
+    "Y44": {
+      "asset": "belt/workshopmythical44"
+    }
+  },
+  {
+    "Y45": {
+      "asset": "belt/workshopmythical45"
+    }
+  },
+  {
+    "Y46": {
+      "asset": "belt/workshopmythical46"
+    }
+  },
+  {
+    "Y47": {
+      "asset": "belt/workshopmythical47"
+    }
+  },
+  {
+    "Y48": {
+      "asset": "belt/workshopmythical48"
+    }
+  },
+  {
+    "Y49": {
+      "asset": "belt/workshopmythical49"
+    }
+  },
+  {
+    "Y50": {
+      "asset": "belt/workshopmythical50"
+    }
+  },
+  {
+    "Y51": {
+      "asset": "belt/workshopmythical51"
+    }
+  },
+  {
+    "Y52": {
+      "asset": "belt/workshopmythical52"
+    }
+  },
+  {
+    "Y53": {
+      "asset": "belt/workshopmythical53"
+    }
+  },
+  {
+    "Y54": {
+      "asset": "belt/workshopmythical54"
+    }
+  },
+  {
+    "Y55": {
+      "asset": "belt/workshopmythical55"
+    }
+  },
+  {
+    "Y56": {
+      "asset": "belt/workshopmythical56"
+    }
+  },
+  {
+    "Y57": {
+      "asset": "belt/workshopmythical57"
+    }
+  },
+  {
+    "Y58": {
+      "asset": "belt/workshopmythical58"
+    }
+  },
+  {
+    "Y59": {
+      "asset": "belt/workshopmythical59"
+    }
+  },
+  {
+    "Y60": {
+      "asset": "belt/workshopmythical60"
+    }
+  },
+  {
+    "Y61": {
+      "asset": "belt/workshopmythical61"
+    }
+  },
+  {
+    "Y62": {
+      "asset": "belt/workshopmythical62"
+    }
+  },
+  {
+    "Y63": {
+      "asset": "belt/workshopmythical63"
+    }
+  },
+  {
+    "Y64": {
+      "asset": "belt/workshopmythical64"
+    }
+  },
+  {
+    "Y65": {
+      "asset": "belt/workshopmythical65"
+    }
+  },
+  {
+    "Y66": {
+      "asset": "belt/workshopmythical66"
+    }
+  },
+  {
+    "Y67": {
+      "asset": "belt/workshopmythical67"
+    }
+  },
+  {
+    "Y68": {
+      "asset": "belt/workshopmythical68"
+    }
+  },
+  {
+    "Y69": {
+      "asset": "belt/workshopmythical69"
+    }
+  },
+  {
+    "Y70": {
+      "asset": "belt/workshopmythical70"
+    }
+  },
+  {
+    "Y71": {
+      "asset": "belt/workshopmythical71"
+    }
+  },
+  {
+    "Y72": {
+      "asset": "belt/workshopmythical72"
+    }
+  },
+  {
+    "Y73": {
+      "asset": "belt/workshopmythical73"
+    }
+  },
+  {
+    "Y74": {
+      "asset": "belt/workshopmythical74"
+    }
+  },
+  {
+    "Y75": {
+      "asset": "belt/workshopmythical75"
+    }
+  },
+  {
+    "Y76": {
+      "asset": "belt/workshopmythical76"
+    }
+  },
+  {
+    "Y77": {
+      "asset": "belt/workshopmythical77"
+    }
+  },
+  {
+    "Y78": {
+      "asset": "belt/workshopmythical78"
+    }
+  },
+  {
+    "Y79": {
+      "asset": "belt/workshopmythical79"
+    }
+  },
+  {
+    "Y80": {
+      "asset": "belt/workshopmythical80"
+    }
+  }
+]

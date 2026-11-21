@@ -1,0 +1,50 @@
+[
+  {
+    "title": "D3 goblin notification sound by Lotfnebulous - Download on ZEDGE\u2122 | d9de",
+    "file": "zedge-1.mp3",
+    "url": "https://www.zedge.net/notification-sounds/c7f60988-732f-4673-98c7-af8dbd53d9de",
+    "output": "data/local/sfx/workshop/goblins/voice1.flac",
+    "sha256": "294fa566c638bffafbdad41bcbc88674cf9cf2b13aae6d34b3be17e164320d4d",
+    "source_sha256": "03fcc0d24d5786b7fe3b282d0acf642c1f6a50d63d749a1135f3fcdd9773048a"
+  },
+  {
+    "title": "Treasure Goblin 06 notification sound by SpaceYeti - Download on ZEDGE\u2122 | 6210",
+    "file": "zedge-2.mp3",
+    "url": "https://www.zedge.net/notification-sounds/bd55331e-c47a-33a5-bb4f-00add5946210",
+    "output": "data/local/sfx/workshop/goblins/voice2.flac",
+    "sha256": "54ef0e0b3543d6114f41d928576774826b1aa9738ea826351f0dccde754fb7a6",
+    "source_sha256": "6aee12eba949bcaeb22d09b12eaa7c41b4f4df3ebaab1a3fa4b7af1ac1fb7f36"
+  },
+  {
+    "title": "Treasure Goblin 05 notification sound by SpaceYeti - Download on ZEDGE\u2122 | 8c13",
+    "file": "zedge-3.mp3",
+    "url": "https://www.zedge.net/notification-sounds/4501cbca-0e51-317b-8b59-91807d0c8c13",
+    "output": "data/local/sfx/workshop/goblins/voice3.flac",
+    "sha256": "5d61814d802ff0c78b4d0f3748d25e7e9d729297d9613e507310ec2daf400e6a",
+    "source_sha256": "010025a51f9cc5b4406177a669db4ec9e8961d63f3ebc1ac957f1874ec10f0c3"
+  },
+  {
+    "title": "Treasure Goblin 05 notification sound by Namtarian - Download on ZEDGE\u2122 | 7574",
+    "file": "zedge-4.mp3",
+    "url": "https://www.zedge.net/notification-sounds/7f8987b1-45e1-4baf-aaea-5fdbfd317574",
+    "output": "data/local/sfx/workshop/goblins/voice4.flac",
+    "sha256": "09243c495ef1c0998fd25d79918bc3b1f58b2743efbb5f4fc22868d113b173eb",
+    "source_sha256": "44525e09a26ae35926d145261ca260df03308a22eeccef1eb27d41695318520a"
+  },
+  {
+    "title": "Treasure Goblin 06 notification sound by Namtarian - Download on ZEDGE\u2122 | 4fca",
+    "file": "zedge-5.mp3",
+    "url": "https://www.zedge.net/notification-sounds/c4d28430-830f-4d7f-996a-ad03b7e94fca",
+    "output": "data/local/sfx/workshop/goblins/voice5.flac",
+    "sha256": "8872a256763e4e3f6f5077c7344af8caf9634461d532c29f45224cbe4036ae4a",
+    "source_sha256": "9b977ea222394143f0450990b70f1457903c4122eaa0c6639dc9b59cf2159dfd"
+  },
+  {
+    "title": "Treasure Goblin 07 notification sound by Namtarian - Download on ZEDGE\u2122 | a0a7",
+    "file": "zedge-6.mp3",
+    "url": "https://www.zedge.net/notification-sounds/b13bc7ef-3fb4-4a4b-bb87-27381b77a0a7",
+    "output": "data/local/sfx/workshop/goblins/voice6.flac",
+    "sha256": "efdb1a3c2e633536541b0aad68b728a9832729fbf639de5c04df7d40d5302fac",
+    "source_sha256": "7599f3bae4302f74f8822544bdb6062928e0d4686270d834e3f29a635a78fd66"
+  }
+]

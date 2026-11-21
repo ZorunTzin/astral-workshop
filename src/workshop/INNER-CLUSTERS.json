@@ -1,0 +1,1510 @@
+{
+  "Vigor": {
+    "title": "Universal Aptitude",
+    "ranks": [
+      {
+        "label": "+5 to all attributes",
+        "effects": [
+          {
+            "code": "all-stats",
+            "parameter": 0,
+            "minimum": 5,
+            "maximum": 5,
+            "bonus": false
+          }
+        ]
+      },
+      {
+        "label": "+5 to all attributes",
+        "effects": [
+          {
+            "code": "all-stats",
+            "parameter": 0,
+            "minimum": 5,
+            "maximum": 5,
+            "bonus": false
+          }
+        ]
+      },
+      {
+        "label": "+5 to all attributes",
+        "effects": [
+          {
+            "code": "all-stats",
+            "parameter": 0,
+            "minimum": 5,
+            "maximum": 5,
+            "bonus": false
+          }
+        ]
+      },
+      {
+        "label": "+10 to all attributes / +1 to all skills",
+        "effects": [
+          {
+            "code": "all-stats",
+            "parameter": 0,
+            "minimum": 10,
+            "maximum": 10,
+            "bonus": false
+          },
+          {
+            "code": "allskills",
+            "parameter": 0,
+            "minimum": 1,
+            "maximum": 1,
+            "bonus": true
+          }
+        ]
+      }
+    ]
+  },
+  "Aether": {
+    "title": "Mana Reaver",
+    "ranks": [
+      {
+        "label": "+5 Mana after each kill",
+        "effects": [
+          {
+            "code": "mana-kill",
+            "parameter": 0,
+            "minimum": 5,
+            "maximum": 5,
+            "bonus": false
+          }
+        ]
+      },
+      {
+        "label": "+5 Mana after each kill",
+        "effects": [
+          {
+            "code": "mana-kill",
+            "parameter": 0,
+            "minimum": 5,
+            "maximum": 5,
+            "bonus": false
+          }
+        ]
+      },
+      {
+        "label": "+5 Mana after each kill",
+        "effects": [
+          {
+            "code": "mana-kill",
+            "parameter": 0,
+            "minimum": 5,
+            "maximum": 5,
+            "bonus": false
+          }
+        ]
+      },
+      {
+        "label": "+10 Mana after each kill / 25% Damage taken goes to Mana",
+        "effects": [
+          {
+            "code": "mana-kill",
+            "parameter": 0,
+            "minimum": 10,
+            "maximum": 10,
+            "bonus": false
+          },
+          {
+            "code": "dmg-to-mana",
+            "parameter": 0,
+            "minimum": 25,
+            "maximum": 25,
+            "bonus": true
+          }
+        ]
+      }
+    ]
+  },
+  "Ward": {
+    "title": "Prismatic Ward",
+    "ranks": [
+      {
+        "label": "+1% maximum fire resistance",
+        "effects": [
+          {
+            "code": "res-fire-max",
+            "parameter": 0,
+            "minimum": 1,
+            "maximum": 1,
+            "bonus": false
+          }
+        ]
+      },
+      {
+        "label": "+1% maximum cold resistance",
+        "effects": [
+          {
+            "code": "res-cold-max",
+            "parameter": 0,
+            "minimum": 1,
+            "maximum": 1,
+            "bonus": false
+          }
+        ]
+      },
+      {
+        "label": "+1% maximum lightning resistance",
+        "effects": [
+          {
+            "code": "res-ltng-max",
+            "parameter": 0,
+            "minimum": 1,
+            "maximum": 1,
+            "bonus": false
+          }
+        ]
+      },
+      {
+        "label": "+1% maximum poison resistance / +1% all maximum resistances",
+        "effects": [
+          {
+            "code": "res-pois-max",
+            "parameter": 0,
+            "minimum": 1,
+            "maximum": 1,
+            "bonus": false
+          },
+          {
+            "code": "res-all-max",
+            "parameter": 0,
+            "minimum": 1,
+            "maximum": 1,
+            "bonus": true
+          }
+        ]
+      }
+    ]
+  },
+  "Cinder": {
+    "title": "Fire Infusion",
+    "ranks": [
+      {
+        "label": "+30 Fire damage to attacks",
+        "effects": [
+          {
+            "code": "dmg-fire",
+            "parameter": 0,
+            "minimum": 30,
+            "maximum": 30,
+            "bonus": false
+          }
+        ]
+      },
+      {
+        "label": "+30 Fire damage to attacks",
+        "effects": [
+          {
+            "code": "dmg-fire",
+            "parameter": 0,
+            "minimum": 30,
+            "maximum": 30,
+            "bonus": false
+          }
+        ]
+      },
+      {
+        "label": "+30 Fire damage to attacks",
+        "effects": [
+          {
+            "code": "dmg-fire",
+            "parameter": 0,
+            "minimum": 30,
+            "maximum": 30,
+            "bonus": false
+          }
+        ]
+      },
+      {
+        "label": "+60 Fire damage to attacks / -10% enemy fire resistance",
+        "effects": [
+          {
+            "code": "dmg-fire",
+            "parameter": 0,
+            "minimum": 60,
+            "maximum": 60,
+            "bonus": false
+          },
+          {
+            "code": "pierce-fire",
+            "parameter": 0,
+            "minimum": 10,
+            "maximum": 10,
+            "bonus": true
+          }
+        ]
+      }
+    ]
+  },
+  "Rime": {
+    "title": "Cold Infusion",
+    "ranks": [
+      {
+        "label": "+30 Cold damage to attacks",
+        "effects": [
+          {
+            "code": "dmg-cold",
+            "parameter": 50,
+            "minimum": 30,
+            "maximum": 30,
+            "bonus": false
+          }
+        ]
+      },
+      {
+        "label": "+30 Cold damage to attacks",
+        "effects": [
+          {
+            "code": "dmg-cold",
+            "parameter": 50,
+            "minimum": 30,
+            "maximum": 30,
+            "bonus": false
+          }
+        ]
+      },
+      {
+        "label": "+30 Cold damage to attacks",
+        "effects": [
+          {
+            "code": "dmg-cold",
+            "parameter": 50,
+            "minimum": 30,
+            "maximum": 30,
+            "bonus": false
+          }
+        ]
+      },
+      {
+        "label": "+60 Cold damage to attacks / -10% enemy cold resistance",
+        "effects": [
+          {
+            "code": "dmg-cold",
+            "parameter": 50,
+            "minimum": 60,
+            "maximum": 60,
+            "bonus": false
+          },
+          {
+            "code": "pierce-cold",
+            "parameter": 0,
+            "minimum": 10,
+            "maximum": 10,
+            "bonus": true
+          }
+        ]
+      }
+    ]
+  },
+  "Spark": {
+    "title": "Lightning Infusion",
+    "ranks": [
+      {
+        "label": "+30 Lightning damage to attacks",
+        "effects": [
+          {
+            "code": "dmg-ltng",
+            "parameter": 0,
+            "minimum": 30,
+            "maximum": 30,
+            "bonus": false
+          }
+        ]
+      },
+      {
+        "label": "+30 Lightning damage to attacks",
+        "effects": [
+          {
+            "code": "dmg-ltng",
+            "parameter": 0,
+            "minimum": 30,
+            "maximum": 30,
+            "bonus": false
+          }
+        ]
+      },
+      {
+        "label": "+30 Lightning damage to attacks",
+        "effects": [
+          {
+            "code": "dmg-ltng",
+            "parameter": 0,
+            "minimum": 30,
+            "maximum": 30,
+            "bonus": false
+          }
+        ]
+      },
+      {
+        "label": "+60 Lightning damage to attacks / -10% enemy lightning resistance",
+        "effects": [
+          {
+            "code": "dmg-ltng",
+            "parameter": 0,
+            "minimum": 60,
+            "maximum": 60,
+            "bonus": false
+          },
+          {
+            "code": "pierce-ltng",
+            "parameter": 0,
+            "minimum": 10,
+            "maximum": 10,
+            "bonus": true
+          }
+        ]
+      }
+    ]
+  },
+  "Venom": {
+    "title": "Poison Infusion",
+    "ranks": [
+      {
+        "label": "Adds 30 poison damage over 1 seconds to attacks",
+        "effects": [
+          {
+            "code": "dmg-pois",
+            "parameter": 25,
+            "minimum": 307,
+            "maximum": 307,
+            "bonus": false
+          }
+        ]
+      },
+      {
+        "label": "Adds 30 poison damage over 1 seconds to attacks",
+        "effects": [
+          {
+            "code": "dmg-pois",
+            "parameter": 25,
+            "minimum": 307,
+            "maximum": 307,
+            "bonus": false
+          }
+        ]
+      },
+      {
+        "label": "Adds 30 poison damage over 1 seconds to attacks",
+        "effects": [
+          {
+            "code": "dmg-pois",
+            "parameter": 25,
+            "minimum": 307,
+            "maximum": 307,
+            "bonus": false
+          }
+        ]
+      },
+      {
+        "label": "Adds 60 poison damage over 1 seconds to attacks / -10% to enemy Poison Resistance",
+        "effects": [
+          {
+            "code": "dmg-pois",
+            "parameter": 25,
+            "minimum": 614,
+            "maximum": 614,
+            "bonus": false
+          },
+          {
+            "code": "pierce-pois",
+            "parameter": 0,
+            "minimum": 10,
+            "maximum": 10,
+            "bonus": true
+          }
+        ]
+      }
+    ]
+  },
+  "Bone": {
+    "title": "Magic Infusion",
+    "ranks": [
+      {
+        "label": "+30 Magic damage to attacks",
+        "effects": [
+          {
+            "code": "dmg-mag",
+            "parameter": 0,
+            "minimum": 30,
+            "maximum": 30,
+            "bonus": false
+          }
+        ]
+      },
+      {
+        "label": "+30 Magic damage to attacks",
+        "effects": [
+          {
+            "code": "dmg-mag",
+            "parameter": 0,
+            "minimum": 30,
+            "maximum": 30,
+            "bonus": false
+          }
+        ]
+      },
+      {
+        "label": "+30 Magic damage to attacks",
+        "effects": [
+          {
+            "code": "dmg-mag",
+            "parameter": 0,
+            "minimum": 30,
+            "maximum": 30,
+            "bonus": false
+          }
+        ]
+      },
+      {
+        "label": "+60 Magic damage to attacks / -10% enemy magic resistance",
+        "effects": [
+          {
+            "code": "dmg-mag",
+            "parameter": 0,
+            "minimum": 60,
+            "maximum": 60,
+            "bonus": false
+          },
+          {
+            "code": "pierce-mag",
+            "parameter": 0,
+            "minimum": 10,
+            "maximum": 10,
+            "bonus": true
+          }
+        ]
+      }
+    ]
+  },
+  "Flow": {
+    "title": "Thunderstorm",
+    "ranks": [
+      {
+        "label": "+30 Lightning damage to attacks",
+        "effects": [
+          {
+            "code": "dmg-ltng",
+            "parameter": 0,
+            "minimum": 30,
+            "maximum": 30,
+            "bonus": false
+          }
+        ]
+      },
+      {
+        "label": "+30 Lightning damage to attacks",
+        "effects": [
+          {
+            "code": "dmg-ltng",
+            "parameter": 0,
+            "minimum": 30,
+            "maximum": 30,
+            "bonus": false
+          }
+        ]
+      },
+      {
+        "label": "+30 Lightning damage to attacks",
+        "effects": [
+          {
+            "code": "dmg-ltng",
+            "parameter": 0,
+            "minimum": 30,
+            "maximum": 30,
+            "bonus": false
+          }
+        ]
+      },
+      {
+        "label": "+60 Lightning damage to attacks / 10% chance to cast level 8 Chain Lightning on striking",
+        "effects": [
+          {
+            "code": "dmg-ltng",
+            "parameter": 0,
+            "minimum": 60,
+            "maximum": 60,
+            "bonus": false
+          },
+          {
+            "code": "hit-skill",
+            "parameter": "Chain Lightning",
+            "minimum": 10,
+            "maximum": 8,
+            "bonus": true
+          }
+        ]
+      }
+    ]
+  },
+  "Reaping": {
+    "title": "Deathfire",
+    "ranks": [
+      {
+        "label": "+10 Life on hit",
+        "effects": [
+          {
+            "code": "healperhit",
+            "parameter": 0,
+            "minimum": 10,
+            "maximum": 10,
+            "bonus": false
+          }
+        ]
+      },
+      {
+        "label": "+10 Life on hit",
+        "effects": [
+          {
+            "code": "healperhit",
+            "parameter": 0,
+            "minimum": 10,
+            "maximum": 10,
+            "bonus": false
+          }
+        ]
+      },
+      {
+        "label": "+10 Life on hit",
+        "effects": [
+          {
+            "code": "healperhit",
+            "parameter": 0,
+            "minimum": 10,
+            "maximum": 10,
+            "bonus": false
+          }
+        ]
+      },
+      {
+        "label": "+20 Life on hit / 5% chance to cast level 1 Corpse Explosion on kill",
+        "effects": [
+          {
+            "code": "healperhit",
+            "parameter": 0,
+            "minimum": 20,
+            "maximum": 20,
+            "bonus": false
+          },
+          {
+            "code": "kill-skill",
+            "parameter": "Corpse Explosion",
+            "minimum": 5,
+            "maximum": 1,
+            "bonus": true
+          }
+        ]
+      }
+    ]
+  },
+  "Steel": {
+    "title": "Corpsebreaker",
+    "ranks": [
+      {
+        "label": "+15 Maximum weapon damage",
+        "effects": [
+          {
+            "code": "dmg-max",
+            "parameter": 0,
+            "minimum": 15,
+            "maximum": 15,
+            "bonus": false
+          }
+        ]
+      },
+      {
+        "label": "+15 Maximum weapon damage",
+        "effects": [
+          {
+            "code": "dmg-max",
+            "parameter": 0,
+            "minimum": 15,
+            "maximum": 15,
+            "bonus": false
+          }
+        ]
+      },
+      {
+        "label": "+15 Maximum weapon damage",
+        "effects": [
+          {
+            "code": "dmg-max",
+            "parameter": 0,
+            "minimum": 15,
+            "maximum": 15,
+            "bonus": false
+          }
+        ]
+      },
+      {
+        "label": "+30 Maximum weapon damage / 25% chance to cast level 1 Bash on attack",
+        "effects": [
+          {
+            "code": "dmg-max",
+            "parameter": 0,
+            "minimum": 30,
+            "maximum": 30,
+            "bonus": false
+          },
+          {
+            "code": "att-skill",
+            "parameter": "Bash",
+            "minimum": 25,
+            "maximum": 1,
+            "bonus": true
+          }
+        ]
+      }
+    ]
+  },
+  "Ember": {
+    "title": "Amazon Training 1",
+    "ranks": [
+      {
+        "label": "+1 to Bow and Crossbow skills (Amazon)",
+        "effects": [
+          {
+            "code": "skilltab",
+            "parameter": 0,
+            "minimum": 1,
+            "maximum": 1,
+            "bonus": false
+          }
+        ]
+      },
+      {
+        "label": "+1 to Passive and Magic skills (Amazon)",
+        "effects": [
+          {
+            "code": "skilltab",
+            "parameter": 1,
+            "minimum": 1,
+            "maximum": 1,
+            "bonus": false
+          }
+        ]
+      },
+      {
+        "label": "+1 to Javelin and Spear skills (Amazon)",
+        "effects": [
+          {
+            "code": "skilltab",
+            "parameter": 2,
+            "minimum": 1,
+            "maximum": 1,
+            "bonus": false
+          }
+        ]
+      },
+      {
+        "label": "+1 to all Amazon skills",
+        "effects": [
+          {
+            "code": "ama",
+            "parameter": 0,
+            "minimum": 1,
+            "maximum": 1,
+            "bonus": false
+          }
+        ]
+      }
+    ]
+  },
+  "Focus": {
+    "title": "Amazon Training 2",
+    "ranks": [
+      {
+        "label": "+1 to Bow and Crossbow skills (Amazon)",
+        "effects": [
+          {
+            "code": "skilltab",
+            "parameter": 0,
+            "minimum": 1,
+            "maximum": 1,
+            "bonus": false
+          }
+        ]
+      },
+      {
+        "label": "+1 to Passive and Magic skills (Amazon)",
+        "effects": [
+          {
+            "code": "skilltab",
+            "parameter": 1,
+            "minimum": 1,
+            "maximum": 1,
+            "bonus": false
+          }
+        ]
+      },
+      {
+        "label": "+1 to Javelin and Spear skills (Amazon)",
+        "effects": [
+          {
+            "code": "skilltab",
+            "parameter": 2,
+            "minimum": 1,
+            "maximum": 1,
+            "bonus": false
+          }
+        ]
+      },
+      {
+        "label": "+1 to all Amazon skills",
+        "effects": [
+          {
+            "code": "ama",
+            "parameter": 0,
+            "minimum": 1,
+            "maximum": 1,
+            "bonus": false
+          }
+        ]
+      }
+    ]
+  },
+  "Iron": {
+    "title": "Sorceress Training 1",
+    "ranks": [
+      {
+        "label": "+1 to Fire skills (Sorceress)",
+        "effects": [
+          {
+            "code": "skilltab",
+            "parameter": 3,
+            "minimum": 1,
+            "maximum": 1,
+            "bonus": false
+          }
+        ]
+      },
+      {
+        "label": "+1 to Lightning skills (Sorceress)",
+        "effects": [
+          {
+            "code": "skilltab",
+            "parameter": 4,
+            "minimum": 1,
+            "maximum": 1,
+            "bonus": false
+          }
+        ]
+      },
+      {
+        "label": "+1 to Cold skills (Sorceress)",
+        "effects": [
+          {
+            "code": "skilltab",
+            "parameter": 5,
+            "minimum": 1,
+            "maximum": 1,
+            "bonus": false
+          }
+        ]
+      },
+      {
+        "label": "+1 to all Sorceress skills",
+        "effects": [
+          {
+            "code": "sor",
+            "parameter": 0,
+            "minimum": 1,
+            "maximum": 1,
+            "bonus": false
+          }
+        ]
+      }
+    ]
+  },
+  "Guard": {
+    "title": "Sorceress Training 2",
+    "ranks": [
+      {
+        "label": "+1 to Fire skills (Sorceress)",
+        "effects": [
+          {
+            "code": "skilltab",
+            "parameter": 3,
+            "minimum": 1,
+            "maximum": 1,
+            "bonus": false
+          }
+        ]
+      },
+      {
+        "label": "+1 to Lightning skills (Sorceress)",
+        "effects": [
+          {
+            "code": "skilltab",
+            "parameter": 4,
+            "minimum": 1,
+            "maximum": 1,
+            "bonus": false
+          }
+        ]
+      },
+      {
+        "label": "+1 to Cold skills (Sorceress)",
+        "effects": [
+          {
+            "code": "skilltab",
+            "parameter": 5,
+            "minimum": 1,
+            "maximum": 1,
+            "bonus": false
+          }
+        ]
+      },
+      {
+        "label": "+1 to all Sorceress skills",
+        "effects": [
+          {
+            "code": "sor",
+            "parameter": 0,
+            "minimum": 1,
+            "maximum": 1,
+            "bonus": false
+          }
+        ]
+      }
+    ]
+  },
+  "Grit": {
+    "title": "Necromancer Training 1",
+    "ranks": [
+      {
+        "label": "+1 to Curses skills (Necromancer)",
+        "effects": [
+          {
+            "code": "skilltab",
+            "parameter": 6,
+            "minimum": 1,
+            "maximum": 1,
+            "bonus": false
+          }
+        ]
+      },
+      {
+        "label": "+1 to Poison and Bone skills (Necromancer)",
+        "effects": [
+          {
+            "code": "skilltab",
+            "parameter": 7,
+            "minimum": 1,
+            "maximum": 1,
+            "bonus": false
+          }
+        ]
+      },
+      {
+        "label": "+1 to Summoning skills (Necromancer)",
+        "effects": [
+          {
+            "code": "skilltab",
+            "parameter": 8,
+            "minimum": 1,
+            "maximum": 1,
+            "bonus": false
+          }
+        ]
+      },
+      {
+        "label": "+1 to all Necromancer skills",
+        "effects": [
+          {
+            "code": "nec",
+            "parameter": 0,
+            "minimum": 1,
+            "maximum": 1,
+            "bonus": false
+          }
+        ]
+      }
+    ]
+  },
+  "Aim": {
+    "title": "Necromancer Training 2",
+    "ranks": [
+      {
+        "label": "+1 to Curses skills (Necromancer)",
+        "effects": [
+          {
+            "code": "skilltab",
+            "parameter": 6,
+            "minimum": 1,
+            "maximum": 1,
+            "bonus": false
+          }
+        ]
+      },
+      {
+        "label": "+1 to Poison and Bone skills (Necromancer)",
+        "effects": [
+          {
+            "code": "skilltab",
+            "parameter": 7,
+            "minimum": 1,
+            "maximum": 1,
+            "bonus": false
+          }
+        ]
+      },
+      {
+        "label": "+1 to Summoning skills (Necromancer)",
+        "effects": [
+          {
+            "code": "skilltab",
+            "parameter": 8,
+            "minimum": 1,
+            "maximum": 1,
+            "bonus": false
+          }
+        ]
+      },
+      {
+        "label": "+1 to all Necromancer skills",
+        "effects": [
+          {
+            "code": "nec",
+            "parameter": 0,
+            "minimum": 1,
+            "maximum": 1,
+            "bonus": false
+          }
+        ]
+      }
+    ]
+  },
+  "Stride": {
+    "title": "Paladin Training 1",
+    "ranks": [
+      {
+        "label": "+1 to Combat skills (Paladin)",
+        "effects": [
+          {
+            "code": "skilltab",
+            "parameter": 9,
+            "minimum": 1,
+            "maximum": 1,
+            "bonus": false
+          }
+        ]
+      },
+      {
+        "label": "+1 to Offensive Auras skills (Paladin)",
+        "effects": [
+          {
+            "code": "skilltab",
+            "parameter": 10,
+            "minimum": 1,
+            "maximum": 1,
+            "bonus": false
+          }
+        ]
+      },
+      {
+        "label": "+1 to Defensive Auras skills (Paladin)",
+        "effects": [
+          {
+            "code": "skilltab",
+            "parameter": 11,
+            "minimum": 1,
+            "maximum": 1,
+            "bonus": false
+          }
+        ]
+      },
+      {
+        "label": "+1 to all Paladin skills",
+        "effects": [
+          {
+            "code": "pal",
+            "parameter": 0,
+            "minimum": 1,
+            "maximum": 1,
+            "bonus": false
+          }
+        ]
+      }
+    ]
+  },
+  "Edge": {
+    "title": "Paladin Training 2",
+    "ranks": [
+      {
+        "label": "+1 to Combat skills (Paladin)",
+        "effects": [
+          {
+            "code": "skilltab",
+            "parameter": 9,
+            "minimum": 1,
+            "maximum": 1,
+            "bonus": false
+          }
+        ]
+      },
+      {
+        "label": "+1 to Offensive Auras skills (Paladin)",
+        "effects": [
+          {
+            "code": "skilltab",
+            "parameter": 10,
+            "minimum": 1,
+            "maximum": 1,
+            "bonus": false
+          }
+        ]
+      },
+      {
+        "label": "+1 to Defensive Auras skills (Paladin)",
+        "effects": [
+          {
+            "code": "skilltab",
+            "parameter": 11,
+            "minimum": 1,
+            "maximum": 1,
+            "bonus": false
+          }
+        ]
+      },
+      {
+        "label": "+1 to all Paladin skills",
+        "effects": [
+          {
+            "code": "pal",
+            "parameter": 0,
+            "minimum": 1,
+            "maximum": 1,
+            "bonus": false
+          }
+        ]
+      }
+    ]
+  },
+  "Veil": {
+    "title": "Barbarian Training 1",
+    "ranks": [
+      {
+        "label": "+1 to Combat skills (Barbarian)",
+        "effects": [
+          {
+            "code": "skilltab",
+            "parameter": 12,
+            "minimum": 1,
+            "maximum": 1,
+            "bonus": false
+          }
+        ]
+      },
+      {
+        "label": "+1 to Masteries and Throwing skills (Barbarian)",
+        "effects": [
+          {
+            "code": "skilltab",
+            "parameter": 13,
+            "minimum": 1,
+            "maximum": 1,
+            "bonus": false
+          }
+        ]
+      },
+      {
+        "label": "+1 to Warcries skills (Barbarian)",
+        "effects": [
+          {
+            "code": "skilltab",
+            "parameter": 14,
+            "minimum": 1,
+            "maximum": 1,
+            "bonus": false
+          }
+        ]
+      },
+      {
+        "label": "+1 to all Barbarian skills",
+        "effects": [
+          {
+            "code": "bar",
+            "parameter": 0,
+            "minimum": 1,
+            "maximum": 1,
+            "bonus": false
+          }
+        ]
+      }
+    ]
+  },
+  "Sentry": {
+    "title": "Barbarian Training 2",
+    "ranks": [
+      {
+        "label": "+1 to Combat skills (Barbarian)",
+        "effects": [
+          {
+            "code": "skilltab",
+            "parameter": 12,
+            "minimum": 1,
+            "maximum": 1,
+            "bonus": false
+          }
+        ]
+      },
+      {
+        "label": "+1 to Masteries and Throwing skills (Barbarian)",
+        "effects": [
+          {
+            "code": "skilltab",
+            "parameter": 13,
+            "minimum": 1,
+            "maximum": 1,
+            "bonus": false
+          }
+        ]
+      },
+      {
+        "label": "+1 to Warcries skills (Barbarian)",
+        "effects": [
+          {
+            "code": "skilltab",
+            "parameter": 14,
+            "minimum": 1,
+            "maximum": 1,
+            "bonus": false
+          }
+        ]
+      },
+      {
+        "label": "+1 to all Barbarian skills",
+        "effects": [
+          {
+            "code": "bar",
+            "parameter": 0,
+            "minimum": 1,
+            "maximum": 1,
+            "bonus": false
+          }
+        ]
+      }
+    ]
+  },
+  "Pack": {
+    "title": "Druid Training 1",
+    "ranks": [
+      {
+        "label": "+1 to Summoning skills (Druid)",
+        "effects": [
+          {
+            "code": "skilltab",
+            "parameter": 15,
+            "minimum": 1,
+            "maximum": 1,
+            "bonus": false
+          }
+        ]
+      },
+      {
+        "label": "+1 to Shape Shifting skills (Druid)",
+        "effects": [
+          {
+            "code": "skilltab",
+            "parameter": 16,
+            "minimum": 1,
+            "maximum": 1,
+            "bonus": false
+          }
+        ]
+      },
+      {
+        "label": "+1 to Elemental skills (Druid)",
+        "effects": [
+          {
+            "code": "skilltab",
+            "parameter": 17,
+            "minimum": 1,
+            "maximum": 1,
+            "bonus": false
+          }
+        ]
+      },
+      {
+        "label": "+1 to all Druid skills",
+        "effects": [
+          {
+            "code": "dru",
+            "parameter": 0,
+            "minimum": 1,
+            "maximum": 1,
+            "bonus": false
+          }
+        ]
+      }
+    ]
+  },
+  "Crypt": {
+    "title": "Druid Training 2",
+    "ranks": [
+      {
+        "label": "+1 to Summoning skills (Druid)",
+        "effects": [
+          {
+            "code": "skilltab",
+            "parameter": 15,
+            "minimum": 1,
+            "maximum": 1,
+            "bonus": false
+          }
+        ]
+      },
+      {
+        "label": "+1 to Shape Shifting skills (Druid)",
+        "effects": [
+          {
+            "code": "skilltab",
+            "parameter": 16,
+            "minimum": 1,
+            "maximum": 1,
+            "bonus": false
+          }
+        ]
+      },
+      {
+        "label": "+1 to Elemental skills (Druid)",
+        "effects": [
+          {
+            "code": "skilltab",
+            "parameter": 17,
+            "minimum": 1,
+            "maximum": 1,
+            "bonus": false
+          }
+        ]
+      },
+      {
+        "label": "+1 to all Druid skills",
+        "effects": [
+          {
+            "code": "dru",
+            "parameter": 0,
+            "minimum": 1,
+            "maximum": 1,
+            "bonus": false
+          }
+        ]
+      }
+    ]
+  },
+  "Spirit": {
+    "title": "Assassin Training 1",
+    "ranks": [
+      {
+        "label": "+1 to Traps skills (Assassin)",
+        "effects": [
+          {
+            "code": "skilltab",
+            "parameter": 18,
+            "minimum": 1,
+            "maximum": 1,
+            "bonus": false
+          }
+        ]
+      },
+      {
+        "label": "+1 to Shadow Disciplines skills (Assassin)",
+        "effects": [
+          {
+            "code": "skilltab",
+            "parameter": 19,
+            "minimum": 1,
+            "maximum": 1,
+            "bonus": false
+          }
+        ]
+      },
+      {
+        "label": "+1 to Martial Arts skills (Assassin)",
+        "effects": [
+          {
+            "code": "skilltab",
+            "parameter": 20,
+            "minimum": 1,
+            "maximum": 1,
+            "bonus": false
+          }
+        ]
+      },
+      {
+        "label": "+1 to all Assassin skills",
+        "effects": [
+          {
+            "code": "ass",
+            "parameter": 0,
+            "minimum": 1,
+            "maximum": 1,
+            "bonus": false
+          }
+        ]
+      }
+    ]
+  },
+  "Runeglass": {
+    "title": "Assassin Training 2",
+    "ranks": [
+      {
+        "label": "+1 to Traps skills (Assassin)",
+        "effects": [
+          {
+            "code": "skilltab",
+            "parameter": 18,
+            "minimum": 1,
+            "maximum": 1,
+            "bonus": false
+          }
+        ]
+      },
+      {
+        "label": "+1 to Shadow Disciplines skills (Assassin)",
+        "effects": [
+          {
+            "code": "skilltab",
+            "parameter": 19,
+            "minimum": 1,
+            "maximum": 1,
+            "bonus": false
+          }
+        ]
+      },
+      {
+        "label": "+1 to Martial Arts skills (Assassin)",
+        "effects": [
+          {
+            "code": "skilltab",
+            "parameter": 20,
+            "minimum": 1,
+            "maximum": 1,
+            "bonus": false
+          }
+        ]
+      },
+      {
+        "label": "+1 to all Assassin skills",
+        "effects": [
+          {
+            "code": "ass",
+            "parameter": 0,
+            "minimum": 1,
+            "maximum": 1,
+            "bonus": false
+          }
+        ]
+      }
+    ]
+  },
+  "Spoils": {
+    "title": "Warlock Training 1",
+    "ranks": [
+      {
+        "label": "+1 to Demon skills (Warlock)",
+        "effects": [
+          {
+            "code": "skilltab",
+            "parameter": 21,
+            "minimum": 1,
+            "maximum": 1,
+            "bonus": false
+          }
+        ]
+      },
+      {
+        "label": "+1 to Eldritch skills (Warlock)",
+        "effects": [
+          {
+            "code": "skilltab",
+            "parameter": 22,
+            "minimum": 1,
+            "maximum": 1,
+            "bonus": false
+          }
+        ]
+      },
+      {
+        "label": "+1 to Chaos skills (Warlock)",
+        "effects": [
+          {
+            "code": "skilltab",
+            "parameter": 23,
+            "minimum": 1,
+            "maximum": 1,
+            "bonus": false
+          }
+        ]
+      },
+      {
+        "label": "+1 to all Warlock skills",
+        "effects": [
+          {
+            "code": "war",
+            "parameter": 0,
+            "minimum": 1,
+            "maximum": 1,
+            "bonus": false
+          }
+        ]
+      }
+    ]
+  },
+  "Hunger": {
+    "title": "Warlock Training 2",
+    "ranks": [
+      {
+        "label": "+1 to Demon skills (Warlock)",
+        "effects": [
+          {
+            "code": "skilltab",
+            "parameter": 21,
+            "minimum": 1,
+            "maximum": 1,
+            "bonus": false
+          }
+        ]
+      },
+      {
+        "label": "+1 to Eldritch skills (Warlock)",
+        "effects": [
+          {
+            "code": "skilltab",
+            "parameter": 22,
+            "minimum": 1,
+            "maximum": 1,
+            "bonus": false
+          }
+        ]
+      },
+      {
+        "label": "+1 to Chaos skills (Warlock)",
+        "effects": [
+          {
+            "code": "skilltab",
+            "parameter": 23,
+            "minimum": 1,
+            "maximum": 1,
+            "bonus": false
+          }
+        ]
+      },
+      {
+        "label": "+1 to all Warlock skills",
+        "effects": [
+          {
+            "code": "war",
+            "parameter": 0,
+            "minimum": 1,
+            "maximum": 1,
+            "bonus": false
+          }
+        ]
+      }
+    ]
+  }
+}

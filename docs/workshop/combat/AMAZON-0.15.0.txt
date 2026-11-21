@@ -1,0 +1,14 @@
+Amazon 0.15.0
+
+Installed into ReimaginedWorkshop on 2026-11-15.
+All existing combat tests, the new Amazon runtime test and all table verification scripts passed.
+Four buff reservations use 15 + 3 * effective skill level, divided by reservation efficiency.
+Native integer explosion radii use five subtiles (approximately three displayed yards).
+Split Arrow has three bounded generations; return arrows never return recursively.
+
+Startup: 7 plugins loaded, Amazon hooks registered, native stat ABI probe PASS, all 190 TXT tables compiled, startup 24/24 complete.
+A native D2Render pipeline assertion occurred afterward for PopcornLiquid (pipeline_cache.cpp:150).
+The process remained alive but did not close gracefully; only our startup process was stopped. No character was loaded.
+Combat, visual behavior and normal interactive launch remain to be confirmed by the user.
+
+Public reference updated: https://astral-workshop-compendium.chattyactor2.chatgpt.site

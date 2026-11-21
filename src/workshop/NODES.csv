@@ -1,0 +1,113 @@
+region;path;slot;name;property;parameter;minimum;maximum;description
+Origins;1;Inner;Ember;hp;;30;30;Life
+Origins;1;Outer;Bloodstone;hp;;75;75;Life
+Origins;1;Side;Fleetfoot;move2;;25;25;Run/walk %
+Origins;1;Keystone;Blood Tithe;hit-skill;Life Tap;25;10;Life for Life Tap
+Origins;2;Inner;Aether;mana;;30;30;Mana
+Origins;2;Outer;Deep Well;mana;;75;75;Mana
+Origins;2;Side;Quickening;move2;;25;25;Run/walk %
+Origins;2;Keystone;Inner Choir;aura;Meditation;3;3;Mana for Meditation
+Origins;3;Inner;Ward;res-all;;9;9;All resists
+Origins;3;Outer;Prism;res-all;;21;21;All resists
+Origins;3;Side;Wayfarer;move2;;25;25;Run/walk %
+Origins;3;Keystone;Rift Walker;oskill;Teleport;1;1;Resists for Teleport
+Arms;1;Inner;Steel;dmg%;;25;25;Weapon damage %
+Arms;1;Outer;Warhammer;dmg%;;50;50;Weapon damage %
+Arms;1;Side;Momentum;swing2;;20;20;Attack speed %
+Arms;1;Keystone;Sunder;crush;0;50;50;Damage for crushing blow
+Arms;2;Inner;Focus;att;;250;250;Attack rating
+Arms;2;Outer;Sightline;att;;500;500;Attack rating
+Arms;2;Side;Finesse;dex;;20;20;Dexterity
+Arms;2;Keystone;True Aim;ignore-ac;0;1;1;Accuracy for ignore defense
+Arms;3;Inner;Vigor;str;;10;10;Strength
+Arms;3;Outer;Titan;str;;25;25;Strength
+Arms;3;Side;Long Reach;dmg-max;;15;15;Max damage
+Arms;3;Keystone;Battle Cry;oskill;Battle Orders;1;1;Battle Orders and Battle Command
+Bulwark;1;Inner;Iron;ac;;500;500;Defense
+Bulwark;1;Outer;Ironwall;ac;;1000;1000;Defense
+Bulwark;1;Side;Poise;balance2;;30;30;Hit recovery %
+Bulwark;1;Keystone;Rimeheart;nofreeze;0;1;1;Defense for freeze immunity
+Bulwark;2;Inner;Guard;block;;10;10;Block %
+Bulwark;2;Outer;Bastion;block;;25;25;Block %
+Bulwark;2;Side;Parry;block2;;50;50;Block rate %
+Bulwark;2;Keystone;Thorn Crown;aura;Thorns;5;5;Block for Thorns aura
+Bulwark;3;Inner;Grit;red-dmg;;10;10;Physical reduction
+Bulwark;3;Outer;Adamant;red-dmg;;25;25;Physical reduction
+Bulwark;3;Side;Fortitude;vit;;25;25;Vitality
+Bulwark;3;Keystone;Faithguard;oskill;Holy Shield;3;3;Reduction for Holy Shield
+Elements;1;Inner;Spark;extra-ltng;;15;15;Lightning damage %
+Elements;1;Outer;Tempest;extra-ltng;;15;15;Lightning damage %
+Elements;1;Side;Conductor;pierce-ltng;;10;10;Lightning pierce %
+Elements;1;Keystone;Stormheart;oskill;Static Field;3;3;Lightning bonus for Static
+Elements;2;Inner;Cinder;extra-fire;;15;15;Fire damage %
+Elements;2;Outer;Inferno;extra-fire;;15;15;Fire damage %
+Elements;2;Side;Scorch;pierce-fire;;10;10;Fire pierce %
+Elements;2;Keystone;Firebrand;oskill;Enchant;20;20;Fire bonus for Enchant
+Elements;3;Inner;Rime;extra-cold;;15;15;Cold damage %
+Elements;3;Outer;Glacier;extra-cold;;15;15;Cold damage %
+Elements;3;Side;Fracture;pierce-cold;;10;10;Cold pierce %
+Elements;3;Keystone;Winter Tide;aura;Holy Freeze;4;4;Cold bonus for Holy Freeze
+Hunt;1;Inner;Aim;att%;;25;25;Attack rating %
+Hunt;1;Outer;Eagle Eye;att%;;50;50;Attack rating %
+Hunt;1;Side;Draw;swing2;;30;30;Attack speed %
+Hunt;1;Keystone;Throughshot;pierce;0;100;100;Aim for piercing attacks
+Hunt;2;Inner;Stride;move2;;25;25;Run/walk %
+Hunt;2;Outer;Pursuit;move2;;50;50;Run/walk %
+Hunt;2;Side;Wind;balance2;;10;10;Faster hit recovery
+Hunt;2;Keystone;Windcaller;aura;Vigor;4;4;Speed for Vigor aura
+Hunt;3;Inner;Edge;dmg-min;;15;15;Min damage
+Hunt;3;Outer;Fang;dmg-min;;30;30;Min damage
+Hunt;3;Side;Barbs;openwounds;;25;25;Open wounds %
+Hunt;3;Keystone;Deadeye;deadly;0;33;33;Min damage for deadly strike
+Occult;1;Inner;Venom;extra-pois;;15;15;Poison damage %
+Occult;1;Outer;Virulence;extra-pois;;15;15;Poison damage %
+Occult;1;Side;Toxin;pierce-pois;;10;10;Poison pierce %
+Occult;1;Keystone;Blight;oskill;Lower Resist;2;2;Poison bonus for Lower Resist
+Occult;2;Inner;Veil;res-curse-len;;25;25;Curse duration reduction %
+Occult;2;Outer;Shroud;res-curse-len;;50;50;Curse duration reduction %
+Occult;2;Side;Night Sight;light;;15;15;Light radius
+Occult;2;Keystone;Hexblade;hit-skill;Amplify Damage;25;8;Curse ward for Amplify proc
+Occult;3;Inner;Bone;extra-mag;;15;15;Magic damage %
+Occult;3;Outer;Ossuary;extra-mag;;30;30;Magic damage %
+Occult;3;Side;Grave Lore;enr;;20;20;Energy
+Occult;3;Keystone;Boneweaver;magicskill;0;3;3;Magic damage for +2 magic skills
+Legion;1;Inner;Sentry;ac-miss;;750;750;Missile defense
+Legion;1;Outer;Watchtower;ac-miss;;1500;1500;Missile defense
+Legion;1;Side;Warden;res-ltng;;25;25;Lightning resist
+Legion;1;Keystone;Machinist;extra_traps;0;2;2;Missile defense for +1 trap
+Legion;2;Inner;Pack;hp%;;5;5;Maximum life %
+Legion;2;Outer;Great Hunt;hp%;;10;10;Maximum life %
+Legion;2;Side;Trail;move2;;25;25;Run/walk %
+Legion;2;Keystone;Ravenlord;ws-minion-limit;0;2;2;Maximum life for +1 summon per supported family
+Legion;3;Inner;Crypt;att;;500;500;Attack rating
+Legion;3;Outer;Tomb;att;;1000;1000;Attack rating
+Legion;3;Side;Exorcist;dmg-undead;;75;75;Damage vs undead %
+Legion;3;Keystone;Legionnaire;aura;Might;4;4;Accuracy for Might aura
+Arcana;1;Inner;Flow;regen-mana;;30;30;Mana regen %
+Arcana;1;Outer;Wellspring;regen-mana;;60;60;Mana regen %
+Arcana;1;Side;Invocation;cast2;;20;20;Cast rate %
+Arcana;1;Keystone;Soul Font;oskill;Energy Shield;3;3;Regen for mana after kills
+Arcana;2;Inner;Spirit;enr;;10;10;Energy
+Arcana;2;Outer;Deep Mind;enr;;25;25;Energy
+Arcana;2;Side;Clarity;mana;;75;75;Mana
+Arcana;2;Keystone;Oracle;oskill;Oak Sage;10;10;Energy for Oak Sage
+Arcana;3;Inner;Runeglass;red-mag;;10;10;Magic reduction
+Arcana;3;Outer;Spellward;red-mag;;20;20;Magic reduction
+Arcana;3;Side;Anchor;res-mag;;10;10;Magic resist
+Arcana;3;Keystone;Shadow Skin;oskill;Fade;3;3;Magic reduction for Fade
+Harvest;1;Inner;Spoils;gold%;;50;50;Gold find %
+Harvest;1;Outer;Treasure;gold%;;100;100;Gold find %
+Harvest;1;Side;Fortune;mag%;;50;50;Magic find %
+Harvest;1;Keystone;Alchemist;mag%;0;100;100;Gold find for +75% magic find
+Harvest;2;Inner;Reaping;heal-kill;;5;5;Life after kill
+Harvest;2;Outer;Harvest;heal-kill;;10;10;Life after kill
+Harvest;2;Side;Renewal;regen;;50;50;Replenish life
+Harvest;2;Keystone;Blood Drinker;lifesteal;0;25;25;Life on kill for life steal
+Harvest;3;Inner;Hunger;mana-kill;;5;5;Mana after kill
+Harvest;3;Outer;Feast;mana-kill;;10;10;Mana after kill
+Harvest;3;Side;Siphon;mana;;75;75;Mana
+Harvest;3;Keystone;Mind Drinker;manasteal;0;25;25;Mana on kill for mana steal
+Legion;4;Heart;Broodheart;ws-pet-life;;30;30;Minion maximum life %
+Legion;4;Fury;Pack Fury;ws-pet-damage;;30;30;Minion damage %
+Legion;4;Rush;Wild Rush;ws-pet-speed;;20;20;Minion movement and attack speed %
+Legion;4;Swarm;Swarm;ws-pet-count;;1;1;Maximum summons per supported family

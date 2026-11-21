@@ -1,0 +1,632 @@
+[
+  {
+    "table": "data/global/excel",
+    "skill": "Might",
+    "id": 98,
+    "before": {
+      "aurastatcalc1": "(ln34)*(100+stat('workshop_aura_effect'.accr))/100",
+      "aurastatcalc2": "lvl*(100+stat('workshop_aura_effect'.accr))/100"
+    },
+    "after": {
+      "aurastatcalc1": "((ln34)*(100+stat('workshop_aura_effect'.accr))/100)/2",
+      "aurastatcalc2": "lvl*(100+stat('workshop_aura_effect'.accr))/100"
+    }
+  },
+  {
+    "table": "data/global/excel",
+    "skill": "Holy Fire",
+    "id": 102,
+    "before": {
+      "passivecalc1": "enms*par5/256",
+      "passivecalc2": "exms*par5/256",
+      "EMin": "1485",
+      "EMinLev1": "742",
+      "EMinLev2": "2227",
+      "EMinLev3": "3712",
+      "EMinLev4": "5197",
+      "EMinLev5": "6682",
+      "EMax": "4454",
+      "EMaxLev1": "1485",
+      "EMaxLev2": "2970",
+      "EMaxLev3": "4454",
+      "EMaxLev4": "5939",
+      "EMaxLev5": "7424"
+    },
+    "after": {
+      "passivecalc1": "enms*par5/256",
+      "passivecalc2": "exms*par5/256",
+      "EMin": "742",
+      "EMinLev1": "371",
+      "EMinLev2": "1113",
+      "EMinLev3": "1856",
+      "EMinLev4": "2598",
+      "EMinLev5": "3341",
+      "EMax": "2227",
+      "EMaxLev1": "742",
+      "EMaxLev2": "1485",
+      "EMaxLev3": "2227",
+      "EMaxLev4": "2969",
+      "EMaxLev5": "3712"
+    }
+  },
+  {
+    "table": "data/global/excel",
+    "skill": "Defiance",
+    "id": 104,
+    "before": {
+      "aurastatcalc1": "(ln34)*(100+stat('workshop_aura_effect'.accr))/100",
+      "aurastatcalc2": "lvl*(100+stat('workshop_aura_effect'.accr))/100"
+    },
+    "after": {
+      "aurastatcalc1": "((ln34)*(100+stat('workshop_aura_effect'.accr))/100)/2",
+      "aurastatcalc2": "lvl*(100+stat('workshop_aura_effect'.accr))/100"
+    }
+  },
+  {
+    "table": "data/global/excel",
+    "skill": "Blessed Aim",
+    "id": 108,
+    "before": {
+      "aurastatcalc1": "(ln34)*(100+stat('workshop_aura_effect'.accr))/100",
+      "aurastatcalc2": "lvl*(100+stat('workshop_aura_effect'.accr))/100",
+      "passivecalc1": "skill('Blessed Aim'.blvl) * par8"
+    },
+    "after": {
+      "aurastatcalc1": "((ln34)*(100+stat('workshop_aura_effect'.accr))/100)/2",
+      "aurastatcalc2": "lvl*(100+stat('workshop_aura_effect'.accr))/100",
+      "passivecalc1": "skill('Blessed Aim'.blvl) * par8"
+    }
+  },
+  {
+    "table": "data/global/excel",
+    "skill": "Cleansing",
+    "id": 109,
+    "before": {
+      "calc1": "(20+5*lvl)*(100+stat('workshop_aura_effect'.accr))/100",
+      "calc2": "(300+20*lvl)*(100+stat('workshop_aura_effect'.accr))/100"
+    },
+    "after": {
+      "calc1": "((20+5*lvl)*(100+stat('workshop_aura_effect'.accr))/100)/2",
+      "calc2": "((300+20*lvl)*(100+stat('workshop_aura_effect'.accr))/100)/2"
+    }
+  },
+  {
+    "table": "data/global/excel",
+    "skill": "Concentration",
+    "id": 113,
+    "before": {
+      "aurastatcalc1": "(ln34)*(100+stat('workshop_aura_effect'.accr))/100",
+      "aurastatcalc2": "(par5)*(100+stat('workshop_aura_effect'.accr))/100"
+    },
+    "after": {
+      "aurastatcalc1": "((ln34)*(100+stat('workshop_aura_effect'.accr))/100)/2",
+      "aurastatcalc2": "((par5)*(100+stat('workshop_aura_effect'.accr))/100)/2"
+    }
+  },
+  {
+    "table": "data/global/excel",
+    "skill": "Holy Freeze",
+    "id": 114,
+    "before": {
+      "aurastatcalc1": "0-min(90,min(ln34,50)*(100+stat('workshop_aura_effect'.accr))/100)",
+      "aurastatcalc2": "ast1",
+      "aurastatcalc3": "ast1",
+      "passivecalc1": "enms*par5/256",
+      "passivecalc2": "exms*par5/256",
+      "EMin": "1280",
+      "EMinLev1": "1280",
+      "EMinLev2": "2560",
+      "EMinLev3": "3840",
+      "EMinLev4": "5120",
+      "EMinLev5": "6400",
+      "EMax": "2560",
+      "EMaxLev1": "1280",
+      "EMaxLev2": "2560",
+      "EMaxLev3": "3840",
+      "EMaxLev4": "5120",
+      "EMaxLev5": "6400"
+    },
+    "after": {
+      "aurastatcalc1": "(0-min(90,min(ln34,50)*(100+stat('workshop_aura_effect'.accr))/100))/2",
+      "aurastatcalc2": "ast1",
+      "aurastatcalc3": "ast1",
+      "passivecalc1": "enms*par5/256",
+      "passivecalc2": "exms*par5/256",
+      "EMin": "640",
+      "EMinLev1": "640",
+      "EMinLev2": "1280",
+      "EMinLev3": "1920",
+      "EMinLev4": "2560",
+      "EMinLev5": "3200",
+      "EMax": "1280",
+      "EMaxLev1": "640",
+      "EMaxLev2": "1280",
+      "EMaxLev3": "1920",
+      "EMaxLev4": "2560",
+      "EMaxLev5": "3200"
+    }
+  },
+  {
+    "table": "data/global/excel",
+    "skill": "Vigor",
+    "id": 115,
+    "before": {
+      "aurastatcalc1": "(ln34)*(100+stat('workshop_aura_effect'.accr))/100",
+      "aurastatcalc2": "(ln34)*(100+stat('workshop_aura_effect'.accr))/100",
+      "aurastatcalc3": "(dm56)*(100+stat('workshop_aura_effect'.accr))/100"
+    },
+    "after": {
+      "aurastatcalc1": "((ln34)*(100+stat('workshop_aura_effect'.accr))/100)/2",
+      "aurastatcalc2": "((ln34)*(100+stat('workshop_aura_effect'.accr))/100)/2",
+      "aurastatcalc3": "((dm56)*(100+stat('workshop_aura_effect'.accr))/100)/2"
+    }
+  },
+  {
+    "table": "data/global/excel",
+    "skill": "Holy Shock",
+    "id": 118,
+    "before": {
+      "passivecalc1": "1",
+      "passivecalc2": "exms*par5/256",
+      "EMin": "1075",
+      "EMax": "10752",
+      "EMaxLev1": "6451",
+      "EMaxLev2": "8602",
+      "EMaxLev3": "10752",
+      "EMaxLev4": "12902",
+      "EMaxLev5": "16128"
+    },
+    "after": {
+      "passivecalc1": "(1)/2",
+      "passivecalc2": "exms*par5/256",
+      "EMin": "537",
+      "EMax": "5376",
+      "EMaxLev1": "3225",
+      "EMaxLev2": "4301",
+      "EMaxLev3": "5376",
+      "EMaxLev4": "6451",
+      "EMaxLev5": "8064"
+    }
+  },
+  {
+    "table": "data/global/excel",
+    "skill": "Sanctuary",
+    "id": 119,
+    "before": {
+      "aurastatcalc1": "(-ln91)*(100+stat('workshop_aura_effect'.accr))/100",
+      "passivecalc1": "ln34",
+      "passivecalc2": "ln56",
+      "passivecalc3": "1",
+      "EMin": "806",
+      "EMinLev1": "0",
+      "EMinLev2": "0",
+      "EMinLev3": "0",
+      "EMinLev4": "0",
+      "EMinLev5": "0",
+      "EMax": "8064",
+      "EMaxLev1": "4838",
+      "EMaxLev2": "6452",
+      "EMaxLev3": "8064",
+      "EMaxLev4": "9677",
+      "EMaxLev5": "12096"
+    },
+    "after": {
+      "aurastatcalc1": "((-ln91)*(100+stat('workshop_aura_effect'.accr))/100)/2",
+      "passivecalc1": "(ln34)/2",
+      "passivecalc2": "(ln56)/2",
+      "passivecalc3": "1",
+      "EMin": "403",
+      "EMinLev1": "0",
+      "EMinLev2": "0",
+      "EMinLev3": "0",
+      "EMinLev4": "0",
+      "EMinLev5": "0",
+      "EMax": "4032",
+      "EMaxLev1": "2419",
+      "EMaxLev2": "3226",
+      "EMaxLev3": "4032",
+      "EMaxLev4": "4838",
+      "EMaxLev5": "6048"
+    }
+  },
+  {
+    "table": "data/global/excel",
+    "skill": "Meditation",
+    "id": 120,
+    "before": {
+      "aurastatcalc1": "(ln34)*(100+stat('workshop_aura_effect'.accr))/100",
+      "aurastatcalc2": "(skill('Prayer'.edns))*(100+stat('workshop_aura_effect'.accr))/100"
+    },
+    "after": {
+      "aurastatcalc1": "((ln34)*(100+stat('workshop_aura_effect'.accr))/100)/2",
+      "aurastatcalc2": "((skill('Prayer'.edns))*(100+stat('workshop_aura_effect'.accr))/100)/2"
+    }
+  },
+  {
+    "table": "data/global/excel",
+    "skill": "Fanaticism",
+    "id": 122,
+    "before": {
+      "aurastatcalc1": "(dm34)*(100+stat('workshop_aura_effect'.accr))/100",
+      "aurastatcalc2": "(toht)*(100+stat('workshop_aura_effect'.accr))/100",
+      "aurastatcalc3": "(ln56/2)*(100+stat('workshop_aura_effect'.accr))/100",
+      "passivecalc1": "ln56"
+    },
+    "after": {
+      "aurastatcalc1": "((dm34)*(100+stat('workshop_aura_effect'.accr))/100)/2",
+      "aurastatcalc2": "((toht)*(100+stat('workshop_aura_effect'.accr))/100)/2",
+      "aurastatcalc3": "((ln56/2)*(100+stat('workshop_aura_effect'.accr))/100)/2",
+      "passivecalc1": "(ln56)/2"
+    }
+  },
+  {
+    "table": "data/global/excel",
+    "skill": "Conviction",
+    "id": 123,
+    "before": {
+      "aurastatcalc1": "(0-(min(ln56,50)))*(100+stat('workshop_aura_effect'.accr))/100",
+      "aurastatcalc2": "(0-((((lvl<25)?lvl:(17+lvl/par4))*(100+(blvl*par7))/100)+par3))*(100+stat('workshop_aura_effect'.accr))/100",
+      "aurastatcalc3": "ast2",
+      "aurastatcalc4": "ast2",
+      "aurastatcalc5": "0-lvl*(100+stat('workshop_aura_effect'.accr))/100"
+    },
+    "after": {
+      "aurastatcalc1": "((0-(min(ln56,50)))*(100+stat('workshop_aura_effect'.accr))/100)/2",
+      "aurastatcalc2": "((0-((((lvl<25)?lvl:(17+lvl/par4))*(100+(blvl*par7))/100)+par3))*(100+stat('workshop_aura_effect'.accr))/100)/2",
+      "aurastatcalc3": "ast2",
+      "aurastatcalc4": "ast2",
+      "aurastatcalc5": "0-lvl*(100+stat('workshop_aura_effect'.accr))/100"
+    }
+  },
+  {
+    "table": "data/global/excel",
+    "skill": "Redemption",
+    "id": 124,
+    "before": {
+      "calc1": "dm34",
+      "calc2": "ln56",
+      "calc3": "ln56"
+    },
+    "after": {
+      "calc1": "(dm34)/2",
+      "calc2": "(ln56)/2",
+      "calc3": "(ln56)/2"
+    }
+  },
+  {
+    "table": "data/global/excel",
+    "skill": "Salvation",
+    "id": 125,
+    "before": {
+      "aurastatcalc1": "(dm34)*(100+stat('workshop_aura_effect'.accr))/100",
+      "aurastatcalc2": "(dm34)*(100+stat('workshop_aura_effect'.accr))/100",
+      "aurastatcalc3": "(dm34)*(100+stat('workshop_aura_effect'.accr))/100",
+      "aurastatcalc4": "(1+lvl/10)*(100+stat('workshop_aura_effect'.accr))/100",
+      "aurastatcalc5": "(1+lvl/10)*(100+stat('workshop_aura_effect'.accr))/100",
+      "aurastatcalc6": "(1+lvl/10)*(100+stat('workshop_aura_effect'.accr))/100"
+    },
+    "after": {
+      "aurastatcalc1": "((dm34)*(100+stat('workshop_aura_effect'.accr))/100)/2",
+      "aurastatcalc2": "((dm34)*(100+stat('workshop_aura_effect'.accr))/100)/2",
+      "aurastatcalc3": "((dm34)*(100+stat('workshop_aura_effect'.accr))/100)/2",
+      "aurastatcalc4": "(1+lvl/10)*(100+stat('workshop_aura_effect'.accr))/100",
+      "aurastatcalc5": "(1+lvl/10)*(100+stat('workshop_aura_effect'.accr))/100",
+      "aurastatcalc6": "(1+lvl/10)*(100+stat('workshop_aura_effect'.accr))/100"
+    }
+  },
+  {
+    "table": "data/global/excel/base",
+    "skill": "Might",
+    "id": 98,
+    "before": {
+      "aurastatcalc1": "(ln34)*(100+stat('workshop_aura_effect'.accr))/100",
+      "aurastatcalc2": "lvl*(100+stat('workshop_aura_effect'.accr))/100"
+    },
+    "after": {
+      "aurastatcalc1": "((ln34)*(100+stat('workshop_aura_effect'.accr))/100)/2",
+      "aurastatcalc2": "lvl*(100+stat('workshop_aura_effect'.accr))/100"
+    }
+  },
+  {
+    "table": "data/global/excel/base",
+    "skill": "Holy Fire",
+    "id": 102,
+    "before": {
+      "passivecalc1": "enms*par5/256",
+      "passivecalc2": "exms*par5/256",
+      "EMin": "1485",
+      "EMinLev1": "742",
+      "EMinLev2": "2227",
+      "EMinLev3": "3712",
+      "EMinLev4": "5197",
+      "EMinLev5": "6682",
+      "EMax": "4454",
+      "EMaxLev1": "1485",
+      "EMaxLev2": "2970",
+      "EMaxLev3": "4454",
+      "EMaxLev4": "5939",
+      "EMaxLev5": "7424"
+    },
+    "after": {
+      "passivecalc1": "enms*par5/256",
+      "passivecalc2": "exms*par5/256",
+      "EMin": "742",
+      "EMinLev1": "371",
+      "EMinLev2": "1113",
+      "EMinLev3": "1856",
+      "EMinLev4": "2598",
+      "EMinLev5": "3341",
+      "EMax": "2227",
+      "EMaxLev1": "742",
+      "EMaxLev2": "1485",
+      "EMaxLev3": "2227",
+      "EMaxLev4": "2969",
+      "EMaxLev5": "3712"
+    }
+  },
+  {
+    "table": "data/global/excel/base",
+    "skill": "Defiance",
+    "id": 104,
+    "before": {
+      "aurastatcalc1": "(ln34)*(100+stat('workshop_aura_effect'.accr))/100",
+      "aurastatcalc2": "lvl*(100+stat('workshop_aura_effect'.accr))/100"
+    },
+    "after": {
+      "aurastatcalc1": "((ln34)*(100+stat('workshop_aura_effect'.accr))/100)/2",
+      "aurastatcalc2": "lvl*(100+stat('workshop_aura_effect'.accr))/100"
+    }
+  },
+  {
+    "table": "data/global/excel/base",
+    "skill": "Blessed Aim",
+    "id": 108,
+    "before": {
+      "aurastatcalc1": "(ln34)*(100+stat('workshop_aura_effect'.accr))/100",
+      "aurastatcalc2": "lvl*(100+stat('workshop_aura_effect'.accr))/100",
+      "passivecalc1": "skill('Blessed Aim'.blvl) * par8"
+    },
+    "after": {
+      "aurastatcalc1": "((ln34)*(100+stat('workshop_aura_effect'.accr))/100)/2",
+      "aurastatcalc2": "lvl*(100+stat('workshop_aura_effect'.accr))/100",
+      "passivecalc1": "skill('Blessed Aim'.blvl) * par8"
+    }
+  },
+  {
+    "table": "data/global/excel/base",
+    "skill": "Cleansing",
+    "id": 109,
+    "before": {
+      "calc1": "(20+5*lvl)*(100+stat('workshop_aura_effect'.accr))/100",
+      "calc2": "(300+20*lvl)*(100+stat('workshop_aura_effect'.accr))/100"
+    },
+    "after": {
+      "calc1": "((20+5*lvl)*(100+stat('workshop_aura_effect'.accr))/100)/2",
+      "calc2": "((300+20*lvl)*(100+stat('workshop_aura_effect'.accr))/100)/2"
+    }
+  },
+  {
+    "table": "data/global/excel/base",
+    "skill": "Concentration",
+    "id": 113,
+    "before": {
+      "aurastatcalc1": "(ln34)*(100+stat('workshop_aura_effect'.accr))/100",
+      "aurastatcalc2": "(par5)*(100+stat('workshop_aura_effect'.accr))/100"
+    },
+    "after": {
+      "aurastatcalc1": "((ln34)*(100+stat('workshop_aura_effect'.accr))/100)/2",
+      "aurastatcalc2": "((par5)*(100+stat('workshop_aura_effect'.accr))/100)/2"
+    }
+  },
+  {
+    "table": "data/global/excel/base",
+    "skill": "Holy Freeze",
+    "id": 114,
+    "before": {
+      "aurastatcalc1": "0-min(90,min(ln34,50)*(100+stat('workshop_aura_effect'.accr))/100)",
+      "aurastatcalc2": "ast1",
+      "aurastatcalc3": "ast1",
+      "passivecalc1": "enms*par5/256",
+      "passivecalc2": "exms*par5/256",
+      "EMin": "1280",
+      "EMinLev1": "1280",
+      "EMinLev2": "2560",
+      "EMinLev3": "3840",
+      "EMinLev4": "5120",
+      "EMinLev5": "6400",
+      "EMax": "2560",
+      "EMaxLev1": "1280",
+      "EMaxLev2": "2560",
+      "EMaxLev3": "3840",
+      "EMaxLev4": "5120",
+      "EMaxLev5": "6400"
+    },
+    "after": {
+      "aurastatcalc1": "(0-min(90,min(ln34,50)*(100+stat('workshop_aura_effect'.accr))/100))/2",
+      "aurastatcalc2": "ast1",
+      "aurastatcalc3": "ast1",
+      "passivecalc1": "enms*par5/256",
+      "passivecalc2": "exms*par5/256",
+      "EMin": "640",
+      "EMinLev1": "640",
+      "EMinLev2": "1280",
+      "EMinLev3": "1920",
+      "EMinLev4": "2560",
+      "EMinLev5": "3200",
+      "EMax": "1280",
+      "EMaxLev1": "640",
+      "EMaxLev2": "1280",
+      "EMaxLev3": "1920",
+      "EMaxLev4": "2560",
+      "EMaxLev5": "3200"
+    }
+  },
+  {
+    "table": "data/global/excel/base",
+    "skill": "Vigor",
+    "id": 115,
+    "before": {
+      "aurastatcalc1": "(ln34)*(100+stat('workshop_aura_effect'.accr))/100",
+      "aurastatcalc2": "(ln34)*(100+stat('workshop_aura_effect'.accr))/100",
+      "aurastatcalc3": "(dm56)*(100+stat('workshop_aura_effect'.accr))/100"
+    },
+    "after": {
+      "aurastatcalc1": "((ln34)*(100+stat('workshop_aura_effect'.accr))/100)/2",
+      "aurastatcalc2": "((ln34)*(100+stat('workshop_aura_effect'.accr))/100)/2",
+      "aurastatcalc3": "((dm56)*(100+stat('workshop_aura_effect'.accr))/100)/2"
+    }
+  },
+  {
+    "table": "data/global/excel/base",
+    "skill": "Holy Shock",
+    "id": 118,
+    "before": {
+      "passivecalc1": "1",
+      "passivecalc2": "exms*par5/256",
+      "EMin": "1075",
+      "EMax": "10752",
+      "EMaxLev1": "6451",
+      "EMaxLev2": "8602",
+      "EMaxLev3": "10752",
+      "EMaxLev4": "12902",
+      "EMaxLev5": "16128"
+    },
+    "after": {
+      "passivecalc1": "(1)/2",
+      "passivecalc2": "exms*par5/256",
+      "EMin": "537",
+      "EMax": "5376",
+      "EMaxLev1": "3225",
+      "EMaxLev2": "4301",
+      "EMaxLev3": "5376",
+      "EMaxLev4": "6451",
+      "EMaxLev5": "8064"
+    }
+  },
+  {
+    "table": "data/global/excel/base",
+    "skill": "Sanctuary",
+    "id": 119,
+    "before": {
+      "aurastatcalc1": "(-ln91)*(100+stat('workshop_aura_effect'.accr))/100",
+      "passivecalc1": "ln34",
+      "passivecalc2": "ln56",
+      "passivecalc3": "1",
+      "EMin": "806",
+      "EMinLev1": "0",
+      "EMinLev2": "0",
+      "EMinLev3": "0",
+      "EMinLev4": "0",
+      "EMinLev5": "0",
+      "EMax": "8064",
+      "EMaxLev1": "4838",
+      "EMaxLev2": "6452",
+      "EMaxLev3": "8064",
+      "EMaxLev4": "9677",
+      "EMaxLev5": "12096"
+    },
+    "after": {
+      "aurastatcalc1": "((-ln91)*(100+stat('workshop_aura_effect'.accr))/100)/2",
+      "passivecalc1": "(ln34)/2",
+      "passivecalc2": "(ln56)/2",
+      "passivecalc3": "1",
+      "EMin": "403",
+      "EMinLev1": "0",
+      "EMinLev2": "0",
+      "EMinLev3": "0",
+      "EMinLev4": "0",
+      "EMinLev5": "0",
+      "EMax": "4032",
+      "EMaxLev1": "2419",
+      "EMaxLev2": "3226",
+      "EMaxLev3": "4032",
+      "EMaxLev4": "4838",
+      "EMaxLev5": "6048"
+    }
+  },
+  {
+    "table": "data/global/excel/base",
+    "skill": "Meditation",
+    "id": 120,
+    "before": {
+      "aurastatcalc1": "(ln34)*(100+stat('workshop_aura_effect'.accr))/100",
+      "aurastatcalc2": "(skill('Prayer'.edns))*(100+stat('workshop_aura_effect'.accr))/100"
+    },
+    "after": {
+      "aurastatcalc1": "((ln34)*(100+stat('workshop_aura_effect'.accr))/100)/2",
+      "aurastatcalc2": "((skill('Prayer'.edns))*(100+stat('workshop_aura_effect'.accr))/100)/2"
+    }
+  },
+  {
+    "table": "data/global/excel/base",
+    "skill": "Fanaticism",
+    "id": 122,
+    "before": {
+      "aurastatcalc1": "(dm34)*(100+stat('workshop_aura_effect'.accr))/100",
+      "aurastatcalc2": "(toht)*(100+stat('workshop_aura_effect'.accr))/100",
+      "aurastatcalc3": "(ln56/2)*(100+stat('workshop_aura_effect'.accr))/100",
+      "passivecalc1": "ln56"
+    },
+    "after": {
+      "aurastatcalc1": "((dm34)*(100+stat('workshop_aura_effect'.accr))/100)/2",
+      "aurastatcalc2": "((toht)*(100+stat('workshop_aura_effect'.accr))/100)/2",
+      "aurastatcalc3": "((ln56/2)*(100+stat('workshop_aura_effect'.accr))/100)/2",
+      "passivecalc1": "(ln56)/2"
+    }
+  },
+  {
+    "table": "data/global/excel/base",
+    "skill": "Conviction",
+    "id": 123,
+    "before": {
+      "aurastatcalc1": "(0-(min(ln56,50)))*(100+stat('workshop_aura_effect'.accr))/100",
+      "aurastatcalc2": "(0-((((lvl<25)?lvl:(17+lvl/par4))*(100+(blvl*par7))/100)+par3))*(100+stat('workshop_aura_effect'.accr))/100",
+      "aurastatcalc3": "ast2",
+      "aurastatcalc4": "ast2",
+      "aurastatcalc5": "0-lvl*(100+stat('workshop_aura_effect'.accr))/100"
+    },
+    "after": {
+      "aurastatcalc1": "((0-(min(ln56,50)))*(100+stat('workshop_aura_effect'.accr))/100)/2",
+      "aurastatcalc2": "((0-((((lvl<25)?lvl:(17+lvl/par4))*(100+(blvl*par7))/100)+par3))*(100+stat('workshop_aura_effect'.accr))/100)/2",
+      "aurastatcalc3": "ast2",
+      "aurastatcalc4": "ast2",
+      "aurastatcalc5": "0-lvl*(100+stat('workshop_aura_effect'.accr))/100"
+    }
+  },
+  {
+    "table": "data/global/excel/base",
+    "skill": "Redemption",
+    "id": 124,
+    "before": {
+      "calc1": "dm34",
+      "calc2": "ln56",
+      "calc3": "ln56"
+    },
+    "after": {
+      "calc1": "(dm34)/2",
+      "calc2": "(ln56)/2",
+      "calc3": "(ln56)/2"
+    }
+  },
+  {
+    "table": "data/global/excel/base",
+    "skill": "Salvation",
+    "id": 125,
+    "before": {
+      "aurastatcalc1": "(dm34)*(100+stat('workshop_aura_effect'.accr))/100",
+      "aurastatcalc2": "(dm34)*(100+stat('workshop_aura_effect'.accr))/100",
+      "aurastatcalc3": "(dm34)*(100+stat('workshop_aura_effect'.accr))/100",
+      "aurastatcalc4": "(1+lvl/10)*(100+stat('workshop_aura_effect'.accr))/100",
+      "aurastatcalc5": "(1+lvl/10)*(100+stat('workshop_aura_effect'.accr))/100",
+      "aurastatcalc6": "(1+lvl/10)*(100+stat('workshop_aura_effect'.accr))/100"
+    },
+    "after": {
+      "aurastatcalc1": "((dm34)*(100+stat('workshop_aura_effect'.accr))/100)/2",
+      "aurastatcalc2": "((dm34)*(100+stat('workshop_aura_effect'.accr))/100)/2",
+      "aurastatcalc3": "((dm34)*(100+stat('workshop_aura_effect'.accr))/100)/2",
+      "aurastatcalc4": "(1+lvl/10)*(100+stat('workshop_aura_effect'.accr))/100",
+      "aurastatcalc5": "(1+lvl/10)*(100+stat('workshop_aura_effect'.accr))/100",
+      "aurastatcalc6": "(1+lvl/10)*(100+stat('workshop_aura_effect'.accr))/100"
+    }
+  }
+]

@@ -1,0 +1,8 @@
+FMMP 0.15.0 includes RuffnecKk MapSense 2.0.2, adapted for D2RLoader ABI 4.
+Source: https://github.com/RuffnecKk/D2RLoader-Suite
+Copyright 2026 RuffnecKk and contributors; MIT. See licenses/MapSense-MIT.txt.
+FMMP changes: ABI and service compatibility, mod-only loading, optional reveal disabled by default.
+Loot effects use the MapSense shared Dear ImGui renderer. First-pickup deposit uses the native bank contract documented by the MIT-licensed Bulk Currency Deposit source.
+The map generator is the upstream release helper and includes libd2; its license is included.
+ImGui, MinHook, tomlplusplus, nlohmann/json and other bundled notices are in licenses/.
+FMMP loot sounds were synthesized for this release.

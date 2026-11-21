@@ -1,0 +1,359 @@
+{
+	/* Upon filename change UPDATE all "PanelManager", "GameplayOptionsPanel", "SettingsPanel" entries to filename without the "hd" ending */
+	"type": "GameplayOptionsPanel", "name": "modinfo_generalinformation",
+    "fields": {
+        "priority": 9003,
+        "rect": { "x": -865, "y": 400, "width": "$OptionsPanelWidth", "height": 1520 },
+        "anchor": { "x": 0.5 },
+        "applySettingsImmediately": false
+    },
+    "children": [
+        {
+                // Native OptionsPanel seeds the first focusable descendant of this accepted row.
+                "type": "TableWidget", "name": "OptionsTable",
+                "fields": {
+                    "rect": { "width": "$OptionsPanelWidth", "height": 1520 },
+                    "columns": [
+                        { "width": "$OptionsPanelWidth", "alignment": { "h": "left", "v": "top" } }
+                    ],
+                    "rowHeight": 1520,
+                    "cellPadding": { "left": 0, "top": 0, "right": 0, "bottom": 0 }
+                },
+                "children": [
+                    {
+                        "type": "TableRowWidget", "name": "ModInformationControlsRow",
+                        "children": [
+                            {
+                                "type": "Widget", "name": "ModInformationControls",
+                                "fields": {
+                                    "rect": { "width": "$OptionsPanelWidth", "height": 1520 }
+                                },
+                                "children": [
+                                    {
+                                        "type": "ImageWidget", "name": "ScrollBarBackground",
+                                        "fields": {
+                                            "rect": "$OptionsScrollBarBackgroundRect",
+                                            "anchor": { "x": 1.0 },
+                                            "filename": "PauseMenu\\VerticalScroll"
+                                        },
+                                        "children": [
+                                            {
+                                                "type": "ScrollControllerWidget", "name": "ScrollController",
+                                                "fields": {
+                                                    "rect": "$OptionsScrollBarRect",
+                                                    "anchor": { "x": 1.0 },
+                                                    "upArrowFilepath": "FrontEnd\\HD\\Final\\FrontEnd_ScrollUpBtn",
+                                                    "downArrowFilepath": "FrontEnd\\HD\\Final\\FrontEnd_ScrollDownBtn",
+                                                    "barFilepath": "PauseMenu\\VerticalIndicator",
+                                                    "viewName": "ScrollView",
+                                                    "wheelScrollSound": "cursor_scroll_hd",
+                                                    "buttonScrollSound": "cursor_scroll_hd",
+                                                        "buttonScrollAmount": 90,
+                                                        "focusIndicatorVisible": true,
+                                                        "navigation": {
+                                                            "left": { "name": "ColorBlindCalibration" },
+                                                            "down": { "name": "ColorBlindCalibration" }
+                                                        }
+                                                }
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        // Keep the actual Close button fixed below the information viewport.
+                                        "type": "TableWidget", "name": "CloseTable",
+                                        "fields": {
+                                            "anchor": { "x": 0.5, "y": 0 },
+                                            "rect": { "x": -250, "y": 1400 },
+                                            "columns": [
+                                                { "width": 500, "alignment": { "h": "center", "v": "center" } }
+                                            ],
+                                            "rowHeight": 120,
+                                            "cellPadding": { "left": 0, "right": 0 }
+                                        },
+                                        "children": [
+                                            {
+                                                "type": "TableRowWidget", "name": "ModInformationCloseRow",
+                                                "children": [
+                                                    {
+                                                        // This registered name admits the enclosing controls row; the scrollbar comes first for focus.
+                                                        "type": "ButtonWidget", "name": "ColorBlindCalibration",
+                                                        "fields": {
+                                                            "filename": "FrontEnd\\HD\\Final\\FrontEnd_ButtonMed",
+                                                            "onClickMessage": "PanelManager:ClosePanel:modinfo_aa",
+                                                            "textString": "@strClose",
+                                                            "hoveredFrame": 3,
+                                                            "text/style": "$StyleFEButtonText",
+                                                            "pointSize": "$MediumLargeFontSize",
+                                                            "textColor": "$LightButtonTextColor",
+                                                            "disabledFrame": 2,
+                                                            "tooltipString": "@strClose",
+                                                            "sound": "cursor_close_window_hd",
+                                                            "acceptsEscKeyEverywhere": true,
+                                                            "focusIndicatorFilename": "Controller/HoverImages/FrontEndButtonMed",
+                                                            "navigation": {
+                                                                "up": { "name": "ScrollController" }
+                                                            }
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+        {
+            "type": "ScrollViewWidget", "name": "ScrollView",
+            "fields": {
+                "rect": { "width": "$OptionsPanelWidth", "height": "$OptionsPanelHeight" },
+                "scrollControllerName": "ScrollController"
+            },
+            "children": [
+                {
+                    "type": "TableWidget", "name": "InformationTable",
+                    "fields": {
+                        "columns": [ "$OptionsTableColumn1", "$OptionsTableColumn2" ],
+                        "rowHeight": "$OptionsTableRowHeight"
+                    },
+                    "children": [
+/* >>> WEBSITE TITLE >>> */
+                        {
+                            "type": "TableRowWidget", "name": "WebsiteTitleRow",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget", "name": "WebsiteTitleText",
+                                    "fields": {
+                                        "text": "Official Website and Wiki",
+                                        "style": "$StyleSettingsTitle"
+                                    },
+                                    "children": [
+                                        {
+                                            "type": "ImageWidget", "name": "Divider",
+                                            "fields": {
+                                                "rect": "$OptionsDividerRect",
+                                                "filename": "PauseMenu\\Divider"
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+/* >>> WEBSITE LINK BELOW >>> */
+                        {
+                            "type": "TableRowWidget",
+                            "name": "WebsiteContentRow",
+                            "fields": {
+                                "rect": {
+                                    "height": 350
+                                }
+                            },
+                            "children": [
+                              {
+                                "type": "TextBoxWidget",
+                                "name": "WebsiteContentText",
+                                "fields": {
+                                  "text": "www.d2r-reimagined.com\n\nwiki.d2r-reimagined.com\n\nFull patch notes can be found on the wiki or discord\n\nDiscord link found on website home page\n",
+                                  "style": {
+                                    "pointSize": 28,
+                                    "spacing": {
+                                      "leading": 0.95,
+                                      "kerning": 0.95
+                                    },
+                                    "alignment": {
+                                      "h": "left",
+                                      "v": "center"
+                                    },
+                                    "options": {
+                                      "lineWrap": true,
+                                      "newlineHandling": "standard",
+                                      "pipeCharacterBehavior": "handle"
+                                    }
+                                   }
+                                }
+                              }
+                            ]
+                        },
+/* <<< WEBSITE LINK OVER <<< */
+/* >>> GENERAL CHANGES TITLE >>> */
+                        {
+                            "type": "TableRowWidget", "name": "GeneralChangesTitleRow",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget", "name": "GeneralChangesTitleText",
+                                    "fields": {
+                                        "text": "General Changes",
+                                        "style": "$StyleSettingsTitle"
+                                    },
+                                    "children": [
+                                        {
+                                            "type": "ImageWidget", "name": "Divider",
+                                            "fields": {
+                                                "rect": "$OptionsDividerRect",
+                                                "filename": "PauseMenu\\Divider"
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+/* >>> GENERAL CHANGES BELOW >>> */
+                        {
+                            "type": "TableRowWidget",
+                            "name": "GeneralChangesContentRow",
+                            "fields": {
+                                "rect": {
+                                    "height": 800
+                                }
+                            },
+                            "children": [
+                              {
+                                "type": "TextBoxWidget",
+                                "name": "GeneralChangesContentText",
+                                "fields": {
+                                  "text": "Max level is 100, 99 for Mercenaries\n\nLevel Curve and Difficulty Scaling adjusted for Hell Difficulty\n\nThere are a lot of new recipes to craft, enchant, and uptier. Hold onto your jewels and check website/wiki.\n\nReworked Jewelry reroll recipes to yield the same item type used in the recipe, and increased ring to 100% plvl\n\nThe Splash Charm (Collin's Lesser Might) is obtained by killing Corpsefire (Den of Evil) on Normal difficulty. This enables splash damage for many melee skills while slightly lowering damage\n\nThe Splash Charm can also be upgraded to decrease the damage penality. Check the wiki.\n\nSelling Standard of Heroes dropped from Ubers Spawns Diablo's Clone which drops the ANNIHILUS Small Charm",
+                                  "style": {
+                                    "pointSize": 28,
+                                    "spacing": {
+                                      "leading": 0.95,
+                                      "kerning": 0.95
+                                    },
+                                    "alignment": {
+                                      "h": "left",
+                                      "v": "center"
+                                    },
+                                    "options": {
+                                      "lineWrap": true,
+                                      "newlineHandling": "standard",
+                                      "pipeCharacterBehavior": "handle"
+                                    }
+                                   }
+                                }
+                              }
+                            ]
+                        },
+/* <<< GENERAL CHANGES OVER <<< */
+/* >>> KNOWN BUGS TITLE >>> */
+                        {
+                            "type": "TableRowWidget", "name": "KnownBugsTitleRow",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget", "name": "KnownBugsTitleText",
+                                    "fields": {
+                                        "text": "Known Bugs",
+                                        "style": "$StyleSettingsTitle"
+                                    },
+                                    "children": [
+                                        {
+                                            "type": "ImageWidget", "name": "Divider",
+                                            "fields": {
+                                                "rect": "$OptionsDividerRect",
+                                                "filename": "PauseMenu\\Divider"
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+/* >>> KNOWN BUGS LIST BELOW >>> */
+                        {
+                            "type": "TableRowWidget",
+                            "name": "KnownBugsContentRow",
+                            "fields": {
+                                "rect": {
+                                    "height": 150
+                                }
+                            },
+                            "children": [
+                              {
+                                "type": "TextBoxWidget",
+                                "name": "KnownBugsContentText",
+                                "fields": {
+                                  "text": "Andariel and The Hell Forge Quest reward still drop vanilla gems. Cube them with the gem bag\n",
+                                  "style": {
+                                    "pointSize": 28,
+                                    "spacing": {
+                                      "leading": 0.95,
+                                      "kerning": 0.95
+                                    },
+                                    "alignment": {
+                                      "h": "left",
+                                      "v": "center"
+                                    },
+                                    "options": {
+                                      "lineWrap": true,
+                                      "newlineHandling": "standard",
+                                      "pipeCharacterBehavior": "handle"
+                                    }
+                                   }
+                                }
+                              }
+                            ]
+                        },
+/* >>> NOT A BUG TILTE >>> */
+                        {
+                            "type": "TableRowWidget", "name": "NotABugTitleRow",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget", "name": "NotABugTitleText",
+                                    "fields": {
+                                        "text": "Not A Bug",
+                                        "style": "$StyleSettingsTitle"
+                                    },
+                                    "children": [
+                                        {
+                                            "type": "ImageWidget", "name": "Divider",
+                                            "fields": {
+                                                "rect": "$OptionsDividerRect",
+                                                "filename": "PauseMenu\\Divider"
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+/* >>> NOT A BUG LIST BELOW >>> */
+                        {
+                            "type": "TableRowWidget",
+                            "name": "NotABugContentRow",
+                            "fields": {
+                                "rect": {
+                                    "height": 250
+                                }
+                            },
+                            "children": [
+                              {
+                                "type": "TextBoxWidget",
+                                "name": "NotABugContentText",
+                                "fields": {
+                                  "text": "Skills with no Class restrictions (Oskills) granted by items are limited to +3 if used by a Class it belongs to. It is hard coded\n\nPaladins take damage when using necromancy\n",
+                                  "style": {
+                                    "pointSize": 28,
+                                    "spacing": {
+                                      "leading": 0.95,
+                                      "kerning": 0.95
+                                    },
+                                    "alignment": {
+                                      "h": "left",
+                                      "v": "center"
+                                    },
+                                    "options": {
+                                      "lineWrap": true,
+                                      "newlineHandling": "standard",
+                                      "pipeCharacterBehavior": "handle"
+                                    }
+                                   }
+                                }
+                              }
+                            ]
+                        }
+/* <<< NOT A BUG LIST OVER <<< */
+                    ]
+                }
+            ]
+        }
+
+    ]
+}

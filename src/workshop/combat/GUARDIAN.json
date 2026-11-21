@@ -1,0 +1,24 @@
+{
+  "monster_class": 854,
+  "skills": [
+    [
+      566,
+      6
+    ],
+    [
+      567,
+      18
+    ],
+    [
+      568,
+      30
+    ],
+    [
+      569,
+      18
+    ]
+  ],
+  "last_missile": 1023,
+  "paladin_state": 298,
+  "zeal_state": 299
+}

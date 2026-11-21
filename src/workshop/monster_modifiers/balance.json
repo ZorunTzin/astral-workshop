@@ -1,0 +1,236 @@
+{
+  "version": "0.18.1",
+  "status": "implemented-awaiting-combat-test",
+  "unchanged": [
+    "Extra Strong",
+    "Cursed",
+    "Mana Burn",
+    "Aura Enchanted",
+    "Champion variants"
+  ],
+  "normalRules": {
+    "nativeChampionChance": true,
+    "nativeAffixCount": false,
+    "excludeCombinations": false,
+    "duplicates": false,
+    "affixCountByDifficulty": [
+      [
+        1,
+        2
+      ],
+      [
+        2,
+        4
+      ],
+      [
+        3,
+        5
+      ]
+    ],
+    "fixedBossAffixesPreserved": true,
+    "damagePercentPerModifier": 5,
+    "lifePercentPerModifier": 25,
+    "bonusesAdditive": true
+  },
+  "modifiers": [
+    {
+      "id": "fast",
+      "name": "Extra Fast",
+      "native": 6,
+      "movementBonusPercent": 200,
+      "attackSpeedBonusPercent": 200
+    },
+    {
+      "id": "gifted",
+      "name": "Magically Gifted",
+      "native": 8,
+      "resistanceBonus": 20,
+      "intervalFrames": 25,
+      "spells": [
+        "Fire Ball",
+        "Lightning",
+        "Ice Bolt"
+      ],
+      "damageBase": 30,
+      "damagePerMonsterLevel": 8
+    },
+    {
+      "id": "fire",
+      "name": "Fire Enchanted",
+      "native": 9,
+      "burnFrames": 75,
+      "deathDelayFrames": 75,
+      "deathRadiusYards": 6,
+      "deathDamageBase": 100,
+      "deathDamagePerMonsterLevel": 30
+    },
+    {
+      "id": "lightning",
+      "name": "Lightning Enchanted",
+      "native": 17,
+      "intervalFrames": 25,
+      "spell": "Chain Lightning",
+      "damageBase": 15,
+      "damagePerMonsterLevel": 4
+    },
+    {
+      "id": "cold",
+      "name": "Cold Enchanted",
+      "native": 18,
+      "intervalFrames": 25,
+      "spell": "Ice Bolt",
+      "damageBase": 15,
+      "damagePerMonsterLevel": 4
+    },
+    {
+      "id": "teleport",
+      "name": "Teleportation",
+      "native": 26,
+      "intervalFrames": 100,
+      "healPercent": 5
+    },
+    {
+      "id": "spectral",
+      "name": "Spectral Hit",
+      "native": 27,
+      "hitsPerBurst": 4,
+      "radiusYards": 3
+    },
+    {
+      "id": "stone",
+      "name": "Stone Skin",
+      "native": 28,
+      "damageTakenPercent": 25
+    },
+    {
+      "id": "multishot",
+      "name": "Multiple Shots",
+      "native": 29,
+      "projectiles": 5
+    },
+    {
+      "id": "poison",
+      "name": "Plaguebearer",
+      "weight": 6,
+      "intervalFrames": 50,
+      "poolDurationFrames": 75,
+      "poolRadiusYards": 2,
+      "deathPools": 3,
+      "initialDelayFrames": 25
+    },
+    {
+      "id": "gravity",
+      "name": "Gravity Core",
+      "weight": 6,
+      "intervalFrames": 125,
+      "warningFrames": 25,
+      "radiusYards": 16,
+      "slowPercent": 30,
+      "initialDelayFrames": 25,
+      "pullDistanceFraction": "2/3"
+    },
+    {
+      "id": "mirror",
+      "name": "Mirror Image",
+      "weight": 6,
+      "intervalFrames": 200,
+      "count": 2,
+      "durationFrames": 150,
+      "lifePercent": 25,
+      "damagePercent": 35,
+      "initialDelayFrames": 25
+    },
+    {
+      "id": "leader",
+      "name": "Pack Leader",
+      "weight": 6,
+      "intervalFrames": 200,
+      "maximumLiveAdds": 4,
+      "damageAuraPercent": 30,
+      "initialDelayFrames": 25
+    },
+    {
+      "id": "glitter",
+      "name": "Glittering",
+      "weight": 6,
+      "lootRolls": 2
+    },
+    {
+      "id": "raid",
+      "name": "Raid Boss",
+      "weight": 1,
+      "allOtherModifiers": true,
+      "lootRolls": 5,
+      "lootStacksWithGlittering": false
+    },
+    {
+      "id": "totems",
+      "name": "Totemic",
+      "weight": 6,
+      "intervalFrames": 75,
+      "maximumLiveTotems": 3,
+      "durationFrames": 250,
+      "radiusYards": 8,
+      "damageTakenPercent": 10,
+      "lifeRegenerationPercentPerSecond": 10,
+      "totemLifePercent": 2,
+      "protectOtherTotems": false
+    },
+    {
+      "id": "duelist",
+      "name": "Duelist",
+      "weight": 6,
+      "radiusYards": 8,
+      "requiresAttackerInside": true,
+      "petUsesOwnerPosition": true,
+      "visualRefreshFrames": 20,
+      "visualLifetimeFrames": 40,
+      "visualNeedsEnemyTarget": false
+    },
+    {
+      "id": "ritualist",
+      "name": "Ritualist",
+      "weight": 6,
+      "ritualSeconds": 10,
+      "stones": 3,
+      "stoneLifePercent": 5,
+      "oncePerMonster": true,
+      "summonSeconds": 60,
+      "lifePercentByRemainingStones": [
+        0,
+        100,
+        200,
+        400
+      ],
+      "damagePercentByRemainingStones": [
+        0,
+        125,
+        200,
+        300
+      ]
+    },
+    {
+      "id": "corpseeater",
+      "name": "Corpse Eater",
+      "weight": 6,
+      "radiusYards": 8,
+      "intervalFrames": 75,
+      "healPercent": 100,
+      "consumesCorpses": true,
+      "excludePrivateHelpers": true
+    }
+  ],
+  "implementation": {
+    "enabledInGame": true,
+    "portableTests": "passed",
+    "nativeBaseBridge": "0.16.3: fixed-point AoE, native projectile publication, corpse-mode death detection, difficulty ranges and per-affix life/damage. Gameplay validation pending.",
+    "privateSpells": "5 isolated monster spells",
+    "remaining": [],
+    "limitations": [
+      "Combat behavior and the final in-game caption layout still require gameplay confirmation."
+    ],
+    "modifierCaptions": "Ten custom modifier names; existing native text preserved.",
+    "areaHazards": "Native impact damage enabled by clearing inherited Explosion flag; accuracy-independent native spell hit with resistance processing. Gameplay confirmation pending.",
+    "superuniqueRollSafety": "Missing override maps use a valid empty native weight-map header; supplied native maps are forwarded unchanged."
+  }
+}

@@ -1,0 +1,3 @@
+# These files are identity-checked byte for byte by the scoped integrations.
+bank.txt -text
+src/workshop/integration/upstream/** -text

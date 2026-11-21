@@ -1,0 +1,1533 @@
+[
+  {
+    "key": "MonsterLife",
+    "name": "Enduring foes",
+    "effect": "Monster maximum life",
+    "base": 20,
+    "cap": 1000000,
+    "positive": false,
+    "stats": [],
+    "kind": "life",
+    "unit": "%",
+    "uncapped": true,
+    "tiers": [
+      20,
+      40,
+      60,
+      80,
+      120
+    ],
+    "enabled": true
+  },
+  {
+    "key": "MonsterDamage",
+    "name": "Brutal foes",
+    "effect": "Monster damage",
+    "base": 10,
+    "cap": 1000000,
+    "positive": false,
+    "stats": [],
+    "kind": "damage",
+    "unit": "%",
+    "uncapped": true,
+    "tiers": [
+      10,
+      20,
+      30,
+      40,
+      60
+    ],
+    "enabled": true
+  },
+  {
+    "key": "MonsterSpeed",
+    "name": "Restless foes",
+    "effect": "Monster movement speed",
+    "base": 10,
+    "cap": 1000000,
+    "positive": false,
+    "stats": [
+      [
+        67,
+        1
+      ]
+    ],
+    "kind": "stat",
+    "unit": "%",
+    "uncapped": true,
+    "tiers": [
+      10,
+      20,
+      30,
+      40,
+      60
+    ],
+    "enabled": true
+  },
+  {
+    "key": "PlayerLife",
+    "name": "Vitality",
+    "effect": "Your maximum life",
+    "base": 3,
+    "cap": 1000000,
+    "positive": true,
+    "stats": [
+      [
+        76,
+        1
+      ]
+    ],
+    "kind": "stat",
+    "unit": "%",
+    "uncapped": true,
+    "tiers": [
+      3,
+      6,
+      9,
+      12,
+      20
+    ],
+    "enabled": true
+  },
+  {
+    "key": "PlayerDamage",
+    "name": "Weapon power",
+    "effect": "Your weapon damage",
+    "base": 12,
+    "cap": 1000000,
+    "positive": true,
+    "stats": [
+      [
+        25,
+        1
+      ]
+    ],
+    "kind": "stat",
+    "unit": "%",
+    "uncapped": true,
+    "tiers": [
+      12,
+      24,
+      36,
+      48,
+      72
+    ],
+    "enabled": true
+  },
+  {
+    "key": "PlayerCast",
+    "name": "Spell haste",
+    "effect": "Your faster cast rate",
+    "base": 5,
+    "cap": 1000000,
+    "positive": true,
+    "stats": [
+      [
+        105,
+        1
+      ]
+    ],
+    "kind": "stat",
+    "unit": "%",
+    "uncapped": true,
+    "tiers": [
+      5,
+      10,
+      15,
+      20,
+      30
+    ],
+    "enabled": true
+  },
+  {
+    "key": "MonsterAttack",
+    "name": "Frenzy",
+    "effect": "Monster attack speed",
+    "base": 10,
+    "cap": 1000000,
+    "positive": false,
+    "stats": [
+      [
+        68,
+        1
+      ]
+    ],
+    "kind": "stat",
+    "unit": "%",
+    "uncapped": true,
+    "tiers": [
+      10,
+      20,
+      30,
+      40,
+      60
+    ],
+    "enabled": true
+  },
+  {
+    "key": "MonsterCast",
+    "name": "Fast casters",
+    "effect": "Monster cast speed",
+    "base": 10,
+    "cap": 1000000,
+    "positive": false,
+    "stats": [
+      [
+        105,
+        1
+      ]
+    ],
+    "kind": "stat",
+    "unit": "%",
+    "uncapped": true,
+    "tiers": [
+      10,
+      20,
+      30,
+      40,
+      60
+    ],
+    "enabled": true
+  },
+  {
+    "key": "MonsterAim",
+    "name": "Accurate foes",
+    "effect": "Monster attack rating",
+    "base": 15,
+    "cap": 1000000,
+    "positive": false,
+    "stats": [],
+    "kind": "aim",
+    "unit": "%",
+    "uncapped": true,
+    "tiers": [
+      15,
+      30,
+      45,
+      60,
+      90
+    ],
+    "enabled": true
+  },
+  {
+    "key": "MonsterArmor",
+    "name": "Armored foes",
+    "effect": "Monster defense",
+    "base": 20,
+    "cap": 1000000,
+    "positive": false,
+    "stats": [],
+    "kind": "armor",
+    "unit": "%",
+    "uncapped": true,
+    "tiers": [
+      20,
+      40,
+      60,
+      80,
+      120
+    ],
+    "enabled": true
+  },
+  {
+    "key": "MonsterResist",
+    "name": "Elemental skin",
+    "effect": "Monster elemental resistances",
+    "base": 10,
+    "cap": 100,
+    "positive": false,
+    "stats": [
+      [
+        39,
+        1
+      ],
+      [
+        41,
+        1
+      ],
+      [
+        43,
+        1
+      ],
+      [
+        45,
+        1
+      ]
+    ],
+    "kind": "resist",
+    "unit": "%",
+    "uncapped": false,
+    "tiers": [
+      10,
+      20,
+      30,
+      40,
+      60
+    ],
+    "enabled": true
+  },
+  {
+    "key": "MonsterPhysical",
+    "name": "Iron hide",
+    "effect": "Monster physical resistance",
+    "base": 5,
+    "cap": 100,
+    "positive": false,
+    "stats": [
+      [
+        36,
+        1
+      ]
+    ],
+    "kind": "resist",
+    "unit": "%",
+    "uncapped": false,
+    "tiers": [
+      5,
+      10,
+      15,
+      20,
+      30
+    ],
+    "enabled": true
+  },
+  {
+    "key": "MonsterRecovery",
+    "name": "Unyielding foes",
+    "effect": "Monster hit recovery",
+    "base": 20,
+    "cap": 1000000,
+    "positive": false,
+    "stats": [
+      [
+        99,
+        1
+      ]
+    ],
+    "kind": "stat",
+    "unit": "%",
+    "uncapped": true,
+    "tiers": [
+      20,
+      40,
+      60,
+      80,
+      120
+    ],
+    "enabled": true
+  },
+  {
+    "key": "MonsterRegen",
+    "name": "Regenerating foes",
+    "effect": "Monster life regenerated per second",
+    "base": 1,
+    "cap": 100,
+    "positive": false,
+    "stats": [],
+    "kind": "regen",
+    "unit": "%",
+    "uncapped": false,
+    "tiers": [
+      1,
+      2,
+      3,
+      4,
+      6
+    ],
+    "enabled": true
+  },
+  {
+    "key": "MonsterLeech",
+    "name": "Bloodthirsty foes",
+    "effect": "Monster life healed on hit",
+    "base": 10,
+    "cap": 100,
+    "positive": false,
+    "stats": [],
+    "kind": "heal",
+    "unit": "%",
+    "uncapped": false,
+    "tiers": [
+      10,
+      20,
+      30,
+      40,
+      60
+    ],
+    "enabled": true
+  },
+  {
+    "key": "MonsterRage",
+    "name": "Last stand",
+    "effect": "Monster damage below half life",
+    "base": 20,
+    "cap": 1000000,
+    "positive": false,
+    "stats": [],
+    "kind": "rage",
+    "unit": "%",
+    "uncapped": true,
+    "tiers": [
+      20,
+      40,
+      60,
+      80,
+      120
+    ],
+    "enabled": true
+  },
+  {
+    "key": "MonsterCount",
+    "name": "Outnumbered",
+    "effect": "Additional wave enemies",
+    "base": 10,
+    "cap": 1000000,
+    "positive": false,
+    "stats": [],
+    "kind": "count",
+    "unit": "%",
+    "uncapped": true,
+    "tiers": [
+      10,
+      20,
+      30,
+      40,
+      60
+    ],
+    "enabled": true
+  },
+  {
+    "key": "MonsterFire",
+    "name": "Fire weapons",
+    "effect": "Monster fire attack damage",
+    "base": 50,
+    "cap": 1000000,
+    "positive": false,
+    "stats": [
+      [
+        48,
+        1
+      ],
+      [
+        49,
+        2
+      ]
+    ],
+    "kind": "stat",
+    "unit": " damage",
+    "uncapped": true,
+    "tiers": [
+      50,
+      100,
+      150,
+      200,
+      300
+    ],
+    "enabled": true
+  },
+  {
+    "key": "MonsterCold",
+    "name": "Frost weapons",
+    "effect": "Monster cold attack damage",
+    "base": 50,
+    "cap": 1000000,
+    "positive": false,
+    "stats": [
+      [
+        54,
+        1
+      ],
+      [
+        55,
+        2
+      ]
+    ],
+    "kind": "stat",
+    "unit": " damage",
+    "uncapped": true,
+    "tiers": [
+      50,
+      100,
+      150,
+      200,
+      300
+    ],
+    "enabled": true
+  },
+  {
+    "key": "MonsterLightning",
+    "name": "Storm weapons",
+    "effect": "Monster lightning attack damage",
+    "base": 50,
+    "cap": 1000000,
+    "positive": false,
+    "stats": [
+      [
+        50,
+        1
+      ],
+      [
+        51,
+        2
+      ]
+    ],
+    "kind": "stat",
+    "unit": " damage",
+    "uncapped": true,
+    "tiers": [
+      50,
+      100,
+      150,
+      200,
+      300
+    ],
+    "enabled": true
+  },
+  {
+    "key": "MonsterPoison",
+    "name": "Poison weapons",
+    "effect": "Monster poison damage per second",
+    "base": 50,
+    "cap": 1000000,
+    "positive": false,
+    "stats": [
+      [
+        57,
+        1
+      ],
+      [
+        58,
+        1
+      ]
+    ],
+    "kind": "poison",
+    "unit": " damage",
+    "uncapped": true,
+    "tiers": [
+      50,
+      100,
+      150,
+      200,
+      300
+    ],
+    "enabled": true
+  },
+  {
+    "key": "PlayerMana",
+    "name": "Spirit",
+    "effect": "Maximum mana",
+    "base": 8,
+    "cap": 1000000,
+    "positive": true,
+    "stats": [
+      [
+        77,
+        1
+      ]
+    ],
+    "kind": "stat",
+    "unit": "%",
+    "uncapped": true,
+    "tiers": [
+      8,
+      16,
+      24,
+      32,
+      48
+    ],
+    "enabled": true
+  },
+  {
+    "key": "PlayerRegen",
+    "name": "Recovery",
+    "effect": "Replenish life",
+    "base": 25,
+    "cap": 1000000,
+    "positive": true,
+    "stats": [
+      [
+        74,
+        1
+      ]
+    ],
+    "kind": "stat",
+    "unit": "",
+    "uncapped": true,
+    "tiers": [
+      25,
+      50,
+      75,
+      100,
+      150
+    ],
+    "enabled": true
+  },
+  {
+    "key": "PlayerManaRegen",
+    "name": "Clarity",
+    "effect": "Mana regeneration",
+    "base": 25,
+    "cap": 1000000,
+    "positive": true,
+    "stats": [
+      [
+        27,
+        1
+      ]
+    ],
+    "kind": "stat",
+    "unit": "%",
+    "uncapped": true,
+    "tiers": [
+      25,
+      50,
+      75,
+      100,
+      150
+    ],
+    "enabled": true
+  },
+  {
+    "key": "PlayerLifeKill",
+    "name": "Blood harvest",
+    "effect": "Life after kill",
+    "base": 10,
+    "cap": 1000000,
+    "positive": true,
+    "stats": [
+      [
+        86,
+        1
+      ]
+    ],
+    "kind": "stat",
+    "unit": "",
+    "uncapped": true,
+    "tiers": [
+      10,
+      20,
+      30,
+      40,
+      60
+    ],
+    "enabled": true
+  },
+  {
+    "key": "PlayerManaKill",
+    "name": "Soul harvest",
+    "effect": "Mana after kill",
+    "base": 10,
+    "cap": 1000000,
+    "positive": true,
+    "stats": [
+      [
+        138,
+        1
+      ]
+    ],
+    "kind": "stat",
+    "unit": "",
+    "uncapped": true,
+    "tiers": [
+      10,
+      20,
+      30,
+      40,
+      60
+    ],
+    "enabled": true
+  },
+  {
+    "key": "PlayerLeech",
+    "name": "Vampirism",
+    "effect": "Life stolen per hit",
+    "base": 5,
+    "cap": 1000000,
+    "positive": true,
+    "stats": [
+      [
+        60,
+        1
+      ]
+    ],
+    "kind": "stat",
+    "unit": "%",
+    "uncapped": true,
+    "tiers": [
+      5,
+      10,
+      15,
+      20,
+      30
+    ],
+    "enabled": true
+  },
+  {
+    "key": "PlayerManaLeech",
+    "name": "Essence theft",
+    "effect": "Mana stolen per hit",
+    "base": 5,
+    "cap": 1000000,
+    "positive": true,
+    "stats": [
+      [
+        62,
+        1
+      ]
+    ],
+    "kind": "stat",
+    "unit": "%",
+    "uncapped": true,
+    "tiers": [
+      5,
+      10,
+      15,
+      20,
+      30
+    ],
+    "enabled": true
+  },
+  {
+    "key": "PlayerArmor",
+    "name": "Bulwark",
+    "effect": "Enhanced defense",
+    "base": 15,
+    "cap": 1000000,
+    "positive": true,
+    "stats": [
+      [
+        16,
+        1
+      ]
+    ],
+    "kind": "stat",
+    "unit": "%",
+    "uncapped": true,
+    "tiers": [
+      15,
+      30,
+      45,
+      60,
+      90
+    ],
+    "enabled": true
+  },
+  {
+    "key": "PlayerDR",
+    "name": "Unbreakable",
+    "effect": "Physical damage reduction",
+    "base": 5,
+    "cap": 100,
+    "positive": true,
+    "stats": [
+      [
+        36,
+        1
+      ]
+    ],
+    "kind": "stat",
+    "unit": "%",
+    "uncapped": false,
+    "tiers": [
+      5,
+      10,
+      15,
+      20,
+      30
+    ],
+    "enabled": true
+  },
+  {
+    "key": "PlayerResist",
+    "name": "Elemental guard",
+    "effect": "All elemental resistances",
+    "base": 10,
+    "cap": 1000000,
+    "positive": true,
+    "stats": [
+      [
+        39,
+        1
+      ],
+      [
+        41,
+        1
+      ],
+      [
+        43,
+        1
+      ],
+      [
+        45,
+        1
+      ]
+    ],
+    "kind": "stat",
+    "unit": "%",
+    "uncapped": true,
+    "tiers": [
+      10,
+      20,
+      30,
+      40,
+      60
+    ],
+    "enabled": true
+  },
+  {
+    "key": "PlayerMaxResist",
+    "name": "Higher protection",
+    "effect": "Maximum elemental resistances",
+    "base": 1,
+    "cap": 100,
+    "positive": true,
+    "stats": [
+      [
+        40,
+        1
+      ],
+      [
+        42,
+        1
+      ],
+      [
+        44,
+        1
+      ],
+      [
+        46,
+        1
+      ]
+    ],
+    "kind": "stat",
+    "unit": "%",
+    "uncapped": false,
+    "tiers": [
+      1,
+      2,
+      3,
+      4,
+      6
+    ],
+    "enabled": true
+  },
+  {
+    "key": "PlayerRecovery",
+    "name": "Steadfast",
+    "effect": "Faster hit recovery",
+    "base": 5,
+    "cap": 1000000,
+    "positive": true,
+    "stats": [
+      [
+        99,
+        1
+      ]
+    ],
+    "kind": "stat",
+    "unit": "%",
+    "uncapped": true,
+    "tiers": [
+      5,
+      10,
+      15,
+      20,
+      30
+    ],
+    "enabled": false
+  },
+  {
+    "key": "PlayerStrength",
+    "name": "Strength",
+    "effect": "Strength (percent)",
+    "base": 5,
+    "cap": 1000000,
+    "positive": true,
+    "stats": [
+      [
+        0,
+        1
+      ]
+    ],
+    "kind": "attribute",
+    "unit": "%",
+    "uncapped": true,
+    "tiers": [
+      5,
+      10,
+      15,
+      20,
+      30
+    ],
+    "enabled": true
+  },
+  {
+    "key": "PlayerDexterity",
+    "name": "Dexterity",
+    "effect": "Dexterity (percent)",
+    "base": 5,
+    "cap": 1000000,
+    "positive": true,
+    "stats": [
+      [
+        2,
+        1
+      ]
+    ],
+    "kind": "attribute",
+    "unit": "%",
+    "uncapped": true,
+    "tiers": [
+      5,
+      10,
+      15,
+      20,
+      30
+    ],
+    "enabled": true
+  },
+  {
+    "key": "PlayerEnergy",
+    "name": "Energy",
+    "effect": "Energy (percent)",
+    "base": 5,
+    "cap": 1000000,
+    "positive": true,
+    "stats": [
+      [
+        1,
+        1
+      ]
+    ],
+    "kind": "attribute",
+    "unit": "%",
+    "uncapped": true,
+    "tiers": [
+      5,
+      10,
+      15,
+      20,
+      30
+    ],
+    "enabled": true
+  },
+  {
+    "key": "PlayerStats",
+    "name": "Perfection",
+    "effect": "All attributes (percent)",
+    "base": 3,
+    "cap": 1000000,
+    "positive": true,
+    "stats": [
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        2,
+        1
+      ],
+      [
+        3,
+        1
+      ]
+    ],
+    "kind": "attribute",
+    "unit": "%",
+    "uncapped": true,
+    "tiers": [
+      3,
+      6,
+      9,
+      12,
+      20
+    ],
+    "enabled": true
+  },
+  {
+    "key": "PlayerSpeed",
+    "name": "Haste",
+    "effect": "Movement speed",
+    "base": 10,
+    "cap": 1000000,
+    "positive": true,
+    "stats": [
+      [
+        96,
+        1
+      ]
+    ],
+    "kind": "stat",
+    "unit": "%",
+    "uncapped": true,
+    "tiers": [
+      10,
+      20,
+      30,
+      40,
+      60
+    ],
+    "enabled": true
+  },
+  {
+    "key": "PlayerAttack",
+    "name": "Attack lust",
+    "effect": "Attack speed",
+    "base": 10,
+    "cap": 1000000,
+    "positive": true,
+    "stats": [
+      [
+        93,
+        1
+      ]
+    ],
+    "kind": "stat",
+    "unit": "%",
+    "uncapped": true,
+    "tiers": [
+      10,
+      20,
+      30,
+      40,
+      60
+    ],
+    "enabled": true
+  },
+  {
+    "key": "PlayerAim",
+    "name": "Precision",
+    "effect": "Attack rating",
+    "base": 15,
+    "cap": 1000000,
+    "positive": true,
+    "stats": [
+      [
+        119,
+        1
+      ]
+    ],
+    "kind": "stat",
+    "unit": "%",
+    "uncapped": true,
+    "tiers": [
+      15,
+      30,
+      45,
+      60,
+      90
+    ],
+    "enabled": true
+  },
+  {
+    "key": "PlayerFlat",
+    "name": "Sharp blades",
+    "effect": "Minimum and maximum damage",
+    "base": 25,
+    "cap": 1000000,
+    "positive": true,
+    "stats": [
+      [
+        21,
+        1
+      ],
+      [
+        22,
+        1
+      ]
+    ],
+    "kind": "stat",
+    "unit": "",
+    "uncapped": true,
+    "tiers": [
+      25,
+      50,
+      75,
+      100,
+      150
+    ],
+    "enabled": true
+  },
+  {
+    "key": "PlayerFire",
+    "name": "Fire arts",
+    "effect": "Fire skill damage",
+    "base": 5,
+    "cap": 1000000,
+    "positive": true,
+    "stats": [
+      [
+        329,
+        1
+      ]
+    ],
+    "kind": "stat",
+    "unit": "%",
+    "uncapped": true,
+    "tiers": [
+      5,
+      10,
+      15,
+      20,
+      30
+    ],
+    "enabled": true
+  },
+  {
+    "key": "PlayerCold",
+    "name": "Cold arts",
+    "effect": "Cold skill damage",
+    "base": 5,
+    "cap": 1000000,
+    "positive": true,
+    "stats": [
+      [
+        331,
+        1
+      ]
+    ],
+    "kind": "stat",
+    "unit": "%",
+    "uncapped": true,
+    "tiers": [
+      5,
+      10,
+      15,
+      20,
+      30
+    ],
+    "enabled": true
+  },
+  {
+    "key": "PlayerLightning",
+    "name": "Storm arts",
+    "effect": "Lightning skill damage",
+    "base": 5,
+    "cap": 1000000,
+    "positive": true,
+    "stats": [
+      [
+        330,
+        1
+      ]
+    ],
+    "kind": "stat",
+    "unit": "%",
+    "uncapped": true,
+    "tiers": [
+      5,
+      10,
+      15,
+      20,
+      30
+    ],
+    "enabled": true
+  },
+  {
+    "key": "PlayerPoison",
+    "name": "Poison arts",
+    "effect": "Poison skill damage",
+    "base": 5,
+    "cap": 1000000,
+    "positive": true,
+    "stats": [
+      [
+        332,
+        1
+      ]
+    ],
+    "kind": "stat",
+    "unit": "%",
+    "uncapped": true,
+    "tiers": [
+      5,
+      10,
+      15,
+      20,
+      30
+    ],
+    "enabled": true
+  },
+  {
+    "key": "PlayerCrushing",
+    "name": "Destroyer",
+    "effect": "Crushing Blow",
+    "base": 5,
+    "cap": 100,
+    "positive": true,
+    "stats": [
+      [
+        136,
+        1
+      ]
+    ],
+    "kind": "stat",
+    "unit": "%",
+    "uncapped": false,
+    "tiers": [
+      5,
+      10,
+      15,
+      20,
+      30
+    ],
+    "enabled": true
+  },
+  {
+    "key": "PlayerDeadly",
+    "name": "Precise death",
+    "effect": "Deadly Strike",
+    "base": 5,
+    "cap": 100,
+    "positive": true,
+    "stats": [
+      [
+        141,
+        1
+      ]
+    ],
+    "kind": "stat",
+    "unit": "%",
+    "uncapped": false,
+    "tiers": [
+      5,
+      10,
+      15,
+      20,
+      30
+    ],
+    "enabled": true
+  },
+  {
+    "key": "PlayerBleed",
+    "name": "Bloodletting",
+    "effect": "Chance to cause bleeding",
+    "base": 5,
+    "cap": 100,
+    "positive": true,
+    "stats": [
+      [
+        256,
+        1
+      ]
+    ],
+    "kind": "stat",
+    "unit": "%",
+    "uncapped": false,
+    "tiers": [
+      5,
+      10,
+      15,
+      20,
+      30
+    ],
+    "enabled": true
+  },
+  {
+    "key": "PlayerImpale",
+    "name": "Impaler",
+    "effect": "Chance to impale",
+    "base": 5,
+    "cap": 100,
+    "positive": true,
+    "stats": [
+      [
+        257,
+        1
+      ]
+    ],
+    "kind": "stat",
+    "unit": "%",
+    "uncapped": false,
+    "tiers": [
+      5,
+      10,
+      15,
+      20,
+      30
+    ],
+    "enabled": true
+  },
+  {
+    "key": "PlayerPierce",
+    "name": "Piercing shots",
+    "effect": "Pierce chance",
+    "base": 10,
+    "cap": 100,
+    "positive": true,
+    "stats": [
+      [
+        156,
+        1
+      ]
+    ],
+    "kind": "stat",
+    "unit": "%",
+    "uncapped": false,
+    "tiers": [
+      10,
+      20,
+      30,
+      40,
+      60
+    ],
+    "enabled": true
+  },
+  {
+    "key": "ChainReaction",
+    "name": "Chain reaction",
+    "effect": "Chain Lightning chance on hit",
+    "base": 2,
+    "cap": 100,
+    "positive": true,
+    "stats": [],
+    "kind": "proc",
+    "unit": "%",
+    "uncapped": false,
+    "tiers": [
+      2,
+      4,
+      6,
+      8,
+      12
+    ],
+    "enabled": true
+  },
+  {
+    "key": "FireSpark",
+    "name": "Fire spark",
+    "effect": "Fire Ball chance on hit",
+    "base": 2,
+    "cap": 100,
+    "positive": true,
+    "stats": [],
+    "kind": "proc",
+    "unit": "%",
+    "uncapped": false,
+    "tiers": [
+      2,
+      4,
+      6,
+      8,
+      12
+    ],
+    "enabled": true
+  },
+  {
+    "key": "FrostPulse",
+    "name": "Frost pulse",
+    "effect": "Frost Nova chance on hit",
+    "base": 2,
+    "cap": 100,
+    "positive": true,
+    "stats": [],
+    "kind": "proc",
+    "unit": "%",
+    "uncapped": false,
+    "tiers": [
+      2,
+      4,
+      6,
+      8,
+      12
+    ],
+    "enabled": true
+  },
+  {
+    "key": "ChampionWave",
+    "name": "Champion wave",
+    "effect": "Next wave: champions only",
+    "base": 1,
+    "cap": 1,
+    "positive": false,
+    "stats": [],
+    "kind": "wave",
+    "unit": "",
+    "uncapped": false,
+    "tier": 3,
+    "tiers": [
+      1,
+      2,
+      3,
+      4,
+      6
+    ],
+    "enabled": true
+  },
+  {
+    "key": "EliteWave",
+    "name": "Elite wave",
+    "effect": "Next wave: elites with one modifier each",
+    "base": 1,
+    "cap": 1,
+    "positive": false,
+    "stats": [],
+    "kind": "wave",
+    "unit": "",
+    "uncapped": false,
+    "tier": 4,
+    "tiers": [
+      1,
+      2,
+      3,
+      4,
+      6
+    ],
+    "enabled": true
+  },
+  {
+    "key": "MonsterMagic",
+    "name": "Magic weapons",
+    "effect": "Monster magic attack damage",
+    "base": 50,
+    "tiers": [
+      50,
+      100,
+      150,
+      200,
+      300
+    ],
+    "cap": 1000000,
+    "positive": false,
+    "stats": [
+      [
+        52,
+        1
+      ],
+      [
+        53,
+        2
+      ]
+    ],
+    "kind": "stat",
+    "unit": " damage",
+    "uncapped": true,
+    "enabled": true
+  },
+  {
+    "key": "MonsterPhysicalWeapon",
+    "name": "Physical weapons",
+    "effect": "Monster physical attack damage",
+    "base": 50,
+    "tiers": [
+      50,
+      100,
+      150,
+      200,
+      300
+    ],
+    "cap": 1000000,
+    "positive": false,
+    "stats": [
+      [
+        21,
+        1
+      ],
+      [
+        22,
+        2
+      ],
+      [
+        23,
+        1
+      ],
+      [
+        24,
+        2
+      ]
+    ],
+    "kind": "stat",
+    "unit": " damage",
+    "uncapped": true,
+    "enabled": true
+  },
+  {
+    "key": "PlayerVitality",
+    "name": "Constitution",
+    "effect": "Vitality (percent)",
+    "base": 5,
+    "tiers": [
+      5,
+      10,
+      15,
+      20,
+      30
+    ],
+    "cap": 1000000,
+    "positive": true,
+    "stats": [
+      [
+        3,
+        1
+      ]
+    ],
+    "kind": "attribute",
+    "unit": "%",
+    "uncapped": true,
+    "enabled": true
+  },
+  {
+    "key": "SealChampions",
+    "name": "Champion population",
+    "effect": "Additional Champion chance per enemy",
+    "base": 5,
+    "tiers": [
+      5,
+      10,
+      15,
+      20,
+      30
+    ],
+    "cap": 100,
+    "positive": false,
+    "stats": [],
+    "kind": "seal",
+    "unit": "%",
+    "uncapped": false,
+    "enabled": false
+  },
+  {
+    "key": "SealElites",
+    "name": "Elite population",
+    "effect": "Additional Elite chance per enemy",
+    "base": 2,
+    "tiers": [
+      2,
+      4,
+      6,
+      8,
+      12
+    ],
+    "cap": 100,
+    "positive": false,
+    "stats": [],
+    "kind": "seal",
+    "unit": "%",
+    "uncapped": false,
+    "enabled": false
+  },
+  {
+    "key": "LootGoblinWave",
+    "name": "Loot goblin wave",
+    "effect": "The next wave is only loot goblins",
+    "base": 1,
+    "tiers": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "cap": 1,
+    "positive": true,
+    "stats": [],
+    "kind": "wave",
+    "unit": "",
+    "uncapped": false,
+    "enabled": true
+  }
+]

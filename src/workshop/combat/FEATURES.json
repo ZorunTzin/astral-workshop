@@ -1,0 +1,21 @@
+{
+  "legacy": {
+    "100": 560,
+    "105": 561,
+    "110": 562,
+    "103": 563,
+    "109": 564
+  },
+  "nova_skill": 565,
+  "nova_missile": 1019,
+  "ground_state": 297,
+  "stats": {
+    "workshop_reservation_efficiency": 496,
+    "workshop_aura_effect": 497,
+    "workshop_ground_physical": 498,
+    "workshop_retribution_charge": 499,
+    "workshop_guardian_life": 500,
+    "workshop_guardian_min_damage": 501,
+    "workshop_guardian_max_damage": 502
+  }
+}

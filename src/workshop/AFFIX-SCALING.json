@@ -1,0 +1,950 @@
+[
+  {
+    "code": "ac",
+    "propertyId": 0,
+    "kind": 1,
+    "minimumCap": 0
+  },
+  {
+    "code": "ac-miss",
+    "propertyId": 1,
+    "kind": 1,
+    "minimumCap": 0
+  },
+  {
+    "code": "red-dmg",
+    "propertyId": 3,
+    "kind": 1,
+    "minimumCap": 0
+  },
+  {
+    "code": "red-dmg%",
+    "propertyId": 4,
+    "kind": 1,
+    "minimumCap": 0
+  },
+  {
+    "code": "ac%",
+    "propertyId": 5,
+    "kind": 1,
+    "minimumCap": 0
+  },
+  {
+    "code": "red-mag",
+    "propertyId": 6,
+    "kind": 1,
+    "minimumCap": 0
+  },
+  {
+    "code": "str",
+    "propertyId": 7,
+    "kind": 1,
+    "minimumCap": 0
+  },
+  {
+    "code": "dex",
+    "propertyId": 8,
+    "kind": 1,
+    "minimumCap": 0
+  },
+  {
+    "code": "vit",
+    "propertyId": 9,
+    "kind": 1,
+    "minimumCap": 0
+  },
+  {
+    "code": "enr",
+    "propertyId": 10,
+    "kind": 1,
+    "minimumCap": 0
+  },
+  {
+    "code": "mana",
+    "propertyId": 11,
+    "kind": 1,
+    "minimumCap": 0
+  },
+  {
+    "code": "mana%",
+    "propertyId": 12,
+    "kind": 1,
+    "minimumCap": 0
+  },
+  {
+    "code": "hp",
+    "propertyId": 13,
+    "kind": 1,
+    "minimumCap": 0
+  },
+  {
+    "code": "hp%",
+    "propertyId": 14,
+    "kind": 1,
+    "minimumCap": 0
+  },
+  {
+    "code": "att",
+    "propertyId": 15,
+    "kind": 1,
+    "minimumCap": 0
+  },
+  {
+    "code": "block",
+    "propertyId": 16,
+    "kind": 1,
+    "minimumCap": 0
+  },
+  {
+    "code": "cold-min",
+    "propertyId": 17,
+    "kind": 1,
+    "minimumCap": 0
+  },
+  {
+    "code": "cold-max",
+    "propertyId": 18,
+    "kind": 1,
+    "minimumCap": 0
+  },
+  {
+    "code": "cold-len",
+    "propertyId": 19,
+    "kind": 1,
+    "minimumCap": 0
+  },
+  {
+    "code": "fire-min",
+    "propertyId": 20,
+    "kind": 1,
+    "minimumCap": 0
+  },
+  {
+    "code": "fire-max",
+    "propertyId": 21,
+    "kind": 1,
+    "minimumCap": 0
+  },
+  {
+    "code": "ltng-min",
+    "propertyId": 22,
+    "kind": 1,
+    "minimumCap": 0
+  },
+  {
+    "code": "ltng-max",
+    "propertyId": 23,
+    "kind": 1,
+    "minimumCap": 0
+  },
+  {
+    "code": "dmg-min",
+    "propertyId": 27,
+    "kind": 1,
+    "minimumCap": 0
+  },
+  {
+    "code": "dmg-max",
+    "propertyId": 28,
+    "kind": 1,
+    "minimumCap": 0
+  },
+  {
+    "code": "dmg%",
+    "propertyId": 29,
+    "kind": 1,
+    "minimumCap": 0
+  },
+  {
+    "code": "dmg-to-mana",
+    "propertyId": 30,
+    "kind": 1,
+    "minimumCap": 0
+  },
+  {
+    "code": "res-fire",
+    "propertyId": 31,
+    "kind": 1,
+    "minimumCap": 0
+  },
+  {
+    "code": "res-fire-max",
+    "propertyId": 32,
+    "kind": 1,
+    "minimumCap": 0
+  },
+  {
+    "code": "res-ltng",
+    "propertyId": 33,
+    "kind": 1,
+    "minimumCap": 0
+  },
+  {
+    "code": "res-ltng-max",
+    "propertyId": 34,
+    "kind": 1,
+    "minimumCap": 0
+  },
+  {
+    "code": "res-cold",
+    "propertyId": 35,
+    "kind": 1,
+    "minimumCap": 0
+  },
+  {
+    "code": "res-cold-max",
+    "propertyId": 36,
+    "kind": 1,
+    "minimumCap": 0
+  },
+  {
+    "code": "res-mag",
+    "propertyId": 37,
+    "kind": 1,
+    "minimumCap": 0
+  },
+  {
+    "code": "res-pois",
+    "propertyId": 39,
+    "kind": 1,
+    "minimumCap": 0
+  },
+  {
+    "code": "res-pois-max",
+    "propertyId": 40,
+    "kind": 1,
+    "minimumCap": 0
+  },
+  {
+    "code": "res-all",
+    "propertyId": 41,
+    "kind": 1,
+    "minimumCap": 0
+  },
+  {
+    "code": "res-all-max",
+    "propertyId": 42,
+    "kind": 1,
+    "minimumCap": 0
+  },
+  {
+    "code": "abs-fire%",
+    "propertyId": 43,
+    "kind": 1,
+    "minimumCap": 0
+  },
+  {
+    "code": "abs-fire",
+    "propertyId": 44,
+    "kind": 1,
+    "minimumCap": 0
+  },
+  {
+    "code": "abs-ltng%",
+    "propertyId": 45,
+    "kind": 1,
+    "minimumCap": 0
+  },
+  {
+    "code": "abs-ltng",
+    "propertyId": 46,
+    "kind": 1,
+    "minimumCap": 0
+  },
+  {
+    "code": "abs-cold%",
+    "propertyId": 49,
+    "kind": 1,
+    "minimumCap": 0
+  },
+  {
+    "code": "abs-cold",
+    "propertyId": 50,
+    "kind": 1,
+    "minimumCap": 0
+  },
+  {
+    "code": "dur",
+    "propertyId": 51,
+    "kind": 1,
+    "minimumCap": 0
+  },
+  {
+    "code": "regen",
+    "propertyId": 53,
+    "kind": 1,
+    "minimumCap": 0
+  },
+  {
+    "code": "thorns",
+    "propertyId": 54,
+    "kind": 1,
+    "minimumCap": 0
+  },
+  {
+    "code": "swing1",
+    "propertyId": 55,
+    "kind": 1,
+    "minimumCap": 0
+  },
+  {
+    "code": "swing2",
+    "propertyId": 56,
+    "kind": 1,
+    "minimumCap": 0
+  },
+  {
+    "code": "swing3",
+    "propertyId": 57,
+    "kind": 1,
+    "minimumCap": 0
+  },
+  {
+    "code": "gold%",
+    "propertyId": 58,
+    "kind": 1,
+    "minimumCap": 0
+  },
+  {
+    "code": "mag%",
+    "propertyId": 59,
+    "kind": 1,
+    "minimumCap": 0
+  },
+  {
+    "code": "knock",
+    "propertyId": 60,
+    "kind": 0,
+    "minimumCap": 0
+  },
+  {
+    "code": "regen-mana",
+    "propertyId": 62,
+    "kind": 1,
+    "minimumCap": 0
+  },
+  {
+    "code": "manasteal",
+    "propertyId": 65,
+    "kind": 1,
+    "minimumCap": 0
+  },
+  {
+    "code": "lifesteal",
+    "propertyId": 66,
+    "kind": 1,
+    "minimumCap": 0
+  },
+  {
+    "code": "ama",
+    "propertyId": 67,
+    "kind": 1,
+    "minimumCap": 0
+  },
+  {
+    "code": "pal",
+    "propertyId": 68,
+    "kind": 1,
+    "minimumCap": 0
+  },
+  {
+    "code": "nec",
+    "propertyId": 69,
+    "kind": 1,
+    "minimumCap": 0
+  },
+  {
+    "code": "sor",
+    "propertyId": 70,
+    "kind": 1,
+    "minimumCap": 0
+  },
+  {
+    "code": "bar",
+    "propertyId": 71,
+    "kind": 1,
+    "minimumCap": 0
+  },
+  {
+    "code": "light",
+    "propertyId": 73,
+    "kind": 1,
+    "minimumCap": 0
+  },
+  {
+    "code": "ease",
+    "propertyId": 75,
+    "kind": 1,
+    "minimumCap": 0
+  },
+  {
+    "code": "move1",
+    "propertyId": 76,
+    "kind": 1,
+    "minimumCap": 0
+  },
+  {
+    "code": "move2",
+    "propertyId": 77,
+    "kind": 1,
+    "minimumCap": 0
+  },
+  {
+    "code": "move3",
+    "propertyId": 78,
+    "kind": 1,
+    "minimumCap": 0
+  },
+  {
+    "code": "balance1",
+    "propertyId": 79,
+    "kind": 1,
+    "minimumCap": 0
+  },
+  {
+    "code": "balance2",
+    "propertyId": 80,
+    "kind": 1,
+    "minimumCap": 0
+  },
+  {
+    "code": "balance3",
+    "propertyId": 81,
+    "kind": 1,
+    "minimumCap": 0
+  },
+  {
+    "code": "block2",
+    "propertyId": 83,
+    "kind": 1,
+    "minimumCap": 0
+  },
+  {
+    "code": "cast1",
+    "propertyId": 85,
+    "kind": 1,
+    "minimumCap": 0
+  },
+  {
+    "code": "cast2",
+    "propertyId": 86,
+    "kind": 1,
+    "minimumCap": 0
+  },
+  {
+    "code": "cast3",
+    "propertyId": 87,
+    "kind": 1,
+    "minimumCap": 0
+  },
+  {
+    "code": "res-pois-len",
+    "propertyId": 88,
+    "kind": 1,
+    "minimumCap": 0
+  },
+  {
+    "code": "howl",
+    "propertyId": 90,
+    "kind": 1,
+    "minimumCap": 255
+  },
+  {
+    "code": "stupidity",
+    "propertyId": 91,
+    "kind": 1,
+    "minimumCap": 0
+  },
+  {
+    "code": "ignore-ac",
+    "propertyId": 92,
+    "kind": 0,
+    "minimumCap": 0
+  },
+  {
+    "code": "reduce-ac",
+    "propertyId": 93,
+    "kind": 1,
+    "minimumCap": 0
+  },
+  {
+    "code": "noheal",
+    "propertyId": 94,
+    "kind": 0,
+    "minimumCap": 0
+  },
+  {
+    "code": "half-freeze",
+    "propertyId": 95,
+    "kind": 0,
+    "minimumCap": 0
+  },
+  {
+    "code": "att%",
+    "propertyId": 96,
+    "kind": 1,
+    "minimumCap": 0
+  },
+  {
+    "code": "dmg-demon",
+    "propertyId": 98,
+    "kind": 1,
+    "minimumCap": 0
+  },
+  {
+    "code": "dmg-undead",
+    "propertyId": 99,
+    "kind": 1,
+    "minimumCap": 0
+  },
+  {
+    "code": "att-demon",
+    "propertyId": 100,
+    "kind": 1,
+    "minimumCap": 0
+  },
+  {
+    "code": "att-undead",
+    "propertyId": 101,
+    "kind": 1,
+    "minimumCap": 0
+  },
+  {
+    "code": "allskills",
+    "propertyId": 104,
+    "kind": 1,
+    "minimumCap": 0
+  },
+  {
+    "code": "openwounds",
+    "propertyId": 107,
+    "kind": 1,
+    "minimumCap": 0
+  },
+  {
+    "code": "kick",
+    "propertyId": 109,
+    "kind": 1,
+    "minimumCap": 0
+  },
+  {
+    "code": "mana-kill",
+    "propertyId": 110,
+    "kind": 1,
+    "minimumCap": 0
+  },
+  {
+    "code": "deadly",
+    "propertyId": 113,
+    "kind": 1,
+    "minimumCap": 0
+  },
+  {
+    "code": "slow",
+    "propertyId": 114,
+    "kind": 1,
+    "minimumCap": 0
+  },
+  {
+    "code": "nofreeze",
+    "propertyId": 115,
+    "kind": 0,
+    "minimumCap": 0
+  },
+  {
+    "code": "stamdrain",
+    "propertyId": 116,
+    "kind": 1,
+    "minimumCap": 0
+  },
+  {
+    "code": "reanimate",
+    "propertyId": 117,
+    "kind": 1,
+    "minimumCap": 100
+  },
+  {
+    "code": "pierce",
+    "propertyId": 118,
+    "kind": 1,
+    "minimumCap": 0
+  },
+  {
+    "code": "dru",
+    "propertyId": 121,
+    "kind": 1,
+    "minimumCap": 0
+  },
+  {
+    "code": "ass",
+    "propertyId": 122,
+    "kind": 1,
+    "minimumCap": 0
+  },
+  {
+    "code": "skilltab",
+    "propertyId": 124,
+    "kind": 1,
+    "minimumCap": 0
+  },
+  {
+    "code": "aura",
+    "propertyId": 125,
+    "kind": 1,
+    "minimumCap": 100
+  },
+  {
+    "code": "hit-skill",
+    "propertyId": 127,
+    "kind": 4,
+    "minimumCap": 100
+  },
+  {
+    "code": "gethit-skill",
+    "propertyId": 128,
+    "kind": 4,
+    "minimumCap": 100
+  },
+  {
+    "code": "sock",
+    "propertyId": 133,
+    "kind": 3,
+    "minimumCap": 0
+  },
+  {
+    "code": "dmg-mag",
+    "propertyId": 136,
+    "kind": 1,
+    "minimumCap": 0
+  },
+  {
+    "code": "dmg-pois",
+    "propertyId": 138,
+    "kind": 1,
+    "minimumCap": 0
+  },
+  {
+    "code": "dmg-norm",
+    "propertyId": 140,
+    "kind": 1,
+    "minimumCap": 0
+  },
+  {
+    "code": "ac/lvl",
+    "propertyId": 141,
+    "kind": 2,
+    "minimumCap": 0
+  },
+  {
+    "code": "ac%/lvl",
+    "propertyId": 142,
+    "kind": 2,
+    "minimumCap": 0
+  },
+  {
+    "code": "hp/lvl",
+    "propertyId": 143,
+    "kind": 2,
+    "minimumCap": 0
+  },
+  {
+    "code": "mana/lvl",
+    "propertyId": 144,
+    "kind": 2,
+    "minimumCap": 0
+  },
+  {
+    "code": "dmg/lvl",
+    "propertyId": 145,
+    "kind": 2,
+    "minimumCap": 0
+  },
+  {
+    "code": "dmg%/lvl",
+    "propertyId": 146,
+    "kind": 2,
+    "minimumCap": 0
+  },
+  {
+    "code": "str/lvl",
+    "propertyId": 147,
+    "kind": 2,
+    "minimumCap": 0
+  },
+  {
+    "code": "dex/lvl",
+    "propertyId": 148,
+    "kind": 2,
+    "minimumCap": 0
+  },
+  {
+    "code": "att/lvl",
+    "propertyId": 151,
+    "kind": 2,
+    "minimumCap": 0
+  },
+  {
+    "code": "att%/lvl",
+    "propertyId": 152,
+    "kind": 2,
+    "minimumCap": 0
+  },
+  {
+    "code": "res-cold/lvl",
+    "propertyId": 157,
+    "kind": 2,
+    "minimumCap": 0
+  },
+  {
+    "code": "res-fire/lvl",
+    "propertyId": 158,
+    "kind": 2,
+    "minimumCap": 0
+  },
+  {
+    "code": "res-ltng/lvl",
+    "propertyId": 159,
+    "kind": 2,
+    "minimumCap": 0
+  },
+  {
+    "code": "res-pois/lvl",
+    "propertyId": 160,
+    "kind": 2,
+    "minimumCap": 0
+  },
+  {
+    "code": "thorns/lvl",
+    "propertyId": 165,
+    "kind": 2,
+    "minimumCap": 0
+  },
+  {
+    "code": "rep-dur",
+    "propertyId": 179,
+    "kind": 2,
+    "minimumCap": 0
+  },
+  {
+    "code": "rep-quant",
+    "propertyId": 180,
+    "kind": 2,
+    "minimumCap": 0
+  },
+  {
+    "code": "stack",
+    "propertyId": 181,
+    "kind": 1,
+    "minimumCap": 0
+  },
+  {
+    "code": "pierce-fire",
+    "propertyId": 232,
+    "kind": 1,
+    "minimumCap": 0
+  },
+  {
+    "code": "pierce-ltng",
+    "propertyId": 233,
+    "kind": 1,
+    "minimumCap": 0
+  },
+  {
+    "code": "pierce-cold",
+    "propertyId": 234,
+    "kind": 1,
+    "minimumCap": 0
+  },
+  {
+    "code": "pierce-pois",
+    "propertyId": 235,
+    "kind": 1,
+    "minimumCap": 0
+  },
+  {
+    "code": "indestruct",
+    "propertyId": 242,
+    "kind": 0,
+    "minimumCap": 0
+  },
+  {
+    "code": "charged",
+    "propertyId": 243,
+    "kind": 5,
+    "minimumCap": 0
+  },
+  {
+    "code": "extra-fire",
+    "propertyId": 244,
+    "kind": 1,
+    "minimumCap": 0
+  },
+  {
+    "code": "extra-ltng",
+    "propertyId": 245,
+    "kind": 1,
+    "minimumCap": 0
+  },
+  {
+    "code": "extra-cold",
+    "propertyId": 246,
+    "kind": 1,
+    "minimumCap": 0
+  },
+  {
+    "code": "extra-pois",
+    "propertyId": 247,
+    "kind": 1,
+    "minimumCap": 0
+  },
+  {
+    "code": "dmg-elem",
+    "propertyId": 248,
+    "kind": 1,
+    "minimumCap": 0
+  },
+  {
+    "code": "all-stats",
+    "propertyId": 251,
+    "kind": 1,
+    "minimumCap": 0
+  },
+  {
+    "code": "addxp",
+    "propertyId": 252,
+    "kind": 1,
+    "minimumCap": 0
+  },
+  {
+    "code": "heal-kill",
+    "propertyId": 253,
+    "kind": 1,
+    "minimumCap": 0
+  },
+  {
+    "code": "cheap",
+    "propertyId": 254,
+    "kind": 1,
+    "minimumCap": 0
+  },
+  {
+    "code": "death-skill",
+    "propertyId": 259,
+    "kind": 4,
+    "minimumCap": 100
+  },
+  {
+    "code": "levelup-skill",
+    "propertyId": 260,
+    "kind": 4,
+    "minimumCap": 100
+  },
+  {
+    "code": "skill-rand",
+    "propertyId": 261,
+    "kind": 2,
+    "minimumCap": 0
+  },
+  {
+    "code": "ethereal",
+    "propertyId": 264,
+    "kind": 0,
+    "minimumCap": 0
+  },
+  {
+    "code": "charge-noconsume",
+    "propertyId": 275,
+    "kind": 1,
+    "minimumCap": 100
+  },
+  {
+    "code": "war",
+    "propertyId": 276,
+    "kind": 1,
+    "minimumCap": 0
+  },
+  {
+    "code": "pierce-mag",
+    "propertyId": 278,
+    "kind": 1,
+    "minimumCap": 0
+  },
+  {
+    "code": "pierce-dmg",
+    "propertyId": 279,
+    "kind": 1,
+    "minimumCap": 0
+  },
+  {
+    "code": "str%",
+    "propertyId": 284,
+    "kind": 1,
+    "minimumCap": 0
+  },
+  {
+    "code": "dex%",
+    "propertyId": 285,
+    "kind": 1,
+    "minimumCap": 0
+  },
+  {
+    "code": "vit%",
+    "propertyId": 286,
+    "kind": 1,
+    "minimumCap": 0
+  },
+  {
+    "code": "enr%",
+    "propertyId": 287,
+    "kind": 1,
+    "minimumCap": 0
+  },
+  {
+    "code": "healperhit",
+    "propertyId": 376,
+    "kind": 1,
+    "minimumCap": 0
+  },
+  {
+    "code": "extra_bonespears",
+    "propertyId": 387,
+    "kind": 1,
+    "minimumCap": 0
+  },
+  {
+    "code": "extra_holybolt",
+    "propertyId": 392,
+    "kind": 1,
+    "minimumCap": 0
+  },
+  {
+    "code": "pierce-elem",
+    "propertyId": 410,
+    "kind": 1,
+    "minimumCap": 0
+  },
+  {
+    "code": "ws-bleed",
+    "propertyId": 468,
+    "kind": 0,
+    "minimumCap": 0
+  },
+  {
+    "code": "ws-impale",
+    "propertyId": 469,
+    "kind": 0,
+    "minimumCap": 0
+  },
+  {
+    "code": "ws-aura-effect",
+    "propertyId": 480,
+    "kind": 0,
+    "minimumCap": 0
+  },
+  {
+    "code": "ws-reservation-efficiency",
+    "propertyId": 481,
+    "kind": 0,
+    "minimumCap": 0
+  }
+]

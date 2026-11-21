@@ -1,0 +1,25 @@
+Stat	*ID	Send Other	Signed	Send Bits	Send Param Bits	UpdateAnimRate	Saved	CSvSigned	CSvBits	CSvParam	fCallback	fMin	MinAccr	Encode	Add	Multiply	ValShift	1.09-Save Bits	1.09-Save Add	Save Bits	Save Add	Save Param Bits	keepzero	op	op param	op base	op stat1	op stat2	op stat3	direct	maxstat	damagerelated	itemevent1	itemeventfunc1	itemevent2	itemeventfunc2	descpriority	descfunc	descval	descstrpos	descstrneg	descstr2	dgrp	dgrpfunc	dgrpval	dgrpstrpos	dgrpstrneg	dgrpstr2	stuff	advdisplay	*eol
+fmmp_plague_event_control	402		1	32																																															0
+fmmp_virus_base_rate	403		1	32																																															0
+fmmp_virus_start_frame	404		1	32																																															0
+fmmp_virus_elapsed_seconds	405		1	32																																															0
+fmmp_virus_last_rate	406		1	32																																															0
+fmmp_virus_pulse_done	407			1																																															0
+fmmp_curse_mastery	408		1	32																																															0
+fmmp_plague_lord	409		1	32																																															0
+fmmp_curse_dot_end	410		1	32																																															0
+fmmp_decrep_start	411		1	32																																															0
+fmmp_decrep_second	412		1	32																																															0
+fmmp_frost_stacks	413		1	32																																															0
+fmmp_element_hit_frame	414		1	32																																															0
+fmmp_ground_frame	415		1	32																																															0
+fmmp_ground_x	416		1	32																																															0
+fmmp_ground_y	417		1	32																																															0
+fmmp_poison_transport	418		1	32																																															0
+fmmp_skeleton_proc_frame	419		1	32																																															0
+fmmp_skeleton_rng	420		1	32																																															0
+fmmp_blaze_started	421		1	32																																															0
+fmmp_lightning_frame	422		1	32																																															0
+fmmp_native_blaze_tag	423		1	32																																															0
+fmmp_curse_clock_frame	424		1	32																																															0
+fmmp_curse_clock_class	425		1	32																																															0

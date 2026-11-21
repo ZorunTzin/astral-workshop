@@ -1,0 +1,72 @@
+{
+  "version": "0.20.0",
+  "firstLevel": 166,
+  "state": 332,
+  "monsters": [
+    1494,
+    1495,
+    1496,
+    1497,
+    1498,
+    1499,
+    1500,
+    1501,
+    1502,
+    1503,
+    1504,
+    1505,
+    1506,
+    1507,
+    1508,
+    1509,
+    1510,
+    1511,
+    1512,
+    1513,
+    1514,
+    1515,
+    1516
+  ],
+  "map": {
+    "size": 32,
+    "floor": 194,
+    "walls": {
+      "1": 2098049,
+      "2": 2098049,
+      "3": 2097281
+    }
+  },
+  "names": [
+    "Verdant Trial",
+    "Desert Trial",
+    "Jungle Trial",
+    "Infernal Trial",
+    "Frozen Trial"
+  ],
+  "sealCodes": [
+    "Wa1",
+    "Wa2",
+    "Wa3",
+    "Wa4",
+    "Wa5"
+  ],
+  "price": 1,
+  "hellOnly": true,
+  "monsterBases": [
+    "minion5",
+    "deathmauler5",
+    "succubus5",
+    "skeleton7",
+    "zombie5",
+    "goatman6",
+    "fallen6",
+    "scarab6",
+    "clawviper6",
+    "arach6",
+    "thornhulk5",
+    "vampire6",
+    "doomknight1",
+    "wraith6",
+    "brute5"
+  ]
+}

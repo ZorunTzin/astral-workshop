@@ -1,0 +1,1 @@
+Existing user-installed ESR loot-filter binary by CelestialRayOne, copied unchanged for local Workshop integration. No ESR game tables or Sully filter rules are redistributed. Workshop uses an original conservative rule profile. Native signature checks remain intact. See PROVENANCE.json for source and SHA-256.

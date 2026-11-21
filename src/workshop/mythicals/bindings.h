@@ -1,0 +1,15 @@
+constexpr int Power0=0;
+constexpr int Power18=18;
+constexpr int Power20=20;
+constexpr int Power27=27;
+constexpr int Power42=42;
+constexpr int Power28=28;
+constexpr int Power29=29;
+constexpr int Power30=30;
+constexpr int Power31=31;
+constexpr int Power32=32;
+constexpr int Power33=33;
+constexpr int Power34=34;
+constexpr int MarkerStat=258;
+constexpr int BondState=354;
+constexpr int RenewalState=355;

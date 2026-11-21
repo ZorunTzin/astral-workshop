@@ -1,0 +1,10 @@
+{
+  "mod": "ReimaginedWorkshop",
+  "core": "1.3.1-beta",
+  "native_material_registry": "D2RCore Advanced Stash; unsupported items remain in inventory",
+  "tables": {
+    "misc": "b8ae68fbdc08577a234dea5d830884b75c13a12c94f3de9e89026044401eb475",
+    "itemtypes": "4a52402966577195ec7def937fd929a1185e54505e4e9febeeb822798c356e3c",
+    "inventory": "480475413e269cb078434be3de1994830895484948d3cabdb6993e98d35ad498"
+  }
+}

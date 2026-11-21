@@ -1,0 +1,102 @@
+[
+  {
+    "name": "WorkshopPaladinAura1",
+    "effect": "Increased Aura Effect",
+    "tier": 1,
+    "affixLevel": 1,
+    "requiredLevel": 1,
+    "minimum": 1,
+    "maximum": 3,
+    "itemType": "pala"
+  },
+  {
+    "name": "WorkshopPaladinAura2",
+    "effect": "Increased Aura Effect",
+    "tier": 2,
+    "affixLevel": 20,
+    "requiredLevel": 15,
+    "minimum": 4,
+    "maximum": 6,
+    "itemType": "pala"
+  },
+  {
+    "name": "WorkshopPaladinAura3",
+    "effect": "Increased Aura Effect",
+    "tier": 3,
+    "affixLevel": 40,
+    "requiredLevel": 30,
+    "minimum": 7,
+    "maximum": 9,
+    "itemType": "pala"
+  },
+  {
+    "name": "WorkshopPaladinAura4",
+    "effect": "Increased Aura Effect",
+    "tier": 4,
+    "affixLevel": 60,
+    "requiredLevel": 45,
+    "minimum": 10,
+    "maximum": 12,
+    "itemType": "pala"
+  },
+  {
+    "name": "WorkshopPaladinAura5",
+    "effect": "Increased Aura Effect",
+    "tier": 5,
+    "affixLevel": 80,
+    "requiredLevel": 60,
+    "minimum": 13,
+    "maximum": 15,
+    "itemType": "pala"
+  },
+  {
+    "name": "WorkshopPaladinEfficiency1",
+    "effect": "Reservation Efficiency",
+    "tier": 1,
+    "affixLevel": 1,
+    "requiredLevel": 1,
+    "minimum": 1,
+    "maximum": 3,
+    "itemType": "pala"
+  },
+  {
+    "name": "WorkshopPaladinEfficiency2",
+    "effect": "Reservation Efficiency",
+    "tier": 2,
+    "affixLevel": 20,
+    "requiredLevel": 15,
+    "minimum": 4,
+    "maximum": 6,
+    "itemType": "pala"
+  },
+  {
+    "name": "WorkshopPaladinEfficiency3",
+    "effect": "Reservation Efficiency",
+    "tier": 3,
+    "affixLevel": 40,
+    "requiredLevel": 30,
+    "minimum": 7,
+    "maximum": 9,
+    "itemType": "pala"
+  },
+  {
+    "name": "WorkshopPaladinEfficiency4",
+    "effect": "Reservation Efficiency",
+    "tier": 4,
+    "affixLevel": 60,
+    "requiredLevel": 45,
+    "minimum": 10,
+    "maximum": 12,
+    "itemType": "pala"
+  },
+  {
+    "name": "WorkshopPaladinEfficiency5",
+    "effect": "Reservation Efficiency",
+    "tier": 5,
+    "affixLevel": 80,
+    "requiredLevel": 60,
+    "minimum": 13,
+    "maximum": 15,
+    "itemType": "pala"
+  }
+]

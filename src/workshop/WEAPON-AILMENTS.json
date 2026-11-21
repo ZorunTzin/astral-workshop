@@ -1,0 +1,568 @@
+{
+  "version": "0.18.0",
+  "affixes": [
+    {
+      "name": "of Bloodletting 1",
+      "effect": "Chance to Cause Bleeding on Hit",
+      "alvl": 1,
+      "maxAlvl": 11,
+      "requiredLevel": 1,
+      "min": 2,
+      "max": 5
+    },
+    {
+      "name": "of Bloodletting 2",
+      "effect": "Chance to Cause Bleeding on Hit",
+      "alvl": 12,
+      "maxAlvl": 24,
+      "requiredLevel": 9,
+      "min": 4,
+      "max": 8
+    },
+    {
+      "name": "of Bloodletting 3",
+      "effect": "Chance to Cause Bleeding on Hit",
+      "alvl": 25,
+      "maxAlvl": 39,
+      "requiredLevel": 18,
+      "min": 7,
+      "max": 12
+    },
+    {
+      "name": "of Bloodletting 4",
+      "effect": "Chance to Cause Bleeding on Hit",
+      "alvl": 40,
+      "maxAlvl": 54,
+      "requiredLevel": 30,
+      "min": 10,
+      "max": 18
+    },
+    {
+      "name": "of Bloodletting 5",
+      "effect": "Chance to Cause Bleeding on Hit",
+      "alvl": 55,
+      "maxAlvl": 69,
+      "requiredLevel": 42,
+      "min": 15,
+      "max": 25
+    },
+    {
+      "name": "of Bloodletting 6",
+      "effect": "Chance to Cause Bleeding on Hit",
+      "alvl": 70,
+      "maxAlvl": 84,
+      "requiredLevel": 54,
+      "min": 20,
+      "max": 32
+    },
+    {
+      "name": "of Bloodletting 7",
+      "effect": "Chance to Cause Bleeding on Hit",
+      "alvl": 85,
+      "maxAlvl": null,
+      "requiredLevel": 65,
+      "min": 25,
+      "max": 40
+    },
+    {
+      "name": "of Impalement 1",
+      "effect": "Chance to Impale on Hit",
+      "alvl": 1,
+      "maxAlvl": 11,
+      "requiredLevel": 1,
+      "min": 2,
+      "max": 5
+    },
+    {
+      "name": "of Impalement 2",
+      "effect": "Chance to Impale on Hit",
+      "alvl": 12,
+      "maxAlvl": 24,
+      "requiredLevel": 9,
+      "min": 4,
+      "max": 8
+    },
+    {
+      "name": "of Impalement 3",
+      "effect": "Chance to Impale on Hit",
+      "alvl": 25,
+      "maxAlvl": 39,
+      "requiredLevel": 18,
+      "min": 7,
+      "max": 12
+    },
+    {
+      "name": "of Impalement 4",
+      "effect": "Chance to Impale on Hit",
+      "alvl": 40,
+      "maxAlvl": 54,
+      "requiredLevel": 30,
+      "min": 10,
+      "max": 18
+    },
+    {
+      "name": "of Impalement 5",
+      "effect": "Chance to Impale on Hit",
+      "alvl": 55,
+      "maxAlvl": 69,
+      "requiredLevel": 42,
+      "min": 15,
+      "max": 25
+    },
+    {
+      "name": "of Impalement 6",
+      "effect": "Chance to Impale on Hit",
+      "alvl": 70,
+      "maxAlvl": 84,
+      "requiredLevel": 54,
+      "min": 20,
+      "max": 32
+    },
+    {
+      "name": "of Impalement 7",
+      "effect": "Chance to Impale on Hit",
+      "alvl": 85,
+      "maxAlvl": null,
+      "requiredLevel": 65,
+      "min": 25,
+      "max": 40
+    }
+  ],
+  "items": [
+    {
+      "table": "uniqueitems",
+      "item": "Rixot's Keen",
+      "code": "ssd",
+      "powerLevel": 2,
+      "effect": "bleed",
+      "min": 2,
+      "max": 5,
+      "slot": 7
+    },
+    {
+      "table": "uniqueitems",
+      "item": "Skewer of Krintiz",
+      "code": "sbr",
+      "powerLevel": 10,
+      "effect": "bleed",
+      "min": 2,
+      "max": 5,
+      "slot": 8
+    },
+    {
+      "table": "uniqueitems",
+      "item": "Gleamscythe",
+      "code": "flc",
+      "powerLevel": 13,
+      "effect": "bleed",
+      "min": 4,
+      "max": 8,
+      "slot": 8
+    },
+    {
+      "table": "uniqueitems",
+      "item": "Bladebone",
+      "code": "2ax",
+      "powerLevel": 15,
+      "effect": "bleed",
+      "min": 4,
+      "max": 8,
+      "slot": 9
+    },
+    {
+      "table": "uniqueitems",
+      "item": "Goreshovel",
+      "code": "bax",
+      "powerLevel": 14,
+      "effect": "bleed",
+      "min": 4,
+      "max": 8,
+      "slot": 7
+    },
+    {
+      "table": "uniqueitems",
+      "item": "Brainhew",
+      "code": "gax",
+      "powerLevel": 25,
+      "effect": "bleed",
+      "min": 7,
+      "max": 12,
+      "slot": 8
+    },
+    {
+      "table": "uniqueitems",
+      "item": "Soulflay",
+      "code": "clm",
+      "powerLevel": 19,
+      "effect": "bleed",
+      "min": 4,
+      "max": 8,
+      "slot": 7
+    },
+    {
+      "table": "uniqueitems",
+      "item": "Blacktongue",
+      "code": "bsw",
+      "powerLevel": 26,
+      "effect": "bleed",
+      "min": 7,
+      "max": 12,
+      "slot": 8
+    },
+    {
+      "table": "uniqueitems",
+      "item": "Ripsaw",
+      "code": "flb",
+      "powerLevel": 13,
+      "effect": "bleed",
+      "min": 4,
+      "max": 8,
+      "slot": 6
+    },
+    {
+      "table": "uniqueitems",
+      "item": "The Patriarch",
+      "code": "gsd",
+      "powerLevel": 16,
+      "effect": "bleed",
+      "min": 4,
+      "max": 8,
+      "slot": 8
+    },
+    {
+      "table": "uniqueitems",
+      "item": "The Patriarch",
+      "code": "gsd",
+      "powerLevel": 16,
+      "effect": "impale",
+      "min": 2,
+      "max": 5,
+      "slot": 9
+    },
+    {
+      "table": "uniqueitems",
+      "item": "The Dragon Chang",
+      "code": "spr",
+      "powerLevel": 8,
+      "effect": "bleed",
+      "min": 2,
+      "max": 5,
+      "slot": 7
+    },
+    {
+      "table": "uniqueitems",
+      "item": "Razortine",
+      "code": "tri",
+      "powerLevel": 12,
+      "effect": "bleed",
+      "min": 4,
+      "max": 8,
+      "slot": 8
+    },
+    {
+      "table": "uniqueitems",
+      "item": "Dimoak's Hew",
+      "code": "bar",
+      "powerLevel": 8,
+      "effect": "bleed",
+      "min": 2,
+      "max": 5,
+      "slot": 6
+    },
+    {
+      "table": "uniqueitems",
+      "item": "Soul Harvest",
+      "code": "scy",
+      "powerLevel": 19,
+      "effect": "bleed",
+      "min": 4,
+      "max": 8,
+      "slot": 8
+    },
+    {
+      "table": "uniqueitems",
+      "item": "Woestave",
+      "code": "hal",
+      "powerLevel": 28,
+      "effect": "bleed",
+      "min": 7,
+      "max": 12,
+      "slot": 9
+    },
+    {
+      "table": "uniqueitems",
+      "item": "Bloodmoon",
+      "code": "7sb",
+      "powerLevel": 61,
+      "effect": "bleed",
+      "min": 15,
+      "max": 25,
+      "slot": 8
+    },
+    {
+      "table": "uniqueitems",
+      "item": "Flamebellow",
+      "code": "7gs",
+      "powerLevel": 71,
+      "effect": "bleed",
+      "min": 20,
+      "max": 32,
+      "slot": 10
+    },
+    {
+      "table": "uniqueitems",
+      "item": "Pluckeye",
+      "code": "sbw",
+      "powerLevel": 7,
+      "effect": "impale",
+      "min": 2,
+      "max": 5,
+      "slot": 8
+    },
+    {
+      "table": "uniqueitems",
+      "item": "Witherstring",
+      "code": "hbw",
+      "powerLevel": 13,
+      "effect": "impale",
+      "min": 4,
+      "max": 8,
+      "slot": 8
+    },
+    {
+      "table": "uniqueitems",
+      "item": "Leadcrow",
+      "code": "lxb",
+      "powerLevel": 9,
+      "effect": "impale",
+      "min": 2,
+      "max": 5,
+      "slot": 8
+    },
+    {
+      "table": "uniqueitems",
+      "item": "Ichorsting",
+      "code": "mxb",
+      "powerLevel": 18,
+      "effect": "impale",
+      "min": 4,
+      "max": 8,
+      "slot": 8
+    },
+    {
+      "table": "uniqueitems",
+      "item": "Hellcast",
+      "code": "hxb",
+      "powerLevel": 27,
+      "effect": "impale",
+      "min": 7,
+      "max": 12,
+      "slot": 9
+    },
+    {
+      "table": "uniqueitems",
+      "item": "Endlesshail",
+      "code": "8cb",
+      "powerLevel": 36,
+      "effect": "impale",
+      "min": 7,
+      "max": 12,
+      "slot": 8
+    },
+    {
+      "table": "uniqueitems",
+      "item": "Cliffkiller",
+      "code": "8l8",
+      "powerLevel": 41,
+      "effect": "impale",
+      "min": 10,
+      "max": 18,
+      "slot": 9
+    },
+    {
+      "table": "uniqueitems",
+      "item": "Magewrath",
+      "code": "8sw",
+      "powerLevel": 43,
+      "effect": "impale",
+      "min": 10,
+      "max": 18,
+      "slot": 11
+    },
+    {
+      "table": "uniqueitems",
+      "item": "Langer Briser",
+      "code": "8lx",
+      "powerLevel": 32,
+      "effect": "impale",
+      "min": 7,
+      "max": 12,
+      "slot": 9
+    },
+    {
+      "table": "uniqueitems",
+      "item": "Deathbit",
+      "code": "9tk",
+      "powerLevel": 40,
+      "effect": "impale",
+      "min": 10,
+      "max": 18,
+      "slot": 8
+    },
+    {
+      "table": "setitems",
+      "item": "Berserker's Hatchet",
+      "code": "2ax",
+      "powerLevel": 3,
+      "effect": "bleed",
+      "min": 2,
+      "max": 5,
+      "slot": 5
+    },
+    {
+      "table": "setitems",
+      "item": "Death's Touch",
+      "code": "wsd",
+      "powerLevel": 6,
+      "effect": "bleed",
+      "min": 2,
+      "max": 5,
+      "slot": 4
+    },
+    {
+      "table": "setitems",
+      "item": "Isenhart's Lightbrand",
+      "code": "bsd",
+      "powerLevel": 8,
+      "effect": "bleed",
+      "min": 2,
+      "max": 5,
+      "slot": 5
+    },
+    {
+      "table": "setitems",
+      "item": "Angelic Sickle",
+      "code": "sbr",
+      "powerLevel": 12,
+      "effect": "bleed",
+      "min": 4,
+      "max": 8,
+      "slot": 4
+    },
+    {
+      "table": "setitems",
+      "item": "Tancred's Crowbill",
+      "code": "mpi",
+      "powerLevel": 20,
+      "effect": "bleed",
+      "min": 4,
+      "max": 8,
+      "slot": 5
+    },
+    {
+      "table": "setitems",
+      "item": "Arctic Horn",
+      "code": "swb",
+      "powerLevel": 2,
+      "effect": "impale",
+      "min": 2,
+      "max": 5,
+      "slot": 4
+    },
+    {
+      "table": "setitems",
+      "item": "Vidala's Barb",
+      "code": "lbb",
+      "powerLevel": 14,
+      "effect": "impale",
+      "min": 4,
+      "max": 8,
+      "slot": 6
+    },
+    {
+      "table": "setitems",
+      "item": "Corgina's Orb",
+      "code": "ob2",
+      "powerLevel": 15,
+      "effect": "bleed",
+      "min": 4,
+      "max": 8,
+      "slot": 4
+    },
+    {
+      "table": "setitems",
+      "item": "Warlord's Pike",
+      "code": "pik",
+      "powerLevel": 20,
+      "effect": "bleed",
+      "min": 4,
+      "max": 8,
+      "slot": 4
+    },
+    {
+      "table": "setitems",
+      "item": "Lancer's Reach",
+      "code": "9pa",
+      "powerLevel": 37,
+      "effect": "bleed",
+      "min": 7,
+      "max": 12,
+      "slot": 4
+    },
+    {
+      "table": "setitems",
+      "item": "Kingpin's Blade",
+      "code": "9fc",
+      "powerLevel": 35,
+      "effect": "bleed",
+      "min": 7,
+      "max": 12,
+      "slot": 8
+    },
+    {
+      "table": "setitems",
+      "item": "Cryptic Claws",
+      "code": "7tw",
+      "powerLevel": 77,
+      "effect": "bleed",
+      "min": 20,
+      "max": 32,
+      "slot": 5
+    },
+    {
+      "table": "setitems",
+      "item": "Trent's Caster",
+      "code": "am7",
+      "powerLevel": 40,
+      "effect": "impale",
+      "min": 10,
+      "max": 18,
+      "slot": 5
+    },
+    {
+      "table": "setitems",
+      "item": "Alyssa's Leafblighter",
+      "code": "8l8",
+      "powerLevel": 44,
+      "effect": "impale",
+      "min": 10,
+      "max": 18,
+      "slot": 5
+    },
+    {
+      "table": "setitems",
+      "item": "Holy Fury",
+      "code": "7s7",
+      "powerLevel": 64,
+      "effect": "impale",
+      "min": 15,
+      "max": 25,
+      "slot": 6
+    }
+  ],
+  "excludedTypes": [
+    "rod"
+  ],
+  "allowedException": "orb",
+  "affixScaling": "exact ranges; exempt from magic/rare multipliers"
+}

@@ -1,0 +1,136 @@
+{
+    "dependencies": {
+        "particles": [],
+        "models": [],
+        "skeletons": [],
+        "animations": [],
+        "textures": [],
+        "physics": [],
+        "json": [
+            {
+                "path": "data/hd/env/vis/act1_barracks_desecrated.json"
+            },
+            {
+                "path": "data/hd/env/vis/act1_catacombs_desecrated.json"
+            },
+            {
+                "path": "data/hd/env/vis/act1_caves_desecrated.json"
+            },
+            {
+                "path": "data/hd/env/vis/act1_court_desecrated.json"
+            },
+            {
+                "path": "data/hd/env/vis/act1_crypt_desecrated.json"
+            },
+            {
+                "path": "data/hd/env/vis/act1_outdoors_desecrated.json"
+            },
+            {
+                "path": "data/hd/env/vis/act2_arcane_desecrated.json"
+            },
+            {
+                "path": "data/hd/env/vis/act2_maggot_desecrated.json"
+            },
+            {
+                "path": "data/hd/env/vis/act2_palace_cells_desecrated.json"
+            },
+            {
+                "path": "data/hd/env/vis/act2_palace_desecrated.json"
+            },
+            {
+                "path": "data/hd/env/vis/act2_sewer_desecrated.json"
+            },
+            {
+                "path": "data/hd/env/vis/act2_tainted_sun.json"
+            },
+            {
+                "path": "data/hd/env/vis/act2_tomb_desecrated.json"
+            },
+            {
+                "path": "data/hd/env/vis/act2_town_desecrated.json"
+            },
+            {
+                "path": "data/hd/env/vis/act3_docktown_desecrated.json"
+            },
+            {
+                "path": "data/hd/env/vis/act3_jungle_dungeon_desecrated.json"
+            },
+            {
+                "path": "data/hd/env/vis/act3_sewer_desecrated.json"
+            },
+            {
+                "path": "data/hd/env/vis/act3_spider_desecrated.json"
+            },
+            {
+                "path": "data/hd/env/vis/act3_temple_desecrated.json"
+            },
+            {
+                "path": "data/hd/env/vis/act3_travincal_desecrated.json"
+            },
+            {
+                "path": "data/hd/env/vis/act4_lava_desecrated.json"
+            },
+            {
+                "path": "data/hd/env/vis/act4_mesa_desecrated.json"
+            },
+            {
+                "path": "data/hd/env/vis/denofevil_vis.json"
+            },
+            {
+                "path": "data/hd/env/vis/diabloappears_vis.json"
+            },
+            {
+                "path": "data/hd/env/vis/expansion_baallair_throneroom_desecrated.json"
+            },
+            {
+                "path": "data/hd/env/vis/expansion_icecave_desecrated.json"
+            },
+            {
+                "path": "data/hd/env/vis/expansion_mountaintop_desecrated.json"
+            },
+            {
+                "path": "data/hd/env/vis/expansion_siege_desecrated.json"
+            },
+            {
+                "path": "data/hd/env/vis/expansion_wildtemple_desecrated.json"
+            },
+            {
+                "path": "data/hd/env/vis/expansion_wildtemple_tempenter_desecrated.json"
+            }
+        ],
+        "variantdata": [],
+        "objecteffects": [],
+        "other": []
+    },
+    "type": "VisualDataEventMap",
+    "name": "vis_event_map_VisualDataEventMap",
+    "DenOfEvil": {
+        "type": "VisualDataEventDefinition",
+        "name": "VisualDataEventMap_DenOfEvil",
+        "definition": "data/hd/env/vis/denofevil_vis.json",
+        "inTransitionTime": 3.0,
+        "outTransitionTime": 3.0
+    },
+    "DiabloAppeared": {
+        "type": "VisualDataEventDefinition",
+        "name": "VisualDataEventMap_DiabloAppeared",
+        "definition": "data/hd/env/vis/diabloappears_vis.json",
+        "inTransitionTime": 3.0,
+        "outTransitionTime": 3.0
+    },
+    "TaintedSun": {
+        "type": "VisualDataEventDefinition",
+        "name": "VisualDataEventMap_TaintedSun",
+        "definition": "data/hd/env/vis/act2_tainted_sun.json",
+        "inTransitionTime": 3.0,
+        "outTransitionTime": 3.0
+    },
+    "Desecrated": {
+        "type": "VisualDataBiomeEventDefinition",
+        "name": "VisualDataEventMap_Desecrated",
+        "definitions": {
+        },
+        "inTransitionTime": 0.0,
+        "outTransitionTime": 0.0
+    }
+}

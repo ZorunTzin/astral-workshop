@@ -1,0 +1,113 @@
+region;path;slot;name;property;parameter;minimum;maximum;description;Knoten 2;Knoten 3;Knoten 4;Knoten 5 mit Bonus
+Origins;1;Inner;Ember;all-stats;;3;3;All attributes;+1 to Bow and Crossbow skills (Amazon);+1 to Passive and Magic skills (Amazon);+1 to Javelin and Spear skills (Amazon);+1 to all Amazon skills
+Origins;1;Outer;Bloodstone;all-stats;;3;3;All attributes;+37 Life;+37 Life;+37 Life;+75 Life / +20 Replenish Life
+Origins;1;Side;Fleetfoot;all-stats;;3;3;All attributes;+12 Run/walk %;+12 Run/walk %;+12 Run/walk %;+25 Run/walk % / +10% faster hit recovery
+Origins;1;Keystone;Blood Tithe;hit-skill;Life Tap;25;10;Life for Life Tap;;;;
+Origins;2;Inner;Aether;all-stats;;3;3;All attributes;+5 Mana after each kill;+5 Mana after each kill;+5 Mana after each kill;+10 Mana after each kill / 25% Damage taken goes to Mana
+Origins;2;Outer;Deep Well;all-stats;;3;3;All attributes;+37 Mana;+37 Mana;+37 Mana;+75 Mana / +15% mana regeneration
+Origins;2;Side;Quickening;all-stats;;3;3;All attributes;+12 Run/walk %;+12 Run/walk %;+12 Run/walk %;+25 Run/walk % / +10% faster hit recovery
+Origins;2;Keystone;Inner Choir;aura;Meditation;3;3;Mana for Meditation;;;;
+Origins;3;Inner;Ward;all-stats;;3;3;All attributes;+1% maximum fire resistance;+1% maximum cold resistance;+1% maximum lightning resistance;+1% maximum poison resistance / +1% all maximum resistances
+Origins;3;Outer;Prism;all-stats;;3;3;All attributes;+10 All resists;+10 All resists;+10 All resists;+21 All resists / +1% maximum all resistances
+Origins;3;Side;Wayfarer;all-stats;;3;3;All attributes;+12 Run/walk %;+12 Run/walk %;+12 Run/walk %;+25 Run/walk % / +10% faster hit recovery
+Origins;3;Keystone;Rift Walker;oskill;Teleport;1;1;Resists for Teleport;;;;
+Arms;1;Inner;Steel;all-stats;;3;3;All attributes;+15 Maximum weapon damage;+15 Maximum weapon damage;+15 Maximum weapon damage;+30 Maximum weapon damage / 25% chance to cast level 1 Bash on attack
+Arms;1;Outer;Warhammer;all-stats;;3;3;All attributes;+25 Weapon damage %;+25 Weapon damage %;+25 Weapon damage %;+50 Weapon damage % / +5% crushing blow
+Arms;1;Side;Momentum;all-stats;;3;3;All attributes;+10 Attack speed %;+10 Attack speed %;+10 Attack speed %;+20 Attack speed % / +500 attack rating
+Arms;1;Keystone;Sunder;crush;0;50;50;Damage for crushing blow;;;;
+Arms;2;Inner;Focus;all-stats;;3;3;All attributes;+1 to Bow and Crossbow skills (Amazon);+1 to Passive and Magic skills (Amazon);+1 to Javelin and Spear skills (Amazon);+1 to all Amazon skills
+Arms;2;Outer;Sightline;all-stats;;3;3;All attributes;+250 Attack Rating;+250 Attack Rating;+250 Attack Rating;+500 Attack Rating / 20% Increased attack speed
+Arms;2;Side;Finesse;all-stats;;3;3;All attributes;+10 Dexterity;+10 Dexterity;+10 Dexterity;+20 Dexterity / +10% dexterity
+Arms;2;Keystone;True Aim;ignore-ac;0;1;1;Accuracy for ignore defense;;;;
+Arms;3;Inner;Vigor;all-stats;;3;3;All attributes;+5 to all attributes;+5 to all attributes;+5 to all attributes;+10 to all attributes / +1 to all skills
+Arms;3;Outer;Titan;all-stats;;3;3;All attributes;+10 Strength;+10 Strength;+10 Strength;+20 Strength / 10% Strength
+Arms;3;Side;Long Reach;all-stats;;3;3;All attributes;+15 Maximum damage;+15 Maximum damage;+15 Maximum damage;+30 Maximum damage / +30 Minimum damage
+Arms;3;Keystone;Battle Cry;oskill;Battle Orders;1;1;Battle Orders and Battle Command;;;;
+Bulwark;1;Inner;Iron;all-stats;;3;3;All attributes;+1 to Fire skills (Sorceress);+1 to Lightning skills (Sorceress);+1 to Cold skills (Sorceress);+1 to all Sorceress skills
+Bulwark;1;Outer;Ironwall;all-stats;;3;3;All attributes;+500 Defense;+500 Defense;+500 Defense;+1000 Defense / 10% Increased chance of blocking
+Bulwark;1;Side;Poise;all-stats;;3;3;All attributes;20% Faster hit recovery;20% Faster hit recovery;20% Faster hit recovery;40% Faster hit recovery / 5% Damage reduced
+Bulwark;1;Keystone;Rimeheart;nofreeze;0;1;1;Defense for freeze immunity;;;;
+Bulwark;2;Inner;Guard;all-stats;;3;3;All attributes;+1 to Fire skills (Sorceress);+1 to Lightning skills (Sorceress);+1 to Cold skills (Sorceress);+1 to all Sorceress skills
+Bulwark;2;Outer;Bastion;all-stats;;3;3;All attributes;12% Increased chance of blocking;12% Increased chance of blocking;12% Increased chance of blocking;25% Increased chance of blocking / 25% Faster block rate
+Bulwark;2;Side;Parry;all-stats;;3;3;All attributes;25% Faster block rate;25% Faster block rate;25% Faster block rate;50% Faster block rate / 10% Increased chance of blocking
+Bulwark;2;Keystone;Thorn Crown;aura;Thorns;5;5;Block for Thorns aura;;;;
+Bulwark;3;Inner;Grit;all-stats;;3;3;All attributes;+1 to Curses skills (Necromancer);+1 to Poison and Bone skills (Necromancer);+1 to Summoning skills (Necromancer);+1 to all Necromancer skills
+Bulwark;3;Outer;Adamant;all-stats;;3;3;All attributes;+12 Physical reduction;+12 Physical reduction;+12 Physical reduction;+25 Physical reduction / +30 maximum life
+Bulwark;3;Side;Fortitude;all-stats;;3;3;All attributes;+10 Vitality;+10 Vitality;+10 Vitality;+20 Vitality / 10% Vitality
+Bulwark;3;Keystone;Faithguard;oskill;Holy Shield;3;3;Reduction for Holy Shield;;;;
+Elements;1;Inner;Spark;all-stats;;3;3;All attributes;+30 Lightning damage to attacks;+30 Lightning damage to attacks;+30 Lightning damage to attacks;+60 Lightning damage to attacks / -10% enemy lightning resistance
+Elements;1;Outer;Tempest;all-stats;;3;3;All attributes;+7 Lightning damage %;+7 Lightning damage %;+7 Lightning damage %;+15 Lightning damage % / −5% enemy lightning resistance
+Elements;1;Side;Conductor;all-stats;;3;3;All attributes;+5 Lightning pierce %;+5 Lightning pierce %;+5 Lightning pierce %;+10 Lightning pierce % / +10% lightning skill damage
+Elements;1;Keystone;Stormheart;oskill;Static Field;3;3;Lightning bonus for Static;;;;
+Elements;2;Inner;Cinder;all-stats;;3;3;All attributes;+30 Fire damage to attacks;+30 Fire damage to attacks;+30 Fire damage to attacks;+60 Fire damage to attacks / -10% enemy fire resistance
+Elements;2;Outer;Inferno;all-stats;;3;3;All attributes;+7 Fire damage %;+7 Fire damage %;+7 Fire damage %;+15 Fire damage % / −5% enemy fire resistance
+Elements;2;Side;Scorch;all-stats;;3;3;All attributes;+5 Fire pierce %;+5 Fire pierce %;+5 Fire pierce %;+10 Fire pierce % / +10% fire skill damage
+Elements;2;Keystone;Firebrand;oskill;Enchant;20;20;Fire bonus for Enchant;;;;
+Elements;3;Inner;Rime;all-stats;;3;3;All attributes;+30 Cold damage to attacks;+30 Cold damage to attacks;+30 Cold damage to attacks;+60 Cold damage to attacks / -10% enemy cold resistance
+Elements;3;Outer;Glacier;all-stats;;3;3;All attributes;+7 Cold damage %;+7 Cold damage %;+7 Cold damage %;+15 Cold damage % / −5% enemy cold resistance
+Elements;3;Side;Fracture;all-stats;;3;3;All attributes;+5 Cold pierce %;+5 Cold pierce %;+5 Cold pierce %;+10 Cold pierce % / +10% cold skill damage
+Elements;3;Keystone;Winter Tide;aura;Holy Freeze;4;4;Cold bonus for Holy Freeze;;;;
+Hunt;1;Inner;Aim;all-stats;;3;3;All attributes;+1 to Curses skills (Necromancer);+1 to Poison and Bone skills (Necromancer);+1 to Summoning skills (Necromancer);+1 to all Necromancer skills
+Hunt;1;Outer;Eagle Eye;all-stats;;3;3;All attributes;25% Bonus to Attack Rating;25% Bonus to Attack Rating;25% Bonus to Attack Rating;50% Bonus to Attack Rating / +25 Maximum damage
+Hunt;1;Side;Draw;all-stats;;3;3;All attributes;+15 Attack speed %;+15 Attack speed %;+15 Attack speed %;+30 Attack speed % / +500 attack rating
+Hunt;1;Keystone;Throughshot;pierce;0;100;100;Aim for piercing attacks;;;;
+Hunt;2;Inner;Stride;all-stats;;3;3;All attributes;+1 to Combat skills (Paladin);+1 to Offensive Auras skills (Paladin);+1 to Defensive Auras skills (Paladin);+1 to all Paladin skills
+Hunt;2;Outer;Pursuit;all-stats;;3;3;All attributes;12% Faster run/walk;12% Faster run/walk;12% Faster run/walk;25% Faster run/walk / 10% Faster hit recovery
+Hunt;2;Side;Wind;all-stats;;3;3;All attributes;+5% faster hit recovery;+5% faster hit recovery;+5% faster hit recovery;+10% faster hit recovery / +15% faster run/walk
+Hunt;2;Keystone;Windcaller;aura;Vigor;4;4;Speed for Vigor aura;;;;
+Hunt;3;Inner;Edge;all-stats;;3;3;All attributes;+1 to Combat skills (Paladin);+1 to Offensive Auras skills (Paladin);+1 to Defensive Auras skills (Paladin);+1 to all Paladin skills
+Hunt;3;Outer;Fang;all-stats;;3;3;All attributes;+15 Minimum damage;+15 Minimum damage;+15 Minimum damage;+30 Minimum damage / +30 Maximum damage
+Hunt;3;Side;Barbs;all-stats;;3;3;All attributes;+12 Open wounds %;+12 Open wounds %;+12 Open wounds %;+25 Open wounds % / +8% deadly strike
+Hunt;3;Keystone;Deadeye;deadly;0;33;33;Min damage for deadly strike;;;;
+Occult;1;Inner;Venom;all-stats;;3;3;All attributes;Adds 30 poison damage over 1 seconds to attacks;Adds 30 poison damage over 1 seconds to attacks;Adds 30 poison damage over 1 seconds to attacks;Adds 60 poison damage over 1 seconds to attacks / -10% to enemy Poison Resistance
+Occult;1;Outer;Virulence;all-stats;;3;3;All attributes;+7 Poison damage %;+7 Poison damage %;+7 Poison damage %;+15 Poison damage % / −5% enemy poison resistance
+Occult;1;Side;Toxin;all-stats;;3;3;All attributes;+5 Poison pierce %;+5 Poison pierce %;+5 Poison pierce %;+10 Poison pierce % / +10% poison skill damage
+Occult;1;Keystone;Blight;oskill;Lower Resist;2;2;Poison bonus for Lower Resist;;;;
+Occult;2;Inner;Veil;all-stats;;3;3;All attributes;+1 to Combat skills (Barbarian);+1 to Masteries and Throwing skills (Barbarian);+1 to Warcries skills (Barbarian);+1 to all Barbarian skills
+Occult;2;Outer;Shroud;all-stats;;3;3;All attributes;+25 Curse duration reduction %;+25 Curse duration reduction %;+25 Curse duration reduction %;+50 Curse duration reduction % / +15% faster hit recovery
+Occult;2;Side;Night Sight;all-stats;;3;3;All attributes;-5% to enemy Physical Resistance;-5% to enemy Physical Resistance;-5% to enemy Physical Resistance;-5% to enemy Physical Resistance / +10% Crushing blow
+Occult;2;Keystone;Hexblade;hit-skill;Amplify Damage;25;8;Curse ward for Amplify proc;;;;
+Occult;3;Inner;Bone;all-stats;;3;3;All attributes;+30 Magic damage to attacks;+30 Magic damage to attacks;+30 Magic damage to attacks;+60 Magic damage to attacks / -10% enemy magic resistance
+Occult;3;Outer;Ossuary;all-stats;;3;3;All attributes;+15 Magic damage %;+15 Magic damage %;+15 Magic damage %;+30 Magic damage % / −5% enemy magic resistance
+Occult;3;Side;Grave Lore;all-stats;;3;3;All attributes;+10 Energy;+10 Energy;+10 Energy;+20 Energy / +10% energy
+Occult;3;Keystone;Boneweaver;magicskill;0;3;3;Magic damage for +2 magic skills;;;;
+Legion;1;Inner;Sentry;all-stats;;3;3;All attributes;+1 to Combat skills (Barbarian);+1 to Masteries and Throwing skills (Barbarian);+1 to Warcries skills (Barbarian);+1 to all Barbarian skills
+Legion;1;Outer;Watchtower;all-stats;;3;3;All attributes;+750 Missile defense;+750 Missile defense;+750 Missile defense;+1500 Missile defense / +15% faster block rate
+Legion;1;Side;Warden;all-stats;;3;3;All attributes;+12% to Lightning Resistances;+12% to Fire Resistances;+12% to Cold Resistances;+12% to All Resistances / +1% to maximum All Resistances
+Legion;1;Keystone;Machinist;extra_traps;0;2;2;Missile defense for +1 trap;;;;
+Legion;2;Inner;Pack;all-stats;;3;3;All attributes;+1 to Summoning skills (Druid);+1 to Shape Shifting skills (Druid);+1 to Elemental skills (Druid);+1 to all Druid skills
+Legion;2;Outer;Great Hunt;all-stats;;3;3;All attributes;+5 Maximum life %;+5 Maximum life %;+5 Maximum life %;+10 Maximum life % / +5% all resistances
+Legion;2;Side;Trail;all-stats;;3;3;All attributes;5% Maximum mana;5% Maximum mana;5% Maximum mana;10% Maximum mana / +5% to All Resistances
+Legion;2;Keystone;Ravenlord;ws-minion-limit;0;2;2;Maximum life for +1 summon per supported family;;;;
+Legion;3;Inner;Crypt;all-stats;;3;3;All attributes;+1 to Summoning skills (Druid);+1 to Shape Shifting skills (Druid);+1 to Elemental skills (Druid);+1 to all Druid skills
+Legion;3;Outer;Tomb;all-stats;;3;3;All attributes;+500 Attack Rating;+500 Attack Rating;+500 Attack Rating;+1000 Attack Rating / 20% Increased attack speed
+Legion;3;Side;Exorcist;all-stats;;3;3;All attributes;37% Damage to undead;37% Damage to undead;37% Damage to undead;75% Damage to undead / +15 Life after each kill
+Legion;3;Keystone;Legionnaire;aura;Might;4;4;Accuracy for Might aura;;;;
+Arcana;1;Inner;Flow;all-stats;;3;3;All attributes;+30 Lightning damage to attacks;+30 Lightning damage to attacks;+30 Lightning damage to attacks;+60 Lightning damage to attacks / 10% chance to cast level 8 Chain Lightning on striking
+Arcana;1;Outer;Wellspring;all-stats;;3;3;All attributes;+30 Mana regen %;+30 Mana regen %;+30 Mana regen %;+60 Mana regen % / +25 maximum mana
+Arcana;1;Side;Invocation;all-stats;;3;3;All attributes;+10 Cast rate %;+10 Cast rate %;+10 Cast rate %;+20 Cast rate % / +20 maximum mana
+Arcana;1;Keystone;Soul Font;oskill;Energy Shield;3;3;Regen for mana after kills;;;;
+Arcana;2;Inner;Spirit;all-stats;;3;3;All attributes;+1 to Traps skills (Assassin);+1 to Shadow Disciplines skills (Assassin);+1 to Martial Arts skills (Assassin);+1 to all Assassin skills
+Arcana;2;Outer;Deep Mind;all-stats;;3;3;All attributes;+10 Energy;+10 Energy;+10 Energy;+20 Energy / 10% Energy
+Arcana;2;Side;Clarity;all-stats;;3;3;All attributes;+37 Mana;+37 Mana;+37 Mana;+75 Mana / +15% mana regeneration
+Arcana;2;Keystone;Oracle;oskill;Oak Sage;10;10;Energy for Oak Sage;;;;
+Arcana;3;Inner;Runeglass;all-stats;;3;3;All attributes;+1 to Traps skills (Assassin);+1 to Shadow Disciplines skills (Assassin);+1 to Martial Arts skills (Assassin);+1 to all Assassin skills
+Arcana;3;Outer;Spellward;all-stats;;3;3;All attributes;+10 Magic reduction;+10 Magic reduction;+10 Magic reduction;+20 Magic reduction / +30 maximum mana
+Arcana;3;Side;Anchor;all-stats;;3;3;All attributes;+5 Magic resist;+5 Magic resist;+5 Magic resist;+10 Magic resist / +1% maximum all resistances
+Arcana;3;Keystone;Shadow Skin;oskill;Fade;3;3;Magic reduction for Fade;;;;
+Harvest;1;Inner;Spoils;all-stats;;3;3;All attributes;+1 to Demon skills (Warlock);+1 to Eldritch skills (Warlock);+1 to Chaos skills (Warlock);+1 to all Warlock skills
+Harvest;1;Outer;Treasure;all-stats;;3;3;All attributes;+50 Gold find %;+50 Gold find %;+50 Gold find %;+100 Gold find % / +15% magic find
+Harvest;1;Side;Fortune;all-stats;;3;3;All attributes;+25 Magic find %;+25 Magic find %;+25 Magic find %;+50 Magic find % / +50% extra gold
+Harvest;1;Keystone;Alchemist;mag%;0;100;100;Gold find for +75% magic find;;;;
+Harvest;2;Inner;Reaping;all-stats;;3;3;All attributes;+10 Life on hit;+10 Life on hit;+10 Life on hit;+20 Life on hit / 5% chance to cast level 1 Corpse Explosion on kill
+Harvest;2;Outer;Harvest;all-stats;;3;3;All attributes;+5 Life after kill;+5 Life after kill;+5 Life after kill;+10 Life after kill / +20 Replenish Life
+Harvest;2;Side;Renewal;all-stats;;3;3;All attributes;50 Replenish Life;50 Replenish Life;50 Replenish Life;+100 Replenish Life / +40 Life
+Harvest;2;Keystone;Blood Drinker;lifesteal;0;25;25;Life on kill for life steal;;;;
+Harvest;3;Inner;Hunger;all-stats;;3;3;All attributes;+1 to Demon skills (Warlock);+1 to Eldritch skills (Warlock);+1 to Chaos skills (Warlock);+1 to all Warlock skills
+Harvest;3;Outer;Feast;all-stats;;3;3;All attributes;+5 Mana after kill;+5 Mana after kill;+5 Mana after kill;+10 Mana after kill / +15% mana regeneration
+Harvest;3;Side;Siphon;all-stats;;3;3;All attributes;+37 Mana;+37 Mana;+37 Mana;+75 Mana / +15% mana regeneration
+Harvest;3;Keystone;Mind Drinker;manasteal;0;25;25;Mana on kill for mana steal;;;;
+Legion;4;Heart;Broodheart;all-stats;;3;3;All attributes;+15 Minion maximum life %;+15 Minion maximum life %;+15 Minion maximum life %;+30 Minion maximum life % / +15% minion damage
+Legion;4;Fury;Pack Fury;all-stats;;3;3;All attributes;+15 Minion damage %;+15 Minion damage %;+15 Minion damage %;+30 Minion damage % / +10% minion attack and movement speed
+Legion;4;Rush;Wild Rush;all-stats;;3;3;All attributes;+10 Minion movement and attack speed %;+10 Minion movement and attack speed %;+10 Minion movement and attack speed %;+20 Minion movement and attack speed % / +20% minion maximum life
+Legion;4;Swarm;Swarm;all-stats;;3;3;All attributes;+10% minion damage / +10% minion maximum life;+10% minion damage / +10% minion maximum life;+10% minion damage / +10% minion maximum life;+1 Maximum summons per supported family / +25% minion maximum life

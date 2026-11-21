@@ -1,0 +1,430 @@
+[
+  {
+    "from": "local-work",
+    "to": "archive/local"
+  },
+  {
+    "from": "archive/local/workshop-clusters",
+    "to": "build/workshop-clusters"
+  },
+  {
+    "from": "archive/local/workshop-tree-v2/base.zip",
+    "to": "build/inputs/reimagined-base.zip"
+  },
+  {
+    "from": "build/workshop-clusters/backup",
+    "to": "archive/local/backups/workshop"
+  },
+  {
+    "from": "build/workshop-clusters/save-backups",
+    "to": "archive/local/backups/saves"
+  },
+  {
+    "from": "workshop",
+    "to": "src/workshop"
+  },
+  {
+    "from": "src/workshop/README.md",
+    "to": "docs/workshop/README.md"
+  },
+  {
+    "from": "src/workshop/CONSTELLATIONS.md",
+    "to": "docs/workshop/CONSTELLATIONS.md"
+  },
+  {
+    "from": "src/workshop/FORGING.md",
+    "to": "docs/workshop/FORGING.md"
+  },
+  {
+    "from": "src/workshop/combat/README.md",
+    "to": "docs/workshop/combat/README.md"
+  },
+  {
+    "from": "src/workshop/integration/README.md",
+    "to": "docs/workshop/integration/README.md"
+  },
+  {
+    "from": "src/workshop/Astral-Skilltree-0.9.5.xlsx",
+    "to": "tables/Astral-Skilltree-0.9.5.xlsx"
+  },
+  {
+    "from": "src/workshop/INNER-CLUSTERS-draft.csv",
+    "to": "tables/drafts/INNER-CLUSTERS-draft.csv"
+  },
+  {
+    "from": "src/workshop/NODES-step1.csv",
+    "to": "archive/legacy-tree/NODES-step1.csv"
+  },
+  {
+    "from": "src/workshop/atlas0.inc",
+    "to": "archive/legacy-tree/atlas0.inc"
+  },
+  {
+    "from": "src/workshop/atlas1.inc",
+    "to": "archive/legacy-tree/atlas1.inc"
+  },
+  {
+    "from": "src/workshop/atlas2.inc",
+    "to": "archive/legacy-tree/atlas2.inc"
+  },
+  {
+    "from": "src/workshop/atlas3.inc",
+    "to": "archive/legacy-tree/atlas3.inc"
+  },
+  {
+    "from": "src/workshop/atlas4.inc",
+    "to": "archive/legacy-tree/atlas4.inc"
+  },
+  {
+    "from": "src/workshop/atlas5.inc",
+    "to": "archive/legacy-tree/atlas5.inc"
+  },
+  {
+    "from": "src/workshop/atlas6.inc",
+    "to": "archive/legacy-tree/atlas6.inc"
+  },
+  {
+    "from": "src/workshop/atlas7.inc",
+    "to": "archive/legacy-tree/atlas7.inc"
+  },
+  {
+    "from": "src/workshop/atlas8.inc",
+    "to": "archive/legacy-tree/atlas8.inc"
+  },
+  {
+    "from": "src/workshop/layout.inc",
+    "to": "archive/legacy-tree/layout.inc"
+  },
+  {
+    "from": "src/workshop/sectors.py",
+    "to": "archive/legacy-tree/sectors.py"
+  },
+  {
+    "from": "src/workshop/passives.obj",
+    "to": "build/objects/previous/passives.obj"
+  },
+  {
+    "from": "src/workshop/passives.res",
+    "to": "build/objects/previous/passives.res"
+  },
+  {
+    "from": "src/workshop/__pycache__",
+    "to": "build/cache/previous-workshop"
+  },
+  {
+    "from": "src/workshop/install.ps1",
+    "to": "scripts/Install-Workshop.ps1"
+  },
+  {
+    "from": "build/workshop-clusters/deploy.py",
+    "to": "scripts/Deploy-Workshop.py"
+  },
+  {
+    "from": "scripts/compare-key-entries.js",
+    "to": "archive/upstream-tools/compare-key-entries.js"
+  },
+  {
+    "from": "scripts/copy-english-names.js",
+    "to": "archive/upstream-tools/copy-english-names.js"
+  },
+  {
+    "from": "scripts/copy-files.bat",
+    "to": "archive/upstream-tools/copy-files.bat"
+  },
+  {
+    "from": "scripts/fill-in-ids.js",
+    "to": "archive/upstream-tools/fill-in-ids.js"
+  },
+  {
+    "from": "scripts/make_levels_table.py",
+    "to": "archive/upstream-tools/make_levels_table.py"
+  },
+  {
+    "from": "scripts/translate_items.py",
+    "to": "archive/upstream-tools/translate_items.py"
+  },
+  {
+    "from": "D2R Data Guide.url",
+    "to": "docs/links/D2R Data Guide.url"
+  },
+  {
+    "from": "lint",
+    "to": "tools/lint"
+  },
+  {
+    "from": "tools/lint/output.txt",
+    "to": "archive/legacy-reports/lint/output.txt"
+  },
+  {
+    "from": "tools/lint/output_base.txt",
+    "to": "archive/legacy-reports/lint/output_base.txt"
+  },
+  {
+    "from": "archive/local/outputs/runeword-forging-20261109/Runenwoerter-Schmieden-Entwurf.xlsx",
+    "to": "tables/Runenwoerter-Schmieden-Entwurf.xlsx"
+  },
+  {
+    "from": "archive/local/outputs/runeword-forging-20261109/Runenwoerter-Schmieden-Entwurf.xlsx.inspect.ndjson",
+    "to": "build/spreadsheets/runewords/Runenwoerter-Schmieden-Entwurf.xlsx.inspect.ndjson"
+  },
+  {
+    "from": "archive/local/outputs/workshop-swarm-update/build.mjs",
+    "to": "scripts/spreadsheets/skilltree/build.mjs"
+  },
+  {
+    "from": "archive/local/outputs/workshop-swarm-update/collect_tree.py",
+    "to": "scripts/spreadsheets/skilltree/collect_tree.py"
+  },
+  {
+    "from": "archive/local/outputs/workshop-swarm-update/node_modules",
+    "to": "scripts/spreadsheets/node_modules"
+  },
+  {
+    "from": "archive/local/outputs/workshop-swarm-update/Astral-Skilltree-0.9.5.xlsx.inspect.ndjson",
+    "to": "build/spreadsheets/skilltree/Astral-Skilltree-0.9.5.xlsx.inspect.ndjson"
+  },
+  {
+    "from": "archive/local/outputs/workshop-swarm-update/preview-swarm.png",
+    "to": "build/spreadsheets/skilltree/preview-swarm.png"
+  },
+  {
+    "from": "archive/local/outputs/workshop-swarm-update/preview-top.png",
+    "to": "build/spreadsheets/skilltree/preview-top.png"
+  },
+  {
+    "from": "archive/local/outputs/workshop-swarm-update/tree.json",
+    "to": "build/spreadsheets/skilltree/tree.json"
+  },
+  {
+    "from": "archive/local/workshop-atlas",
+    "to": "archive/local/prototypes/workshop-atlas"
+  },
+  {
+    "from": "archive/local/workshop-balance",
+    "to": "archive/local/prototypes/workshop-balance"
+  },
+  {
+    "from": "archive/local/workshop-direct",
+    "to": "archive/local/prototypes/workshop-direct"
+  },
+  {
+    "from": "archive/local/workshop-fullscreen",
+    "to": "archive/local/prototypes/workshop-fullscreen"
+  },
+  {
+    "from": "archive/local/workshop-node-design",
+    "to": "archive/local/prototypes/workshop-node-design"
+  },
+  {
+    "from": "archive/local/workshop-pets",
+    "to": "archive/local/prototypes/workshop-pets"
+  },
+  {
+    "from": "archive/local/workshop-proto",
+    "to": "archive/local/prototypes/workshop-proto"
+  },
+  {
+    "from": "archive/local/workshop-tree-v2",
+    "to": "archive/local/prototypes/workshop-tree-v2"
+  },
+  {
+    "from": "archive/local/workshop-unified",
+    "to": "archive/local/prototypes/workshop-unified"
+  },
+  {
+    "from": "archive/local/.pd2-aura-buffs",
+    "to": "archive/local/pd2/.pd2-aura-buffs"
+  },
+  {
+    "from": "archive/local/.pd2-reawakening-setup",
+    "to": "archive/local/pd2/.pd2-reawakening-setup"
+  },
+  {
+    "from": "archive/local/.fmmp-repository",
+    "to": "archive/local/frankenstein/.fmmp-repository"
+  },
+  {
+    "from": "archive/local/.frankenstein-release-0522",
+    "to": "archive/local/frankenstein/.frankenstein-release-0522"
+  },
+  {
+    "from": "archive/local/.runeforge-editor",
+    "to": "archive/local/tools/runeforge-editor"
+  },
+  {
+    "from": "archive/local/.workshop-sdk",
+    "to": "archive/local/dependencies/.workshop-sdk"
+  },
+  {
+    "from": "archive/local/runeword-plan",
+    "to": "archive/local/design/runeword-plan"
+  },
+  {
+    "from": "archive/local/runtime-library-copy",
+    "to": "archive/local/recovery/runtime-library-copy"
+  },
+  {
+    "from": "archive/local/migration-20261110.json",
+    "to": "archive/local/migrations/first-workspace-move.json"
+  },
+  {
+    "from": "archive/local/README.md",
+    "to": "archive/local/migrations/previous-workspace-README.md"
+  },
+  {
+    "from": "build\\workshop-clusters\\examine.py",
+    "to": "archive/local/diagnostics/examine.py"
+  },
+  {
+    "from": "build\\workshop-clusters\\find-req.py",
+    "to": "archive/local/diagnostics/find-req.py"
+  },
+  {
+    "from": "build\\workshop-clusters\\inner-design.py",
+    "to": "archive/local/diagnostics/inner-design.py"
+  },
+  {
+    "from": "build\\workshop-clusters\\live-combat-read.py",
+    "to": "archive/local/diagnostics/live-combat-read.py"
+  },
+  {
+    "from": "build\\workshop-clusters\\native-inspect.py",
+    "to": "archive/local/diagnostics/native-inspect.py"
+  },
+  {
+    "from": "build\\workshop-clusters\\read-affixes.py",
+    "to": "archive/local/diagnostics/read-affixes.py"
+  },
+  {
+    "from": "build\\workshop-clusters\\read-aura.py",
+    "to": "archive/local/diagnostics/read-aura.py"
+  },
+  {
+    "from": "build\\workshop-clusters\\read-code.py",
+    "to": "archive/local/diagnostics/read-code.py"
+  },
+  {
+    "from": "build\\workshop-clusters\\read-forge.py",
+    "to": "archive/local/diagnostics/read-forge.py"
+  },
+  {
+    "from": "build\\workshop-clusters\\read-managers.py",
+    "to": "archive/local/diagnostics/read-managers.py"
+  },
+  {
+    "from": "build\\workshop-clusters\\read-ui.py",
+    "to": "archive/local/diagnostics/read-ui.py"
+  },
+  {
+    "from": "build\\workshop-clusters\\read-vtable.py",
+    "to": "archive/local/diagnostics/read-vtable.py"
+  },
+  {
+    "from": "build\\workshop-clusters\\read-widgets.py",
+    "to": "archive/local/diagnostics/read-widgets.py"
+  },
+  {
+    "from": "build\\workshop-clusters\\scan-aura.py",
+    "to": "archive/local/diagnostics/scan-aura.py"
+  },
+  {
+    "from": "build\\workshop-clusters\\update-093.py",
+    "to": "archive/local/diagnostics/update-093.py"
+  },
+  {
+    "from": "build/workshop-clusters/analysis-libs",
+    "to": "archive/local/diagnostics/analysis-libs"
+  },
+  {
+    "from": "build/workshop-clusters/guardian-check.cmd",
+    "to": "archive/local/diagnostics/guardian-check.cmd"
+  },
+  {
+    "from": "build/workshop-clusters/item-check.cmd",
+    "to": "archive/local/diagnostics/item-check.cmd"
+  },
+  {
+    "from": "build\\workshop-clusters\\ItemsMagic.cpp.reference",
+    "to": "archive/local/research/ItemsMagic.cpp.reference"
+  },
+  {
+    "from": "build\\workshop-clusters\\Objects.cpp.reference",
+    "to": "archive/local/research/Objects.cpp.reference"
+  },
+  {
+    "from": "build\\workshop-clusters\\ObjMode.cpp.reference",
+    "to": "archive/local/research/ObjMode.cpp.reference"
+  },
+  {
+    "from": "build\\workshop-clusters\\Player.cpp.reference",
+    "to": "archive/local/research/Player.cpp.reference"
+  },
+  {
+    "from": "build\\workshop-clusters\\PlrTrade.cpp.reference",
+    "to": "archive/local/research/PlrTrade.cpp.reference"
+  },
+  {
+    "from": "build\\workshop-clusters\\SCmd.cpp.reference",
+    "to": "archive/local/research/SCmd.cpp.reference"
+  },
+  {
+    "from": "build\\workshop-clusters\\SkillPal-reference.cpp",
+    "to": "archive/local/research/SkillPal-reference.cpp"
+  },
+  {
+    "from": "build\\workshop-clusters\\native-aura-snapshot.bin",
+    "to": "archive/local/research/native-aura-snapshot.bin"
+  },
+  {
+    "from": "build\\workshop-clusters\\suite-source",
+    "to": "archive/local/research/suite-source"
+  },
+  {
+    "from": "build/workshop-clusters/buff-hud",
+    "to": "archive/local/downloads/buff-hud"
+  },
+  {
+    "from": "build/workshop-clusters/buff-hud.zip",
+    "to": "archive/local/downloads/buff-hud.zip"
+  },
+  {
+    "from": "build/workshop-clusters/curse-icons-reference.jpg",
+    "to": "archive/local/art-reference/curse-icons-reference.jpg"
+  },
+  {
+    "from": "build/workshop-clusters/curse-style.png",
+    "to": "archive/local/art-reference/curse-style.png"
+  },
+  {
+    "from": "build/workshop-clusters/sigil-reference.png",
+    "to": "archive/local/art-reference/sigil-reference.png"
+  },
+  {
+    "from": "build/workshop-clusters/paladin-icon-inputs.json",
+    "to": "archive/local/art-reference/paladin-icon-inputs.json"
+  },
+  {
+    "from": "build/workshop-clusters/preview-small.png",
+    "to": "archive/local/art-reference/preview-small.png"
+  },
+  {
+    "from": "build/workshop-clusters/__pycache__",
+    "to": "build/cache/previous-stage"
+  },
+  {
+    "from": "build/workshop-clusters/smoke093.pid",
+    "to": "archive/local/diagnostics/smoke093.pid"
+  },
+  {
+    "from": "build/inputs/reimagined-base.zip",
+    "to": "tools/inputs/reimagined-base.zip"
+  },
+  {
+    "from": "scripts/reorganize_workspace.py",
+    "to": "archive/migrations/reorganize-20261110.py"
+  },
+  {
+    "from": "src/workshop/set_reforge.inc",
+    "to": "archive/legacy-tree/set_reforge.inc"
+  }
+]
