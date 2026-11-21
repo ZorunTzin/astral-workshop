@@ -28,3 +28,12 @@ Astral Workshop builds on **[Reimagined 3.1.0](https://github.com/D2R-Reimagined
 ## Explore the compendium
 
 The **[Astral Workshop website](https://astral-workshop-compendium.chattyactor2.chatgpt.site)** is the main reference for forge recipes, passive nodes, class skills, endgame systems and update notes. You will also find the latest launcher download there.
+
+
+## Latest release: v0.20.6
+
+In-game shared stash organizer with page names, favorites, colors and affix search. Sort items in the current shared page, inventory and Cube; successive successful clicks alternate row-first and column-first placement.
+
+[Release notes and downloads](https://github.com/ZorunTzin/astral-workshop/releases/tag/v0.20.6) · [Compendium](https://astral-workshop-compendium.chattyactor2.chatgpt.site)
+
+The launcher installs mod updates when Play or Check and repair is used. Full corresponding source is included in workshop-source.zip.
