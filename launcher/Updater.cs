@@ -51,7 +51,7 @@ public static class Updater {
    await Task.Run(()=>{if(!Hash(zip).Equals(release.Sha256,StringComparison.OrdinalIgnoreCase))throw new InvalidDataException("Download checksum failed. Existing installation was not changed.");},token);
    await Task.Run(()=>Prepare(live,stage,zip,release,json,token),token);
    token.ThrowIfCancellationRequested();
-   if(System.Diagnostics.Process.GetProcessesByName("D2R").Length>0)throw new IOException("D2R started during the update. Close the game and try again.");
+   if(System.Diagnostics.Process.GetProcessesByName("D2R").Length>0||System.Diagnostics.Process.GetProcessesByName("D2RLoader").Length>0)throw new IOException("D2R or D2RLoader started during the update. Close the game and try again.");
    progress.Report(("Installing verified update…",95));
    if(Directory.Exists(live))Directory.Move(live,backup);
    try{Directory.Move(stage,live);}catch{if(Directory.Exists(backup))Directory.Move(backup,live);throw;}
