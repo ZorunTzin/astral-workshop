@@ -211,6 +211,9 @@ def install(root):
   local.update(EruptionVisual=int(vortex['*ID']),EruptionVisualSkill=int(vortex_spell['*Id']),EruptionHit=int(eruption_hit['*ID']))
   if bindings:assert bindings==local
   bindings=local
+  ch,chars=read(p/'charstats.txt')
+  next(r for r in chars if r['class']=='Sorceress')['StartSkill']='Fire Ball'
+  write(p/'charstats.txt',ch,chars)
   for name,h,rows in [('skills',sh,skills),('skilldesc',dh,descs),('missiles',mh,missiles),('states',sth,states),('monstats',nh,monsters),('pettype',ph,pets)]:write(p/(name+'.txt'),h,rows)
  strings=root/'data/local/lng/strings/skills.json';rows=json.loads(strings.read_text(encoding='utf-8-sig'));known={r['Key']:r for r in rows};last=max(r['id'] for f in strings.parent.glob('*.json') for r in json.loads(f.read_text(encoding='utf-8-sig')) if 'id' in r)
  for key,text in labels.items():

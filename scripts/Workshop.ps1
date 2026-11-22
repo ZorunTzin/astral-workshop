@@ -58,6 +58,7 @@ try {
             Invoke-WorkshopCommand 'cmd.exe' @('/c',(Join-Path $workshopStage 'test-093.cmd'))
         }
         'Check' {
+            Invoke-WorkshopCommand $workshopPython @('-X','utf8',(Join-Path $workshopSource 'player_qol_verify.py'),$workshopStage)
             Invoke-WorkshopCommand $workshopPython @('-X','utf8',(Join-Path $workshopSource 'mercenary_skills_verify.py'))
             Invoke-WorkshopCommand $workshopPython @('-X','utf8',(Join-Path $workshopSource 'leagues/verify.py'),$workshopStage)
             Invoke-WorkshopCommand $workshopPython @('-X','utf8',(Join-Path $workshopSource 'progression/verify.py'),$workshopStage)

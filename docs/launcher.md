@@ -40,3 +40,9 @@ Launcher updates currently use the new setup executable; automatic updates on Pl
 Tests cover traversal, duplicate paths, corrupt/missing payload entries, configuration preservation, unmanaged files, cancellation and removal of obsolete managed files. Staging does not modify the live installation. The final directory swap restores the old installation if moving the new directory fails.
 
 The launcher uses the project's approved astral background and its own WPF implementation; no third-party launcher artwork is included. Original project and dependency licenses remain applicable.
+
+## Launcher 0.2.0
+
+Only one launcher instance runs per Windows session; opening it again restores the existing window. Game launch is refused while D2R or D2RLoader is running. UI failures are reported and logged to `%LOCALAPPDATA%/AstralWorkshop/launcher.log`. Open saved characters resolves Windows Saved Games (including redirection) and the installed modinfo.json savepath. It creates the correct empty profile directory if no character has been saved yet.
+
+Monster display is bundled and checks the shipped Workshop bank.txt; a separate Frankenstein installation is no longer required. Supported loader/core identity checks remain active.

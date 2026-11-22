@@ -89,6 +89,8 @@ modfiles += ['d2rloader/config/fmmp-mercenary-charms.toml']
 assets += ['data/global/excel/hireling.txt','data/global/excel/base/hireling.txt']
 docs += ['workshop/mercenary_skills.py','workshop/mercenary_skills_verify.py']
 
+modfiles += ['d2rloader/patches/workshop-keep-equipment.json']
+
 def sha(p):return sha256(p.read_bytes()).hexdigest() if p.exists() else None
 backup=repo/"archive/local/backups/workshop"/datetime.now().strftime("%Y%m%d-%H%M%S")
 jobs=[]
@@ -100,7 +102,17 @@ for rel in assets+plugins+modfiles:
         expected=json.loads((src/rel).read_text())
         if existing.get("name")!=expected.get("name") or existing.get("savepath") not in ("ReimaginedWorkshop/",expected["savepath"]):raise RuntimeError("Unexpected installed save profile")
     elif sha(repo/rel)!=sha(target) and sha(target)!=sha(src/rel):
-        raise RuntimeError("Repo/game divergence: "+rel)
+        # A reviewed edit can already be present in both repository and stage.
+        # Accept only an unchanged installed Git baseline (or a genuinely new
+        # file); any independent game modification still stops deployment.
+        import subprocess
+        prior=subprocess.run(['git','show','HEAD:'+rel],cwd=repo,capture_output=True)
+        baseline=sha256(prior.stdout).hexdigest() if prior.returncode==0 else None
+        same_baseline=sha(target)==baseline
+        if prior.returncode==0 and target.exists() and Path(rel).suffix in ('.txt','.json','.toml'):
+            same_baseline=target.read_bytes().replace(b'\r\n',b'\n')==prior.stdout.replace(b'\r\n',b'\n')
+        if sha(repo/rel)!=sha(src/rel) or not same_baseline:
+            raise RuntimeError("Repo/game divergence: "+rel)
     jobs.append((target,rel,"game"))
 def repository_destination(rel):
     if rel in {"workshop/BARBARIAN.md","workshop/README.md","workshop/CONSTELLATIONS.md","workshop/FORGING.md","workshop/combat/README.md","workshop/integration/README.md"}:

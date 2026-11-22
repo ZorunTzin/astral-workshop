@@ -47,13 +47,16 @@ def install(root, *, pickup_only=False):
     pickup = replace(pickup, old_hash, bank_hash, 3)
     (plugins / 'fmmp-auto-collectibles.dll').write_bytes(pickup)
 
+    monster = (HERE / 'upstream/fmmp-monster-display.dll').read_bytes()
+    monster = replace(monster, b'FMMP-Experimental-R67\0', b'ReimaginedWorkshop\0')
+    # Use our shipped manifest, never an unrelated FMMP installation.
+    monster = replace(monster, '/mods/FMMP-Experimental-R67/FMMP-Experimental-R67.mpq\0'.encode('utf-16le'), '/mods/ReimaginedWorkshop/bank.txt\0'.encode('utf-16le'))
+    monster = replace(monster, old_hash, bank_hash, 3)
+    (plugins / 'fmmp-monster-display.dll').write_bytes(monster)
+
     if pickup_only:
         print('Refreshed pickup manifest and guarded pickup plugin only.')
         return
-
-    monster = (HERE / 'upstream/fmmp-monster-display.dll').read_bytes()
-    monster = replace(monster, b'FMMP-Experimental-R67\0', b'ReimaginedWorkshop\0')
-    (plugins / 'fmmp-monster-display.dll').write_bytes(monster)
 
     maps = (HERE / 'upstream/d2rl-ruffneckk-mapsense.dll').read_bytes()
     maps = bytearray(replace(maps, b'FMMP-Experimental-R67\0', b'ReimaginedWorkshop\0'))

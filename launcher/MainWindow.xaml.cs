@@ -18,14 +18,14 @@ public partial class MainWindow : Window {
   if(cancellation!=null)return;
   try {
    if(!File.Exists(Path.Combine(GamePath.Text,"D2R.exe"))||!File.Exists(Path.Combine(GamePath.Text,"D2RLoader.exe"))) throw new InvalidOperationException("Select a D2R folder containing D2R.exe and D2RLoader.exe in Settings.");
-   if(Process.GetProcessesByName("D2R").Length>0)throw new InvalidOperationException("Close Diablo II: Resurrected before updating.");
+   if(Process.GetProcessesByName("D2R").Length>0||Process.GetProcessesByName("D2RLoader").Length>0)throw new InvalidOperationException("Diablo II or D2RLoader is already running. Close it before starting another session.");
    Save(); SettingsPanel.Visibility=Visibility.Collapsed; PlayButton.IsEnabled=false; CancelButton.Visibility=Visibility.Visible; cancellation=new();
    var reporter=new Progress<(string Message,double Percent)>(p=>{Status.Text=p.Message;Progress.Value=p.Percent;});
    await Updater.Run(GamePath.Text,reporter,cancellation.Token);
    RefreshVersion();
    if(launch) { cancellation.Token.ThrowIfCancellationRequested(); Process.Start(new ProcessStartInfo(Path.Combine(GamePath.Text,"D2RLoader.exe")){WorkingDirectory=GamePath.Text,Arguments="-mod ReimaginedWorkshop -txt "+Arguments.Text,UseShellExecute=true}); Status.Text="Game started."; } else Status.Text="Mod files verified and up to date.";
   } catch(OperationCanceledException) {Status.Text="Update cancelled. The game was not started.";}
-    catch(Exception e) {Status.Text=e.Message;}
+    catch(Exception e) {App.Log(e);Status.Text=e.Message;}
   finally {cancellation?.Dispose();cancellation=null;PlayButton.IsEnabled=true;CancelButton.Visibility=Visibility.Collapsed;}
  }
  async void Play_Click(object s,RoutedEventArgs e)=>await Update(true);
@@ -44,16 +44,12 @@ public partial class MainWindow : Window {
  void OpenGame_Click(object s,RoutedEventArgs e) {if(Directory.Exists(GamePath.Text))Open(GamePath.Text);}
  void OpenSettings_Click(object s,RoutedEventArgs e) {Directory.CreateDirectory(SettingsDir);Open(SettingsDir);}
  void OpenSaves_Click(object s,RoutedEventArgs e) {
-  var profile="ReimaginedWorkshop";
-  var metadata=Path.Combine(GamePath.Text,"Mods","ReimaginedWorkshop","ReimaginedWorkshop.mpq","modinfo.json");
-  if(File.Exists(metadata)) {
-   using var doc=JsonDocument.Parse(File.ReadAllText(metadata));
-   if(doc.RootElement.TryGetProperty("savepath",out var value)) {
-    var candidate=(value.GetString()??"").TrimEnd('/','\\');
-    if(candidate.Length>0 && candidate.All(c=>char.IsLetterOrDigit(c)||c=='-'||c=='_'))profile=candidate;
-   }
-  }
-  var p=Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile),"Saved Games","Diablo II Resurrected","mods",profile);
-  if(Directory.Exists(p))Open(p);else Status.Text="No saved characters folder exists yet.";
+  try {
+   if(!Directory.Exists(GamePath.Text))throw new IOException("Select the game directory in Settings first.");
+   var metadata=Path.Combine(GamePath.Text,"Mods","ReimaginedWorkshop","ReimaginedWorkshop.mpq","modinfo.json");
+   if(!File.Exists(metadata))throw new IOException("Install or repair the mod first so its saved-character folder can be resolved.");
+   var path=SavePaths.Resolve(SavePaths.SavedGames(),metadata);
+   Directory.CreateDirectory(path);Open(path);Status.Text="Saved characters: "+path;
+  }catch(Exception error){App.Log(error);Status.Text=error.Message;}
  }
 }

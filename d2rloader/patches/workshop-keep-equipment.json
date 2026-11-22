@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "name": "Workshop Keep Equipped Items on Death",
+  "description": "Keep worn equipment, weapon swap and belt contents on the character. Cursor, corpse XP and gold use native behavior. D2R 3.4.0 verified byte guard.",
+  "patches": [
+    {
+      "description": "Atomically skip equipment collection and belt relocation in CreateDeadBody; retain cursor collection and native corpse creation.",
+      "op": "bytes",
+      "rva": "0x42c240",
+      "expected": "41 B8 1B 03 00 00 48 8D 15 F3 CC 8E 01 48 8B CF E8 0B E1 F1 FF 48 8B C8 8B D3 E8 71 C4 F5 FF 4C 8B F0 48 85 C0 74 36 41 B8 1D 03 00 00 48 8D 15 CC CC 8E 01 48 8B C8 E8 B4 E0 F1 FF 49 8B D6 42 89 84 A5 50 02 00 00 48 8D 4D A0 E8 90 6A F5 FF 49 FF C4 0F 10 00 0F 11 06 48 83 C6 10 FF C3 83 FB 0D 7C 9C 41 B8 23 03 00 00 4C 89 64 24 78 48 8D 15 8A CC 8E 01 4C 89 65 80 48 8B CF 4D 8B F4 E8 9B E0 F1 FF 48 8B C8 BA 08 00 00 00 E8 FE C3 F5 FF 48 89 44 24 68 49 8B F7 48 85 C0 0F 84 4E 02 00 00",
+      "bytes": "E9 5F 00 00 00 90 48 8D 15 F3 CC 8E 01 48 8B CF E8 0B E1 F1 FF 48 8B C8 8B D3 E8 71 C4 F5 FF 4C 8B F0 48 85 C0 74 36 41 B8 1D 03 00 00 48 8D 15 CC CC 8E 01 48 8B C8 E8 B4 E0 F1 FF 49 8B D6 42 89 84 A5 50 02 00 00 48 8D 4D A0 E8 90 6A F5 FF 49 FF C4 0F 10 00 0F 11 06 48 83 C6 10 FF C3 83 FB 0D 7C 9C 41 B8 23 03 00 00 4C 89 64 24 78 48 8D 15 8A CC 8E 01 4C 89 65 80 48 8B CF 4D 8B F4 E8 9B E0 F1 FF 48 8B C8 BA 08 00 00 00 E8 FE C3 F5 FF 48 89 44 24 68 49 8B F7 E9 52 02 00 00 90 90 90 90"
+    }
+  ]
+}

@@ -19,5 +19,11 @@ try{
  var duplicate=release with{Files=[files[0],files[0]]};Reject(()=>Updater.Validate(duplicate,root),"duplicate manifest paths rejected");
  using var cancel=new CancellationTokenSource();cancel.Cancel();try{Updater.Prepare(live,Path.Combine(root,"cancel"),zip,release,"",cancel.Token);throw new Exception("Cancellation ignored");}catch(OperationCanceledException){Check(true,"cancel before commit");}
  var old=release with{Files=[new("ReimaginedWorkshop.mpq/data/obsolete.txt",Hash("old"))]};Directory.CreateDirectory(Path.Combine(live,"ReimaginedWorkshop.mpq/data"));File.WriteAllText(Path.Combine(live,"ReimaginedWorkshop.mpq/data/obsolete.txt"),"old");File.WriteAllText(Path.Combine(live,".astral-manifest.json"),JsonSerializer.Serialize(old));var stage2=Path.Combine(root,"stage2");Updater.Prepare(live,stage2,zip,release,JsonSerializer.Serialize(release),default);Check(!File.Exists(Path.Combine(stage2,"ReimaginedWorkshop.mpq/data/obsolete.txt")),"obsolete managed file removed");Check(File.Exists(Path.Combine(live,"ReimaginedWorkshop.mpq/data/obsolete.txt")),"old installation retained");
+ var metadata=Path.Combine(root,"modinfo.json");
+ File.WriteAllText(metadata,"{\"savepath\":\"ReimaginedWorkshop-v2/\"}");
+ Check(SavePaths.Resolve(Path.Combine(root,"redirected-saves"),metadata)==Path.Combine(root,"redirected-saves","Diablo II Resurrected","mods","ReimaginedWorkshop-v2"),"redirected Saved Games and versioned mod profile");
+ File.WriteAllText(metadata,"{\"savepath\":\"../other/\"}");
+ Reject(()=>SavePaths.Resolve(root,metadata),"savepath traversal rejected");
+ Check(Directory.Exists(SavePaths.SavedGames()),"Windows Saved Games known folder resolves");
  Console.WriteLine($"{passed} checks passed");
 }finally{Directory.Delete(root,true);}
