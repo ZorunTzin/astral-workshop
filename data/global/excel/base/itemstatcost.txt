@@ -261,10 +261,10 @@ ws_mythical_power	258			8	6									1						8	0	6															180	1	0	WorkshopM
 ws-myth-life-regen	259			16																16	0																185	1	1	ws-myth-life-regen	ws-myth-life-regen										0
 ws-myth-mana-percent	260			16																16	0																185	1	1	ws-myth-mana-percent	ws-myth-mana-percent										0
 ws-myth-mana-regen	261			16																16	0																185	1	1	ws-myth-mana-regen	ws-myth-mana-regen										0
-item_absorb_slash	262		1																																																0
-item_absorb_crush	263		1																																																0
-item_absorb_thrust	264		1																																																0
-item_absorb_slash_percent	265		1																																																0
+ws_orb_spell_damage	262			16																12	0																85	2	1	WorkshopOrbSpell	WorkshopOrbSpell										0
+ws_orb_trinity_chance	263			16																10	0																85	2	1	WorkshopOrbTrinity	WorkshopOrbTrinity										0
+ws_orb_level_cost	264			16																7	0																85	1	1	WorkshopOrbLevel	WorkshopOrbLevel										0
+ws_orb_cube_budget	265			16																																															0
 item_absorb_crush_percent	266		1																																																0
 item_absorb_thrust_percent	267		1																																																0
 item_armor_bytime	268		1	22										4		0		22	0	22	0			6			armorclass										180	17		ModStr1i	ModStr1i										0

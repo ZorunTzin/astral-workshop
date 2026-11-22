@@ -7,7 +7,7 @@ b=json.loads((Path(__file__).parent/'SORCERESS.json').read_text())
 for folder in ('data/global/excel','data/global/excel/base'):
  p=root/folder;_,skills=read(p/'skills.txt');_,descs=read(p/'skilldesc.txt');_,missiles=read(p/'missiles.txt');_,monsters=read(p/'monstats.txt');_,states=read(p/'states.txt')
  s={int(r['*Id']):r for r in skills if r['*Id'].isdigit()};d={r['skilldesc']:r for r in descs};m={r['Missile']:r for r in missiles};st={r['state']:r for r in states}
- expected={47:1,51:6,45:1,55:6,36:12,41:18,39:18,43:6,44:6}
+ expected={47:1,46:6,51:12,45:1,55:6,36:12,41:18,39:18,43:6,44:6}
  for sid,level in expected.items():assert int(s[sid]['reqlevel'])==level,(sid,s[sid]['reqlevel'])
  positions=[tuple(d[r['skilldesc']][k] for k in ('SkillPage','SkillRow','SkillColumn')) for r in s.values() if r['charclass']=='sor']
  assert len(positions)==len(set(positions))==30

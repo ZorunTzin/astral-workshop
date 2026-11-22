@@ -53,6 +53,8 @@ for folder in ('data/global/excel','data/global/excel/base'):
     expected=dict(r);expected[key]='Ws Trial Special Original';assert after['Ws Trial Special Original']==expected;continue
    # Mythical pool composition has its own exhaustive reachability verifier.
    if name=='treasureclassex' and r[key].startswith('Ws Mythical Pool'):continue
+   if name=='monstats' and r[key].startswith('wsarena'):
+    assert all(after[r[key]][k]==v for k,v in r.items() if k not in ('Level','Level(N)','Level(H)','Exp','Exp(N)','Exp(H)'));continue
    if r[key] and not r[key].startswith(('ws_goblin_','Ws Goblin ','workshop_goblin_')):assert after[r[key]]==r,(name,r[key])
 models=json.loads((root/'data/hd/character/monsters.json').read_text(encoding='utf-8-sig'))
 for f in families:

@@ -55,7 +55,7 @@ Five test seals from Akara (1 gold), Hell only, cube in Harrogath. Native enemy 
 - 53 modifiers. Each three-card selection has a 10% chance of one positive character modifier, otherwise three harmful monster modifiers. No duplicate offers. Capped choices are excluded while alternatives remain.
 - Loot bonus = 2 × min(200, 5 × (wave−1) + 10 × (trial−1) + internal card reward sum). The card UI displays twice each internal reward contribution. The same total gives temporary Magic Find and additional native treasure-class rolls (fractional hundredths give a chance for another roll).
 - Top-right ACTIVE MODIFIERS toggles a paged view of actual selected totals. NEXT PAGE cycles through eight entries at a time; click ACTIVE MODIFIERS again to return.
-- Cards appear three seconds after a wave clears. No hotkeys. Enemy life uses native monster maximum life multiplied by Trial tier (1.2 / 1.5 / 1.9 / 2.4 / 3.0), wave scaling (+12% per wave after the first) and accumulated life modifiers. The 10-HP playtest override is disabled. Experience remains disabled.
+- Cards appear three seconds after a wave clears. No hotkeys. Enemy life uses native monster maximum life multiplied by Trial tier (1.2 / 1.5 / 1.9 / 2.4 / 3.0), wave scaling (+12% per wave after the first) and accumulated life modifiers. The 10-HP playtest override is disabled. Experience is enabled: native monster-type XP, level 100 in wave 1, +1 level per subsequent wave. XP follows the ordinary level-100+ trend without the special native level-110 boss jump.
 - Player procs: Chain Lightning 53, Fire Ball 47, private legacy Frost Nova 597. Maximum 25% each, a shared 25-tick cooldown, level min(20,3+wave/2), no proc recursion. No more than one effect per successful roll window.
 - Native monster resistance bonuses stop at 95 total without lowering existing immunities. Extra enemy count caps the wave at 72. Monster regeneration and healing on hit are percentages of maximum HP; increased damage below half HP is applied after normal wave scaling.
 
@@ -126,3 +126,7 @@ Dynamic hazards/terrain, shrinking zones, ritual/boss/elite waves, resurrection,
 ## Verification
 
 Runtime tests cover 100,000 offer selections, no duplicate cards, at most one positive, capped proc exclusion, unique wave types, proc throttling/recursion, native loot forwarding, buff cleanup and delayed choice opening. Data checks cover private monster tables/models, all offer variants and page widgets. Build/data checks do not confirm native UI or live combat visuals. Expansion awaits gameplay testing.
+
+## Level-120 progression update
+
+All regular wave monsters, milestone bosses, replacement spawns and Trial goblins use `100 + wave - 1` (native nine-bit transmission safety limit 511). The existing tier/wave life and damage multipliers remain in place. Goblin split stages with zero XP remain zero; terminal children retain their rewards. Player death costs no XP in any difficulty. See `src/workshop/progression/README.md` for the calibrated player curve.

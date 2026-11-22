@@ -1,0 +1,730 @@
+{
+  "cap": 120,
+  "total_xp": 3520485254,
+  "old_target_level": 99,
+  "old_effective_xp_80_to_99": 37435796756.704765,
+  "new_effective_xp_80_to_120": 37435796754.40813,
+  "relative_error": -6.13487038947369e-11,
+  "levels": [
+    {
+      "level": 1,
+      "total_xp": 0,
+      "next_xp": 500,
+      "xp_percent": 100.0
+    },
+    {
+      "level": 2,
+      "total_xp": 500,
+      "next_xp": 1000,
+      "xp_percent": 100.0
+    },
+    {
+      "level": 3,
+      "total_xp": 1500,
+      "next_xp": 2250,
+      "xp_percent": 100.0
+    },
+    {
+      "level": 4,
+      "total_xp": 3750,
+      "next_xp": 4125,
+      "xp_percent": 100.0
+    },
+    {
+      "level": 5,
+      "total_xp": 7875,
+      "next_xp": 6300,
+      "xp_percent": 100.0
+    },
+    {
+      "level": 6,
+      "total_xp": 14175,
+      "next_xp": 8505,
+      "xp_percent": 100.0
+    },
+    {
+      "level": 7,
+      "total_xp": 22680,
+      "next_xp": 10206,
+      "xp_percent": 100.0
+    },
+    {
+      "level": 8,
+      "total_xp": 32886,
+      "next_xp": 11510,
+      "xp_percent": 100.0
+    },
+    {
+      "level": 9,
+      "total_xp": 44396,
+      "next_xp": 13319,
+      "xp_percent": 100.0
+    },
+    {
+      "level": 10,
+      "total_xp": 57715,
+      "next_xp": 14429,
+      "xp_percent": 100.0
+    },
+    {
+      "level": 11,
+      "total_xp": 72144,
+      "next_xp": 18036,
+      "xp_percent": 100.0
+    },
+    {
+      "level": 12,
+      "total_xp": 90180,
+      "next_xp": 22545,
+      "xp_percent": 100.0
+    },
+    {
+      "level": 13,
+      "total_xp": 112725,
+      "next_xp": 28181,
+      "xp_percent": 100.0
+    },
+    {
+      "level": 14,
+      "total_xp": 140906,
+      "next_xp": 35226,
+      "xp_percent": 100.0
+    },
+    {
+      "level": 15,
+      "total_xp": 176132,
+      "next_xp": 44033,
+      "xp_percent": 100.0
+    },
+    {
+      "level": 16,
+      "total_xp": 220165,
+      "next_xp": 55042,
+      "xp_percent": 100.0
+    },
+    {
+      "level": 17,
+      "total_xp": 275207,
+      "next_xp": 68801,
+      "xp_percent": 100.0
+    },
+    {
+      "level": 18,
+      "total_xp": 344008,
+      "next_xp": 86002,
+      "xp_percent": 100.0
+    },
+    {
+      "level": 19,
+      "total_xp": 430010,
+      "next_xp": 107503,
+      "xp_percent": 100.0
+    },
+    {
+      "level": 20,
+      "total_xp": 537513,
+      "next_xp": 134378,
+      "xp_percent": 100.0
+    },
+    {
+      "level": 21,
+      "total_xp": 671891,
+      "next_xp": 167973,
+      "xp_percent": 100.0
+    },
+    {
+      "level": 22,
+      "total_xp": 839864,
+      "next_xp": 209966,
+      "xp_percent": 100.0
+    },
+    {
+      "level": 23,
+      "total_xp": 1049830,
+      "next_xp": 262457,
+      "xp_percent": 100.0
+    },
+    {
+      "level": 24,
+      "total_xp": 1312287,
+      "next_xp": 328072,
+      "xp_percent": 100.0
+    },
+    {
+      "level": 25,
+      "total_xp": 1640359,
+      "next_xp": 410090,
+      "xp_percent": 100.0
+    },
+    {
+      "level": 26,
+      "total_xp": 2050449,
+      "next_xp": 512612,
+      "xp_percent": 100.0
+    },
+    {
+      "level": 27,
+      "total_xp": 2563061,
+      "next_xp": 640765,
+      "xp_percent": 100.0
+    },
+    {
+      "level": 28,
+      "total_xp": 3203826,
+      "next_xp": 698434,
+      "xp_percent": 100.0
+    },
+    {
+      "level": 29,
+      "total_xp": 3902260,
+      "next_xp": 761293,
+      "xp_percent": 100.0
+    },
+    {
+      "level": 30,
+      "total_xp": 4663553,
+      "next_xp": 829810,
+      "xp_percent": 100.0
+    },
+    {
+      "level": 31,
+      "total_xp": 5493363,
+      "next_xp": 904492,
+      "xp_percent": 100.0
+    },
+    {
+      "level": 32,
+      "total_xp": 6397855,
+      "next_xp": 985897,
+      "xp_percent": 100.0
+    },
+    {
+      "level": 33,
+      "total_xp": 7383752,
+      "next_xp": 1074627,
+      "xp_percent": 100.0
+    },
+    {
+      "level": 34,
+      "total_xp": 8458379,
+      "next_xp": 1171344,
+      "xp_percent": 100.0
+    },
+    {
+      "level": 35,
+      "total_xp": 9629723,
+      "next_xp": 1276765,
+      "xp_percent": 100.0
+    },
+    {
+      "level": 36,
+      "total_xp": 10906488,
+      "next_xp": 1391674,
+      "xp_percent": 100.0
+    },
+    {
+      "level": 37,
+      "total_xp": 12298162,
+      "next_xp": 1516924,
+      "xp_percent": 100.0
+    },
+    {
+      "level": 38,
+      "total_xp": 13815086,
+      "next_xp": 1653448,
+      "xp_percent": 100.0
+    },
+    {
+      "level": 39,
+      "total_xp": 15468534,
+      "next_xp": 1802257,
+      "xp_percent": 100.0
+    },
+    {
+      "level": 40,
+      "total_xp": 17270791,
+      "next_xp": 1964461,
+      "xp_percent": 100.0
+    },
+    {
+      "level": 41,
+      "total_xp": 19235252,
+      "next_xp": 2141263,
+      "xp_percent": 100.0
+    },
+    {
+      "level": 42,
+      "total_xp": 21376515,
+      "next_xp": 2333976,
+      "xp_percent": 100.0
+    },
+    {
+      "level": 43,
+      "total_xp": 23710491,
+      "next_xp": 2544034,
+      "xp_percent": 100.0
+    },
+    {
+      "level": 44,
+      "total_xp": 26254525,
+      "next_xp": 2772997,
+      "xp_percent": 100.0
+    },
+    {
+      "level": 45,
+      "total_xp": 29027522,
+      "next_xp": 3022566,
+      "xp_percent": 100.0
+    },
+    {
+      "level": 46,
+      "total_xp": 32050088,
+      "next_xp": 3294598,
+      "xp_percent": 100.0
+    },
+    {
+      "level": 47,
+      "total_xp": 35344686,
+      "next_xp": 3591112,
+      "xp_percent": 100.0
+    },
+    {
+      "level": 48,
+      "total_xp": 38935798,
+      "next_xp": 3914311,
+      "xp_percent": 100.0
+    },
+    {
+      "level": 49,
+      "total_xp": 42850109,
+      "next_xp": 4266600,
+      "xp_percent": 100.0
+    },
+    {
+      "level": 50,
+      "total_xp": 47116709,
+      "next_xp": 4650593,
+      "xp_percent": 100.0
+    },
+    {
+      "level": 51,
+      "total_xp": 51767302,
+      "next_xp": 5069147,
+      "xp_percent": 100.0
+    },
+    {
+      "level": 52,
+      "total_xp": 56836449,
+      "next_xp": 5525370,
+      "xp_percent": 100.0
+    },
+    {
+      "level": 53,
+      "total_xp": 62361819,
+      "next_xp": 6022654,
+      "xp_percent": 100.0
+    },
+    {
+      "level": 54,
+      "total_xp": 68384473,
+      "next_xp": 6564692,
+      "xp_percent": 100.0
+    },
+    {
+      "level": 55,
+      "total_xp": 74949165,
+      "next_xp": 7155515,
+      "xp_percent": 100.0
+    },
+    {
+      "level": 56,
+      "total_xp": 82104680,
+      "next_xp": 7799511,
+      "xp_percent": 100.0
+    },
+    {
+      "level": 57,
+      "total_xp": 89904191,
+      "next_xp": 8501467,
+      "xp_percent": 100.0
+    },
+    {
+      "level": 58,
+      "total_xp": 98405658,
+      "next_xp": 9266598,
+      "xp_percent": 100.0
+    },
+    {
+      "level": 59,
+      "total_xp": 107672256,
+      "next_xp": 10100593,
+      "xp_percent": 100.0
+    },
+    {
+      "level": 60,
+      "total_xp": 117772849,
+      "next_xp": 11009646,
+      "xp_percent": 100.0
+    },
+    {
+      "level": 61,
+      "total_xp": 128782495,
+      "next_xp": 12000515,
+      "xp_percent": 100.0
+    },
+    {
+      "level": 62,
+      "total_xp": 140783010,
+      "next_xp": 13080560,
+      "xp_percent": 100.0
+    },
+    {
+      "level": 63,
+      "total_xp": 153863570,
+      "next_xp": 14257811,
+      "xp_percent": 100.0
+    },
+    {
+      "level": 64,
+      "total_xp": 168121381,
+      "next_xp": 15541015,
+      "xp_percent": 100.0
+    },
+    {
+      "level": 65,
+      "total_xp": 183662396,
+      "next_xp": 16939705,
+      "xp_percent": 100.0
+    },
+    {
+      "level": 66,
+      "total_xp": 200602101,
+      "next_xp": 18464279,
+      "xp_percent": 100.0
+    },
+    {
+      "level": 67,
+      "total_xp": 219066380,
+      "next_xp": 20126064,
+      "xp_percent": 100.0
+    },
+    {
+      "level": 68,
+      "total_xp": 239192444,
+      "next_xp": 21937409,
+      "xp_percent": 100.0
+    },
+    {
+      "level": 69,
+      "total_xp": 261129853,
+      "next_xp": 23911777,
+      "xp_percent": 100.0
+    },
+    {
+      "level": 70,
+      "total_xp": 285041630,
+      "next_xp": 26063836,
+      "xp_percent": 100.0
+    },
+    {
+      "level": 71,
+      "total_xp": 311105466,
+      "next_xp": 28409582,
+      "xp_percent": 100.0
+    },
+    {
+      "level": 72,
+      "total_xp": 339515048,
+      "next_xp": 30966444,
+      "xp_percent": 100.0
+    },
+    {
+      "level": 73,
+      "total_xp": 370481492,
+      "next_xp": 33753424,
+      "xp_percent": 100.0
+    },
+    {
+      "level": 74,
+      "total_xp": 404234916,
+      "next_xp": 36791232,
+      "xp_percent": 100.0
+    },
+    {
+      "level": 75,
+      "total_xp": 441026148,
+      "next_xp": 40102443,
+      "xp_percent": 100.0
+    },
+    {
+      "level": 76,
+      "total_xp": 481128591,
+      "next_xp": 43711663,
+      "xp_percent": 100.0
+    },
+    {
+      "level": 77,
+      "total_xp": 524840254,
+      "next_xp": 47645713,
+      "xp_percent": 100.0
+    },
+    {
+      "level": 78,
+      "total_xp": 572485967,
+      "next_xp": 51933826,
+      "xp_percent": 100.0
+    },
+    {
+      "level": 79,
+      "total_xp": 624419793,
+      "next_xp": 56607872,
+      "xp_percent": 100.0
+    },
+    {
+      "level": 80,
+      "total_xp": 681027665,
+      "next_xp": 18299861,
+      "xp_percent": 97.65625
+    },
+    {
+      "level": 81,
+      "total_xp": 699327526,
+      "next_xp": 19385331,
+      "xp_percent": 95.3125
+    },
+    {
+      "level": 82,
+      "total_xp": 718712857,
+      "next_xp": 20565897,
+      "xp_percent": 93.06640625
+    },
+    {
+      "level": 83,
+      "total_xp": 739278754,
+      "next_xp": 21789499,
+      "xp_percent": 90.72265625
+    },
+    {
+      "level": 84,
+      "total_xp": 761068253,
+      "next_xp": 23112098,
+      "xp_percent": 88.37890625
+    },
+    {
+      "level": 85,
+      "total_xp": 784180351,
+      "next_xp": 24491405,
+      "xp_percent": 86.1328125
+    },
+    {
+      "level": 86,
+      "total_xp": 808671756,
+      "next_xp": 25973044,
+      "xp_percent": 83.7890625
+    },
+    {
+      "level": 87,
+      "total_xp": 834644800,
+      "next_xp": 27527868,
+      "xp_percent": 81.4453125
+    },
+    {
+      "level": 88,
+      "total_xp": 862172668,
+      "next_xp": 29187576,
+      "xp_percent": 79.1015625
+    },
+    {
+      "level": 89,
+      "total_xp": 891360244,
+      "next_xp": 30940249,
+      "xp_percent": 76.7578125
+    },
+    {
+      "level": 90,
+      "total_xp": 922300493,
+      "next_xp": 32799319,
+      "xp_percent": 74.51171875
+    },
+    {
+      "level": 91,
+      "total_xp": 955099812,
+      "next_xp": 34775014,
+      "xp_percent": 72.16796875
+    },
+    {
+      "level": 92,
+      "total_xp": 989874826,
+      "next_xp": 36857272,
+      "xp_percent": 69.82421875
+    },
+    {
+      "level": 93,
+      "total_xp": 1026732098,
+      "next_xp": 39084363,
+      "xp_percent": 67.48046875
+    },
+    {
+      "level": 94,
+      "total_xp": 1065816461,
+      "next_xp": 41416465,
+      "xp_percent": 65.234375
+    },
+    {
+      "level": 95,
+      "total_xp": 1107232926,
+      "next_xp": 43926936,
+      "xp_percent": 62.890625
+    },
+    {
+      "level": 96,
+      "total_xp": 1151159862,
+      "next_xp": 46538701,
+      "xp_percent": 60.546875
+    },
+    {
+      "level": 97,
+      "total_xp": 1197698563,
+      "next_xp": 49368607,
+      "xp_percent": 58.30078125
+    },
+    {
+      "level": 98,
+      "total_xp": 1247067170,
+      "next_xp": 52293392,
+      "xp_percent": 55.95703125
+    },
+    {
+      "level": 99,
+      "total_xp": 1299360562,
+      "next_xp": 55483373,
+      "xp_percent": 53.61328125
+    },
+    {
+      "level": 100,
+      "total_xp": 1354843935,
+      "next_xp": 58769428,
+      "xp_percent": 51.26953125
+    },
+    {
+      "level": 101,
+      "total_xp": 1413613363,
+      "next_xp": 62354353,
+      "xp_percent": 48.92578125
+    },
+    {
+      "level": 102,
+      "total_xp": 1475967716,
+      "next_xp": 66058575,
+      "xp_percent": 46.6796875
+    },
+    {
+      "level": 103,
+      "total_xp": 1542026291,
+      "next_xp": 70074914,
+      "xp_percent": 44.23828125
+    },
+    {
+      "level": 104,
+      "total_xp": 1612101205,
+      "next_xp": 74250510,
+      "xp_percent": 41.796875
+    },
+    {
+      "level": 105,
+      "total_xp": 1686351715,
+      "next_xp": 78749931,
+      "xp_percent": 39.453125
+    },
+    {
+      "level": 106,
+      "total_xp": 1765101646,
+      "next_xp": 83456876,
+      "xp_percent": 37.01171875
+    },
+    {
+      "level": 107,
+      "total_xp": 1848558522,
+      "next_xp": 88497198,
+      "xp_percent": 34.5703125
+    },
+    {
+      "level": 108,
+      "total_xp": 1937055720,
+      "next_xp": 93803099,
+      "xp_percent": 32.2265625
+    },
+    {
+      "level": 109,
+      "total_xp": 2030858819,
+      "next_xp": 99449022,
+      "xp_percent": 27.9296875
+    },
+    {
+      "level": 110,
+      "total_xp": 2130307841,
+      "next_xp": 105430086,
+      "xp_percent": 22.16796875
+    },
+    {
+      "level": 111,
+      "total_xp": 2235737927,
+      "next_xp": 111754008,
+      "xp_percent": 17.1875
+    },
+    {
+      "level": 112,
+      "total_xp": 2347491935,
+      "next_xp": 118496136,
+      "xp_percent": 13.4765625
+    },
+    {
+      "level": 113,
+      "total_xp": 2465988071,
+      "next_xp": 125579056,
+      "xp_percent": 10.25390625
+    },
+    {
+      "level": 114,
+      "total_xp": 2591567127,
+      "next_xp": 133179076,
+      "xp_percent": 8.0078125
+    },
+    {
+      "level": 115,
+      "total_xp": 2724746203,
+      "next_xp": 141111613,
+      "xp_percent": 5.95703125
+    },
+    {
+      "level": 116,
+      "total_xp": 2865857816,
+      "next_xp": 149678672,
+      "xp_percent": 4.4921875
+    },
+    {
+      "level": 117,
+      "total_xp": 3015536488,
+      "next_xp": 158562198,
+      "xp_percent": 3.02734375
+    },
+    {
+      "level": 118,
+      "total_xp": 3174098686,
+      "next_xp": 168219331,
+      "xp_percent": 2.34375
+    },
+    {
+      "level": 119,
+      "total_xp": 3342318017,
+      "next_xp": 178167237,
+      "xp_percent": 1.5625
+    },
+    {
+      "level": 120,
+      "total_xp": 3520485254,
+      "next_xp": 0,
+      "xp_percent": 0.0
+    }
+  ]
+}

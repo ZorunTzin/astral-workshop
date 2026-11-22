@@ -1029,6 +1029,21 @@
       ]
     },
     {
+      "type": "ImageWidget",
+      "name": "LeagueBackground",
+      "fields": {
+        "rect": {
+          "x": 80,
+          "y": 3,
+          "width": 1560,
+          "height": 1260
+        },
+        "filename": "Workshop/leagueBackground",
+        "visible": false,
+        "enabled": false
+      }
+    },
+    {
       "type": "Widget",
       "name": "advancedstash_materials",
       "children": [
@@ -1511,6 +1526,162 @@
               "height": 98
             },
             "itemCode": "Wt5"
+          }
+        },
+        {
+          "type": "AdvancedStashSlotWidget",
+          "name": "LeagueOrb00",
+          "fields": {
+            "rect": {
+              "x": 350,
+              "y": 138,
+              "width": 98,
+              "height": 98
+            },
+            "itemCode": "Ln1"
+          }
+        },
+        {
+          "type": "AdvancedStashSlotWidget",
+          "name": "LeagueOrb01",
+          "fields": {
+            "rect": {
+              "x": 650,
+              "y": 138,
+              "width": 98,
+              "height": 98
+            },
+            "itemCode": "Ln2"
+          }
+        },
+        {
+          "type": "AdvancedStashSlotWidget",
+          "name": "LeagueOrb02",
+          "fields": {
+            "rect": {
+              "x": 950,
+              "y": 138,
+              "width": 98,
+              "height": 98
+            },
+            "itemCode": "Ln3"
+          }
+        },
+        {
+          "type": "AdvancedStashSlotWidget",
+          "name": "LeagueOrb03",
+          "fields": {
+            "rect": {
+              "x": 1250,
+              "y": 138,
+              "width": 98,
+              "height": 98
+            },
+            "itemCode": "Ln4"
+          }
+        },
+        {
+          "type": "AdvancedStashSlotWidget",
+          "name": "LeagueOrb10",
+          "fields": {
+            "rect": {
+              "x": 350,
+              "y": 258,
+              "width": 98,
+              "height": 98
+            },
+            "itemCode": "Lo1"
+          }
+        },
+        {
+          "type": "AdvancedStashSlotWidget",
+          "name": "LeagueOrb11",
+          "fields": {
+            "rect": {
+              "x": 650,
+              "y": 258,
+              "width": 98,
+              "height": 98
+            },
+            "itemCode": "Lo2"
+          }
+        },
+        {
+          "type": "AdvancedStashSlotWidget",
+          "name": "LeagueOrb12",
+          "fields": {
+            "rect": {
+              "x": 950,
+              "y": 258,
+              "width": 98,
+              "height": 98
+            },
+            "itemCode": "Lo3"
+          }
+        },
+        {
+          "type": "AdvancedStashSlotWidget",
+          "name": "LeagueOrb13",
+          "fields": {
+            "rect": {
+              "x": 1250,
+              "y": 258,
+              "width": 98,
+              "height": 98
+            },
+            "itemCode": "Lo4"
+          }
+        },
+        {
+          "type": "AdvancedStashSlotWidget",
+          "name": "LeagueOrb20",
+          "fields": {
+            "rect": {
+              "x": 350,
+              "y": 378,
+              "width": 98,
+              "height": 98
+            },
+            "itemCode": "Lp1"
+          }
+        },
+        {
+          "type": "AdvancedStashSlotWidget",
+          "name": "LeagueOrb21",
+          "fields": {
+            "rect": {
+              "x": 650,
+              "y": 378,
+              "width": 98,
+              "height": 98
+            },
+            "itemCode": "Lp2"
+          }
+        },
+        {
+          "type": "AdvancedStashSlotWidget",
+          "name": "LeagueOrb22",
+          "fields": {
+            "rect": {
+              "x": 950,
+              "y": 378,
+              "width": 98,
+              "height": 98
+            },
+            "itemCode": "Lp3"
+          }
+        },
+        {
+          "type": "AdvancedStashSlotWidget",
+          "name": "LeagueOrb23",
+          "fields": {
+            "rect": {
+              "x": 1250,
+              "y": 378,
+              "width": 98,
+              "height": 98
+            },
+            "itemCode": "Lp4"
           }
         }
       ]
@@ -2117,6 +2288,44 @@
           }
         }
       ]
+    },
+    {
+      "type": "ButtonWidget",
+      "name": "LeagueTab",
+      "fields": {
+        "rect": {
+          "x": 1064,
+          "y": -60,
+          "width": 240,
+          "height": 64
+        },
+        "filename": "Workshop/leagueTab",
+        "normalFrame": 0,
+        "hoveredFrame": 1,
+        "pressedFrame": 2,
+        "disabledFrame": 3,
+        "onClickMessage": "PanelManager:ClosePanel:WorkshopStashLeague",
+        "visible": true
+      }
+    },
+    {
+      "type": "ButtonWidget",
+      "name": "LeagueMaterialsBack",
+      "fields": {
+        "rect": {
+          "x": 670,
+          "y": -60,
+          "width": 196,
+          "height": 64
+        },
+        "filename": "Workshop/leagueMaterials",
+        "normalFrame": 0,
+        "hoveredFrame": 1,
+        "pressedFrame": 2,
+        "disabledFrame": 3,
+        "onClickMessage": "PanelManager:ClosePanel:WorkshopStashLeagueBack",
+        "visible": false
+      }
     }
   ]
 }

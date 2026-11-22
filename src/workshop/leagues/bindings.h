@@ -1,0 +1,2 @@
+#pragma once
+namespace League { inline constexpr unsigned AreaChance=12,MaxLiving=48; inline constexpr unsigned Durations[3]={90, 180, 180}; inline constexpr int Classes[3][3][3]={{{1531, 1532, 1533}, {1534, 1535, 1536}, {1537, 1538, 1539}}, {{1540, 1541, 1542}, {1543, 1544, 1545}, {1546, 1547, 1548}}, {{1549, 1550, 1551}, {1552, 1553, 1554}, {1555, 1556, 1557}}}; inline constexpr int Pillars[3]={587, 588, 589}; inline constexpr int DarknessState=356; inline constexpr int RiftMissile=1103; }

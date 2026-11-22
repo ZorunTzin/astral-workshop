@@ -5,6 +5,7 @@ namespace Amazon {
 #include "amazon_bindings.h"
 constexpr unsigned Invalid=0xffffffffU;
 inline Curses::MissileHitFn OriginalHit=nullptr;
+inline thread_local void* CurrentHitMissile=nullptr;
 // Native volley publisher handles the owning client and other room viewers.
 // Use the spawn packet path, not the late-room resynchronization helper.
 using PublishFn=void(__fastcall*)(void*,void**,unsigned char,void*,void*,unsigned short);
@@ -95,6 +96,7 @@ inline void Created(void* game,void* raw,void* missile)noexcept{
  }
 }
 inline int __fastcall MissileHit(void* game,void* missile,void* target,int force){
+ struct Context {void* prior;Context(void* m):prior(CurrentHitMissile){CurrentHitMissile=m;}~Context(){CurrentHitMissile=prior;}} context(missile);
  Reset(game);Impact request;bool queued=false;
  const int cls=missile?static_cast<unsigned*>(missile)[1]:-1;
  if(cls==Return&&target&&GuardianCombat::Hostile(game,target))Trace("damage at return collision",Barbarian::Id(missile),cls,Ramp::GetUnit(missile,21,0));

@@ -25,8 +25,8 @@ for folder in ('data/global/excel','data/global/excel/base'):
  for i,r in enumerate(recipes):assert r['min diff']=='2' and r['input 1']==meta['sealCodes'][i] and r['output']==f"Red Portal,lvl={meta['firstLevel']+i},qty=1"
  monsters={int(r['*hcIdx']):r for r in rows('monstats') if r['*hcIdx'].isdigit()}
  for id in meta['monsters']:
-  r=monsters[id];assert r['neverCount']=='1' and r['Level(H)']=='85'
-  assert all(r[k] in ('','0') for k in r if k.startswith('Exp'))
+  r=monsters[id];assert r['neverCount']=='1' and r['Level(H)']=='100'
+  assert all(int(r[k])>0 for k in ('Exp','Exp(N)','Exp(H)'))
   assert r['TreasureClass(H)']
   source=next(x for x in monsters.values() if x['Id']==json.loads((root/'workshop/endgame/enemy_pool.json').read_text())[meta['monsters'].index(id)])
   tc={x['Treasure Class']:x for x in rows('treasureclassex')}

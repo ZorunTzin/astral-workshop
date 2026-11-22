@@ -5,7 +5,7 @@
 struct List { void* owner{};int state{};unsigned expiry=0x7fffffff;std::map<int,int> stats; };
 struct Unit { unsigned type=0,cls=3,id=10,mode=1;unsigned char native[0x150]{};std::map<int,int> stats;std::map<int,List> lists;std::map<int,int> levels; int x=20,y=20,room=1; };
 Unit player,mercenary;
-alignas(8) unsigned char game[0x3000]{};
+alignas(8) unsigned char game[0x4000]{};
 std::map<int,std::array<unsigned char,0x2ec>> records;
 unsigned pulses=0,itemCalls=0,scheduled=0;
 void Frame(unsigned n){*reinterpret_cast<unsigned*>(game+0x170)=n;}

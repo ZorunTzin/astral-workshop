@@ -5,6 +5,8 @@ namespace SetSelectors {
 inline std::uint64_t Random=0;
 inline void* Session=nullptr;inline unsigned Last=0,NextFrame=0;
 inline unsigned Draw(unsigned bound){
+    if(!bound)return 0;
+    if(!Random)Random=1; // A proc may precede the first selector frame.
     // Rejection sampling prevents modulo bias for three-, five- and six-piece sets.
     const unsigned threshold=(0u-bound)%bound;
     for(;;){Random^=Random>>12;Random^=Random<<25;Random^=Random>>27;

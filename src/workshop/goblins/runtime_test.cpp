@@ -75,7 +75,7 @@ int main(){
  assert(!Arena::BossWave(Arena::Current)&&Arena::WaveCount(Arena::Current)==Arena::Current.count());
  player.room=166;Arena::Pending=2;Arena::Enemies.clear();Goblins::SpawnTrialWave(&player,100);
  assert(Arena::Pending==0&&Arena::Current.phase==Arena::Phase::Fighting&&Arena::Enemies.size()==2&&Goblins::TrialWaveBusy());
- for(auto& r:Goblins::Runners)assert(r.trialWave&&Goblins::GoblinClass(r.cls));
+ for(auto& r:Goblins::Runners){assert(r.trialWave&&Goblins::GoblinClass(r.cls));assert(mobs[r.id].stats[12]==109);}
  Tick(300);Tick(375);assert(!Goblins::TrialWaveBusy());
  Clean();::Frame(100);player.room=166;Arena::Current.phase=Arena::Phase::Fighting;
  assert(Goblins::Spawn(&player,166,100,6,true));id=serial;Notify(id,Goblins::Classes[6],166);mobs.erase(id);Tick(105);

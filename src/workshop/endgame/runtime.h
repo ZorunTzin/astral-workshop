@@ -2,6 +2,7 @@
 #include "engine.h"
 #include "bindings.h"
 #include "boss_bindings.h"
+#include "../progression/bindings.h"
 #include <D2RLPlugin/lifecycle_events.h>
 #pragma comment(lib,"user32.lib")
 #include <mutex>
@@ -158,6 +159,12 @@ inline bool RankWaveMonster(void* u,int rank=0){
  for(int id:{1,2,4})MonsterRuntime::Init(u,id,1);
  MonsterRuntime::Init(u,mod,1);return true;
 }
+// Apply once after native rank initialization, also on replacement spawns.
+inline void WaveProgression(void* unit){
+ const int oldLevel=Ramp::GetUnit(unit,12,0),xp=Ramp::GetUnit(unit,13,0);
+ Ramp::SetUnit(unit,13,Progression::ScaleExperience(xp,oldLevel,Current.wave),0);
+ Ramp::SetUnit(unit,12,Progression::WaveLevel(Current.wave),0);
+}
 inline void SpawnWave(void* player,unsigned now){
  if(now<ReadyAt)return;
  if(GoblinWave(Current)){if(SpawnGoblinWave)SpawnGoblinWave(player,now);return;}
@@ -171,6 +178,7 @@ inline void SpawnWave(void* player,unsigned now){
   int milestone=MilestoneRank(Current,index);if(milestone)rank=milestone;
   int cls=rank==3?BossClasses[Current.stage-1]:WaveClasses[rank==1?0:index%3];
   void* u=MonsterRuntime::Spawn(Game,SoulHarvest::Room(player),x,y,cls,1,-1,0);++Attempt;if(!u)continue;if(!RankWaveMonster(u,rank)){if(Barbarian::DeleteUnit)Barbarian::DeleteUnit(Game,u);continue;}
+  WaveProgression(u);
   int hp=LowLifePlaytest?PlaytestLife(Current):int(std::clamp<std::int64_t>(int64_t(Ramp::GetUnit(u,7,0))*Current.lifePercent()/100,256,0x3fffffff));
   if(LowLifePlaytest)Ramp::SetUnit(u,74,0,0);
   Ramp::SetUnit(u,7,hp,0);Ramp::SetUnit(u,6,hp,0);MonsterBonuses(u);
@@ -192,7 +200,8 @@ inline void RecoverMissing(void* player,unsigned now){
    int x=Assassin::Coordinate(player,false)+int(std::cos(angle)*radius),y=Assassin::Coordinate(player,true)+int(std::sin(angle)*radius);
    void* u=MonsterRuntime::Spawn(Game,SoulHarvest::Room(player),x,y,record.cls,1,-1,0);if(!u)continue;
    if(!RankWaveMonster(u,record.rank)){if(Barbarian::DeleteUnit)Barbarian::DeleteUnit(Game,u);continue;}
-   int hp=LowLifePlaytest?PlaytestLife(Current):int(std::clamp<int64_t>(int64_t(Ramp::GetUnit(u,7,0))*Current.lifePercent()/100,256,0x3fffffff));
+   WaveProgression(u);
+  int hp=LowLifePlaytest?PlaytestLife(Current):int(std::clamp<int64_t>(int64_t(Ramp::GetUnit(u,7,0))*Current.lifePercent()/100,256,0x3fffffff));
    if(LowLifePlaytest)Ramp::SetUnit(u,74,0,0);Ramp::SetUnit(u,7,hp,0);Ramp::SetUnit(u,6,hp,0);MonsterBonuses(u);Assassin::SetTarget(u,player);
    unsigned old=record.id;record.id=Barbarian::Id(u);record.missingSince=0;*tracked=record.id;if(old!=record.id)RetiredEnemies.push_back({old,record.cls,0});
    char line[180]{};std::snprintf(line,sizeof(line),"Arena recovered missing enemy: trial=%d wave=%d old=%u replacement=%u class=%d",Current.stage,Current.wave,old,record.id,record.cls);if(Context)Context->LogInfo(line);return;
@@ -322,7 +331,7 @@ inline void __cdecl Draw(const PluginContext* c,const Overlay::Frame* f,void*) n
    shownEpoch=0;held=false;float x=f->screenWidth*.12f,y=f->screenHeight*.08f;
    box({x,y,f->screenWidth*.88f,y+105*scale},{.045f,.035f,.085f,.94f},8);
    std::snprintf(line,sizeof(line),"ASTRAL TRIAL %d  |  WAVE %d  |  ENEMIES %d  |  SCORE %d",r.stage,r.wave,view.alive,r.score);Text(c,f,x+20*scale,y+12*scale,line,gold,23*scale);
-   Text(c,f,x+20*scale,y+46*scale,r.phase==Phase::Countdown?"Next wave in preparation":r.phase==Phase::Fighting?"Defeat every enemy. TEST: 10 base HP + life bonuses.":"Run ended - use a town portal to leave.",white,18*scale);
+   Text(c,f,x+20*scale,y+46*scale,r.phase==Phase::Countdown?"Next wave in preparation":r.phase==Phase::Fighting?"Defeat every enemy.":"Run ended - use a town portal to leave.",white,18*scale);
    if(!view.note.empty())Text(c,f,x+20*scale,y+78*scale,view.note,white,15*scale);
   }
  }catch(...){}

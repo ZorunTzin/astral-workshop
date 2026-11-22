@@ -355,3 +355,4 @@ wsmyth666	352					1																																																													
 wsmyth667	353					1																																																																				0
 wsmythicalbonds	354					1																																										battlecommandcast																										0
 wsmythicalrenewal	355					1																																										battlecommandcast																										0
+wsleaguenight	356					1																																																																				0

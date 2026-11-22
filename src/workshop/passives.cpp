@@ -63,11 +63,12 @@ int __fastcall sigilRequiredLevel(void* item,void* player){
     forgeTooltipSnapshot={};
     if(item && *static_cast<unsigned*>(item)==4){
         const int marker=readItemStat(item,forgeMarkerStat,0),value=readItemStat(item,forgeLevelStat,0);
-        required=std::max(required,forgeRequiredLevel(marker,value));
+        required=std::max(required,forgeRequiredLevel(marker,value))+std::max(0,readItemStat(item,LeagueCraft::LevelStat,0));
         forgeTooltipSnapshot={static_cast<unsigned*>(item)[2],marker,value,GetTickCount64()};
     }
     return required;
 }
+#include "leagues/craft_native.inc"
 Panels::RegistrationHandle panel{};
 Build selected{};
 unsigned budget=0;
@@ -668,6 +669,7 @@ D2RL_PLUGIN_EXPORT bool D2RLoaderLoadPlugin(const PluginContext* ctx) noexcept {
     auto hook=MakeInlineHook(0x376de0,expected,sizeof(expected),
         reinterpret_cast<void*>(sigilRequiredLevel),reinterpret_cast<void**>(&originalRequiredLevel));
     if(!ctx->api->installInlineHook(ctx,&hook))return false;
+    if(!LeagueCraft::Install(ctx))return false;
     return ctx->RegisterConsoleCommand("astral",command,"Open tree, toggle a node by name, or inscribe the plan.");
 }
 D2RL_PLUGIN_EXPORT void D2RLoaderUnloadPlugin() noexcept {WorkshopStash::Organizer::shutdown();}

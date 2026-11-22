@@ -134,3 +134,25 @@ for %%T in (engine_test runtime_test) do (
  if not "!errorlevel!"=="0" exit /b 1
 )
 popd
+
+rem League encounters use the same authoritative combat frame and lifecycle service.
+pushd "%~dp0"
+cl /nologo /std:c++latest /EHsc /O2 /MT /I ..\SDK\include ..\leagues\runtime_test.cpp /Fe:league_runtime_test.exe
+if not "!errorlevel!"=="0" exit /b 1
+league_runtime_test.exe
+if not "!errorlevel!"=="0" exit /b 1
+popd
+
+pushd "%~dp0"
+cl /nologo /std:c++latest /EHsc /O2 /MT /I ..\SDK\include ..\leagues\effects_test.cpp /Fe:league_effects_test.exe
+if not "!errorlevel!"=="0" exit /b 1
+league_effects_test.exe
+if not "!errorlevel!"=="0" exit /b 1
+popd
+
+pushd "%~dp0"
+cl /nologo /std:c++latest /EHsc /O2 /MT ..\leagues\craft_test.cpp /Fe:league_craft_test.exe
+if not "!errorlevel!"=="0" exit /b 1
+league_craft_test.exe
+if not "!errorlevel!"=="0" exit /b 1
+popd

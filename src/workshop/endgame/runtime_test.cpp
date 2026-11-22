@@ -14,7 +14,7 @@ void* __fastcall AFind(void*,int type,unsigned id){if(!type&&id==player.id)retur
 void __fastcall ATarget(void*,void*){}
 void __fastcall ADelete(void*,void* p){if(static_cast<Unit*>(p)->type==2){++portalsDeleted;return;}for(auto& u:mobs)if(u.get()==p){u.reset();++deleted;}}
 void __fastcall ARoomDelete(void*,unsigned,unsigned){}
-void* __fastcall ASpawn(void*,void*,int x,int y,int cls,int,int,unsigned short){if(blockSpawn)return nullptr;auto p=std::make_unique<Unit>();p->type=1;p->id=100+unsigned(mobs.size());p->cls=cls;p->room=player.room;p->x=x;p->y=y;p->stats[6]=p->stats[7]=1000;void* rankData=spawnedRankData;std::memcpy(p->native,&rankData,8);auto raw=p.get();mobs.push_back(std::move(p));return raw;}
+void* __fastcall ASpawn(void*,void*,int x,int y,int cls,int,int,unsigned short){if(blockSpawn)return nullptr;auto p=std::make_unique<Unit>();p->type=1;p->id=100+unsigned(mobs.size());p->cls=cls;p->room=player.room;p->x=x;p->y=y;p->stats[6]=p->stats[7]=1000;p->stats[12]=100;p->stats[13]=Progression::NativeHellXP[100];void* rankData=spawnedRankData;std::memcpy(p->native,&rankData,8);auto raw=p.get();mobs.push_back(std::move(p));return raw;}
 D2RL::Inventory::Result __cdecl ALocal(const D2RL::PluginContext*,D2RL::PlayerHandle* p) noexcept{*p=10;return D2RL::Inventory::Result::Success;}
 D2RL::Items::Result __cdecl AItem(const D2RL::PluginContext*,D2RL::PlayerHandle,const D2RL::Items::ItemCreateSpec* spec,D2RL::ItemHandle* item) noexcept{if(full)return D2RL::Items::Result::InvalidArgument;assert(spec->quality==D2RL::Items::Quality::Normal);assert(spec->destination.container==D2RL::Items::ItemContainer::Ground);assert(spec->destination.placement==D2RL::Items::Placement::Exact);assert(spec->destination.x==unsigned(player.x)&&spec->destination.y==unsigned(player.y));++created;*item=created;return D2RL::Items::Result::Success;}
 Unit craftedSeal;unsigned char sealData[0x80]{};int portalResult=1;
@@ -37,6 +37,14 @@ void PortalCraftTests(){
  puts("PASS: crafted seal portal snapshot only from Cube, success-only transfer, exact tier modifiers, rank chance and one-time consumption.");
 }
 int main(){
+ assert(Progression::WaveLevel(1)==100&&Progression::WaveLevel(21)==120&&Progression::WaveLevel(50)==149);
+ assert(Progression::WaveLevel(0)==100&&Progression::WaveLevel(2147483647)==511);
+ const int baseXP=Progression::NativeHellXP[100];
+ int previousXP=0;
+ for(int wave=1;wave<=412;++wave){int xp=Progression::ScaleExperience(baseXP,100,wave);assert(xp>previousXP);previousXP=xp;}
+ assert(Progression::ScaleExperience(0,100,50)==0);
+ assert(Progression::ScaleExperience(baseXP*3,100,21)==Progression::ScaleExperience(baseXP,100,21)*3);
+ assert(Progression::ScaleExperience(2147483647,1,2147483647)==0x3fffffff);
  static_assert(!Arena::LowLifePlaytest,"Trials must use native monster life in production");
  ExistingAuraTests();PortalCraftTests();Arena::NaturalRanks=false;
  for(auto size: {std::pair<float,float>{1280,720},{1920,1080},{3840,2160}}){for(int i=0;i<4;++i){auto r=Arena::ChoiceRect(i,size.first,size.second);assert(Arena::ChoiceAt((r.left+r.right)/2,(r.top+r.bottom)/2,size.first,size.second)==i);}assert(Arena::ChoiceAt(0,0,size.first,size.second)==-1);}
@@ -66,6 +74,7 @@ Arena::Enabled=true;Arena::Context=&ctx;void* p=&player;std::memcpy(game+0x2230+
  for(int f=1075;f<=1100;f+=5){Frame(f);Arena::Frame(game);}assert(Arena::Current.phase==Arena::Phase::Fighting&&Arena::Enemies.size()==14);
  Arena::Run hpRun;hpRun.start(1,1,1);assert(Arena::PlaytestLife(hpRun)==2560);hpRun.bonuses[0]=20;assert(Arena::PlaytestLife(hpRun)==3072);hpRun.wave=2;assert(Arena::PlaytestLife(hpRun)==3440);
  for(const auto& u:mobs)if(u){int dx=u->x-player.x,dy=u->y-player.y;double distance=std::sqrt(double(dx*dx+dy*dy));assert(distance>=54&&distance<=89);}
+ assert(mobs[0]->stats[12]==100&&mobs[0]->stats[13]==baseXP);
  assert(mobs[0]->stats[7]==1200&&mobs[0]->stats[6]==1200);alignas(8) char packet[0x180]{};int damage=100;std::memcpy(packet+0x18,&damage,4);std::memcpy(packet+0x134,&damage,4);Arena::Damage(game,mobs[0].get(),&player,packet);assert(Barbarian::ReadDamage(packet,0x134)==120);
 
  MonsterRuntime::AdditionalLootRolls=Arena::NativeLootBonus;
@@ -132,7 +141,7 @@ Arena::Enabled=true;Arena::Context=&ctx;void* p=&player;std::memcpy(game+0x2230+
  Frame(2000);Arena::Frame(game);assert(Arena::Enemies[0]==999999);
  Frame(2120);Arena::Frame(game);assert(Arena::Enemies[0]==999999&&Arena::Current.completed==0);
  Frame(2125);Arena::Frame(game);assert(Arena::Enemies[0]!=999999&&Arena::Current.phase==Arena::Phase::Fighting&&Arena::Current.completed==0);
- auto replacement=AFind(game,1,Arena::Enemies[0]);assert(replacement&&GetUnit(replacement,6,0)==1200);
+ auto replacement=AFind(game,1,Arena::Enemies[0]);assert(replacement&&GetUnit(replacement,6,0)==1200);assert(GetUnit(replacement,12,0)==100&&GetUnit(replacement,13,0)==baseXP);
  Frame(2130);Arena::Frame(game);assert(Arena::Current.phase==Arena::Phase::Fighting);
  SetUnit(replacement,6,0,0);Frame(2135);Arena::Frame(game);assert(Arena::Current.phase==Arena::Phase::Choice&&Arena::Current.completed==1);
  std::puts("PASS: missing enemy recovery waits, replaces without credit, then unlocks cards only after replacement death.");
@@ -168,6 +177,7 @@ Arena::Enabled=true;Arena::Context=&ctx;void* p=&player;std::memcpy(game+0x2230+
  Arena::StartWave(5000);for(unsigned now=5075;Arena::Pending&&now<5300;now+=5)Arena::SpawnWave(&player,now);
  assert(!Arena::Pending&&Arena::Enemies.size()==unsigned(Arena::Current.count()+8));
  auto boss=std::find_if(Arena::SpawnRecords.begin(),Arena::SpawnRecords.end(),[](auto r){return r.rank==3;});assert(boss!=Arena::SpawnRecords.end()&&boss->cls==Arena::BossClasses[0]);
+ for(unsigned id:Arena::Enemies){auto unit=AFind(game,1,id);assert(unit&&GetUnit(unit,12,0)==109&&GetUnit(unit,13,0)>baseXP);}
  unsigned bossId=boss->id;
  for(unsigned id:Arena::Enemies)if(id!=bossId)SetUnit(AFind(game,1,id),6,0,0);
  Arena::Next=0;Frame(5310);Arena::Frame(game);assert(Arena::Current.phase==Arena::Phase::Fighting);

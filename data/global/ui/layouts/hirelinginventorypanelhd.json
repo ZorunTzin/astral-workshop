@@ -1,542 +1,1356 @@
 {
-    "type": "HirelingInventoryPanel", "name": "HirelingInventoryPanel",
-    "fields": {
-        "rect": "$LeftPanelRect",
-        "anchor": "$LeftPanelAnchor",
-        "slotBackgroundFilename": "PANEL\\Hireling\\HireablePanel\\Hireables_Paperdoll",
-        // limited to 20 overrides
-        "slotBackgroundOverrides": [
-            {
-                "monsterClass": 271,
-                "rightBackgroundFrame": 0,
-                "leftBackgroundFrame": 0
-            },
-            {
-                "monsterClass": 338,
-                "rightBackgroundFrame": 1,
-                "leftBackgroundFrame": 1
-            },
-            {
-                "monsterClass": 359,
-                "rightBackgroundFrame": 2,
-                "leftBackgroundFrame": 3
-            },
-            {
-                "monsterClass": 560,
-                "rightBackgroundFrame": 4,
-                "leftBackgroundFrame": 4
-            },
-            {
-                "monsterClass": 561,
-                "rightBackgroundFrame": 2,
-                "leftBackgroundFrame": 2
-            }
-        ]
+  "type": "HirelingInventoryPanel",
+  "name": "HirelingInventoryPanel",
+  "fields": {
+    "rect": {
+      "x": 236,
+      "y": 0,
+      "width": 1162,
+      "height": 1580
     },
-    "children": [
-        {
-            "type": "ImageWidget", "name": "Background",
-            "fields": {
-                "rect": { "x": 0, "y": 0 },
-                "filename": "\\PANEL\\Hireling\\HirelingPanel"
-            }
+    "anchor": {
+      "x": 0,
+      "y": 0
+    },
+    "slotBackgroundFilename": "PANEL\\Hireling\\HireablePanel\\Hireables_Paperdoll",
+    "slotBackgroundOverrides": [
+      {
+        "monsterClass": 271,
+        "rightBackgroundFrame": 0,
+        "leftBackgroundFrame": 0
+      },
+      {
+        "monsterClass": 338,
+        "rightBackgroundFrame": 1,
+        "leftBackgroundFrame": 1
+      },
+      {
+        "monsterClass": 359,
+        "rightBackgroundFrame": 2,
+        "leftBackgroundFrame": 3
+      },
+      {
+        "monsterClass": 560,
+        "rightBackgroundFrame": 4,
+        "leftBackgroundFrame": 4
+      },
+      {
+        "monsterClass": 561,
+        "rightBackgroundFrame": 2,
+        "leftBackgroundFrame": 2
+      }
+    ]
+  },
+  "children": [
+    {
+      "type": "ImageWidget",
+      "name": "Background",
+      "fields": {
+        "rect": {
+          "x": 0,
+          "y": 0
         },
-        {
-            "type": "ClickCatcherWidget",
-            "fields": {
-                "rect": "$PanelClickCatcherRect"
-            }
+        "filename": "Workshop/mercenary/hirelingpanel"
+      }
+    },
+    {
+      "type": "ScrollViewWidget",
+      "name": "StatsStone0",
+      "fields": {
+        "rect": {
+          "x": 0,
+          "y": 815,
+          "width": 1162,
+          "height": 60
         },
+        "clipChildrenDraw": true
+      },
+      "children": [
         {
-            "type": "ImageWidget", "name": "LeftHinge",
-            "fields": {
-                "rect": "$LeftHingeRect",
-                "filename": "$LeftHingeSprite"
+          "type": "Widget",
+          "name": "StatsStone0Content",
+          "fields": {
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 1162,
+              "height": 60
             }
-        },
-        {
-            "type": "TextBoxWidget", "name": "Title",
-            "fields": {
-                "rect": { "x": 481, "y": -73, "width": 196, "height": 196 },
-                "style": "$StyleTitleBlock",
-                "text": "@MiniPanelHireinv"
+          },
+          "children": [
+            {
+              "type": "ImageWidget",
+              "name": "StatsStone0Art",
+              "fields": {
+                "rect": {
+                  "x": 0,
+                  "y": -840
+                },
+                "filename": "Workshop/mercenary/hirelingpanel"
+              }
             }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "ScrollViewWidget",
+      "name": "StatsStone1",
+      "fields": {
+        "rect": {
+          "x": 0,
+          "y": 875,
+          "width": 1162,
+          "height": 60
         },
-        // Background images for inventory slots
+        "clipChildrenDraw": true
+      },
+      "children": [
         {
-            "type": "InventorySlotWidget", "name": "slot_head",
-            "fields": {
-                "rect": { "x": 481, "y": 113, "width": 196, "height": 196 },
-                "cellSize": "$ItemCellSize",
-                "location": "head",
-                "gemSocketFilename": "PANEL\\gemsocket",
-                "backgroundFilename": "PANEL\\Inventory\\Inventory_Paperdoll_HeadArmor",
-                "isHireable": true
+          "type": "Widget",
+          "name": "StatsStone1Content",
+          "fields": {
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 1162,
+              "height": 60
             }
-        },
-        {
-            "type": "InventorySlotWidget", "name": "slot_torso",
-            "fields": {
-                "rect": { "x": 483, "y": 348, "width": 196, "height": 294 },
-                "cellSize": "$ItemCellSize",
-                "location": "torso",
-                "gemSocketFilename": "PANEL\\gemsocket",
-                "backgroundFilename": "PANEL\\Inventory\\Inventory_Paperdoll_ChestArmor",
-                "isHireable": true
+          },
+          "children": [
+            {
+              "type": "ImageWidget",
+              "name": "StatsStone1Art",
+              "fields": {
+                "rect": {
+                  "x": 0,
+                  "y": -840
+                },
+                "filename": "Workshop/mercenary/hirelingpanel"
+              }
             }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "ScrollViewWidget",
+      "name": "StatsStone2",
+      "fields": {
+        "rect": {
+          "x": 0,
+          "y": 935,
+          "width": 1162,
+          "height": 60
         },
+        "clipChildrenDraw": true
+      },
+      "children": [
         {
-            "type": "InventorySlotWidget", "name": "slot_right_arm",
-            "fields": {
-                "rect": { "x": 110, "y": 156, "width": 196, "height": 392 },
-                "cellSize": "$ItemCellSize",
-                "location": "right_arm",
-                "gemSocketFilename": "PANEL\\gemsocket",
-                "backgroundFilename": "PANEL\\Inventory\\Inventory_Paperdoll_Weapon",
-                "isHireable": true
+          "type": "Widget",
+          "name": "StatsStone2Content",
+          "fields": {
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 1162,
+              "height": 60
             }
-        },
-        {
-            "type": "InventorySlotWidget", "name": "slot_left_arm",
-            "fields": {
-                "rect": { "x": 863, "y": 156, "width": 196, "height": 392 },
-                "cellSize": "$ItemCellSize",
-                "location": "left_arm",
-                "gemSocketFilename": "PANEL\\gemsocket",
-                "backgroundFilename": "PANEL\\Inventory\\Inventory_Paperdoll_Weapon",
-                "isHireable": true
+          },
+          "children": [
+            {
+              "type": "ImageWidget",
+              "name": "StatsStone2Art",
+              "fields": {
+                "rect": {
+                  "x": 0,
+                  "y": -840
+                },
+                "filename": "Workshop/mercenary/hirelingpanel"
+              }
             }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "ScrollViewWidget",
+      "name": "StatsStone3",
+      "fields": {
+        "rect": {
+          "x": 0,
+          "y": 995,
+          "width": 1162,
+          "height": 55
         },
+        "clipChildrenDraw": true
+      },
+      "children": [
         {
-            "type": "InventorySlotWidget", "name": "slot_belt",
-            "fields": {
-                "rect": { "x": 483, "y": 688, "width": 196, "height": 98 },
-                "cellSize": "$ItemCellSize",
-                "location": "belt",
-                "gemSocketFilename": "PANEL\\gemsocket",
-                "backgroundFilename": "PANEL\\Inventory\\Inventory_Paperdoll_Belt",
-                "isHireable": true
+          "type": "Widget",
+          "name": "StatsStone3Content",
+          "fields": {
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 1162,
+              "height": 55
             }
-        },
-        {
-            "type": "InventorySlotWidget", "name": "slot_right_hand",
-            "fields": {
-                "rect": { "x": 720, "y": 691, "width": 98, "height": 98 },
-                "cellSize": "$ItemCellSize",
-                "location": "right_hand",
-                "gemSocketFilename": "PANEL\\gemsocket",
-                "backgroundFilename": "PANEL\\Inventory\\Inventory_Paperdoll_Ring",
-                "isHireable": false
+          },
+          "children": [
+            {
+              "type": "ImageWidget",
+              "name": "StatsStone3Art",
+              "fields": {
+                "rect": {
+                  "x": 0,
+                  "y": -840
+                },
+                "filename": "Workshop/mercenary/hirelingpanel"
+              }
             }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "ImageWidget",
+      "name": "LeftHinge",
+      "fields": {
+        "rect": {
+          "x": -236,
+          "y": 630
         },
+        "filename": "PANEL\\Docking_Bar\\SidePanel_Hinge_L"
+      }
+    },
+    {
+      "type": "ImageWidget",
+      "name": "LeftSprite",
+      "fields": {
+        "rect": {
+          "x": -236,
+          "y": -204
+        },
+        "filename": "PANEL\\Docking_Bar\\SidePanel_L"
+      }
+    },
+    {
+      "type": "ScrollViewWidget",
+      "name": "CharmArt",
+      "fields": {
+        "rect": {
+          "x": 0,
+          "y": 1050,
+          "width": 1162,
+          "height": 396
+        },
+        "clipChildrenDraw": true
+      },
+      "children": [
         {
-            "type": "InventorySlotWidget", "name": "slot_left_hand",
-            "fields": {
-                "rect": { "x": 345, "y": 691, "width": 98, "height": 98 },
-                "cellSize": "$ItemCellSize",
-                "location": "left_hand",
-                "gemSocketFilename": "PANEL\\gemsocket",
-                "backgroundFilename": "PANEL\\Inventory\\Inventory_Paperdoll_Ring",
-                "isHireable": false
+          "type": "Widget",
+          "name": "CharmArtContent",
+          "fields": {
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 1162,
+              "height": 396
             }
-        },
-        {
-            "type": "InventorySlotWidget", "name": "slot_gloves",
-            "fields": {
-                "rect": { "x": 108, "y": 591, "width": 196, "height": 196 },
-                "cellSize": "$ItemCellSize",
-                "location": "gloves",
-                "gemSocketFilename": "PANEL\\gemsocket",
-                "backgroundFilename": "PANEL\\Inventory\\Inventory_Paperdoll_Glove",
-                "isHireable": false
+          },
+          "children": [
+            {
+              "type": "ImageWidget",
+              "name": "CharmArtArt",
+              "fields": {
+                "rect": {
+                  "x": 0,
+                  "y": -815
+                },
+                "filename": "Workshop/mercenary/background_expanded2"
+              }
             }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "ScrollViewWidget",
+      "name": "CharmFooter",
+      "fields": {
+        "rect": {
+          "x": 0,
+          "y": 1446,
+          "width": 1162,
+          "height": 134
         },
+        "clipChildrenDraw": true
+      },
+      "children": [
         {
-            "type": "InventorySlotWidget", "name": "slot_feet",
-            "fields": {
-                "rect": { "x": 861, "y": 591, "width": 196, "height": 196 },
-                "cellSize": "$ItemCellSize",
-                "location": "feet",
-                "gemSocketFilename": "PANEL\\gemsocket",
-                "backgroundFilename": "PANEL\\Inventory\\Inventory_Paperdoll_Boots",
-                "isHireable": false
+          "type": "Widget",
+          "name": "CharmFooterContent",
+          "fields": {
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 1162,
+              "height": 134
             }
-        },
-        {
-            "type": "InventorySlotWidget", "name": "slot_neck",
-            "fields": {
-                "rect": { "x": 720, "y": 271, "width": 98, "height": 98 },
-                "cellSize": "$ItemCellSize",
-                "location": "neck",
-                "gemSocketFilename": "PANEL\\gemsocket",
-                "backgroundFilename": "PANEL\\Inventory\\Inventory_Paperdoll_Amulet",
-                "isHireable": false
+          },
+          "children": [
+            {
+              "type": "ImageWidget",
+              "name": "CharmFooterArt",
+              "fields": {
+                "rect": {
+                  "x": 0,
+                  "y": -1603
+                },
+                "filename": "Workshop/mercenary/background_expanded2"
+              }
             }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "ClickCatcherWidget",
+      "fields": {
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "width": 1162,
+          "height": 1580
+        }
+      },
+      "name": "MercClickCatcher"
+    },
+    {
+      "type": "TextBoxWidget",
+      "name": "Title",
+      "fields": {
+        "rect": {
+          "x": 350,
+          "y": 0,
+          "width": 450,
+          "height": 60
         },
-        {
-            "type": "TextBoxWidget", "name": "CharacterName",
-            "fields": {
-                "rect": { "x": 121, "y": 849, "width": 500, "height": 50 },
-                "style": {
-                    "fontColor":"$FontColorWhite",
-                    "pointSize": "$LargeFontSize",
-                    "dropShadow": "$DefaultDropShadow",
-                    "alignment": { "h": "left", "v": "bottom" }
-                }
+        "style": {
+          "fontColor": {
+            "r": 199,
+            "g": 179,
+            "b": 119,
+            "a": 255
+          },
+          "pointSize": 38,
+          "dropShadow": {
+            "shadowColor": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 200
+            },
+            "offset": {
+              "x": 3,
+              "y": 3
             }
+          },
+          "alignment": {
+            "h": "center",
+            "v": "center"
+          },
+          "spacing": {
+            "kerning": 0.94
+          }
         },
-        {
-            "type": "TextBoxWidget", "name": "HPTitle",
-            "fields": {
-                "rect": { "x": 108, "y": 1020, "width": 251, "height": 59 },
-                "text": "@strchrlif",
-                "style": {
-                    "fontColor":"$FontColorWhite",
-                    "fontFace": "Formal",
-                    "pointSize": "$SmallPanelFontSize",
-                    "alignment": { "h": "left", "v": "center" }
-                }
+        "text": "@MiniPanelHireinv"
+      }
+    },
+    {
+      "type": "InventorySlotWidget",
+      "name": "slot_head",
+      "fields": {
+        "rect": {
+          "x": 481,
+          "y": 113,
+          "width": 196,
+          "height": 196
+        },
+        "cellSize": {
+          "x": 98,
+          "y": 98
+        },
+        "location": "head",
+        "gemSocketFilename": "PANEL\\gemsocket",
+        "backgroundFilename": "PANEL\\Inventory\\Inventory_Paperdoll_HeadArmor",
+        "isHireable": true
+      }
+    },
+    {
+      "type": "InventorySlotWidget",
+      "name": "slot_torso",
+      "fields": {
+        "rect": {
+          "x": 483,
+          "y": 348,
+          "width": 196,
+          "height": 294
+        },
+        "cellSize": {
+          "x": 98,
+          "y": 98
+        },
+        "location": "torso",
+        "gemSocketFilename": "PANEL\\gemsocket",
+        "backgroundFilename": "PANEL\\Inventory\\Inventory_Paperdoll_ChestArmor",
+        "isHireable": true
+      }
+    },
+    {
+      "type": "InventorySlotWidget",
+      "name": "slot_right_arm",
+      "fields": {
+        "rect": {
+          "x": 110,
+          "y": 156,
+          "width": 196,
+          "height": 392
+        },
+        "cellSize": {
+          "x": 98,
+          "y": 98
+        },
+        "location": "right_arm",
+        "gemSocketFilename": "PANEL\\gemsocket",
+        "backgroundFilename": "PANEL\\Inventory\\Inventory_Paperdoll_Weapon",
+        "isHireable": true
+      }
+    },
+    {
+      "type": "InventorySlotWidget",
+      "name": "slot_left_arm",
+      "fields": {
+        "rect": {
+          "x": 863,
+          "y": 156,
+          "width": 196,
+          "height": 392
+        },
+        "cellSize": {
+          "x": 98,
+          "y": 98
+        },
+        "location": "left_arm",
+        "gemSocketFilename": "PANEL\\gemsocket",
+        "backgroundFilename": "PANEL\\Inventory\\Inventory_Paperdoll_Weapon",
+        "isHireable": true
+      }
+    },
+    {
+      "type": "TextBoxWidget",
+      "name": "CharacterName",
+      "fields": {
+        "rect": {
+          "x": 100,
+          "y": 60,
+          "width": 350,
+          "height": 50
+        },
+        "style": {
+          "fontColor": {
+            "r": 240,
+            "g": 240,
+            "b": 240,
+            "a": 255
+          },
+          "pointSize": 38,
+          "dropShadow": {
+            "shadowColor": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 200
+            },
+            "offset": {
+              "x": 3,
+              "y": 3
             }
+          },
+          "alignment": {
+            "h": "left",
+            "v": "bottom"
+          }
+        }
+      }
+    },
+    {
+      "type": "TextBoxWidget",
+      "name": "HPTitle",
+      "fields": {
+        "rect": {
+          "x": 100,
+          "y": 820,
+          "width": 155,
+          "height": 32
         },
-        {
-            "type": "TextBoxWidget", "name": "HPStat",
-            "fields": {
-                "rect": { "x": 358, "y": 1020, "width": 187, "height": 59 },
-                "style": {
-                    "fontColor": { "r": 255, "g": 255, "b": 255, "a": 255 },
-                    "pointSize": "$SmallPanelFontSize",
-                    "alignment": { "h": "right", "v": "center" }
-                }
+        "text": "@strchrlif",
+        "style": {
+          "fontColor": {
+            "r": 240,
+            "g": 240,
+            "b": 240,
+            "a": 255
+          },
+          "fontFace": "Formal",
+          "pointSize": 22,
+          "alignment": {
+            "h": "left",
+            "v": "center"
+          }
+        }
+      }
+    },
+    {
+      "type": "TextBoxWidget",
+      "name": "HPStat",
+      "fields": {
+        "rect": {
+          "x": 260,
+          "y": 820,
+          "width": 285,
+          "height": 32
+        },
+        "style": {
+          "fontColor": {
+            "r": 255,
+            "g": 255,
+            "b": 255,
+            "a": 255
+          },
+          "pointSize": 22,
+          "alignment": {
+            "h": "center",
+            "v": "center"
+          }
+        }
+      }
+    },
+    {
+      "type": "TextBoxWidget",
+      "name": "HireTypeText",
+      "fields": {
+        "rect": {
+          "x": 710,
+          "y": 60,
+          "width": 350,
+          "height": 44
+        },
+        "text": "@strchrlvl",
+        "style": {
+          "fontColor": {
+            "r": 240,
+            "g": 240,
+            "b": 240,
+            "a": 255
+          },
+          "pointSize": 28,
+          "dropShadow": {
+            "shadowColor": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 200
+            },
+            "offset": {
+              "x": 3,
+              "y": 3
             }
+          },
+          "alignment": {
+            "h": "left",
+            "v": "center"
+          }
+        }
+      }
+    },
+    {
+      "type": "ScrollViewWidget",
+      "name": "FMMPMercXpClip",
+      "fields": {
+        "rect": {
+          "x": 715,
+          "y": 96,
+          "width": 340,
+          "height": 40
         },
-        // Level
+        "clipChildrenDraw": true
+      },
+      "children": [
         {
-            "type": "TextBoxWidget", "name": "HireTypeText",
-            "fields": {
-                "rect": { "x": 126, "y": 937, "width": 100, "height": 30 },
-                "text": "@strchrlvl",
-                "style": {
-                    "fontColor": "$FontColorWhite",
-                    "pointSize": "$SmallPanelFontSize",
-                    "dropShadow": "$DefaultDropShadow",
-                    "alignment": { "h": "left", "v": "center" }
-                }
+          "type": "Widget",
+          "name": "FMMPMercXpClipContent",
+          "fields": {
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 340,
+              "height": 40
             }
-        },
-        // Experience
-        {
-            "type": "ExpBarWidget", "name": "XpProgress",
-            "fields": {
-                "rect": { "x": 139, "y": 913, "width": 888, "height": 10 } ,
+          },
+          "children": [
+            {
+              "type": "ExpBarWidget",
+              "name": "XpProgress",
+              "fields": {
+                "rect": {
+                  "x": 0,
+                  "y": 15,
+                  "width": 340,
+                  "height": 10
+                },
                 "filename": "PANEL\\Hireling\\Hireling_ExpBar",
                 "frame": 0,
                 "isHireling": true,
-                "hitMargin": { "top": 15, "bottom": 15 }
-            }
-        },
-        {
-             "type": "TextBoxWidget", "name": "NextLevelXP",
-             "fields": {
-                 "rect": { "x": 839, "y": 937, "width": 250, "height": 50 },
-                 "style": {
-                     "fontColor": { "r": 255, "g": 255, "b": 255, "a": 255 },
-                     "pointSize": "$SmallPanelFontSize",
-                     "alignment": { "h": "left", "v": "center" }
-                 }
-             }
-         },
-         {
-             "type": "TextBoxWidget", "name": "ConnectorWord",
-             "fields": {
-                 "rect": { "x": 798, "y": 937, "height": 50 },
-                 "text": "@ItemStats1j",
-                 "style": {
-                     "fontColor": { "r": 255, "g": 255, "b": 255, "a": 255 },
-                     "pointSize": "$SmallPanelFontSize",
-                     "alignment": { "h": "center", "v": "center" }
-                 }
-             }
-         },
-         {
-             "type": "TextBoxWidget", "name": "CurrentXP",
-             "fields": {
-                 "rect": { "x": 517, "y": 937, "width": 250, "height": 50 },
-                 "style": {
-                     "fontColor": { "r": 255, "g": 255, "b": 255, "a": 255 },
-                     "pointSize": "$SmallPanelFontSize",
-                     "alignment": { "h": "right", "v": "center" }
-                 }
-             }
-         },
-        // Base stats
-        {
-            "type": "TextBoxWidget", "name": "StrengthTitle",
-            "fields":
-            {
-                "rect": { "x": 108, "y": 1102, "width": 251, "height": 59 },
-                "text": "@strchrstr",
-                "style": {
-                    "fontColor":"$FontColorWhite",
-                    "fontFace": "Formal",
-                    "pointSize": "$SmallPanelFontSize",
-                    "alignment": { "h": "left", "v": "center" }
+                "hitMargin": {
+                  "top": 15,
+                  "bottom": 15
                 }
+              }
             }
-        },
-        {
-            "type": "TextBoxWidget", "name": "StrengthStat",
-            "fields": {
-                "rect": { "x": 358, "y": 1102, "width": 187, "height": 59 },
-                "style": {
-                    "fontColor": { "r": 255, "g": 255, "b": 255, "a": 255 },
-                    "pointSize": "$SmallPanelFontSize",
-                    "alignment": { "h": "right", "v": "center" }
-                }
-            }
-        },
-        {
-            "type": "TextBoxWidget", "name": "DexTitle",
-            "fields": {
-                "rect": { "x": 108, "y": 1186, "width": 251, "height": 59 },
-                "text": "@strchrdex",
-                "style": {
-                    "fontColor":"$FontColorWhite",
-                    "fontFace": "Formal",
-                    "pointSize": "$SmallPanelFontSize",
-                    "alignment": { "h": "left", "v": "center" }
-                }
-            }
-        },
-        {
-            "type": "TextBoxWidget", "name": "DexStat",
-            "fields": {
-                "rect": { "x": 358, "y": 1186, "width": 187, "height": 59 },
-                "style": {
-                    "fontColor": { "r": 255, "g": 255, "b": 255, "a": 255 },
-                    "pointSize": "$SmallPanelFontSize",
-                    "alignment": { "h": "right", "v": "center" }
-                }
-            }
-        },
-        {
-            "type": "TextBoxWidget", "name": "DamageTitle",
-            "fields": {
-                "rect": { "x": 108, "y": 1269, "width": 251, "height": 59 },
-                "text": "@strchrskm",
-                "style": {
-                    "fontColor":"$FontColorWhite",
-                    "fontFace": "Formal",
-                    "pointSize": "$SmallPanelFontSize",
-                    "alignment": { "h": "left", "v": "center" }
-                }
-            }
-        },
-        {
-            "type": "Widget", "name": "Damage",
-            "fields": {
-                "rect": { "x": 358, "y": 1269, "width": 187, "height": 59 }
-            },
-            "children": [
-                {
-                    "type": "TextBoxWidget", "name": "DamageStat",
-                    "fields": {
-                        "rect": { "x": -50, "y": 0, "width": 237, "height": 59 },
-                        "style": {
-                            "fontColor": { "r": 255, "g": 255, "b": 255, "a": 255 },
-                            "pointSize": "$SmallPanelFontSize",
-                            "alignment": { "h": "right", "v": "center" }
-                        }
-                    }
-                },
-                {
-                    "type": "TextBoxWidget", "name": "DamageStatTop",
-                    "fields": {
-                        "rect": { "x": -50, "y": 0, "width": 237, "height": 59 },
-                        "style": {
-                            "fontColor": { "r": 255, "g": 255, "b": 255, "a": 255 },
-                            "pointSize": "$SmallPanelFontSize",
-                            "alignment": { "h": "right", "v": "top" }
-                        }
-                    }
-                },
-                {
-                    "type": "TextBoxWidget", "name": "DamageStatBottom",
-                    "fields": {
-                        "rect": { "x": -50, "y": -1, "width": 237, "height": 59 },
-                        "style": {
-                            "fontColor": { "r": 255, "g": 255, "b": 255, "a": 255 },
-                            "pointSize": "$SmallPanelFontSize",
-                            "alignment": { "h": "right", "v": "bottom" }
-                        }
-                    }
-                }
-            ]
-        },
-        {
-            "type": "TextBoxWidget", "name": "ArmorClassTitle",
-            "fields": {
-                "rect": { "x": 108, "y": 1353, "width": 251, "height": 59 },
-                "text": "@strchrdef",
-                "style": {
-                    "fontColor":"$FontColorWhite",
-                    "fontFace": "Formal",
-                    "pointSize": "$SmallPanelFontSize",
-                    "alignment": { "h": "left", "v": "center" }
-                }
-            }
-        },
-        {
-            "type": "TextBoxWidget", "name": "ArmorClass",
-            "fields": {
-                "rect": { "x": 358, "y": 1353, "width": 187, "height": 59 },
-                "style": {
-                    "fontColor": { "r": 255, "g": 255, "b": 255, "a": 255 },
-                    "pointSize": "$SmallPanelFontSize",
-                    "alignment": { "h": "right", "v": "center" }
-                }
-            }
-        },
-        // Elemental Resistances
-        {
-            "type": "TextBoxWidget", "name": "FireResistanceTitle",
-            "fields": {
-                "rect": { "x": 612, "y": 1103, "width": 325, "height": 59 },
-                "text": "@strchrfir",
-                "style": {
-                    "fontColor":"$FontColorWhite",
-                    "fontFace": "Formal",
-                    "pointSize": "$SmallPanelFontSize",
-                    "alignment": { "h": "left", "v": "center" }
-                }
-            }
-        },
-        {
-            "type": "TextBoxWidget", "name": "FireText",
-            "fields": {
-                "rect": { "x": 934, "y": 1103, "width": 113, "height": 59 },
-                "style": {
-                    "fontColor": { "r": 255, "g": 255, "b": 255, "a": 255 },
-                    "pointSize": "$SmallPanelFontSize",
-                    "alignment": { "h": "right", "v": "center" }
-                }
-            }
-        },
-        {
-            "type": "TextBoxWidget", "name": "ColdResistanceTitle",
-            "fields": {
-                "rect": { "x": 612, "y": 1184, "width": 325, "height": 59 },
-                "text": "@strchrcol",
-                "style": {
-                    "fontColor":"$FontColorWhite",
-                    "fontFace": "Formal",
-                    "pointSize": "$SmallPanelFontSize",
-                    "alignment": { "h": "left", "v": "center" }
-                }
-            }
-        },
-        {
-            "type": "TextBoxWidget", "name": "ColdText",
-            "fields": {
-                "rect": { "x": 934, "y": 1184, "width": 113, "height": 59 },
-                "style": {
-                    "fontColor": { "r": 255, "g": 255, "b": 255, "a": 255 },
-                    "pointSize": "$SmallPanelFontSize",
-                    "alignment": { "h": "right", "v": "center" }
-                }
-            }
-        },
-        {
-            "type": "TextBoxWidget", "name": "LightningResistanceTitle",
-            "fields": {
-                "rect": { "x": 612, "y": 1269, "width": 325, "height": 59 },
-                "text": "@strchrlit",
-                "style": {
-                    "fontColor":"$FontColorWhite",
-                    "fontFace": "Formal",
-                    "pointSize": "$SmallPanelFontSize",
-                    "alignment": { "h": "left", "v": "center" }
-                }
-            }
-        },
-        {
-            "type": "TextBoxWidget", "name": "LightningText",
-            "fields": {
-                "rect": { "x": 934, "y": 1269, "width": 113, "height": 59 },
-                "style": {
-                    "fontColor": { "r": 255, "g": 255, "b": 255, "a": 255 },
-                    "pointSize": "$SmallPanelFontSize",
-                    "alignment": { "h": "right", "v": "center" }
-                }
-            }
-        },
-        {
-            "type": "TextBoxWidget", "name": "PoisonResistanceTitle",
-            "fields": {
-                "rect": { "x": 612, "y": 1351, "width": 325, "height": 59 },
-                "text": "@strchrpos",
-                "style": {
-                    "fontColor":"$FontColorWhite",
-                    "fontFace": "Formal",
-                    "pointSize": "$SmallPanelFontSize",
-                    "alignment": { "h": "left", "v": "center" }
-                }
-            }
-        },
-        {
-            "type": "TextBoxWidget", "name": "PoisonText",
-            "fields": {
-                "rect": { "x": 934, "y": 1351, "width": 113, "height": 59 },
-                "style": {
-                    "fontColor": { "r": 255, "g": 255, "b": 255, "a": 255 },
-                    "pointSize": "$SmallPanelFontSize",
-                    "alignment": { "h": "right", "v": "center" }
-                }
-            }
-        },
-        // To Advanced Stats panel
-        {
-            "type": "ButtonWidget", "name": "AdvancedStats",
-            "fields": {
-                "rect": { "x": 1108, "y": 721 },
-                "filename": "PANEL\\Character_Sheet\\AdvancedStatsButton",
-                "hoveredFrame": 3,
-                "onClickMessage": "HirelingInventoryPanelMessage:ToggleAdvancedStats",
-                "pressLabelOffset": { "x": 0, "y": 2 },
-                "tooltipString": "@AdvancedStats"
-            }
-        },
-        // Close Panel
-        {
-            "type": "ButtonWidget", "name": "CloseButton",
-            "fields": {
-                "rect": { "x": 1075, "y": 9 },
-                "filename": "PANEL\\closebtn_4x",
-                "hoveredFrame": 3,
-                "onClickMessage": "HirelingInventoryPanelMessage:Close",
-                "tooltipString": "@strClose"
-            }
-        },
-        // Hire skills
-        {
-            "type": "HirelingSkillIconWidget", "name": "Skill0",
-            "fields": {
-                "rect": { "x": 673, "y": 1007, "scale": 0.60 },
-                "skillIconFilename": "Spells/Hireables/HrSkillIcon"
-            }
-        },
-        {
-            "type": "HirelingSkillIconWidget", "name": "Skill1",
-            "fields": {
-                "rect": { "x": 780, "y": 1007, "scale": 0.60 },
-                "skillIconFilename": "Spells/Hireables/HrSkillIcon"
-            }
-        },
-        {
-            "type": "HirelingSkillIconWidget", "name": "Skill2",
-            "fields": {
-                "rect": { "x": 887, "y": 1007, "scale": 0.60 },
-                "skillIconFilename": "Spells/Hireables/HrSkillIcon"
-            }
+          ]
         }
-    ]
+      ]
+    },
+    {
+      "type": "TextBoxWidget",
+      "name": "StrengthTitle",
+      "fields": {
+        "rect": {
+          "x": 100,
+          "y": 854,
+          "width": 155,
+          "height": 32
+        },
+        "text": "@strchrstr",
+        "style": {
+          "fontColor": {
+            "r": 240,
+            "g": 240,
+            "b": 240,
+            "a": 255
+          },
+          "fontFace": "Formal",
+          "pointSize": 22,
+          "alignment": {
+            "h": "left",
+            "v": "center"
+          }
+        }
+      }
+    },
+    {
+      "type": "TextBoxWidget",
+      "name": "StrengthStat",
+      "fields": {
+        "rect": {
+          "x": 260,
+          "y": 854,
+          "width": 285,
+          "height": 32
+        },
+        "style": {
+          "fontColor": {
+            "r": 255,
+            "g": 255,
+            "b": 255,
+            "a": 255
+          },
+          "pointSize": 22,
+          "alignment": {
+            "h": "center",
+            "v": "center"
+          }
+        }
+      }
+    },
+    {
+      "type": "TextBoxWidget",
+      "name": "DexTitle",
+      "fields": {
+        "rect": {
+          "x": 100,
+          "y": 888,
+          "width": 155,
+          "height": 32
+        },
+        "text": "@strchrdex",
+        "style": {
+          "fontColor": {
+            "r": 240,
+            "g": 240,
+            "b": 240,
+            "a": 255
+          },
+          "fontFace": "Formal",
+          "pointSize": 22,
+          "alignment": {
+            "h": "left",
+            "v": "center"
+          }
+        }
+      }
+    },
+    {
+      "type": "TextBoxWidget",
+      "name": "DexStat",
+      "fields": {
+        "rect": {
+          "x": 260,
+          "y": 888,
+          "width": 285,
+          "height": 32
+        },
+        "style": {
+          "fontColor": {
+            "r": 255,
+            "g": 255,
+            "b": 255,
+            "a": 255
+          },
+          "pointSize": 22,
+          "alignment": {
+            "h": "center",
+            "v": "center"
+          }
+        }
+      }
+    },
+    {
+      "type": "TextBoxWidget",
+      "name": "DamageTitle",
+      "fields": {
+        "rect": {
+          "x": 100,
+          "y": 922,
+          "width": 155,
+          "height": 32
+        },
+        "text": "@strchrskm",
+        "style": {
+          "fontColor": {
+            "r": 240,
+            "g": 240,
+            "b": 240,
+            "a": 255
+          },
+          "fontFace": "Formal",
+          "pointSize": 22,
+          "alignment": {
+            "h": "left",
+            "v": "center"
+          }
+        }
+      }
+    },
+    {
+      "type": "Widget",
+      "name": "Damage",
+      "fields": {
+        "rect": {
+          "x": 260,
+          "y": 922,
+          "width": 285,
+          "height": 58
+        }
+      },
+      "children": [
+        {
+          "type": "TextBoxWidget",
+          "name": "DamageStat",
+          "fields": {
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 285,
+              "height": 32
+            },
+            "style": {
+              "fontColor": {
+                "r": 255,
+                "g": 255,
+                "b": 255,
+                "a": 255
+              },
+              "pointSize": 22,
+              "alignment": {
+                "h": "center",
+                "v": "center"
+              }
+            }
+          }
+        },
+        {
+          "type": "TextBoxWidget",
+          "name": "DamageStatTop",
+          "fields": {
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 285,
+              "height": 32
+            },
+            "style": {
+              "fontColor": {
+                "r": 255,
+                "g": 255,
+                "b": 255,
+                "a": 255
+              },
+              "pointSize": 22,
+              "alignment": {
+                "h": "center",
+                "v": "top"
+              }
+            }
+          }
+        },
+        {
+          "type": "TextBoxWidget",
+          "name": "DamageStatBottom",
+          "fields": {
+            "rect": {
+              "x": 0,
+              "y": 26,
+              "width": 285,
+              "height": 32
+            },
+            "style": {
+              "fontColor": {
+                "r": 255,
+                "g": 255,
+                "b": 255,
+                "a": 255
+              },
+              "pointSize": 22,
+              "alignment": {
+                "h": "center",
+                "v": "bottom"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "type": "TextBoxWidget",
+      "name": "ArmorClassTitle",
+      "fields": {
+        "rect": {
+          "x": 580,
+          "y": 956,
+          "width": 345,
+          "height": 32
+        },
+        "text": "@strchrdef",
+        "style": {
+          "fontColor": {
+            "r": 240,
+            "g": 240,
+            "b": 240,
+            "a": 255
+          },
+          "fontFace": "Formal",
+          "pointSize": 22,
+          "alignment": {
+            "h": "left",
+            "v": "center"
+          }
+        }
+      }
+    },
+    {
+      "type": "TextBoxWidget",
+      "name": "ArmorClass",
+      "fields": {
+        "rect": {
+          "x": 935,
+          "y": 956,
+          "width": 120,
+          "height": 32
+        },
+        "style": {
+          "fontColor": {
+            "r": 255,
+            "g": 255,
+            "b": 255,
+            "a": 255
+          },
+          "pointSize": 22,
+          "alignment": {
+            "h": "center",
+            "v": "center"
+          }
+        }
+      }
+    },
+    {
+      "type": "TextBoxWidget",
+      "name": "FireResistanceTitle",
+      "fields": {
+        "rect": {
+          "x": 580,
+          "y": 820,
+          "width": 345,
+          "height": 32
+        },
+        "text": "@strchrfir",
+        "style": {
+          "fontColor": {
+            "r": 240,
+            "g": 240,
+            "b": 240,
+            "a": 255
+          },
+          "fontFace": "Formal",
+          "pointSize": 22,
+          "alignment": {
+            "h": "left",
+            "v": "center"
+          }
+        }
+      }
+    },
+    {
+      "type": "TextBoxWidget",
+      "name": "FireText",
+      "fields": {
+        "rect": {
+          "x": 935,
+          "y": 820,
+          "width": 120,
+          "height": 32
+        },
+        "style": {
+          "fontColor": {
+            "r": 255,
+            "g": 255,
+            "b": 255,
+            "a": 255
+          },
+          "pointSize": 22,
+          "alignment": {
+            "h": "center",
+            "v": "center"
+          }
+        }
+      }
+    },
+    {
+      "type": "TextBoxWidget",
+      "name": "ColdResistanceTitle",
+      "fields": {
+        "rect": {
+          "x": 580,
+          "y": 854,
+          "width": 345,
+          "height": 32
+        },
+        "text": "@strchrcol",
+        "style": {
+          "fontColor": {
+            "r": 240,
+            "g": 240,
+            "b": 240,
+            "a": 255
+          },
+          "fontFace": "Formal",
+          "pointSize": 22,
+          "alignment": {
+            "h": "left",
+            "v": "center"
+          }
+        }
+      }
+    },
+    {
+      "type": "TextBoxWidget",
+      "name": "ColdText",
+      "fields": {
+        "rect": {
+          "x": 935,
+          "y": 854,
+          "width": 120,
+          "height": 32
+        },
+        "style": {
+          "fontColor": {
+            "r": 255,
+            "g": 255,
+            "b": 255,
+            "a": 255
+          },
+          "pointSize": 22,
+          "alignment": {
+            "h": "center",
+            "v": "center"
+          }
+        }
+      }
+    },
+    {
+      "type": "TextBoxWidget",
+      "name": "LightningResistanceTitle",
+      "fields": {
+        "rect": {
+          "x": 580,
+          "y": 888,
+          "width": 345,
+          "height": 32
+        },
+        "text": "@strchrlit",
+        "style": {
+          "fontColor": {
+            "r": 240,
+            "g": 240,
+            "b": 240,
+            "a": 255
+          },
+          "fontFace": "Formal",
+          "pointSize": 22,
+          "alignment": {
+            "h": "left",
+            "v": "center"
+          }
+        }
+      }
+    },
+    {
+      "type": "TextBoxWidget",
+      "name": "LightningText",
+      "fields": {
+        "rect": {
+          "x": 935,
+          "y": 888,
+          "width": 120,
+          "height": 32
+        },
+        "style": {
+          "fontColor": {
+            "r": 255,
+            "g": 255,
+            "b": 255,
+            "a": 255
+          },
+          "pointSize": 22,
+          "alignment": {
+            "h": "center",
+            "v": "center"
+          }
+        }
+      }
+    },
+    {
+      "type": "TextBoxWidget",
+      "name": "PoisonResistanceTitle",
+      "fields": {
+        "rect": {
+          "x": 580,
+          "y": 922,
+          "width": 345,
+          "height": 32
+        },
+        "text": "@strchrpos",
+        "style": {
+          "fontColor": {
+            "r": 240,
+            "g": 240,
+            "b": 240,
+            "a": 255
+          },
+          "fontFace": "Formal",
+          "pointSize": 22,
+          "alignment": {
+            "h": "left",
+            "v": "center"
+          }
+        }
+      }
+    },
+    {
+      "type": "TextBoxWidget",
+      "name": "PoisonText",
+      "fields": {
+        "rect": {
+          "x": 935,
+          "y": 922,
+          "width": 120,
+          "height": 32
+        },
+        "style": {
+          "fontColor": {
+            "r": 255,
+            "g": 255,
+            "b": 255,
+            "a": 255
+          },
+          "pointSize": 22,
+          "alignment": {
+            "h": "center",
+            "v": "center"
+          }
+        }
+      }
+    },
+    {
+      "type": "ButtonWidget",
+      "name": "AdvancedStats",
+      "fields": {
+        "rect": {
+          "x": 1104,
+          "y": 850
+        },
+        "filename": "PANEL\\Character_Sheet\\AdvancedStatsButton",
+        "hoveredFrame": 3,
+        "onClickMessage": "HirelingInventoryPanelMessage:ToggleAdvancedStats",
+        "pressLabelOffset": {
+          "x": 0,
+          "y": 2
+        },
+        "tooltipString": "@AdvancedStats"
+      }
+    },
+    {
+      "type": "ButtonWidget",
+      "name": "CloseButton",
+      "fields": {
+        "rect": {
+          "x": 1075,
+          "y": 9
+        },
+        "filename": "PANEL\\closebtn_4x",
+        "hoveredFrame": 3,
+        "onClickMessage": "HirelingInventoryPanelMessage:Close",
+        "tooltipString": "@strClose",
+        "sound": "cursor_close_window_hd"
+      }
+    },
+    {
+      "type": "HirelingSkillIconWidget",
+      "name": "Skill0",
+      "fields": {
+        "rect": {
+          "x": 760,
+          "y": 990,
+          "scale": 0.4
+        },
+        "skillIconFilename": "Spells/Hireables/HrSkillIcon"
+      }
+    },
+    {
+      "type": "HirelingSkillIconWidget",
+      "name": "Skill1",
+      "fields": {
+        "rect": {
+          "x": 855,
+          "y": 990,
+          "scale": 0.4
+        },
+        "skillIconFilename": "Spells/Hireables/HrSkillIcon"
+      }
+    },
+    {
+      "type": "HirelingSkillIconWidget",
+      "name": "Skill2",
+      "fields": {
+        "rect": {
+          "x": 950,
+          "y": 990,
+          "scale": 0.4
+        },
+        "skillIconFilename": "Spells/Hireables/HrSkillIcon"
+      }
+    },
+    {
+      "type": "InventorySlotWidget",
+      "name": "slot_belt",
+      "fields": {
+        "rect": {
+          "x": 483,
+          "y": 688,
+          "width": 196,
+          "height": 98
+        },
+        "cellSize": {
+          "x": 98,
+          "y": 98
+        },
+        "location": "belt",
+        "gemSocketFilename": "PANEL\\gemsocket",
+        "backgroundFilename": "PANEL\\Inventory\\Inventory_Paperdoll_Belt",
+        "isHireable": true
+      }
+    },
+    {
+      "type": "InventorySlotWidget",
+      "name": "slot_right_hand",
+      "fields": {
+        "rect": {
+          "x": 720,
+          "y": 691,
+          "width": 98,
+          "height": 98
+        },
+        "cellSize": {
+          "x": 98,
+          "y": 98
+        },
+        "location": "right_hand",
+        "gemSocketFilename": "PANEL\\gemsocket",
+        "backgroundFilename": "PANEL\\Inventory\\Inventory_Paperdoll_Ring",
+        "isHireable": false
+      }
+    },
+    {
+      "type": "InventorySlotWidget",
+      "name": "slot_left_hand",
+      "fields": {
+        "rect": {
+          "x": 345,
+          "y": 691,
+          "width": 98,
+          "height": 98
+        },
+        "cellSize": {
+          "x": 98,
+          "y": 98
+        },
+        "location": "left_hand",
+        "gemSocketFilename": "PANEL\\gemsocket",
+        "backgroundFilename": "PANEL\\Inventory\\Inventory_Paperdoll_Ring",
+        "isHireable": false
+      }
+    },
+    {
+      "type": "InventorySlotWidget",
+      "name": "slot_gloves",
+      "fields": {
+        "rect": {
+          "x": 108,
+          "y": 591,
+          "width": 196,
+          "height": 196
+        },
+        "cellSize": {
+          "x": 98,
+          "y": 98
+        },
+        "location": "gloves",
+        "gemSocketFilename": "PANEL\\gemsocket",
+        "backgroundFilename": "PANEL\\Inventory\\Inventory_Paperdoll_Glove",
+        "isHireable": false
+      }
+    },
+    {
+      "type": "InventorySlotWidget",
+      "name": "slot_feet",
+      "fields": {
+        "rect": {
+          "x": 861,
+          "y": 591,
+          "width": 196,
+          "height": 196
+        },
+        "cellSize": {
+          "x": 98,
+          "y": 98
+        },
+        "location": "feet",
+        "gemSocketFilename": "PANEL\\gemsocket",
+        "backgroundFilename": "PANEL\\Inventory\\Inventory_Paperdoll_Boots",
+        "isHireable": false
+      }
+    },
+    {
+      "type": "InventorySlotWidget",
+      "name": "slot_neck",
+      "fields": {
+        "rect": {
+          "x": 720,
+          "y": 271,
+          "width": 98,
+          "height": 98
+        },
+        "cellSize": {
+          "x": 98,
+          "y": 98
+        },
+        "location": "neck",
+        "gemSocketFilename": "PANEL\\gemsocket",
+        "backgroundFilename": "PANEL\\Inventory\\Inventory_Paperdoll_Amulet",
+        "isHireable": false
+      }
+    },
+    {
+      "type": "TextBoxWidget",
+      "name": "CharmTitle",
+      "fields": {
+        "rect": {
+          "x": 100,
+          "y": 988,
+          "width": 570,
+          "height": 44
+        },
+        "text": "Mercenary Charms",
+        "style": {
+          "fontColor": {
+            "r": 199,
+            "g": 179,
+            "b": 119,
+            "a": 255
+          },
+          "pointSize": 38,
+          "dropShadow": {
+            "shadowColor": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 200
+            },
+            "offset": {
+              "x": 3,
+              "y": 3
+            }
+          },
+          "alignment": {
+            "h": "center",
+            "v": "center"
+          },
+          "spacing": {
+            "kerning": 0.94
+          }
+        }
+      }
+    },
+    {
+      "type": "InventoryGridWidget",
+      "name": "charm_grid",
+      "fields": {
+        "rect": {
+          "x": 93,
+          "y": 1054
+        },
+        "cellCount": {
+          "x": 10,
+          "y": 4
+        },
+        "cellSize": {
+          "x": 98,
+          "y": 98
+        },
+        "gemSocketFilename": "PANEL\\gemsocket"
+      }
+    }
+  ]
 }

@@ -70,6 +70,7 @@ inline bool Spawn(void* player,int level,unsigned now,int family=-1,bool trialWa
   void* unit=MonsterRuntime::Spawn(Game,SoulHarvest::Room(player),px+dx[n],py+dy[n],cls,1,-1,0);
   if(!unit)continue;
   if(Arena::Level(unit)!=level){Remove(unit);continue;}
+  if(TrialArea(level))Arena::WaveProgression(unit);
   Runner r{Barbarian::Id(unit),cls,level,{},now,now,false};r.escape.start(now,Ramp::GetUnit(unit,6,0));r.trialWave=trialWave;r.lastTick=now;r.x=Assassin::Coordinate(unit,false);r.y=Assassin::Coordinate(unit,true);Runners.push_back(r);
   if(TrialArea(level)&&!trialWave)Visits.trialSpawned[level]=true;
   Log("spawn",level,cls);return true;
@@ -110,6 +111,7 @@ inline void SpawnChildren(const std::vector<unsigned>& players,unsigned now){
   for(unsigned attempt=0;attempt<16&&job.remaining;++attempt){unsigned n=(start+attempt)%8;int radius=2+int(attempt/8)*2;
    void* unit=MonsterRuntime::Spawn(Game,SoulHarvest::Room(anchor),job.x+dx[n]*radius,job.y+dy[n]*radius,job.cls,1,-1,0);
    if(!unit)continue;if(Arena::Level(unit)!=job.level){Remove(unit);continue;}
+   if(TrialArea(job.level))Arena::WaveProgression(unit);
    Runner child{Barbarian::Id(unit),job.cls,job.level,{},now,now};child.escape.start(now,Ramp::GetUnit(unit,6,0));child.trialWave=job.trialWave;child.lastTick=now;child.x=Assassin::Coordinate(unit,false);child.y=Assassin::Coordinate(unit,true);Runners.push_back(child);if(job.trialWave)TrackWave(unit);--job.remaining;
    Log("gelatinous child",job.level,job.cls);
   }

@@ -24774,3 +24774,51 @@ Workshop Blank Seal Portal 5	1			2	100					1	Wt5							Red Portal,lvl=170,qty=1	
 Workshop Blank Seal Awakening 5	1				100	18	444	0		2	Wt5	Woa						Wa5				ws-trial-craft	100	0	1	1																																																																															0
 Workshop Blank Seal Ascension 5	1				100	18	444	0		2	Wt5	Wob						Wa5				ws-trial-craft	100	1	1	1																																																																															0
 Workshop Blank Seal Corruption 5	1				100	18	444	0		2	Wt5	Wog						Wa5				ws-trial-craft	100	6	1	1																																																																															0
+Workshop League Orb Ln1 weap	1				100	15	265	2		2	weap	Ln1						useitem				dmg%	100	0	3	3	ws-orb-level	100	0	2	2																																																																										0
+Workshop League Orb Ln2 weap	1				100	15	265	4		2	weap	Ln2						useitem				dmg%	100	0	8	8	ws-orb-level	100	0	4	4																																																																										0
+Workshop League Orb Ln3 weap	1				100	15	265	6		2	weap	Ln3						useitem				dmg%	100	0	15	15	ws-orb-level	100	0	6	6																																																																										0
+Workshop League Orb Ln4 weap	1				100	15	265	10		2	weap	Ln4						useitem				dmg%	100	0	24	24	dmg-max	100	0	5	5	ws-orb-level	100	0	10	10																																																																					0
+Workshop League Orb Ln1 armo	1				100	15	265	2		2	armo	Ln1						useitem				hp	100	0	5	5	ws-orb-level	100	0	2	2																																																																										0
+Workshop League Orb Ln2 armo	1				100	15	265	4		2	armo	Ln2						useitem				hp	100	0	12	12	ws-orb-level	100	0	4	4																																																																										0
+Workshop League Orb Ln3 armo	1				100	15	265	6		2	armo	Ln3						useitem				hp	100	0	21	21	ws-orb-level	100	0	6	6																																																																										0
+Workshop League Orb Ln4 armo	1				100	15	265	10		2	armo	Ln4						useitem				hp	100	0	36	36	hp%	100	0	1	1	ws-orb-level	100	0	10	10																																																																					0
+Workshop League Orb Ln1 ring	1				100	15	265	2		2	ring	Ln1						useitem				mana	100	0	5	5	ws-orb-level	100	0	2	2																																																																										0
+Workshop League Orb Ln1 amul	1				100	15	265	2		2	amul	Ln1						useitem				mana	100	0	5	5	ws-orb-level	100	0	2	2																																																																										0
+Workshop League Orb Ln2 ring	1				100	15	265	4		2	ring	Ln2						useitem				mana	100	0	12	12	ws-orb-level	100	0	4	4																																																																										0
+Workshop League Orb Ln2 amul	1				100	15	265	4		2	amul	Ln2						useitem				mana	100	0	12	12	ws-orb-level	100	0	4	4																																																																										0
+Workshop League Orb Ln3 ring	1				100	15	265	6		2	ring	Ln3						useitem				mana	100	0	21	21	ws-orb-level	100	0	6	6																																																																										0
+Workshop League Orb Ln3 amul	1				100	15	265	6		2	amul	Ln3						useitem				mana	100	0	21	21	ws-orb-level	100	0	6	6																																																																										0
+Workshop League Orb Ln4 ring	1				100	15	265	10		2	ring	Ln4						useitem				mana	100	0	36	36	mana%	100	0	1	1	ws-orb-level	100	0	10	10																																																																					0
+Workshop League Orb Ln4 amul	1				100	15	265	10		2	amul	Ln4						useitem				mana	100	0	36	36	mana%	100	0	1	1	ws-orb-level	100	0	10	10																																																																					0
+Workshop League Orb Lo1 weap	1				100	15	265	2		2	weap	Lo1						useitem				ws-orb-spell	100	0	1	1	ws-orb-level	100	0	2	2																																																																										0
+Workshop League Orb Lo2 weap	1				100	15	265	4		2	weap	Lo2						useitem				ws-orb-spell	100	0	4	4	ws-orb-level	100	0	4	4																																																																										0
+Workshop League Orb Lo3 weap	1				100	15	265	6		2	weap	Lo3						useitem				ws-orb-spell	100	0	9	9	ws-orb-level	100	0	6	6																																																																										0
+Workshop League Orb Lo4 weap	1				100	15	265	10		2	weap	Lo4						useitem				ws-orb-spell	100	0	16	16	cast2	100	0	10	10	ws-orb-level	100	0	10	10																																																																					0
+Workshop League Orb Lo1 armo	1				100	15	265	2		2	armo	Lo1						useitem				ac%	100	0	5	5	ws-orb-level	100	0	2	2																																																																										0
+Workshop League Orb Lo2 armo	1				100	15	265	4		2	armo	Lo2						useitem				ac%	100	0	12	12	ws-orb-level	100	0	4	4																																																																										0
+Workshop League Orb Lo3 armo	1				100	15	265	6		2	armo	Lo3						useitem				ac%	100	0	21	21	ws-orb-level	100	0	6	6																																																																										0
+Workshop League Orb Lo4 armo	1				100	15	265	10		2	armo	Lo4						useitem				ac%	100	0	36	36	red-dmg%	100	0	1	1	ws-orb-level	100	0	10	10																																																																					0
+Workshop League Orb Lo1 ring	1				100	15	265	2		2	ring	Lo1						useitem				res-all	100	0	1	1	ws-orb-level	100	0	2	2																																																																										0
+Workshop League Orb Lo1 amul	1				100	15	265	2		2	amul	Lo1						useitem				res-all	100	0	1	1	ws-orb-level	100	0	2	2																																																																										0
+Workshop League Orb Lo2 ring	1				100	15	265	4		2	ring	Lo2						useitem				res-all	100	0	4	4	ws-orb-level	100	0	4	4																																																																										0
+Workshop League Orb Lo2 amul	1				100	15	265	4		2	amul	Lo2						useitem				res-all	100	0	4	4	ws-orb-level	100	0	4	4																																																																										0
+Workshop League Orb Lo3 ring	1				100	15	265	6		2	ring	Lo3						useitem				res-all	100	0	9	9	ws-orb-level	100	0	6	6																																																																										0
+Workshop League Orb Lo3 amul	1				100	15	265	6		2	amul	Lo3						useitem				res-all	100	0	9	9	ws-orb-level	100	0	6	6																																																																										0
+Workshop League Orb Lo4 ring	1				100	15	265	10		2	ring	Lo4						useitem				res-all	100	0	16	16	res-all-max	100	0	1	1	ws-orb-level	100	0	10	10																																																																					0
+Workshop League Orb Lo4 amul	1				100	15	265	10		2	amul	Lo4						useitem				res-all	100	0	16	16	res-all-max	100	0	1	1	ws-orb-level	100	0	10	10																																																																					0
+Workshop League Orb Lp1 weap	1				100	15	265	2		2	weap	Lp1						useitem				ws-bleed	100	0	1	1	ws-orb-level	100	0	2	2																																																																										0
+Workshop League Orb Lp2 weap	1				100	15	265	4		2	weap	Lp2						useitem				ws-bleed	100	0	4	4	ws-orb-level	100	0	4	4																																																																										0
+Workshop League Orb Lp3 weap	1				100	15	265	6		2	weap	Lp3						useitem				ws-bleed	100	0	6	6	ws-orb-level	100	0	6	6																																																																										0
+Workshop League Orb Lp4 weap	1				100	15	265	10		2	weap	Lp4						useitem				ws-bleed	100	0	16	16	ws-impale	100	0	5	5	ws-orb-level	100	0	10	10																																																																					0
+Workshop League Orb Lp1 armo	1				100	15	265	2		2	armo	Lp1						useitem				mag%	100	0	3	3	ws-orb-level	100	0	2	2																																																																										0
+Workshop League Orb Lp2 armo	1				100	15	265	4		2	armo	Lp2						useitem				mag%	100	0	8	8	ws-orb-level	100	0	4	4																																																																										0
+Workshop League Orb Lp3 armo	1				100	15	265	6		2	armo	Lp3						useitem				mag%	100	0	15	15	ws-orb-level	100	0	6	6																																																																										0
+Workshop League Orb Lp4 armo	1				100	15	265	10		2	armo	Lp4						useitem				mag%	100	0	24	24	gold%	100	0	20	20	ws-orb-level	100	0	10	10																																																																					0
+Workshop League Orb Lp1 ring	1				100	15	265	2		2	ring	Lp1						useitem				dmg-fire	100	0	1	3	dmg-ltng	100	0	1	3	dmg-cold	100	25	1	3	ws-orb-level	100	0	2	2																																																																0
+Workshop League Orb Lp1 amul	1				100	15	265	2		2	amul	Lp1						useitem				dmg-fire	100	0	1	3	dmg-ltng	100	0	1	3	dmg-cold	100	25	1	3	ws-orb-level	100	0	2	2																																																																0
+Workshop League Orb Lp2 ring	1				100	15	265	4		2	ring	Lp2						useitem				dmg-fire	100	0	4	8	dmg-ltng	100	0	4	8	dmg-cold	100	25	4	8	ws-orb-level	100	0	4	4																																																																0
+Workshop League Orb Lp2 amul	1				100	15	265	4		2	amul	Lp2						useitem				dmg-fire	100	0	4	8	dmg-ltng	100	0	4	8	dmg-cold	100	25	4	8	ws-orb-level	100	0	4	4																																																																0
+Workshop League Orb Lp3 ring	1				100	15	265	6		2	ring	Lp3						useitem				dmg-fire	100	0	9	16	dmg-ltng	100	0	9	16	dmg-cold	100	25	9	16	ws-orb-level	100	0	6	6																																																																0
+Workshop League Orb Lp3 amul	1				100	15	265	6		2	amul	Lp3						useitem				dmg-fire	100	0	9	16	dmg-ltng	100	0	9	16	dmg-cold	100	25	9	16	ws-orb-level	100	0	6	6																																																																0
+Workshop League Orb Lp4 ring	1				100	15	265	10		2	ring	Lp4						useitem				dmg-fire	100	0	16	25	dmg-ltng	100	0	16	25	dmg-cold	100	25	16	25	ws-orb-nova	100	0	1	1	ws-orb-level	100	0	10	10																																																											0
+Workshop League Orb Lp4 amul	1				100	15	265	10		2	amul	Lp4						useitem				dmg-fire	100	0	16	25	dmg-ltng	100	0	16	25	dmg-cold	100	25	16	25	ws-orb-nova	100	0	1	1	ws-orb-level	100	0	10	10																																																											0

@@ -7058,5 +7058,65 @@
     "Y80": {
       "asset": "belt/workshopmythical80"
     }
+  },
+  {
+    "Ln1": {
+      "asset": "uniquecharm/workshop_league_night0"
+    }
+  },
+  {
+    "Ln2": {
+      "asset": "uniquecharm/workshop_league_night1"
+    }
+  },
+  {
+    "Ln3": {
+      "asset": "uniquecharm/workshop_league_night2"
+    }
+  },
+  {
+    "Ln4": {
+      "asset": "uniquecharm/workshop_league_night3"
+    }
+  },
+  {
+    "Lo1": {
+      "asset": "uniquecharm/workshop_league_breach0"
+    }
+  },
+  {
+    "Lo2": {
+      "asset": "uniquecharm/workshop_league_breach1"
+    }
+  },
+  {
+    "Lo3": {
+      "asset": "uniquecharm/workshop_league_breach2"
+    }
+  },
+  {
+    "Lo4": {
+      "asset": "uniquecharm/workshop_league_breach3"
+    }
+  },
+  {
+    "Lp1": {
+      "asset": "uniquecharm/workshop_league_beyond0"
+    }
+  },
+  {
+    "Lp2": {
+      "asset": "uniquecharm/workshop_league_beyond1"
+    }
+  },
+  {
+    "Lp3": {
+      "asset": "uniquecharm/workshop_league_beyond2"
+    }
+  },
+  {
+    "Lp4": {
+      "asset": "uniquecharm/workshop_league_beyond3"
+    }
   }
 ]

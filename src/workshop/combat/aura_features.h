@@ -246,7 +246,9 @@ inline void Tick(void* game) {
 #include "../monster_modifiers/runtime.h"
 #include "../endgame/runtime.h"
 #include "../goblins/runtime.h"
+#include "../leagues/runtime.h"
 #include "../mythicals/runtime.h"
+#include "../leagues/effects.h"
 namespace AuraBuffs {
 inline bool InstallFeatures(const D2RL::PluginContext* context) {
     const unsigned char expected[]={0x41,0x8b,0xc0,0x83,0xe0,0x7f};
@@ -266,15 +268,16 @@ inline bool InstallFeatures(const D2RL::PluginContext* context) {
     if(!Barbarian::Install(context)||!Assassin::Install(context)||!Amazon::Install(context))return false;
     if(!MonsterModifierSpells::Bind(context)||!MonsterModifiersNative::Install(context)||!MonsterRuntime::Install(context))return false;
     if(!Arena::Install(context)||!Goblins::Install(context))return false;
-    FeatureFrame=[](void* game){AuraFeatures::Tick(game);GuardianCombat::Tick(game);RedemptionLife::Tick(game);SetSelectors::Tick(game);Barbarian::Tick(game);Sorceress::Tick(game);Assassin::Frame(game);Amazon::Frame(game);Druid::Frame(game);MonsterRuntime::Frame(game);Arena::Frame(game);Goblins::Frame(game);Mythicals::Frame(game);};
+    if(!League::install(context))context->LogWarn("League encounters disabled: unsupported object API.");
+    FeatureFrame=[](void* game){LeagueEffects::Frame(game);AuraFeatures::Tick(game);GuardianCombat::Tick(game);RedemptionLife::Tick(game);SetSelectors::Tick(game);Barbarian::Tick(game);Sorceress::Tick(game);Assassin::Frame(game);Amazon::Frame(game);Druid::Frame(game);MonsterRuntime::Frame(game);Arena::Frame(game);Goblins::Frame(game);League::frame(game);Mythicals::Frame(game);};
     CustomCast=[](void* g,void* u,int s,int l){int d=Druid::Cast(g,u,s,l);if(d>=0)return d;int r=Amazon::Cast(g,u,s,l);return r<0?Assassin::Cast(g,u,s,l):r;};
     Curses::BeforeMissileTick=Amazon::BeforeTick;Curses::AfterMissileTick=Amazon::FinishTick;
     Druid::NativeRaven=reinterpret_cast<SkillFn*>(context->exeBase+0x238ea00)[114];
     Sorceress::NativeMorph=reinterpret_cast<SkillFn*>(context->exeBase+0x238ea00)[116];
     Sorceress::NativeStorm=reinterpret_cast<SkillFn*>(context->exeBase+0x238ea00)[102];
     FeaturePulse=[](void* g,void* u,unsigned i,int l){return Druid::BuffPulse(g,u,i,l)||Amazon::BuffPulse(g,u,i,l)||Assassin::BuffPulse(g,u,i,l)||Sorceress::Pulse(g,u,i,l)||Barbarian::FeastPulse(g,u,i,l)||AuraFeatures::Pulse(g,u,i,l);};FeatureDisable=[](void* g,void* u,unsigned i){Druid::Disable(g,u,i);Assassin::Disable(g,u,i);Sorceress::Disable(g,u,i);AuraFeatures::Disable(g,u,i);};
-    Curses::AdditionalHitEffects=[](void* g,void* a,void* d,void* p){AuraFeatures::Hit(g,a,d,p);Barbarian::Hit(g,a,d,p);Sorceress::Hit(g,a,d,p);Assassin::HitEvent(g,a,d,p);Amazon::Hit(g,a,d,p);Druid::Hit(g,a,d,p);Mythicals::Hit(g,a,d,p);MonsterModifiersNative::Damage(g,a,d,p);MonsterRuntime::Damage(g,a,d,p);Arena::Damage(g,a,d,p);};
-    Curses::AdditionalIncomingHit=[](void* g,void* a,void* d,void* p){AuraFeatures::IncomingHit(g,a,d,p);Barbarian::Before(g,a,d,p);};
+    Curses::AdditionalHitEffects=[](void* g,void* a,void* d,void* p){if(LeagueEffects::Depth)return;LeagueEffects::Hit(g,a,d,p);AuraFeatures::Hit(g,a,d,p);Barbarian::Hit(g,a,d,p);Sorceress::Hit(g,a,d,p);Assassin::HitEvent(g,a,d,p);Amazon::Hit(g,a,d,p);Druid::Hit(g,a,d,p);Mythicals::Hit(g,a,d,p);MonsterModifiersNative::Damage(g,a,d,p);MonsterRuntime::Damage(g,a,d,p);Arena::Damage(g,a,d,p);};
+    Curses::AdditionalIncomingHit=[](void* g,void* a,void* d,void* p){LeagueEffects::Before(g,a,d,p);AuraFeatures::IncomingHit(g,a,d,p);Barbarian::Before(g,a,d,p);};
     Curses::AdditionalMissileContext=Barbarian::ProjectileContext;
     Curses::AdditionalMissileFilter=[](void* g,void* p) noexcept {return MonsterModifierSpells::BeforeCreate(g,p)&&MonsterRuntime::Projectile(g,p)&&Amazon::Filter(g,p)&&Barbarian::FilterProjectile(g,p);};
     Curses::AdditionalMissileCreated=[](void* g,void* p,void* m) noexcept {Barbarian::ProjectileCreated(g,p,m);Sorceress::Projectile(g,p,m);Assassin::Projectile(g,p,m);Amazon::Created(g,p,m);Druid::Projectile(g,p,m);MonsterModifierSpells::Created(g,p,m);};

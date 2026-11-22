@@ -1,0 +1,14 @@
+{
+  "source": "B:\\D2R\\Diablo II Resurrected\\Mods\\FMMP-Experimental-R67",
+  "files": {
+    "data/global/ui/layouts/hirelinginventorypanelhd.json": "3242f9831897010763e8a638289b1e48ccfebe0a684485843c30e83804b3c856",
+    "data/global/ui/layouts/controller/hirelinginventorypanelhd.json": "291e19078c29ad9d5dffd18499e87296873337629c06a2b1778b014f2fee877c",
+    "data/hd/global/ui/panel/hireling/hirelingpanel.sprite": "d6bb7c1653a12ad4776d9d542de912327d7e2a36e1b3d15dd8205dc62a9bc7e3",
+    "data/hd/global/ui/panel/hireling/hirelingpanel.lowend.sprite": "571c4fb7391d35b8a9ad080142462e80710eaeb06ef8cd547359c555fc92b615",
+    "data/hd/global/ui/panel/inventory/background_expanded2.sprite": "84f6ff4ff6408854f5566832b1b15eb77b954d3f9b65193a7abd0ea649242b5d",
+    "data/hd/global/ui/panel/inventory/background_expanded2.lowend.sprite": "8c859d80290ef0f87528a2c36a63d9dfd64c853306d047b5aa4e0e46575fc312",
+    "fmmp-mercenary-charms.dll": "142599528613ab71ebb46890cec317649a7b96e2332d3397667b9aa6056e1d17",
+    "fmmp-mercenary-charms.toml": "b5972a429c4178a32c65d0f238106a3437450f345ebb360fb25646802684e2ac"
+  },
+  "port": "Only the exact active-mod identity string is retargeted. Native and loader hash guards remain intact."
+}

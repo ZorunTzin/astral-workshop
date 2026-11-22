@@ -341,3 +341,16 @@ install_item_limits(root)
 
 from mythicals.data import install as install_mythicals
 install_mythicals(root)
+
+from progression.data import install as install_progression
+install_progression(root)
+
+from leagues.data import install as install_leagues
+install_leagues(root)
+
+# Saved mercenary charm page and combined equipment panel.
+from integration.mercenary import install as install_mercenary_charms
+install_mercenary_charms(root)
+
+from mercenary_skills import install as install_mercenary_skills
+install_mercenary_skills(root)

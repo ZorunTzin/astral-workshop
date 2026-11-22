@@ -76,6 +76,19 @@ docs += ['workshop/item_limits.py','workshop/item_limits_verify.py','workshop/it
 assets += json.loads((src/'workshop/mythicals/assets.json').read_text(encoding='utf8'))
 docs += [str(p.relative_to(src)).replace('\\','/') for p in (src/'workshop/mythicals').rglob('*') if p.is_file() and '__pycache__' not in p.parts]
 
+assets += json.loads((src/'workshop/progression/assets.json').read_text())
+docs += [str(p.relative_to(src)).replace('\\','/') for p in (src/'workshop/progression').glob('*') if p.is_file()]
+
+assets += json.loads((src/'workshop/leagues/assets.json').read_text())
+docs += [str(p.relative_to(src)).replace(chr(92),'/') for p in (src/'workshop/leagues').rglob('*') if p.is_file() and '__pycache__' not in p.parts]
+
+assets += json.loads((src/'workshop/integration/mercenary-assets.json').read_text())
+plugins += ['d2rloader/plugins/fmmp-mercenary-charms.dll']
+modfiles += ['d2rloader/config/fmmp-mercenary-charms.toml']
+
+assets += ['data/global/excel/hireling.txt','data/global/excel/base/hireling.txt']
+docs += ['workshop/mercenary_skills.py','workshop/mercenary_skills_verify.py']
+
 def sha(p):return sha256(p.read_bytes()).hexdigest() if p.exists() else None
 backup=repo/"archive/local/backups/workshop"/datetime.now().strftime("%Y%m%d-%H%M%S")
 jobs=[]

@@ -487,3 +487,7 @@ ws-mythical-power	483	1	22	ws_mythical_power																																	0
 ws-myth-life-regen	484	1	1	ws-myth-life-regen																																	0
 ws-myth-mana-percent	485	1	1	ws-myth-mana-percent																																	0
 ws-myth-mana-regen	486	1	1	ws-myth-mana-regen																																	0
+ws-orb-spell	488	1	1	ws_orb_spell_damage																																	0
+ws-orb-nova	489	1	1	ws_orb_trinity_chance																																	0
+ws-orb-level	490	1	1	ws_orb_level_cost																																	0
+ws-orb-craft	491	1	1	ws_orb_level_cost																																	0

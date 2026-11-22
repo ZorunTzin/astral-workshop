@@ -2,6 +2,7 @@
 // expands our generated bundle before the cube commits/synchronizes its output.
 // Every real bonus still uses D2R's own property implementation and random rolls.
 #include "forge.inc"
+#include "leagues/craft_bindings.h"
 #include "affix_scaling.inc"
 #include "universal_class_items.h"
 #include "endgame/seal_engine.h"

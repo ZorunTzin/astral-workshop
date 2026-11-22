@@ -100,7 +100,8 @@ for name in ('Blood Empowerment','Celestial Empowerment','Underworld Empowerment
 for rel in assets:
  if rel.startswith('data/hd/items/') and 'workshopmythical' in rel and rel.endswith('.json'):
   j=json.loads((root/rel).read_text());fx=[e for e in j['entities'] if e['name'].startswith('workshop_mythical_glow_')]
-  assert len(fx)==3 and all(c.get('hardKillOnDestroy') for e in fx for c in e['components'] if c['type']=='VfxDefinitionComponent')
+  assert not any(c.get('filename','').endswith('fx_horadric_light.particles') for e in j['entities'] for c in e['components'])
+  assert len(fx)==2 and all(c.get('hardKillOnDestroy') for e in fx for c in e['components'] if c['type']=='VfxDefinitionComponent')
 # Re-running the generator must not change rows, IDs, probabilities, localizations or graphics.
 def hashes():return {p:hashlib.sha256((root/p).read_bytes()).hexdigest() for p in assets}
 before=hashes();install(root);assert hashes()==before,'Generator is not idempotent'

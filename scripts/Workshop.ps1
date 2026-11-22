@@ -22,11 +22,15 @@ function Copy-WorkshopSources {
         Invoke-WorkshopCommand $workshopPython @((Join-Path $workshopSource 'stash_organizer_catalog.py'),$workshopStage,(Join-Path $workshopStage 'workshop/stash_organizer_catalog.h'))
     }
     Invoke-WorkshopCommand $workshopPython @((Join-Path $workshopSource 'item_sort_ui.py'),$workshopStage)
+    Invoke-WorkshopCommand $workshopPython @((Join-Path $workshopSource 'integration/mercenary.py'),$workshopStage)
     Invoke-WorkshopCommand $workshopPython @('-c',"import sys;sys.path.insert(0,r'$workshopSource');from monster_modifiers.data import install;install(r'$workshopStage')")
     Invoke-WorkshopCommand $workshopPython @((Join-Path $workshopSource 'goblins/data.py'),$workshopStage)
     Copy-Item -LiteralPath (Join-Path $workshopRepository 'modinfo.json') -Destination $workshopStage -Force
     Invoke-WorkshopCommand $workshopPython @((Join-Path $workshopSource 'item_limits.py'),$workshopStage)
     Invoke-WorkshopCommand $workshopPython @((Join-Path $workshopSource 'mythicals/data.py'),$workshopStage)
+    Invoke-WorkshopCommand $workshopPython @((Join-Path $workshopSource 'progression/data.py'),$workshopStage)
+    Invoke-WorkshopCommand $workshopPython @((Join-Path $workshopSource 'leagues/data.py'),$workshopStage)
+    Invoke-WorkshopCommand $workshopPython @((Join-Path $workshopSource 'mercenary_skills.py'),$workshopStage)
     Invoke-WorkshopCommand $workshopPython @((Join-Path $workshopSource 'buff_hud.py'),$workshopStage)
     Invoke-WorkshopCommand $workshopPython @((Join-Path $workshopSource 'stash_organizer_catalog.py'),$workshopStage,(Join-Path $workshopStage 'workshop/stash_organizer_catalog.h'))
     Invoke-WorkshopCommand $workshopPython @((Join-Path $workshopSource 'endgame/refresh_panel.py'),$workshopStage)
@@ -54,6 +58,9 @@ try {
             Invoke-WorkshopCommand 'cmd.exe' @('/c',(Join-Path $workshopStage 'test-093.cmd'))
         }
         'Check' {
+            Invoke-WorkshopCommand $workshopPython @('-X','utf8',(Join-Path $workshopSource 'mercenary_skills_verify.py'))
+            Invoke-WorkshopCommand $workshopPython @('-X','utf8',(Join-Path $workshopSource 'leagues/verify.py'),$workshopStage)
+            Invoke-WorkshopCommand $workshopPython @('-X','utf8',(Join-Path $workshopSource 'progression/verify.py'),$workshopStage)
             Invoke-WorkshopCommand $workshopPython @('-X','utf8',(Join-Path $workshopSource 'mythicals/verify.py'),$workshopStage)
             Invoke-WorkshopCommand $workshopPython @('-X','utf8',(Join-Path $workshopSource 'paladin_affixes_verify.py'),$workshopStage)
             Invoke-WorkshopCommand $workshopPython @('-X','utf8',(Join-Path $workshopStage 'workshop\endgame\verify.py'))

@@ -330,6 +330,7 @@ inline bool command(const PluginContext* c,const char* name){
  threads->runOnUiThread(c,action,reinterpret_cast<void*>(static_cast<intptr_t>(id)));return true;
 }
 inline void __cdecl update(const PluginContext* c,void*) noexcept {
+ LeagueStash::tick();
  pending=false;std::lock_guard lock(mutex);
  struct SyncOnExit {~SyncOnExit(){syncNative();}} sync;
  if(!available||!ready)return;

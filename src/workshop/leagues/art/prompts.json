@@ -1,0 +1,18 @@
+{
+  "tool": "built-in image_gen",
+  "common": "One centered dark fantasy currency orb inventory icon; worn magical artifact; strong readable silhouette; no text, border or pedestal; transparent background.",
+  "subjects": {
+    "night0": "obsidian orb with silver crescent",
+    "night1": "obsidian orb enclosing a silver skull",
+    "night2": "cracked obsidian orb with a ghostly soul",
+    "night3": "obsidian orb in a silver pointed crown",
+    "breach0": "emerald orb enclosing a luminous fissure",
+    "breach1": "emerald orb with three orbiting shards",
+    "breach2": "emerald orb enclosing a spiral vortex",
+    "breach3": "emerald orb with angular prongs and star",
+    "beyond0": "crimson orb enclosing a black blood droplet",
+    "beyond1": "crimson orb wrapped in hooked spikes",
+    "beyond2": "crimson orb with three claw slashes",
+    "beyond3": "crimson orb in a horned crown"
+  }
+}

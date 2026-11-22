@@ -81,6 +81,7 @@ bool visible(const PluginContext*) noexcept {
         }return true;
     } __except(EXCEPTION_EXECUTE_HANDLER){return false;}
 }
+#include "leagues/stash.inc"
 #include "stash_organizer.inc"
 #include "item_sort.inc"
 void navigate(const PluginContext* ctx,void* data) noexcept {
@@ -96,6 +97,7 @@ SharedEvents::UiMessageAction message(const PluginContext* ctx,const SharedEvent
        _stricmp(e->target,"PanelManager")||_stricmp(e->command,"ClosePanel")||
        std::strncmp(e->text,"WorkshopStash",13))return SharedEvents::UiMessageAction::Continue;
     const char* command=e->text+13;
+    if(!std::strcmp(command,"League")||!std::strcmp(command,"LeagueBack")){threads->runOnUiThread(ctx,LeagueStash::select,reinterpret_cast<void*>(uintptr_t(!std::strcmp(command,"LeagueBack"))));return SharedEvents::UiMessageAction::Consume;}
     if(!std::strncmp(command,"UI",2)&&Organizer::command(ctx,command+2))return SharedEvents::UiMessageAction::Consume;
     if(!std::strcmp(command,"Organizer")){
         ctx->LogInfo("[stash] Organizer button clicked.");

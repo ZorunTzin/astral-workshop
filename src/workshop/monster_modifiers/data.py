@@ -23,7 +23,7 @@ def install(root):
    # Explicit missile publication is the sole visual path. Native item-proc
    # packets would replay the client spell at its victim as well.
    # Enchanted projectiles: half of the previous release's already reduced curve.
-   s['HitShift']=str(int(s.get('HitShift') or 8)-(2 if name.startswith('Enchanted') else 1))
+   s['HitShift']=str(int(s.get('HitShift') or 8)-2)
    for n in range(1,6):s['EMinLev'+str(n)]=s['EMaxLev'+str(n)]=str(growth)
    for suffix in ('b','c'):s['srvmissile'+suffix]=s['cltmissile'+suffix]=''
    m=oldmissiles[sourceMissile].copy();m.update(Missile=missileName,Skill=skillName,SrcDamage='0',ClientSend='0',**{'*ID':str(mid)})

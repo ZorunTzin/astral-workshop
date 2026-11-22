@@ -40,8 +40,8 @@ for folder in ('data/global/excel','data/global/excel/base'):
  for name,base,growth,oldshift in [('GiftedFire',30,8,7),('GiftedLightning',30,8,8),('GiftedCold',30,8,7),('EnchantedChain',15,4,8),('EnchantedCold',15,4,7)]:
   r=skills['Workshop Monster '+name]
   assert not r['cltdofunc'] and not r['cltmissilea'] and r['ItemCltEffect']=='0'
-  reduction=2 if name.startswith('Enchanted') else 1
+  reduction=2
   assert int(r['HitShift'])==oldshift-reduction
   for level in (1,10,85,99):
    assert (int(r['EMin'])+int(r['EMinLev1'])*(level-1))*2**int(r['HitShift']) == (base+growth*level)*2**oldshift//(2**reduction)
-print('PASS: Enchanted curves halved again; Gifted curves unchanged; fractional damage preserved.')
+print('PASS: Gifted curves halved; Enchanted curves preserved; fractional damage preserved.')

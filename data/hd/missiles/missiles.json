@@ -1056,5 +1056,9 @@
     "wsmyth_blizzard4": "comet",
     "wsmyth_blizzardexplode1": "holy_bolt_missile",
     "wsmyth_blizzardexplode2": "holy_bolt_missile",
-    "wsmyth_blizzardexplode3": "holy_bolt_missile"
+    "wsmyth_blizzardexplode3": "holy_bolt_missile",
+    "wsleague_rift": "wsleague_rift",
+    "workshop_trinity_fire": "fireball",
+    "workshop_trinity_cold": "frost_nova",
+    "workshop_trinity_light": "electric_nova"
 }

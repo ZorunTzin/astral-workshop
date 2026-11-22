@@ -1,0 +1,201 @@
+{
+  "dependencies": {
+    "particles": [
+      {
+        "path": "data/hd/vfx/particles/overlays/object/horadric_light/fx_horadric_light.particles"
+      },
+      {
+        "path": "data/hd/vfx/particles/workshop/league_orb2.particles"
+      }
+    ],
+    "models": [
+      {
+        "path": "data/hd/items/misc/charm/charm_small/charm_small.model"
+      },
+      {
+        "path": "data/hd/vfx/meshes/FX_Mesh_Diskmesh_wide_subdiv_Fanaticism.model"
+      }
+    ],
+    "skeletons": [
+      {
+        "path": "data/hd/items/dropped_items/skeleton/dropped_items.skeleton"
+      }
+    ],
+    "animations": [],
+    "textures": [
+      {
+        "path": "data/hd/items/misc/charm/charm_small/misc_charm_small_ALB.texture"
+      },
+      {
+        "path": "data/hd/items/misc/charm/charm_small/misc_charm_small_NRM.texture"
+      },
+      {
+        "path": "data/hd/items/misc/charm/charm_small/misc_charm_small_ORM.texture"
+      },
+      {
+        "path": "data/hd/vfx/leagues/orb2_______________________________.texture"
+      },
+      {
+        "path": "data/hd/vfx/leagues/w2____________.texture"
+      },
+      {
+        "path": "data/hd/vfx/textures/gradient/T_FX_AlphaRemapCurve_blinkfix.texture"
+      },
+      {
+        "path": "data/hd/vfx/goblins/glow3______________________________.texture"
+      },
+      {
+        "path": "data/hd/vfx/goblins/dim___________.texture"
+      }
+    ],
+    "physics": [],
+    "json": [
+      {
+        "path": "data/hd/items/dropped_items/dropped_items_helms_flip_ne.json"
+      }
+    ],
+    "variantdata": [],
+    "objecteffects": [],
+    "other": []
+  },
+  "type": "UnitDefinition",
+  "name": "charm_small",
+  "entities": [
+    {
+      "type": "Entity",
+      "name": "entity_root",
+      "id": 713262390,
+      "components": [
+        {
+          "type": "UnitRootComponent",
+          "name": "component_root",
+          "state_machine_filename": "data/hd/items/dropped_items/dropped_items_helms_flip_ne.json",
+          "doNotInheritRotation": false,
+          "rotationOverride": {
+            "x": 0,
+            "y": 0.3826834,
+            "z": 0,
+            "w": 0.9238795
+          },
+          "doNotUseHDHeight": false,
+          "hideAllMeshWhenInOpenedMode": false,
+          "onCreateEventName": "",
+          "animations": []
+        },
+        {
+          "type": "SkeletonDefinitionComponent",
+          "name": "component_skeleton",
+          "filename": "data/hd/items/dropped_items/skeleton/dropped_items.skeleton"
+        },
+        {
+          "type": "TransformDefinitionComponent",
+          "name": "entity_root_TransformDefinition",
+          "position": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "orientation": {
+            "x": 0,
+            "y": -0.398749083,
+            "z": 0,
+            "w": 0.9170601
+          },
+          "scale": {
+            "x": 1,
+            "y": 1,
+            "z": 1
+          },
+          "inheritOnlyPosition": false
+        }
+      ]
+    },
+    {
+      "type": "Entity",
+      "name": "entity_model",
+      "id": 996691434,
+      "components": [
+        {
+          "type": "ModelDefinitionComponent",
+          "name": "component_model_charm_small",
+          "filename": "data/hd/items/misc/charm/charm_small/charm_small.model",
+          "visibleLayers": 1,
+          "lightMask": 19,
+          "shadowMask": 3,
+          "ghostShadows": false,
+          "floorModel": false,
+          "terrainBlendEnableYUpBlend": false,
+          "terrainBlendMode": 1
+        }
+      ]
+    },
+    {
+      "type": "Entity",
+      "name": "league_orb_light_2_0",
+      "id": 1651873049,
+      "components": [
+        {
+          "type": "TransformDefinitionComponent",
+          "name": "component_transform1",
+          "position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "orientation": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 1.0
+          },
+          "scale": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0
+          },
+          "inheritOnlyPosition": false
+        },
+        {
+          "type": "VfxDefinitionComponent",
+          "name": "league_orb_light_2_0_vfx",
+          "filename": "data/hd/vfx/particles/overlays/object/horadric_light/fx_horadric_light.particles",
+          "hardKillOnDestroy": true
+        }
+      ]
+    },
+    {
+      "type": "Entity",
+      "name": "league_orb_light_2_1",
+      "id": 359835023,
+      "components": [
+        {
+          "type": "VfxDefinitionComponent",
+          "name": "league_orb_light_2_1_vfx",
+          "filename": "data/hd/vfx/particles/workshop/league_orb2.particles",
+          "hardKillOnDestroy": true
+        },
+        {
+          "type": "TransformDefinitionComponent",
+          "name": "goblin_glow_transform",
+          "position": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "orientation": {
+            "x": 0,
+            "y": 0,
+            "z": 0,
+            "w": 1
+          },
+          "scale": {
+            "x": 0.8,
+            "y": 0.8,
+            "z": 0.8
+          },
+          "inheritOnlyPosition": true
+        }
+      ]
+    }
+  ]
+}

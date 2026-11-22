@@ -2026,3 +2026,12 @@ Ws Mythical Pool 5			1					0	WorkshopMythical69	1	WorkshopMythical74	1	WorkshopM
 Ws Mythical Pool 6			1					0	WorkshopMythical60	1	WorkshopMythical61	1	WorkshopMythical62	1	WorkshopMythical63	1	WorkshopMythical64	1	WorkshopMythical65	1	WorkshopMythical66	1	WorkshopMythical67	1	WorkshopMythical68	1	WorkshopMythical69	1										0
 Ws Mythical Pool 7			1					0	WorkshopMythical70	1	WorkshopMythical71	1	WorkshopMythical72	1	WorkshopMythical73	1	WorkshopMythical74	1	WorkshopMythical75	1	WorkshopMythical76	1	WorkshopMythical77	1	WorkshopMythical78	1	WorkshopMythical79	1										0
 Ws Mythical Pool 8			1					0	WorkshopMythical80	1																												0
+Ws League 0 0			1					3891	Ln1	60	Ln2	25	Ln3	12	Ln4	12																						0
+Ws League 0 1			1					1223	Ln1	60	Ln2	25	Ln3	12	Ln4	12																						0
+Ws League 0 2			1					291	Ln1	60	Ln2	25	Ln3	12	Ln4	12																						0
+Ws League 1 0			1					3891	Lo1	60	Lo2	25	Lo3	12	Lo4	12																						0
+Ws League 1 1			1					1223	Lo1	60	Lo2	25	Lo3	12	Lo4	12																						0
+Ws League 1 2			1					291	Lo1	60	Lo2	25	Lo3	12	Lo4	12																						0
+Ws League 2 0			1					3891	Lp1	60	Lp2	25	Lp3	12	Lp4	12																						0
+Ws League 2 1			1					1223	Lp1	60	Lp2	25	Lp3	12	Lp4	12																						0
+Ws League 2 2			1					291	Lp1	60	Lp2	25	Lp3	12	Lp4	12																						0

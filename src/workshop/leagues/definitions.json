@@ -1,0 +1,70 @@
+{
+  "version": 1,
+  "areaChancePercent": 12,
+  "nightSeconds": 90,
+  "beyondSeconds": 180,
+  "breachSeconds": 180,
+  "maxLiving": 48,
+  "mechanics": [
+    {
+      "id": "night",
+      "name": "Night of the Dead",
+      "color": [
+        0.055,
+        0.06,
+        0.075
+      ],
+      "monsters": [
+        "zombie1",
+        "zombie2",
+        "zombie3"
+      ],
+      "orbs": [
+        "Dusk",
+        "Grave",
+        "Soul",
+        "Lich"
+      ]
+    },
+    {
+      "id": "breach",
+      "name": "Astral Breach",
+      "color": [
+        0.08,
+        0.85,
+        0.22
+      ],
+      "monsters": [
+        "fallen1",
+        "zombie3",
+        "brute1"
+      ],
+      "orbs": [
+        "Fissure",
+        "Fracture",
+        "Vortex",
+        "Convergence"
+      ]
+    },
+    {
+      "id": "beyond",
+      "name": "Beyond",
+      "color": [
+        0.85,
+        0.035,
+        0.06
+      ],
+      "monsters": [
+        "fallen1",
+        "brute1",
+        "zombie3"
+      ],
+      "orbs": [
+        "Blood",
+        "Hunger",
+        "Ruin",
+        "Dominion"
+      ]
+    }
+  ]
+}
