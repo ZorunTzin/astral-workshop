@@ -356,3 +356,6 @@ wsmyth667	353					1																																																													
 wsmythicalbonds	354					1																																										battlecommandcast																										0
 wsmythicalrenewal	355					1																																										battlecommandcast																										0
 wsleaguenight	356					1																																																																				0
+workshop_amazon_mastery_0	357					1						1																																										Spear Mastery																				0
+workshop_amazon_mastery_1	358					1						1																																										Bow Mastery																				0
+workshop_amazon_mastery_2	359					1						1																																										Javelin Mastery																				0

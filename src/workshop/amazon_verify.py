@@ -10,7 +10,7 @@ for folder in ('data/global/excel','data/global/excel/base'):
  _,rows=read(root/folder/'skilldesc.txt');d={r['skilldesc']:r for r in rows}
  _,rows=read(root/folder/'missiles.txt');m={int(r['*ID']):r for r in rows if r['*ID'].isdigit()}
  slots=[tuple(d[r['skilldesc']][k] for k in ('SkillPage','SkillRow','SkillColumn')) for r in s.values() if r['charclass']=='ama']
- assert len(slots)==len(set(slots))==30
+ assert len(slots)==len(set(slots))==33
  for sid,fn,state,helper,base,growth in b['auras']:
   r=s[sid];assert r['srvdofunc']=='18' and r['auralencalc']=='50'
   assert r['aurastate']=='workshop_amazon_'+str(sid)

@@ -18,6 +18,9 @@ inline void __cdecl draw(const D2RL::PluginContext* c,const D2RL::Overlay::Frame
  unsigned char transform[0x38];std::vector<Marker> markers;ULONGLONG observed;
  AcquireSRWLockShared(&Lock);std::memcpy(transform,Transform,sizeof(transform));markers=Markers;observed=Observed;ReleaseSRWLockShared(&Lock);
  if(GetTickCount64()-observed>100)return; // Native projection stops when automap is hidden.
+ const float scale=f->screenHeight/2160.0f;
+ const char* brand="Astral Workshop";
+ D2RL::Overlay::TextRequest brandText{sizeof(brandText),0,f->canvas,{f->screenWidth-310*scale,120*scale},{.82f,.73f,.46f,1},28*scale,0,brand,15,0};Api->drawText(c,&brandText);
  const D2RL::Overlay::Color colors[]={{.65f,.68f,.78f,1},{.1f,1,.25f,1},{1,.1f,.12f,1}};
  for(auto m:markers){
   if(m.kind<0||m.kind>2)continue;

@@ -87,7 +87,7 @@ def install(root):
   r=next((x for x in strings if x['Key']==key),None)
   if r is None:last+=1;r={'id':last,'Key':key};strings.append(r)
   for lang in strings[0]:
-   if lang not in ('id','Key'):r[lang]=text
+   if lang not in ('id','Key'):r[lang]=text.replace('%','%%') if key.startswith('LeagueOrbHelp') else text
  p.write_text(json.dumps(strings,indent=2,ensure_ascii=False),encoding="utf-8");assets.append(str(p.relative_to(root)).replace('\\','/'))
  for folder in ('data/global/excel','data/global/excel/base'):
   p=root/folder/'misc.txt';h,rows=read(p)

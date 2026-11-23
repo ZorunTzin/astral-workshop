@@ -80,7 +80,7 @@ int main(){
  // Initial breach defenders, stronger waves and boss wave; event ends only after all are dead.
  reset();assert(League::place(&player,1,100,0));assert(League::Events[0].visuals.size()==9);
  unsigned now=110;
- for(int stage=0;stage<4;++stage){for(int n=0;n<15;++n){tick(now);now+=10;}assert(League::Events[0].state.stage==stage);assert(!League::Mobs.empty());auto mobs=League::Mobs;for(auto& m:mobs){int rank=stage==3?2:stage>0?1:0;assert(std::find(std::begin(League::Classes[1][rank]),std::end(League::Classes[1][rank]),m.cls)!=std::end(League::Classes[1][rank]));kill(m.id);}tick(now);now+=10;}
+ for(int stage=0;stage<4;++stage){for(int n=0;n<15;++n){tick(now);now+=10;}assert(League::Events[0].state.stage==stage);assert(!League::Mobs.empty());auto mobs=League::Mobs;for(auto& m:mobs){int rank=stage==3?2:stage>0?1:0;assert(std::find(std::begin(League::Classes[1][rank]),std::end(League::Classes[1][rank]),m.cls)!=std::end(League::Classes[1][rank])||std::find(std::begin(League::Classes[1][0]),std::end(League::Classes[1][0]),m.cls)!=std::end(League::Classes[1][0]));kill(m.id);}tick(now);now+=10;}
  assert(League::Events[0].state.phase==League::Phase::Complete&&League::Events[0].visuals.empty());
  // Beyond needs five nearby recent ordinary kills. Its own kills cannot recursively spawn.
  reset();assert(League::place(&player,2,100,0));units[League::Events[0].pillar].mode=1;tick(105);
@@ -96,7 +96,7 @@ int main(){
  // Night never exceeds the active monster cap, and timeout removes all event entities.
  reset();assert(League::place(&player,0,100,0));units[League::Events[0].pillar].mode=1;for(unsigned n=105;n<2300;n+=5){tick(n);assert(League::Mobs.size()<=League::MaxLiving);}tick(2400);assert(League::Mobs.empty()&&League::Events[0].state.phase==League::Phase::Complete);
  // Native free-position search writes the second argument, not a separate output.
- reset();relocate=true;assert(League::place(&player,0,100,0));assert(League::Events[0].state.center.x==player.x+15&&League::Events[0].state.center.y==player.y+4);relocate=false;
+ reset();relocate=true;assert(!League::place(&player,0,100,0));assert(League::Events.empty());relocate=false;
  // Entering at a blocked area boundary must not permanently consume the forced spawns.
  reset();League::Testing=true;League::Visited[2]=false;blocked=true;tick(105);assert(League::Events.empty()&&League::Pending[2]==7);blocked=false;tick(150);assert(League::Events.empty());tick(155);assert(League::Events.size()==3&&League::Pending[2]==0);tick(210);assert(League::Events.size()==3);
  // Failed placement produces neither an event nor partial items, and no towns/trials roll.

@@ -158,7 +158,7 @@
     {
       "id": "raid",
       "name": "Raid Boss",
-      "weight": 1,
+      "weight": 0,
       "allOtherModifiers": true,
       "lootRolls": 5,
       "lootStacksWithGlittering": false

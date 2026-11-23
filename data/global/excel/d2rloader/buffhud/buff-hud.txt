@@ -109,3 +109,6 @@ wsmyth664	350	timer	0	0	664	0	1
 wsmyth665	351	timer	0	0	665	0	1
 wsmyth666	352	timer	0	0	666	0	1
 wsmyth667	353	timer	0	0	667	0	1
+workshop_amazon_mastery_0	357	timer	0	0	670	0	1
+workshop_amazon_mastery_1	358	timer	0	0	672	0	1
+workshop_amazon_mastery_2	359	timer	0	0	674	0	1

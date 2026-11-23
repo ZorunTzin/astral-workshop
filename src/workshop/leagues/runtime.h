@@ -87,6 +87,14 @@ inline bool place(void* player,int kind,unsigned now,int direction){
  for(int attempt=0;attempt<8;++attempt){int n=(direction+attempt)%8;Point at{p.x+dx[n],p.y+dy[n]};
   auto room=FreePosition(SoulHarvest::Room(player),&at,&at,3,0x3e01,0xc01,0);if(!room)continue;
   room=RoomAt(room,at.x,at.y);if(!room)continue;
+  // Require an unchanged free position across the entire footprint and bypass ring.
+  // Reject narrow corridors instead of allowing the allocator to nudge a probe.
+  bool clear=true;
+  for(int x=-5;x<=5&&clear;++x)for(int y=-5;y<=5;++y){
+   Point wanted{at.x+x,at.y+y},found=wanted;
+   if(!FreePosition(room,&found,&found,1,0x3e01,0xc01,0)||found.x!=wanted.x||found.y!=wanted.y){clear=false;break;}
+  }
+  if(!clear)continue;
   auto* pillar=Allocate(2,Pillars[kind],at.x,at.y,Game,room,1,0,0,nullptr);if(!pillar)continue;
   if(Arena::Level(pillar)!=Arena::Level(player)){remove(pillar);continue;}
   Event e;e.state.kind=Kind(kind);e.state.area=Arena::Level(player);e.state.center=at;e.state.lastSeen=now;e.state.rifts={at,Point{at.x+12,at.y+7},Point{at.x-12,at.y+7}};e.pillar=Barbarian::Id(pillar);Events.push_back(e);auto index=unsigned(Events.size()-1);
@@ -138,10 +146,11 @@ inline void frame(void* game){
   if(now>=e.retry){e.retry=now+10;
    for(int count=0;count<4&&e.queued>0&&living(i)<MaxLiving;++count){
     int variant=int(random(Seed)%3),rank=0;Point at=s.center;
-    if(s.kind==Kind::Night){at=position(player);at.x+=int(random(Seed)%25)-12;at.y+=int(random(Seed)%25)-12;rank=s.stage>=20&&random(Seed)%20==0?2:random(Seed)%7==0?1:0;}
+    if(s.kind==Kind::Night){at=position(player);at.x+=3*(int(random(Seed)%25)-12);at.y+=3*(int(random(Seed)%25)-12);rank=s.stage>=20&&random(Seed)%20==0?2:random(Seed)%7==0?1:0;}
     if(s.kind==Kind::Breach){at=s.rifts[(s.spawned+count)%3];rank=s.stage==3?2:s.stage>0?1:0;}
     if(s.kind==Kind::Beyond)rank=s.groups%4==0?2:s.groups>4?1:0;
     at.x+=int(random(Seed)%5)-2;at.y+=int(random(Seed)%5)-2;
+    if(rank>0&&random(Seed)%4!=0)rank=0; // 75% fewer elite promotions in every mechanic.
     if(spawn(player,i,at,rank,variant))--e.queued;
    }
   }

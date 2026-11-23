@@ -48,6 +48,13 @@ for item in catalog:
 for r in table('gamble'):assert r.get('code') not in codes
 # A TC graph proves that existing world monsters have no explicit route to a Mythical.
 tcs={r['Treasure Class']:r for r in table('treasureclassex')}
+positions={name:i for i,name in enumerate(tcs)}
+for name,row in tcs.items():
+ if name.startswith('Ws '):
+  for n in range(1,11):
+   child=row.get('Item'+str(n),'')
+   if child in positions:assert positions[child]<positions[name],(name,child,'forward TC reference')
+
 def reaches(name,seen=frozenset()):
  if name in keys or name in codes:return True
  if name not in tcs or name in seen:return False

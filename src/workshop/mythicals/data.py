@@ -196,6 +196,22 @@ def install(root):
   if old['Item1']!='Ws Trial Special Original':
    prior=dict(old);prior['Treasure Class']='Ws Trial Special Original';tcs.append(prior)
   tc('Ws Trial Special',-2,0,[('Ws Trial Special Original',1),('Ws Mythical Chance',1)])
+  # Native TC compilation resolves nested classes only from preceding rows.
+  # Move this wrapper's new dependencies ahead of it, preserving all other rows.
+  names={'Ws Trial Special Original','Ws Mythical Pool','Ws Mythical Chance'}
+  names.update(name for name,_ in groups)
+  dependencies=[r for r in tcs if r['Treasure Class'] in names]
+  tcs[:]=[r for r in tcs if r['Treasure Class'] not in names]
+  ordered=[]
+  def place(row):
+   if row in ordered:return
+   for n in range(1,11):
+    child=next((r for r in dependencies if r['Treasure Class']==row.get('Item'+str(n))),None)
+    if child is not None:place(child)
+   ordered.append(row)
+  for row in dependencies:place(row)
+  index=next(i for i,r in enumerate(tcs) if r['Treasure Class']=='Ws Trial Special')
+  tcs[index:index]=ordered
   # Opt-in early-game test source. Store and restore every original difficulty TC.
   cfg=json.loads((HERE/'test-drops.json').read_text(encoding='utf8'))
   test_on=cfg.get('enabled',False)

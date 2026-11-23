@@ -44,8 +44,8 @@ Items::Result forgeDetails(const PluginContext*,ItemHandle,Items::ItemDetails* d
 }
 Widgets::Result noPanel(const PluginContext*,const char*,Widgets::WidgetHandle*) noexcept {return Widgets::Result::NotFound;}
 int nativeRequirement(void*,void*){return 67;}
-int simulatedRequirement=32;
-int savedRequirement(void*,int stat,unsigned){if(stat==forgeLevelStat||stat==forgeMarkerStat)return 0;assert(stat==pointRequirementStat);return simulatedRequirement;}
+int simulatedRequirement=32,simulatedOrbRequirement=0;
+int savedRequirement(void*,int stat,unsigned){if(stat==forgeLevelStat||stat==forgeMarkerStat)return 0;if(stat==LeagueCraft::LevelStat)return simulatedOrbRequirement;assert(stat==pointRequirementStat);return simulatedRequirement;}
 namespace {
 void __fastcall captureForge(bool, int source, void*, void* item, void*, int, int, int,
         const Items::PropertySpec* property, int, unsigned, void*) {
@@ -181,6 +181,7 @@ int main(){
     assert(sigilRequiredLevel(&itemType,nullptr)==32);
     simulatedRequirement=3;assert(sigilRequiredLevel(&itemType,nullptr)==3);
     simulatedRequirement=0;assert(sigilRequiredLevel(&itemType,nullptr)==67);
+    simulatedOrbRequirement=10;assert(sigilRequiredLevel(&itemType,nullptr)==77);simulatedOrbRequirement=0;
     simulatedRequirement=32;itemType=0;assert(sigilRequiredLevel(&itemType,nullptr)==67);
 
     readLevel=[](){return budget;};

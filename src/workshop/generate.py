@@ -354,3 +354,10 @@ install_mercenary_charms(root)
 
 from mercenary_skills import install as install_mercenary_skills
 install_mercenary_skills(root)
+
+from presentation_qol import install as install_presentation_qol
+install_presentation_qol(root)
+
+from combat.amazon_masteries_data import install as install_amazon_masteries
+install_amazon_masteries(root)
+install_buff_hud(root)

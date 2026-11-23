@@ -15,7 +15,7 @@ int main(){
  assert(Identity(0,42)!=Identity(1,42));
  assert(Type(Identity(1,42))==1&&Number(Identity(1,42))==42);
 
- for(unsigned seed=1;seed<1000;++seed){unsigned rng=seed;Mask used=0;for(unsigned n=0;n<Count;++n){auto m=Roll(All,used,rng);if(m==Count){assert(Expand(used)==All);break;}assert(!(Expand(used)&Bit(m)));used|=Bit(m);}}
+ for(unsigned seed=1;seed<1000;++seed){unsigned rng=seed;Mask used=0;for(unsigned n=0;n<Count;++n){auto m=Roll(All,used,rng);if(m==Count){assert(Expand(used)==(All&~Bit(Raid)));break;}assert(m!=Raid);assert(!(Expand(used)&Bit(m)));used|=Bit(m);}}
  assert(Expand(Bit(Raid)|Bit(Fire))==All);assert(LootRolls(All)==5);assert(LootRolls(Bit(Glitter))==2);
  assert(DamageTaken(1000,Bit(Stone),false)==250);assert(DamageTaken(1000,0,true)==100);assert(DamageTaken(1000,Bit(Stone),true)==25);
  assert(ModifierCount(All)==23&&LifePercent(All)==675&&DamagePercent(All)==215);

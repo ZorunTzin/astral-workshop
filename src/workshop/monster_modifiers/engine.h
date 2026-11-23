@@ -29,7 +29,7 @@ inline int LootRolls(Mask m){return m&Bit(Raid)?5:m&Bit(Glitter)?2:1;}
 inline int DamageTaken(int value,Mask mask,bool totem){std::int64_t v=std::max(0,value);if(mask&Bit(Stone))v=v*25/100;if(totem)v=v*10/100;return int(v);}
 inline unsigned Random(unsigned& seed){seed^=seed<<13;seed^=seed>>17;seed^=seed<<5;return seed;}
 inline Mod Roll(Mask eligible,Mask used,unsigned& seed){
- eligible&=~Expand(used);unsigned weight=0;for(unsigned i=0;i<Count;++i)if(eligible&(Mask(1)<<i))weight+=i==Raid?1:6;
+ eligible&=~(Expand(used)|Bit(Raid));unsigned weight=0;for(unsigned i=0;i<Count;++i)if(eligible&(Mask(1)<<i))weight+=i==Raid?1:6;
  if(!weight)return Count;unsigned r=Random(seed)%weight;
  for(unsigned i=0;i<Count;++i)if(eligible&(Mask(1)<<i)){unsigned w=i==Raid?1:6;if(r<w)return Mod(i);r-=w;}return Count;
 }

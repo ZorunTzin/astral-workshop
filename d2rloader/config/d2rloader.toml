@@ -28,7 +28,7 @@ add_shared_tabs = 995
 # show_game_id = true
 
 # Show D2RLoader or the active mod name after the native automap details.
-# show_current_mod = true
+show_current_mod = false # Astral Workshop is drawn by the mod automap overlay.
 
 [d2rcore.fonts]
 # Register custom fonts for this mod.

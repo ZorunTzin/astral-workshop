@@ -192,6 +192,7 @@ inline void __cdecl editKey(const PluginContext*,void* data) noexcept {
 }
 inline void queueEdit(unsigned kind,unsigned value=0){int field=activeEdit;if(field<0)return;unsigned packed=(unsigned(field)<<24)|(kind<<16)|value;threads->runOnUiThread(context,editKey,reinterpret_cast<void*>(uintptr_t(packed)));}
 inline ResultWheel resultWheel;
+inline bool draggingScroll=false;
 inline bool wheelOverResults(MSG* msg){
  POINT pt{short(LOWORD(msg->lParam)),short(HIWORD(msg->lParam))};RECT rect{};
  if(!GetClientRect(msg->hwnd,&rect)||!ScreenToClient(msg->hwnd,&pt))return false;
@@ -200,6 +201,20 @@ inline bool wheelOverResults(MSG* msg){
 inline LRESULT CALLBACK textKeys(int code,WPARAM removed,LPARAM data){
  if(code==HC_ACTION&&removed==PM_REMOVE){
   auto msg=reinterpret_cast<MSG*>(data);
+  if(editorVisible()&&(msg->message==WM_LBUTTONDOWN||msg->message==WM_MOUSEMOVE||msg->message==WM_LBUTTONUP)){
+   RECT rect{};GetClientRect(msg->hwnd,&rect);float scale=float(rect.bottom-rect.top)/2160.0f;
+   float x=short(LOWORD(msg->lParam)),y=short(HIWORD(msg->lParam));
+   float left=float(rect.right-rect.left)-1220*scale,top=float(rect.bottom-rect.top)/2-580*scale;
+   bool over=scale>0&&x>=left+1135*scale&&x<left+1160*scale&&y>=top+505*scale&&y<top+985*scale;
+   if(msg->message==WM_LBUTTONDOWN&&over)draggingScroll=true;
+   if(draggingScroll){
+    int pages;{std::lock_guard lock(mutex);pages=std::max(0,(int(results.size())-1)/10);}
+    float progress=scale>0?std::clamp((y-top-520*scale)/(450*scale),0.0f,1.0f):0;
+    threads->runOnUiThread(context,action,reinterpret_cast<void*>(uintptr_t(400+int(progress*pages+.5f))));
+    if(msg->message==WM_LBUTTONUP)draggingScroll=false;
+    msg->message=WM_NULL;return CallNextHookEx(textKeyHook,code,removed,data);
+   }
+  }else if(!editorVisible())draggingScroll=false;
   if(msg->message==WM_MOUSEWHEEL&&editorVisible()&&wheelOverResults(msg)){
    int steps=resultWheel.steps(short(HIWORD(msg->wParam)));
    for(int i=0;i<std::abs(steps);++i)threads->runOnUiThread(context,action,reinterpret_cast<void*>(uintptr_t(steps>0?9:10)));
@@ -307,6 +322,8 @@ inline void __cdecl action(const PluginContext*,void* data) noexcept {
  if(id==4){favoritesOnly=!favoritesOnly;resultOffset=0;}
  if(id==6){int n=pageNumber(input("Page"),total);if(n<0)report(L"Enter a page from 1 to "+std::to_wstring(total)+L".");else requestPage(n);}
  if(id==8){settleUntil=0;capture();lastCapture=GetTickCount64();}
+ if(id>=400)resultOffset=(id-400)*10;
+ if(id>=200&&id<=209)resultOffset=((std::max(0,int(results.size())-1)/10)*(id-200)/9)*10;
  if(id==9)resultOffset=std::max(0,resultOffset-10);
  if(id==10)resultOffset+=10;
  if(id==11){selectedResult={-1,L""};query=input("Search");if(query.find_first_not_of(L" \t\r\n")==std::wstring::npos)query.clear();filterApplied=!query.empty();resultOffset=0;report(query.empty()?L"Filter cleared.":L"Filter applied. Click an item to reveal it in the stash.");}
@@ -325,6 +342,7 @@ inline bool command(const PluginContext* c,const char* name){
  const char* names[]={"Close","Save","Favorite","Favorites","Profile","Go","Scan","Refresh","Prev","Next","Clear"};
  for(int i=0;i<11;++i)if(!std::strcmp(name,names[i]))id=i+1;
  if(std::strlen(name)==6&&!std::strncmp(name,"Color",5)&&name[5]>='0'&&name[5]<='5')id=20+name[5]-'0';
+ if(std::strlen(name)==7&&!std::strncmp(name,"Scroll",6)&&name[6]>='0'&&name[6]<='9')id=200+name[6]-'0';
  if(std::strlen(name)==4&&!std::strncmp(name,"Row",3)&&name[3]>='0'&&name[3]<='9')id=100+name[3]-'0';
  if(!id)return false;
  threads->runOnUiThread(c,action,reinterpret_cast<void*>(static_cast<intptr_t>(id)));return true;
@@ -387,6 +405,14 @@ inline void __cdecl frame(const PluginContext* c,const Overlay::Frame* f,void*) 
  std::lock_guard lock(mutex);
  if(traceFrame){char line[200];std::snprintf(line,sizeof(line),"[stash] Render frame: size=%u viewport=%.0fx%.0f stash=%d menu=%d page=%d",f->structSize,f->screenWidth,f->screenHeight,int(stashOpen),int(opened),current+1);c->LogInfo(line);traceFrame=false;}
  if(!stashOpen||current<0||current>=total)return;
+ if(opened){
+  float scale=f->screenHeight/2160.0f,left=f->screenWidth-1220*scale,top=f->screenHeight/2-580*scale;
+  float height=std::max(30.0f,480.0f*10/std::max(10,int(results.size())));
+  float offset=(480-height)*resultOffset/std::max(1,(int(results.size())-1)/10*10);
+  fill(f,left+1138*scale,top+505*scale,20*scale,480*scale,{.12f,.12f,.12f,1});
+  fill(f,left+1140*scale,top+(505+offset)*scale,16*scale,height*scale,colors[1]);
+ }
+
 
 }
 inline void __cdecl reset(const PluginContext*,void*) noexcept {

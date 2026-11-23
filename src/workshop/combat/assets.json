@@ -77,5 +77,11 @@
   "data/global/excel/d2rloader/buffhud/buff-hud.txt",
   "data/global/excel/monseq.txt",
   "data/global/excel/base/monseq.txt",
-  "data/hd/missiles/workshop_split_arrow.json"
+  "data/hd/missiles/workshop_split_arrow.json",
+  "data/global/excel/charstats.txt",
+  "data/global/excel/misc.txt",
+  "data/global/excel/cubemain.txt",
+  "data/global/excel/base/charstats.txt",
+  "data/global/excel/base/misc.txt",
+  "data/global/excel/base/cubemain.txt"
 ]

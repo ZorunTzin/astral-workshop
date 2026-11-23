@@ -1672,6 +1672,15 @@ Workshop Trial Seal Drops			1					24975	Wt1	10	Wt2	6	Wt3	4	Wt4	3	Wt5	2										
 Ws Trial Materials			1					24975	Lab T1 Materials	10	Lab T2 Materials	6	Lab T3 Materials	4	Lab T4 Materials	3	Lab T5 Materials	2																				0
 Workshop Trial Orb Materials			-3					0	Ws Trial Materials	1	Workshop Trial Orbs	1	Workshop Trial Seal Drops	1																								0
 Ws Trial Runes			1					3980	Runes 17	20																												0
+Ws Mythical Pool 0			1					0	WorkshopMythical00	1	WorkshopMythical01	1	WorkshopMythical02	1	WorkshopMythical03	1	WorkshopMythical04	1	WorkshopMythical05	1	WorkshopMythical06	1	WorkshopMythical07	1	WorkshopMythical08	1	WorkshopMythical09	1										0
+Ws Mythical Pool 1			1					0	WorkshopMythical10	1	WorkshopMythical11	1	WorkshopMythical12	1	WorkshopMythical13	1	WorkshopMythical14	1	WorkshopMythical15	1	WorkshopMythical16	1	WorkshopMythical17	1	WorkshopMythical18	1	WorkshopMythical19	1										0
+Ws Mythical Pool 2			1					0	WorkshopMythical20	1	WorkshopMythical21	1	WorkshopMythical22	1	WorkshopMythical23	1	WorkshopMythical24	1	WorkshopMythical25	1	WorkshopMythical26	1	WorkshopMythical27	1	WorkshopMythical28	1	WorkshopMythical29	1										0
+Ws Mythical Pool 3			1					0	WorkshopMythical30	1	WorkshopMythical31	1	WorkshopMythical32	1	WorkshopMythical33	1	WorkshopMythical34	1	WorkshopMythical35	1	WorkshopMythical36	1	WorkshopMythical37	1	WorkshopMythical38	1	WorkshopMythical39	1										0
+Ws Mythical Pool 4			1					0	WorkshopMythical40	1	WorkshopMythical41	1	WorkshopMythical42	1	WorkshopMythical43	1	WorkshopMythical44	1	WorkshopMythical45	1	WorkshopMythical59	1	WorkshopMythical62	1	WorkshopMythical64	1	WorkshopMythical67	1										0
+Ws Mythical Pool 5			1					0	WorkshopMythical69	1	WorkshopMythical74	1	WorkshopMythical79	1																								0
+Ws Mythical Pool			1					0	Ws Mythical Pool 0	10	Ws Mythical Pool 1	10	Ws Mythical Pool 2	10	Ws Mythical Pool 3	10	Ws Mythical Pool 4	10	Ws Mythical Pool 5	3																		0
+Ws Mythical Chance			1					4999	Ws Mythical Pool	1																												0
+Ws Trial Special Original			1					495	Lab Jewelry	5																												0
 Ws Trial Special			-2					0	Ws Trial Special Original	1	Ws Mythical Chance	1																										0
 Ws Trial Base Act 5 (H) H2H B			-4					0	Act 5 (H) H2H B	1	Ws Trial Runes	1	Workshop Trial Orb Materials	1	Ws Trial Special	1																						0
 Ws Trial Base Act 5 (H) Champ B			-4					0	Act 5 (H) Champ B	1	Ws Trial Runes	1	Workshop Trial Orb Materials	1	Ws Trial Special	1																						0
@@ -1976,6 +1985,7 @@ Ws Seal World a3892b033120			-2					0	Lab Class Pal	1	Workshop Trial Seal Drops	
 Ws Seal World 54cdb552ff2f			-2					0	Lab Boss Nakrul	1	Workshop Trial Seal Drops	1																										0
 Ws Seal World a57b7aafcdc0			-2					0	Lab Boss Diablo Extra	1	Workshop Trial Seal Drops	1																										0
 Ws Seal World e3d30e9fb451			-2					0	Lab Class Ama	1	Workshop Trial Seal Drops	1																										0
+Ws Goblin Trial Orbs			1	0	0	0		0	Woa	1	Wob	1	Woc	1	Wod	1	Woe	1	Wof	1	Wog	1																0
 Ws Goblin treasure			4	800	700	900		0	Act 1 Equip A	5	Jewelry A	1																										0
 Ws Goblin gem_hoarder			4	0	0	0		0	gsv	1	gsy	1	gsb	1	gsg	1	gsr	1	gsw	1	sku	1																0
 Ws Goblin gilded_baron			4	0	0	0		0	gld	1																												0
@@ -1994,7 +2004,6 @@ Ws Goblin gilded_baron (H)			4	0	0	0		0	gld	1																												0
 Ws Goblin insufferable_miscreant (H)			4	0	0	0		0	Runes 15	1																												0
 Ws Goblin odious_collector (H)			4	0	0	0		0	Lab T3 Materials	3	Ws Goblin Trial Orbs	1																										0
 Ws Goblin malevolent_tormentor (H)			4	800	700	900		0	Act 1 (H) Equip A	3	Jewelry A	2																										0
-Ws Goblin Trial Orbs			1	0	0	0		0	Woa	1	Wob	1	Woc	1	Wod	1	Woe	1	Wof	1	Wog	1																0
 Ws Goblin gelatinous_sire			0	0	0	0		0																														0
 Ws Goblin gelatinous_medium			0	0	0	0		0																														0
 Ws Goblin gelatinous_small			2	800	700	900		0	Act 1 Equip A	5	Jewelry A	1																										0
@@ -2004,20 +2013,11 @@ Ws Goblin gelatinous_small (N)			2	800	700	900		0	Act 1 (N) Equip A	5	Jewelry A	
 Ws Goblin gelatinous_sire (H)			0	0	0	0		0																														0
 Ws Goblin gelatinous_medium (H)			0	0	0	0		0																														0
 Ws Goblin gelatinous_small (H)			2	800	700	900		0	Act 1 (H) Equip A	5	Jewelry A	1																										0
-Ws Mythical Pool 0			1					0	WorkshopMythical00	1	WorkshopMythical01	1	WorkshopMythical02	1	WorkshopMythical03	1	WorkshopMythical04	1	WorkshopMythical05	1	WorkshopMythical06	1	WorkshopMythical07	1	WorkshopMythical08	1	WorkshopMythical09	1										0
-Ws Mythical Pool 1			1					0	WorkshopMythical10	1	WorkshopMythical11	1	WorkshopMythical12	1	WorkshopMythical13	1	WorkshopMythical14	1	WorkshopMythical15	1	WorkshopMythical16	1	WorkshopMythical17	1	WorkshopMythical18	1	WorkshopMythical19	1										0
-Ws Mythical Pool 2			1					0	WorkshopMythical20	1	WorkshopMythical21	1	WorkshopMythical22	1	WorkshopMythical23	1	WorkshopMythical24	1	WorkshopMythical25	1	WorkshopMythical26	1	WorkshopMythical27	1	WorkshopMythical28	1	WorkshopMythical29	1										0
-Ws Mythical Pool 3			1					0	WorkshopMythical30	1	WorkshopMythical31	1	WorkshopMythical32	1	WorkshopMythical33	1	WorkshopMythical34	1	WorkshopMythical35	1	WorkshopMythical36	1	WorkshopMythical37	1	WorkshopMythical38	1	WorkshopMythical39	1										0
-Ws Mythical Pool 4			1					0	WorkshopMythical40	1	WorkshopMythical41	1	WorkshopMythical42	1	WorkshopMythical43	1	WorkshopMythical44	1	WorkshopMythical45	1	WorkshopMythical59	1	WorkshopMythical62	1	WorkshopMythical64	1	WorkshopMythical67	1										0
-Ws Mythical Pool			1					0	Ws Mythical Pool 0	10	Ws Mythical Pool 1	10	Ws Mythical Pool 2	10	Ws Mythical Pool 3	10	Ws Mythical Pool 4	10	Ws Mythical Pool 5	3																		0
-Ws Mythical Chance			1					4999	Ws Mythical Pool	1																												0
-Ws Trial Special Original			1					495	Lab Jewelry	5																												0
 Ws Mythical Test Original TC			1					0	Corpsefire Splash Charm	1																												0
 Ws Mythical Test Original TC(N)			1					0	Act 1 (N) Super A	1																												0
 Ws Mythical Test Original TC(H)			1					0	Corpsefire (H)	1																												0
 Ws Mythical Test Original TC(H) Desecrated			1					0	Corpsefire (H) Desecrated	1																												0
 Ws Mythical Test Corpsefire			-6					0	Ws Mythical Pool	6																												0
-Ws Mythical Pool 5			1					0	WorkshopMythical69	1	WorkshopMythical74	1	WorkshopMythical79	1																								0
 Ws Mythical Pool 6			1					0	WorkshopMythical60	1	WorkshopMythical61	1	WorkshopMythical62	1	WorkshopMythical63	1	WorkshopMythical64	1	WorkshopMythical65	1	WorkshopMythical66	1	WorkshopMythical67	1	WorkshopMythical68	1	WorkshopMythical69	1										0
 Ws Mythical Pool 7			1					0	WorkshopMythical70	1	WorkshopMythical71	1	WorkshopMythical72	1	WorkshopMythical73	1	WorkshopMythical74	1	WorkshopMythical75	1	WorkshopMythical76	1	WorkshopMythical77	1	WorkshopMythical78	1	WorkshopMythical79	1										0
 Ws Mythical Pool 8			1					0	WorkshopMythical80	1																												0

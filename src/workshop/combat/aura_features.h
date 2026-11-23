@@ -249,6 +249,7 @@ inline void Tick(void* game) {
 #include "../leagues/runtime.h"
 #include "../mythicals/runtime.h"
 #include "../leagues/effects.h"
+#include "amazon_masteries.h"
 namespace AuraBuffs {
 inline bool InstallFeatures(const D2RL::PluginContext* context) {
     const unsigned char expected[]={0x41,0x8b,0xc0,0x83,0xe0,0x7f};
@@ -269,8 +270,8 @@ inline bool InstallFeatures(const D2RL::PluginContext* context) {
     if(!MonsterModifierSpells::Bind(context)||!MonsterModifiersNative::Install(context)||!MonsterRuntime::Install(context))return false;
     if(!Arena::Install(context)||!Goblins::Install(context))return false;
     if(!League::install(context))context->LogWarn("League encounters disabled: unsupported object API.");
-    FeatureFrame=[](void* game){LeagueEffects::Frame(game);AuraFeatures::Tick(game);GuardianCombat::Tick(game);RedemptionLife::Tick(game);SetSelectors::Tick(game);Barbarian::Tick(game);Sorceress::Tick(game);Assassin::Frame(game);Amazon::Frame(game);Druid::Frame(game);MonsterRuntime::Frame(game);Arena::Frame(game);Goblins::Frame(game);League::frame(game);Mythicals::Frame(game);};
-    CustomCast=[](void* g,void* u,int s,int l){int d=Druid::Cast(g,u,s,l);if(d>=0)return d;int r=Amazon::Cast(g,u,s,l);return r<0?Assassin::Cast(g,u,s,l):r;};
+    FeatureFrame=[](void* game){AmazonMasteries::frame(game);LeagueEffects::Frame(game);AuraFeatures::Tick(game);GuardianCombat::Tick(game);RedemptionLife::Tick(game);SetSelectors::Tick(game);Barbarian::Tick(game);Sorceress::Tick(game);Assassin::Frame(game);Amazon::Frame(game);Druid::Frame(game);MonsterRuntime::Frame(game);Arena::Frame(game);Goblins::Frame(game);League::frame(game);Mythicals::Frame(game);};
+    CustomCast=[](void* g,void* u,int s,int l){int mastery=AmazonMasteries::cast(g,u,s,l);if(mastery>=0)return mastery;int d=Druid::Cast(g,u,s,l);if(d>=0)return d;int r=Amazon::Cast(g,u,s,l);return r<0?Assassin::Cast(g,u,s,l):r;};
     Curses::BeforeMissileTick=Amazon::BeforeTick;Curses::AfterMissileTick=Amazon::FinishTick;
     Druid::NativeRaven=reinterpret_cast<SkillFn*>(context->exeBase+0x238ea00)[114];
     Sorceress::NativeMorph=reinterpret_cast<SkillFn*>(context->exeBase+0x238ea00)[116];
@@ -289,6 +290,7 @@ inline bool InstallFeatures(const D2RL::PluginContext* context) {
     context->LogInfo("Druid 0.19.0 enabled: three reservations, native stone morph/ravens, cone/seed spells and companion effects");
     context->LogInfo("Amazon 0.19.0 enabled: four reservations, bounded split/return arrows, Pounce and javelin patterns");
     context->LogInfo("Paladin replacements enabled: efficiency, mastery, guardian, Retribution, Sanctified Ground");
+    if(!AmazonMasteries::install(context))return false;
     return true;
 }
 } // namespace AuraBuffs

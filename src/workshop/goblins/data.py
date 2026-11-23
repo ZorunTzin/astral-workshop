@@ -72,6 +72,11 @@ def install(root):
    gems.append((("sku","skl","skz")[diff],1))
    rewards=[[(equip,5),('Jewelry A',1) ],gems,[('gld',1)],[('Runes '+str((5,10,15)[diff]),1)],[('Lab T'+str(diff+1)+' Materials',3),('Ws Goblin Trial Orbs',1)],[(equip,3),('Jewelry A',2)],[],[],[(equip,5),('Jewelry A',1)]]
    for i,f in enumerate(families):tc('Ws Goblin '+f+suffix,rewards[i],i in (0,5,8),picks=0 if i in (6,7) else 2 if i==8 else 4)
+  # Upgrades may already contain parent rows before this newly added pool.
+  pool=next(r for r in tcs if r['Treasure Class']=='Ws Goblin Trial Orbs')
+  tcs.remove(pool)
+  first=next(i for i,r in enumerate(tcs) if r['Treasure Class'].startswith('Ws Goblin '))
+  tcs.insert(first,pool)
   write(p/'treasureclassex.txt',h,tcs)
   h,rows=read(p/'monstats.txt');ids=[]
   for i,f in enumerate(families):
