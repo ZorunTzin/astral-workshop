@@ -5,7 +5,13 @@ from PIL import Image,ImageDraw,ImageFont
 
 def install(root):
  from leagues.data import MECHANICS,CODES
- root=Path(root);assets=[];font=ImageFont.truetype('C:/Windows/Fonts/georgia.ttf',25)
+ from leagues.crafting import COST,describe
+ root=Path(root);assets=[]
+ # Plain UTF-8 for the shared tooltip API; percent signs are not printf formats.
+ descriptions=['\n'.join(f'{name}: {describe(m,g,t)}' for g,name in enumerate(['Weapons','Armor / Shields','Rings / Amulets']))+f'\nCube with equipment. +{COST[t]} Required Level.\nBonuses stack. Maximum required level: 120.' for m in range(3) for t in range(4)]
+ target=root/'workshop/leagues/stash_tooltips.h';target.parent.mkdir(parents=True,exist_ok=True)
+ target.write_text('#pragma once\ninline constexpr const char* OrbStashDescriptions[]={\n'+',\n'.join(json.dumps(x) for x in descriptions)+'\n};\n')
+ font=ImageFont.truetype('C:/Windows/Fonts/georgia.ttf',25)
  def sprite(name,im,frames=1):
   rel='data/hd/global/ui/Workshop/'+name+'.sprite';p=root/rel;p.parent.mkdir(parents=True,exist_ok=True);p.write_bytes(struct.pack('<4sHH8I',b'SpA1',31,im.width//frames,im.width,im.height,0,frames,0,0,0,0)+im.tobytes());assets.append(rel)
  for name,text in [('leagueTab','League items'),('leagueMaterials','Materials')]:

@@ -665,6 +665,9 @@ D2RL_PLUGIN_EXPORT bool D2RLoaderLoadPlugin(const PluginContext* ctx) noexcept {
     auto sealLabel=forgedLabel;sealLabel.callback=trialSealTooltip;
     SharedEvents::ListenerHandle sealHandle{};
     if(events->registerItemTooltipListener(ctx,&sealLabel,&sealHandle)!=SharedEvents::Result::Success)return false;
+    auto orbLabel=forgedLabel;orbLabel.callback=WorkshopStash::LeagueStash::tooltip;
+    SharedEvents::ListenerHandle orbHandle{};
+    if(events->registerItemTooltipListener(ctx,&orbLabel,&orbHandle)!=SharedEvents::Result::Success)return false;
     ctx->LogInfo("Runeforged and Trial seal saved tooltip labels enabled");
     auto hook=MakeInlineHook(0x376de0,expected,sizeof(expected),
         reinterpret_cast<void*>(sigilRequiredLevel),reinterpret_cast<void**>(&originalRequiredLevel));

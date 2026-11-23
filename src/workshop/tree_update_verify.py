@@ -25,8 +25,8 @@ for folder in ('data/global/excel','data/global/excel/base'):
 strings={r['Key']:r['enUS'] for r in json.loads((root/'data/local/lng/strings/item-names.json').read_text(encoding='utf-8-sig'))}
 tips=[v for k,v in strings.items() if k.startswith('WorkshopNode')]
 assert len(tips)==452
-blood=next(t for t in tips if t.startswith('Blood Drinker\n'))
-assert '25% Life stolen per hit' in blood and 'Life on kill for' not in blood
+blood=next(t for t in tips if t.startswith('Berserker\n'))
+assert '+1 to Rage (All Classes)' in blood and 'Life on kill for' not in blood
 assert 'Cost: 1 point' in blood and '30 / 60 / 90' in blood
 nodes=list(csv.DictReader((root/'workshop/NODES.csv').open(encoding='utf-8-sig'),delimiter=';'))
 assert next(r for r in nodes if r['name']=='Wind')['property']=='balance2'

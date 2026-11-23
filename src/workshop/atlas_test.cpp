@@ -168,6 +168,32 @@ unsigned routeMask(unsigned p,unsigned node){
     assert(false);return 0;
 }
 int main(){
+    { // Only the stack's own unit may receive the extra crafting description.
+      using namespace WorkshopStash;
+      static unsigned char bank[0x80]{},slot[0x620]{};
+      static unsigned unit[]={4,123,40};
+      static void* owner=bank;
+      auto oldFind=find,oldChild=child;auto oldManager=manager;
+      manager=&owner;
+      find=+[](void*,const char*)->void*{return bank;};
+      child=+[](void*,const char* name)->void*{
+        return (!std::strcmp(name,"advancedstash_materials")||!std::strcmp(name,"LeagueOrb02"))?slot:nullptr;
+      };
+      *reinterpret_cast<unsigned**>(slot+0x608)=unit;bank[0x51]=1;
+      LeagueStash::active=true;
+      Items::ItemInfo info{.classId=123,.runtimeId=40};
+      assert(LeagueStash::tooltipIndex(info)==2);
+      info.runtimeId=41;assert(LeagueStash::tooltipIndex(info)==-1);
+      info.runtimeId=40;info.classId=124;assert(LeagueStash::tooltipIndex(info)==-1);
+      info.classId=123;bank[0x51]=0;assert(LeagueStash::tooltipIndex(info)==-1);
+      bank[0x51]=1;LeagueStash::active=false;assert(LeagueStash::tooltipIndex(info)==-1);
+      for(auto text:LeagueStash::OrbStashDescriptions){
+        assert(std::strstr(text,"Weapons:")&&std::strstr(text,"Armor / Shields:")&&std::strstr(text,"Rings / Amulets:"));
+        assert(!std::strstr(text,"%%"));
+      }
+      find=oldFind;child=oldChild;manager=oldManager;
+    }
+
     testForgeDispatch();
     for(unsigned i=0;i<std::size(forgeWords);++i){
         const int marker=2+(i>>7),value=i&127;
@@ -426,7 +452,7 @@ int main(){
     clickApply(allocate("Ravenlord"));assert(exact(summonCountProperty,2));
     clickApply(allocate("SoulFont"));assert(exact(stars[named("SoulFont").first][named("SoulFont").second].property,3,58));
     auto [rp,ri]=named("Reaping");clickApply(allocate("Reaping",4));
-    assert(exact(innerRanks[number(rp,ri)][0].effects[0].propertyId,50));
+    assert(exact(innerRanks[number(rp,ri)][0].effects[0].propertyId,11));
     auto [np,ni]=named("NightSight");clickApply(allocate("NightSight",4));
     assert(exact(innerRanks[number(np,ni)][0].effects[0].propertyId,20));
     // Regression for Treasure: 50+50+50+100 Gold Find remains on the
@@ -469,6 +495,10 @@ int main(){
     speed[wp]|=1u<<10;clickApply(speed);
     assert(findProperty(wideStats[6].native)==76&&findProperty(wideStats[11].native)==35);
     std::puts("PASS: all four spell-mastery clusters grant 36%, Fang retains 75 minimum damage; Pursuit+Wind grant 76 FRW and 35 FHR together, including their Keystone.");
+    {auto [p,i]=named("Bloodthirster");Build b{};b[p]=routeMask(p,i);clickApply(b);
+     assert(findProperty(stars[p][i].property)==50);}
+    {auto [p,i]=named("Berserker");Build b{};b[p]=routeMask(p,i);clickApply(b);
+     assert(findProperty(stars[p][i].property,128)==1);}
     // Visible stem prerequisites: Inner -> Side -> Outer -> Keystone.
     selected={};assert(choose(&ctx,"Node0"));
     assert(!choose(&ctx,"Node1")&&!choose(&ctx,"Node9"));
@@ -476,7 +506,7 @@ int main(){
     assert(choose(&ctx,"Node2"));
     assert(selected[0]==1); // Unlearning Side returns Outer and its Keystone.
     std::puts("PASS: straight stem prerequisites and descendant point refunds match visible edges.");
-    std::puts("PASS: imported Keystone procs, +2 summons, Energy Shield, 50 Life on hit, 20% physical pierce and saved 200-FHR overflow.");
+    std::puts("PASS: imported Keystone procs, +2 summons, Energy Shield, 11 Life on hit, 20% physical pierce and saved 200-FHR overflow.");
     std::puts("PASS: all 27 keystones, Apply click without chart, level requirement, persisted receipts, 336 active cluster rank allocations and their effective properties, 99-point cap, one-sigil replacement.");
     return 0;
 }

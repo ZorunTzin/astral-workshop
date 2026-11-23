@@ -125,7 +125,7 @@ inline void Hit(void* game,void* attacker,void* defender,void* packet){
     // The damage-event hook controls hit reactions; its packet can be a copy.
     // Only this resolved-hit hook precedes the actual native HP subtraction.
     // Scale here once, alongside Attract, so Rage changes the applied damage.
-    void* rageOwner=Actor(game,attacker);
+    void* rageOwner=AilmentActor(game,attacker);
     if(Curses::Player(rageOwner)){
         const int permille=CarnagePermille(Level(game,rageOwner,128),Ramp::GetUnit(defender,6,0),Ramp::GetUnit(defender,7,0));
         if(permille>0)AuraFeatures::ScaleResolvedDamage(packet,1000+permille,1000);

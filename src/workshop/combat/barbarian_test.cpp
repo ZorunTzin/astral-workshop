@@ -63,6 +63,14 @@ int main(){
  Barbarian::Hit(game,&player,&target,packet);
  assert(Barbarian::ReadDamage(packet,0x18)==210*256&&Barbarian::ReadDamage(packet,0x134)==210*256);
  target.stats[6]=0;Barbarian::After(game,&player,&target,packet);assert(GetUnit(&player,68,0)==21);assert(player.lists[Barbarian::CarnageState].expiry==350);
+ // Berserker grants Rage as an oskill; damage and kill buffs work on every class.
+ for(unsigned cls=0;cls<7;++cls){
+  Fresh(100);player.cls=cls;player.levels[128]=1;target.stats[6]=500*256;Damage();
+  Barbarian::Before(game,&player,&target,packet);Barbarian::Hit(game,&player,&target,packet);
+  assert(Barbarian::ReadDamage(packet,0x18)==210*256);
+  target.stats[6]=0;Barbarian::After(game,&player,&target,packet);assert(GetUnit(&player,68,0)==21);
+ }
+ player.cls=4;
  // Normal damage-event completion occurs before HP subtraction. Confirm death
  // on the next frame, then start the full ten-second timer once.
  Fresh(100);player.levels[128]=1;Damage();Barbarian::Before(game,&player,&target,packet);Barbarian::After(game,&player,&target,packet);

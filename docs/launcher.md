@@ -46,3 +46,13 @@ The launcher uses the project's approved astral background and its own WPF imple
 Only one launcher instance runs per Windows session; opening it again restores the existing window. Game launch is refused while D2R or D2RLoader is running. UI failures are reported and logged to `%LOCALAPPDATA%/AstralWorkshop/launcher.log`. Open saved characters resolves Windows Saved Games (including redirection) and the installed modinfo.json savepath. It creates the correct empty profile directory if no character has been saved yet.
 
 Monster display is bundled and checks the shipped Workshop bank.txt; a separate Frankenstein installation is no longer required. Supported loader/core identity checks remain active.
+
+## Launcher 0.3.0 — monster density
+
+Settings > Game > Monster density selects x1 (default) through x5. The preference is saved, including across launcher restarts, and applied after a successful Play or Check and repair. Restart the game for a new selection.
+
+The multiplier scales MonDen, MonDen(N) and MonDen(H) in both levels.txt variants from the release originals. Town/Trial zero densities stay zero; unique-pack counts, bosses and scripted League groups are unchanged. Population placement constraints can affect the actual monster count.
+
+The updater retains checksum-verified originals under the mod's .astral-density directory. It accepts only the exact selected transformation during integrity checks, so density does not trigger repeat downloads. Switching factors never compounds; x1 restores the original bytes. New releases replace the baseline before applying the selected factor. Invalid settings default to x1; malformed tables and density values above 10000 are rejected before launch.
+
+Validation: 63 updater/settings/density checks, including the current two game tables at every factor, plus Windows launcher and installer builds. Actual in-game population counts have not been manually measured.

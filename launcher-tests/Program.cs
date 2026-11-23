@@ -25,5 +25,36 @@ try{
  File.WriteAllText(metadata,"{\"savepath\":\"../other/\"}");
  Reject(()=>SavePaths.Resolve(root,metadata),"savepath traversal rejected");
  Check(Directory.Exists(SavePaths.SavedGames()),"Windows Saved Games known folder resolves");
+ // Density is derived from verified release originals, never multiplied cumulatively.
+ var densityRoot=Path.Combine(root,"density");
+ string table="Name\tMonDen\tMonDen(N)\tMonDen(H)\tMonUMin\r\nTown\t0\t0\t0\t0\r\nField\t1800\t100\t200\t3\r\nTrial\t0\t\t0\t7\r\n";
+ var densityFiles=DensityModifier.Paths.Select(path=>new ReleaseFile(path,Hash(table))).ToArray();
+ var densityRelease=new ModRelease("density-test","workshop-mod.zip",new string('0',64),densityFiles);
+ foreach(var f in densityFiles){var path=Updater.SafePath(densityRoot,f.Path);Directory.CreateDirectory(Path.GetDirectoryName(path)!);File.WriteAllText(path,table);}
+ for(int multiplier=1;multiplier<=5;multiplier++){
+  DensityModifier.Apply(densityRoot,densityRelease,multiplier);DensityModifier.Apply(densityRoot,densityRelease,multiplier);
+  foreach(var f in densityFiles){var text=File.ReadAllText(Updater.SafePath(densityRoot,f.Path));Check(text.Contains($"Field\t{1800*multiplier}\t{100*multiplier}\t{200*multiplier}\t3\r\n")&&text.Contains("Trial\t0\t\t0\t7"),$"density x{multiplier}: all difficulties, fixed spawns untouched, no compounding");Check(DensityModifier.Matches(densityRoot,f),"modified density passes exact release-derived integrity check");}
+ }
+ DensityModifier.Apply(densityRoot,densityRelease,2);Check(File.ReadAllText(Updater.SafePath(densityRoot,densityFiles[0].Path)).Contains("Field\t3600\t200\t400"),"switch x5 to x2 uses original baseline");
+ DensityModifier.Apply(densityRoot,densityRelease,1);Check(densityFiles.All(f=>File.ReadAllText(Updater.SafePath(densityRoot,f.Path))==table),"x1 restores exact original bytes");
+ byte[] bom=[239,187,191,..Encoding.UTF8.GetBytes(table)];Check(DensityModifier.Transform(bom,2).AsSpan().StartsWith(new byte[]{239,187,191}),"UTF-8 BOM preserved");
+ Reject(()=>DensityModifier.Transform(Encoding.UTF8.GetBytes(table),6),"unsupported density rejected");
+ Reject(()=>DensityModifier.Transform(Encoding.UTF8.GetBytes("bad\nrow\n"),2),"invalid density table rejected");
+ Reject(()=>DensityModifier.Transform(Encoding.UTF8.GetBytes(table.Replace("1800","3000")),5),"density overflow rejected");
+ var first=Updater.SafePath(densityRoot,densityFiles[0].Path);File.AppendAllText(first,"corrupt");Check(!DensityModifier.Matches(densityRoot,densityFiles[0]),"modified table corruption triggers repair");
+ Reject(()=>DensityModifier.Apply(densityRoot,densityRelease,2),"corrupt baseline is never reused");File.WriteAllText(first,table);
+ var nextTable=table.Replace("1800","1500");var nextRelease=densityRelease with{Files=DensityModifier.Paths.Select(path=>new ReleaseFile(path,Hash(nextTable))).ToArray()};
+ Check(!DensityModifier.Matches(densityRoot,nextRelease.Files[0]),"new release checksum invalidates old baseline");
+ foreach(var f in nextRelease.Files)File.WriteAllText(Updater.SafePath(densityRoot,f.Path),nextTable);
+ DensityModifier.Apply(densityRoot,nextRelease,3);Check(File.ReadAllText(first).Contains("Field\t4500\t300\t600"),"updated release uses its new baseline");
+ var oldPreferences=JsonSerializer.Deserialize<Preferences>("{\"GameDirectory\":\"D2R\",\"ExtraArguments\":\"-w\"}")!;
+ Check(oldPreferences.DensityMultiplier==1,"old settings default to x1");
+ Check(JsonSerializer.Deserialize<Preferences>(JsonSerializer.Serialize(oldPreferences with{DensityMultiplier=5}))!.DensityMultiplier==5,"density preference persists");
+ Check(DensityModifier.Normalize(0)==1&&DensityModifier.Normalize(6)==1,"invalid saved settings fall back to x1");
+ var repo=Path.GetFullPath(Path.Combine(AppContext.BaseDirectory,"../../../../"));
+ foreach(var rel in new[]{"data/global/excel/levels.txt","data/global/excel/base/levels.txt"}){
+  var bytes=File.ReadAllBytes(Path.Combine(repo,rel));
+  for(int multiplier=1;multiplier<=5;multiplier++)Check(DensityModifier.Transform(bytes,multiplier).Length>0,$"current {rel} supports x{multiplier}");
+ }
  Console.WriteLine($"{passed} checks passed");
 }finally{Directory.Delete(root,true);}

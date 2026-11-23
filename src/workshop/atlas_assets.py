@@ -137,6 +137,11 @@ def export(root,positions):
     for k in ("mana","stam","att","light","regen","ac-miss","move2","str","dex","vit","enr","balance2"):
         st=itemstats[properties[k]["stat1"]]
         limit=(1<<int(st["Save Bits"]))-1-int(st["Save Add"] or 0)
+        # Keep the established Sigil encoding when regenerating against tables
+        # whose general item limits have subsequently been widened.
+        sigil_limits={'mana':223,'stam':223,'att':1023,'light':11,'regen':33,'ac-miss':511,
+                      'move2':107,'str':223,'dex':95,'vit':95,'enr':95,'balance2':107}
+        limit=min(limit,sigil_limits[k])
         source.append(f"{{{props['ws-wide-'+k]},{props[k]},{limit},{1<<int(st['ValShift'] or 0)}}},")
     source.append(f"{{{props['ws-light-min-wide']},{props['ws-light-min-native']},63,1}},")
     source.append(f"{{{props['ws-poison-rate-wide']},{props['ws-poison-rate-native']},1023,1}},")
@@ -265,5 +270,11 @@ def export(root,positions):
     # Other feature generators also append localized skills. Allocate after all
     # string tables so node IDs cannot collide with those skill descriptions.
     last=max(v["id"] for path in file.parent.glob("*.json") for v in json.loads(path.read_text(encoding="utf-8-sig")) if isinstance(v,dict) and 'id' in v)
-    added=[{"id":last+n,"Key":k,**{lang:t for lang in data[0] if lang not in ("id","Key")}} for n,(k,t) in enumerate(tip.items(),1)]
-    raw=file.read_bytes().rstrip();file.write_bytes(raw[:-1].rstrip()+b",\n"+json.dumps(added,indent=2,ensure_ascii=False)[1:].encode()+b"\n")
+    existing={r['Key']:r for r in data}
+    for key,text in tip.items():
+        row=existing.get(key)
+        if row is None:
+            last+=1;row={'id':last,'Key':key};data.append(row)
+        for lang in data[0]:
+            if lang not in ('id','Key'):row[lang]=text
+    file.write_text(json.dumps(data,indent=2,ensure_ascii=False),encoding='utf8')

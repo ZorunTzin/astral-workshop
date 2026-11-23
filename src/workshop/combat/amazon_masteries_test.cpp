@@ -23,8 +23,8 @@ int main(){
  assert(AmazonMasteries::allowed(game,&player,bow));
  weaponCode=weapons[1];assert(AmazonMasteries::cast(game,&player,bow,1)==1);
  assert(GetUnit(&player,76,0)==10&&GetUnit(&player,60,0)==2&&GetUnit(&player,36,0)==0&&GetUnit(&player,96,0)==11);
- for(int stat:{48,50,54})assert(GetUnit(&player,stat,0)==3);
- for(int stat:{49,51,55})assert(GetUnit(&player,stat,0)==6);
+ for(int stat:{48,50,54})assert(GetUnit(&player,stat,0)==6);
+ for(int stat:{49,51,55})assert(GetUnit(&player,stat,0)==12);
  weaponCode=weapons[2];assert(!AmazonMasteries::allowed(game,&player,0));AmazonMasteries::frame(game);assert(GetUnit(&player,96,0)==0);
  assert(AmazonMasteries::cast(game,&player,javelin,1)==1);assert(GetUnit(&player,20,0)==4&&GetUnit(&player,76,0)==15);
  slot=11;assert(!AmazonMasteries::allowed(game,&player,0));Frame(105);AmazonMasteries::frame(game);assert(GetUnit(&player,76,0)==0);slot=4;
@@ -42,6 +42,9 @@ int main(){
   weaponCode=weapons[1];AmazonMasteries::cast(game,&player,bow,level);
   assert(GetUnit(&player,76,0)==10+level-1);
   assert(GetUnit(&player,60,0)==(4+level-1)/2);
+  for(int stat:{338,339,340})assert(GetUnit(&player,stat,0)==std::min(35,4+level));
+  for(int stat:{48,50,54})assert(GetUnit(&player,stat,0)==2+4*level);
+  for(int stat:{49,51,55})assert(GetUnit(&player,stat,0)==6+6*level);
   AmazonMasteries::cast(game,&player,bow,level);
   weaponCode=weapons[0];AmazonMasteries::cast(game,&player,spear,level);
   assert(GetUnit(&player,76,0)==20+2*(level-1));

@@ -8,7 +8,7 @@ FLAT = {'hp':'Life','mana':'Mana','str':'Strength','dex':'Dexterity','vit':'Vita
         'healperhit':'Life on hit','heal-kill':'Life after each kill','mana-kill':'Mana after each kill','regen':'Replenish Life',
         'extra_traps':'Maximum traps','ws-pet-count':'Maximum summons','ws-minion-limit':'Maximum summons',
         'all-stats':'All attributes','allskills':'All skills','magicskill':'Magic skills'}
-PERCENT = {'move2':'Faster run/walk','balance2':'Faster hit recovery','swing2':'Increased attack speed',
+PERCENT = {'ws-bleed':'chance to cause Bleeding','move2':'Faster run/walk','balance2':'Faster hit recovery','swing2':'Increased attack speed',
            'cast2':'Faster cast rate','block2':'Faster block rate','block':'Increased chance of blocking',
            'str%':'Strength','dex%':'Dexterity','vit%':'Vitality','enr%':'Energy',
            'att%':'Bonus to Attack Rating','dmg%':'Enhanced damage','dmg-undead':'Damage to undead',

@@ -209,8 +209,8 @@ Other learned node bonuses remain active.
 Cost: 1 point
 Keystone slots unlock at character levels 30 / 60 / 90 (max 3)
 Other learned node bonuses remain active.
-- Hexblade
-25% chance to cast level 8 Plague on striking
+- Bloodthirster
+50% chance to cause Bleeding
 Cost: 1 point
 Keystone slots unlock at character levels 30 / 60 / 90 (max 3)
 Other learned node bonuses remain active.
@@ -326,8 +326,8 @@ Cost: 1 point
 Keystone slots unlock at character levels 30 / 60 / 90 (max 3)
 Other learned node bonuses remain active.
 Treasure gold bonus is retained.
-- Blood Drinker
-25% Life stolen per hit
+- Berserker
++1 to Rage (All Classes)
 Cost: 1 point
 Keystone slots unlock at character levels 30 / 60 / 90 (max 3)
 Other learned node bonuses remain active.

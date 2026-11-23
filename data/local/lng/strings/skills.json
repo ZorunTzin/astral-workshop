@@ -51338,5 +51338,22 @@
     "zhCN": "Workshop Jab Bleed Level",
     "id": 61588,
     "Key": "WorkshopInternalSkill676"
+  },
+  {
+    "id": 61589,
+    "Key": "WorkshopAmazonMastery1Value7",
+    "enUS": "Chance to Avoid Damage: %d%%",
+    "zhTW": "Chance to Avoid Damage: %d%%",
+    "deDE": "Chance to Avoid Damage: %d%%",
+    "esES": "Chance to Avoid Damage: %d%%",
+    "frFR": "Chance to Avoid Damage: %d%%",
+    "itIT": "Chance to Avoid Damage: %d%%",
+    "koKR": "Chance to Avoid Damage: %d%%",
+    "plPL": "Chance to Avoid Damage: %d%%",
+    "esMX": "Chance to Avoid Damage: %d%%",
+    "jaJP": "Chance to Avoid Damage: %d%%",
+    "ptBR": "Chance to Avoid Damage: %d%%",
+    "ruRU": "Chance to Avoid Damage: %d%%",
+    "zhCN": "Chance to Avoid Damage: %d%%"
   }
 ]

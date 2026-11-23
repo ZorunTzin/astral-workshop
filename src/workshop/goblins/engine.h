@@ -2,7 +2,7 @@
 #include <array>
 #include <cstdint>
 namespace Goblins {
-constexpr unsigned WorldChance=10,TrialChance=1; // percent, per area / wave (not per frame or player)
+constexpr unsigned WorldChance=30,TrialChance=3; // percent, per area / wave (not per frame or player)
 constexpr unsigned FirstChannelDelay=200,ChannelDuration=75,RetryDelay=125;
 inline bool WorldArea(int level){return level>=2&&level<=132&&level!=39&&level!=40&&level!=75&&level!=103&&level!=109;}
 inline bool TrialArea(int level){return level>=166&&level<=170;}

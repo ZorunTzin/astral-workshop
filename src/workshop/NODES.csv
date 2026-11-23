@@ -66,7 +66,7 @@ Occult;1;Keystone;Blight;oskill;Lower Resist;2;2;Poison bonus for Lower Resist
 Occult;2;Inner;Veil;res-curse-len;;25;25;Curse duration reduction %
 Occult;2;Outer;Shroud;res-curse-len;;50;50;Curse duration reduction %
 Occult;2;Side;Night Sight;light;;15;15;Light radius
-Occult;2;Keystone;Hexblade;hit-skill;Amplify Damage;25;8;Curse ward for Amplify proc
+Occult;2;Keystone;Bloodthirster;ws-bleed;0;50;50;
 Occult;3;Inner;Bone;extra-mag;;15;15;Magic damage %
 Occult;3;Outer;Ossuary;extra-mag;;30;30;Magic damage %
 Occult;3;Side;Grave Lore;enr;;20;20;Energy
@@ -102,7 +102,7 @@ Harvest;1;Keystone;Alchemist;mag%;0;100;100;Gold find for +75% magic find
 Harvest;2;Inner;Reaping;heal-kill;;5;5;Life after kill
 Harvest;2;Outer;Harvest;heal-kill;;10;10;Life after kill
 Harvest;2;Side;Renewal;regen;;50;50;Replenish life
-Harvest;2;Keystone;Blood Drinker;lifesteal;0;25;25;Life on kill for life steal
+Harvest;2;Keystone;Berserker;oskill;Shield Mastery;1;1;
 Harvest;3;Inner;Hunger;mana-kill;;5;5;Mana after kill
 Harvest;3;Outer;Feast;mana-kill;;10;10;Mana after kill
 Harvest;3;Side;Siphon;mana;;75;75;Mana

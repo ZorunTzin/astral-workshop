@@ -4,14 +4,13 @@ using System.Text.Json;
 using System.Windows;
 using Microsoft.Win32;
 namespace AstralWorkshop;
-public sealed record Preferences(string GameDirectory = "", string ExtraArguments = "");
 public partial class MainWindow : Window {
  internal const string Repository = "https://github.com/ZorunTzin/astral-workshop";
  static readonly string SettingsDir = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "AstralWorkshop");
  static readonly string SettingsFile = Path.Combine(SettingsDir, "settings.json");
  CancellationTokenSource? cancellation;
- public MainWindow() { InitializeComponent(); try { if(File.Exists(SettingsFile)) { var p=JsonSerializer.Deserialize<Preferences>(File.ReadAllText(SettingsFile)); GamePath.Text=p?.GameDirectory??""; Arguments.Text=p?.ExtraArguments??""; } } catch(Exception e) { Status.Text="Settings could not be loaded: "+e.Message; } RefreshVersion(); Closing += (_,e)=>{ if(cancellation!=null) { cancellation.Cancel(); e.Cancel=true; Status.Text="Cancelling update. Please wait before closing."; } else Save(); }; }
- void Save() { Directory.CreateDirectory(SettingsDir); var temp=SettingsFile+".tmp"; File.WriteAllText(temp,JsonSerializer.Serialize(new Preferences(GamePath.Text,Arguments.Text))); File.Move(temp,SettingsFile,true); }
+ public MainWindow() { InitializeComponent(); try { if(File.Exists(SettingsFile)) { var p=JsonSerializer.Deserialize<Preferences>(File.ReadAllText(SettingsFile)); GamePath.Text=p?.GameDirectory??""; Arguments.Text=p?.ExtraArguments??""; Density.SelectedIndex=DensityModifier.Normalize(p?.DensityMultiplier??1)-1; } } catch(Exception e) { Status.Text="Settings could not be loaded: "+e.Message; } RefreshVersion(); Closing += (_,e)=>{ if(cancellation!=null) { cancellation.Cancel(); e.Cancel=true; Status.Text="Cancelling update. Please wait before closing."; } else Save(); }; }
+ void Save() { Directory.CreateDirectory(SettingsDir); var temp=SettingsFile+".tmp"; File.WriteAllText(temp,JsonSerializer.Serialize(new Preferences(GamePath.Text,Arguments.Text,Density.SelectedIndex+1))); File.Move(temp,SettingsFile,true); }
  void RefreshVersion() { var file=Path.Combine(GamePath.Text,"Mods","ReimaginedWorkshop",".astral-version"); VersionLabel.Text=File.Exists(file)?"Installed mod: "+File.ReadAllText(file):"Mod not installed by this launcher yet"; if(!string.IsNullOrEmpty(GamePath.Text)) Status.Text="Ready. Play checks for updates before starting the game."; }
  static void Open(string path) { Process.Start(new ProcessStartInfo(path){UseShellExecute=true}); }
  async Task Update(bool launch) {
@@ -21,7 +20,7 @@ public partial class MainWindow : Window {
    if(Process.GetProcessesByName("D2R").Length>0||Process.GetProcessesByName("D2RLoader").Length>0)throw new InvalidOperationException("Diablo II or D2RLoader is already running. Close it before starting another session.");
    Save(); SettingsPanel.Visibility=Visibility.Collapsed; PlayButton.IsEnabled=false; CancelButton.Visibility=Visibility.Visible; cancellation=new();
    var reporter=new Progress<(string Message,double Percent)>(p=>{Status.Text=p.Message;Progress.Value=p.Percent;});
-   await Updater.Run(GamePath.Text,reporter,cancellation.Token);
+   await Updater.Run(GamePath.Text,reporter,cancellation.Token,Density.SelectedIndex+1);
    RefreshVersion();
    if(launch) { cancellation.Token.ThrowIfCancellationRequested(); Process.Start(new ProcessStartInfo(Path.Combine(GamePath.Text,"D2RLoader.exe")){WorkingDirectory=GamePath.Text,Arguments="-mod ReimaginedWorkshop -txt "+Arguments.Text,UseShellExecute=true}); Status.Text="Game started."; } else Status.Text="Mod files verified and up to date.";
   } catch(OperationCanceledException) {Status.Text="Update cancelled. The game was not started.";}

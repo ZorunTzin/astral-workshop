@@ -5,7 +5,7 @@ from fractions import Fraction
 from combat.port import read,write
 NAMES=('Spear Mastery','Bow Mastery','Javelin Mastery')
 # stat, base, per skill level, cap, tooltip (same values drive the native runtime).
-BONUSES=[[(76,18,2,100000,'Maximum Life: +%d%%'),(16,20,10,500,'Defense: +%d%%'),(36,2,1,20,'Physical Damage Reduction: %d%%'),(39,8,2,100000,'All Resistances: +%d%%'),(93,7,3,100000,'Attack Speed: +%d%%')],[(76,9,1,100000,'Maximum Life: +%d%%'),(60,1.5,0.5,100000,'Life Stolen per Hit: %d%%'),(96,10,1,40,'Movement Speed: +%d%%'),(-1,3,1,25,'Impale Chance: %d%%'),(48,1,2,500,'Fire / Cold / Lightning Minimum Damage: +%d'),(49,3,3,750,'Fire / Cold / Lightning Maximum Damage: +%d')],[(20,3,1,25,'Block Chance: +%d%%'),(138,4,1,100000,'Mana after Each Kill: +%d'),(76,13.5,1.5,100000,'Maximum Life: +%d%%'),(99,5,2,60,'Faster Hit Recovery: +%d%%'),(102,5,2,60,'Faster Block Rate: +%d%%')]]
+BONUSES=[[(76,18,2,100000,'Maximum Life: +%d%%'),(16,20,10,500,'Defense: +%d%%'),(36,2,1,20,'Physical Damage Reduction: %d%%'),(39,8,2,100000,'All Resistances: +%d%%'),(93,7,3,100000,'Attack Speed: +%d%%')],[(76,9,1,100000,'Maximum Life: +%d%%'),(60,1.5,0.5,100000,'Life Stolen per Hit: %d%%'),(96,10,1,40,'Movement Speed: +%d%%'),(-1,3,1,25,'Impale Chance: %d%%'),(48,2,4,1000,'Fire / Cold / Lightning Minimum Damage: +%d'),(49,6,6,1500,'Fire / Cold / Lightning Maximum Damage: +%d'),(-2,4,1,35,'Chance to Avoid Damage: %d%%')],[(20,3,1,25,'Block Chance: +%d%%'),(138,4,1,100000,'Mana after Each Kill: +%d'),(76,13.5,1.5,100000,'Maximum Life: +%d%%'),(99,5,2,60,'Faster Hit Recovery: +%d%%'),(102,5,2,60,'Faster Block Rate: +%d%%')]]
 def scaled(base,step):
  a,b=Fraction(str(base)),Fraction(str(step));div=max(a.denominator,b.denominator)
  return int(a*div),int(b*div),div
@@ -35,7 +35,9 @@ def install(root):
    labels[key+'Name']=name;labels[key+'Desc']='Toggle. Only one Mastery can be active. No mana cost. '+('Spears only. Cannot use bow or javelin skills.' if i==0 else 'Bows and crossbows only.' if i==1 else 'Javelins only.')+' Bonuses are suspended with another weapon.'
    for j,(stat,base,step,cap,text) in enumerate(BONUSES[i],1):
     base,step,div=scaled(base,step)
-    k=key+'Value'+str(j);labels[k]=text;d.update({f'descline{j}':'36',f'desctexta{j}':k,f'desccalca{j}':f'min({cap},({base}+{step}*lvl)/{div})'})
+    k=key+'Value'+str(j);labels[k]=text
+    prefix,slot=('desc',j) if j<=6 else ('dsc2',j-6)
+    d.update({f'{prefix}line{slot}':'36',f'{prefix}texta{slot}':k,f'{prefix}calca{slot}':f'min({cap},({base}+{step}*lvl)/{div})'})
    local.append((int(r['*Id']),int(ss[state]['*ID']),int(by[helper]['*Id'])))
   for name,h,rows in [('skills',sh,skills),('skilldesc',dh,descs),('states',th,states)]:write(p/(name+'.txt'),h,rows)
   if bindings is not None:assert bindings==local
@@ -55,7 +57,7 @@ def install(root):
  for i,bonus in enumerate(BONUSES):
   for stat,base,step,cap,_ in bonus:
    base,step,div=scaled(base,step)
-   targets=[39,41,43,45] if stat==39 else [48,50,54] if stat==48 else [49,51,55] if stat==49 else [impale if stat==-1 else stat]
+   targets=[338,339,340] if stat==-2 else [39,41,43,45] if stat==39 else [48,50,54] if stat==48 else [49,51,55] if stat==49 else [impale if stat==-1 else stat]
    lines += ['{'+','.join(map(str,(i,s,base,step,cap,div)))+'},' for s in targets]
  lines+=['};','inline constexpr int Attacks[]={'+','.join(r['*Id'] for r in skills if r['*Id'].isdigit() and (int(r.get('SrcDam') or 0)>0 or r['skill'] in ('Attack','Throw','Kick') or (r['charclass']=='ama' and any(r.get(k) for k in ('itypea1','itypea2')))))+'};']
  (out/'amazon_masteries_bindings.h').write_text('\n'.join(lines),encoding='utf8')

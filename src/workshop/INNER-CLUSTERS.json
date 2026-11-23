@@ -543,49 +543,49 @@
     "title": "Deathfire",
     "ranks": [
       {
-        "label": "+10 Life on hit",
+        "label": "+2 Life on hit",
         "effects": [
           {
             "code": "healperhit",
             "parameter": 0,
-            "minimum": 10,
-            "maximum": 10,
+            "minimum": 2,
+            "maximum": 2,
             "bonus": false
           }
         ]
       },
       {
-        "label": "+10 Life on hit",
+        "label": "+2 Life on hit",
         "effects": [
           {
             "code": "healperhit",
             "parameter": 0,
-            "minimum": 10,
-            "maximum": 10,
+            "minimum": 2,
+            "maximum": 2,
             "bonus": false
           }
         ]
       },
       {
-        "label": "+10 Life on hit",
+        "label": "+2 Life on hit",
         "effects": [
           {
             "code": "healperhit",
             "parameter": 0,
-            "minimum": 10,
-            "maximum": 10,
+            "minimum": 2,
+            "maximum": 2,
             "bonus": false
           }
         ]
       },
       {
-        "label": "+20 Life on hit / 5% chance to cast level 1 Corpse Explosion on kill",
+        "label": "+5 Life on hit / 5% chance to cast level 1 Corpse Explosion on kill",
         "effects": [
           {
             "code": "healperhit",
             "parameter": 0,
-            "minimum": 20,
-            "maximum": 20,
+            "minimum": 5,
+            "maximum": 5,
             "bonus": false
           },
           {

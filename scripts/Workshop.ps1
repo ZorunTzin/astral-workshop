@@ -39,6 +39,7 @@ function Copy-WorkshopSources {
     Invoke-WorkshopCommand $workshopPython @((Join-Path $workshopSource 'endgame/refresh_panel.py'),$workshopStage)
     & robocopy (Join-Path $workshopRepository 'docs\workshop') (Join-Path $workshopStage 'workshop') *.md /S /COPY:DAT /R:1 /W:1 /NFL /NDL /NJH /NJS /NP
     if ($LASTEXITCODE -ge 8) { throw 'Documentation staging failed.' }
+    Invoke-WorkshopCommand $workshopPython @('-c',"import sys;from pathlib import Path;sys.path.insert(0,r'$workshopSource');from atlas_assets import export;export(Path(r'$workshopStage'),[])")
 }
 Push-Location $workshopRepository
 try {

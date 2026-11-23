@@ -66,7 +66,7 @@ Occult;1;Keystone;Blight;oskill;Lower Resist;2;2;Poison bonus for Lower Resist;;
 Occult;2;Inner;Veil;all-stats;;3;3;All attributes;+1 to Combat skills (Barbarian);+1 to Masteries and Throwing skills (Barbarian);+1 to Warcries skills (Barbarian);+1 to all Barbarian skills
 Occult;2;Outer;Shroud;all-stats;;3;3;All attributes;+25 Curse duration reduction %;+25 Curse duration reduction %;+25 Curse duration reduction %;+50 Curse duration reduction % / +15% faster hit recovery
 Occult;2;Side;Night Sight;all-stats;;3;3;All attributes;-5% to enemy Physical Resistance;-5% to enemy Physical Resistance;-5% to enemy Physical Resistance;-5% to enemy Physical Resistance / +10% Crushing blow
-Occult;2;Keystone;Hexblade;hit-skill;Amplify Damage;25;8;Curse ward for Amplify proc;;;;
+Occult;2;Keystone;Bloodthirster;ws-bleed;0;50;50;;;;;
 Occult;3;Inner;Bone;all-stats;;3;3;All attributes;+30 Magic damage to attacks;+30 Magic damage to attacks;+30 Magic damage to attacks;+60 Magic damage to attacks / -10% enemy magic resistance
 Occult;3;Outer;Ossuary;all-stats;;3;3;All attributes;+15 Magic damage %;+15 Magic damage %;+15 Magic damage %;+30 Magic damage % / −5% enemy magic resistance
 Occult;3;Side;Grave Lore;all-stats;;3;3;All attributes;+10 Energy;+10 Energy;+10 Energy;+20 Energy / +10% energy
@@ -99,10 +99,10 @@ Harvest;1;Inner;Spoils;all-stats;;3;3;All attributes;+1 to Demon skills (Warlock
 Harvest;1;Outer;Treasure;all-stats;;3;3;All attributes;+50 Gold find %;+50 Gold find %;+50 Gold find %;+100 Gold find % / +15% magic find
 Harvest;1;Side;Fortune;all-stats;;3;3;All attributes;+25 Magic find %;+25 Magic find %;+25 Magic find %;+50 Magic find % / +50% extra gold
 Harvest;1;Keystone;Alchemist;mag%;0;100;100;Gold find for +75% magic find;;;;
-Harvest;2;Inner;Reaping;all-stats;;3;3;All attributes;+10 Life on hit;+10 Life on hit;+10 Life on hit;+20 Life on hit / 5% chance to cast level 1 Corpse Explosion on kill
+Harvest;2;Inner;Reaping;all-stats;;3;3;All attributes;+2 Life on hit;+2 Life on hit;+2 Life on hit;+5 Life on hit / 5% chance to cast level 1 Corpse Explosion on kill
 Harvest;2;Outer;Harvest;all-stats;;3;3;All attributes;+5 Life after kill;+5 Life after kill;+5 Life after kill;+10 Life after kill / +20 Replenish Life
 Harvest;2;Side;Renewal;all-stats;;3;3;All attributes;50 Replenish Life;50 Replenish Life;50 Replenish Life;+100 Replenish Life / +40 Life
-Harvest;2;Keystone;Blood Drinker;lifesteal;0;25;25;Life on kill for life steal;;;;
+Harvest;2;Keystone;Berserker;oskill;Shield Mastery;1;1;;;;;
 Harvest;3;Inner;Hunger;all-stats;;3;3;All attributes;+1 to Demon skills (Warlock);+1 to Eldritch skills (Warlock);+1 to Chaos skills (Warlock);+1 to all Warlock skills
 Harvest;3;Outer;Feast;all-stats;;3;3;All attributes;+5 Mana after kill;+5 Mana after kill;+5 Mana after kill;+10 Mana after kill / +15% mana regeneration
 Harvest;3;Side;Siphon;all-stats;;3;3;All attributes;+37 Mana;+37 Mana;+37 Mana;+75 Mana / +15% mana regeneration
