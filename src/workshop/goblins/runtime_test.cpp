@@ -16,7 +16,7 @@ void* __fastcall GPortal(void*,void* raw){auto& p=*static_cast<Pulse::Params*>(r
 void* __fastcall GSpawn(void*,void* room,int x,int y,int cls,int,int,unsigned short){++spawns;if(spawnBlocked)return nullptr;auto& u=mobs[++serial];u.type=1;u.cls=cls;u.id=serial;u.mode=1;u.room=int(uintptr_t(room));u.x=x;u.y=y;u.stats[6]=u.stats[7]=10000;return &u;}
 unsigned PortalCount(){unsigned count=0;for(auto& [id,u]:mobs){auto it=u.lists.find(Goblins::EscapeState);if(it!=u.lists.end()&&it->second.expiry>Ramp::Frame(game)+1)++count;}return count;}
 void Tick(unsigned now){::Frame(now);Goblins::Frame(game);}
-void Clean(unsigned now=100){mobs.clear();portals.clear();Goblins::TestFamily=0;Goblins::NextTest=0;Goblins::TestPlaced=false;Goblins::Game=game;Goblins::Last=now;Goblins::Next=0;Goblins::Seed=123;Goblins::Visits={};Goblins::Visits.visited[2]=true;Goblins::Runners.clear();Goblins::Splits.clear();Goblins::Deaths.clear();Goblins::TestBloodMoor=false;player.room=2;}
+void Clean(unsigned now=100){mobs.clear();portals.clear();Goblins::TestFamily=0;Goblins::NextTest=0;Goblins::TestPlaced=false;Goblins::Game=game;Goblins::Last=now;Goblins::Next=0;Goblins::Seed=123;Goblins::Visits={};Goblins::WorldQueue.clear();Goblins::Visits.visited[2]=true;Goblins::Runners.clear();Goblins::Splits.clear();Goblins::Deaths.clear();Goblins::TestBloodMoor=false;player.room=2;}
 void Notify(unsigned id,int cls,int level=2){D2RL::Lifecycle::MonsterDeathEvent event{};event.structSize=sizeof(event);event.monster={D2RL::Lifecycle::UnitType::Monster,id,unsigned(cls),0};event.levelId=level;Goblins::OnDeath(nullptr,&event,nullptr);}
 int main(){
  ExistingAuraTests();player={};player.stats[6]=1000;player.room=2;player.x=20;player.y=20;
@@ -56,6 +56,11 @@ int main(){
  // Unrelated/replayed death cannot manufacture a split; pending work clears with the session.
  Notify(id,Goblins::Classes[6]);Tick(380);assert(Goblins::Splits.empty()&&spawns==before);
  Goblins::Splits.push_back({Goblins::Classes[7],2,20,20,2,400});Tick(1);assert(Goblins::Splits.empty());
+ // A selected world encounter survives failed placement, then spawns exactly once.
+ Clean();Goblins::WorldQueue.push_back({2,0,100});spawnBlocked=true;Tick(100);
+ assert(Goblins::WorldQueue.size()==1&&Goblins::Runners.empty());
+ spawnBlocked=false;Tick(150);assert(Goblins::WorldQueue.empty()&&Goblins::Runners.size()==1);
+ before=spawns;Tick(155);assert(spawns==before);
  // Death during channel cleans the portal but leaves native death/loot alone.
  Clean();assert(Goblins::Spawn(&player,2,100,0));id=serial;Tick(300);assert(PortalCount()==1);before=deletes;mobs.at(id).mode=12;Tick(305);assert(PortalCount()==0&&deletes==before);
  // Every family sends cleanup even if the corpse was already removed.

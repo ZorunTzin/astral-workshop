@@ -23,6 +23,11 @@ int main(){
  Drop(game,&boss,&player,1,0,0,0,1,0,0);assert(dropCalls==6);
  a=Effects.find(Key(&boss));a->mask=Bit(Glitter);Drop(game,&boss,&player,1,0,0,0,0,0,0);assert(dropCalls==8);
  a->mask=0;Drop(game,&boss,&player,1,0,0,0,0,0,0);assert(dropCalls==9);
+ auto priorDrop=OriginalDrop;GoldLootScale=[](void*,void*){return 1250;};player.stats[79]=100;
+ OriginalDrop=[](void*,void*,void* killer,unsigned short,std::uintptr_t,std::uintptr_t,std::uintptr_t,std::uintptr_t,std::uintptr_t,std::uintptr_t)->std::uintptr_t{assert(Ramp::GetUnit(killer,79,0)==249900);return 77;};
+ assert(Drop(game,&boss,&player,1,0,0,0,0,0,0)==77);assert(player.stats[79]==100);
+ OriginalDrop=priorDrop;GoldLootScale=nullptr;
+
  OriginalMulti=[](void*,void*,int,int){++volleyCalls;};
  Multi(game,nullptr,29,1);assert(volleyCalls==2&&WideVolley==0);
  Depth=1;Multi(game,nullptr,29,1);assert(volleyCalls==3);Depth=0;

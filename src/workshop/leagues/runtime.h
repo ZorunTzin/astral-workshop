@@ -51,7 +51,7 @@ inline void balance(void* unit,int area){
  for(int stat:{21,22,23,24,48,49,50,51,52,53,54,55,57,58})scale(stat,1);
  // Exp coefficients vary by family; recover native player-count scaling from the original row.
  int cls=static_cast<int*>(unit)[1],coefficient=100;
- for(int m=0;m<3;++m)for(int r=0;r<3;++r)for(int v=0;v<3;++v)if(Classes[m][r][v]==cls)coefficient=ExperienceCoefficients[diff][m][v];
+ for(int m=0;m<3;++m)for(int r=0;r<3;++r)for(int v=0;v<VariantCounts[m];++v)if(Classes[m][r][v]==cls)coefficient=ExperienceCoefficients[diff][m][v];
  int base=std::max(1,LevelCurve[diff][old][2]*coefficient/100),xp=Ramp::GetUnit(unit,13,0);
  Ramp::SetUnit(unit,13,int(std::clamp<int64_t>(int64_t(std::max(1,xp))*ZoneBaseline[diff][area][1]*2/base,1,0x3fffffff)),0);
  Ramp::SetUnit(unit,12,level,0);
@@ -145,7 +145,7 @@ inline void frame(void* game){
   }
   if(now>=e.retry){e.retry=now+10;
    for(int count=0;count<4&&e.queued>0&&living(i)<MaxLiving;++count){
-    int variant=int(random(Seed)%3),rank=0;Point at=s.center;
+    int variant=int(random(Seed)%VariantCounts[int(s.kind)]),rank=0;Point at=s.center;
     if(s.kind==Kind::Night){at=position(player);at.x+=3*(int(random(Seed)%25)-12);at.y+=3*(int(random(Seed)%25)-12);rank=s.stage>=20&&random(Seed)%20==0?2:random(Seed)%7==0?1:0;}
     if(s.kind==Kind::Breach){at=s.rifts[(s.spawned+count)%3];rank=s.stage==3?2:s.stage>0?1:0;}
     if(s.kind==Kind::Beyond)rank=s.groups%4==0?2:s.groups>4?1:0;

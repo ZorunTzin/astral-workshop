@@ -12,6 +12,6 @@ int main(){using namespace Goblins;
  for(int i=0;i<3;++i){assert(!e.tick(t,hp)&&e.channel);assert(!e.tick(t+10,--hp)&&!e.channel);t+=10+RetryDelay;}
  assert(e.interrupted==3);assert(!e.tick(t,hp)&&e.channel);assert(!e.tick(t+10,--hp)&&e.channel);assert(!e.tick(t+75,0));assert(e.tick(t+75,hp));
  unsigned seed=123,world=0,trial=0;for(int i=0;i<100000;++i){world+=Random(seed)%100<WorldChance;trial+=Random(seed)%100<TrialChance;}
- assert(world>2700&&world<3300&&trial>800&&trial<1200);
+ assert(world>9500&&world<10500&&trial>800&&trial<1200);
  puts("Goblin schedule, rarity and escape tests passed.");
 }

@@ -40,7 +40,7 @@
                             "type": "DesecratedDifficultyConfig",
                             "name": "desecratedzones_desecrated_zones_0_game_difficulties_expansion_normal_defaults",
                             "bound_incl_min": 3,
-                            "bound_incl_max": 45,
+                            "bound_incl_max": 70,
                             "boost_level": 2,
                             "boost_experience_percent": 25
                         }
@@ -55,7 +55,7 @@
                             "type": "DesecratedDifficultyConfig",
                             "name": "desecratedzones_desecrated_zones_0_game_difficulties_expansion_nightmare_defaults",
                             "bound_incl_min": 45,
-                            "bound_incl_max": 80,
+                            "bound_incl_max": 85,
                             "boost_level": 2,
                             "boost_experience_percent": 25
                         }
@@ -121,7 +121,7 @@
                                 "unique_mod": 28,
                                 "chance": 5
                             }
-                        ],                        
+                        ],
                         "defaults": {
                             "type": "DesecratedDifficultyConfig",
                             "name": "desecratedzones_desecrated_zones_0_game_difficulties_expansion_hell_defaults",
@@ -340,7 +340,7 @@
                             "type": "DesecratedDifficultyConfig",
                             "name": "desecratedzones_desecrated_zones_0_game_difficulties_rotw_normal_defaults",
                             "bound_incl_min": 3,
-                            "bound_incl_max": 45,
+                            "bound_incl_max": 70,
                             "boost_level": 2,
                             "boost_experience_percent": 25
                         }
@@ -355,7 +355,7 @@
                             "type": "DesecratedDifficultyConfig",
                             "name": "desecratedzones_desecrated_zones_0_game_difficulties_rotw_nightmare_defaults",
                             "bound_incl_min": 45,
-                            "bound_incl_max": 80,
+                            "bound_incl_max": 85,
                             "boost_level": 2,
                             "boost_experience_percent": 25
                         }

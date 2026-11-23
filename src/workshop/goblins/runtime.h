@@ -7,6 +7,10 @@
 namespace Goblins {
 inline void* Game=nullptr;inline unsigned Last=0,Next=0,Seed=0;
 inline Schedule Visits;
+struct PendingWorld {int area,family;unsigned retry;};
+inline std::vector<PendingWorld> WorldQueue;
+using RoomAtFn=void*(__fastcall*)(void*,int,int);
+inline RoomAtFn RoomAt=nullptr;
 inline bool TestBloodMoor=false,TestPlaced=false;
 inline int TestFamily=0;inline unsigned NextTest=0;
 inline bool ReadTestMode(){
@@ -30,7 +34,17 @@ inline void __cdecl OnDeath(const D2RL::PluginContext*,const D2RL::Lifecycle::Mo
 inline void SpawnTrialWave(void*,unsigned);
 inline bool TrialWaveBusy();
 inline int TrialWaveRemaining();
+inline int GoldScale(void* game,void* unit){
+ if(!Curses::Monster(unit)||static_cast<unsigned*>(unit)[1]!=Classes[2])return 1;
+ // Normal level-one gold piles (8-10) become 10,000-12,500 before existing Gold Find.
+ const int level=Ramp::GetUnit(unit,12,0);
+ return level<=1?1250:50;
+}
 inline bool Install(const D2RL::PluginContext* c){
+ MonsterRuntime::GoldLootScale=GoldScale;
+ const unsigned char roomGuard[]={0x48,0x89,0x5c,0x24,0x10,0x55,0x56,0x57,0x48,0x83,0xec,0x20};
+ if(!c->api->checkExpectedBytes(c,0x38dfb0,roomGuard,sizeof(roomGuard)))return false;
+ RoomAt=reinterpret_cast<RoomAtFn>(c->exeBase+0x38dfb0);
  Arena::SpawnGoblinWave=SpawnTrialWave;Arena::GoblinWaveBusy=TrialWaveBusy;Arena::GoblinWaveRemaining=TrialWaveRemaining;
  const D2RL::LifecycleService* api=nullptr;
  if(c->QueryService(&api)!=D2RL::ServiceQueryResult::Success||!D2RL::HasLifecycleServiceField(api,D2RL::LifecycleServiceSize)||!api->registerMonsterDeathListener)return false;
@@ -67,7 +81,8 @@ inline bool Spawn(void* player,int level,unsigned now,int family=-1,bool trialWa
  static constexpr int dx[]={10,7,0,-7,-10,-7,0,7},dy[]={0,7,10,7,0,-7,-10,-7};
  unsigned start=Random(Seed)%8;
  for(unsigned i=0;i<8;++i){unsigned n=(start+i)%8;
-  void* unit=MonsterRuntime::Spawn(Game,SoulHarvest::Room(player),px+dx[n],py+dy[n],cls,1,-1,0);
+  void* room=RoomAt?RoomAt(SoulHarvest::Room(player),px+dx[n],py+dy[n]):SoulHarvest::Room(player);if(!room)continue;
+  void* unit=MonsterRuntime::Spawn(Game,room,px+dx[n],py+dy[n],cls,1,-1,0);
   if(!unit)continue;
   if(Arena::Level(unit)!=level){Remove(unit);continue;}
   if(TrialArea(level))Arena::WaveProgression(unit);
@@ -121,7 +136,7 @@ inline void SpawnChildren(const std::vector<unsigned>& players,unsigned now){
 inline void Frame(void* game){
  if(!game||!Arena::Enabled||!Arena::Level||!MonsterRuntime::Spawn||!Barbarian::DeleteUnit||!Barbarian::RoomDelete||!Barbarian::ModeInfo||!Barbarian::ModeChange)return;
  const unsigned now=Ramp::Frame(game);
- if(Game!=game||now<Last){Game=game;Visits={};Runners.clear();Splits.clear();{std::lock_guard<std::mutex> lock(DeathMutex);Deaths.clear();}Next=0;Seed=now^unsigned(GetTickCount())^0xa341316c;TestBloodMoor=ReadTestMode();TestPlaced=false;TestFamily=0;NextTest=0;}
+ if(Game!=game||now<Last){Game=game;Visits={};WorldQueue.clear();Runners.clear();Splits.clear();{std::lock_guard<std::mutex> lock(DeathMutex);Deaths.clear();}Next=0;Seed=now^unsigned(GetTickCount())^0xa341316c;TestBloodMoor=ReadTestMode();TestPlaced=false;TestFamily=0;NextTest=0;}
  Last=now;if(now<Next)return;Next=now+5;
  // Capture identities before any spawn/delete mutates the game's unit chains.
  std::vector<unsigned> players;
@@ -142,7 +157,16 @@ inline void Frame(void* game){
   bool trial=TrialArea(level),roll=false;
   if(trial){if(!Arena::GoblinWave(Arena::Current)&&Arena::Current.phase==Arena::Phase::Fighting&&Arena::Current.stage==level-165)roll=Visits.takeTrial(level,Arena::Current.wave);}
   else if(now>=100)roll=Visits.takeWorld(level);
-  if(roll&&Random(Seed)%100<(trial?TrialChance:WorldChance))Spawn(player,level,now);
+  if(roll){
+   bool selected=Random(Seed)%100<(trial?TrialChance:WorldChance);
+   if(!trial)Log(selected?"world roll selected":"world roll empty",level,0);
+   if(selected){if(trial)Spawn(player,level,now);else WorldQueue.push_back({level,int(Random(Seed)%NaturalCount),now});}
+  }
+  for(auto it=WorldQueue.begin();it!=WorldQueue.end();){
+   if(it->area!=level||now<it->retry){++it;continue;}
+   it->retry=now+50;
+   if(Spawn(player,level,now,it->family))it=WorldQueue.erase(it);else ++it;
+  }
  }
  std::vector<Death> deaths;{std::lock_guard<std::mutex> lock(DeathMutex);deaths.swap(Deaths);}
  for(auto it=Runners.begin();it!=Runners.end();){

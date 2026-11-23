@@ -33,6 +33,12 @@ for folder in ('data/global/excel','data/global/excel/base'):
  _,levels=read(p/'levels.txt')
  for r in levels:
   if r['Name'].startswith('Workshop ') and 'Trial' in r['Name']:assert all(r[k]=='100' for k in r if k.startswith('MonLvl'))
+for directory in ('data/global/excel','data/global/excel/base'):
+ _,shrines=read(root/directory/'shrines.txt')
+ for row in shrines:
+  if 6<=int(row['Code'])<=15:assert row['Duration in frames']=='7500'
+ fire=next(r for r in shrines if r['Code']=='19')
+ assert fire['Arg0']=='50' and fire['Arg1']=='2000' and not fire['Duration in frames']
 assets=json.loads((root/'workshop/progression/assets.json').read_text())
 before={a:hashlib.sha256((root/a).read_bytes()).hexdigest() for a in assets};install(root)
 assert before=={a:hashlib.sha256((root/a).read_bytes()).hexdigest() for a in assets}

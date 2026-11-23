@@ -1,5 +1,5 @@
 #pragma once
-// Retry only observed ground pickups of the twelve League currencies through the engine's normal deposit path.
+// Retry only observed ground pickups of the League currencies, gems and runes through the engine's normal deposit path.
 // No item deletion, synthetic balance, or save-file manipulation is performed here.
 namespace LeagueStorage {
 using Pointer=void*(__fastcall*)(void*);
@@ -28,8 +28,12 @@ inline unsigned NextTick=0,LastTick=0,Deposited=0;inline void* Session=nullptr;
 struct GroundItem {unsigned id,code;};
 inline std::vector<GroundItem> Ground;
 inline bool currency(unsigned code){
+ if(code==D2RL::Items::MakeItemCode('o','o','i'))return true;
  for(char m='n';m<='p';++m)for(char row='1';row<='4';++row)
   if(code==D2RL::Items::MakeItemCode('L',m,row))return true;
+ // Exact rune and gem codes from the Workshop misc table.
+ static constexpr unsigned collectibles[]={544039217u,543777841u,544040241u,543322673u,543257393u,543912753u,544174897u,544240689u,543318887u,543646567u,544367463u,544629607u,544695143u,544826215u,543319655u,543647335u,544368231u,544630375u,544695911u,544826983u,543321191u,543648871u,544369767u,544697447u,544828519u,543452519u,543518055u,543911271u,544042343u,544173415u,544370023u,544435559u,544501095u,543322215u,543649895u,544370791u,544632935u,544698471u,544829543u,543322983u,543650663u,544371559u,544633703u,544699239u,544830311u,544635495u,540094578u,540160114u,540225650u,540291186u,540356722u,540422258u,540487794u,540553330u,540618866u,540029298u,540094834u,540160370u,540225906u,540291442u,540356978u,540422514u,540488050u,540553586u,540619122u,540029554u,540095090u,540160626u,540226162u,540291698u,540357234u,540422770u,540488306u,540553842u,540619378u,540029810u,540095346u,540160882u,540226418u,540291954u,540357490u,540423026u,540488562u,540554098u,540619634u,543386483u,543583091u,543976307u,544566131u,544893811u};
+ for(auto value:collectibles)if(code==value)return true;
  return false;
 }
 inline bool observed(unsigned id,unsigned code){return std::any_of(Ground.begin(),Ground.end(),[&](auto& g){return g.id==id&&g.code==code;});}
@@ -139,6 +143,6 @@ inline bool install(const D2RL::PluginContext* c){
  Stackable=reinterpret_cast<Boolean>(c->exeBase+0x46dc00);
  Deposit=reinterpret_cast<DepositFn>(c->exeBase+0x4f92f0);
  Context=c;
- c->LogInfo("League orb storage: guarded native deposit retry enabled.");return true;
+ c->LogInfo("Pickup storage: guarded ground-only deposit retry for League orbs, gems and runes enabled.");return true;
 }
 }

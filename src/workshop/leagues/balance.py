@@ -23,4 +23,4 @@ def install(root):
    z[int(r['Id'])]=[lv,max(1,round(sum(xp)/len(xp))) if xp else curve[min(lv,511)][2]]
   zones.append(z)
  cpp=lambda a:json.dumps(a).replace('[','{').replace(']','}')
- (root/'workshop/leagues/balance_bindings.h').write_text('#pragma once\nnamespace League { inline constexpr int ZoneBaseline[3][133][2]='+cpp(zones)+'; inline constexpr int LevelCurve[3][512][3]='+cpp(curves)+'; inline constexpr int ExperienceCoefficients[3][3][3]='+cpp(coefficients)+'; }\n')
+ (root/'workshop/leagues/balance_bindings.h').write_text('#pragma once\nnamespace League { inline constexpr int ZoneBaseline[3][133][2]='+cpp(zones)+'; inline constexpr int LevelCurve[3][512][3]='+cpp(curves)+'; inline constexpr int ExperienceCoefficients[3][3]['+str(max(len(m['monsters']) for m in MECHANICS))+']='+cpp(coefficients)+'; }\n')

@@ -111,6 +111,13 @@ int main(){
  // Removing equipment removes its proc chance; no learned mastery is created.
  Fresh(483);player.stats[256]=player.stats[257]=0;Damage();Barbarian::Hit(game,&player,&target,packet);t=Barbarian::Track(&target,483);assert(!t->bleed&&!t->impales[0].hits);
  player.cls=4;
+ // Jab uses custom Bleed on a successful direct weapon hit; blocked hits do not apply it.
+ Fresh(485);player.cls=0;player.levels[10]=91;skillRecord=10;p=skillList;std::memcpy(reinterpret_cast<unsigned char*>(&player)+0x100,&p,8);
+ Damage();Barbarian::Before(game,&player,&target,packet);Barbarian::Hit(game,&player,&target,packet);Barbarian::After(game,&player,&target,packet);
+ t=Barbarian::Track(&target,485);assert(t->bleed==70*256);
+ Fresh(486);player.cls=0;player.levels[10]=91;p=skillList;std::memcpy(reinterpret_cast<unsigned char*>(&player)+0x100,&p,8);
+ Damage();std::memcpy(packet+4,&blocked,2);Barbarian::Hit(game,&player,&target,packet);assert(!Barbarian::Track(&target,486)->bleed);
+ player.cls=4;
  // Ground Stomp: five separate successful hit opportunities, once per target
  // per pulse, rather than overlapping ring projectiles applying extra damage.
  Fresh(490);player.levels[140]=20;skillRecord=140;p=skillList;std::memcpy(reinterpret_cast<unsigned char*>(&player)+0x100,&p,8);

@@ -52,6 +52,18 @@ def curve():
 
 def install(root):
  root=Path(root);assets=[];experience,report=curve()
+ # Native Terror Zone caps, for both Expansion and Reign of the Warlock.
+ zones=root/'data/hd/global/excel/desecratedzones.json'
+ source=zones if zones.exists() else Path(__file__).with_name('terrorzones-base.json')
+ config=json.loads(source.read_text(encoding='utf-8-sig'))
+ zones.parent.mkdir(parents=True,exist_ok=True)
+ for schedule in config['desecrated_zones']:
+  for version in schedule['game_difficulties'].values():
+   if not isinstance(version,dict):continue
+   for difficulty,cap in {'normal':70,'nightmare':85,'hell':100}.items():
+    if difficulty in version:version[difficulty]['defaults']['bound_incl_max']=cap
+ zones.write_text(json.dumps(config,ensure_ascii=False,indent=4)+'\n',encoding='utf8')
+ assets.append(zones.relative_to(root).as_posix())
  original=BASE['monlvl'];mh=list(original[0]);mon=[r.copy() for r in original]
  # Keep existing level-110 special row intact. Extend native lookup bounds safely.
  for level in range(111,MON_CAP+1):
@@ -79,6 +91,11 @@ def install(root):
    for k in ('Level','Level(N)','Level(H)'):r[k]='100'
    for k in ('Exp','Exp(N)','Exp(H)'):r[k]=str(max(1,int(source[k] or 100))) if source else '100'
   write(p/'monstats.txt',h,rs)
+  h,rs=read(p/'shrines.txt')
+  for r in rs:
+   if 6 <= int(r['Code']) <= 15:r['Duration in frames']='7500'
+  write(p/'shrines.txt',h,rs)
+  assets.append(directory+'/shrines.txt')
   assets.extend(directory+'/'+n+'.txt' for n in ('experience','monlvl','difficultylevels','levels','monstats'))
  # XP alone follows the smooth ordinary 100..109 trend: no special 110 boss spike.
  xp=[int(r['L-XP(H)']) for r in mon]

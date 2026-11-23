@@ -163,3 +163,10 @@ if not "!errorlevel!"=="0" exit /b 1
 amazon_masteries_test.exe
 if not "!errorlevel!"=="0" exit /b 1
 popd
+
+pushd "%~dp0"
+cl /nologo /std:c++latest /EHsc /O2 /MT /I ..\SDK\include shrines_test.cpp /Fe:shrines_test.exe
+if not "!errorlevel!"=="0" exit /b 1
+shrines_test.exe
+if not "!errorlevel!"=="0" exit /b 1
+popd

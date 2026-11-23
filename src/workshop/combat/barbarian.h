@@ -7,6 +7,7 @@
 // Item chances reuse two audited obsolete stat IDs; mastery effects share the same engine.
 namespace Barbarian {
 #include "barbarian_bindings.h"
+#include "amazon_melee_bindings.h"
 inline int (*TestLevel)(void*,void*,int)=nullptr;
 using SetAiParamsFn=void(__fastcall*)(void*,int,int,int);
 inline SetAiParamsFn SetAiParams=nullptr;
@@ -145,7 +146,8 @@ inline void Hit(void* game,void* attacker,void* defender,void* packet){
     const int impaleLevel=(Actor(game,attacker)&&(thrown||skill==137))?Level(game,owner,135):0;
     const int itemBleed=Curses::Player(attacker)?Ramp::GetUnit(attacker,ItemBleedChance,0):0;
     const int itemImpale=Curses::Player(attacker)?Ramp::GetUnit(attacker,ItemImpaleChance,0):0;
-    const bool bleed=Roll(CombinedChance(Chance(bleedLevel),itemBleed)),impale=Roll(CombinedChance(Chance(impaleLevel),itemImpale));
+    const int jabLevel=(skill==10&&Curses::Player(attacker)&&!Curses::ProcDepth&&!(ReadDamage(packet,0)&2))?(TestLevel?TestLevel(game,attacker,10):Curses::EvalCalc4(game,attacker,JabLevelSkill,1,0)):0;
+    const bool bleed=Roll(CombinedChance(Chance(bleedLevel)+(jabLevel>0?std::min(100,9+jabLevel):0),itemBleed)),impale=Roll(CombinedChance(Chance(impaleLevel),itemImpale));
     if(!bleed&&!impale)return;if(!t)t=Track(defender,now);if(!t)return;
     if(bleed){const int rate=int(std::min<std::int64_t>(std::int64_t{base}*70/100,0x1fffffff));
         if(t->bleedUntil<now||rate>=t->bleed){t->owner=Id(owner);t->bleed=rate;t->bleedUntil=now+125;t->nextBleed=now+25;}}

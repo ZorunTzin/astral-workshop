@@ -51304,5 +51304,39 @@
     "ptBR": "Faster Block Rate: +%d%%",
     "ruRU": "Faster Block Rate: +%d%%",
     "zhCN": "Faster Block Rate: +%d%%"
+  },
+  {
+    "id": 61587,
+    "Key": "WorkshopJabBleedChance",
+    "enUS": "Chance to Cause Bleeding on Hit: %d%%",
+    "zhTW": "Chance to Cause Bleeding on Hit: %d%%",
+    "deDE": "Chance to Cause Bleeding on Hit: %d%%",
+    "esES": "Chance to Cause Bleeding on Hit: %d%%",
+    "frFR": "Chance to Cause Bleeding on Hit: %d%%",
+    "itIT": "Chance to Cause Bleeding on Hit: %d%%",
+    "koKR": "Chance to Cause Bleeding on Hit: %d%%",
+    "plPL": "Chance to Cause Bleeding on Hit: %d%%",
+    "esMX": "Chance to Cause Bleeding on Hit: %d%%",
+    "jaJP": "Chance to Cause Bleeding on Hit: %d%%",
+    "ptBR": "Chance to Cause Bleeding on Hit: %d%%",
+    "ruRU": "Chance to Cause Bleeding on Hit: %d%%",
+    "zhCN": "Chance to Cause Bleeding on Hit: %d%%"
+  },
+  {
+    "enUS": "Workshop Jab Bleed Level",
+    "zhTW": "Workshop Jab Bleed Level",
+    "deDE": "Workshop Jab Bleed Level",
+    "esES": "Workshop Jab Bleed Level",
+    "frFR": "Workshop Jab Bleed Level",
+    "itIT": "Workshop Jab Bleed Level",
+    "koKR": "Workshop Jab Bleed Level",
+    "plPL": "Workshop Jab Bleed Level",
+    "esMX": "Workshop Jab Bleed Level",
+    "jaJP": "Workshop Jab Bleed Level",
+    "ptBR": "Workshop Jab Bleed Level",
+    "ruRU": "Workshop Jab Bleed Level",
+    "zhCN": "Workshop Jab Bleed Level",
+    "id": 61588,
+    "Key": "WorkshopInternalSkill676"
   }
 ]

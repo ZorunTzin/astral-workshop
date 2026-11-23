@@ -3,7 +3,7 @@
   "core": "1.3.1-beta",
   "native_material_registry": "D2RCore Advanced Stash; unsupported items remain in inventory",
   "tables": {
-    "misc": "3cc4188ad396fad19d0bcab0fe9af5aabbad5020529499060f067263ee95962b",
+    "misc": "f10dede388398de672b7782587aa9150c6722b75aacb98670252baf4f22c73dd",
     "itemtypes": "8e3ce0e872986d601717737763042a3bbeaa7e430e711fcadcdec9edbbce2fb4",
     "inventory": "480475413e269cb078434be3de1994830895484948d3cabdb6993e98d35ad498"
   }

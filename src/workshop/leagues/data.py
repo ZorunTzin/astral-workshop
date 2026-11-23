@@ -27,16 +27,26 @@ def install(root):
     code=CODES[m][i];r=newrow(rows,h,'code',code);r.update(template)
     for k in r:
      if k.endswith(('Min','Max','MagicLvl')):r[k]='0'
-    r.update(code=code,normcode=code,ubercode=code,ultracode=code,name=name+' Orb',namestr=code,level='1',levelreq='1',cost='1',spawnable='0',PermStoreItem='0',multibuy='0',NightmareUpgrade=code,HellUpgrade=code,UICatOverride='wleague',AdvancedStashStackable='1',useable='0',pSpell='-1',compactsave='1',stackable='0',spelldesc='2',spelldescstr='League'+str(m),spelldescstr2='LeagueOrbHelp',invwidth='1',invheight='1')
-    labels[code]='\u00ffc'+['5','2','1'][m]+name+' Orb\u00ffc0';labels['League'+str(m)]=mechanic['name']+' currency'
+    r.update(code=code,normcode=code,ubercode=code,ultracode=code,name=name+' Orb (t'+str(i+1)+')',namestr=code,level='1',levelreq='1',cost='1',spawnable='0',PermStoreItem='0',multibuy='0',NightmareUpgrade=code,HellUpgrade=code,UICatOverride='wleague',AdvancedStashStackable='1',useable='0',pSpell='-1',compactsave='1',stackable='0',spelldesc='2',spelldescstr='League'+str(m),spelldescstr2='LeagueOrbHelp',invwidth='1',invheight='1')
+    labels[code]='\u00ffc'+['5','2','1'][m]+name+' Orb (t'+str(i+1)+')\u00ffc0';labels['League'+str(m)]=mechanic['name']+' currency'
   labels['LeagueOrbHelp']='Automatically stored in League items.\nNo effect yet.';labels['wleague']='League items'
   write(p/'misc.txt',h,rows)
   h,rows=read(p/'itemuicategories.txt');r=newrow(rows,h,'Name','wleague');r.update(dict(zip(h,['wleague','0','misc','0','3'])));write(p/'itemuicategories.txt',h,rows)
   h,tcs=read(p/'treasureclassex.txt')
   for m in range(3):
    for rank in range(3):
-    name=f'Ws League {m} {rank}';r=newrow(tcs,h,'Treasure Class',name);r.update({k:'' for k in h});r.update({'Treasure Class':name,'Picks':'1','NoDrop':str(4*[900,233,0][rank]+291),'*eol':'0'})
-    for i,(code,weight) in enumerate(zip(CODES[m],[60,25,12,12]),1):r['Item'+str(i)]=code;r['Prob'+str(i)]=str(weight)
+    # Preserve overall Breach/Beyond odds (109 / old total); halve Night only.
+    oldtotal=4*[900,233,0][rank]+400
+    for diff,suffix in enumerate(('',' (N)',' (H)')):
+     name=f'Ws League {m} {rank}'+suffix;r=newrow(tcs,h,'Treasure Class',name);r.update({k:'' for k in h})
+     r.update({'Treasure Class':name,'Picks':'1','NoDrop':str(oldtotal*(2 if m==0 else 1)-109),'*eol':'0'})
+     # Parent drops keep exact total odds; child selection supplies tier weights.
+     pool=name+' Tiers';r['Item1']=pool;r['Prob1']='109'
+     child=newrow(tcs,h,'Treasure Class',pool);child.update({k:'' for k in h});child.update({'Treasure Class':pool,'Picks':'1','NoDrop':'0','*eol':'0'})
+     for i,(code,weight) in enumerate(zip(CODES[m],CONFIG['orbTierWeights'][diff]),1):child['Item'+str(i)]=code;child['Prob'+str(i)]=str(weight)
+  # Referenced pools precede parents for native TC resolution.
+  children=[r for r in tcs if r['Treasure Class'].startswith('Ws League ') and r['Treasure Class'].endswith(' Tiers')]
+  tcs=[r for r in tcs if r not in children];first=next(i for i,r in enumerate(tcs) if r['Treasure Class'].startswith('Ws League '));tcs[first:first]=children
   write(p/'treasureclassex.txt',h,tcs)
   h,rows=read(p/'monstats.txt');by={r['Id']:r for r in rows};ids=[]
   nextid=max(int(r['*hcIdx']) for r in rows if r['*hcIdx'].isdigit())+1
@@ -50,12 +60,12 @@ def install(root):
      r['Velocity']=str(max(5,int(r.get('Velocity') or 5)));r['Run']=str(max(7,int(r.get('Run') or 7)))
      r['boss']='1' if rank==2 else '';r['isSpawn']='1';r['enabled']='1';r['Rarity']='0'
      for k in r:
-      if k.startswith('TreasureClass'):r[k]='' if 'Quest' in k else f'Ws League {m} {rank}'
+      if k.startswith('TreasureClass'):r[k]='' if 'Quest' in k else f'Ws League {m} {rank}'+(' (H)' if k.endswith('(H)') else ' (N)' if k.endswith('(N)') else '')
       if k in ('minHP','maxHP','MinHP(N)','MaxHP(N)','MinHP(H)','MaxHP(H)'):r[k]=str(max(1,int(r[k] or 100)*[100,250,800][rank]//100))
      r={k:v for k,v in r.items() if k in h}
      if old:old.update(r)
      else:rows.append(r)
-     rid.append(int(r['*hcIdx']));labels[key]=['Night','Astral','Beyond'][m]+' '+['Shambler','Revenant','Horror'][variant]+['',' Champion',' Overlord'][rank]
+     rid.append(int(r['*hcIdx']));labels[key]=['Night','Astral','Beyond'][m]+' '+(['Shambler','Revenant','Horror'][variant] if m==0 else base.rstrip('123456789').replace('_',' ').title())+['',' Champion',' Overlord'][rank]
     mid.append(rid)
    ids.append(mid)
   write(p/'monstats.txt',h,rows)
@@ -89,7 +99,7 @@ def install(root):
      for t in entry['transforms']:
       t['colorTint']=dict(zip(('x','y','z','w'),[*mechanic['color'],.90]));t['colorAdjustment']={'x':0,'y':-.5 if m==0 else .2,'z':-.35 if m==0 else 0,'w':1}
    rel=f'data/hd/character/enemy/wsleague{m}_{original}_variant.json';jsave(rel,variant)
-   oldpath=f'data/hd/character/enemy/{original}/{original}_variant.json';model=json.loads(json.dumps(model).replace(oldpath,rel))
+   oldpath=model['dependencies']['variantdata'][0]['path'];model=json.loads(json.dumps(model).replace(oldpath,rel))
    model['name']=f'wsleague{m}_{original}';jsave('data/hd/character/enemy/'+model['name']+'.json',model)
    for rank in range(3):
     for v,b in enumerate(mechanic['monsters']):
@@ -138,12 +148,12 @@ def install(root):
  here=root/'workshop/leagues';here.mkdir(parents=True,exist_ok=True)
  ids,objects,dark,rift=bindings[0]
  cpp=lambda x:json.dumps(x).replace('[','{').replace(']','}')
- (here/'bindings.h').write_text('#pragma once\nnamespace League { inline constexpr unsigned AreaChance='+str(CONFIG['areaChancePercent'])+',MaxLiving='+str(CONFIG['maxLiving'])+'; inline constexpr unsigned Durations[3]='+cpp([CONFIG['nightSeconds'],CONFIG['breachSeconds'],CONFIG['beyondSeconds']])+'; inline constexpr int Classes[3][3][3]='+cpp(ids)+'; inline constexpr int Pillars[3]='+cpp(objects)+'; inline constexpr int DarknessState='+str(dark)+'; inline constexpr int RiftMissile='+str(rift)+'; }\n')
+ (here/'bindings.h').write_text('#pragma once\nnamespace League { inline constexpr unsigned AreaChance='+str(CONFIG['areaChancePercent'])+',MaxLiving='+str(CONFIG['maxLiving'])+'; inline constexpr unsigned Durations[3]='+cpp([CONFIG['nightSeconds'],CONFIG['breachSeconds'],CONFIG['beyondSeconds']])+'; inline constexpr int VariantCounts[3]='+cpp([len(m['monsters']) for m in MECHANICS])+'; inline constexpr int Classes[3][3]['+str(max(len(m['monsters']) for m in MECHANICS))+']='+cpp(ids)+'; inline constexpr int Pillars[3]='+cpp(objects)+'; inline constexpr int DarknessState='+str(dark)+'; inline constexpr int RiftMissile='+str(rift)+'; }\n')
  (here/'assets.json').write_text(json.dumps(sorted(set(assets)),indent=2))
  from leagues.balance import install as balance
  balance(root)
  from integration.prepare import install as pickup
  pickup(root,pickup_only=True)
- print('Leagues: 3 encounters, 27 private monster variants, 3 pillars, 12 stored currencies.')
+ print('Leagues: 3 encounters, 81 private monster variants, 3 pillars, 12 stored currencies.')
 if __name__=='__main__':install(sys.argv[1])
 

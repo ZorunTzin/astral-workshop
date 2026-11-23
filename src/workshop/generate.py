@@ -360,4 +360,6 @@ install_presentation_qol(root)
 
 from combat.amazon_masteries_data import install as install_amazon_masteries
 install_amazon_masteries(root)
+from combat.amazon_melee_data import install as install_amazon_melee
+install_amazon_melee(root)
 install_buff_hud(root)

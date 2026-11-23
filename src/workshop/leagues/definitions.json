@@ -37,7 +37,16 @@
       "monsters": [
         "fallen1",
         "zombie3",
-        "brute1"
+        "brute1",
+        "skeleton1",
+        "goatman1",
+        "corruptrogue1",
+        "baboon1",
+        "scarab1",
+        "clawviper1",
+        "vampire1",
+        "wraith1",
+        "foulcrow1"
       ],
       "orbs": [
         "Fissure",
@@ -57,7 +66,16 @@
       "monsters": [
         "fallen1",
         "brute1",
-        "zombie3"
+        "zombie3",
+        "skeleton1",
+        "goatman1",
+        "corruptrogue1",
+        "baboon1",
+        "scarab1",
+        "clawviper1",
+        "vampire1",
+        "wraith1",
+        "foulcrow1"
       ],
       "orbs": [
         "Blood",
@@ -66,5 +84,25 @@
         "Dominion"
       ]
     }
+  ],
+  "orbTierWeights": [
+    [
+      80,
+      15,
+      4,
+      1
+    ],
+    [
+      65,
+      25,
+      8,
+      2
+    ],
+    [
+      50,
+      32,
+      15,
+      3
+    ]
   ]
 }

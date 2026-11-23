@@ -26,7 +26,7 @@ for folder in ('data/global/excel','data/global/excel/base'):
    if key.startswith('TreasureClass'):assert value in tc,(key,value)
  for r in tcs:
   if not r['Treasure Class'].startswith('Ws Goblin '):continue
-  expected=1 if r['Treasure Class']=='Ws Goblin Trial Orbs' else 0 if any(x in r['Treasure Class'] for x in ('gelatinous_sire','gelatinous_medium')) else 2 if 'gelatinous_small' in r['Treasure Class'] else 4
+  expected=1 if r['Treasure Class'] in ('Ws Goblin Trial Orbs','Ws Goblin Crafting Materials') else 0 if any(x in r['Treasure Class'] for x in ('gelatinous_sire','gelatinous_medium')) else 2 if 'gelatinous_small' in r['Treasure Class'] else 4
   assert r['Picks']==str(expected) and r['NoDrop']=='0'
   if expected==0:assert all(not r.get('Item'+str(i)) for i in range(1,11))
   for i in range(1,11):
@@ -38,10 +38,13 @@ for folder in ('data/global/excel','data/global/excel/base'):
  _,misc=read(p/'misc.txt');gemcodes={x['code'] for x in misc if x['type'].startswith('gem')}
  for suffix in ('',' (N)',' (H)'):
   gems=tc['Ws Goblin gem_hoarder'+suffix]
-  assert all(gems.get('Item'+str(i),'') in gemcodes for i in range(1,8))
+  assert [gems.get('Item'+str(i),'') for i in range(1,9)]==['gmm','gmt','gms','gme','gmr','gmd','gmk','gmo']
  for suffix in ('',' (N)',' (H)'):
   collector=tc['Ws Goblin odious_collector'+suffix]
-  assert collector['Item2']=='Ws Goblin Trial Orbs' and collector['Prob1']=='3' and collector['Prob2']=='1'
+  assert collector['Item1']=='Ws Goblin Crafting Materials' and collector['Item2']=='Ws Goblin Trial Orbs' and collector['Prob1']=='3' and collector['Prob2']=='1'
+ materials=tc['Ws Goblin Crafting Materials'];bycode={r['code']:r for r in misc}
+ for i in range(1,8):
+  item=bycode[materials['Item'+str(i)]];assert item['spawnable']=='1' and int(item['level'])<=1
  pool=tc['Ws Goblin Trial Orbs']
  assert [pool['Item'+str(i)] for i in range(1,8)]==['Woa','Wob','Woc','Wod','Woe','Wof','Wog']
  # Existing definitions and TC rows remain byte-for-field identical to the installed baseline.
@@ -55,7 +58,7 @@ for folder in ('data/global/excel','data/global/excel/base'):
    if name=='treasureclassex' and r[key].startswith('Ws Mythical Pool'):continue
    if name=='monstats' and r[key].startswith('wsarena'):
     assert all(after[r[key]][k]==v for k,v in r.items() if k not in ('Level','Level(N)','Level(H)','Exp','Exp(N)','Exp(H)'));continue
-   if r[key] and not r[key].startswith(('ws_goblin_','Ws Goblin ','workshop_goblin_')):assert after[r[key]]==r,(name,r[key])
+   if r[key] and not r[key].startswith(('ws_goblin_','Ws Goblin ','workshop_goblin_','wsleague','Ws League ')):assert after[r[key]]==r,(name,r[key])
 models=json.loads((root/'data/hd/character/monsters.json').read_text(encoding='utf-8-sig'))
 for f in families:
  assert models['ws_goblin_'+f]=='workshop_goblin_'+f

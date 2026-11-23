@@ -1,5 +1,5 @@
 """Create a versioned, checksum-verified Workshop payload for GitHub Releases."""
-import argparse, hashlib, json, pathlib, zipfile
+import argparse, hashlib, json, pathlib, zipfile, subprocess, tarfile
 ROOT=pathlib.Path(__file__).resolve().parents[1]
 def digest(path):
     h=hashlib.sha256()
@@ -28,13 +28,16 @@ def package(version):
     source=out/'workshop-source.zip'
     folders=['src','tables','scripts','launcher','launcher-tests','launcher-setup','docs','data','d2rloader']
     with zipfile.ZipFile(source,'w',zipfile.ZIP_DEFLATED,compresslevel=6) as z:
-        for folder in folders:
-            for path in sorted((ROOT/folder).rglob('*')):
-                if not path.is_file() or path.is_symlink() or any(p in {'bin','obj','__pycache__','node_modules'} for p in path.relative_to(ROOT).parts):continue
+        names=folders+['LICENSE.txt','README.md','modinfo.json','bank.txt','.gitignore']
+        proc=subprocess.Popen(['git','archive','--format=tar','HEAD','--',*names],cwd=ROOT,stdout=subprocess.PIPE)
+        with tarfile.open(fileobj=proc.stdout,mode='r|') as archive_source:
+            for entry in archive_source:
+                if not entry.isfile():continue
+                path=pathlib.PurePosixPath(entry.name)
+                if any(p in {'bin','obj','__pycache__','node_modules'} for p in path.parts):continue
                 if path.suffix.lower() in {'.log','.bak','.pdb','.obj','.exp','.lib'}:continue
-                z.write(path,path.relative_to(ROOT).as_posix())
-        for name in ['LICENSE.txt','README.md','modinfo.json','bank.txt','.gitignore']:
-            z.write(ROOT/name,name)
+                z.writestr(entry.name,archive_source.extractfile(entry).read())
+        assert proc.wait()==0,'git archive failed'
     print(f'Source archive: {source.stat().st_size/1048576:.1f} MB',flush=True)
 if __name__=='__main__':
     parser=argparse.ArgumentParser();parser.add_argument('version');package(parser.parse_args().version)

@@ -33,6 +33,7 @@ function Copy-WorkshopSources {
     Invoke-WorkshopCommand $workshopPython @((Join-Path $workshopSource 'mercenary_skills.py'),$workshopStage)
     Invoke-WorkshopCommand $workshopPython @((Join-Path $workshopSource 'presentation_qol.py'),$workshopStage)
     Invoke-WorkshopCommand $workshopPython @('-c',"import sys;sys.path.insert(0,r'$workshopSource');from combat.amazon_masteries_data import install;install(r'$workshopStage')")
+    Invoke-WorkshopCommand $workshopPython @('-c',"import sys;sys.path.insert(0,r'$workshopSource');from combat.amazon_melee_data import install;install(r'$workshopStage')")
     Invoke-WorkshopCommand $workshopPython @((Join-Path $workshopSource 'buff_hud.py'),$workshopStage)
     Invoke-WorkshopCommand $workshopPython @((Join-Path $workshopSource 'stash_organizer_catalog.py'),$workshopStage,(Join-Path $workshopStage 'workshop/stash_organizer_catalog.h'))
     Invoke-WorkshopCommand $workshopPython @((Join-Path $workshopSource 'endgame/refresh_panel.py'),$workshopStage)

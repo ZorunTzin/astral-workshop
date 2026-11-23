@@ -61,6 +61,17 @@ void storageTests(){
  auto* withdrawn=static_cast<Unit*>(LAlloc(4,D2RL::Items::MakeItemCode('L','n','3'),0,0,game,LRoom(&player),1,0,0,nullptr));backpack.push_back(withdrawn->id);auto* wd=itemData[withdrawn->id].data();std::memcpy(reinterpret_cast<unsigned char*>(withdrawn)+0x10,&wd,8);
  collect(game,&player);assert(depositCalls==24&&backpack.size()==1);backpack.clear();
 
+ // Gems/runes use the same ground-only path; withdrawal never qualifies.
+ for(const char* code:{"ooi","r01","r33","gzv","gly","glb","glg","glr","glw","skz","1am"}){
+  unsigned c=D2RL::Items::MakeItemCode(code[0],code[1],code[2]);assert(currency(c));
+  auto* u=static_cast<Unit*>(LAlloc(4,c,0,0,game,LRoom(&player),1,0,0,nullptr));backpack.push_back(u->id);
+  auto* data=itemData[u->id].data();std::memcpy(reinterpret_cast<unsigned char*>(u)+0x10,&data,8);
+  int before=depositCalls;collect(game,&player);assert(depositCalls==before);
+  u->mode=3;void* ptr=u;std::memcpy(game+0x2e30+8*(u->id&127),&ptr,8);observeGround(game);
+  u->mode=0;ptr=nullptr;std::memcpy(game+0x2e30+8*(u->id&127),&ptr,8);
+  collect(game,&player);assert(backpack.empty()&&depositCalls==before+1&&Ground.empty());
+ }
+ assert(!currency(D2RL::Items::MakeItemCode('h','p','1')));
  Deposit=nullptr;units.clear();
  std::puts("PASS: all 12 orb codes; absent bank and failed deposit retain items; retry deposits once without duplicates.");
 }

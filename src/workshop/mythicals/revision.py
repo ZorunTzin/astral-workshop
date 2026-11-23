@@ -90,7 +90,7 @@ def revise_tables(root,d,skills,descs,props,statrows,stath,ph,text):
  # Make the flat physical defense wording unambiguous, without changing mechanics.
  stat=next(x for x in statrows if x['Stat']=='normal_damage_reduction')
  stat.update(descstrpos='WorkshopDamageTakenReduced',descstrneg='WorkshopDamageTakenReduced')
- text('WorkshopDamageTakenReduced','Physical Damage Taken Reduced by')
+ text('WorkshopDamageTakenReduced','Physical Damage Taken Reduced by %d')
  display_stats(d,statrows,stath,props,ph,text)
  write(d/'itemstatcost.txt',stath,statrows);write(d/'missiles.txt',mh,missiles)
  assets += [str((d/f).relative_to(root)).replace('\\','/') for f in ('itemstatcost.txt','missiles.txt')]

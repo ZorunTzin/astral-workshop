@@ -1,11 +1,11 @@
-# Reimagined Workshop
+# Astral Workshop
 
 Offline Diablo II: Resurrected modding project based on D2R Reimagined.
 The game-ready mod payload remains at the repository root. Development files are separated below.
 
 ## Current release
 
-Version **0.21.0**: [release notes](docs/RELEASE-0.21.0.md), [Mythical mechanics](src/workshop/mythicals/README.md), [53-item catalog](src/workshop/mythicals/CATALOG.md) and [live compendium](https://astral-workshop-compendium.chattyactor2.chatgpt.site).
+Version **0.24.0**: [release notes](docs/RELEASE-0.24.0.md), [Mythical mechanics](src/workshop/mythicals/README.md), [53-item catalog](src/workshop/mythicals/CATALOG.md) and [live compendium](https://astral-workshop-compendium.chattyactor2.chatgpt.site).
 
 Uses the separate **ReimaginedWorkshop-v2** save profile; do not copy legacy saves into it.
 

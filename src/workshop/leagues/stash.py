@@ -28,7 +28,7 @@ def install(root):
    x=270+i*300
    d.rectangle((x-2,y-2,x+100,y+100),fill=(10,11,13,255),outline=(125,105,65,255),width=2)
    d.text((x+112,y+35),mechanic['orbs'][i],font=small,anchor='lm',fill=(190,190,185,255))
-   d.text((x+112,y+61),'Orb',font=small,anchor='lm',fill=(155,155,150,255))
+   d.text((x+112,y+61),f'Orb (t{i+1})',font=small,anchor='lm',fill=(155,155,150,255))
  sprite('leagueBackground',im)
  for name,offset in [('bankexpansionlayouthd.json',0),('controller/bankexpansionlayouthd.json',212)]:
   path=root/'data/global/ui/layouts'/name;j=json.loads(path.read_text(encoding='utf-8-sig'));children=j['children'];children[:]=[c for c in children if not c.get('name','').startswith('League')]

@@ -18,6 +18,7 @@ inline NativeEvent OriginalFireMode=nullptr,OriginalFireExplosion=nullptr,Origin
 inline NativePair OriginalStart=nullptr,OriginalSuccess=nullptr,OriginalHurt=nullptr,OriginalMode=nullptr;
 inline NativeMissile OriginalMissile=nullptr;inline DropFn OriginalDrop=nullptr;inline NativeEvent* Callbacks=nullptr;
 inline int(*AdditionalLootRolls)(void*,void*)=nullptr;
+inline int(*GoldLootScale)(void*,void*)=nullptr;
 inline Engine Effects;inline void* Game=nullptr;inline unsigned LastFrame=0,NextScan=0,NextRegen=0,Depth=0,DropDepth=0,WideVolley=0;
 struct Extra {Id id=Invalid;Mask initialized=0;int lifePercent=100;bool counted=false;};inline std::vector<Extra> Extras;
 struct Child {Id id=Invalid,owner=Invalid;Action kind=Action::Totem;unsigned until=0;int strength=0;};inline std::vector<Child> Children;
@@ -189,8 +190,11 @@ inline void __fastcall Hurt(void* game,void* u){OriginalHurt(game,u);Reset(game)
 inline void __fastcall Mode(void* game,void* u){OriginalMode(game,u);Reset(game);bool first=Effects.find(Key(u))&&!Effects.find(Key(u))->died;Missing(game,u,u,1);if(!Living(u)){if(Effects.find(Key(u)))Effects.death(WorldHost,Key(u),Ramp::Frame(game));if(first&&(MaskOf(u)&Bit(Raid))&&!MonsterModifiersNative::RawHas(u,18)){auto fn=Callbacks[18*6+2];if(fn)fn(game,u,18,1);}}}
 inline void __fastcall Missile(void* game,void* u,void* missile){OriginalMissile(game,u,missile);Reset(game);Missing(game,u,missile,5);}
 inline std::uintptr_t __fastcall Drop(void* game,void* unit,void* killer,unsigned short tc,std::uintptr_t a5,std::uintptr_t a6,std::uintptr_t a7,std::uintptr_t a8,std::uintptr_t a9,std::uintptr_t a10){
- Reset(game);const int rolls=DropDepth||a8||a9||!Curses::Monster(unit)?1:LootRolls(MaskOf(unit))+(AdditionalLootRolls?AdditionalLootRolls(game,unit):0);++DropDepth;
- auto result=OriginalDrop(game,unit,killer,tc,a5,a6,a7,a8,a9,a10);for(int n=1;n<rolls;++n)OriginalDrop(game,unit,killer,tc,a5,a6,a7,a8,a9,a10);--DropDepth;return result;
+ Reset(game);const int goldScale=!DropDepth&&killer&&(Curses::Player(killer)||Curses::Monster(killer))&&GoldLootScale?GoldLootScale(game,unit):1;
+ const int oldGold=goldScale>1?Ramp::GetUnit(killer,79,0):0;
+ if(goldScale>1)Ramp::SetUnit(killer,79,int(std::min<std::int64_t>(10000000,(std::int64_t{100}+std::max(0,oldGold))*goldScale-100)),0);
+ const int rolls=DropDepth||a8||a9||!Curses::Monster(unit)?1:LootRolls(MaskOf(unit))+(AdditionalLootRolls?AdditionalLootRolls(game,unit):0);++DropDepth;
+ auto result=OriginalDrop(game,unit,killer,tc,a5,a6,a7,a8,a9,a10);for(int n=1;n<rolls;++n)OriginalDrop(game,unit,killer,tc,a5,a6,a7,a8,a9,a10);--DropDepth;if(goldScale>1)Ramp::SetUnit(killer,79,oldGold,0);return result;
 }
 inline void Damage(void* game,void* attacker,void* defender,void* packet){
  if(!game||!packet)return;Reset(game);

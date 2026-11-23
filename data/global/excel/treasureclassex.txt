@@ -1986,23 +1986,24 @@ Ws Seal World 54cdb552ff2f			-2					0	Lab Boss Nakrul	1	Workshop Trial Seal Drop
 Ws Seal World a57b7aafcdc0			-2					0	Lab Boss Diablo Extra	1	Workshop Trial Seal Drops	1																										0
 Ws Seal World e3d30e9fb451			-2					0	Lab Class Ama	1	Workshop Trial Seal Drops	1																										0
 Ws Goblin Trial Orbs			1	0	0	0		0	Woa	1	Wob	1	Woc	1	Wod	1	Woe	1	Wof	1	Wog	1																0
+Ws Goblin Crafting Materials			1	0	0	0		0	ooi	1	oos	1	ooc	1	ooa	1	ooe	1	ka3	1	oor	1																0
 Ws Goblin treasure			4	800	700	900		0	Act 1 Equip A	5	Jewelry A	1																										0
-Ws Goblin gem_hoarder			4	0	0	0		0	gsv	1	gsy	1	gsb	1	gsg	1	gsr	1	gsw	1	sku	1																0
+Ws Goblin gem_hoarder			4	0	0	0		0	gmm	1	gmt	1	gms	1	gme	1	gmr	1	gmd	1	gmk	1	gmo	1														0
 Ws Goblin gilded_baron			4	0	0	0		0	gld	1																												0
 Ws Goblin insufferable_miscreant			4	0	0	0		0	Runes 5	1																												0
-Ws Goblin odious_collector			4	0	0	0		0	Lab T1 Materials	3	Ws Goblin Trial Orbs	1																										0
+Ws Goblin odious_collector			4	0	0	0		0	Ws Goblin Crafting Materials	3	Ws Goblin Trial Orbs	1																										0
 Ws Goblin malevolent_tormentor			4	800	700	900		0	Act 1 Equip A	3	Jewelry A	2																										0
 Ws Goblin treasure (N)			4	800	700	900		0	Act 1 (N) Equip A	5	Jewelry A	1																										0
-Ws Goblin gem_hoarder (N)			4	0	0	0		0	gzv	1	gly	1	glb	1	glg	1	glr	1	glw	1	skl	1																0
+Ws Goblin gem_hoarder (N)			4	0	0	0		0	gmm	1	gmt	1	gms	1	gme	1	gmr	1	gmd	1	gmk	1	gmo	1														0
 Ws Goblin gilded_baron (N)			4	0	0	0		0	gld	1																												0
 Ws Goblin insufferable_miscreant (N)			4	0	0	0		0	Runes 10	1																												0
-Ws Goblin odious_collector (N)			4	0	0	0		0	Lab T2 Materials	3	Ws Goblin Trial Orbs	1																										0
+Ws Goblin odious_collector (N)			4	0	0	0		0	Ws Goblin Crafting Materials	3	Ws Goblin Trial Orbs	1																										0
 Ws Goblin malevolent_tormentor (N)			4	800	700	900		0	Act 1 (N) Equip A	3	Jewelry A	2																										0
 Ws Goblin treasure (H)			4	800	700	900		0	Act 1 (H) Equip A	5	Jewelry A	1																										0
-Ws Goblin gem_hoarder (H)			4	0	0	0		0	gpv	1	gpy	1	gpb	1	gpg	1	gpr	1	gpw	1	skz	1																0
+Ws Goblin gem_hoarder (H)			4	0	0	0		0	gmm	1	gmt	1	gms	1	gme	1	gmr	1	gmd	1	gmk	1	gmo	1														0
 Ws Goblin gilded_baron (H)			4	0	0	0		0	gld	1																												0
 Ws Goblin insufferable_miscreant (H)			4	0	0	0		0	Runes 15	1																												0
-Ws Goblin odious_collector (H)			4	0	0	0		0	Lab T3 Materials	3	Ws Goblin Trial Orbs	1																										0
+Ws Goblin odious_collector (H)			4	0	0	0		0	Ws Goblin Crafting Materials	3	Ws Goblin Trial Orbs	1																										0
 Ws Goblin malevolent_tormentor (H)			4	800	700	900		0	Act 1 (H) Equip A	3	Jewelry A	2																										0
 Ws Goblin gelatinous_sire			0	0	0	0		0																														0
 Ws Goblin gelatinous_medium			0	0	0	0		0																														0
@@ -2021,12 +2022,57 @@ Ws Mythical Test Corpsefire			-6					0	Ws Mythical Pool	6																							
 Ws Mythical Pool 6			1					0	WorkshopMythical60	1	WorkshopMythical61	1	WorkshopMythical62	1	WorkshopMythical63	1	WorkshopMythical64	1	WorkshopMythical65	1	WorkshopMythical66	1	WorkshopMythical67	1	WorkshopMythical68	1	WorkshopMythical69	1										0
 Ws Mythical Pool 7			1					0	WorkshopMythical70	1	WorkshopMythical71	1	WorkshopMythical72	1	WorkshopMythical73	1	WorkshopMythical74	1	WorkshopMythical75	1	WorkshopMythical76	1	WorkshopMythical77	1	WorkshopMythical78	1	WorkshopMythical79	1										0
 Ws Mythical Pool 8			1					0	WorkshopMythical80	1																												0
-Ws League 0 0			1					3891	Ln1	60	Ln2	25	Ln3	12	Ln4	12																						0
-Ws League 0 1			1					1223	Ln1	60	Ln2	25	Ln3	12	Ln4	12																						0
-Ws League 0 2			1					291	Ln1	60	Ln2	25	Ln3	12	Ln4	12																						0
-Ws League 1 0			1					3891	Lo1	60	Lo2	25	Lo3	12	Lo4	12																						0
-Ws League 1 1			1					1223	Lo1	60	Lo2	25	Lo3	12	Lo4	12																						0
-Ws League 1 2			1					291	Lo1	60	Lo2	25	Lo3	12	Lo4	12																						0
-Ws League 2 0			1					3891	Lp1	60	Lp2	25	Lp3	12	Lp4	12																						0
-Ws League 2 1			1					1223	Lp1	60	Lp2	25	Lp3	12	Lp4	12																						0
-Ws League 2 2			1					291	Lp1	60	Lp2	25	Lp3	12	Lp4	12																						0
+Ws League 0 0 Tiers			1					0	Ln1	80	Ln2	15	Ln3	4	Ln4	1																						0
+Ws League 0 0 (N) Tiers			1					0	Ln1	65	Ln2	25	Ln3	8	Ln4	2																						0
+Ws League 0 0 (H) Tiers			1					0	Ln1	50	Ln2	32	Ln3	15	Ln4	3																						0
+Ws League 0 1 Tiers			1					0	Ln1	80	Ln2	15	Ln3	4	Ln4	1																						0
+Ws League 0 1 (N) Tiers			1					0	Ln1	65	Ln2	25	Ln3	8	Ln4	2																						0
+Ws League 0 1 (H) Tiers			1					0	Ln1	50	Ln2	32	Ln3	15	Ln4	3																						0
+Ws League 0 2 Tiers			1					0	Ln1	80	Ln2	15	Ln3	4	Ln4	1																						0
+Ws League 0 2 (N) Tiers			1					0	Ln1	65	Ln2	25	Ln3	8	Ln4	2																						0
+Ws League 0 2 (H) Tiers			1					0	Ln1	50	Ln2	32	Ln3	15	Ln4	3																						0
+Ws League 1 0 Tiers			1					0	Lo1	80	Lo2	15	Lo3	4	Lo4	1																						0
+Ws League 1 0 (N) Tiers			1					0	Lo1	65	Lo2	25	Lo3	8	Lo4	2																						0
+Ws League 1 0 (H) Tiers			1					0	Lo1	50	Lo2	32	Lo3	15	Lo4	3																						0
+Ws League 1 1 Tiers			1					0	Lo1	80	Lo2	15	Lo3	4	Lo4	1																						0
+Ws League 1 1 (N) Tiers			1					0	Lo1	65	Lo2	25	Lo3	8	Lo4	2																						0
+Ws League 1 1 (H) Tiers			1					0	Lo1	50	Lo2	32	Lo3	15	Lo4	3																						0
+Ws League 1 2 Tiers			1					0	Lo1	80	Lo2	15	Lo3	4	Lo4	1																						0
+Ws League 1 2 (N) Tiers			1					0	Lo1	65	Lo2	25	Lo3	8	Lo4	2																						0
+Ws League 1 2 (H) Tiers			1					0	Lo1	50	Lo2	32	Lo3	15	Lo4	3																						0
+Ws League 2 0 Tiers			1					0	Lp1	80	Lp2	15	Lp3	4	Lp4	1																						0
+Ws League 2 0 (N) Tiers			1					0	Lp1	65	Lp2	25	Lp3	8	Lp4	2																						0
+Ws League 2 0 (H) Tiers			1					0	Lp1	50	Lp2	32	Lp3	15	Lp4	3																						0
+Ws League 2 1 Tiers			1					0	Lp1	80	Lp2	15	Lp3	4	Lp4	1																						0
+Ws League 2 1 (N) Tiers			1					0	Lp1	65	Lp2	25	Lp3	8	Lp4	2																						0
+Ws League 2 1 (H) Tiers			1					0	Lp1	50	Lp2	32	Lp3	15	Lp4	3																						0
+Ws League 2 2 Tiers			1					0	Lp1	80	Lp2	15	Lp3	4	Lp4	1																						0
+Ws League 2 2 (N) Tiers			1					0	Lp1	65	Lp2	25	Lp3	8	Lp4	2																						0
+Ws League 2 2 (H) Tiers			1					0	Lp1	50	Lp2	32	Lp3	15	Lp4	3																						0
+Ws League 0 0			1					7891	Ws League 0 0 Tiers	109																												0
+Ws League 0 1			1					2555	Ws League 0 1 Tiers	109																												0
+Ws League 0 2			1					691	Ws League 0 2 Tiers	109																												0
+Ws League 1 0			1					3891	Ws League 1 0 Tiers	109																												0
+Ws League 1 1			1					1223	Ws League 1 1 Tiers	109																												0
+Ws League 1 2			1					291	Ws League 1 2 Tiers	109																												0
+Ws League 2 0			1					3891	Ws League 2 0 Tiers	109																												0
+Ws League 2 1			1					1223	Ws League 2 1 Tiers	109																												0
+Ws League 2 2			1					291	Ws League 2 2 Tiers	109																												0
+Ws League 0 0 (N)			1					7891	Ws League 0 0 (N) Tiers	109																												0
+Ws League 0 0 (H)			1					7891	Ws League 0 0 (H) Tiers	109																												0
+Ws League 0 1 (N)			1					2555	Ws League 0 1 (N) Tiers	109																												0
+Ws League 0 1 (H)			1					2555	Ws League 0 1 (H) Tiers	109																												0
+Ws League 0 2 (N)			1					691	Ws League 0 2 (N) Tiers	109																												0
+Ws League 0 2 (H)			1					691	Ws League 0 2 (H) Tiers	109																												0
+Ws League 1 0 (N)			1					3891	Ws League 1 0 (N) Tiers	109																												0
+Ws League 1 0 (H)			1					3891	Ws League 1 0 (H) Tiers	109																												0
+Ws League 1 1 (N)			1					1223	Ws League 1 1 (N) Tiers	109																												0
+Ws League 1 1 (H)			1					1223	Ws League 1 1 (H) Tiers	109																												0
+Ws League 1 2 (N)			1					291	Ws League 1 2 (N) Tiers	109																												0
+Ws League 1 2 (H)			1					291	Ws League 1 2 (H) Tiers	109																												0
+Ws League 2 0 (N)			1					3891	Ws League 2 0 (N) Tiers	109																												0
+Ws League 2 0 (H)			1					3891	Ws League 2 0 (H) Tiers	109																												0
+Ws League 2 1 (N)			1					1223	Ws League 2 1 (N) Tiers	109																												0
+Ws League 2 1 (H)			1					1223	Ws League 2 1 (H) Tiers	109																												0
+Ws League 2 2 (N)			1					291	Ws League 2 2 (N) Tiers	109																												0
+Ws League 2 2 (H)			1					291	Ws League 2 2 (H) Tiers	109																												0

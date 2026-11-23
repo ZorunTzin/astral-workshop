@@ -1,8 +1,11 @@
 #pragma once
 // Sorceress uses existing guarded frame, damage, projectile and skill-event hooks.
 // Persistent records contain unit IDs only; no native pointer survives a frame.
+#include "../leagues/craft_bindings.h"
 namespace Sorceress {
 #include "sorceress_bindings.h"
+struct EnchantAttack {unsigned id=0xffffffffU,frame=0;};
+inline std::array<EnchantAttack,512> EnchantAttacks{};
 inline void* Session=nullptr;
 inline unsigned Last=0,Next=0,Depth=0,Random=0x419e73U;
 inline AuraBuffs::SkillFn NativeMorph=nullptr,NativeStorm=nullptr;
@@ -35,7 +38,7 @@ inline void AddComboHit(unsigned owner,unsigned now){
  if(slot){const int previous=slot->owner==owner&&now<slot->until?slot->stacks:0;*slot={owner,now+75,std::min(3,previous+1)};}
 }
 inline bool EruptionDispatch=false,EruptionProcWindow=false;
-inline void Reset(void* game){const unsigned now=Ramp::Frame(game);if(Session!=game||now<Last){Zones={};Eruptions={};EruptionCombos={};FrostNovaTimers={};EruptionPower=1;EruptionDispatch=false;EruptionProcWindow=false;Next=0;Depth=0;Session=game;}Last=now;}
+inline void Reset(void* game){const unsigned now=Ramp::Frame(game);if(Session!=game||now<Last){EnchantAttacks={};Zones={};Eruptions={};EruptionCombos={};FrostNovaTimers={};EruptionPower=1;EruptionDispatch=false;EruptionProcWindow=false;Next=0;Depth=0;Session=game;}Last=now;}
 inline int Level(void* game,void* unit,int which){
  if(TestLevel)return TestLevel(game,unit,which);
  void* record=Curses::Record(Ramp::Version(game),LevelHelper);if(!record)return 0;
@@ -93,20 +96,23 @@ inline void Storm(void* game,void* source,void* target,int skill,int level){
  if(Ramp::Log&&StormLogs++<12){char message[160]{};std::snprintf(message,sizeof(message),"Sorceress storm dispatch: form=%d level=%d result=%d frame=%u",skill,level,result,Ramp::Frame(game));Ramp::Log(message);}
 
 }
+inline void EnchantAttackRecovery(void* game,void* source){
+ if(!game||!source||Depth||Curses::ProcDepth||EruptionDispatch||!AuraFeatures::Alive(source))return;
+ void* list=Ramp::OriginalList(source,16);if(!list||!Curses::ListLevel)return;
+ const int level=Curses::ListLevel(list);if(level<1)return;
+ Reset(game);const unsigned id=Barbarian::Id(source),now=Ramp::Frame(game);
+ EnchantAttack* slot=nullptr;
+ for(auto& hit:EnchantAttacks){if(hit.id==id&&hit.frame==now)return;if(!slot&&(hit.id==0xffffffffU||hit.frame!=now))slot=&hit;}
+ if(!slot)return;*slot={id,now};
+ const int gain=(5+std::min(level,1000))*256;
+ for(int stat:{6,8}){const int value=Ramp::GetUnit(source,stat,0),cap=std::max(0,Ramp::GetUnit(source,stat+1,0));Ramp::SetUnit(source,stat,int(std::min<std::int64_t>(cap,std::int64_t{value}+gain)),0);}
+ Refresh(source);
+}
+inline bool EnchantWeaponSkill(int skill){return std::find(std::begin(LeagueCraft::WeaponSkills),std::end(LeagueCraft::WeaponSkills),skill)!=std::end(LeagueCraft::WeaponSkills);}
 inline bool Event(void* game,int event,void* source,void* target,int skill,int level){
- if(skill==52){
-  // Native Enchant supplies the cast level on the enchanted unit's event.
-  // Only direct melee attack events qualify; missile/proc chains cannot heal.
-  if(event==7&&!Depth&&!Curses::ProcDepth&&!EruptionDispatch&&level>0&&AuraFeatures::Alive(source)&&Ramp::OriginalList(source,16)){
-   const int gain=(5+std::min(level,1000))*256;
-   for(int stat:{6,8}){
-    const int value=Ramp::GetUnit(source,stat,0),cap=std::max(0,Ramp::GetUnit(source,stat+1,0));
-    Ramp::SetUnit(source,stat,int(std::min<std::int64_t>(cap,std::int64_t{value}+gain)),0);
-   }
-   Refresh(source);
-  }
-  return true;
- }
+ // Enchant's native cast handler does not register these aura events.
+ // Recovery is owned by direct attack completion/projectile creation below.
+ if(skill==52)return true;
 
  if(skill!=36&&skill!=39&&skill!=43)return false;
  if((event!=7&&event!=8)||Depth||Curses::ProcDepth||!source||!target||level<1||!AuraFeatures::Alive(source))return true;
@@ -186,6 +192,7 @@ inline void EruptionTick(void* game,unsigned now){
 }
 inline void Projectile(void* game,void* raw,void* missile) noexcept {
  if(!raw)return;const auto& p=*static_cast<Pulse::Params*>(raw);
+ if(missile&&p.owner&&p.origin==p.owner&&EnchantWeaponSkill(p.skill)&&std::find(std::begin(LeagueCraft::WeaponMissiles),std::end(LeagueCraft::WeaponMissiles),p.missile)!=std::end(LeagueCraft::WeaponMissiles))EnchantAttackRecovery(game,p.owner);
  if(p.missile==EruptionHit&&missile){
   // Native snapshot retains weapon proc metadata; scale only damage fields.
   for(int stat:{21,22,48,49,50,51,52,53,54,55,57,58,316,317}){
@@ -204,6 +211,7 @@ inline void Projectile(void* game,void* raw,void* missile) noexcept {
  for(auto& z:Zones)if(z.owner==0xffffffffU||now>=z.until){z={};z.owner=id;z.start=now;z.next=now+25;z.until=now+75;z.x=Curses::X(p.owner);z.y=Curses::Y(p.owner);z.level=std::clamp(p.level,1,1000);z.visualNext=now+5;z.seed=id*1664525U+now+1013904223U;z.area=Barbarian::AuraArea?Barbarian::AuraArea(p.owner):0;return;}
 }
 inline void Hit(void* game,void* attacker,void* defender,void* damage){
+ if(damage&&attacker&&!(Barbarian::ReadDamage(damage,0)&2)&&EnchantWeaponSkill(Barbarian::UsedSkill(attacker))&&GuardianCombat::Hostile(game,defender))EnchantAttackRecovery(game,attacker);
  if(!EruptionDispatch&&!Depth&&!Curses::ProcDepth&&damage&&Curses::Player(attacker)&&Barbarian::UsedSkill(attacker)==49&&GuardianCombat::Hostile(game,defender)){
   unsigned short flags=0;std::memcpy(&flags,static_cast<unsigned char*>(damage)+4,2);
   if((flags&1)&&!(flags&0x4020)&&!(Barbarian::ReadDamage(damage,0)&2))StartEruption(game,attacker,defender,std::max(1,Level(game,attacker,3)));

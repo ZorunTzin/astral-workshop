@@ -4,7 +4,7 @@ Seven encounter families (nine Frankenstein monster definitions including split 
 
 ## Encounters
 
-3% once per ordinary Act I–V area per game, excluding towns and the Cow Level. Trials (166–170) roll 1% once per fighting wave, at most one successful spawn per trial per game. Rolls are shared across players and consumed even when placement fails. Special endgame areas, towns, followers and the Goblin Hoard are excluded. Goblins are not required to clear a trial wave. Their escape timer pauses while the trial modifier cards are open.
+10% once per ordinary Act I–V area per game, excluding towns and the Cow Level. Trials (166–170) roll 1% once per fighting wave, at most one successful spawn per trial per game. Rolls are shared across players. Selected Act encounters retry blocked placement every two seconds while a player is in the area. Special endgame areas, towns, followers and the Goblin Hoard are excluded. Goblins are not required to clear a trial wave. Their escape timer pauses while the trial modifier cards are open.
 
 ## Fleeing
 
@@ -32,4 +32,4 @@ Glow compatibility: every custom overlay includes its matching legacy DCC in add
 
 Glow revision 3: HD monster definitions now own the colored VFX directly, using the native monster VfxDefinitionComponent pattern. Runtime glow-state application has been removed to prevent duplicate effects. The effect is hard-killed when its owning entity is destroyed. Live visibility and corpse behavior still require ingame verification.
 
-Blood Moor test mode disabled locally (workshop-goblins-test.txt = 0). Natural rolls remain 3% once per eligible act area and 1% per Trial wave, at most one natural encounter per Trial. The legendary loot-goblin wave is a separate one-wave event.
+Blood Moor test mode disabled locally (workshop-goblins-test.txt = 0). Natural rolls remain 10% once per eligible act area and 1% per Trial wave, at most one natural encounter per Trial. The legendary loot-goblin wave is a separate one-wave event.

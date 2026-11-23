@@ -35,11 +35,28 @@ int __fastcall SorcEvaluate(unsigned char version,void* unit,int formula,int ski
 int main(){
  BaseAuraTests();
  player.lists.clear();player.stats[6]=100*256;player.stats[7]=200*256;player.stats[8]=10*256;player.stats[9]=20*256;
+ Frame(900);
  Curses::Curse enchanted{&player,&player,52,10,100,-1,0,16,nullptr};Apply(&enchanted);
- assert(Sorceress::Event(game,7,&player,&player,52,10));
+ Curses::ListLevel=[](void*)->int{return 10;};Frame(900);Sorceress::Session=nullptr;
+ Sorceress::EnchantAttackRecovery(game,&player);
  assert(GetUnit(&player,6,0)==115*256&&GetUnit(&player,8,0)==20*256);
- assert(Sorceress::Event(game,8,&player,&player,52,10));assert(GetUnit(&player,6,0)==115*256);
- player.lists.clear();Sorceress::Event(game,7,&player,&player,52,10);assert(GetUnit(&player,6,0)==115*256);
+ Sorceress::EnchantAttackRecovery(game,&player);assert(GetUnit(&player,6,0)==115*256);
+ assert(Sorceress::Event(game,7,&player,&player,52,10));assert(GetUnit(&player,6,0)==115*256);
+ Frame(901);Curses::ProcDepth=1;Sorceress::EnchantAttackRecovery(game,&player);Curses::ProcDepth=0;assert(GetUnit(&player,6,0)==115*256);
+ Sorceress::EnchantAttackRecovery(game,&player);assert(GetUnit(&player,6,0)==130*256);
+ Curses::Owner=[](void*,void*)->void*{return nullptr;};
+ // Exercise the actual hook routes: direct weapon attack, spell rejection, ranged launch.
+ Frame(902);Unit enchantEnemy;enchantEnemy.type=1;enchantEnemy.stats[6]=1000;
+ alignas(8) unsigned char enchantList[0x20]{},enchantNode[0x10]{},enchantDamage[0x180]{};
+ short enchantSkill=0;void* enchantPtr=&enchantSkill;std::memcpy(enchantNode,&enchantPtr,8);enchantPtr=enchantNode;std::memcpy(enchantList+0x18,&enchantPtr,8);enchantPtr=enchantList;std::memcpy(reinterpret_cast<unsigned char*>(&player)+0x100,&enchantPtr,8);
+ Sorceress::Hit(game,&player,&enchantEnemy,enchantDamage);assert(GetUnit(&player,6,0)==145*256);
+ Sorceress::Hit(game,&player,&enchantEnemy,enchantDamage);assert(GetUnit(&player,6,0)==145*256);
+ Frame(903);enchantSkill=47;Sorceress::Hit(game,&player,&enchantEnemy,enchantDamage);assert(GetUnit(&player,6,0)==145*256);
+ Pulse::Params ranged{};ranged.owner=ranged.origin=&player;ranged.skill=0;ranged.missile=LeagueCraft::WeaponMissiles[0];Unit arrow;
+ Sorceress::Projectile(game,&ranged,&arrow);assert(GetUnit(&player,6,0)==160*256);
+ Sorceress::Projectile(game,&ranged,&arrow);assert(GetUnit(&player,6,0)==160*256);
+ enchantPtr=nullptr;std::memcpy(reinterpret_cast<unsigned char*>(&player)+0x100,&enchantPtr,8);
+ player.lists.clear();Frame(904);Sorceress::EnchantAttackRecovery(game,&player);assert(GetUnit(&player,6,0)==160*256);
 Frame(1000);player.lists.clear();player.stats.clear();player.stats[6]=player.stats[7]=1000*256;player.stats[8]=player.stats[9]=2000*256;
  Curses::Record=SorcRecord;Curses::Evaluate=SorcEvaluate;Curses::Register=SorcRegister;Curses::ListLevel=SorcListLevel;Curses::Cast=SorcCast;Sorceress::TestLevel=SorcLevel;Sorceress::Session=nullptr;
  Sorceress::NativeMorph=Morph;Sorceress::NativeStorm=[](void*,void*,int skill,int)->int{assert(skill==Sorceress::FireProc);++stormCreates;lastStorm=skill;return 1;};Pulse::OriginalCreate=CreateSorc;

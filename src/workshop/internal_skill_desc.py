@@ -12,13 +12,24 @@ def install(root):
  root=Path(root);labels={}
  for folder in ('data/global/excel','data/global/excel/base'):
   p=root/folder;sh,skills=read(p/'skills.txt');dh,descs=read(p/'skilldesc.txt')
+  # Repeated helper generation must not append duplicate internal descriptions.
+  seen=set();unique=[]
+  for d in descs:
+   key=d['skilldesc']
+   if key.startswith('workshop_internal_') and key in seen:continue
+   seen.add(key);unique.append(d)
+  descs=unique
   attack=next(r for r in descs if r['skilldesc']=='attack')
   for row in skills:
    if not row['*Id'].isdigit() or int(row['*Id'])<532 or row['skilldesc']:continue
    skill=row['*Id'];key='WorkshopInternalSkill'+skill;name='workshop_internal_'+skill
    desc={k:'' for k in dh};desc.update(skilldesc=name,**{'str name':key,'str short':key,'str long':key,'str alt':key,'IconCel':attack['IconCel'],'SkillPage':'0','SkillRow':'0','SkillColumn':'0','ListRow':'0'})
    # Header spelling differs between source generations; keep only real fields.
-   desc={k:desc.get(k,'') for k in dh};descs.append(desc);row['skilldesc']=name
+   desc={k:desc.get(k,'') for k in dh};
+   existing=next((d for d in descs if d['skilldesc']==name),None)
+   if existing is None:descs.append(desc)
+   else:existing.update(desc)
+   row['skilldesc']=name
    labels[key]=row['skill'].replace('Workshop Guardian ','Astral Guardian: ').replace('Workshop Legacy ','Legacy ').replace('Workshop Aura Level ','Aura level: ')
   write(p/'skills.txt',sh,skills);write(p/'skilldesc.txt',dh,descs)
  strings=root/'data/local/lng/strings/skills.json';rows=json.loads(strings.read_text(encoding='utf8'));known={r['Key'] for r in rows};nextid=max(int(r['id']) for f in strings.parent.glob('*.json') for r in json.loads(f.read_text(encoding='utf-8-sig')) if isinstance(r,dict) and 'id' in r)+1

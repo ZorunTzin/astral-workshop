@@ -65,18 +65,17 @@ def install(root):
   for name in ('misc','weapons','armor'):
    _,items=read(p/(name+'.txt'));codes.update(r['code'] for r in items)
   tc('Ws Goblin Trial Orbs',[(c,1) for c in ('Woa','Wob','Woc','Wod','Woe','Wof','Wog')],picks=1)
+  tc('Ws Goblin Crafting Materials',[(c,1) for c in ('ooi','oos','ooc','ooa','ooe','ka3','oor')],picks=1)
   for diff,suffix in enumerate(('',' (N)',' (H)')):
    equip='Act 1'+suffix+' Equip A'
-   gems=[('g'+grade+color,1) for color in ('v','y','b','g','r','w') for grade in [('s','l','p')[diff]]]
-   gems=[("gzv" if code=="glv" else code,weight) for code,weight in gems]
-   gems.append((("sku","skl","skz")[diff],1))
-   rewards=[[(equip,5),('Jewelry A',1) ],gems,[('gld',1)],[('Runes '+str((5,10,15)[diff]),1)],[('Lab T'+str(diff+1)+' Materials',3),('Ws Goblin Trial Orbs',1)],[(equip,3),('Jewelry A',2)],[],[],[(equip,5),('Jewelry A',1)]]
+   gems=[(c,1) for c in ('gmm','gmt','gms','gme','gmr','gmd','gmk','gmo')]
+   rewards=[[(equip,5),('Jewelry A',1) ],gems,[('gld',1)],[('Runes '+str((5,10,15)[diff]),1)],[('Ws Goblin Crafting Materials',3),('Ws Goblin Trial Orbs',1)],[(equip,3),('Jewelry A',2)],[],[],[(equip,5),('Jewelry A',1)]]
    for i,f in enumerate(families):tc('Ws Goblin '+f+suffix,rewards[i],i in (0,5,8),picks=0 if i in (6,7) else 2 if i==8 else 4)
   # Upgrades may already contain parent rows before this newly added pool.
-  pool=next(r for r in tcs if r['Treasure Class']=='Ws Goblin Trial Orbs')
-  tcs.remove(pool)
+  pools=[r for r in tcs if r['Treasure Class'] in ('Ws Goblin Trial Orbs','Ws Goblin Crafting Materials')]
+  tcs=[r for r in tcs if r not in pools]
   first=next(i for i,r in enumerate(tcs) if r['Treasure Class'].startswith('Ws Goblin '))
-  tcs.insert(first,pool)
+  tcs[first:first]=pools
   write(p/'treasureclassex.txt',h,tcs)
   h,rows=read(p/'monstats.txt');ids=[]
   for i,f in enumerate(families):

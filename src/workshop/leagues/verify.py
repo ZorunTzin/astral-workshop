@@ -19,15 +19,17 @@ for base in ('','base/'):
  mons=table('monstats',base)
  for m in range(3):
   for rank in range(3):
-   tc=tcs[f'Ws League {m} {rank}']
-   assert tc['Picks']=='1' and tc['NoDrop']==str(4*[900,233,0][rank]+291)
-   assert [tc[f'Item{i+1}'] for i in range(4)]==codes[m*4:m*4+4]
-   assert [int(tc[f'Prob{i+1}']) for i in range(4)]==[60,25,12,12]
-   for v in range(3):
+   for diff,suffix in enumerate(('',' (N)',' (H)')):
+    tc=tcs[f'Ws League {m} {rank}'+suffix];pool=tcs[tc['Item1']]
+    assert tc['Picks']=='1' and tc['Prob1']=='109'
+    assert int(tc['NoDrop'])==(4*[900,233,0][rank]+400)*(2 if m==0 else 1)-109
+    assert [pool[f'Item{i+1}'] for i in range(4)]==codes[m*4:m*4+4]
+    assert [int(pool[f'Prob{i+1}']) for i in range(4)]==cfg['orbTierWeights'][diff]
+   for v in range(len(cfg['mechanics'][m]['monsters'])):
     r=next(r for r in mons if r['Id']==f'wsleague{m}{rank}{v}')
     assert r['enabled']=='1' and r['neverCount']=='1'
     assert r['BaseId']==cfg['mechanics'][m]['monsters'][v]
-    assert all(not value or value==f'Ws League {m} {rank}' for key,value in r.items() if key.startswith('TreasureClass'))
+    assert all(not value or value==f'Ws League {m} {rank}'+(' (H)' if key.endswith('(H)') else ' (N)' if key.endswith('(N)') else '') for key,value in r.items() if key.startswith('TreasureClass'))
   obj=next(r for r in table('objects',base) if r['Name']==f'WsLeaguePillar{m}')
   assert obj['OperateFn']=='18' and obj['InitFn']=='0' and obj['Selectable0']=='1' and obj['Selectable1']=='0'
  for name,key in [('monstats','*hcIdx'),('objects','*ID'),('states','*ID'),('missiles','*ID')]:
@@ -58,7 +60,7 @@ for rel in assets:
 models=json.loads((root/'data/hd/character/monsters.json').read_text())
 for m in range(3):
  for rank in range(3):
-  for v in range(3):
+  for v in range(len(cfg['mechanics'][m]['monsters'])):
    model=json.loads((root/f'data/hd/character/enemy/{models[f"wsleague{m}{rank}{v}"]}.json').read_text())
    var=model['dependencies']['variantdata'][0]['path'];assert var.startswith(f'data/hd/character/enemy/wsleague{m}_')
    variants=json.loads((root/var).read_text())
@@ -68,13 +70,14 @@ for m in range(3):
 manifest=(root/'bank.txt').read_bytes();bank=json.loads(manifest)
 for name,digest in bank['tables'].items():assert hashlib.sha256((root/f'data/global/excel/{name}.txt').read_bytes()).hexdigest()==digest
 assert (root/'d2rloader/plugins/fmmp-auto-collectibles.dll').read_bytes().count(hashlib.sha256(manifest).hexdigest().encode())==3
-print(f'PASS: 12 crafting currencies, 27 colored monster variants, pillar operations, loot, two 3x4 layouts, {len(assets)} assets and pickup manifest.')
+print(f'PASS: 12 crafting currencies, 81 colored monster variants, pillar operations, loot, two 3x4 layouts, {len(assets)} assets and pickup manifest.')
 
 # Orb names are mechanic-colored, every ground model carries both beam and colored aura.
 strings={r['Key']:r['enUS'] for r in json.loads((root/'data/local/lng/strings/item-names.json').read_text(encoding='utf-8-sig'))}
 for m,mechanic in enumerate(cfg['mechanics']):
  for i in range(4):
   assert strings[codes[m*4+i]].startswith('\u00ffc'+['5','2','1'][m])
+  assert f' Orb (t{i+1})' in strings[codes[m*4+i]]
   model=json.loads((root/f"data/hd/items/misc/uniquecharm/workshop_league_{mechanic['id']}{i}.json").read_text())
   effects=[c for e in model['entities'] for c in e['components'] if c['type']=='VfxDefinitionComponent']
   assert len(effects)>=2 and all(c['hardKillOnDestroy'] for c in effects)
@@ -85,14 +88,15 @@ for m,mechanic in enumerate(cfg['mechanics']):
 print('PASS: 12 colored orb labels, jewel beams and mechanic-colored ground glows.')
 
 
-# Preserve absolute tier-4 odds; tiers 1-3 become precisely one quarter.
+# Exact per-monster chance, and conditional tier distribution, independently checked.
 from fractions import Fraction
-for rank in range(3):
- tc=tcs[f'Ws League 0 {rank}'];weights=[int(tc[f'Prob{i}']) for i in range(1,5)]
- total=int(tc['NoDrop'])+sum(weights);oldtotal=[900,233,0][rank]+100
- for i,old in enumerate([60,25,12,3]):
-  assert Fraction(weights[i],total)==Fraction(old,oldtotal)*(Fraction(1,4) if i<3 else 1)
-print('PASS: exact quarter drop odds for tiers 1-3 and unchanged tier 4.')
+for m in range(3):
+ for rank in range(3):
+  for diff,suffix in enumerate(('',' (N)',' (H)')):
+   tc=tcs[f'Ws League {m} {rank}'+suffix];prob=int(tc['Prob1']);total=int(tc['NoDrop'])+prob
+   assert Fraction(prob,total)==Fraction(109,4*[900,233,0][rank]+400)*(Fraction(1,2) if m==0 else 1)
+   pool=tcs[tc['Item1']];assert sum(int(pool[f'Prob{i}']) for i in range(1,5))==100
+print('PASS: Night-only half drop rate; Normal/Nightmare/Hell tier distributions; unchanged Breach/Beyond total odds.')
 
 # Saved properties, safe recipe gating and every equipment/family/tier combination.
 import sys
