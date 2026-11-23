@@ -31,7 +31,7 @@ def install(root):
     h=by['Attack'].copy();h['*Id']=str(max(int(x['*Id']) for x in skills if x['*Id'].isdigit())+1);skills.append(h);by[helper]=h
    by[helper].update(skill=helper,charclass='',skilldesc='',calc4="skill('"+name+"'.lvl)")
    if key not in ds:ds[key]={k:'' for k in dh};descs.append(ds[key])
-   d=ds[key];d.update(skilldesc=key,SkillPage='3',SkillRow='2' if i==2 else '1',SkillColumn='1' if i==2 else str(i+2),ListRow='0',IconCel=str(60+2*i),**{'str name':key+'Name','str short':key+'Desc','str long':key+'Desc','str alt':key+'Name','*eol':'0'})
+   d=ds[key];d.update(skilldesc=key,SkillPage='1' if i==1 else '3',SkillRow='2' if i==0 else '1',SkillColumn='2' if i==2 else '1',ListRow='0',IconCel=str(60+2*i),**{'str name':key+'Name','str short':key+'Desc','str long':key+'Desc','str alt':key+'Name','*eol':'0'})
    labels[key+'Name']=name;labels[key+'Desc']='Toggle. Only one Mastery can be active. No mana cost. '+('Spears only. Cannot use bow or javelin skills.' if i==0 else 'Bows and crossbows only.' if i==1 else 'Javelins only.')+' Bonuses are suspended with another weapon.'
    for j,(stat,base,step,cap,text) in enumerate(BONUSES[i],1):
     base,step,div=scaled(base,step)
