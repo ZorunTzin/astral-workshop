@@ -43,7 +43,7 @@ inline void pulse(void* game,void* unit,int kind,int level){
  int state=Definitions[kind].state;auto list=Ramp::OriginalList(unit,state);
  if(!list){Curses::Curse request{unit,unit,Definitions[kind].skill,level,50,-1,0,state,nullptr};list=Curses::OriginalApply(&request);}
  if(!list)return;
- for(auto b:Bonuses)if(b.kind==kind)Curses::Write(game,list,b.stat,std::min(b.cap,b.base+b.step*level));
+ for(auto b:Bonuses)if(b.kind==kind)Curses::Write(game,list,b.stat,std::min(b.cap,(b.base+b.step*level)/b.divisor));
  Ramp::SetExpiry(list,Ramp::Frame(game)+50);Ramp::Schedule(game,unit,12,Ramp::Frame(game)+50,0,0,0);
  if(SoulHarvest::Refresh)SoulHarvest::Refresh(unit);
  Curses::Update(unit,"Amazon Mastery",0);

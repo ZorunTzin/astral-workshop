@@ -18,21 +18,37 @@ int main(){
  weaponCode=weapons[0];auto spear=AmazonMasteries::Definitions[0].skill,bow=AmazonMasteries::Definitions[1].skill,javelin=AmazonMasteries::Definitions[2].skill;
  assert(AmazonMasteries::cast(game,&player,spear,1)==1);
  assert(GetUnit(&player,76,0)==20&&GetUnit(&player,16,0)==30&&GetUnit(&player,36,0)==3);
- for(int stat:{39,41,43,45})assert(GetUnit(&player,stat,0)==6);
+ for(int stat:{39,41,43,45})assert(GetUnit(&player,stat,0)==10);
  assert(AmazonMasteries::allowed(game,&player,10));assert(!AmazonMasteries::allowed(game,&player,15));assert(!AmazonMasteries::allowed(game,&player,6));
  assert(AmazonMasteries::allowed(game,&player,bow));
  weaponCode=weapons[1];assert(AmazonMasteries::cast(game,&player,bow,1)==1);
- assert(GetUnit(&player,76,0)==0&&GetUnit(&player,36,0)==0&&GetUnit(&player,96,0)==11);
+ assert(GetUnit(&player,76,0)==10&&GetUnit(&player,60,0)==2&&GetUnit(&player,36,0)==0&&GetUnit(&player,96,0)==11);
  for(int stat:{48,50,54})assert(GetUnit(&player,stat,0)==3);
  for(int stat:{49,51,55})assert(GetUnit(&player,stat,0)==6);
  weaponCode=weapons[2];assert(!AmazonMasteries::allowed(game,&player,0));AmazonMasteries::frame(game);assert(GetUnit(&player,96,0)==0);
- assert(AmazonMasteries::cast(game,&player,javelin,1)==1);assert(GetUnit(&player,20,0)==4&&GetUnit(&player,76,0)==14);
+ assert(AmazonMasteries::cast(game,&player,javelin,1)==1);assert(GetUnit(&player,20,0)==4&&GetUnit(&player,76,0)==15);
  slot=11;assert(!AmazonMasteries::allowed(game,&player,0));Frame(105);AmazonMasteries::frame(game);assert(GetUnit(&player,76,0)==0);slot=4;
- Frame(110);AmazonMasteries::frame(game);assert(GetUnit(&player,76,0)==14);
- player.levels[javelin]=20;Frame(115);AmazonMasteries::frame(game);assert(GetUnit(&player,76,0)==90);
+ Frame(110);AmazonMasteries::frame(game);assert(GetUnit(&player,76,0)==15);
+ player.levels[javelin]=20;Frame(115);AmazonMasteries::frame(game);assert(GetUnit(&player,76,0)==43&&GetUnit(&player,138,0)==24);
  assert(AmazonMasteries::cast(game,&player,javelin,20)==1);assert(GetUnit(&player,76,0)==0);assert(AmazonMasteries::allowed(game,&player,0));
  AmazonMasteries::cast(game,&player,javelin,20);player.stats[6]=0;Frame(120);AmazonMasteries::frame(game);assert(GetUnit(&player,76,0)==0);
  player.stats[6]=1000;AmazonMasteries::cast(game,&player,javelin,20);player.levels[javelin]=0;Frame(125);AmazonMasteries::frame(game);assert(GetUnit(&player,76,0)==0);
+ // Fractional scaling is truncated only after calculating the full bonus.
+ for(int level=1;level<=40;++level){
+  weaponCode=weapons[2];AmazonMasteries::cast(game,&player,javelin,level);
+  assert(GetUnit(&player,76,0)==(30+3*(level-1))/2);
+  assert(GetUnit(&player,138,0)==5+level-1);
+  AmazonMasteries::cast(game,&player,javelin,level);
+  weaponCode=weapons[1];AmazonMasteries::cast(game,&player,bow,level);
+  assert(GetUnit(&player,76,0)==10+level-1);
+  assert(GetUnit(&player,60,0)==(4+level-1)/2);
+  AmazonMasteries::cast(game,&player,bow,level);
+  weaponCode=weapons[0];AmazonMasteries::cast(game,&player,spear,level);
+  assert(GetUnit(&player,76,0)==20+2*(level-1));
+  assert(GetUnit(&player,93,0)==10+3*(level-1));
+  for(int stat:{39,41,43,45})assert(GetUnit(&player,stat,0)==10+2*(level-1));
+  AmazonMasteries::cast(game,&player,spear,level);
+ }
  assert(GetUnit(&player,9,0)==10000);
  puts("PASS: exclusive Masteries, exact bonus bundles, weapon/skill gates, inactive swap slots, suspended bonuses, level updates, toggle, death and respec cleanup; no mana cost.");
 }
