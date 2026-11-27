@@ -40,5 +40,11 @@ int main(){
  pet.cls=357;pet.stats[6]=500*256;pet.stats[7]=1000*256;pet.x=player.x;pet.y=player.y;PlaceDruid(pet,1,24);PlaceDruid(player,0,player.id);
  Frame(3000);Druid::VineBuff(game,&player,20,true);assert(GetUnit(&pet,68,0)==25);unsigned solarEnd=static_cast<List*>(GetList(&pet,Druid::SolarState))->expiry;
  Frame(3100);Druid::VineBuff(game,&player,20,false);assert(static_cast<List*>(GetList(&pet,Druid::SolarState))->expiry==solarEnd);assert(GetList(&pet,Druid::VineState));Frame(3126);assert(!GetList(&pet,Druid::SolarState)&&GetList(&pet,Druid::VineState));
+ // Alpha's Call alone summons Ravens; Avatar alone never does.
+ static int ravenCalls=0;Druid::NativeRaven=[](void*,void* u,int skill,int level)->int{assert(u==&player&&skill==Druid::Raven&&level==20);++ravenCalls;return 1;};
+ auto* ap=AuraBuffs::Track(game,&player);assert(ap);int ai=AuraBuffs::Index(224),vi=AuraBuffs::Index(221);
+ ap->costs[ai]=1;ap->levels[ai]=20;ap->costs[vi]=0;Druid::Players={};Druid::Zones={};Frame(4000);Druid::Frame(game);assert(ravenCalls==1);
+ ap->costs[ai]=0;ap->costs[vi]=1;ap->levels[vi]=20;auto& avatar=player.lists[Druid::AvatarState];avatar.state=Druid::AvatarState;avatar.expiry=5000;
+ Frame(4125);Druid::Frame(game);assert(ravenCalls==1);Druid::NativeRaven=nullptr;
  puts("PASS: Druid simultaneous reservations, native morph reversal/renewal, no lightning/defense from Avatar, max-resist steps, three frost ticks, bounded Raven cadence, fifth-hit trigger, cone bounds and session cleanup.");
 }

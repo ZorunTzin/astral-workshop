@@ -1,3 +1,6 @@
+#ifndef WORKSHOP_CHRONICLE_TEST
+#include <intrin.h>
+#endif
 // D2R build 93847: native Chronicle insertion, notification and persistence.
 // Byte guards below are checked before hooks/patches; no item flags or save widths change.
 #include "forge_chronicle_engine.h"
@@ -18,6 +21,39 @@ ChronicleCubeFn originalChronicleCube{};
 ChronicleAddFn chronicleAdd{};ChronicleClientFn chronicleClient{};
 ChroniclePlayerFn chroniclePlayer{};ChronicleSendFn chronicleSend{};
 ChronicleClockFn chronicleClock{};ChroniclePickupFn originalChroniclePickup{};
+
+// The client notification builds a synthetic socketed item. It does not carry
+// our forge marker, so its native display name is often "Gemmed <base>".
+// Scope the override to that notification's one name call, using its recipe ID.
+using ChronicleNotifyFn=void(__fastcall*)(unsigned char,int);
+using ChronicleNameFn=std::uintptr_t(__fastcall*)(void*,char*);
+ChronicleNotifyFn originalChronicleNotify{};
+ChronicleNameFn originalChronicleName{};
+thread_local int chronicleNotificationIndex=-1;
+void* chronicleNameReturn{};
+int chronicleNameIndex(unsigned char type,int recipe){
+ if(!forgeChronicleReady||type!=2)return -1;
+ for(unsigned i=0;i<forgeChronicleNativeIds.size();++i)
+  if(forgeChronicleNativeIds[i]==recipe)return static_cast<int>(i);
+ return -1;
+}
+void __fastcall chronicleNotify(unsigned char type,int recipe){
+ const int previous=chronicleNotificationIndex;
+ chronicleNotificationIndex=chronicleNameIndex(type,recipe);
+ originalChronicleNotify(type,recipe);
+ chronicleNotificationIndex=previous;
+}
+bool chronicleNotificationName(char* out,void* caller){
+ if(!out||caller!=chronicleNameReturn||chronicleNotificationIndex<0)return false;
+ std::snprintf(out,0x400,"%s",forgeWords[chronicleNotificationIndex].name);
+ return true;
+}
+#ifndef WORKSHOP_CHRONICLE_TEST
+std::uintptr_t __fastcall chronicleItemName(void* item,char* out){
+ if(chronicleNotificationName(out,_ReturnAddress()))return reinterpret_cast<std::uintptr_t>(out);
+ return originalChronicleName(item,out);
+}
+#endif
 
 void recordRuneForge(void* player,void* item){
  if(!forgeChronicleReady||!readItemStat||!player||!item||*static_cast<unsigned*>(player)!=0||*static_cast<unsigned*>(item)!=4)return;
@@ -81,7 +117,10 @@ bool installForgeChronicle(const PluginContext* ctx){
  {0x122c310,"\x48\x83\xec\x28\x48\x8d\x4c\x24\x30\xff\x15\xc9\xc0\x65",14},
  {0x4247d0,"\x48\x89\x5c\x24\x20\x57\x48\x83\xec\x60\x48\x8b\x05\xe7",14},
  {0x3d8b94,"\x74\x6a",2},
- {0x5269c0,"\x40\x55\x53\x56\x57\x41\x54\x41\x55\x41\x56\x41\x57\x48\x8d\xac\x24\x08\xea\xff\xff",21}};
+ {0x5269c0,"\x40\x55\x53\x56\x57\x41\x54\x41\x55\x41\x56\x41\x57\x48\x8d\xac\x24\x08\xea\xff\xff",21},
+ {0x2317e0,"\x40\x55\x53\x57\x48\x8d\xac\x24\x80\xf6\xff\xff\x48\x81\xec\x80\x0a\x00\x00",19},
+ {0x231962,"\xe8\xcd\x9c\xbf\x03",5},
+ {0x3e2b634,"\xff\x25\x86\xf6\xff\xff",6}};
  for(const auto& g:guards)if(std::memcmp(exe+g.rva,g.bytes,g.size)){ctx->LogError("Chronicle native signature mismatch; integration not installed");return false;}
  chronicleAdd=reinterpret_cast<ChronicleAddFn>(exe+0x3471a0);
  chronicleClient=reinterpret_cast<ChronicleClientFn>(exe+0x48fde0);
@@ -99,6 +138,13 @@ bool installForgeChronicle(const PluginContext* ctx){
  // Only the Chronicle catalog's skip-incomplete-row branch is removed.
  // Runes.complete stays 0 everywhere; the socket crafting code is unchanged.
  if(!ctx->PatchNop(0x3d8b94,guards[6].bytes,2,2))return false;
+ // Preserve the native localized chat template, item link, toast and catalog updates.
+ auto notifyHook=MakeInlineHook(0x2317e0,guards[8].bytes,guards[8].size,reinterpret_cast<void*>(chronicleNotify),reinterpret_cast<void**>(&originalChronicleNotify));
+ if(!ctx->api->installInlineHook(ctx,&notifyHook))return false;
+ std::memcpy(&originalChronicleName,exe+0x3e2acc0,sizeof(originalChronicleName));
+ if(!originalChronicleName)return false;
+ chronicleNameReturn=exe+0x231967;
+ if(!ctx->PatchWriteU64(0x3e2acc0,&originalChronicleName,sizeof(originalChronicleName),reinterpret_cast<std::uint64_t>(chronicleItemName)))return false;
  forgeChronicleInstalled=true;
  ctx->LogInfo("Native Chronicle Runeforged integration enabled");return true;
 }

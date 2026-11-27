@@ -20,3 +20,4 @@ inline constexpr int PounceVisual=640;
 inline constexpr int ChargedBolt=1073;
 inline constexpr int LightningStrike=232;
 inline constexpr int Toxic=1075;
+inline constexpr int Split4=1113;

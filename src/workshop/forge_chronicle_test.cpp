@@ -22,6 +22,14 @@ long long __fastcall clockNow(){return 123LL*60000000000LL;}
 void __fastcall pickup(void*,void*){++nativePickups;}
 void* cubeResult{};
 void* __fastcall cube(void*,void* p,void*,void*){assert(p==expectedPlayer);return cubeResult;}
+void __fastcall notify(unsigned char type,int recipe){
+ char out[1024]="Gemmed Bow";
+ const int index=chronicleNameIndex(type,recipe);
+ assert(chronicleNotificationIndex==index);
+ assert(!chronicleNotificationName(out,reinterpret_cast<void*>(2)));
+ assert(chronicleNotificationName(out,chronicleNameReturn)==(index>=0));
+ assert(std::strcmp(out,index>=0?forgeWords[index].name:"Gemmed Bow")==0);
+}
 int main(){
  for(int i=0;i<220;++i)assert(ForgeChronicle::identity(2+i/128,i%128)==i);
  for(auto pair:std::array<std::array<int,2>,7>{{{1,12},{0,0},{4,0},{2,-1},{2,128},{3,92},{3,127}}})assert(ForgeChronicle::identity(pair[0],pair[1])==-1);
@@ -44,5 +52,14 @@ int main(){
  assert(chronicleCube(nullptr,p,nullptr,nullptr)==nullptr&&sends==2); // failed cube output
  cubeResult=item;assert(chronicleCube(nullptr,p,nullptr,nullptr)==item&&sends==3&&lastPacket.recipe==60042);
  chronicleCube(nullptr,p,nullptr,nullptr);assert(sends==3); // repeat successful forge
- std::puts("PASS: all 220 forge IDs, variant mapping, packet layout, duplicate suppression, legacy/invalid IDs, native runeword exclusion and Unique/Set delegation");
+ originalChronicleNotify=notify;chronicleNameReturn=reinterpret_cast<void*>(1);
+ for(unsigned i=0;i<220;++i){
+  forgeWords[i].name=i%2?"Enigma":"Breath of the Dying";
+  chronicleNotify(2,60000+i);assert(chronicleNotificationIndex==-1);
+ }
+ chronicleNotify(0,60000);chronicleNotify(1,60000);chronicleNotify(2,59999);
+ forgeChronicleReady=false;chronicleNotify(2,60000);forgeChronicleReady=true;
+ chronicleNotificationIndex=17;chronicleNotify(2,60042);assert(chronicleNotificationIndex==17);
+ chronicleNotificationIndex=-1;
+ std::puts("PASS: notification names for all 220 recipes, scoped caller/category, context restoration; all 220 forge IDs, variant mapping, packet layout, duplicate suppression, legacy/invalid IDs, native runeword exclusion and Unique/Set delegation");
 }

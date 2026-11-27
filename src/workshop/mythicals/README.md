@@ -1,6 +1,6 @@
 # Mythical Uniques — 0.21.0
 
-53 active variants: 43 ESR adaptations, three Mageblood belts and seven selected Screams belts. Retired Screams rows retain their IDs for saved items but no longer drop. Sources: https://easternsunresurrected.com/unique_mythicals.htm and https://lukaszpg.github.io/TheArchivistSoE/ . Source snapshots and per-item adaptations are stored alongside this file.
+54 active variants: The Gull, an original Workshop helmet, plus 43 ESR adaptations, three Mageblood belts and seven selected Screams belts. Retired Screams rows retain their IDs for saved items but no longer drop. Sources: https://easternsunresurrected.com/unique_mythicals.htm and https://lukaszpg.github.io/TheArchivistSoE/ . Source snapshots and per-item adaptations are stored alongside this file.
 
 ## Drops and saves
 
@@ -35,4 +35,18 @@ On-cast source procs use on-kill. Equipped source auras become activatable Works
 
 ## Verification
 
-verify.py checks property/save limits, all proc handler IDs, exact exception values, 53-item active drop pool, seven Screams, belt ancestry, native summon formulas, Starfall routing, three cleanup-enabled ground effects per model and repeatable generation. Native tests cover damage, resistance, ring pairing, regeneration scaling, renewal, unequip and death. Actual in-game proc animation, Buff HUD rendering and save/load still require gameplay verification.
+verify.py checks property/save limits, all proc handler IDs, exact exception values, 64-variant active drop pool, seven Screams, belt ancestry, native summon formulas, Starfall routing, three cleanup-enabled ground effects per model and repeatable generation. Native tests cover damage, resistance, ring pairing, regeneration scaling, renewal, unequip and death. Actual in-game proc animation, Buff HUD rendering and save/load still require gameplay verification.
+
+## The Gull
+
+Mythical Bone Visage, level 90, strength 100. 150–200% enhanced defense, +80–120 life, +15–20 all resistances. Every champion/unique kill (including owned missiles and summons) grants one of ten positive shrine buffs for 60 seconds. Different shrine types coexist; the same type refreshes. These buffs stack with normal shrines. Instant shrines are excluded.
+
+While equipped, a separate temporary list adds half the actual shrine values; the native skill shrine's hidden +2 is included. Whole-number bonuses round down. Native shrine timers are extended once by 50%; re-equipping cannot compound them. Removing the helmet removes the amplification, while an existing buff keeps its snapshotted duration. All temporary lists expire normally and are cleared on death. Stat 266 was unused and unsaved, audited before assigning its new one-bit saved flag. No existing save field changes width.
+
+Inventory art: gull-art/the-gull.png, generated using built-in image_gen. The ground/equipped model uses an existing native headgear rig; no new 3D model is included. Production drop pool has 64 equally weighted active Mythicals; no test-only guaranteed drops are enabled.
+
+## 0.26.0 additions
+
+The Gull, Original Sin, Svalinn, Replica Dreamfeather, Rathpith Globe, Aegis Aurora, Nimis and four Doryani’s Prototype variants (Fire, Cold, Lightning, Poison) are in the Trial pool. Blood Raven and Corpsefire have no forced Mythical drops; Corpsefire’s original splash charm remains.
+
+Localized stat labels use the native color parser. Shared tooltip callbacks run after parsing and therefore use the renderer’s U+E07E color selector, avoiding visible color codes and fallback font selection.

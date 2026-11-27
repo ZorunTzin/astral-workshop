@@ -26,7 +26,7 @@ for kind,bonuses in expected.items():
 import struct
 for path in (r/'data/hd/global/ui/spells/amazon').glob('*.sprite'):
  raw=path.read_bytes();width,height,_,count=struct.unpack_from('<4I',raw,8)
- assert count==66 and len(raw)==40+width*height*4
+ assert count==70 and len(raw)==40+width*height*4
 c=(r/'workshop/stash_organizer_catalog.h').read_text();assert '\\u00ffc' not in c and '*c9' not in c
 for p in (r/'data/local/lng/strings').glob('*.json'):
  for row in json.loads(p.read_text(encoding='utf-8-sig')):

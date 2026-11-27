@@ -58,6 +58,7 @@ inline void Area(Id owner,int x,int y,int damage,int element,double radius,int d
  --Depth;
 }
 inline bool Protected(void* target){if(!GuardianCombat::Hostile(Game,target)||static_cast<unsigned*>(target)[1]==TotemClass)return false;for(const auto& c:Children)if(c.kind==Action::Totem&&c.until>LastFrame){void* u=Find(c.id);if(Living(u)&&Near(u,target,12))return true;}return false;}
+inline void (*ChildSpawned)(void*,void*)=nullptr;
 inline void SpawnChild(const Event& e){
  void* owner=Find(e.owner);void* target=Find(e.target);if(!Spawn||!owner||Children.size()>=512)return;
  int cls=e.action==Action::RuneStone?RuneClass:TotemClass;if(e.action!=Action::Totem&&e.action!=Action::RuneStone){cls=-1;for(auto& p:CloneClasses)if(unsigned(p[0])==static_cast<unsigned*>(owner)[1]){cls=p[1];break;}if(cls<0)return;}
@@ -74,6 +75,7 @@ inline void SpawnChild(const Event& e){
  hp=int(std::clamp<std::int64_t>(1LL*hp*percent/100,256,0x3fffffff));
  Ramp::SetUnit(child,7,hp,0);Ramp::SetUnit(child,6,hp,0);Ramp::SetUnit(child,12,Ramp::GetUnit(owner,12,0),0);
  if(e.action!=Action::Totem&&e.action!=Action::RuneStone){for(int stat:{21,22,23,24,48,49,50,51,52,53,54,55})Ramp::SetUnit(child,stat,Ramp::GetUnit(owner,stat,0),0);if(target)Assassin::SetTarget(child,target);}
+ if(ChildSpawned)ChildSpawned(owner,child);
  Children.push_back({Key(child),e.owner,e.action,e.duration?LastFrame+e.duration:LastFrame+750,e.action==Action::RitualSummon?RitualDamagePercent(e.damage,MaskOf(owner)):0});
 }
 // Reject before the native damage call, including application of poison damage.

@@ -130,3 +130,22 @@ for base in ('','base/'):
   r=missiles['workshop_trinity_'+name];assert r['SrcDamage']=='0' and r['CollideType']=='0'
 assert RULES[6][0][1]==[1,4,6,16]
 print('PASS: 48 gated Cube recipes, additive saved stat widths, no automatic nova missile collisions and all tier costs.')
+
+# Exclusive trait classes preserve ordinary and existing League IDs.
+registry=json.loads((root/'data/hd/character/monsters.json').read_text(encoding='utf-8-sig'))
+for base in ('','base/'):
+ mons={r['Id']:r for r in table('monstats',base)}
+ traits=[r for r in mons.values() if r['Id'].startswith('wsleague') and '_trait' in r['Id']]
+ assert len(traits)==162
+ for r in traits:
+  parent=mons[r['Id'].split('_trait')[0]];trait=int(r['Id'].split('_trait')[1])
+  assert r['BaseId']==parent['BaseId'] and r['Rarity']=='0' and r['neverCount']=='1'
+  if trait==5:assert all(not v for k,v in r.items() if k.startswith('TreasureClass')) and all(r[k]=='0' for k in ('Exp','Exp(N)','Exp(H)'))
+  if trait in (1,5):
+   name=registry[r['Id']];model=json.loads((root/'data/hd/character/enemy'/(name+'.json')).read_text())
+   original=json.loads((root/'data/hd/character/enemy'/(registry[parent['Id']]+'.json')).read_text())
+   def scale(m):
+    e=next(e for e in m['entities'] if e['name']=='entity_root')
+    return next((c['scale'] for c in e['components'] if c['type']=='TransformDefinitionComponent'),dict(x=1,y=1,z=1))
+   assert scale(model)=={k:v*(1.65 if trait==1 else .6) for k,v in scale(original).items()}
+print('PASS: 162 private League trait classes, large/small HD variants, zero child loot/XP, stable base families.')

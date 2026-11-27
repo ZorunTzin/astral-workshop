@@ -5,6 +5,7 @@ inline const ThreadService* ChoiceThreads=nullptr;
 inline Panels::RegistrationHandle ChoicePanel=0;
 inline std::atomic<bool> ChoiceSyncPending{false};
 inline unsigned ChoiceShownEpoch=0;
+inline bool ChoiceHidden=false,ToggleWasDown=false;inline unsigned HiddenEpoch=0;
 inline bool ShowActive=false;inline int ActivePage=0;
 // Same guarded child traversal and visibility setter as Astral Atlas. Avoid
 // findWidget: the installed loader faults while resolving native child paths.
@@ -24,8 +25,9 @@ inline int SetNativeOffers(const Run& run) noexcept {
    if(!name||std::strcmp(name,"workshop-curses/TrialChoices"))continue;
    auto children=*reinterpret_cast<unsigned char***>(root+0x58);auto n=*reinterpret_cast<size_t*>(root+0x60);if(n>16384)return 0;int shown=0;
    for(size_t k=0;k<n;++k){auto widget=children[k];if(!widget)continue;auto key=*reinterpret_cast<const char**>(widget+8);if(!key)continue;
-    int slot,s,m,t;bool visible=false,isOffer=false;
-    if(std::sscanf(key,"Offer_%d_%d_%d_%d",&slot,&s,&m,&t)==4&&slot>=0&&slot<3){isOffer=true;visible=!ShowActive&&s==stage&&m==int(offers[slot].mod)&&t==offers[slot].tier;}
+    int slot,s,m,t,league;bool visible=false,isOffer=false;
+    if(std::sscanf(key,"LeagueOffer_%d_%d_%d_%d_%d",&slot,&s,&m,&t,&league)==5&&slot>=0&&slot<3){isOffer=true;visible=!ShowActive&&s==stage&&m==int(offers[slot].mod)&&t==offers[slot].tier&&league==offers[slot].value;}
+    else if(std::sscanf(key,"Offer_%d_%d_%d_%d",&slot,&s,&m,&t)==4&&slot>=0&&slot<3){isOffer=true;visible=!ShowActive&&s==stage&&m==int(offers[slot].mod)&&t==offers[slot].tier;}
     else if(std::sscanf(key,"Category_%d_%d",&slot,&t)==2&&slot>=0&&slot<3)visible=!ShowActive&&t==int(Positive[int(offers[slot].mod)]);
     else if(std::sscanf(key,"NextWave_%d_%d",&s,&t)==2){int powers[]={10000,1000,100,10,1};int next=run.wave+1;visible=s>=0&&s<5&&next/powers[s]%10==t&&(s==4||next>=powers[s]);}
     else if(std::sscanf(key,"RerollCount_%d",&t)==1)visible=!ShowActive&&t==run.rerolls;
@@ -52,7 +54,11 @@ inline void __cdecl SyncChoicePanel(const PluginContext* c,void*) noexcept {
   View view;{std::lock_guard<std::mutex> lock(ViewMutex);view=Display;}
   Panels::PanelInfo info{.structSize=Panels::PanelInfoSize};
   bool open=ChoicePanels->getPanelInfo(c,ChoicePanel,&info)==Panels::Result::Success&&info.presentationState==Panels::PresentationState::Open;
-  bool wanted=view.visible&&view.run.phase==Phase::Choice&&view.choiceReady;
+  if(HiddenEpoch!=view.run.epoch){HiddenEpoch=view.run.epoch;ChoiceHidden=false;}
+  DWORD pid=0;GetWindowThreadProcessId(GetForegroundWindow(),&pid);
+  bool down=pid==GetCurrentProcessId()&&(GetAsyncKeyState(VK_CONTROL)&0x8000)&&(GetAsyncKeyState('T')&0x8000);
+  if(down&&!ToggleWasDown&&view.visible)ChoiceHidden=!ChoiceHidden;ToggleWasDown=down;
+  bool wanted=view.visible&&view.run.phase==Phase::Choice&&view.choiceReady&&!ChoiceHidden;
   if(!wanted){if(open)ChoicePanels->closePanel(c,ChoicePanel);ChoiceShownEpoch=0;ShowActive=false;ActivePage=0;}
   else {
    if(!open){auto result=ChoicePanels->openPanel(c,ChoicePanel);ChoiceShownEpoch=0;if(result!=Panels::Result::Success)c->LogWarn("Arena native choice panel could not open");}

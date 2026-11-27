@@ -20,7 +20,8 @@
     "PounceVisual": 640,
     "ChargedBolt": 1073,
     "LightningStrike": 232,
-    "Toxic": 1075
+    "Toxic": 1075,
+    "Split4": 1113
   },
   "auras": [
     [

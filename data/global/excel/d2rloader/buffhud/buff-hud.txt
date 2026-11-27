@@ -112,3 +112,13 @@ wsmyth667	353	timer	0	0	667	0	1
 workshop_amazon_mastery_0	357	timer	0	0	670	0	1
 workshop_amazon_mastery_1	358	timer	0	0	672	0	1
 workshop_amazon_mastery_2	359	timer	0	0	674	0	1
+shrine_gull_armor	361	timer	0	0	0	0	1
+shrine_gull_combat	362	timer	0	0	0	0	1
+shrine_gull_lightning	363	timer	0	0	0	0	1
+shrine_gull_fire	364	timer	0	0	0	0	1
+shrine_gull_cold	365	timer	0	0	0	0	1
+shrine_gull_poison	366	timer	0	0	0	0	1
+shrine_gull_skill	367	timer	0	0	0	0	1
+shrine_gull_mana	368	timer	0	0	0	0	1
+shrine_gull_stamina	369	timer	0	0	0	0	1
+shrine_gull_experience	370	timer	0	0	0	0	1

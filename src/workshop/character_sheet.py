@@ -53,7 +53,10 @@ def install(root):
    elif sid==20:
     d.update({'descdam':'21','ddam calc1':'','ddam calc2':'','descatt':'3'})
    elif sid in (19,22):
-    d['ddam calc1']='clc4' if sid==22 else 'clc1';d['ddam calc2']='0'
+    d['ddam calc1']='(100+clc4)/3-100' if sid==22 else 'clc1';d['ddam calc2']='0'
   write(root/folder/'skilldesc.txt',dh,descs)
  strings.write_text(json.dumps(labels,ensure_ascii=False,indent=2),encoding='utf8')
  print('Character sheet: custom labels, weapon/pulse/DPS units, zero stale Double Throw/Berserk displays.')
+
+ from advanced_stats import install as advanced_stats
+ advanced_stats(root)

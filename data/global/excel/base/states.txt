@@ -359,3 +359,17 @@ wsleaguenight	356					1																																																									
 workshop_amazon_mastery_0	357					1						1																																										Spear Mastery																				0
 workshop_amazon_mastery_1	358					1						1																																										Bow Mastery																				0
 workshop_amazon_mastery_2	359					1						1																																										Javelin Mastery																				0
+workshop_unity_amazon	360				1						1																																											Amazonian Unity										2	0									0
+shrine_gull_armor	361					1								1																													shrine_armor	shrine_shimmer00																										1				0
+shrine_gull_combat	362					1						1	1																														shrine_combat	shrine_shimmer00																										1				0
+shrine_gull_lightning	363					1										1																											shrine_resist_lightning	shrine_shimmer01																										1				0
+shrine_gull_fire	364					1									1																												shrine_resist_fire	shrine_shimmer00																										1				0
+shrine_gull_cold	365					1											1																										shrine_resist_cold	shrine_shimmer01																										1				0
+shrine_gull_poison	366					1													1																								shrine_resist_poison	shrine_shimmer01																										1				0
+shrine_gull_skill	367					1																																					shrine_skill	shrine_shimmer00																										1				0
+shrine_gull_mana	368					1																																					shrine_mana_regen	shrine_shimmer01																										1				0
+shrine_gull_stamina	369					1												1																									shrine_stamina	shrine_shimmer01																										1				0
+shrine_gull_experience	370					1																																					shrine_experience	shrine_shimmer00																										1				0
+ws_gull_amplifier	371					1																																																																1				0
+ws_poe_display	372					1																																																																				0
+ws_prototype_aura	373					1																																																																				0

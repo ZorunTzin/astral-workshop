@@ -4,17 +4,20 @@
 #include "storage.h"
 #include "map.h"
 #include "balance_bindings.h"
+#include "traits.h"
 namespace League {
 // Native argument 7 is allocation flags (bit 0 attaches to room); argument 8 is animation mode.
 using AllocFn=void*(__fastcall*)(int,int,int,int,void*,void*,unsigned short,int,int,void*);
 using RoomAtFn=void*(__fastcall*)(void*,int,int);
 using FreeFn=void*(__fastcall*)(void*,Point*,Point*,int,int,int,int);
+inline D2RL::Reimplementations::GetLevelIdFromRoomContextFn RoomArea=nullptr;
 inline AllocFn Allocate=nullptr;inline RoomAtFn RoomAt=nullptr;inline FreeFn FreePosition=nullptr;
 inline void* Game=nullptr;inline unsigned Last=0,Next=0,Seed=1;inline bool Testing=false;
-inline std::array<bool,133> Visited{};
+inline std::array<bool,133> Visited{},EntryKnown{};
+inline std::array<Point,133> Entry{};
 inline std::array<unsigned,133> Pending{},Attempts{},RetryAt{};
 struct Mob {unsigned id;int cls;unsigned event;Point p;};
-struct Event {Encounter state;unsigned pillar=0xffffffffu;std::vector<unsigned> visuals;int queued=0;unsigned retry=0;};
+struct Event {Encounter state;unsigned pillar=0xffffffffu;std::vector<unsigned> visuals;int queued=0;unsigned retry=0,cursor=0;std::vector<int> remaining;};
 inline std::vector<Event> Events;inline std::vector<Mob> Mobs;
 struct Retired {int type,cls;unsigned id;};inline std::vector<Retired> Retirements;
 struct Death {unsigned id;int cls,area;Point p;};inline std::vector<Death> Deaths;
@@ -28,6 +31,7 @@ inline void __cdecl death(const D2RL::PluginContext*,const D2RL::Lifecycle::Mons
  if(!Game||!e||e->structSize<D2RL::Lifecycle::MonsterDeathEventRequiredSize||Deaths.size()>=512)return;
  // Observation-only callback; spawning/removal is deferred to the next game tick.
  auto* unit=Curses::Find(Game,1,e->monster.id);if(!unit)return;
+ LeagueTraits::Death(e->monster.id,int(e->monster.classId));
  Deaths.push_back({e->monster.id,int(e->monster.classId),e->levelId,position(unit)});
 }
 inline void log(const char* action,int area,int kind){if(Arena::Context){char text[160];std::snprintf(text,sizeof(text),"League: %s area=%d mechanic=%d",action,area,kind);Arena::Context->LogInfo(text);}}
@@ -35,6 +39,7 @@ inline bool same(void* u,int cls){return u&&static_cast<int*>(u)[1]==cls;}
 inline unsigned living(unsigned index){unsigned n=0;for(auto& mob:Mobs)if(mob.event==index){auto* u=Curses::Find(Game,1,mob.id);if(same(u,mob.cls)&&MonsterRuntime::Living(u))++n;}return n;}
 inline void retire(int type,int cls,unsigned id){auto* u=Curses::Find(Game,type,id);if(u){if(same(u,cls))remove(u);}else if(id!=0xffffffffu)Retirements.push_back({type,cls,id});}
 inline void finish(unsigned index){
+ LeagueTraits::Cancel(index);
  auto& e=Events[index];e.state.phase=Phase::Complete;e.queued=0;e.state.kills.clear();
  retire(2,Pillars[int(e.state.kind)],e.pillar);e.pillar=0xffffffffu;
  for(auto id:e.visuals)retire(3,RiftMissile,id);e.visuals.clear();
@@ -68,20 +73,23 @@ inline void rankElite(void* unit,int rank){
  for(unsigned i=0;i<count&&i<9;++i){int mod=MonsterRuntime::RollNative(Game,unit,used,nullptr);if(mod<=0||mod>=256)break;mods[i]=static_cast<unsigned char>(mod);used[mod]=1;MonsterRuntime::Init(unit,mod,1);}
  MonsterRuntime::Track(Game,unit);Ramp::SetUnit(unit,6,Ramp::GetUnit(unit,7,0),0);
 }
+inline unsigned eLimit(unsigned index){return Events[index].state.kind==Kind::Breach?100:MaxLiving;}
 inline bool spawn(void* player,unsigned index,Point at,int rank,int variant){
- if(Mobs.size()>=MaxLiving*3||living(index)>=MaxLiving)return false;
- auto& e=Events[index];int cls=Classes[int(e.state.kind)][rank][variant];void* room=RoomAt(SoulHarvest::Room(player),at.x,at.y);if(!room)return false;
+ if(Mobs.size()>=MaxLiving*3||living(index)>=(eLimit(index)))return false;
+ auto& e=Events[index];int cls=LeagueTraits::Choose(Classes[int(e.state.kind)][rank][variant]);void* room=RoomAt(SoulHarvest::Room(player),at.x,at.y);if(!room)return false;
  void* unit=MonsterRuntime::Spawn(Game,room,at.x,at.y,cls,1,-1,0);if(!unit)return false;
- if(Arena::Level(unit)!=e.state.area){remove(unit);return false;}
+ if(Arena::Level(unit)!=e.state.area||(e.state.kind==Kind::Breach&&distance2(position(unit),at)>64)){remove(unit);return false;}
  Mobs.push_back({Barbarian::Id(unit),cls,index,position(unit)});++e.state.spawned;
  balance(unit,e.state.area); // Preserve rank HP multipliers and native loot.
  if(rank>0)rankElite(unit,rank);
+ LeagueTraits::Attach(Game,unit,player,index);
  Assassin::SetTarget(unit,player);return true;
 }
 inline void visual(void* player,Event& e,Point at,unsigned duration){
  Pulse::Params p{};p.flags=0x8021;p.owner=player;p.origin=player;p.missile=RiftMissile;p.level=1;p.x=at.x;p.y=at.y;p.targetX=at.x+1;p.targetY=at.y;p.range=duration;
  if(void* v=Pulse::OnCreate(Game,&p)){e.visuals.push_back(Barbarian::Id(v));if(Amazon::PublishMissiles){void* list[]={v};Amazon::PublishMissiles(player,list,1,nullptr,nullptr,0);}}
 }
+inline bool awayFromEntry(int area,Point p){return !EntryKnown[area]||distance2(p,Entry[area])>=EntryClearance*EntryClearance;}
 inline bool place(void* player,int kind,unsigned now,int direction){
  Point p=position(player);constexpr int dx[]={12,-12,0,0,9,-9,9,-9},dy[]={0,0,12,-12,9,9,-9,-9};
  for(int attempt=0;attempt<8;++attempt){int n=(direction+attempt)%8;Point at{p.x+dx[n],p.y+dy[n]};
@@ -94,29 +102,49 @@ inline bool place(void* player,int kind,unsigned now,int direction){
    Point wanted{at.x+x,at.y+y},found=wanted;
    if(!FreePosition(room,&found,&found,1,0x3e01,0xc01,0)||found.x!=wanted.x||found.y!=wanted.y){clear=false;break;}
   }
-  if(!clear)continue;
+  if(!clear||(!Testing&&!awayFromEntry(Arena::Level(player),at)))continue;
+  std::vector<Point> rifts;
+  if(kind==1){
+   rifts.push_back(at);const unsigned desired=4+random(Seed)%7;
+   for(int probe=0;probe<192&&rifts.size()<desired;++probe){
+    const double angle=(random(Seed)%6283)/1000.;const int radius=48+random(Seed)%89;
+    Point q{at.x+int(std::cos(angle)*radius),at.y+int(std::sin(angle)*radius)};
+    auto rr=RoomAt(room,q.x,q.y);if(!rr||(RoomArea&&RoomArea(rr)!=Arena::Level(player)))continue;
+    Point found=q;if(!FreePosition(rr,&found,&found,3,0x3e01,0xc01,0)||distance2(q,found)>9)continue;
+    if(!spaced(found,rifts)||(!Testing&&!awayFromEntry(Arena::Level(player),found)))continue;
+    bool free=true;
+    for(int x=-3;x<=3&&free;++x)for(int y=-3;y<=3;++y){Point want{found.x+x,found.y+y},test=want;
+     if(!FreePosition(rr,&test,&test,1,0x3e01,0xc01,0)||distance2(want,test)){free=false;break;}}
+    if(free)rifts.push_back(found);
+   }
+   if(rifts.size()<4)continue;
+  }
   auto* pillar=Allocate(2,Pillars[kind],at.x,at.y,Game,room,1,0,0,nullptr);if(!pillar)continue;
   if(Arena::Level(pillar)!=Arena::Level(player)){remove(pillar);continue;}
-  Event e;e.state.kind=Kind(kind);e.state.area=Arena::Level(player);e.state.center=at;e.state.lastSeen=now;e.state.rifts={at,Point{at.x+12,at.y+7},Point{at.x-12,at.y+7}};e.pillar=Barbarian::Id(pillar);Events.push_back(e);auto index=unsigned(Events.size()-1);
-  if(kind==1){auto& event=Events.back();event.state.activate(now);event.queued=9;for(auto q:event.state.rifts)visual(player,event,q,Durations[kind]*TicksPerSecond);for(int edge=0;edge<2;++edge)for(int k=1;k<4;++k){auto a=event.state.rifts[edge],b=event.state.rifts[edge+1];visual(player,event,{a.x+(b.x-a.x)*k/4,a.y+(b.y-a.y)*k/4},Durations[kind]*TicksPerSecond);}}
+  Event e;e.state.kind=Kind(kind);e.state.area=Arena::Level(player);e.state.center=at;e.state.lastSeen=now;e.state.rifts=std::move(rifts);e.pillar=Barbarian::Id(pillar);Events.push_back(e);auto index=unsigned(Events.size()-1);
+  if(kind==1){auto& event=Events.back();event.state.activate(now);
+   for(auto q:event.state.rifts){int count=5+random(Seed)%6;event.remaining.push_back(count);event.queued+=count;visual(player,event,q,Durations[kind]*TicksPerSecond);}
+  }
   log("placed",e.state.area,kind);return true;
  }return false;
 }
 inline void frame(void* game){
  if(!game||!Arena::Enabled||!Arena::Level||!Allocate||!MonsterRuntime::Spawn||!Assassin::SetTarget)return;
  unsigned now=Ramp::Frame(game);LeagueStorage::frame(game,now);
- if(Game!=game||now<Last){Game=game;Events.clear();Mobs.clear();Deaths.clear();Retirements.clear();Visited={};Pending={};Attempts={};RetryAt={};Next=0;Seed=unsigned(GetTickCount())^now;Testing=readTest();log(Testing?"session TEST Blood Moor enabled":"session random encounters enabled",0,-1);}
+ if(Game!=game||now<Last){Game=game;Events.clear();Mobs.clear();Deaths.clear();Retirements.clear();Visited={};EntryKnown={};Entry={};Pending={};Attempts={};RetryAt={};Next=0;Seed=unsigned(GetTickCount())^now;Testing=readTest();log(Testing?"session TEST Blood Moor enabled":"session random encounters enabled",0,-1);}
+ LeagueTraits::Frame(game);
  Last=now;if(now<Next)return;Next=now+5;
  for(auto it=Retirements.begin();it!=Retirements.end();){auto* u=Curses::Find(game,it->type,it->id);if(u){if(same(u,it->cls))remove(u);it=Retirements.erase(it);}else ++it;}
  std::vector<unsigned> players;AuraFeatures::Units(game,0,[&](void* p){if(MonsterRuntime::Living(p))players.push_back(Barbarian::Id(p));});
  for(auto id:players){auto* p=Curses::Find(game,0,id);if(!p)continue;int area=Arena::Level(p);if(!eligible(area)||now<100)continue;
-  if(!Visited[area]){Visited[area]=true;
+  if(!Visited[area]){Visited[area]=true;EntryKnown[area]=true;Entry[area]=position(p);
    if(Testing&&area==2)Pending[area]=7;
    else Pending[area]=rollMechanics(Seed);
    log("independent roll mask",area,int(Pending[area]));
    if(Pending[area])log("placement queued",area,-1);
   }
   if(!Pending[area]||now<RetryAt[area])continue;
+  if(!Testing&&!awayFromEntry(area,position(p)))continue;
   RetryAt[area]=now+50;++Attempts[area];
   for(int kind=0;kind<3;++kind)if(Pending[area]&(1u<<kind)){
    if(place(p,kind,now,kind*2)){Pending[area]&=~(1u<<kind);}
@@ -127,9 +155,10 @@ inline void frame(void* game){
  }
  auto deaths=std::move(Deaths);Deaths.clear();
  for(auto& d:deaths){
+  if(auto info=LeagueTraits::Info(d.cls);info&&info->trait==LeagueTraits::Child){Mobs.erase(std::remove_if(Mobs.begin(),Mobs.end(),[&](auto& m){return m.id==d.id&&m.cls==d.cls;}),Mobs.end());continue;}
   auto it=std::find_if(Mobs.begin(),Mobs.end(),[&](auto& m){return m.id==d.id&&m.cls==d.cls;});
   if(it!=Mobs.end()){auto& e=Events[it->event];bool beyond=e.state.kind==Kind::Beyond;++e.state.killed;Mobs.erase(it);if(beyond)continue;} // Night/Breach feed Beyond, Beyond itself cannot recurse.
-  for(auto& e:Events)if(e.state.area==d.area&&e.state.clustered(d.p,now)){e.state.center=d.p;e.queued+=e.state.groups%4==0?1:4;log("Beyond cluster",d.area,2);}
+  for(auto& e:Events)if(e.state.area==d.area&&e.state.clustered(d.p,now)){e.state.center=d.p;e.queued+=beyondCount(Seed,e.state.groups);log("Beyond cluster",d.area,2);}
  }
  
  for(unsigned i=0;i<Events.size();++i){auto& e=Events[i];auto& s=e.state;if(s.phase==Phase::Complete)continue;
@@ -139,19 +168,22 @@ inline void frame(void* game){
   if(s.phase==Phase::Waiting){auto* pillar=Curses::Find(game,2,e.pillar);if(same(pillar,Pillars[int(s.kind)])&&static_cast<unsigned*>(pillar)[3]!=0){s.activate(now);log("activated",s.area,int(s.kind));}else continue;}
   if(s.expired(now)){finish(i);continue;}
   if(s.kind==Kind::Night){
-   if(now>=s.next&&s.spawned<180){s.next=now+75;e.queued=std::min(e.queued+6,12);++s.stage;}
-  }else if(s.kind==Kind::Breach&&e.queued==0&&living(i)==0){
-   if(s.stage>=3){finish(i);continue;}++s.stage;e.queued=s.stage==3?3:12;
+   if(now>=s.next&&s.spawned<180){++s.stage;s.next=s.started+nightSpawnOffset(s.stage);e.queued=std::min(e.queued+6,12);}
+  }else if(s.kind==Kind::Breach&&e.queued==0&&living(i)==0&&!LeagueTraits::Busy(i)){
+   finish(i);continue;
   }
   if(now>=e.retry){e.retry=now+10;
-   for(int count=0;count<4&&e.queued>0&&living(i)<MaxLiving;++count){
-    int variant=int(random(Seed)%VariantCounts[int(s.kind)]),rank=0;Point at=s.center;
+   for(int count=0;count<4&&e.queued>0&&living(i)<eLimit(i);++count){
+    int variant=int(random(Seed)%VariantCounts[int(s.kind)]),rank=0,rift=-1;Point at=s.center;
     if(s.kind==Kind::Night){at=position(player);at.x+=3*(int(random(Seed)%25)-12);at.y+=3*(int(random(Seed)%25)-12);rank=s.stage>=20&&random(Seed)%20==0?2:random(Seed)%7==0?1:0;}
-    if(s.kind==Kind::Breach){at=s.rifts[(s.spawned+count)%3];rank=s.stage==3?2:s.stage>0?1:0;}
+    if(s.kind==Kind::Breach){
+     for(unsigned n=0;n<s.rifts.size();++n){unsigned slot=e.cursor++%s.rifts.size();if(e.remaining[slot]>0){rift=int(slot);break;}}
+     if(rift<0)break;at=s.rifts[rift];rank=1;
+    }
     if(s.kind==Kind::Beyond)rank=s.groups%4==0?2:s.groups>4?1:0;
     at.x+=int(random(Seed)%5)-2;at.y+=int(random(Seed)%5)-2;
     if(rank>0&&random(Seed)%4!=0)rank=0; // 75% fewer elite promotions in every mechanic.
-    if(spawn(player,i,at,rank,variant))--e.queued;
+    if(spawn(player,i,at,rank,variant)){--e.queued;if(rift>=0)--e.remaining[rift];}
    }
   }
   // Continuously pursue players in the encounter area, including across rooms.
@@ -167,7 +199,18 @@ inline void frame(void* game){
   if(dark&&now%25<5&&Curses::OriginalApply){Curses::Curse effect{p,p,0,1,50,80,-100,DarknessState,nullptr};Curses::OriginalApply(&effect);}else if(!dark)AuraBuffs::Expire(game,p,DarknessState);
  }
 }
+inline void BindTraits(){
+ LeagueTraits::TrackChild=[](void* u,unsigned event){if(event<Events.size()&&Events[event].state.phase==Phase::Active)Mobs.push_back({Barbarian::Id(u),int(static_cast<unsigned*>(u)[1]),event,position(u)});};
+ Arena::LeagueClass=[](int cls){return LeagueTraits::Kind(cls)>=0;};
+ Arena::LeaguePrepareClass=LeagueTraits::Choose;
+ Arena::LeagueSpawned=[](void* u){LeagueTraits::Attach(Arena::Game,u,Arena::Player());};
+ Arena::LeagueBusy=[](){return LeagueTraits::Busy(~0u);};
+ Arena::PrepareLeagueWave=[](){int kind=std::clamp(Arena::Current.bonuses[int(Arena::Mod::LeagueWave)]-1,0,2);for(auto& cls:Arena::WaveClasses)cls=Classes[kind][0][Arena::Current.random()%VariantCounts[kind]];};
+}
 inline bool install(const D2RL::PluginContext* c){
+ RoomArea=reinterpret_cast<D2RL::Reimplementations::GetLevelIdFromRoomContextFn>(GetProcAddress(GetModuleHandleW(L"D2RCore.dll"),MAKEINTRESOURCEA(2001)));
+ if(!RoomArea)return false;
+ BindTraits();
  if(!LeagueMap::install(c))c->LogInfo("League colored map markers unavailable: native/overlay contract mismatch.");
  if(!LeagueStorage::install(c))c->LogInfo("League orb storage unavailable: native contract mismatch.");
  const unsigned char operate[]={0x40,0x53,0x48,0x83,0xec,0x40,0x48,0x8b,0xd9,0x48,0x8b,0x49,0x08};

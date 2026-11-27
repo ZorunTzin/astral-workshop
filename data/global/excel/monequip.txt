@@ -69,3 +69,5 @@ workshop_astral_guardian		0	kit	larm	6							0
 workshop_astral_guardian		0	hlm	head	6							0
 workshop_ancientbarb1	1	0	crs	rarm	2							0
 workshop_ancientbarb2	1	0	tax	rarm	2	tax	larm	2				0
+workshop_unity_amazon	1	0	lbw	rarm	2							0
+workshop_unity_amazon	1	0	lea	tors	2							0

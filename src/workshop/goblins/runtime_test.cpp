@@ -23,7 +23,7 @@ int main(){
  Curses::Find=GFind;Curses::X=GX;Curses::Y=GY;SoulHarvest::Room=GRoom;Arena::Level=GLevel;Arena::Enabled=true;
  Barbarian::RoomDelete=GRoomDelete;Pulse::OriginalCreate=GPortal;Pulse::FilterCreate=nullptr;Pulse::AfterCreate=nullptr;Amazon::PublishMissiles=nullptr;Barbarian::ModeInfo=GInfo;Barbarian::ModeChange=GMove;Barbarian::DeleteUnit=GDelete;MonsterRuntime::Spawn=GSpawn;
  void* ptr=&player;std::memcpy(game+0x2230+8*(player.id&127),&ptr,8);Clean();
- assert(Goblins::Spawn(&player,2,100,0));auto id=serial;auto& goblin=mobs.at(id);
+ assert(Goblins::Spawn(&player,2,100,0));auto id=serial;auto& goblin=mobs.at(id);assert(goblin.stats[12]==Goblins::AreaLevels[std::min(2,int(static_cast<unsigned char*>(game)[0x104]))][2]);
  Tick(105);assert(moves==1&&movedMode==2);assert((movedX-goblin.x)*(goblin.x-player.x)+(movedY-goblin.y)*(goblin.y-player.y)>0);
  Tick(300);assert(movedMode==1&&Goblins::Runners[0].escape.channel);assert(PortalCount()==1);goblin.stats[6]-=100;Tick(305);assert(!Goblins::Runners[0].escape.channel&&movedMode==2);
  assert(PortalCount()==0);Tick(430);assert(Goblins::Runners[0].escape.channel);Tick(505);assert(deletes==1&&Goblins::Runners.empty()&&PortalCount()==0&&removalNotices==1);
@@ -80,7 +80,7 @@ int main(){
  assert(!Arena::BossWave(Arena::Current)&&Arena::WaveCount(Arena::Current)==Arena::Current.count());
  player.room=166;Arena::Pending=2;Arena::Enemies.clear();Goblins::SpawnTrialWave(&player,100);
  assert(Arena::Pending==0&&Arena::Current.phase==Arena::Phase::Fighting&&Arena::Enemies.size()==2&&Goblins::TrialWaveBusy());
- for(auto& r:Goblins::Runners){assert(r.trialWave&&Goblins::GoblinClass(r.cls));assert(mobs[r.id].stats[12]==109);}
+ for(auto& r:Goblins::Runners){assert(r.trialWave&&Goblins::GoblinClass(r.cls));assert(mobs[r.id].stats[12]==114);}
  Tick(300);Tick(375);assert(!Goblins::TrialWaveBusy());
  Clean();::Frame(100);player.room=166;Arena::Current.phase=Arena::Phase::Fighting;
  assert(Goblins::Spawn(&player,166,100,6,true));id=serial;Notify(id,Goblins::Classes[6],166);mobs.erase(id);Tick(105);

@@ -3,13 +3,21 @@
 #include <set>
 #include <cstdio>
 int main(){using namespace Arena;
- Run r;r.start(1,9,123);assert(r.lifePercent()==120&&r.damagePercent()==120&&!r.clear());
+ // Statistical check of the actual extra-roll generator, including fractional tiers.
+ for(int tier=1;tier<=5;++tier){Run loot;loot.start(tier,1,9876);int total=0;for(int i=0;i<100000;++i)total+=1+loot.extraLootRolls();assert(std::abs(total-1000*loot.lootRollPercent())<1000);}
+ Run speed;speed.wave=1;assert(speed.speedPercent()==20);speed.wave=10;assert(speed.speedPercent()==47);
+ Run r;r.start(1,9,123);assert(r.lifePercent()==200&&r.damagePercent()==200&&!r.clear());
  r.phase=Phase::Fighting;assert(r.clear()&&!r.clear());auto score=r.score;auto epoch=r.epoch;
- std::set<int> unique;for(auto o:r.offers){unique.insert(int(o.mod));assert(o.tier>=0&&o.tier<5&&o.value>0&&o.reward>0);if(int(o.mod)<3)assert(o.reward==(10<<o.tier));}assert(unique.size()==3);
+ std::set<int> unique;for(auto o:r.offers){unique.insert(int(o.mod));assert(o.tier>=0&&o.tier<5&&o.value>0&&o.reward>0);if(int(o.mod)<3)assert(o.reward==(5<<o.tier));}assert(unique.size()==3);
  assert(!r.choose(3,epoch)&&!r.choose(0,epoch-1));assert(r.choose(0,epoch));assert(!r.choose(1,epoch)&&r.wave==2&&r.score==score);
  r.phase=Phase::Fighting;r.clear();assert(r.score>score);int full=r.score;assert(r.finish(true)&&r.score==full/2&&!r.finish(true));
  double before=100;for(int i=1;i<=5;++i){Run x;x.start(i,0,1);assert(x.lifePercent()>=before*1.19);before=x.lifePercent();for(int m=0;m<6;++m)for(int t=1;t<5;++t)assert(x.value(Mod(m),t)>x.value(Mod(m),t-1));}
  Run x;x.start(5,0,1);for(int i=0;i<100;++i){x.phase=Phase::Fighting;assert(x.clear());assert(x.choose(i%3,x.epoch));}assert(x.rewards()<=30&&x.maxRune()<=24&&x.lifePercent()<=100000&&x.damagePercent()<=100000);
+ Run league;league.start(1,1,143);int appearances=0;
+ for(int i=0;i<10000;++i){league.roll();for(auto o:league.offers)if(o.mod==Mod::LeagueWave){assert(o.tier==2&&o.value>=1&&o.value<=3);++appearances;}}
+ assert(appearances>200&&appearances<400);league.banned[int(Mod::LeagueWave)]=true;
+ for(int i=0;i<1000;++i){league.roll();for(auto o:league.offers)assert(o.mod!=Mod::LeagueWave);}
+ league.banned[int(Mod::LeagueWave)]=false;league.phase=Phase::Choice;league.offers[0]={Mod::LeagueWave,2,1,20};assert(league.choose(0,league.epoch));assert(league.bonuses[int(Mod::LeagueWave)]==1);league.phase=Phase::Fighting;assert(league.clear()&&league.bonuses[int(Mod::LeagueWave)]==0);
  Run g;g.start(2,0,44);int goblinOffers=0;
  for(int i=0;i<10000;++i){g.roll();for(auto o:g.offers)if(o.mod==Mod::LootGoblinWave){++goblinOffers;assert(o.tier==4&&o.value==1);}}
  assert(goblinOffers>40&&goblinOffers<160);

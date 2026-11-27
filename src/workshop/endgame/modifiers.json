@@ -1361,7 +1361,7 @@
   {
     "key": "EliteWave",
     "name": "Elite wave",
-    "effect": "Next wave: elites with one modifier each",
+    "effect": "Next wave: elites with difficulty-scaled modifiers",
     "base": 1,
     "cap": 1,
     "positive": false,
@@ -1524,6 +1524,26 @@
     ],
     "cap": 1,
     "positive": true,
+    "stats": [],
+    "kind": "wave",
+    "unit": "",
+    "uncapped": false,
+    "enabled": true
+  },
+  {
+    "key": "LeagueWave",
+    "name": "League invasion",
+    "effect": "Next wave: only monsters from one League mechanic",
+    "base": 1,
+    "tiers": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "cap": 1,
+    "positive": false,
     "stats": [],
     "kind": "wave",
     "unit": "",

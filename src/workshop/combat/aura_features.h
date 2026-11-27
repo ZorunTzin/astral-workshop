@@ -250,7 +250,12 @@ inline void Tick(void* game) {
 #include "../mythicals/runtime.h"
 #include "../leagues/effects.h"
 #include "amazon_masteries.h"
+#include "amazon_unity.h"
+#include "big_shot.h"
+#include "training_dummy.h"
 #include "shrines.h"
+#include "../mythicals/gull.h"
+#include "../mythicals/poe.h"
 namespace AuraBuffs {
 inline bool InstallFeatures(const D2RL::PluginContext* context) {
     const unsigned char expected[]={0x41,0x8b,0xc0,0x83,0xe0,0x7f};
@@ -267,31 +272,31 @@ inline bool InstallFeatures(const D2RL::PluginContext* context) {
     GuardianCombat::BindNativeSkills=true;
     GuardianCombat::ToggleState=reinterpret_cast<GuardianCombat::ToggleStateFn>(context->exeBase+0x3354c0);
     if(!RedemptionLife::Install(context))return false;
-    if(!Barbarian::Install(context)||!Assassin::Install(context)||!Amazon::Install(context))return false;
+    if(!Barbarian::Install(context)||!Assassin::Install(context)||!Amazon::Install(context)||!BigShot::Install(context))return false;
     if(!MonsterModifierSpells::Bind(context)||!MonsterModifiersNative::Install(context)||!MonsterRuntime::Install(context))return false;
     if(!Arena::Install(context)||!Goblins::Install(context))return false;
     if(!League::install(context))context->LogWarn("League encounters disabled: unsupported object API.");
-    FeatureFrame=[](void* game){WorkshopShrines::Frame(game);AmazonMasteries::frame(game);LeagueEffects::Frame(game);AuraFeatures::Tick(game);GuardianCombat::Tick(game);RedemptionLife::Tick(game);SetSelectors::Tick(game);Barbarian::Tick(game);Sorceress::Tick(game);Assassin::Frame(game);Amazon::Frame(game);Druid::Frame(game);MonsterRuntime::Frame(game);Arena::Frame(game);Goblins::Frame(game);League::frame(game);Mythicals::Frame(game);};
-    CustomCast=[](void* g,void* u,int s,int l){int mastery=AmazonMasteries::cast(g,u,s,l);if(mastery>=0)return mastery;int d=Druid::Cast(g,u,s,l);if(d>=0)return d;int r=Amazon::Cast(g,u,s,l);return r<0?Assassin::Cast(g,u,s,l):r;};
-    Curses::BeforeMissileTick=Amazon::BeforeTick;Curses::AfterMissileTick=Amazon::FinishTick;
+    FeatureFrame=[](void* game){AmazonUnity::Frame(game);BigShot::Frame(game);TrainingDummy::Frame(game);WorkshopShrines::Frame(game);Gull::Frame(game);PoeMythicals::Frame(game);AmazonMasteries::frame(game);LeagueEffects::Frame(game);AuraFeatures::Tick(game);GuardianCombat::Tick(game);RedemptionLife::Tick(game);SetSelectors::Tick(game);Barbarian::Tick(game);Sorceress::Tick(game);Assassin::Frame(game);Amazon::Frame(game);Druid::Frame(game);MonsterRuntime::Frame(game);Arena::Frame(game);Goblins::Frame(game);League::frame(game);Mythicals::Frame(game);};
+    CustomCast=[](void* g,void* u,int s,int l){int big=BigShot::Cast(g,u,s,l);if(big>=0)return big;int unity=AmazonUnity::Cast(g,u,s,l);if(unity>=0)return unity;int mastery=AmazonMasteries::cast(g,u,s,l);if(mastery>=0)return mastery;int d=Druid::Cast(g,u,s,l);if(d>=0)return d;int r=Amazon::Cast(g,u,s,l);return r<0?Assassin::Cast(g,u,s,l):r;};
+    Curses::BeforeMissileTick=[](void* g,void* m)noexcept{Amazon::BeforeTick(g,m);PoeMythicals::BeforeTick(g,m);};Curses::AfterMissileTick=[](void* g,unsigned id,int result)noexcept{Amazon::FinishTick(g,id,result);PoeMythicals::FinishTick(g,id,result);};
     Druid::NativeRaven=reinterpret_cast<SkillFn*>(context->exeBase+0x238ea00)[114];
     Sorceress::NativeMorph=reinterpret_cast<SkillFn*>(context->exeBase+0x238ea00)[116];
     Sorceress::NativeStorm=reinterpret_cast<SkillFn*>(context->exeBase+0x238ea00)[102];
     FeaturePulse=[](void* g,void* u,unsigned i,int l){return Druid::BuffPulse(g,u,i,l)||Amazon::BuffPulse(g,u,i,l)||Assassin::BuffPulse(g,u,i,l)||Sorceress::Pulse(g,u,i,l)||Barbarian::FeastPulse(g,u,i,l)||AuraFeatures::Pulse(g,u,i,l);};FeatureDisable=[](void* g,void* u,unsigned i){Druid::Disable(g,u,i);Assassin::Disable(g,u,i);Sorceress::Disable(g,u,i);AuraFeatures::Disable(g,u,i);};
-    Curses::AdditionalHitEffects=[](void* g,void* a,void* d,void* p){if(LeagueEffects::Depth)return;LeagueEffects::Hit(g,a,d,p);AuraFeatures::Hit(g,a,d,p);Barbarian::Hit(g,a,d,p);Sorceress::Hit(g,a,d,p);Assassin::HitEvent(g,a,d,p);Amazon::Hit(g,a,d,p);Druid::Hit(g,a,d,p);Mythicals::Hit(g,a,d,p);MonsterModifiersNative::Damage(g,a,d,p);MonsterRuntime::Damage(g,a,d,p);Arena::Damage(g,a,d,p);};
+    Curses::AdditionalHitEffects=[](void* g,void* a,void* d,void* p){if(LeagueEffects::Depth)return;LeagueEffects::Hit(g,a,d,p);AuraFeatures::Hit(g,a,d,p);Barbarian::Hit(g,a,d,p);Sorceress::Hit(g,a,d,p);Assassin::HitEvent(g,a,d,p);Amazon::Hit(g,a,d,p);AmazonUnity::Hit(g,a,d,p);Druid::Hit(g,a,d,p);Mythicals::Hit(g,a,d,p);MonsterModifiersNative::Damage(g,a,d,p);MonsterRuntime::Damage(g,a,d,p);Arena::Damage(g,a,d,p);LeagueTraits::Damage(g,a,d,p);};
     Curses::AdditionalIncomingHit=[](void* g,void* a,void* d,void* p){LeagueEffects::Before(g,a,d,p);AuraFeatures::IncomingHit(g,a,d,p);Barbarian::Before(g,a,d,p);};
     Curses::AdditionalMissileContext=Barbarian::ProjectileContext;
-    Curses::AdditionalMissileFilter=[](void* g,void* p) noexcept {return MonsterModifierSpells::BeforeCreate(g,p)&&MonsterRuntime::Projectile(g,p)&&Amazon::Filter(g,p)&&Barbarian::FilterProjectile(g,p);};
-    Curses::AdditionalMissileCreated=[](void* g,void* p,void* m) noexcept {Barbarian::ProjectileCreated(g,p,m);Sorceress::Projectile(g,p,m);Assassin::Projectile(g,p,m);Amazon::Created(g,p,m);Druid::Projectile(g,p,m);MonsterModifierSpells::Created(g,p,m);};
+    Curses::AdditionalMissileFilter=[](void* g,void* p) noexcept {return MonsterModifierSpells::BeforeCreate(g,p)&&MonsterRuntime::Projectile(g,p)&&Amazon::Filter(g,p)&&Barbarian::FilterProjectile(g,p)&&PoeMythicals::Filter(g,p);};
+    Curses::AdditionalMissileCreated=[](void* g,void* p,void* m) noexcept {Barbarian::ProjectileCreated(g,p,m);Sorceress::Projectile(g,p,m);Assassin::Projectile(g,p,m);Amazon::Created(g,p,m);Druid::Projectile(g,p,m);MonsterModifierSpells::Created(g,p,m);PoeMythicals::Created(g,p,m);};
     Curses::AdditionalAfterDamage=[](void* g,void* a,void* d,void* p){Arena::AfterDamage(g,a,d,p);Barbarian::After(g,a,d,p);MonsterRuntime::After(g,a,d,p);};
-    Curses::AdditionalIgnoreDamage=[](void* game,void* attacker,void* defender,void* packet){return Arena::IgnoreDamage(game,attacker,defender,packet)||Barbarian::IgnoreDamage(game,attacker,defender,packet)||MonsterRuntime::IgnoreDamage(game,attacker,defender,packet);};
+    Curses::AdditionalIgnoreDamage=[](void* game,void* attacker,void* defender,void* packet){return AmazonUnity::Ghost(defender)||Arena::IgnoreDamage(game,attacker,defender,packet)||Barbarian::IgnoreDamage(game,attacker,defender,packet)||MonsterRuntime::IgnoreDamage(game,attacker,defender,packet);};
     Curses::AdditionalWarCry=Barbarian::Applied;
     AfterNativePulse=[](void* g,void* u,unsigned i,int l){Barbarian::ShareAura(g,u,i,l);AuraFeatures::AfterPulse(g,u,i,l);};
     context->LogInfo("Monster phase 1 enabled: Extra Fast +200%, halved Magic Resistant bonus, extra elemental casts, multiplicative Stone Skin; champion variants unchanged");
     context->LogInfo("Druid 0.19.0 enabled: three reservations, native stone morph/ravens, cone/seed spells and companion effects");
     context->LogInfo("Amazon 0.19.0 enabled: four reservations, bounded split/return arrows, Pounce and javelin patterns");
     context->LogInfo("Paladin replacements enabled: efficiency, mastery, guardian, Retribution, Sanctified Ground");
-    if(!AmazonMasteries::install(context)||!WorkshopShrines::Install(context))return false;
+    if(!AmazonMasteries::install(context)||!WorkshopShrines::Install(context)||!Gull::Install(context)||!PoeMythicals::Install(context))return false;
     return true;
 }
 } // namespace AuraBuffs

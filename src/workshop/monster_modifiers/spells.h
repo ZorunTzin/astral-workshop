@@ -22,7 +22,16 @@ inline bool BeforeCreate(void*,void* raw) noexcept {
  return true;
 }
 inline std::vector<void*> CastMissiles;
-inline void Created(void*,void* raw,void* missile){if(!raw||!missile||CastMissiles.size()>=64)return;auto* p=static_cast<Pulse::Params*>(raw);if(Curses::Monster(p->owner)&&p->missile>=GiftedFireMissile&&p->missile<=EnchantedColdMissile){if(Depth)CastMissiles.push_back(missile);else if(Amazon::PublishMissiles){void* list[]={missile};Amazon::PublishMissiles(p->owner,list,1,nullptr,nullptr,0);}}}
+// Set the finished private lightning missile explicitly: native skill/monster
+// scaling must not multiply the early-game affix into a one-shot.
+inline int GiftedLightningDamage(int level){return 40+2*std::clamp(level,1,1000);}
+inline void BalanceGiftedLightning(Pulse::Params* p,void* missile){
+ if(!p||!missile||p->missile!=GiftedLightningMissile||!Curses::Monster(p->owner))return;
+ for(int stat:{21,22,48,49,54,55,57,58})Ramp::SetUnit(missile,stat,0,0);
+ const int damage=GiftedLightningDamage(Ramp::GetUnit(p->owner,12,0))*256;
+ Ramp::SetUnit(missile,50,damage,0);Ramp::SetUnit(missile,51,damage,0);
+}
+inline void Created(void*,void* raw,void* missile){if(!raw||!missile||CastMissiles.size()>=64)return;auto* p=static_cast<Pulse::Params*>(raw);BalanceGiftedLightning(p,missile);if(Curses::Monster(p->owner)&&p->missile>=GiftedFireMissile&&p->missile<=EnchantedColdMissile){if(Depth)CastMissiles.push_back(missile);else if(Amazon::PublishMissiles){void* list[]={missile};Amazon::PublishMissiles(p->owner,list,1,nullptr,nullptr,0);}}}
 constexpr int Skills[]={GiftedFire,GiftedLightning,GiftedCold,EnchantedChain,EnchantedCold};
 inline int Cast(void* game,void* monster,void* target,unsigned spell){
  if(Depth||spell>=5||!Learn||!Curses::Cast||!Assassin::GetTarget||!Assassin::SetTarget)return 0;

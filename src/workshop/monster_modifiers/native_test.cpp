@@ -58,6 +58,12 @@ int main(){
  Pulse::Params ordinary{};ordinary.missile=1;ordinary.owner=&player;auto original=ordinary;
  MonsterModifierSpells::BeforeCreate(game,&ordinary);assert(!std::memcmp(&ordinary,&original,sizeof(ordinary)));
  MonsterModifierSpells::Depth=0;MonsterModifierSpells::CastingMonster=MonsterModifierSpells::CastingTarget=nullptr;
+ // Final missile damage is bounded independently of inherited native values.
+ Pulse::Params gifted{};gifted.owner=&monster;gifted.missile=GiftedLightningMissile;
+ monster.stats[12]=5;testMissile.stats[50]=testMissile.stats[51]=999999;
+ MonsterModifierSpells::BalanceGiftedLightning(&gifted,&testMissile);
+ assert(GetUnit(&testMissile,50,0)==50*256&&GetUnit(&testMissile,51,0)==50*256);
+ monster.stats[12]=105;MonsterModifierSpells::BalanceGiftedLightning(&gifted,&testMissile);assert(GetUnit(&testMissile,50,0)==250*256);
  puts("PASS: cold/lightning start at monster, fly toward player, publish without victim anchor; later bounces and unrelated missiles unchanged.");
  puts("PASS: +200% replaces native Extra Fast contribution; half elemental resistance bonus; Stone Skin removes its resistance initializer; champions unchanged; invalid spell rejected.");
 }

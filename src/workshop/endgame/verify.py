@@ -35,7 +35,7 @@ for folder in ('data/global/excel','data/global/excel/base'):
     original=tc[source[k]]['Item1'] if source[k].startswith('Ws Seal World ') else source[k]
     wrapper=tc[r[k]];assert wrapper['Item1']==original and wrapper['Picks']=='-4'
     assert [wrapper['Item'+str(i)] for i in (2,3,4)]==['Ws Trial Runes','Workshop Trial Orb Materials','Ws Trial Special']
-  assert tc['Ws Trial Runes']['NoDrop']=='3980' and tc['Ws Trial Materials']['NoDrop']=='24975' and tc.get('Ws Trial Special Original',tc['Ws Trial Special'])['NoDrop']=='495'
+  assert tc['Ws Trial Runes']['NoDrop']=='3980' and tc['Ws Trial Materials']['NoDrop']=='497' and tc.get('Ws Trial Special Original',tc['Ws Trial Special'])['NoDrop']=='495'
  assert any(r['state']=='ws_arena_blessing' and int(r['*ID'])==meta['state'] for r in rows('states'))
 b=(root/'data/global/tiles/workshop/astral-arena.ds1').read_bytes();assert struct.unpack_from('<8I',b)==(18,32,32,2,0,0,1,1)
 n=33*33;assert len(b)==32+n*4*4+8;assert b[-8:]==bytes(8)
@@ -67,11 +67,14 @@ import re
 layout=json.loads(''.join(re.findall(r'R"trial\((.*?)\)trial"',(root/'workshop/endgame/panel_layout.h').read_text(),re.S)))
 assert layout['type']=='Panel' and layout['name']=='workshop-curses/TrialChoices'
 offers={w['name']:w for w in layout['children'] if w['name'].startswith('Offer_')}
-catalog=json.loads((root/'workshop/endgame/modifiers.json').read_text());assert len(offers)==3*5*len(catalog)*5
+catalog=json.loads((root/'workshop/endgame/modifiers.json').read_text());assert len(offers)==3*5*(len(catalog)-1)*5
 for slot in range(3):
  for stage in range(1,6):
   for mod in range(len(catalog)):
-   for tier in range(5):assert not offers[f'Offer_{slot}_{stage}_{mod}_{tier}']['fields']['visible']
+   for tier in range(5):
+    if catalog[mod]['name']=='League invasion':
+     for league in range(1,4):assert any(w['name']==f'LeagueOffer_{slot}_{stage}_{mod}_{tier}_{league}' and not w['fields']['visible'] for w in layout['children'])
+    else:assert not offers[f'Offer_{slot}_{stage}_{mod}_{tier}']['fields']['visible']
 assert sum(w['type']=='ButtonWidget' for w in layout['children'])==9
 for name in ('trial-panel','trial-card','trial-finish','trial-active'):
  rel='data/hd/global/ui/Workshop/'+name+'.sprite'
@@ -114,3 +117,14 @@ assert len(headers)==6
 assert all(w['fields']['rect']['y']+w['fields']['rect']['height'] < -400+115 for w in headers)
 assert all('CHARACTER BONUS' not in w['fields']['text'] and 'MONSTER MODIFIER' not in w['fields']['text'] and '+10% life / +2% damage' in w['fields']['text'] for w in layout['children'] if w['name'].startswith('Offer_'))
 print('PASS: category headers above divider; all offers disclose universal monster burden.')
+
+# Explicit Trial-only groups; Worldstone shard probability is 1/500.
+for folder in ('data/global/excel','data/global/excel/base'):
+ import csv
+ tc={r['Treasure Class']:r for r in csv.DictReader((root/folder/'treasureclassex.txt').open(encoding='utf-8-sig'),delimiter='\t')}
+ material=tc['Ws Trial Materials']
+ assert material['NoDrop']=='497' and material['Picks']=='1'
+ for i,(name,codes) in enumerate([('Ws Trial Shards',{f'xa{j}' for j in range(1,6)}),('Ws Trial Keys',{'pk1','pk2','pk3'}),('Ws Trial Statues',{f'ua{j}' for j in range(1,6)})],1):
+  assert material['Item'+str(i)]==name and material['Prob'+str(i)]=='1'
+  group=tc[name];assert {group['Item'+str(j)] for j in range(1,11) if group['Item'+str(j)]}==codes
+print('PASS: Trial-only keys and all five Ancient statues, category odds equal to Worldstone Shards.')

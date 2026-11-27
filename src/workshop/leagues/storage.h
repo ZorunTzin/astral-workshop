@@ -28,7 +28,9 @@ inline unsigned NextTick=0,LastTick=0,Deposited=0;inline void* Session=nullptr;
 struct GroundItem {unsigned id,code;};
 inline std::vector<GroundItem> Ground;
 inline bool currency(unsigned code){
- if(code==D2RL::Items::MakeItemCode('o','o','i'))return true;
+ // All ordinary crafting orbs; trial currencies use their native Materials slots.
+ for(const char* orb:{"ka3","oos","ooc","ooa","ooi","ooe","oor","Woa","Wob","Woc","Wod","Woe","Wof","Wog","Wt1","Wt2","Wt3","Wt4","Wt5"})
+  if(code==D2RL::Items::MakeItemCode(orb[0],orb[1],orb[2]))return true;
  for(char m='n';m<='p';++m)for(char row='1';row<='4';++row)
   if(code==D2RL::Items::MakeItemCode('L',m,row))return true;
  // Exact rune and gem codes from the Workshop misc table.

@@ -17,7 +17,7 @@ void __fastcall LDelete(void*,void* p){++removed;units.erase(static_cast<Unit*>(
 void __fastcall LTarget(void*,void*){++targets;}
 void* __fastcall LApply(void* raw){auto& c=*static_cast<Curses::Curse*>(raw);auto* list=static_cast<List*>(Apply(raw));list->stats[c.stat]=c.value;return list;}
 void tick(unsigned n){Frame(n);League::frame(game);}
-void reset(){units.clear();League::Events.clear();League::Mobs.clear();League::Deaths.clear();League::Retirements.clear();League::Game=game;League::Last=100;League::Next=0;League::Testing=false;League::Visited.fill(true);League::Pending={};League::RetryAt={};League::Attempts={};player.room=2;player.lists.clear();player.mode=1;player.stats[6]=1000;Frame(100);}
+void reset(){units.clear();League::Events.clear();League::Mobs.clear();League::Deaths.clear();League::Retirements.clear();League::Game=game;LeagueTraits::Actors.clear();LeagueTraits::Game=game;LeagueTraits::Last=100;League::Last=100;League::Next=0;League::Testing=false;League::Visited.fill(true);League::EntryKnown={};League::Pending={};League::RetryAt={};League::Attempts={};player.room=2;player.lists.clear();player.mode=1;player.stats[6]=1000;Frame(100);}
 void kill(unsigned id){auto& u=units.at(id);u.mode=12;u.stats[6]=0;D2RL::Lifecycle::MonsterDeathEvent e{};e.structSize=sizeof(e);e.monster={D2RL::Lifecycle::UnitType::Monster,id,u.cls,0};e.levelId=u.room;League::death(nullptr,&e,nullptr);}
 
 Unit clientPlayer;int clientInventoryToken=0;bool clientOnly=false;
@@ -62,7 +62,7 @@ void storageTests(){
  collect(game,&player);assert(depositCalls==24&&backpack.size()==1);backpack.clear();
 
  // Gems/runes use the same ground-only path; withdrawal never qualifies.
- for(const char* code:{"ooi","r01","r33","gzv","gly","glb","glg","glr","glw","skz","1am"}){
+ for(const char* code:{"ka3","oos","ooc","ooa","ooi","ooe","oor","Woa","Wob","Woc","Wod","Woe","Wof","Wog","Wt1","Wt2","Wt3","Wt4","Wt5","r01","r33","gzv","gly","glb","glg","glr","glw","skz","1am"}){
   unsigned c=D2RL::Items::MakeItemCode(code[0],code[1],code[2]);assert(currency(c));
   auto* u=static_cast<Unit*>(LAlloc(4,c,0,0,game,LRoom(&player),1,0,0,nullptr));backpack.push_back(u->id);
   auto* data=itemData[u->id].data();std::memcpy(reinterpret_cast<unsigned char*>(u)+0x10,&data,8);
@@ -71,6 +71,7 @@ void storageTests(){
   u->mode=0;ptr=nullptr;std::memcpy(game+0x2e30+8*(u->id&127),&ptr,8);
   collect(game,&player);assert(backpack.empty()&&depositCalls==before+1&&Ground.empty());
  }
+ for(char c='1';c<='5';++c)assert(!currency(D2RL::Items::MakeItemCode('W','a',c))); // Rolled seals must retain individual modifiers.
  assert(!currency(D2RL::Items::MakeItemCode('h','p','1')));
  Deposit=nullptr;units.clear();
  std::puts("PASS: all 12 orb codes; absent bank and failed deposit retain items; retry deposits once without duplicates.");
@@ -81,21 +82,36 @@ void __fastcall EInit(void*,int,int){++eliteInitializers;}
 int __fastcall ERoll(void*,void*,unsigned char*,void* weights){assert(weights);return 6;}
 void* SLocal(){return &clientPlayer;}
 void* __fastcall SDestination(void* p){assert(p==&clientPlayer);return LFind(game,0,900);}
+#ifdef LEAGUE_TEST_EMBED
+#define main ExistingLeagueTests
+#endif
 int main(){
- ExistingAuraTests();Curses::Find=LFind;Curses::X=LX;Curses::Y=LY;Curses::OriginalApply=LApply;SoulHarvest::Room=LRoom;Arena::Level=LLevel;Arena::Enabled=true;Barbarian::RoomDelete=LNotice;Barbarian::DeleteUnit=LDelete;Assassin::SetTarget=LTarget;MonsterRuntime::Spawn=LSpawn;League::Allocate=LAlloc;League::RoomAt=LAt;League::FreePosition=LFree;Pulse::OriginalCreate=LMissile;Pulse::FilterCreate=nullptr;Pulse::AfterCreate=nullptr;Amazon::PublishMissiles=nullptr;
- player={};player.id=10;void* pp=&player;std::memcpy(game+0x2230+8*(player.id&127),&pp,8);reset();
+ ExistingAuraTests();Curses::Find=LFind;Curses::X=LX;Curses::Y=LY;Curses::OriginalApply=LApply;SoulHarvest::Room=LRoom;Arena::Level=LLevel;Arena::Enabled=true;Barbarian::RoomDelete=LNotice;Barbarian::DeleteUnit=LDelete;Assassin::SetTarget=LTarget;MonsterRuntime::Spawn=LSpawn;League::Allocate=LAlloc;League::RoomArea=[](const void* room) noexcept{return int(uintptr_t(room));};League::RoomAt=LAt;League::FreePosition=LFree;Pulse::OriginalCreate=LMissile;Pulse::FilterCreate=nullptr;Pulse::AfterCreate=nullptr;Amazon::PublishMissiles=nullptr;
+ player={};player.id=10;void* pp=&player;std::memcpy(game+0x2230+8*(player.id&127),&pp,8);reset();League::BindTraits();
  // A genuine native object-mode change is required to activate Night.
  assert(League::place(&player,0,100,0));assert(units.at(League::Events[0].pillar).mode==0&&units.at(League::Events[0].pillar).room==player.room);tick(105);assert(League::Mobs.empty());auto id=League::Events[0].pillar;units[id].mode=1;tick(125);assert(League::Events[0].state.phase==League::Phase::Active&&!League::Mobs.empty());assert(GetUnit(&player,80,0)==-100);assert(targets>0);
  // Leaving the event area removes darkness immediately and retires the event after grace.
  player.room=1;tick(130);Frame(131);assert(GetUnit(&player,80,0)==0);tick(400);assert(League::Events[0].state.phase==League::Phase::Complete&&League::Mobs.empty());
- // Initial breach defenders, stronger waves and boss wave; event ends only after all are dead.
- reset();assert(League::place(&player,1,100,0));assert(League::Events[0].visuals.size()==9);
- unsigned now=110;
- for(int stage=0;stage<4;++stage){for(int n=0;n<15;++n){tick(now);now+=10;}assert(League::Events[0].state.stage==stage);assert(!League::Mobs.empty());auto mobs=League::Mobs;for(auto& m:mobs){int rank=stage==3?2:stage>0?1:0;assert(std::find(std::begin(League::Classes[1][rank]),std::end(League::Classes[1][rank]),m.cls)!=std::end(League::Classes[1][rank])||std::find(std::begin(League::Classes[1][0]),std::end(League::Classes[1][0]),m.cls)!=std::end(League::Classes[1][0]));kill(m.id);}tick(now);now+=10;}
- assert(League::Events[0].state.phase==League::Phase::Complete&&League::Events[0].visuals.empty());
+ // Distributed rifts retain per-rift budgets and finish only after every defender dies.
+ reset();assert(League::place(&player,1,100,0));
+ auto& breach=League::Events[0];assert(breach.state.rifts.size()>=4&&breach.state.rifts.size()<=10);
+ assert(breach.visuals.size()==breach.state.rifts.size());int total=0;
+ for(unsigned i=0;i<breach.remaining.size();++i){assert(breach.remaining[i]>=5&&breach.remaining[i]<=10);total+=breach.remaining[i];
+  for(unsigned j=0;j<i;++j)assert(League::distance2(breach.state.rifts[i],breach.state.rifts[j])>=48*48);}
+ blocked=true;tick(105);assert(breach.queued==total&&League::Mobs.empty());blocked=false;
+ for(unsigned now=110;now<600;now+=10)tick(now);
+ assert(int(League::Mobs.size())==total&&breach.queued==0);
+ auto defenders=League::Mobs;for(auto m:defenders)kill(m.id);tick(610);
+ for(unsigned f=620;f<700&&breach.state.phase!=League::Phase::Complete;f+=10){auto children=League::Mobs;for(auto m:children)if(units.count(m.id)&&units[m.id].stats[6]>0)kill(m.id);tick(f);}
+ assert(breach.state.phase==League::Phase::Complete&&breach.visuals.empty());
+ // Merely waiting at the area entrance cannot place a normal encounter.
+ reset();League::EntryKnown[2]=true;League::Entry[2]={player.x,player.y};League::Pending[2]=2;
+ tick(110);assert(League::Events.empty()&&League::Attempts[2]==0);
+ player.x+=160;tick(170);assert(League::Events.size()==1);
+ for(auto q:League::Events[0].state.rifts)assert(League::awayFromEntry(2,q));player.x-=160;
  // Beyond needs five nearby recent ordinary kills. Its own kills cannot recursively spawn.
  reset();assert(League::place(&player,2,100,0));units[League::Events[0].pillar].mode=1;tick(105);
- for(int n=0;n<5;++n){auto* u=static_cast<Unit*>(LAlloc(1,19,20+n,20,game,LRoom(&player),1,1,0,nullptr));kill(u->id);}tick(115);assert(League::Events[0].state.groups==1&&League::Mobs.size()==4);
+ for(int n=0;n<5;++n){auto* u=static_cast<Unit*>(LAlloc(1,19,20+n,20,game,LRoom(&player),1,1,0,nullptr));kill(u->id);}tick(115);assert(League::Events[0].state.groups==1&&(League::Mobs.size()==4||(League::Mobs.size()>=10&&League::Mobs.size()<=15)));
  auto mobs=League::Mobs;for(auto& m:mobs)kill(m.id);tick(120);assert(League::Events[0].state.groups==1);
  // Other League deaths contribute to Beyond clusters.
  for(int kind:{0,1}){reset();assert(League::place(&player,2,100,0));units[League::Events[0].pillar].mode=1;tick(105);assert(League::place(&player,kind,106,0));
@@ -104,6 +120,10 @@ int main(){
  // Unloaded entities are retired when they become visible again; recycled IDs stay safe.
  reset();assert(League::place(&player,0,100,0));auto hidden=units.at(League::Events[0].pillar);units.erase(hidden.id);League::finish(0);assert(League::Retirements.size()==1);units[hidden.id]=hidden;tick(110);assert(!units.count(hidden.id)&&League::Retirements.empty());
  reset();assert(League::place(&player,0,100,0));hidden=units.at(League::Events[0].pillar);units.erase(hidden.id);League::finish(0);hidden.cls+=1;units[hidden.id]=hidden;tick(110);assert(units.count(hidden.id)&&League::Retirements.empty());
+ // Thirty six-monster waves fit exactly into the new 45-second duration.
+ assert(League::Durations[0]==45);
+ unsigned waves=0;for(unsigned f=0;f<45*25;++f)if(f==League::nightSpawnOffset(waves))++waves;
+ assert(waves==30&&waves*6==180&&League::nightSpawnOffset(30)==1125);
  // Night never exceeds the active monster cap, and timeout removes all event entities.
  reset();assert(League::place(&player,0,100,0));units[League::Events[0].pillar].mode=1;for(unsigned n=105;n<2300;n+=5){tick(n);assert(League::Mobs.size()<=League::MaxLiving);}tick(2400);assert(League::Mobs.empty()&&League::Events[0].state.phase==League::Phase::Complete);
  // Native free-position search writes the second argument, not a separate output.
@@ -127,5 +147,5 @@ int main(){
  // Waiting pillars survive leaving the area to scout another waypoint.
  reset();assert(League::place(&player,2,100,0));player.room=1;tick(400);assert(League::Events[0].state.phase==League::Phase::Waiting);
  storageTests();
- std::puts("PASS: pillar activation, darkness restoration, breach escalation/completion, Beyond spatial/time windows and no recursion, blocked positions, area exclusions, session reset.");
+ std::puts("PASS: pillar activation, darkness restoration, breach escalation/completion, Beyond spatial/time windows and no recursion, blocked positions, area exclusions, session reset.");return 0;
 }

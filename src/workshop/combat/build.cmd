@@ -139,7 +139,15 @@ rem League encounters use the same authoritative combat frame and lifecycle serv
 pushd "%~dp0"
 cl /nologo /std:c++latest /EHsc /O2 /MT /I ..\SDK\include ..\leagues\runtime_test.cpp /Fe:league_runtime_test.exe
 if not "!errorlevel!"=="0" exit /b 1
+cl /nologo /std:c++latest /EHsc /O2 /MT /I ..\SDK\include ..\leagues\traits_test.cpp /Fe:league_traits_test.exe
+if not "!errorlevel!"=="0" exit /b 1
+league_traits_test.exe
+if not "!errorlevel!"=="0" exit /b 1
 league_runtime_test.exe
+if not "!errorlevel!"=="0" exit /b 1
+cl /nologo /std:c++latest /EHsc /O2 /MT /I ..\SDK\include ..\leagues\traits_test.cpp /Fe:league_traits_test.exe
+if not "!errorlevel!"=="0" exit /b 1
+league_traits_test.exe
 if not "!errorlevel!"=="0" exit /b 1
 popd
 
@@ -168,5 +176,46 @@ pushd "%~dp0"
 cl /nologo /std:c++latest /EHsc /O2 /MT /I ..\SDK\include shrines_test.cpp /Fe:shrines_test.exe
 if not "!errorlevel!"=="0" exit /b 1
 shrines_test.exe
+if not "!errorlevel!"=="0" exit /b 1
+popd
+
+pushd "%~dp0"
+cl /nologo /std:c++latest /EHsc /O2 /MT /I ..\SDK\include amazon_unity_test.cpp /Fe:amazon_unity_test.exe
+if not "!errorlevel!"=="0" exit /b 1
+amazon_unity_test.exe
+if not "!errorlevel!"=="0" exit /b 1
+popd
+
+pushd "%~dp0"
+cl /nologo /std:c++latest /EHsc /O2 /MT /I ..\SDK\include training_dummy_test.cpp /Fe:training_dummy_test.exe
+if not "!errorlevel!"=="0" exit /b 1
+training_dummy_test.exe
+if not "!errorlevel!"=="0" exit /b 1
+popd
+
+pushd "%~dp0"
+cl /nologo /std:c++latest /EHsc /O2 /MT /I ..\SDK\include big_shot_test.cpp /Fe:big_shot_test.exe
+if not "!errorlevel!"=="0" exit /b 1
+big_shot_test.exe
+if not "!errorlevel!"=="0" exit /b 1
+popd
+
+pushd "%~dp0"
+cl /nologo /std:c++latest /EHsc /O2 /MT /I ..\SDK\include split_extension_test.cpp /Fe:split_extension_test.exe
+if not "!errorlevel!"=="0" exit /b 1
+split_extension_test.exe
+if not "!errorlevel!"=="0" exit /b 1
+popd
+
+pushd "%~dp0"
+cl /nologo /std:c++latest /EHsc /O2 /MT /I ..\SDK\include ..\mythicals\gull_test.cpp /Fe:gull_test.exe
+if not "!errorlevel!"=="0" exit /b 1
+gull_test.exe
+if not "!errorlevel!"=="0" exit /b 1
+popd
+pushd "%~dp0"
+cl /nologo /std:c++latest /EHsc /O2 /MT /I ..\SDK\include ..\mythicals\poe_test.cpp /Fe:poe_test.exe
+if not "!errorlevel!"=="0" exit /b 1
+poe_test.exe
 if not "!errorlevel!"=="0" exit /b 1
 popd

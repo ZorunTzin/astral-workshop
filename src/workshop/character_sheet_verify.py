@@ -25,6 +25,6 @@ for folder in ('data/global/excel','data/global/excel/base'):
   assert labels[d['str alt']]['enUS'].startswith(labels[d['str name']]['enUS'])
  for sid in (14,25):assert ds[by[sid]['skilldesc']]['descdam']=='8' and ds[by[sid]['skilldesc']]['ddam calc1']=='1'
  assert ds[by[20]['skilldesc']]['descdam']=='21' and ds[by[20]['skilldesc']]['descatt']=='3'
- for sid in (19,22):assert ds[by[sid]['skilldesc']]['ddam calc1']==('clc4' if sid==22 else 'clc1')
+ for sid in (19,22):assert ds[by[sid]['skilldesc']]['ddam calc1']==('(100+clc4)/3-100' if sid==22 else 'clc1')
 
 print('PASS: character-sheet identities, Amazon per-hit/poison-DPS displays, throwing accuracy and non-damaging buff exclusions in both table sets.')

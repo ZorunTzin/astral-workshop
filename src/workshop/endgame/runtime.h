@@ -26,15 +26,21 @@ inline int PlaytestLife(const Run& run){return int(int64_t(10*256)*(100+12*(run.
 inline unsigned ChoiceAvailableAt=0,NextRegen=0,NextProc=0,NextWaveDiagnostic=0;
 inline std::array<int,3> WaveClasses{};
 inline unsigned ProcDepth=0;
+inline bool (*LeagueClass)(int)=nullptr;
+inline int (*LeaguePrepareClass)(int)=nullptr;
+inline void (*LeagueSpawned)(void*)=nullptr;
+inline void (*PrepareLeagueWave)()=nullptr;
+inline bool (*LeagueBusy)()=nullptr;
+inline bool LeagueWave(const Run& run){return run.bonuses[int(Mod::LeagueWave)]!=0;}
 inline bool GoblinWave(const Run& run){return run.bonuses[int(Mod::LootGoblinWave)]!=0;}
 inline void (*SpawnGoblinWave)(void*,unsigned)=nullptr;
 inline bool (*GoblinWaveBusy)()=nullptr;
 inline int (*GoblinWaveRemaining)()=nullptr;
-inline bool BossWave(const Run& run){return !GoblinWave(run)&&run.wave>0&&run.wave%10==0;}
+inline bool BossWave(const Run& run){return !GoblinWave(run)&&!LeagueWave(run)&&run.wave>0&&run.wave%10==0;}
 inline int WaveCount(const Run& run){return run.count()+(BossWave(run)?8:0);}
 // Explicit ranks on milestone escorts override the random one-wave event.
 inline int MilestoneRank(const Run& run,int index){if(!BossWave(run)||index<run.count())return 0;int n=index-run.count();return n==0?3:n<=5?1:2;}
-inline bool TrackedClass(int cls){return std::find(std::begin(MonsterClasses),std::end(MonsterClasses),cls)!=std::end(MonsterClasses)||std::find(std::begin(BossClasses),std::end(BossClasses),cls)!=std::end(BossClasses);}
+inline bool TrackedClass(int cls){return (LeagueClass&&LeagueClass(cls))||std::find(std::begin(MonsterClasses),std::end(MonsterClasses),cls)!=std::end(MonsterClasses)||std::find(std::begin(BossClasses),std::end(BossClasses),cls)!=std::end(BossClasses);}
 inline bool NaturalRanks=true,ChampionPack=false;
 inline Run Current;inline void* Game=nullptr;inline unsigned Last=0,Next=0,SpawnDeadline=0,ReadyAt=0,PortalCleanupAt=0;
 inline unsigned Used=0,Attempt=0;inline int Pending=0;
@@ -78,6 +84,8 @@ inline void ApplyBuff(void* player){if(!player)return;if(void* list=Barbarian::B
  for(int stat=0;stat<4;++stat){int percent=0;for(auto spec:StatBonuses)if(Attributes[spec.mod]&&spec.stat==stat)percent+=Current.bonuses[spec.mod];if(percent)Curses::Write(Game,list,stat,int(std::min<int64_t>(1000000,int64_t(Ramp::GetUnit(player,stat,0))*percent/100)));}
  Curses::Write(Game,list,80,Current.lootBonus());}}
 inline void MonsterBonuses(void* u){
+ // Run/walk, attack, cast and recovery; applied once per spawn.
+ for(int stat:{67,68,99,102,105})Ramp::SetUnit(u,stat,Ramp::GetUnit(u,stat,0)+Current.speedPercent(),0);
  for(auto spec:StatBonuses)if(!Positive[spec.mod]&&Current.bonuses[spec.mod]){
   int base=Ramp::GetUnit(u,spec.stat,0),add=Current.bonuses[spec.mod]*spec.mult;
   if(spec.mod==int(Mod::MonsterResist)||spec.mod==int(Mod::MonsterPhysical))add=std::max(0,std::min(add,100-base));
@@ -141,6 +149,7 @@ inline void End(bool death){if(!Current.finish(death))return;ClearBuff(Player())
 inline void StartWave(unsigned now){
  std::array<int,sizeof(MonsterClasses)/sizeof(int)> pool{};std::copy(std::begin(MonsterClasses),std::end(MonsterClasses),pool.begin());
  for(int i=0;i<3;++i){int j=i+(Current.random()>>8)%(pool.size()-i);std::swap(pool[i],pool[j]);WaveClasses[i]=pool[i];}
+ if(LeagueWave(Current)&&PrepareLeagueWave)PrepareLeagueWave();
  ChampionPack=NaturalRanks&&((Current.random()>>8)%100)<8;
  NextRegen=now+25;NextProc=now;NextWaveDiagnostic=now+250;
 Current.phase=Phase::Countdown;Pending=WaveCount(Current);Attempt=0;ReadyAt=now+75;SpawnDeadline=now+400;Enemies.clear();SpawnRecords.clear();ConfirmedDead.clear();Command=0;}
@@ -154,16 +163,34 @@ inline bool RankWaveMonster(void* u,int rank=0){
  flags=(flags&~(2u|4u|16u))|8u|(champion?4u:0u);std::memcpy(static_cast<unsigned char*>(data)+0x1a,&flags,2);
  auto* mods=static_cast<unsigned char*>(data)+0x20;std::memset(mods,0,9);
  unsigned char used[256]{};std::array<std::uintptr_t,2> weights{};
- int mod=champion?16:MonsterRuntime::OriginalRoll(Game,u,used,weights.data());
- if(mod<=0||mod>=256)return false;mods[0]=static_cast<unsigned char>(mod);
  for(int id:{1,2,4})MonsterRuntime::Init(u,id,1);
- MonsterRuntime::Init(u,mod,1);return true;
+ auto range=MonsterModifiers::RollRange(static_cast<unsigned char*>(Game)[0x104]);
+ int desired=champion?1:range.first+int((Current.random()>>8)%(range.second-range.first+1));
+ for(int slot=0;slot<desired;++slot){int mod=champion?16:MonsterRuntime::RollNative(Game,u,used,weights.data());
+  if(mod==0&&(MonsterRuntime::MaskOf(u)&MonsterModifiers::Bit(MonsterModifiers::Raid)))break;
+  if(mod<=0||mod>=256)return false;mods[slot]=static_cast<unsigned char>(mod);used[mod]=1;MonsterRuntime::Init(u,mod,1);}
+ return true;
 }
 // Apply once after native rank initialization, also on replacement spawns.
 inline void WaveProgression(void* unit){
  const int oldLevel=Ramp::GetUnit(unit,12,0),xp=Ramp::GetUnit(unit,13,0);
- Ramp::SetUnit(unit,13,Progression::ScaleExperience(xp,oldLevel,Current.wave),0);
+ Ramp::SetUnit(unit,13,int(std::min<int64_t>(0x3fffffff,1LL*Progression::ScaleExperience(xp,oldLevel,Current.wave)*Current.stagePercent()/100)),0);
  Ramp::SetUnit(unit,12,Progression::WaveLevel(Current.wave),0);
+}
+// Keep a two-tile margin inside the private 32-tile collision square.
+inline bool SafePosition(int x,int y){
+ const int left=(2000+100*(Current.stage-1))*5,bottom=2000*5;
+ return x>=left+10&&x<=left+150&&y>=bottom+10&&y<=bottom+150;
+}
+inline void* SpawnInside(void* player,int x,int y,int cls){
+ if(!SafePosition(x,y))return nullptr;
+ if(LeagueWave(Current)&&LeaguePrepareClass)cls=LeaguePrepareClass(cls);
+ auto u=MonsterRuntime::Spawn(Game,SoulHarvest::Room(player),x,y,cls,1,-1,0);
+ if(u&&(!SafePosition(Assassin::Coordinate(u,false),Assassin::Coordinate(u,true))||Level(u)!=Level(player))){
+  if(Barbarian::RoomDelete)Barbarian::RoomDelete(SoulHarvest::Room(u),1,Barbarian::Id(u));
+  if(Barbarian::DeleteUnit)Barbarian::DeleteUnit(Game,u);return nullptr;
+ }
+ return u;
 }
 inline void SpawnWave(void* player,unsigned now){
  if(now<ReadyAt)return;
@@ -177,12 +204,12 @@ inline void SpawnWave(void* player,unsigned now){
   int rank=Current.bonuses[int(Mod::ChampionWave)]||Current.bonuses[int(Mod::EliteWave)]?0:ChampionPack&&index<3?1:NaturalRanks&&((Current.random()>>8)%100)<std::min(100,2+SealElite)?2:NaturalRanks&&((Current.random()>>8)%100)<SealChampion?1:0;
   int milestone=MilestoneRank(Current,index);if(milestone)rank=milestone;
   int cls=rank==3?BossClasses[Current.stage-1]:WaveClasses[rank==1?0:index%3];
-  void* u=MonsterRuntime::Spawn(Game,SoulHarvest::Room(player),x,y,cls,1,-1,0);++Attempt;if(!u)continue;if(!RankWaveMonster(u,rank)){if(Barbarian::DeleteUnit)Barbarian::DeleteUnit(Game,u);continue;}
+  void* u=SpawnInside(player,x,y,cls);++Attempt;if(!u)continue;if(!RankWaveMonster(u,rank)){if(Barbarian::DeleteUnit)Barbarian::DeleteUnit(Game,u);continue;}
   WaveProgression(u);
   int hp=LowLifePlaytest?PlaytestLife(Current):int(std::clamp<std::int64_t>(int64_t(Ramp::GetUnit(u,7,0))*Current.lifePercent()/100,256,0x3fffffff));
   if(LowLifePlaytest)Ramp::SetUnit(u,74,0,0);
-  Ramp::SetUnit(u,7,hp,0);Ramp::SetUnit(u,6,hp,0);MonsterBonuses(u);
-  Assassin::SetTarget(u,player);Enemies.push_back(Barbarian::Id(u));SpawnRecords.push_back({Barbarian::Id(u),cls,0,rank});--Pending;
+  Ramp::SetUnit(u,7,hp,0);Ramp::SetUnit(u,6,hp,0);MonsterBonuses(u);if(LeagueWave(Current)&&LeagueSpawned)LeagueSpawned(u);
+  Assassin::SetTarget(u,player);Enemies.push_back(Barbarian::Id(u));SpawnRecords.push_back({Barbarian::Id(u),int(static_cast<unsigned*>(u)[1]),0,rank});--Pending;
  }
  if(!Pending){Current.phase=Phase::Fighting;Publish();}
  else if(now>=SpawnDeadline){SpawnDeadline=now+250;if(Context)Context->LogWarn("Arena: blocked placement; preserving wave and retrying remaining spawns.");Publish("Waiting for free ground for remaining enemies.");}
@@ -198,11 +225,11 @@ inline void RecoverMissing(void* player,unsigned now){
   auto tracked=std::find(Enemies.begin(),Enemies.end(),record.id);if(tracked==Enemies.end())continue;
   for(int attempt=0;attempt<8;++attempt){double angle=(Current.random()%6283)/1000.;int radius=2*(28+Current.random()%17);
    int x=Assassin::Coordinate(player,false)+int(std::cos(angle)*radius),y=Assassin::Coordinate(player,true)+int(std::sin(angle)*radius);
-   void* u=MonsterRuntime::Spawn(Game,SoulHarvest::Room(player),x,y,record.cls,1,-1,0);if(!u)continue;
+   void* u=SpawnInside(player,x,y,record.cls);if(!u)continue;
    if(!RankWaveMonster(u,record.rank)){if(Barbarian::DeleteUnit)Barbarian::DeleteUnit(Game,u);continue;}
    WaveProgression(u);
   int hp=LowLifePlaytest?PlaytestLife(Current):int(std::clamp<int64_t>(int64_t(Ramp::GetUnit(u,7,0))*Current.lifePercent()/100,256,0x3fffffff));
-   if(LowLifePlaytest)Ramp::SetUnit(u,74,0,0);Ramp::SetUnit(u,7,hp,0);Ramp::SetUnit(u,6,hp,0);MonsterBonuses(u);Assassin::SetTarget(u,player);
+   if(LowLifePlaytest)Ramp::SetUnit(u,74,0,0);Ramp::SetUnit(u,7,hp,0);Ramp::SetUnit(u,6,hp,0);MonsterBonuses(u);if(LeagueWave(Current)&&LeagueSpawned)LeagueSpawned(u);Assassin::SetTarget(u,player);
    unsigned old=record.id;record.id=Barbarian::Id(u);record.missingSince=0;*tracked=record.id;if(old!=record.id)RetiredEnemies.push_back({old,record.cls,0});
    char line[180]{};std::snprintf(line,sizeof(line),"Arena recovered missing enemy: trial=%d wave=%d old=%u replacement=%u class=%d",Current.stage,Current.wave,old,record.id,record.cls);if(Context)Context->LogInfo(line);return;
   }
@@ -247,9 +274,10 @@ inline void Frame(void* game){
   bool alive=false,missing=false;for(unsigned id:Enemies){
    if(std::find(ConfirmedDead.begin(),ConfirmedDead.end(),id)!=ConfirmedDead.end())continue;
    void* u=Curses::Find(game,1,id);if(!u){missing=true;continue;}
-   if(MonsterRuntime::Living(u))alive=true;else ConfirmedDead.push_back(id);
+   if(MonsterRuntime::Living(u)){alive=true;Assassin::SetTarget(u,player);}else ConfirmedDead.push_back(id);
   }
   if(GoblinWave(Current)){alive=GoblinWaveBusy?GoblinWaveBusy():true;missing=false;}
+  if(LeagueWave(Current)&&LeagueBusy&&LeagueBusy())alive=true;
   if(!alive&&!missing){RemoveEnemies();Current.clear();ChoiceAvailableAt=now+75;Context->LogInfo("Arena: wave cleared; modifier cards available in three seconds.");for(auto offer:Current.offers){char line[180]{};std::snprintf(line,sizeof(line),"Arena offer: wave=%d name=%s positive=%d tier=%d",Current.wave,Names[int(offer.mod)],Positive[int(offer.mod)]?1:0,offer.tier);Context->LogInfo(line);}Publish("Wave cleared. Choose one modifier or secure your reward.");}
   else {
    if(!alive&&missing)RecoverMissing(player,now);
@@ -266,9 +294,17 @@ inline bool IgnoreDamage(void* game,void* attacker,void* defender,void*){
  if(Current.phase!=Phase::Choice&&Current.phase!=Phase::Countdown)return false;
  return Current.phase==Phase::Choice&&Curses::Player(defender)&&Barbarian::Id(defender)==Current.owner;
 }
+inline void ChildBonuses(void* owner,void* child){
+ if(!Enabled||!ArenaLevel(owner)||std::find(Enemies.begin(),Enemies.end(),Barbarian::Id(owner))==Enemies.end())return;
+ // HP and damage were inherited from the scaled parent; only apply missing
+ // Trial attributes. Helpers grant no additional farmable experience.
+ MonsterBonuses(child);Ramp::SetUnit(child,13,0,0);
+}
 inline void Damage(void* game,void* attacker,void* defender,void* packet){
  if(!Enabled||game!=Game||(Current.phase!=Phase::Fighting&&Current.phase!=Phase::Countdown)||!attacker||!packet)return;
  bool enemy=Curses::Monster(attacker)&&std::find(Enemies.begin(),Enemies.end(),Barbarian::Id(attacker))!=Enemies.end();
+ if(!enemy&&Curses::Monster(attacker)&&ArenaLevel(attacker))for(const auto& child:MonsterRuntime::Children)
+  if(child.id==MonsterRuntime::Key(attacker)&&std::find(Enemies.begin(),Enemies.end(),MonsterRuntime::Number(child.owner))!=Enemies.end()){enemy=true;break;}
  if(enemy){
   int bonus=Current.damagePercent();if(Ramp::GetUnit(attacker,6,0)<Ramp::GetUnit(attacker,7,0)/2)bonus=int(int64_t(bonus)*(100+Current.bonuses[int(Mod::MonsterRage)])/100);
   AuraFeatures::ScaleResolvedDamage(packet,bonus,100);
@@ -338,9 +374,10 @@ inline void __cdecl Draw(const PluginContext* c,const Overlay::Frame* f,void*) n
 }
 inline int NativeLootBonus(void* game,void* unit){
  if(!Enabled||game!=Game||(Current.phase!=Phase::Fighting&&Current.phase!=Phase::Countdown)||!unit||!ArenaLevel(unit)||std::find(Enemies.begin(),Enemies.end(),Barbarian::Id(unit))==Enemies.end())return 0;
- ObserveDeath(game,unit);int bonus=Current.lootBonus();return bonus/100+(int(Current.random()%100)<bonus%100?1:0);
+ ObserveDeath(game,unit);return Current.extraLootRolls();
 }
 inline bool Install(const PluginContext* c){
+ MonsterRuntime::ChildSpawned=ChildBonuses;
  Context=c;auto module=GetModuleHandleW(L"D2RCore.dll");Level=reinterpret_cast<Reimplementations::GetLevelIdFromUnitFn>(GetProcAddress(module,MAKEINTRESOURCEA(2000)));
  if(!Level){c->LogError("Arena: level export missing");return false;}
  auto service=[&](auto* ptr,const char* name){auto result=c->QueryService(ptr);if(result!=ServiceQueryResult::Success){c->LogError(name);return false;}return true;};

@@ -363,3 +363,13 @@ install_amazon_masteries(root)
 from combat.amazon_melee_data import install as install_amazon_melee
 install_amazon_melee(root)
 install_buff_hud(root)
+
+from endgame.labyrinth_balance import install as install_labyrinth_balance
+install_labyrinth_balance(root)
+
+from endgame.trial_loot_balance import install as trial_loot_balance
+trial_loot_balance(root)
+
+# Bind runtime TC/skill/missile IDs after the final table mutation.
+from mythicals.poe_data import finalize as finalize_poe_mythicals
+finalize_poe_mythicals(root)

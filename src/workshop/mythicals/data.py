@@ -261,6 +261,10 @@ def install(root):
     bonds.append([bind[str(item['id'])],int(statmap[st]['*ID']),val])
  (out/'bonds.inc').write_text('constexpr int BondBonuses[][3]={\n'+',\n'.join('{'+','.join(map(str,x))+'}' for x in bonds)+'\n};\n',encoding='utf8')
  (out/'assets.json').write_text(json.dumps(sorted(set(assets)),indent=2),encoding='utf8')
+ from mythicals.gull_data import install as gull
+ gull(root)
+ from mythicals.poe_data import install as poe
+ poe(root)
  print('Mythicals:',len(ACTIVE),'variants; 1/5000 base Trial loot roll; native stats, procs and imported visuals.')
 
 def install_art(root,assets):

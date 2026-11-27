@@ -8,7 +8,7 @@ NAMES=['Awakening','Ascension','Renewal','Augmentation','Purification','Fortune'
 HELP=['Normal seal: add 1-2 modifiers (Magic).','Normal or Magic seal: reroll with 3-5 modifiers (Rare).','Reroll modifiers, keeping seal rarity.','Add a modifier: Magic maximum 2, Rare maximum 5.','Remove all modifiers and restore a Normal seal.','Reroll modifier tiers without changing their types.','Permanently corrupt a seal: add a Legendary modifier, +160% loot, or raise all modifier tiers. Cannot be crafted again.']
 CODES=['Woa','Wob','Woc','Wod','Woe','Wof','Wog']
 VALID=[[0],[0,11,12],[11,12,23,24,25],[11,23,24],[11,12,23,24,25],[11,12,23,24,25],[0,11,12,23,24,25]]
-def install(root):
+def install(root, *, refresh_ui=True):
  root=Path(root);assets=[];binding=None
  labels={'WsArenaHelp':'Hell only - Harrogath (Act V)\nCube this seal alone to open a Trial.\nOne run per tier per game.\nEnemies drop loot on death.','wtor':'Trial Orbs','WsTrialOrbHelp':'Transmute with one Trial Seal in the Horadric Cube. Corrupted seals cannot be crafted.'}
  for i,name in enumerate(('Verdant','Desert','Jungle','Infernal','Frozen'),1):labels['Wa'+str(i)]='\u00ffc;'+name+' Trial Seal (Tier '+str(i)+')\u00ffc0'
@@ -34,7 +34,7 @@ def install(root):
    if r is None:r=template.copy();rows.append(r)
    for k in r:
     if k.endswith(('Min','Max','MagicLvl')):r[k]='0'
-   r.update(name='Trial Orb of '+n,namestr=code,code=code,normcode=code,type='elix',type2='',level='1',levelreq='1',cost='1',spawnable='1',useable='0',pSpell='-1',compactsave='1',stackable='0',multibuy='1',PermStoreItem='1',AkaraMin='1',AkaraMax='1',AkaraMagicLvl='255',NightmareUpgrade=code,HellUpgrade=code,UICatOverride='wtor',AdvancedStashStackable='1',invwidth='1',invheight='1',spelldesc='2',spelldescstr='WsTrialOrb'+str(i),spelldescstr2='WsTrialOrbHelp',spelldesccalc='',uniqueinvfile='')
+   r.update(name='Trial Orb of '+n,namestr=code,code=code,normcode=code,type='elix',type2='',level='1',levelreq='1',cost='1',spawnable='1',useable='0',pSpell='-1',compactsave='1',stackable='0',multibuy='1',PermStoreItem='0',AkaraMin='0',AkaraMax='0',AkaraMagicLvl='0',NightmareUpgrade=code,HellUpgrade=code,UICatOverride='wtor',AdvancedStashStackable='1',invwidth='1',invheight='1',spelldesc='2',spelldescstr='WsTrialOrb'+str(i),spelldescstr2='WsTrialOrbHelp',spelldesccalc='',uniqueinvfile='')
    labels[code]='\u00ffc;Trial Orb of '+n+'\u00ffc0';labels['WsTrialOrb'+str(i)]=HELP[i]
   write(p/'misc.txt',h,rows)
   h,rows=read(p/'itemuicategories.txt');rows=[r for r in rows if r['Name']!='wtorb']
@@ -57,19 +57,21 @@ def install(root):
    r.update({'Treasure Class':name,'Picks':str(picks),'NoDrop':str(nodrop),'*eol':'0'})
    for j in range(1,11):r['Item'+str(j)]='';r['Prob'+str(j)]=''
    for j,(item,w) in enumerate(items,1):r['Item'+str(j)]=item;r['Prob'+str(j)]=str(w)
-  tc('Workshop Trial Orbs',[(c,4) for c in CODES],2730)
-  # Include alongside Herald Orbs everywhere its original branch is called.
-  tc('Workshop Herald And Trial Orbs',[('Herald Orbs',1),('Workshop Trial Orbs',1)],0,-2)
+  tc('Workshop Trial Orbs',[(c,4) for c in CODES],8286)
+  # Undo the old global wrapper on upgrades. Trial currencies are exclusive
+  # to the explicit Trial-material branch; ordinary Herald drops stay intact.
+  tc('Workshop Herald And Trial Orbs',[('Herald Orbs',1)],0,1)
   for r in rows:
-   if r['Treasure Class']=='Workshop Herald And Trial Orbs':continue
    for j in range(1,11):
-    if r['Item'+str(j)]=='Herald Orbs':r['Item'+str(j)]='Workshop Herald And Trial Orbs'
+    if r['Item'+str(j)]=='Workshop Herald And Trial Orbs':r['Item'+str(j)]='Herald Orbs'
   # Trials' bonus-material branch can also produce orbs at the same rare rate.
   for r in rows:
    if r['Treasure Class']=='Workshop Trial Orb Materials':continue
    for j in range(1,11):
     if r['Item'+str(j)]=='Ws Trial Materials':r['Item'+str(j)]='Workshop Trial Orb Materials'
-  tc('Workshop Trial Orb Materials',[('Ws Trial Materials',1),('Workshop Trial Orbs',1)],0,-2)
+  trial_materials=[('Ws Trial Materials',1),('Workshop Trial Orbs',1)]
+  if 'Workshop Trial Seal Drops' in by:trial_materials.append(('Workshop Trial Seal Drops',1))
+  tc('Workshop Trial Orb Materials',trial_materials,0,-len(trial_materials))
   for r in rows:
    for j in range(1,11):
     if r['Item'+str(j)] in ('1gc','Gem Cluster'):r['Item'+str(j)]='';r['Prob'+str(j)]='0'
@@ -106,10 +108,10 @@ def install(root):
  from endgame.boss_data import install as install_bosses
  assets.extend(install_bosses(root))
  from endgame.seal_stash import install as install_stash
- assets.extend(install_stash(root))
+ if refresh_ui:assets.extend(install_stash(root))
  assets+=['data/hd/items/items.json' ,'data/local/lng/strings/item-names.json']
  manifest=here/'assets.json';existing=json.loads(manifest.read_text());manifest.write_text(json.dumps(list(dict.fromkeys(existing+assets)),indent=2))
- print('Trial crafting: 7 orbs, saved seal recipes, Materials category, matching rare drop branch, Akara test stock and original HD art.')
+ print('Trial crafting: 7 orbs, saved seal recipes, Materials category, Trial-exclusive rare drop branch, no vendor stock and original HD art.')
 if __name__=='__main__':
  import sys
  install(sys.argv[1])

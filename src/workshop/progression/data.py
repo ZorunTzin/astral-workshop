@@ -106,7 +106,7 @@ def install(root):
 namespace Progression {
 inline constexpr int MonsterCap=511;
 inline constexpr int NativeHellXP[]={'''+','.join(map(str,xp))+'''};
-inline int WaveLevel(int wave){return int(std::clamp<int64_t>(99LL+wave,100,MonsterCap));}
+inline int WaveLevel(int wave){return int(std::clamp<int64_t>(104LL+wave,105,MonsterCap));}
 inline int ScaleExperience(int xp,int originalLevel,int wave){
  if(xp<=0)return 0; // Zero-XP split stages remain zero, never duplicate rewards.
  const int level=WaveLevel(wave),source=std::clamp(originalLevel,1,MonsterCap);

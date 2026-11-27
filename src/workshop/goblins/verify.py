@@ -41,12 +41,12 @@ for folder in ('data/global/excel','data/global/excel/base'):
   assert [gems.get('Item'+str(i),'') for i in range(1,9)]==['gmm','gmt','gms','gme','gmr','gmd','gmk','gmo']
  for suffix in ('',' (N)',' (H)'):
   collector=tc['Ws Goblin odious_collector'+suffix]
-  assert collector['Item1']=='Ws Goblin Crafting Materials' and collector['Item2']=='Ws Goblin Trial Orbs' and collector['Prob1']=='3' and collector['Prob2']=='1'
+  assert collector['Item1']=='Ws Goblin Crafting Materials' and not collector['Item2'] and collector['Prob1']=='1'
  materials=tc['Ws Goblin Crafting Materials'];bycode={r['code']:r for r in misc}
  for i in range(1,8):
   item=bycode[materials['Item'+str(i)]];assert item['spawnable']=='1' and int(item['level'])<=1
  pool=tc['Ws Goblin Trial Orbs']
- assert [pool['Item'+str(i)] for i in range(1,8)]==['Woa','Wob','Woc','Wod','Woe','Wof','Wog']
+ assert [pool['Item'+str(i)] for i in range(1,8)]==['ooi','oos','ooc','ooa','ooe','ka3','oor']
  # Existing definitions and TC rows remain byte-for-field identical to the installed baseline.
  repo=here.parents[2]
  for name,key in [('missiles','Missile'),('monstats','Id'),('monstats2','Id'),('treasureclassex','Treasure Class')]:
@@ -66,7 +66,7 @@ for f in families:
  assert (root/('data/hd/character/enemy/goblin_'+f+'/animation/combined.animations')).is_file()
 assert not (root/'d2rloader/plugins/fmmp-goblins.dll').exists()
 assert not (root/'d2rloader/config/workshop-goblins-test.txt').exists(),'Test mode must never enter the release staging payload'
-print('PASS: seven encounter families/nine stages, collector Trial Orbs, terminal-only split loot, visual hashes, global text IDs, native baseline preservation and release/test isolation.')
+print('PASS: seven encounter families/nine stages, collector crafting materials, terminal-only split loot, visual hashes, global text IDs, native baseline preservation and release/test isolation.')
 
 portal_ids=[]
 for folder in ('data/global/excel','data/global/excel/base'):

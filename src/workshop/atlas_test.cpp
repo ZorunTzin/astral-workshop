@@ -225,14 +225,14 @@ int main(){
     {char text[160]{};SharedEvents::ItemTooltipEvent event{.text=text,.capacity=sizeof(text)};
      unsigned stealth=0;while(std::strcmp(forgeWords[stealth].name,"Stealth"))++stealth;
      forgeTooltipSnapshot={40,2+int(stealth>>7),int(stealth&127),GetTickCount64()};
-     forgeTooltip(nullptr,&event,nullptr);assert(std::string(text)=="Runeforged (Stealth)");
+     forgeTooltip(nullptr,&event,nullptr);assert(std::string(text)=="\xee\x81\xbe" "4Runeforged (Stealth)" "\xee\x81\xbe" "0");
      event.length=0;text[0]=0;forgeTooltip(nullptr,&event,nullptr);assert(!event.length);
      forgeTooltipSnapshot={41,2,0,GetTickCount64()};forgeTooltip(nullptr,&event,nullptr);assert(!event.length);
-     forgeTooltipSnapshot={40,1,55,GetTickCount64()};forgeTooltip(nullptr,&event,nullptr);assert(std::string(text)=="Runeforged");
+     forgeTooltipSnapshot={40,1,55,GetTickCount64()};forgeTooltip(nullptr,&event,nullptr);assert(std::string(text)=="\xee\x81\xbe" "4Runeforged" "\xee\x81\xbe" "0");
     }
     {char text[160]{};SharedEvents::ItemTooltipEvent event{.text=text,.capacity=sizeof(text)};
      it.serviceVersion=1;it.serviceSize=ItemServiceSize;it.getItemDetails=forgeDetails;
-     forgeTooltipSnapshot={};forgeTooltip(nullptr,&event,nullptr);assert(std::string(text)=="Runeforged (Lore)");
+     forgeTooltipSnapshot={};forgeTooltip(nullptr,&event,nullptr);assert(std::string(text)=="\xee\x81\xbe" "4Runeforged (Lore)" "\xee\x81\xbe" "0");
      it.serviceSize=0;it.getItemDetails=nullptr;
     }
     PluginContext ctx{}; ThreadService svc{};svc.runOnGameThread=enqueueGame;svc.runOnUiThread=enqueueUi;threads=&svc;

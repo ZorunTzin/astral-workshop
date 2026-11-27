@@ -129,7 +129,7 @@ inline void Frame(void* g){
  }
  AuraFeatures::Units(g,0,[&](void* u){if(!AuraFeatures::Alive(u))return;auto* p=Track(u);if(!p)return;int level=Active(u,221);
   if(level&&!Ramp::OriginalList(u,AvatarState)){int i=AuraBuffs::Index(221);if(auto* ap=AuraBuffs::Track(g,u)){AuraBuffs::Disable(g,u,*ap,i);AuraBuffs::SyncReservation(g,u,*ap);}level=0;}
-  if(level){if(Due(Last,p->raven,125)){++Depth;if(NativeRaven)NativeRaven(g,u,Raven,level);--Depth;}}
+  if(int ravenLevel=Active(u,224)){level=ravenLevel;if(Due(Last,p->raven,125)){++Depth;if(NativeRaven)NativeRaven(g,u,Raven,level);--Depth;}}
   else{p->raven=Last+125;p->visual=0;}Companions(g,u);
  });
 }

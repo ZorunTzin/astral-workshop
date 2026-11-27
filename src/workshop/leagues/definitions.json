@@ -1,7 +1,7 @@
 {
   "version": 1,
   "areaChancePercent": 12,
-  "nightSeconds": 90,
+  "nightSeconds": 45,
   "beyondSeconds": 180,
   "breachSeconds": 180,
   "maxLiving": 48,

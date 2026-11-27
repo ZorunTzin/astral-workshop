@@ -6,6 +6,8 @@ static unsigned VisualPackets=0;
 static bool SteeringReady=false;
 static Unit VisualArrow;
 static unsigned Landings=0;
+static Unit SplashTargets[5];
+static unsigned SplashHits=0;
 int main(){
  OriginalAuraTest();
  Curses::X=[](void* u)->int{return static_cast<Unit*>(u)->x;};Curses::Y=[](void* u)->int{return static_cast<Unit*>(u)->y;};
@@ -46,12 +48,13 @@ int main(){
  assert(missile.stats[21]==100&&missile.stats[54]==100&&missile.stats[55]==100);
  assert(missile.stats[56]==200&&missile.stats[59]==200);
  Amazon::CopyDamage(&missile,impact,100);assert(missile.stats[54]==200);
- assert(Amazon::Stage(Amazon::Split3)==3&&Amazon::Stage(Amazon::Return)==-1);
+ assert(Amazon::Stage(Amazon::Split4)==4&&Amazon::Stage(Amazon::Split3)==3&&Amazon::Stage(Amazon::Return)==-1);
  // A single native volley publication owns client enumeration. No game-unit
  // hash traversal, prediction token, origin override or duplicate damage shot.
  Amazon::PublishMissiles=[](void* owner,void** arrows,unsigned char count,void* origin,void* target,unsigned short token){
-  assert(owner==&player&&count==1&&arrows[0]==&VisualArrow);
-  assert(!origin&&token==0&&SteeringReady);
+  const bool split=Amazon::Stage(VisualArrow.cls)>=0;
+  assert(owner==(split?&VisualArrow:&player)&&count==1&&arrows[0]==&VisualArrow);
+  assert(origin==(split?&VisualArrow:nullptr)&&token==0&&SteeringReady);
   assert(!target);++VisualPackets;
  };
  SteeringReady=true;Amazon::PublishVisual(game,&player,&VisualArrow);assert(VisualPackets==1);
@@ -118,6 +121,37 @@ int main(){
   const double travelled=Amazon::ReturnFrames(dx,dy)*18.0/16.0;
   assert(travelled<=d+1e-9&&d-travelled<1.125+1e-9);
  }
+ // Strafe is selected by the impacting projectile, never by the current
+ // right-click skill. Failed/blocked hits and descendants cannot splash.
+ unsigned char splashPacket[0x150]{};unsigned short splashFlags=1;int splashTotal=100;
+ std::memcpy(splashPacket+4,&splashFlags,2);std::memcpy(splashPacket+0x134,&splashTotal,4);
+ Unit strafe;strafe.type=3;strafe.cls=Amazon::StrafeArrow;strafe.stats[21]=200;strafe.stats[22]=400;
+ Amazon::CurrentHitMissile=&strafe;assert(Amazon::StrafeImpact(&player,splashPacket));
+ strafe.cls=Amazon::StrafeBolt;assert(Amazon::StrafeImpact(&player,splashPacket));
+ strafe.cls=Amazon::MultiArrow;assert(!Amazon::StrafeImpact(&player,splashPacket));
+ strafe.cls=Amazon::StrafeArrow;
+ for(unsigned short flags:{0,33,0x4001}){std::memcpy(splashPacket+4,&flags,2);assert(!Amazon::StrafeImpact(&player,splashPacket));}
+ std::memcpy(splashPacket+4,&splashFlags,2);
+ Amazon::SplashDepth=1;assert(!Amazon::StrafeImpact(&player,splashPacket));Amazon::SplashDepth=0;
+ Curses::ProcDepth=1;assert(!Amazon::StrafeImpact(&player,splashPacket));Curses::ProcDepth=0;
+ assert(!Amazon::StrafeImpact(&mercenary,splashPacket));
+ // Full dispatch: only the nearby secondary enemy receives half damage.
+ for(int i=0;i<5;++i){auto& e=SplashTargets[i];e.type=1;e.id=800+i;e.room=1;e.x=30;e.y=30;e.stats[6]=1000;void* ptr=&e;std::memcpy(game+0x2630+8*i,&ptr,8);}
+ SplashTargets[1].x=36; // exact four-yard boundary
+ SplashTargets[2].x=37; // outside radius
+ SplashTargets[3].room=2; // other area
+ SplashTargets[4].stats[6]=0; // dead
+ Curses::Find=[](void*,int type,unsigned id)->void*{for(auto& e:SplashTargets)if(type==1&&e.id==id)return &e;return type==0&&id==player.id?&player:nullptr;};
+ Pulse::OriginalCreate=[](void*,void* raw)->void*{auto* p=static_cast<Pulse::Params*>(raw);assert(p->missile==Amazon::StrafeSplash&&p->target==&SplashTargets[1]);VisualArrow.type=3;VisualArrow.cls=Amazon::StrafeSplash;return &VisualArrow;};
+ Curses::NativeMissileHit=[](void* g,void* m,void* target,int)->int{assert(target==&SplashTargets[1]);assert(GetUnit(m,21,0)==100&&GetUnit(m,22,0)==200);++SplashHits;unsigned char packet[0x150]{};Amazon::Hit(g,&player,target,packet);return 1;};
+ Amazon::Hit(game,&player,&SplashTargets[0],splashPacket);assert(SplashHits==1&&Amazon::SplashDepth==0&&Curses::ProcDepth==0);
+ strafe.cls=AmazonUnity::Arrow;
+ assert(!Amazon::StrafeImpact(&player,splashPacket));
+ AmazonUnity::Hit(game,&player,&SplashTargets[0],splashPacket);assert(SplashHits==2);
+ Amazon::SplashDepth=1;AmazonUnity::Hit(game,&player,&SplashTargets[0],splashPacket);assert(SplashHits==2);Amazon::SplashDepth=0;
+ for(int i=0;i<5;++i){void* ptr=nullptr;std::memcpy(game+0x2630+8*i,&ptr,8);}
+ Curses::Find=Find;Pulse::OriginalCreate=nullptr;Curses::NativeMissileHit=nullptr;
+ Amazon::CurrentHitMissile=nullptr;
  // Starting a new game or rolling back its frame clears pending IDs, avoiding
  // stale targets and projectiles leaking into a different session.
  Amazon::Pending[0].owner=123;Amazon::Flights[0].id=456;Frame(1);Amazon::Reset(game);

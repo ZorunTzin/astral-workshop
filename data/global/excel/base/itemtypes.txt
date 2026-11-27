@@ -203,3 +203,14 @@ Mythical Spiderweb Sash	ym77	belt	myth	1	1	belt	belt			0	0	0	0		1	0	0	0	25	0	40	
 Mythical Spiderweb Sash	ym78	belt	myth	1	1	belt	belt			0	0	0	0		1	0	0	0	25	0	40	0	0	0			0							armo	0	belts	r_arm		
 Mythical Spiderweb Sash	ym79	belt	myth	1	1	belt	belt			0	0	0	0		1	0	0	0	25	0	40	0	0	0			0							armo	0	belts	r_arm		
 Mythical Spiderweb Sash	ym80	belt	myth	1	1	belt	belt			0	0	0	0		1	0	0	0	25	0	40	0	0	0			0							armo	0	belts	r_arm		
+Mythical Bone Visage	ym81	helm	myth	1	1	head	head			0	0	0	0		1	0	0	2	25	2	40	4	0	0			0							armo	0	helms	r_hel		
+Mythical Original Sin	ym82	ring	myth	0	1	rrin	lrin			0	0	0	0	1	1	0	0	0	25	0	40	0	0	0			0	invrin1	invrin2	invrin3	invrin4	invrin5		misc	0	rings			
+Mythical Svalinn	ym83	shie	myth	1	1	rarm	larm			0	0	0	0		1	0	0	3	25	3	40	4	0	0			0							armo	0	shlds	r_off		
+Mythical Replica Dreamfeather	ym84	swor	myth	1	1	rarm	larm			0	0	0	0		1	0	0	3	25	4	40	6	0	0			0							weap	0	sword	r_mel		
+Mythical Rathpith Globe	ym85	shie	myth	1	1	rarm	larm			0	0	0	0		1	0	0	3	25	3	40	4	0	0			0							armo	0	shlds	r_off		
+Mythical Aegis Aurora	ym86	shie	myth	1	1	rarm	larm			0	0	0	0		1	0	0	3	25	3	40	4	0	0			0							armo	0	shlds	r_off		
+Mythical Nimis	ym87	ring	myth	0	1	rrin	lrin			0	0	0	0	1	1	0	0	0	25	0	40	0	0	0			0	invrin1	invrin2	invrin3	invrin4	invrin5		misc	0	rings			
+Mythical Doryani's Prototype - Fire	ym88	tors	myth	1	1	tors	tors			0	0	0	0		1	0	0	3	25	4	40	6	0	0			0							armo	0	armor	r_arm		
+Mythical Doryani's Prototype - Cold	ym89	tors	myth	1	1	tors	tors			0	0	0	0		1	0	0	3	25	4	40	6	0	0			0							armo	0	armor	r_arm		
+Mythical Doryani's Prototype - Lightning	ym90	tors	myth	1	1	tors	tors			0	0	0	0		1	0	0	3	25	4	40	6	0	0			0							armo	0	armor	r_arm		
+Mythical Doryani's Prototype - Poison	ym91	tors	myth	1	1	tors	tors			0	0	0	0		1	0	0	3	25	4	40	6	0	0			0							armo	0	armor	r_arm		

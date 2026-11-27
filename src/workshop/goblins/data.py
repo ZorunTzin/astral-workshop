@@ -64,12 +64,12 @@ def install(root):
   codes=set()
   for name in ('misc','weapons','armor'):
    _,items=read(p/(name+'.txt'));codes.update(r['code'] for r in items)
-  tc('Ws Goblin Trial Orbs',[(c,1) for c in ('Woa','Wob','Woc','Wod','Woe','Wof','Wog')],picks=1)
+  tc('Ws Goblin Trial Orbs',[(c,1) for c in ('ooi','oos','ooc','ooa','ooe','ka3','oor')],picks=1) # Legacy pool: ordinary materials only.
   tc('Ws Goblin Crafting Materials',[(c,1) for c in ('ooi','oos','ooc','ooa','ooe','ka3','oor')],picks=1)
   for diff,suffix in enumerate(('',' (N)',' (H)')):
    equip='Act 1'+suffix+' Equip A'
    gems=[(c,1) for c in ('gmm','gmt','gms','gme','gmr','gmd','gmk','gmo')]
-   rewards=[[(equip,5),('Jewelry A',1) ],gems,[('gld',1)],[('Runes '+str((5,10,15)[diff]),1)],[('Ws Goblin Crafting Materials',3),('Ws Goblin Trial Orbs',1)],[(equip,3),('Jewelry A',2)],[],[],[(equip,5),('Jewelry A',1)]]
+   rewards=[[(equip,5),('Jewelry A',1) ],gems,[('gld',1)],[('Runes '+str((5,10,15)[diff]),1)],[('Ws Goblin Crafting Materials',1)],[(equip,3),('Jewelry A',2)],[],[],[(equip,5),('Jewelry A',1)]]
    for i,f in enumerate(families):tc('Ws Goblin '+f+suffix,rewards[i],i in (0,5,8),picks=0 if i in (6,7) else 2 if i==8 else 4)
   # Upgrades may already contain parent rows before this newly added pool.
   pools=[r for r in tcs if r['Treasure Class'] in ('Ws Goblin Trial Orbs','Ws Goblin Crafting Materials')]
@@ -127,6 +127,10 @@ def install(root):
  from goblins.glow import install as install_glow
  glow_assets,glow_ids=install_glow(root);assets.extend(glow_assets)
  (out/'bindings.h').write_text('#pragma once\nnamespace Goblins { inline constexpr int NaturalCount=7; inline constexpr int Classes[]={'+','.join(map(str,bindings[0]))+'}; inline constexpr int EscapePortal='+str(portal_ids[0])+'; inline constexpr int EscapeState='+str(state_ids[0])+'; inline constexpr int GlowStates[]={'+','.join(map(str,glow_ids))+'}; }\n')
+ _,levels=read(root/'data/global/excel/levels.txt')
+ area={int(r['Id']):r for r in levels if r['Id'].isdigit()}
+ matrix=[[int(area.get(i,{}).get(k) or 1) for i in range(max(area)+1)] for k in ('MonLvl1Ex','MonLvl2Ex','MonLvl3Ex')]
+ (out/'area_levels.h').write_text('#pragma once\nnamespace Goblins { inline constexpr int AreaLevels[3]['+str(max(area)+1)+']='+json.dumps(matrix).replace('[','{').replace(']','}')+'; }\n')
  from goblins.mapsense import install as install_markers
  install_markers(root,bindings[0])
  (out/'assets.json').write_text(json.dumps(sorted(set(assets)),indent=2))

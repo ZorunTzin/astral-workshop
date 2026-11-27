@@ -3792,5 +3792,82 @@
       "uber": "belt/workshopmythical80",
       "ultra": "belt/workshopmythical80"
     }
+  },
+  {
+    "workshopmythical81": {
+      "normal": "helmet/workshopmythical81",
+      "uber": "helmet/workshopmythical81",
+      "ultra": "helmet/workshopmythical81"
+    }
+  },
+  {
+    "workshopmythical82": {
+      "normal": "ring/workshopmythical82",
+      "uber": "ring/workshopmythical82",
+      "ultra": "ring/workshopmythical82"
+    }
+  },
+  {
+    "workshopmythical83": {
+      "normal": "shield/workshopmythical83",
+      "uber": "shield/workshopmythical83",
+      "ultra": "shield/workshopmythical83"
+    }
+  },
+  {
+    "workshopmythical84": {
+      "normal": "sword/workshopmythical84",
+      "uber": "sword/workshopmythical84",
+      "ultra": "sword/workshopmythical84"
+    }
+  },
+  {
+    "workshopmythical85": {
+      "normal": "shield/workshopmythical85",
+      "uber": "shield/workshopmythical85",
+      "ultra": "shield/workshopmythical85"
+    }
+  },
+  {
+    "workshopmythical86": {
+      "normal": "shield/workshopmythical86",
+      "uber": "shield/workshopmythical86",
+      "ultra": "shield/workshopmythical86"
+    }
+  },
+  {
+    "workshopmythical87": {
+      "normal": "ring/workshopmythical87",
+      "uber": "ring/workshopmythical87",
+      "ultra": "ring/workshopmythical87"
+    }
+  },
+  {
+    "workshopmythical88": {
+      "normal": "armor/workshopmythical88",
+      "uber": "armor/workshopmythical88",
+      "ultra": "armor/workshopmythical88"
+    }
+  },
+  {
+    "workshopmythical89": {
+      "normal": "armor/workshopmythical89",
+      "uber": "armor/workshopmythical89",
+      "ultra": "armor/workshopmythical89"
+    }
+  },
+  {
+    "workshopmythical90": {
+      "normal": "armor/workshopmythical90",
+      "uber": "armor/workshopmythical90",
+      "ultra": "armor/workshopmythical90"
+    }
+  },
+  {
+    "workshopmythical91": {
+      "normal": "armor/workshopmythical91",
+      "uber": "armor/workshopmythical91",
+      "ultra": "armor/workshopmythical91"
+    }
   }
 ]

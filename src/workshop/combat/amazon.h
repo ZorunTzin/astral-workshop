@@ -3,6 +3,7 @@
 // All scheduled work keeps IDs and values, never pointers across game frames.
 namespace Amazon {
 #include "amazon_bindings.h"
+#include "amazon_bow_bindings.h"
 constexpr unsigned Invalid=0xffffffffU;
 inline Curses::MissileHitFn OriginalHit=nullptr;
 inline thread_local void* CurrentHitMissile=nullptr;
@@ -20,6 +21,7 @@ inline std::array<Impact,4096> Snapshots{};
 inline const Impact* SpawnContext=nullptr;inline int SpawnClass=0;
 inline void CopyDamage(void*,const Impact&,int);
 inline void PublishFlight(void*,void*);
+inline void BeforeTick(void*,void*) noexcept;
 inline std::array<std::array<unsigned,8>,2048> DiagnosticLogs{};
 inline void Trace(const char* event,unsigned id,int cls,int detail){if(Ramp::Log&&DiagnosticLogs[std::clamp(cls,0,2047)][event[0]=='c'?0:event[0]=='f'?1:event[0]=='r'?2:event[0]=='s'?3:event[0]=='v'?4:5]++<12){char b[180]{};std::snprintf(b,sizeof(b),"Amazon projectile: %s id=%u class=%d detail=%d",event,id,cls,detail);Ramp::Log(b);}}
 
@@ -37,7 +39,7 @@ inline int ToxicVelocity(int l){return int(16LL*256*(100+5*Level(l))/100);}
 // caster. Floor the Euclidean flight time so the last step cannot pass them.
 inline int ReturnFrames(int dx,int dy){return std::max(1,int(std::floor(std::hypot(double(dx),double(dy))*16.0/18.0)));}
 
-inline int Stage(int cls){return cls==Split0?0:cls==Split1?1:cls==Split2?2:cls==Split3?3:-1;}
+inline int Stage(int cls){return cls==Split0?0:cls==Split1?1:cls==Split2?2:cls==Split3?3:cls==Split4?4:-1;}
 inline int X(void* u){return Assassin::Coordinate(u,false);}inline int Y(void* u){return Assassin::Coordinate(u,true);}
 inline void Reset(void* game){unsigned frame=Ramp::Frame(game);if(Session!=game||frame<LastFrame){Session=game;Flights={};Pending={};Snapshots={};Fans={};Depth=0;DiagnosticLogs={};}LastFrame=frame;}
 inline bool BuffPulse(void* g,void* u,unsigned i,int level){
@@ -75,8 +77,7 @@ inline void Created(void* game,void* raw,void* missile)noexcept{
   const unsigned id=Barbarian::Id(missile),slot=id%Flights.size();
   auto& f=Flights[slot];
   f={id,Barbarian::Id(p->owner),unsigned(p->missile),Ramp::Frame(game)+300,Invalid,Level(p->level),Stage(p->missile),false};
-  // The native bow skill publishes the initial shot; never send it twice.
-  if(p->missile==Split0)f.published=true;
+  // All split stages are published explicitly after native initialization.
   auto& snap=Snapshots[slot];snap={f.owner,id,f.cls,Invalid,0,f.level,f.stage,X(missile),Y(missile),f.stage<0,{}};
   for(unsigned n=0;n<std::size(DamageStats);++n)snap.damage[n]=Ramp::GetUnit(missile,DamageStats[n],0);
   Trace("created",id,p->missile,p->level);
@@ -97,7 +98,7 @@ inline void Created(void* game,void* raw,void* missile)noexcept{
 }
 inline int __fastcall MissileHit(void* game,void* missile,void* target,int force){
  struct Context {void* prior;Context(void* m):prior(CurrentHitMissile){CurrentHitMissile=m;}~Context(){CurrentHitMissile=prior;}} context(missile);
- Reset(game);Impact request;bool queued=false;
+ Reset(game);BeforeTick(game,missile);Impact request;bool queued=false;
  const int cls=missile?static_cast<unsigned*>(missile)[1]:-1;
  if(cls==Return&&target&&GuardianCombat::Hostile(game,target))Trace("damage at return collision",Barbarian::Id(missile),cls,Ramp::GetUnit(missile,21,0));
  if(!Depth&&Stage(cls)>=0&&target&&GuardianCombat::Hostile(game,target)){
@@ -106,7 +107,7 @@ inline int __fastcall MissileHit(void* game,void* missile,void* target,int force
     f.lastTarget=Barbarian::Id(target);f.handled=true;
     request={f.owner,f.id,f.cls,f.lastTarget,Ramp::Frame(game)+1,f.level,f.stage,X(target),Y(target),f.stage<0,{}};
     for(unsigned i=0;i<std::size(DamageStats);++i)request.damage[i]=Ramp::GetUnit(missile,DamageStats[i],0);
-    queued=f.stage<3;
+    queued=f.stage<4;
    }break;
   }
  }
@@ -118,7 +119,8 @@ inline void PublishVisual(void* game,void* owner,void* missile,void* target=null
  if(!game||!missile||!Curses::Player(owner)||!PublishMissiles)return;
  // No prediction token and no caster-origin override: preserve the actual
  // remote spawn position/path. Native code enumerates each client once.
- void* arrows[]={missile};PublishMissiles(owner,arrows,1,nullptr,target,0);
+ void* arrows[]={missile};const bool split=Stage(static_cast<unsigned*>(missile)[1])>=0;
+ void* anchor=split?missile:owner;PublishMissiles(anchor,arrows,1,split?missile:nullptr,target,0);
  const auto id=Barbarian::Id(missile);auto& f=Flights[id%Flights.size()];
  if(f.id==id&&f.cls==static_cast<unsigned*>(missile)[1])f.published=true;
  Trace("volley published",id,int(static_cast<unsigned*>(missile)[1]),1);
@@ -151,7 +153,7 @@ inline void Frame(void* game){
  // Guided Arrow has a distinct movement handler. The frame fallback covers
  // it without depending on the generic missile-update hook being called.
  for(auto& f:Flights)if(f.id!=Invalid&&!f.published&&!f.handled&&f.until>now){
-  if(void* missile=Curses::Find(game,3,f.id))PublishFlight(game,missile);
+  if(void* missile=Curses::Find(game,3,f.id))BeforeTick(game,missile);
  }
  for(auto& pending:Pending){
   if(pending.owner==Invalid||now<pending.due)continue;Impact j=pending;pending={};
@@ -162,7 +164,7 @@ inline void Frame(void* game){
   }else{
    void* nearest=nullptr;double distance=1e20;
    AuraFeatures::Units(game,1,[&](void* enemy){if(GuardianCombat::Hostile(game,enemy)&&Barbarian::SameAuraArea(owner,enemy)&&Barbarian::Id(enemy)!=j.target){double dx=X(enemy)-j.x,dy=Y(enemy)-j.y,d=dx*dx+dy*dy;if(d<distance&&d<=225){distance=d;nearest=enemy;}}});
-   if(nearest){const int ids[]={Split0,Split1,Split2,Split3};for(int n=0;n<2;++n)Shoot(game,owner,nearest,j,ids[j.stage+1],22,100);}
+   if(nearest&&j.stage>=0&&j.stage<4){const int ids[]={Split0,Split1,Split2,Split3,Split4};for(int n=0;n<2;++n)Shoot(game,owner,nearest,j,ids[j.stage+1],22,100);}
   }
  }
 }
@@ -179,6 +181,9 @@ inline void BeforeTick(void* game,void* missile) noexcept {
    int bonus=Curses::EvalCalc4(game,owner,22,f.level,0);
    for(int stat:{21,22})Ramp::SetUnit(missile,stat,int(std::clamp<long long>(1LL*Ramp::GetUnit(missile,stat,0)*(100LL+bonus)/100,0,0x3fffffff)),0);
   }
+  // Scale the finalized payload once, including added elemental damage.
+  // Cold/poison duration remains unchanged; descendants inherit this payload.
+  for(int stat:DamageStats)if(stat!=56&&stat!=59)Ramp::SetUnit(missile,stat,Ramp::GetUnit(missile,stat,0)/3,0);
   f.scaled=true;
  }
  if(f.stage>=0)return;
@@ -192,7 +197,37 @@ inline void FinishTick(void* game,unsigned id,int result) noexcept {
  if(result!=2||f.id!=id||f.handled||f.stage>=0||f.until<=Ramp::Frame(game))return;
  f.handled=true;Queue(Snapshots[id%Flights.size()]);Trace("flight ended",id,f.cls,result);
 }
-inline void Hit(void*,void*,void*,void*) {} // Pounce is resolved once by Cast.
+// A successful Strafe impact splashes its finalized missile payload once.
+// Snapshot target IDs before native damage (which can remove units). The
+// primary victim is excluded; misses, blocks and splash hits cannot recurse.
+inline unsigned SplashDepth=0;
+constexpr double StrafeRadius=6.0; // Four yards.
+inline bool SplashImpact(void* attacker,void* packet,int extra=-1){
+ if(SplashDepth||Curses::ProcDepth||!packet||!Curses::Player(attacker)||!CurrentHitMissile)return false;
+ const unsigned cls=static_cast<unsigned*>(CurrentHitMissile)[1];
+ if(cls!=StrafeArrow&&cls!=StrafeBolt&&int(cls)!=extra)return false;
+ unsigned short flags=0;std::memcpy(&flags,static_cast<unsigned char*>(packet)+4,2);
+ return (flags&1)&&!(flags&0x4020)&&Barbarian::ReadDamage(packet,0x134)>0;
+}
+inline bool StrafeImpact(void* a,void* p){return SplashImpact(a,p);}
+inline void SplashHit(void* game,void* attacker,void* defender,void* packet,int extra=-1,int skill=26){
+ if(!SplashImpact(attacker,packet,extra)||!GuardianCombat::Hostile(game,defender))return;
+ Impact payload;for(unsigned i=0;i<std::size(DamageStats);++i)payload.damage[i]=Ramp::GetUnit(CurrentHitMissile,DamageStats[i],0);
+ const int x=X(defender),y=Y(defender);const unsigned primary=Barbarian::Id(defender);
+ std::vector<unsigned> targets;
+ AuraFeatures::Units(game,1,[&](void* enemy){
+  const double dx=X(enemy)-x,dy=Y(enemy)-y;
+  if(Barbarian::Id(enemy)!=primary&&GuardianCombat::Hostile(game,enemy)&&Barbarian::SameAuraArea(attacker,enemy)&&dx*dx+dy*dy<=StrafeRadius*StrafeRadius)targets.push_back(Barbarian::Id(enemy));
+ });
+ ++SplashDepth;++Curses::ProcDepth;
+ for(auto id:targets)if(void* enemy=Curses::Find(game,1,id)){
+  if(!GuardianCombat::Hostile(game,enemy)||!Barbarian::SameAuraArea(attacker,enemy))continue;
+  Pulse::Params p{};p.flags=0x8021;p.owner=attacker;p.origin=enemy;p.target=enemy;p.missile=StrafeSplash;p.skill=skill;p.level=1;p.x=X(enemy)-1;p.y=Y(enemy);p.targetX=p.x+2;p.targetY=p.y;p.range=1;
+  if(void* missile=Pulse::OnCreate(game,&p)){CopyDamage(missile,payload,50);Curses::NativeMissileHit(game,missile,enemy,0);}
+ }
+ --Curses::ProcDepth;--SplashDepth;
+}
+inline void Hit(void* g,void* a,void* d,void* p){SplashHit(g,a,d,p);}
 // Same relocation service used by native Dragon Flight (srvdofunc 52).
 // Pass explicit CURRENT target coordinates; item-proc Teleport instead resolves
 // the caster's cursor/path destination and may jump away from the victim.

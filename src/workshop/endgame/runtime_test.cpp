@@ -32,16 +32,16 @@ void PortalCraftTests(){
  Open(game,&player,nullptr,0,0,Arena::FirstLevel,nullptr,60,1);assert(!Pending[0].ready);
  portalResult=1;sealData[0x55]=0;Open(game,&player,nullptr,0,0,Arena::FirstLevel,nullptr,60,1);assert(!Pending[0].ready);
  sealData[0x55]=3;Open(game,&player,nullptr,0,0,Arena::FirstLevel,nullptr,60,1);assert(Pending[0].ready);
- Arena::Run run;run.start(1,player.id,1);Apply(game,201,run);assert(run.bonuses[0]==150&&run.bonuses[1]==6&&run.bonuses[16]==10);assert(Arena::SealChampion==5);assert(run.rewardBonus==180);assert(!Pending[0].ready);
+ Arena::Run run;run.start(1,player.id,1);Apply(game,201,run);assert(run.bonuses[0]==150&&run.bonuses[1]==6&&run.bonuses[16]==10);assert(Arena::SealChampion==5);assert(run.rewardBonus==90);assert(!Pending[0].ready);
  run.start(1,player.id,1);Apply(game,201,run);assert(run.rewardBonus==0&&Arena::SealChampion==0);
  puts("PASS: crafted seal portal snapshot only from Cube, success-only transfer, exact tier modifiers, rank chance and one-time consumption.");
 }
 int main(){
- assert(Progression::WaveLevel(1)==100&&Progression::WaveLevel(21)==120&&Progression::WaveLevel(50)==149);
- assert(Progression::WaveLevel(0)==100&&Progression::WaveLevel(2147483647)==511);
+ assert(Progression::WaveLevel(1)==105&&Progression::WaveLevel(21)==125&&Progression::WaveLevel(50)==154);
+ assert(Progression::WaveLevel(0)==105&&Progression::WaveLevel(2147483647)==511);
  const int baseXP=Progression::NativeHellXP[100];
  int previousXP=0;
- for(int wave=1;wave<=412;++wave){int xp=Progression::ScaleExperience(baseXP,100,wave);assert(xp>previousXP);previousXP=xp;}
+ for(int wave=1;wave<=407;++wave){int xp=Progression::ScaleExperience(baseXP,100,wave);assert(xp>previousXP);previousXP=xp;}
  assert(Progression::ScaleExperience(0,100,50)==0);
  assert(Progression::ScaleExperience(baseXP*3,100,21)==Progression::ScaleExperience(baseXP,100,21)*3);
  assert(Progression::ScaleExperience(2147483647,1,2147483647)==0x3fffffff);
@@ -49,9 +49,12 @@ int main(){
  ExistingAuraTests();PortalCraftTests();Arena::NaturalRanks=false;
  for(auto size: {std::pair<float,float>{1280,720},{1920,1080},{3840,2160}}){for(int i=0;i<4;++i){auto r=Arena::ChoiceRect(i,size.first,size.second);assert(Arena::ChoiceAt((r.left+r.right)/2,(r.top+r.bottom)/2,size.first,size.second)==i);}assert(Arena::ChoiceAt(0,0,size.first,size.second)==-1);}
  assert(Arena::QueueChoice(5,2));assert(!Arena::QueueChoice(5,0));assert(Arena::Command.exchange(0)==((uint64_t(5)<<32)|3));
- player={};player.x=100;player.y=120;player.room=Arena::FirstLevel;player.stats[6]=player.stats[7]=10000;game[0x104]=2;
+ player={};player.x=10080;player.y=10080;player.room=Arena::FirstLevel;player.stats[6]=player.stats[7]=10000;game[0x104]=2;
  Curses::X=AX;Curses::Y=AY;Curses::Find=AFind;SoulHarvest::Room=ARoom;Assassin::SetTarget=ATarget;MonsterRuntime::Spawn=ASpawn;Barbarian::RoomDelete=ARoomDelete;Barbarian::DeleteUnit=ADelete;
  Arena::Level=ALevel;
+ Arena::Current.stage=1;assert(!Arena::SafePosition(10000,10080)&&!Arena::SafePosition(10160,10080));
+ assert(Arena::SafePosition(10010,10010)&&Arena::SafePosition(10150,10150));
+ assert(!Arena::SpawnInside(&player,10001,10080,Arena::MonsterClasses[0]));
  Unit portal{};portal.type=2;portal.cls=60;portal.room=Arena::FirstLevel;assert(Arena::IsArenaReturnPortal(&portal));portal.room=109;assert(!Arena::IsArenaReturnPortal(&portal));portal.room=Arena::FirstLevel;portal.cls=59;assert(!Arena::IsArenaReturnPortal(&portal));
  Unit townPortal{};townPortal.type=2;townPortal.cls=60;townPortal.room=109;
  Unit redPortal{};redPortal.type=2;redPortal.cls=60;redPortal.room=Arena::FirstLevel;
@@ -73,16 +76,17 @@ Arena::Enabled=true;Arena::Context=&ctx;void* p=&player;std::memcpy(game+0x2230+
  Frame(1070);Arena::Frame(game);assert(mobs.empty());
  for(int f=1075;f<=1100;f+=5){Frame(f);Arena::Frame(game);}assert(Arena::Current.phase==Arena::Phase::Fighting&&Arena::Enemies.size()==14);
  Arena::Run hpRun;hpRun.start(1,1,1);assert(Arena::PlaytestLife(hpRun)==2560);hpRun.bonuses[0]=20;assert(Arena::PlaytestLife(hpRun)==3072);hpRun.wave=2;assert(Arena::PlaytestLife(hpRun)==3440);
- for(const auto& u:mobs)if(u){int dx=u->x-player.x,dy=u->y-player.y;double distance=std::sqrt(double(dx*dx+dy*dy));assert(distance>=54&&distance<=89);}
- assert(mobs[0]->stats[12]==100&&mobs[0]->stats[13]==baseXP);
- assert(mobs[0]->stats[7]==1200&&mobs[0]->stats[6]==1200);alignas(8) char packet[0x180]{};int damage=100;std::memcpy(packet+0x18,&damage,4);std::memcpy(packet+0x134,&damage,4);Arena::Damage(game,mobs[0].get(),&player,packet);assert(Barbarian::ReadDamage(packet,0x134)==120);
+ for(const auto& u:mobs)if(u){int dx=u->x-player.x,dy=u->y-player.y;double distance=std::sqrt(double(dx*dx+dy*dy));assert(distance>=54&&distance<=89&&Arena::SafePosition(u->x,u->y));}
+ for(int stat:{67,68,99,102,105})assert(mobs[0]->stats[stat]==20);
+ assert(mobs[0]->stats[12]==105&&mobs[0]->stats[13]==2*Progression::ScaleExperience(baseXP,100,1));
+ assert(mobs[0]->stats[7]==2000&&mobs[0]->stats[6]==2000);alignas(8) char packet[0x180]{};int damage=100;std::memcpy(packet+0x18,&damage,4);std::memcpy(packet+0x134,&damage,4);Arena::Damage(game,mobs[0].get(),&player,packet);assert(Barbarian::ReadDamage(packet,0x134)==200);
 
  MonsterRuntime::AdditionalLootRolls=Arena::NativeLootBonus;
  MonsterRuntime::OriginalDrop=[](void*,void*,void*,unsigned short,std::uintptr_t,std::uintptr_t,std::uintptr_t,std::uintptr_t,std::uintptr_t,std::uintptr_t)->std::uintptr_t{++created;return 77;};
  Arena::Current.rewardBonus=400;
- assert(Arena::NativeLootBonus(game,mobs[0].get())==4);assert(Arena::NativeLootBonus(game,&player)==0);
- MonsterRuntime::Drop(game,mobs[0].get(),&player,1,0,0,0,0,0,0);assert(created==5);
- MonsterRuntime::Drop(game,mobs[0].get(),&player,1,0,0,0,1,0,0);assert(created==6);
+ assert(Arena::NativeLootBonus(game,mobs[0].get())==9);assert(Arena::NativeLootBonus(game,&player)==0);
+ MonsterRuntime::Drop(game,mobs[0].get(),&player,1,0,0,0,0,0,0);assert(created==10);
+ MonsterRuntime::Drop(game,mobs[0].get(),&player,1,0,0,0,1,0,0);assert(created==11);
  Arena::ApplyBuff(&player);assert(GetUnit(&player,80,0)==400);
  Arena::Current.rewardBonus=0;created=0;
  Curses::Owner=[](void*,void*)->void*{return nullptr;};
@@ -111,17 +115,18 @@ Arena::Enabled=true;Arena::Context=&ctx;void* p=&player;std::memcpy(game+0x2230+
  Frame(1200);Arena::Frame(game);assert(created==0);
  player.room=109;Frame(1230);Arena::Frame(game);assert(Arena::Current.phase==Arena::Phase::Idle);
  player.room=Arena::FirstLevel;Frame(1235);Arena::Frame(game);assert(Arena::Current.phase==Arena::Phase::Idle); // old portal cannot farm again
- player.room=Arena::FirstLevel+1;Frame(1240);Arena::Frame(game);assert(Arena::Current.stage==2&&Arena::Current.phase==Arena::Phase::Countdown);
+ player.x=10580;player.room=Arena::FirstLevel+1;Frame(1240);Arena::Frame(game);assert(Arena::Current.stage==2&&Arena::Current.phase==Arena::Phase::Countdown);
  player.stats[6]=0;Frame(1245);Arena::Frame(game);assert(Arena::Current.phase==Arena::Phase::Failed&&Arena::Enemies.empty());
- Arena::Run scales;for(int i=1;i<=5;++i){scales.stage=i;const double expected[]={1.2,1.5,1.9,2.4,3.0};assert(scales.stageScale()==expected[i-1]);}
+ Arena::Run scales;for(int i=1;i<=5;++i){scales.stage=i;const double expected[]={2.0,3.0,4.0,5.0,6.0};assert(scales.stageScale()==expected[i-1]);}
  Arena::Run reward;reward.start(1,1,1);assert(reward.lootBonus()==0);reward.wave=5;reward.rewardBonus=8;assert(reward.lootBonus()==48);reward.wave=100;assert(reward.lootBonus()==998);
 
- assert(reward.reward(Arena::Mod::MonsterPhysical,0)==10 && reward.reward(Arena::Mod::MonsterPhysical,4)==160);
+ assert(reward.reward(Arena::Mod::MonsterPhysical,0)==5 && reward.reward(Arena::Mod::MonsterPhysical,4)==80);
  alignas(8) unsigned char ranked[0x180]{},rankData[0x80]{};*reinterpret_cast<unsigned*>(ranked)=1;void* rankPtr=rankData;std::memcpy(ranked+0x10,&rankPtr,8);
- MonsterRuntime::Init=[](void*,int id,int unique){assert(unique==1);assert(id==1||id==2||id==4||id==16||id==5);};
- MonsterRuntime::OriginalRoll=[](void*,void*,unsigned char*,void* weights)->int{assert(weights);return 5;};
+ MonsterRuntime::Init=[](void*,int id,int unique){assert(unique==1);assert(id>0&&id<256);};
+ MonsterRuntime::OriginalRoll=[](void*,void*,unsigned char* used,void* weights)->int{assert(weights);for(int id=5;id<10;++id)if(!used[id])return id;return 0;};
+ ++MonsterRuntime::Depth; // Isolate native count/used-mask contract; custom rolls have their own suite.
  Arena::Current.bonuses[int(Arena::Mod::ChampionWave)]=1;assert(Arena::RankWaveMonster(ranked));assert(MonsterModifiersNative::Rank(ranked)==12&&rankData[0x20]==16&&rankData[0x21]==0);
- Arena::Current.bonuses[int(Arena::Mod::ChampionWave)]=0;Arena::Current.bonuses[int(Arena::Mod::EliteWave)]=1;assert(Arena::RankWaveMonster(ranked));assert(MonsterModifiersNative::Rank(ranked)==8&&rankData[0x20]==5&&rankData[0x21]==0);Arena::Current.bonuses[int(Arena::Mod::EliteWave)]=0;
+ Arena::Current.bonuses[int(Arena::Mod::ChampionWave)]=0;Arena::Current.bonuses[int(Arena::Mod::EliteWave)]=1;assert(Arena::RankWaveMonster(ranked));assert(MonsterModifiersNative::Rank(ranked)==8&&rankData[0x20]==5&&rankData[0x21]==6&&rankData[0x22]==7);Arena::Current.bonuses[int(Arena::Mod::EliteWave)]=0;
  Arena::Run once;once.start(1,1,1);once.phase=Arena::Phase::Choice;once.offers[0]={Arena::Mod::ChampionWave,3,1,80};assert(once.choose(0,once.epoch));assert(once.bonuses[int(Arena::Mod::ChampionWave)]==1);once.phase=Arena::Phase::Fighting;assert(once.clear());assert(once.bonuses[int(Arena::Mod::ChampionWave)]==0);
  Arena::Run rolling;rolling.start(1,1,12345);int positiveScreens=0;
  for(int n=0;n<100000;++n){rolling.roll();int positive=0;for(int i=0;i<3;++i){positive+=Arena::Positive[int(rolling.offers[i].mod)];for(int j=0;j<i;++j)assert(rolling.offers[j].mod!=rolling.offers[i].mod);}for(auto o:rolling.offers){if(o.mod==Arena::Mod::ChampionWave)assert(o.tier==3&&o.value==1);if(o.mod==Arena::Mod::EliteWave)assert(o.tier==4&&o.value==1);}assert(positive<=1);positiveScreens+=positive;}
@@ -136,12 +141,12 @@ Arena::Enabled=true;Arena::Context=&ctx;void* p=&player;std::memcpy(game+0x2230+
  assert(actions.value(Arena::Mod::PlayerLife,4)==20&&actions.value(Arena::Mod::PlayerStats,4)==20&&actions.value(Arena::Mod::MonsterMagic,4)==300);
  for(int n=0;n<100;++n){Arena::StartWave(1000);assert(Arena::WaveClasses[0]!=Arena::WaveClasses[1]&&Arena::WaveClasses[1]!=Arena::WaveClasses[2]&&Arena::WaveClasses[0]!=Arena::WaveClasses[2]);}
  // Lost-unit recovery waits five seconds and requires a real replacement kill.
- player.stats[6]=10000;player.room=Arena::FirstLevel;Arena::Current.start(1,player.id,99);Arena::Current.phase=Arena::Phase::Fighting;
+ player.x=10080;player.stats[6]=10000;player.room=Arena::FirstLevel;Arena::Current.start(1,player.id,99);Arena::Current.phase=Arena::Phase::Fighting;
  Arena::Enemies={999999};Arena::ConfirmedDead.clear();Arena::SpawnRecords={{999999,Arena::MonsterClasses[0],0}};Arena::Next=0;
  Frame(2000);Arena::Frame(game);assert(Arena::Enemies[0]==999999);
  Frame(2120);Arena::Frame(game);assert(Arena::Enemies[0]==999999&&Arena::Current.completed==0);
  Frame(2125);Arena::Frame(game);assert(Arena::Enemies[0]!=999999&&Arena::Current.phase==Arena::Phase::Fighting&&Arena::Current.completed==0);
- auto replacement=AFind(game,1,Arena::Enemies[0]);assert(replacement&&GetUnit(replacement,6,0)==1200);assert(GetUnit(replacement,12,0)==100&&GetUnit(replacement,13,0)==baseXP);
+ auto replacement=AFind(game,1,Arena::Enemies[0]);assert(replacement&&GetUnit(replacement,6,0)==2000);assert(GetUnit(replacement,12,0)==105&&GetUnit(replacement,13,0)==2*Progression::ScaleExperience(baseXP,100,1));
  Frame(2130);Arena::Frame(game);assert(Arena::Current.phase==Arena::Phase::Fighting);
  SetUnit(replacement,6,0,0);Frame(2135);Arena::Frame(game);assert(Arena::Current.phase==Arena::Phase::Choice&&Arena::Current.completed==1);
  std::puts("PASS: missing enemy recovery waits, replaces without credit, then unlocks cards only after replacement death.");
@@ -161,8 +166,8 @@ Arena::Enabled=true;Arena::Context=&ctx;void* p=&player;std::memcpy(game+0x2230+
  Unit missile{};missile.type=3;missile.mode=3;missile.room=Arena::FirstLevel;void* missileHead=&missile;std::memcpy(itemGame+0x3230,&missileHead,8);
  Arena::ClearGroundLoot();assert(missile.type==3);assert(!AFind(itemGame,4,9000)&&AFind(itemGame,4,9001)&&AFind(itemGame,4,9002));Arena::Game=savedGame;
  Arena::Current.bonuses[int(Arena::Mod::ChampionWave)]=Arena::Current.bonuses[int(Arena::Mod::EliteWave)]=0;
- assert(Arena::RankWaveMonster(ranked,1)&&rankData[0x20]==16);assert(Arena::RankWaveMonster(ranked,2)&&rankData[0x20]==5&&rankData[0x21]==0);
- std::puts("PASS: cleanup removes only local ground items; natural champion/elite ranking uses one native modifier.");
+ assert(Arena::RankWaveMonster(ranked,1)&&rankData[0x20]==16);assert(Arena::RankWaveMonster(ranked,2)&&rankData[0x20]==5&&rankData[0x21]==6&&rankData[0x22]==7);
+ std::puts("PASS: cleanup removes only local ground items; champions use one modifier; Hell elites receive three to five distinct modifiers.");
  // Milestone extras are additive; exact escort ranks survive event cards.
  for(int stage=1;stage<=5;++stage)for(int wave:{9,10,11,20}){
   Arena::Current.start(stage,player.id,91);Arena::Current.wave=wave;
@@ -174,10 +179,11 @@ Arena::Enabled=true;Arena::Context=&ctx;void* p=&player;std::memcpy(game+0x2230+
  Arena::Current.start(1,player.id,91);Arena::Current.wave=10;player.room=Arena::FirstLevel;
  Arena::Current.bonuses[int(Arena::Mod::ChampionWave)]=1;
  assert(Arena::RankWaveMonster(ranked,2)&&rankData[0x20]==5); // guaranteed elites stay elites
+ --MonsterRuntime::Depth;
  Arena::StartWave(5000);for(unsigned now=5075;Arena::Pending&&now<5300;now+=5)Arena::SpawnWave(&player,now);
  assert(!Arena::Pending&&Arena::Enemies.size()==unsigned(Arena::Current.count()+8));
  auto boss=std::find_if(Arena::SpawnRecords.begin(),Arena::SpawnRecords.end(),[](auto r){return r.rank==3;});assert(boss!=Arena::SpawnRecords.end()&&boss->cls==Arena::BossClasses[0]);
- for(unsigned id:Arena::Enemies){auto unit=AFind(game,1,id);assert(unit&&GetUnit(unit,12,0)==109&&GetUnit(unit,13,0)>baseXP);}
+ for(unsigned id:Arena::Enemies){auto unit=AFind(game,1,id);assert(unit&&GetUnit(unit,12,0)==114&&GetUnit(unit,13,0)>baseXP);}
  unsigned bossId=boss->id;
  for(unsigned id:Arena::Enemies)if(id!=bossId)SetUnit(AFind(game,1,id),6,0,0);
  Arena::Next=0;Frame(5310);Arena::Frame(game);assert(Arena::Current.phase==Arena::Phase::Fighting);
@@ -188,5 +194,12 @@ Arena::Enabled=true;Arena::Context=&ctx;void* p=&player;std::memcpy(game+0x2230+
  Frame(5315);Arena::Frame(game);assert(Arena::Current.phase==Arena::Phase::Choice&&Arena::Current.completed==10);
  std::puts("PASS: wave 10/20 add one act boss, five champions and two elites; boss death is required and recorded after corpse removal.");
  std::printf("PASS: 100000 selections, %d positive screens; at most one positive; distinct enemies, proc cooldown and recursion guard.\n",positiveScreens);
+ // Summoned helpers keep inherited HP, gain all Trial speeds/resistances, and no XP.
+ Unit parent{},child{};parent.type=child.type=1;parent.id=60001;child.id=60002;parent.room=child.room=Arena::FirstLevel;
+ Arena::Enabled=true;Arena::Current.start(1,player.id,1);Arena::Enemies={parent.id};Arena::Current.bonuses[int(Arena::Mod::MonsterResist)]=15;
+ child.stats[6]=child.stats[7]=12345;child.stats[13]=999;Arena::ChildBonuses(&parent,&child);
+ assert(child.stats[6]==12345&&child.stats[7]==12345&&child.stats[13]==0);
+ for(int stat:{67,68,99,102,105})assert(child.stats[stat]==20);
+ for(int stat:{39,41,43,45})assert(child.stats[stat]==15);
  std::puts("PASS: arena countdown, authoritative spawning/clear, native monster HP with Trial life scaling, red-return-portal filtering, tier damage, stale choice, pause protection, temporary buff cleanup, native loot scaling, output-buffer safety, loot-MF cleanup, no Finish item creation, used portal and death cleanup.");
 }

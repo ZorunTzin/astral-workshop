@@ -6,13 +6,17 @@
 #include <cstdint>
 namespace League {
 constexpr unsigned TicksPerSecond=25;
+// 25 Hz cannot represent 1.5 seconds in a single integer interval.
+constexpr unsigned nightSpawnOffset(unsigned wave){return (wave*75+1)/2;}
 enum class Kind {Night,Breach,Beyond};
 enum class Phase {Waiting,Active,Complete};
 struct Point {int x=0,y=0;};
 inline int distance2(Point a,Point b){int x=a.x-b.x,y=a.y-b.y;return x*x+y*y;}
+constexpr int BreachSpacing=48,EntryClearance=80;
+inline bool spaced(Point at,const std::vector<Point>& points){for(auto p:points)if(distance2(at,p)<BreachSpacing*BreachSpacing)return false;return true;}
 struct Kill {Point p;unsigned frame;};
 struct Encounter {
- Kind kind=Kind::Night;Phase phase=Phase::Waiting;int area=0,stage=0,spawned=0,killed=0,groups=0,pending=0;unsigned started=0,until=0,next=0,lastSeen=0;Point center;std::array<Point,3> rifts{};std::vector<Kill> kills;
+ Kind kind=Kind::Night;Phase phase=Phase::Waiting;int area=0,stage=0,spawned=0,killed=0,groups=0,pending=0;unsigned started=0,until=0,next=0,lastSeen=0;Point center;std::vector<Point> rifts;std::vector<Kill> kills;
  bool activate(unsigned now){if(phase!=Phase::Waiting)return false;phase=Phase::Active;started=now;until=now+Durations[int(kind)]*TicksPerSecond;next=now;return true;}
  bool expired(unsigned now)const{return phase==Phase::Active&&now>=until;}
  bool clustered(Point p,unsigned now){
@@ -26,5 +30,6 @@ struct Encounter {
 };
 inline bool eligible(int area){return area>=2&&area<=132&&area!=39&&area!=40&&area!=75&&area!=103&&area!=109;}
 inline unsigned random(unsigned& seed){if(!seed)seed=0x91d401a7;seed^=seed<<13;seed^=seed>>17;seed^=seed<<5;return seed;}
+inline int beyondCount(unsigned& seed,int groups){return random(seed)%5==0?10+random(seed)%6:groups%4==0?1:4;}
 inline unsigned rollMechanics(unsigned& seed){unsigned mask=0;for(int kind=0;kind<3;++kind)if(random(seed)%100<AreaChance)mask|=1u<<kind;return mask;}
 }

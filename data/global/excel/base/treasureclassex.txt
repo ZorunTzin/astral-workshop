@@ -1546,23 +1546,23 @@ Act 4 (H) Herald Item K - 2 Extra			-2	850	850	850	1024	0	Act 4 (H) Herald Item 
 Act 5 (H) Herald Item L - 2 Extra			-2	850	850	850	1024	0	Act 5 (H) Herald Item L	2																						(stat('heraldtier'.accr) >=4) 						0
 Act 5 (H) Herald Item M - 2 Extra			-2	850	850	850	1024	0	Act 5 (H) Herald Item M	2																						(stat('heraldtier'.accr) >=4) 						0
 Act 5 (H) Herald Item N - 2 Extra			-2	850	850	850	1024	0	Act 5 (H) Herald Item N	2																						(stat('heraldtier'.accr) >=4) 						0
-Workshop Trial Orbs			1					2730	Woa	4	Wob	4	Woc	4	Wod	4	Woe	4	Wof	4	Wog	4																0
-Workshop Herald And Trial Orbs			-2					0	Herald Orbs	1	Workshop Trial Orbs	1																										0
-Act 1 (H) Herald A	41	67	-9	989	983	1024	1024	0	Sunder Charms	2	Workshop Herald And Trial Orbs	1	Act 1 (H) Herald Item A	2	Act 1 (H) Herald Item A - 1 Extra	1	Act 1 (H) Herald Item A - 2 Extra	1	Act 3 Terrorize Act Consumable Desecrated	1	Super Potion	1																0
-Act 1 (H) Herald B	41	68	-9	989	983	1024	1024	0	Sunder Charms	2	Workshop Herald And Trial Orbs	1	Act 1 (H) Herald Item B	2	Act 1 (H) Herald Item B - 1 Extra	1	Act 1 (H) Herald Item B - 2 Extra	1	Act 3 Terrorize Act Consumable Desecrated	1	Super Potion	1																0
-Act 1 (H) Herald C	41	69	-9	989	983	1024	1024	0	Sunder Charms	2	Workshop Herald And Trial Orbs	1	Act 1 (H) Herald Item C	2	Act 1 (H) Herald Item C - 1 Extra	1	Act 1 (H) Herald Item C - 2 Extra	1	Act 3 Terrorize Act Consumable Desecrated	1	Super Potion	1																0
-Act 2 (H) Herald A	41	70	-9	989	983	1024	1024	0	Sunder Charms	2	Workshop Herald And Trial Orbs	1	Act 2 (H) Herald Item D	2	Act 2 (H) Herald Item D - 1 Extra	1	Act 2 (H) Herald Item D - 2 Extra	1	Act 4 Terrorize Act Consumable Desecrated	1	Super Potion	1																0
-Act 2 (H) Herald B	41	71	-9	989	983	1024	1024	0	Sunder Charms	2	Workshop Herald And Trial Orbs	1	Act 2 (H) Herald Item E	2	Act 2 (H) Herald Item E - 1 Extra	1	Act 2 (H) Herald Item E - 2 Extra	1	Act 4 Terrorize Act Consumable Desecrated	1	Super Potion	1																0
-Act 2 (H) Herald C	41	72	-9	989	983	1024	1024	0	Sunder Charms	2	Workshop Herald And Trial Orbs	1	Act 2 (H) Herald Item F	2	Act 2 (H) Herald Item F - 1 Extra	1	Act 2 (H) Herald Item F - 2 Extra	1	Act 4 Terrorize Act Consumable Desecrated	1	Super Potion	1																0
-Act 3 (H) Herald A	41	73	-9	989	983	1024	1024	0	Sunder Charms	2	Workshop Herald And Trial Orbs	1	Act 3 (H) Herald Item G	2	Act 3 (H) Herald Item G - 1 Extra	1	Act 3 (H) Herald Item G - 2 Extra	1	Act 5 Terrorize Act Consumable Desecrated	1	Super Potion	1																0
-Act 3 (H) Herald B	41	75	-9	989	983	1024	1024	0	Sunder Charms	2	Workshop Herald And Trial Orbs	1	Act 3 (H) Herald Item H	2	Act 3 (H) Herald Item H - 1 Extra	1	Act 3 (H) Herald Item H - 2 Extra	1	Act 5 Terrorize Act Consumable Desecrated	1	Super Potion	1																0
-Act 3 (H) Herald C	41	78	-9	989	983	1024	1024	0	Sunder Charms	2	Workshop Herald And Trial Orbs	1	Act 3 (H) Herald Item I	2	Act 3 (H) Herald Item I - 1 Extra	1	Act 3 (H) Herald Item I - 2 Extra	1	Act 5 Terrorize Act Consumable Desecrated	1	Super Potion	1																0
-Act 4 (H) Herald A	41	81	-9	989	983	1024	1024	0	Sunder Charms	2	Workshop Herald And Trial Orbs	1	Act 4 (H) Herald Item J	2	Act 4 (H) Herald Item J - 1 Extra	1	Act 4 (H) Herald Item J - 2 Extra	1	Act 2 Terrorize Act Consumable Desecrated	1	Super Potion	1																0
-Act 4 (H) Herald B	41	84	-9	989	983	1024	1024	0	Sunder Charms	2	Workshop Herald And Trial Orbs	1	Act 4 (H) Herald Item K	2	Act 4 (H) Herald Item K - 1 Extra	1	Act 4 (H) Herald Item K - 2 Extra	1	Act 2 Terrorize Act Consumable Desecrated	1	Super Potion	1																0
-Act 4 (H) Herald C	41	87	-9	989	983	1024	1024	0	Sunder Charms	2	Workshop Herald And Trial Orbs	1	Act 4 (H) Herald Item K	2	Act 4 (H) Herald Item K - 1 Extra	1	Act 4 (H) Herald Item K - 2 Extra	1	Act 2 Terrorize Act Consumable Desecrated	1	Super Potion	1																0
-Act 5 (H) Herald A	41	90	-9	989	983	1024	1024	0	Sunder Charms	2	Workshop Herald And Trial Orbs	1	Act 5 (H) Herald Item L	2	Act 5 (H) Herald Item L - 1 Extra	1	Act 5 (H) Herald Item L - 2 Extra	1	Act 1 Terrorize Act Consumable Desecrated	1	Super Potion	1																0
-Act 5 (H) Herald B	41	93	-9	989	983	1024	1024	0	Sunder Charms	2	Workshop Herald And Trial Orbs	1	Act 5 (H) Herald Item M	2	Act 5 (H) Herald Item M - 1 Extra	1	Act 5 (H) Herald Item M - 2 Extra	1	Act 1 Terrorize Act Consumable Desecrated	1	Super Potion	1																0
-Act 5 (H) Herald C	41	96	-9	989	983	1024	1024	0	Sunder Charms	2	Workshop Herald And Trial Orbs	1	Act 5 (H) Herald Item N	2	Act 5 (H) Herald Item N - 1 Extra	1	Act 5 (H) Herald Item N - 2 Extra	1	Act 1 Terrorize Act Consumable Desecrated	1	Super Potion	1																0
+Workshop Trial Orbs			1					8286	Woa	4	Wob	4	Woc	4	Wod	4	Woe	4	Wof	4	Wog	4																0
+Workshop Herald And Trial Orbs			1					0	Herald Orbs	1																												0
+Act 1 (H) Herald A	41	67	-9	989	983	1024	1024	0	Sunder Charms	2	Herald Orbs	1	Act 1 (H) Herald Item A	2	Act 1 (H) Herald Item A - 1 Extra	1	Act 1 (H) Herald Item A - 2 Extra	1	Act 3 Terrorize Act Consumable Desecrated	1	Super Potion	1																0
+Act 1 (H) Herald B	41	68	-9	989	983	1024	1024	0	Sunder Charms	2	Herald Orbs	1	Act 1 (H) Herald Item B	2	Act 1 (H) Herald Item B - 1 Extra	1	Act 1 (H) Herald Item B - 2 Extra	1	Act 3 Terrorize Act Consumable Desecrated	1	Super Potion	1																0
+Act 1 (H) Herald C	41	69	-9	989	983	1024	1024	0	Sunder Charms	2	Herald Orbs	1	Act 1 (H) Herald Item C	2	Act 1 (H) Herald Item C - 1 Extra	1	Act 1 (H) Herald Item C - 2 Extra	1	Act 3 Terrorize Act Consumable Desecrated	1	Super Potion	1																0
+Act 2 (H) Herald A	41	70	-9	989	983	1024	1024	0	Sunder Charms	2	Herald Orbs	1	Act 2 (H) Herald Item D	2	Act 2 (H) Herald Item D - 1 Extra	1	Act 2 (H) Herald Item D - 2 Extra	1	Act 4 Terrorize Act Consumable Desecrated	1	Super Potion	1																0
+Act 2 (H) Herald B	41	71	-9	989	983	1024	1024	0	Sunder Charms	2	Herald Orbs	1	Act 2 (H) Herald Item E	2	Act 2 (H) Herald Item E - 1 Extra	1	Act 2 (H) Herald Item E - 2 Extra	1	Act 4 Terrorize Act Consumable Desecrated	1	Super Potion	1																0
+Act 2 (H) Herald C	41	72	-9	989	983	1024	1024	0	Sunder Charms	2	Herald Orbs	1	Act 2 (H) Herald Item F	2	Act 2 (H) Herald Item F - 1 Extra	1	Act 2 (H) Herald Item F - 2 Extra	1	Act 4 Terrorize Act Consumable Desecrated	1	Super Potion	1																0
+Act 3 (H) Herald A	41	73	-9	989	983	1024	1024	0	Sunder Charms	2	Herald Orbs	1	Act 3 (H) Herald Item G	2	Act 3 (H) Herald Item G - 1 Extra	1	Act 3 (H) Herald Item G - 2 Extra	1	Act 5 Terrorize Act Consumable Desecrated	1	Super Potion	1																0
+Act 3 (H) Herald B	41	75	-9	989	983	1024	1024	0	Sunder Charms	2	Herald Orbs	1	Act 3 (H) Herald Item H	2	Act 3 (H) Herald Item H - 1 Extra	1	Act 3 (H) Herald Item H - 2 Extra	1	Act 5 Terrorize Act Consumable Desecrated	1	Super Potion	1																0
+Act 3 (H) Herald C	41	78	-9	989	983	1024	1024	0	Sunder Charms	2	Herald Orbs	1	Act 3 (H) Herald Item I	2	Act 3 (H) Herald Item I - 1 Extra	1	Act 3 (H) Herald Item I - 2 Extra	1	Act 5 Terrorize Act Consumable Desecrated	1	Super Potion	1																0
+Act 4 (H) Herald A	41	81	-9	989	983	1024	1024	0	Sunder Charms	2	Herald Orbs	1	Act 4 (H) Herald Item J	2	Act 4 (H) Herald Item J - 1 Extra	1	Act 4 (H) Herald Item J - 2 Extra	1	Act 2 Terrorize Act Consumable Desecrated	1	Super Potion	1																0
+Act 4 (H) Herald B	41	84	-9	989	983	1024	1024	0	Sunder Charms	2	Herald Orbs	1	Act 4 (H) Herald Item K	2	Act 4 (H) Herald Item K - 1 Extra	1	Act 4 (H) Herald Item K - 2 Extra	1	Act 2 Terrorize Act Consumable Desecrated	1	Super Potion	1																0
+Act 4 (H) Herald C	41	87	-9	989	983	1024	1024	0	Sunder Charms	2	Herald Orbs	1	Act 4 (H) Herald Item K	2	Act 4 (H) Herald Item K - 1 Extra	1	Act 4 (H) Herald Item K - 2 Extra	1	Act 2 Terrorize Act Consumable Desecrated	1	Super Potion	1																0
+Act 5 (H) Herald A	41	90	-9	989	983	1024	1024	0	Sunder Charms	2	Herald Orbs	1	Act 5 (H) Herald Item L	2	Act 5 (H) Herald Item L - 1 Extra	1	Act 5 (H) Herald Item L - 2 Extra	1	Act 1 Terrorize Act Consumable Desecrated	1	Super Potion	1																0
+Act 5 (H) Herald B	41	93	-9	989	983	1024	1024	0	Sunder Charms	2	Herald Orbs	1	Act 5 (H) Herald Item M	2	Act 5 (H) Herald Item M - 1 Extra	1	Act 5 (H) Herald Item M - 2 Extra	1	Act 1 Terrorize Act Consumable Desecrated	1	Super Potion	1																0
+Act 5 (H) Herald C	41	96	-9	989	983	1024	1024	0	Sunder Charms	2	Herald Orbs	1	Act 5 (H) Herald Item N	2	Act 5 (H) Herald Item N - 1 Extra	1	Act 5 (H) Herald Item N - 2 Extra	1	Act 1 Terrorize Act Consumable Desecrated	1	Super Potion	1																0
 Lab Gold			1					0	gld,mul=1536	1																												0
 Lab Potion			1					0	hp5	5	mp5	5	rvl	2																								0
 Lab Ammo			1					0	aqv	1	cqv	1																										
@@ -1674,16 +1674,20 @@ Lab Class Ama Elite			1					0	amb	1	amc	1	amd	1	ame	1	amf	1																				0
 Lab Class Ama Base			1	1000	1000	1000	1024	0	Lab Class Ama Normal	5	Lab Class Ama Exceptional	5	Lab Class Ama Elite	5																								0
 Lab Class Ama			-3					0	Lab Class Ama Base	2	Lab T1 Unique	1																										0
 Workshop Trial Seal Drops			1					24975	Wt1	10	Wt2	6	Wt3	4	Wt4	3	Wt5	2																				0
-Ws Trial Materials			1					24975	Lab T1 Materials	10	Lab T2 Materials	6	Lab T3 Materials	4	Lab T4 Materials	3	Lab T5 Materials	2																				0
+Ws Trial Shards			1					0	xa1	10	xa2	6	xa3	4	xa4	3	xa5	2																				0
+Ws Trial Keys			1					0	pk1	1	pk2	1	pk3	1																								0
+Ws Trial Statues			1					0	ua1	1	ua2	1	ua3	1	ua4	1	ua5	1																				0
+Ws Trial Materials			1					497	Ws Trial Shards	1	Ws Trial Keys	1	Ws Trial Statues	1																								0
 Workshop Trial Orb Materials			-3					0	Ws Trial Materials	1	Workshop Trial Orbs	1	Workshop Trial Seal Drops	1																								0
 Ws Trial Runes			1					3980	Runes 17	20																												0
-Ws Mythical Pool 0			1					0	WorkshopMythical00	1	WorkshopMythical01	1	WorkshopMythical02	1	WorkshopMythical03	1	WorkshopMythical04	1	WorkshopMythical05	1	WorkshopMythical06	1	WorkshopMythical07	1	WorkshopMythical08	1	WorkshopMythical09	1										0
-Ws Mythical Pool 1			1					0	WorkshopMythical10	1	WorkshopMythical11	1	WorkshopMythical12	1	WorkshopMythical13	1	WorkshopMythical14	1	WorkshopMythical15	1	WorkshopMythical16	1	WorkshopMythical17	1	WorkshopMythical18	1	WorkshopMythical19	1										0
-Ws Mythical Pool 2			1					0	WorkshopMythical20	1	WorkshopMythical21	1	WorkshopMythical22	1	WorkshopMythical23	1	WorkshopMythical24	1	WorkshopMythical25	1	WorkshopMythical26	1	WorkshopMythical27	1	WorkshopMythical28	1	WorkshopMythical29	1										0
-Ws Mythical Pool 3			1					0	WorkshopMythical30	1	WorkshopMythical31	1	WorkshopMythical32	1	WorkshopMythical33	1	WorkshopMythical34	1	WorkshopMythical35	1	WorkshopMythical36	1	WorkshopMythical37	1	WorkshopMythical38	1	WorkshopMythical39	1										0
-Ws Mythical Pool 4			1					0	WorkshopMythical40	1	WorkshopMythical41	1	WorkshopMythical42	1	WorkshopMythical43	1	WorkshopMythical44	1	WorkshopMythical45	1	WorkshopMythical59	1	WorkshopMythical62	1	WorkshopMythical64	1	WorkshopMythical67	1										0
-Ws Mythical Pool 5			1					0	WorkshopMythical69	1	WorkshopMythical74	1	WorkshopMythical79	1																								0
-Ws Mythical Pool			1					0	Ws Mythical Pool 0	10	Ws Mythical Pool 1	10	Ws Mythical Pool 2	10	Ws Mythical Pool 3	10	Ws Mythical Pool 4	10	Ws Mythical Pool 5	3																		0
+Ws Mythical Pool 0			1	1024				0	WorkshopMythical00	1	WorkshopMythical01	1	WorkshopMythical02	1	WorkshopMythical03	1	WorkshopMythical04	1	WorkshopMythical05	1	WorkshopMythical06	1	WorkshopMythical07	1	WorkshopMythical08	1	WorkshopMythical09	1										0
+Ws Mythical Pool 1			1	1024				0	WorkshopMythical10	1	WorkshopMythical11	1	WorkshopMythical12	1	WorkshopMythical13	1	WorkshopMythical14	1	WorkshopMythical15	1	WorkshopMythical16	1	WorkshopMythical17	1	WorkshopMythical18	1	WorkshopMythical19	1										0
+Ws Mythical Pool 2			1	1024				0	WorkshopMythical20	1	WorkshopMythical21	1	WorkshopMythical22	1	WorkshopMythical23	1	WorkshopMythical24	1	WorkshopMythical25	1	WorkshopMythical26	1	WorkshopMythical27	1	WorkshopMythical28	1	WorkshopMythical29	1										0
+Ws Mythical Pool 3			1	1024				0	WorkshopMythical30	1	WorkshopMythical31	1	WorkshopMythical32	1	WorkshopMythical33	1	WorkshopMythical34	1	WorkshopMythical35	1	WorkshopMythical36	1	WorkshopMythical37	1	WorkshopMythical38	1	WorkshopMythical39	1										0
+Ws Mythical Pool 4			1	1024				0	WorkshopMythical40	1	WorkshopMythical41	1	WorkshopMythical42	1	WorkshopMythical43	1	WorkshopMythical44	1	WorkshopMythical45	1	WorkshopMythical59	1	WorkshopMythical62	1	WorkshopMythical64	1	WorkshopMythical67	1										0
+Ws Mythical Pool 5			1	1024				0	WorkshopMythical69	1	WorkshopMythical74	1	WorkshopMythical79	1	WorkshopMythical81	1	WorkshopMythical82	1	WorkshopMythical83	1	WorkshopMythical84	1	WorkshopMythical85	1	WorkshopMythical86	1	WorkshopMythical87	1										0
+Ws Mythical Pool 6			1	1024				0	WorkshopMythical88	1	WorkshopMythical89	1	WorkshopMythical90	1	WorkshopMythical91	1																						0
+Ws Mythical Pool			1	1024				0	Ws Mythical Pool 0	10	Ws Mythical Pool 1	10	Ws Mythical Pool 2	10	Ws Mythical Pool 3	10	Ws Mythical Pool 4	10	Ws Mythical Pool 5	10	Ws Mythical Pool 6	4																0
 Ws Mythical Chance			1					4999	Ws Mythical Pool	1																												0
 Ws Trial Special Original			1					495	Lab Jewelry	5																												0
 Ws Trial Special			-2					0	Ws Trial Special Original	1	Ws Mythical Chance	1																										0
@@ -1990,25 +1994,25 @@ Ws Seal World a3892b033120			-2					0	Lab Class Pal	1	Workshop Trial Seal Drops	
 Ws Seal World 54cdb552ff2f			-2					0	Lab Boss Nakrul	1	Workshop Trial Seal Drops	1																										0
 Ws Seal World a57b7aafcdc0			-2					0	Lab Boss Diablo Extra	1	Workshop Trial Seal Drops	1																										0
 Ws Seal World e3d30e9fb451			-2					0	Lab Class Ama	1	Workshop Trial Seal Drops	1																										0
-Ws Goblin Trial Orbs			1	0	0	0		0	Woa	1	Wob	1	Woc	1	Wod	1	Woe	1	Wof	1	Wog	1																0
+Ws Goblin Trial Orbs			1	0	0	0		0	ooi	1	oos	1	ooc	1	ooa	1	ooe	1	ka3	1	oor	1																0
 Ws Goblin Crafting Materials			1	0	0	0		0	ooi	1	oos	1	ooc	1	ooa	1	ooe	1	ka3	1	oor	1																0
 Ws Goblin treasure			4	800	700	900		0	Act 1 Equip A	5	Jewelry A	1																										0
 Ws Goblin gem_hoarder			4	0	0	0		0	gmm	1	gmt	1	gms	1	gme	1	gmr	1	gmd	1	gmk	1	gmo	1														0
 Ws Goblin gilded_baron			4	0	0	0		0	gld	1																												0
 Ws Goblin insufferable_miscreant			4	0	0	0		0	Runes 5	1																												0
-Ws Goblin odious_collector			4	0	0	0		0	Ws Goblin Crafting Materials	3	Ws Goblin Trial Orbs	1																										0
+Ws Goblin odious_collector			4	0	0	0		0	Ws Goblin Crafting Materials	1																												0
 Ws Goblin malevolent_tormentor			4	800	700	900		0	Act 1 Equip A	3	Jewelry A	2																										0
 Ws Goblin treasure (N)			4	800	700	900		0	Act 1 (N) Equip A	5	Jewelry A	1																										0
 Ws Goblin gem_hoarder (N)			4	0	0	0		0	gmm	1	gmt	1	gms	1	gme	1	gmr	1	gmd	1	gmk	1	gmo	1														0
 Ws Goblin gilded_baron (N)			4	0	0	0		0	gld	1																												0
 Ws Goblin insufferable_miscreant (N)			4	0	0	0		0	Runes 10	1																												0
-Ws Goblin odious_collector (N)			4	0	0	0		0	Ws Goblin Crafting Materials	3	Ws Goblin Trial Orbs	1																										0
+Ws Goblin odious_collector (N)			4	0	0	0		0	Ws Goblin Crafting Materials	1																												0
 Ws Goblin malevolent_tormentor (N)			4	800	700	900		0	Act 1 (N) Equip A	3	Jewelry A	2																										0
 Ws Goblin treasure (H)			4	800	700	900		0	Act 1 (H) Equip A	5	Jewelry A	1																										0
 Ws Goblin gem_hoarder (H)			4	0	0	0		0	gmm	1	gmt	1	gms	1	gme	1	gmr	1	gmd	1	gmk	1	gmo	1														0
 Ws Goblin gilded_baron (H)			4	0	0	0		0	gld	1																												0
 Ws Goblin insufferable_miscreant (H)			4	0	0	0		0	Runes 15	1																												0
-Ws Goblin odious_collector (H)			4	0	0	0		0	Ws Goblin Crafting Materials	3	Ws Goblin Trial Orbs	1																										0
+Ws Goblin odious_collector (H)			4	0	0	0		0	Ws Goblin Crafting Materials	1																												0
 Ws Goblin malevolent_tormentor (H)			4	800	700	900		0	Act 1 (H) Equip A	3	Jewelry A	2																										0
 Ws Goblin gelatinous_sire			0	0	0	0		0																														0
 Ws Goblin gelatinous_medium			0	0	0	0		0																														0
@@ -2023,8 +2027,7 @@ Ws Mythical Test Original TC			1					0	Corpsefire Splash Charm	1																
 Ws Mythical Test Original TC(N)			1					0	Act 1 (N) Super A	1																												0
 Ws Mythical Test Original TC(H)			1					0	Corpsefire (H)	1																												0
 Ws Mythical Test Original TC(H) Desecrated			1					0	Corpsefire (H) Desecrated	1																												0
-Ws Mythical Test Corpsefire			-6					0	Ws Mythical Pool	6																												0
-Ws Mythical Pool 6			1					0	WorkshopMythical60	1	WorkshopMythical61	1	WorkshopMythical62	1	WorkshopMythical63	1	WorkshopMythical64	1	WorkshopMythical65	1	WorkshopMythical66	1	WorkshopMythical67	1	WorkshopMythical68	1	WorkshopMythical69	1										0
+Ws Mythical Test Corpsefire			-6	1024				0	WorkshopMythical81	1	WorkshopMythical82	1	WorkshopMythical83	1	WorkshopMythical84	1	WorkshopMythical85	1	WorkshopMythical86	1																		0
 Ws Mythical Pool 7			1					0	WorkshopMythical70	1	WorkshopMythical71	1	WorkshopMythical72	1	WorkshopMythical73	1	WorkshopMythical74	1	WorkshopMythical75	1	WorkshopMythical76	1	WorkshopMythical77	1	WorkshopMythical78	1	WorkshopMythical79	1										0
 Ws Mythical Pool 8			1					0	WorkshopMythical80	1																												0
 Ws League 0 0 Tiers			1					0	Ln1	80	Ln2	15	Ln3	4	Ln4	1																						0
@@ -2081,3 +2084,23 @@ Ws League 2 1 (N)			1					1223	Ws League 2 1 (N) Tiers	109																						
 Ws League 2 1 (H)			1					1223	Ws League 2 1 (H) Tiers	109																												0
 Ws League 2 2 (N)			1					291	Ws League 2 2 (N) Tiers	109																												0
 Ws League 2 2 (H)			1					291	Ws League 2 2 (H) Tiers	109																												0
+Ws Seal World a9d212556fd1			-2					0	Ws Goblin treasure (H)	1	Workshop Trial Seal Drops	1																										0
+Ws Seal World c1acac36080e			-2					0	Ws Goblin gem_hoarder (H)	1	Workshop Trial Seal Drops	1																										0
+Ws Seal World 619e273647f3			-2					0	Ws Goblin gilded_baron (H)	1	Workshop Trial Seal Drops	1																										0
+Ws Seal World 221728e35be5			-2					0	Ws Goblin insufferable_miscreant (H)	1	Workshop Trial Seal Drops	1																										0
+Ws Seal World 085db7256627			-2					0	Ws Goblin odious_collector (H)	1	Workshop Trial Seal Drops	1																										0
+Ws Seal World cda56af7d3e0			-2					0	Ws Goblin malevolent_tormentor (H)	1	Workshop Trial Seal Drops	1																										0
+Ws Seal World f0fe1308939e			-2					0	Ws Goblin gelatinous_sire (H)	1	Workshop Trial Seal Drops	1																										0
+Ws Seal World 1f94790ce4c6			-2					0	Ws Goblin gelatinous_medium (H)	1	Workshop Trial Seal Drops	1																										0
+Ws Seal World 4c83efccc159			-2					0	Ws Goblin gelatinous_small (H)	1	Workshop Trial Seal Drops	1																										0
+Ws Seal World 4f599fdf89ce			-2					0	Ws League 0 0 (H)	1	Workshop Trial Seal Drops	1																										0
+Ws Seal World d72d65b014c9			-2					0	Ws League 0 1 (H)	1	Workshop Trial Seal Drops	1																										0
+Ws Seal World 62be5ceafd07			-2					0	Ws League 0 2 (H)	1	Workshop Trial Seal Drops	1																										0
+Ws Seal World 479ba46b849b			-2					0	Ws League 1 0 (H)	1	Workshop Trial Seal Drops	1																										0
+Ws Seal World 2341591a6c2b			-2					0	Ws League 1 1 (H)	1	Workshop Trial Seal Drops	1																										0
+Ws Seal World 8da4a439f881			-2					0	Ws League 1 2 (H)	1	Workshop Trial Seal Drops	1																										0
+Ws Seal World 346a39df1eec			-2					0	Ws League 2 0 (H)	1	Workshop Trial Seal Drops	1																										0
+Ws Seal World cc62ffcf071b			-2					0	Ws League 2 1 (H)	1	Workshop Trial Seal Drops	1																										0
+Ws Seal World dce984541505			-2					0	Ws League 2 2 (H)	1	Workshop Trial Seal Drops	1																										0
+Ws Mythical Test Poe Extra			-5	1024				0	WorkshopMythical87	1	WorkshopMythical88	1	WorkshopMythical89	1	WorkshopMythical90	1	WorkshopMythical91	1																				0
+Ws Seal World f1e3b3b6e992			-2					0	Blood Raven (H)	1	Workshop Trial Seal Drops	1																										0

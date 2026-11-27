@@ -6590,56 +6590,6 @@
     }
   },
   {
-    "Wa1": {
-      "asset": "uniquecharm/workshop_trial_seal_forest"
-    }
-  },
-  {
-    "Wt1": {
-      "asset": "uniquecharm/workshop_trial_seal_forest"
-    }
-  },
-  {
-    "Wa2": {
-      "asset": "uniquecharm/workshop_trial_seal_desert"
-    }
-  },
-  {
-    "Wt2": {
-      "asset": "uniquecharm/workshop_trial_seal_desert"
-    }
-  },
-  {
-    "Wa3": {
-      "asset": "uniquecharm/workshop_trial_seal_jungle"
-    }
-  },
-  {
-    "Wt3": {
-      "asset": "uniquecharm/workshop_trial_seal_jungle"
-    }
-  },
-  {
-    "Wa4": {
-      "asset": "uniquecharm/workshop_trial_seal_hell"
-    }
-  },
-  {
-    "Wt4": {
-      "asset": "uniquecharm/workshop_trial_seal_hell"
-    }
-  },
-  {
-    "Wa5": {
-      "asset": "uniquecharm/workshop_trial_seal_frozen"
-    }
-  },
-  {
-    "Wt5": {
-      "asset": "uniquecharm/workshop_trial_seal_frozen"
-    }
-  },
-  {
     "Wnsk": {
       "asset": "uniquecharm/workshop_nightmare_legacy"
     }
@@ -7117,6 +7067,111 @@
   {
     "Lp4": {
       "asset": "uniquecharm/workshop_league_beyond3"
+    }
+  },
+  {
+    "Y81": {
+      "asset": "helmet/workshopmythical81"
+    }
+  },
+  {
+    "Y82": {
+      "asset": "ring/workshopmythical82"
+    }
+  },
+  {
+    "Y83": {
+      "asset": "shield/workshopmythical83"
+    }
+  },
+  {
+    "Y84": {
+      "asset": "sword/workshopmythical84"
+    }
+  },
+  {
+    "Y85": {
+      "asset": "shield/workshopmythical85"
+    }
+  },
+  {
+    "Y86": {
+      "asset": "shield/workshopmythical86"
+    }
+  },
+  {
+    "Y87": {
+      "asset": "ring/workshopmythical87"
+    }
+  },
+  {
+    "Y88": {
+      "asset": "armor/workshopmythical88"
+    }
+  },
+  {
+    "Y89": {
+      "asset": "armor/workshopmythical89"
+    }
+  },
+  {
+    "Y90": {
+      "asset": "armor/workshopmythical90"
+    }
+  },
+  {
+    "Y91": {
+      "asset": "armor/workshopmythical91"
+    }
+  },
+  {
+    "Wa1": {
+      "asset": "uniquecharm/workshop_trial_seal_forest"
+    }
+  },
+  {
+    "Wt1": {
+      "asset": "uniquecharm/workshop_trial_seal_forest"
+    }
+  },
+  {
+    "Wa2": {
+      "asset": "uniquecharm/workshop_trial_seal_desert"
+    }
+  },
+  {
+    "Wt2": {
+      "asset": "uniquecharm/workshop_trial_seal_desert"
+    }
+  },
+  {
+    "Wa3": {
+      "asset": "uniquecharm/workshop_trial_seal_jungle"
+    }
+  },
+  {
+    "Wt3": {
+      "asset": "uniquecharm/workshop_trial_seal_jungle"
+    }
+  },
+  {
+    "Wa4": {
+      "asset": "uniquecharm/workshop_trial_seal_hell"
+    }
+  },
+  {
+    "Wt4": {
+      "asset": "uniquecharm/workshop_trial_seal_hell"
+    }
+  },
+  {
+    "Wa5": {
+      "asset": "uniquecharm/workshop_trial_seal_frozen"
+    }
+  },
+  {
+    "Wt5": {
+      "asset": "uniquecharm/workshop_trial_seal_frozen"
     }
   }
 ]

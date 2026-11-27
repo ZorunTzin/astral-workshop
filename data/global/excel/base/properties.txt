@@ -491,3 +491,11 @@ ws-orb-spell	488	1	1	ws_orb_spell_damage																																	0
 ws-orb-nova	489	1	1	ws_orb_trinity_chance																																	0
 ws-orb-level	490	1	1	ws_orb_level_cost																																	0
 ws-orb-craft	491	1	1	ws_orb_level_cost																																	0
+ws_gull_shrines	492	1	1	ws_gull_shrines																																	0
+ws_poe_sin	493	1	1	ws_poe_sin																																	0
+ws_poe_svalinn	494	1	1	ws_poe_svalinn																																	0
+ws_poe_dream	495	1	1	ws_poe_dream																																	0
+ws_poe_rathpith	496	1	1	ws_poe_rathpith																																	0
+ws_poe_aegis	497	1	1	ws_poe_aegis																																	0
+ws_poe_nimis	498	1	1	ws_poe_nimis																																	0
+ws_poe_prototype	499	1	1	ws_poe_prototype																																	0

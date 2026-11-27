@@ -1021,10 +1021,10 @@
     "workshop_amazon_multiarrow": "arrow",
     "workshop_amazon_multibolt": "x_bow_bolt",
     "workshop_amazon_return": "arrow",
-    "workshop_amazon_split0": "arrow",
-    "workshop_amazon_split1": "arrow",
-    "workshop_amazon_split2": "arrow",
-    "workshop_amazon_split3": "arrow",
+    "workshop_amazon_split0": "workshop_split_arrow",
+    "workshop_amazon_split1": "workshop_split_arrow",
+    "workshop_amazon_split2": "workshop_split_arrow",
+    "workshop_amazon_split3": "workshop_split_arrow",
     "workshop_pounce_hit": "null",
     "workshop_pounce_ring": "warcry_shockwave",
     "workshop_charged_bolt": "charged_bolt",
@@ -1060,5 +1060,10 @@
     "wsleague_rift": "wsleague_rift",
     "workshop_trinity_fire": "fireball",
     "workshop_trinity_cold": "frost_nova",
-    "workshop_trinity_light": "electric_nova"
+    "workshop_trinity_light": "electric_nova",
+    "workshop_unity_arrow": "arrow",
+    "workshop_big_shot": "workshop_big_shot",
+    "workshop_big_shot_nova": "warcry_shockwave",
+    "workshop_big_shot_hit": "null",
+    "workshop_amazon_split4": "workshop_split_arrow"
 }

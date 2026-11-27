@@ -76,7 +76,7 @@ def install(root):
    r.update(Name=key,**{'*ID':old['*ID'] if old else str(max(int(x['*ID']) for x in rows if x['*ID'].isdigit())+1),'*Description':MECHANICS[m]['name'],'OperateFn':'18','InitFn':'0','PopulateFn':'0','Selectable0':'1','Selectable1':'0','Selectable2':'0','Restore':'0','RestoreVirgins':'0','ShrineFunction':'0','AutoMap':'0'})
    if old:old.update(r)
    else:rows.append(r)
-   objects.append(int(r['*ID']));labels[key]=MECHANICS[m]['name']+'\n'+['Activate: survive the dead in darkness.','Defeat the defenders to strengthen the rifts.','Activate: killing enemies close together attracts monsters from beyond.'][m]
+   objects.append(int(r['*ID']));labels[key]=MECHANICS[m]['name']+'\n'+['Activate: survive the dead in darkness.','4-10 scattered rifts. Each holds 5-10 defenders.','Activate: killing enemies close together attracts monsters from beyond.'][m]
   write(p/'objects.txt',h,rows)
   h,rows=read(p/'states.txt');r=newrow(rows,h,'state','wsleaguenight')
   if not r.get('*ID'):r['*ID']=str(max(int(x['*ID']) for x in rows if x['*ID'].isdigit())+1)

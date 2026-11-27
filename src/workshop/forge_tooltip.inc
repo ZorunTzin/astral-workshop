@@ -53,8 +53,8 @@ void __cdecl forgeTooltip(const PluginContext* ctx,SharedEvents::ItemTooltipEven
     const auto* word=forgeWord(marker,value);
     if(!word&&marker!=1)return;
     char label[160];
-    if(word)std::snprintf(label,sizeof(label),"Runeforged (%s)",word->name);
-    else std::snprintf(label,sizeof(label),"Runeforged"); // Old items had no saved word identity.
+    if(word)std::snprintf(label,sizeof(label),"\xee\x81\xbe" "4Runeforged (%s)\xee\x81\xbe" "0",word->name);
+    else std::snprintf(label,sizeof(label),"\xee\x81\xbe" "4Runeforged\xee\x81\xbe" "0"); // Old items had no saved word identity.
     const auto length=std::strlen(label);
     if(length>=event->capacity)return;
     std::memcpy(event->text,label,length+1);event->length=static_cast<unsigned>(length);

@@ -1,6 +1,6 @@
 # Mythical-Katalog 0.21.0
 
-53 aktive Varianten. Level 90. Alte Screams-IDs bleiben nur für gespeicherte Gegenstände erhalten.
+54 aktive Varianten. Level 90. Alte Screams-IDs bleiben nur für gespeicherte Gegenstände erhalten.
 
 ## Doomfletch's Prism
 
@@ -894,3 +894,135 @@ Basis: Spiderweb Sash; Code: `Y79`.
 | ws-myth-life-regen |  | 5 | 5 |
 | ws-myth-mana-regen |  | 400 | 400 |
 | droponly |  | 1 | 1 |
+
+
+## The Gull
+
+Code: `Y81`; required level 90.
+
+- Gain a random shrine buff on elite kill for 60 seconds
+- This stacks with normal shrines
+- 150–200% Enhanced defense
+- +80-120 Life
+- +15-20% to All Resistances
+
+## Original Sin
+
+Code: `Y82`; required level 90.
+
+- All your damage becomes magic
+- Nearby enemies magic resistance is zero
+- +1 All skills
+- 10% to all speeds
+- +20-25% to All Resistances
+- +10-15 All attributes
+
+## Svalinn
+
+Code: `Y83`; required level 90.
+
+- Chance to Block is Lucky (rolls twice)
+- -10% to Maximum Block Chance
+- +300-350 Defense
+- +150-180 Life
+- 30% Faster block rate
+- +25-35% to All Resistances
+- +2 All skills
+
+## Replica Dreamfeather
+
+Code: `Y84`; required level 90.
+
+- 1% increased Physical Attack Damage
+- per 100 Defense
+- Adds 200–350 physical damage
+- 15-20% Increased attack speed
+- +400-500 Defense
+- +280-350 Attack Rating
+- +15-25% to All Resistances
+- +15-25 All attributes
+
+## Rathpith Globe
+
+Code: `Y85`; required level 90.
+
+- 3% increased Spell Damage per 100 Maximum Life
+- Spells cost 10% of current life
+- 120–160% Enhanced defense
+- 15-20% Maximum life
+- 25-35% Faster cast rate
+- 10–15% increased chance of blocking
+- +2 All skills
+
+## Aegis Aurora
+
+Code: `Y86`; required level 90.
+
+- Blocking refreshes a 5-second Damage Barrier
+- Barrier absorbs Damage equal to 2% of Defense
+- +400-450 Defense
+- +25-35% to All Resistances
+- +1-3% to maximum All Resistances
+- 15–20% increased chance of blocking
+- +2 All skills
+
+## Nimis
+
+Code: `Y87`; required level 90.
+
+- Shoot additional projectiles in a random direction
+- which return to you
+- 35-50% Enhanced damage
+- +80-100 Dexterity
+- +15-25% to All Resistances
+- 3-5% Life stolen per hit
+- 3-5% Mana stolen per hit
+- 25-35% Bonus to Attack Rating
+
+## Doryani's Prototype - Fire
+
+Code: `Y88`; required level 90.
+
+- Nearby enemies have fire resistance equal to yours
+- 150–200% Enhanced defense
+- +60-90 Life
+- +3 All skills
+- +15-25% to Fire skill damage
+- 15-25% Faster cast rate
+- +35-50 All attributes
+
+## Doryani's Prototype - Cold
+
+Code: `Y89`; required level 90.
+
+- Nearby enemies have cold resistance equal to yours
+- 150–200% Enhanced defense
+- +60-90 Life
+- +3 All skills
+- +15-25% to Cold skill damage
+- 15-25% Faster cast rate
+- +35-50 All attributes
+
+## Doryani's Prototype - Lightning
+
+Code: `Y90`; required level 90.
+
+- Nearby enemies have lightning resistance equal to yours
+- 150–200% Enhanced defense
+- +60-90 Life
+- +3 All skills
+- +15-25% to Lightning skill damage
+- 15-25% Faster cast rate
+- +35-50 All attributes
+
+## Doryani's Prototype - Poison
+
+Code: `Y91`; required level 90.
+
+- Nearby enemies have poison resistance equal to yours
+- 150–200% Enhanced defense
+- +60-90 Life
+- +3 All skills
+- +15-25% to Poison skill damage
+- 15-25% Faster cast rate
+- +35-50 All attributes

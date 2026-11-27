@@ -9,7 +9,7 @@ rows=lambda n:read(p/(n+'.txt'))[1]
 misc={r['code']:r for r in rows('misc')}
 assert len(rows('itemstatcost'))==511
 for i,code in enumerate(CODES):
- r=misc[code];assert r['cost']=='1' and r['AkaraMin']==r['AkaraMax']=='1' and r['AdvancedStashStackable']=='1' and r['UICatOverride']=='wtor'
+ r=misc[code];assert r['cost']=='1' and r['AkaraMin']==r['AkaraMax']=='0' and r['PermStoreItem']=='0' and r['AdvancedStashStackable']=='1' and r['UICatOverride']=='wtor'
 for i in range(1,6):assert misc['Wa'+str(i)]['compactsave']=='0'
 for r in misc.values():
  if r['code']=='bag' or r['type']=='grab':assert r['PermStoreItem']=='0' and all(not int(v or 0) for k,v in r.items() if k.endswith(('Min','Max','MagicLvl')))
@@ -24,6 +24,21 @@ for n in ['Workshop Trial Orbs','Workshop Herald And Trial Orbs','Workshop Trial
  for i in range(1,11):
   value=r['Item'+str(i)];assert not value or value in classes or value in misc,(n,value)
 assert any('Workshop Trial Orb Materials'==r['Item2'] or 'Workshop Trial Orb Materials'==r['Item3'] for r in classes.values() if r['Treasure Class'].startswith('Ws Trial Base '))
+# Traverse every TC: any path to a Trial orb must originate inside the
+# Trial-only branch. Detect indirect leaks through global/goblin wrappers.
+def trial_orb_path(name,seen=None):
+ seen=set() if seen is None else seen
+ if name in CODES:return True
+ if name not in classes or name in seen:return False
+ seen.add(name)
+ return any(trial_orb_path(classes[name]['Item'+str(i)],seen) for i in range(1,11))
+for name in classes:
+ if trial_orb_path(name):
+  assert name in ('Workshop Trial Orbs','Workshop Trial Orb Materials') or name.startswith(('Ws Trial Base ','Ws Trial Loot ')),name
+for monster in rows('monstats'):
+ if not monster['Id'].startswith('wsarena'):
+  for key,value in monster.items():
+   if key.startswith('TreasureClass'):assert not trial_orb_path(value),(monster['Id'],key,value)
 for filename in ['bankexpansionlayouthd.json','controller/bankexpansionlayouthd.json']:
  layout=json.loads((root/'data/global/ui/layouts'/filename).read_text());group=next(c for c in layout['children'] if c['name']=='advancedstash_materials');slots=[c for c in group['children'] if c['type']=='AdvancedStashSlotWidget']
  assert len(slots)==len(group['children']), 'Native Materials container must contain only stash slots (login crash regression)'
@@ -32,7 +47,7 @@ for filename in ['bankexpansionlayouthd.json','controller/bankexpansionlayouthd.
   if a['name'] not in CODES+SEALS:continue
   x=a['fields']['rect']
   for b in slots:
-   if a is b:continue
+   if a is b or b['name'].startswith('LeagueOrb'):continue # Separate virtual tab; never visible together.
    y=b['fields']['rect'];assert x['x']+x['width']<=y['x'] or y['x']+y['width']<=x['x'] or x['y']+x['height']<=y['y'] or y['y']+y['height']<=x['y'],(a['name'],b['name'])
 for n in NAMES:
  for suffix in ['.sprite','.lowend.sprite']:assert (root/('data/hd/global/ui/items/misc/uniquecharm/workshop_trial_'+n.lower()+suffix)).stat().st_size>1000
@@ -72,7 +87,7 @@ assert classes['Workshop Trial Seal Drops']['NoDrop']=='24975'
 assert sum(int(classes['Workshop Trial Seal Drops']['Prob'+str(i)] or 0) for i in range(1,11))==25
 for r in rows('monstats'):
  if r['Id'].startswith('wsarenaboss'):
-  assert r['neverCount']=='1' and not r['primeevil'] and r['Level(H)']=='85'
+  assert r['neverCount']=='1' and not r['primeevil'] and r['Level(H)']=='100'
   assert all(not v for k,v in r.items() if k.startswith('TreasureClassQuest'))
 for name,r in classes.items():
  if name.startswith('Ws Seal World '):assert r['Picks']=='-2' and r['Item1'] in classes and r['Item2']=='Workshop Trial Seal Drops' and not r['Item1'].startswith('Ws Seal World ')

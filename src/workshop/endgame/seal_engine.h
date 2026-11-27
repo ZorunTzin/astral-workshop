@@ -30,7 +30,7 @@ struct Seal {
  int mod(int i)const{return Mods[(fields[i+1]-1)/5];}
  int tier(int i)const{return (fields[i+1]-1)%5;}
  int value(int i,int stage)const{int m=mod(i),t=tier(i);return m>=58?RankValues[m-58][t]:Arena::TierValues[m][t]*(100+10*(stage-1))/100;}
- int reward()const{int n=fields[7];for(int i=0;i<count();++i)n+=10*(1<<tier(i));return n;}
+ int reward()const{int n=fields[7];for(int i=0;i<count();++i)n+=5*(1<<tier(i));return n;}
 };
 // The shared tooltip bridge consumes UTF-8. Keep this contribution plain text;
 // raw single-byte legacy color escapes are displayed literally by the HD UI.

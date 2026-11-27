@@ -43,11 +43,14 @@ def install(root):
   for stage in range(1,6):
    for mod in range(len(catalog)):
     for tier in range(5):
-     value=catalog[mod]["tiers"][tier]*(100+10*(stage-1))//100;reward=(5 if catalog[mod]['positive'] else 10)*(1<<tier)
+     value=catalog[mod]["tiers"][tier]*(100+10*(stage-1))//100;reward=(5 if catalog[mod]['positive'] else 10)*(1<<tier)//2
      valueText=f'{tiers[tier]}\n\n{names[mod]}\n{effects[mod]}\nUp to +{value}{catalog[mod]['unit']}\nRun cap: {str(catalog[mod]['cap'])+catalog[mod]['unit'] if not catalog[mod].get('uncapped') else 'None'}\nMonsters: +10% life / +2% damage\n\nLoot bonus +{reward}%\n\nCLICK TO CHOOSE'
      if catalog[mod]['kind']=='wave':valueText=f'{tiers[tier]}\n\n{names[mod]}\n{effects[mod]}\nNEXT WAVE ONLY\nMonsters: +10% life / +2% damage\n\nLoot bonus +{reward}%\n\nCLICK TO CHOOSE'
-     children.append(text(f'Offer_{slot}_{stage}_{mod}_{tier}',x+32,-275,586,600,valueText,False))
- children += [widget('ButtonWidget','Finish',rect=dict(x=-400,y=410),filename='Workshop\\trial-finish',pressedFrame=1,disabledFrame=2,hoveredFrame=3,onClickMessage='PanelManager:ClosePanel:TrialFinish'),text('FinishLabel',-370,430,740,70,'FINISH RUN'),text('Hint',-1020,550,2040,60,'Choose one card to begin the next wave. TEST: 10 base HP; life bonuses apply.')]
+     if names[mod]=='League invasion':
+      for league,title in enumerate(('Night of the Dead','Breach','Beyond'),1):
+       children.append(text(f'LeagueOffer_{slot}_{stage}_{mod}_{tier}_{league}',x+32,-275,586,600,valueText.replace(names[mod],title+' invasion').replace(effects[mod],'Next wave: '+title+' monsters'),False))
+     else:children.append(text(f'Offer_{slot}_{stage}_{mod}_{tier}',x+32,-275,586,600,valueText,False))
+ children += [widget('ButtonWidget','Finish',rect=dict(x=-400,y=410),filename='Workshop\\trial-finish',pressedFrame=1,disabledFrame=2,hoveredFrame=3,onClickMessage='PanelManager:ClosePanel:TrialFinish'),text('FinishLabel',-370,430,740,70,'FINISH RUN'),text('Hint',-1020,550,2040,60,'Choose one card to begin the next wave. Ctrl+T: hide/show this menu.')]
  children += [widget('ButtonWidget','ClearLoot',rect=dict(x=-1100,y=-585),filename='Workshop\\trial-active',pressedFrame=1,disabledFrame=2,hoveredFrame=3,onClickMessage='PanelManager:ClosePanel:TrialClearLoot'),text('ClearLootLabel',-1090,-580,400,65,'DELETE GROUND LOOT')]
  children += [widget('ButtonWidget','ActiveToggle',rect=dict(x=680,y=-585),filename='Workshop\\trial-active',pressedFrame=1,disabledFrame=2,hoveredFrame=3,onClickMessage='PanelManager:ClosePanel:TrialActive'),text('ActiveLabel',690,-580,400,65,'ACTIVE MODIFIERS')]
  children.append(text('NextWaveLabel',-1090,-503,270,70,'NEXT WAVE:'))

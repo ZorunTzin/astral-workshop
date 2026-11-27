@@ -101,3 +101,45 @@ The 0.9.1 live tooltip-stat transport did not produce visible numbers in the use
 Guardian formulas include Astral minion life/damage/speed, and the shared summon-limit pass is applied after private skill creation. Its default count remains `1+floor(level/10)` with the Astral count added once. Native summon and casting behavior, private pet pool, spell cadence and the outgoing 1/5 damage factor remain intact.
 
 The optional Buff HUD companion reads a generated mod-aware catalog. Retribution's existing periodic feature callback now maintains only an empty timed native aura-state list as an indicator. Disable expires that state through the existing aura lifecycle. This adds no old reflected-damage stat and no independent timer or scanning loop.
+
+## PoE-inspired Mythicals (2026-11-25)
+
+Nine append-only Mythicals (IDs 82â€“90, unique rows 1567â€“1575) join The Gull (81). Original inventory art is in `src/workshop/mythicals/poe-art`; `prompts.json` records the built-in image generation prompts. Native ground/equipped models are reused. References: https://poedb.tw/us/Original_Sin, https://poedb.tw/us/Svalinn, https://poedb.tw/us/Replica_Dreamfeather, https://poedb.tw/us/Rathpith_Globe, https://poedb.tw/us/Aegis_Aurora, https://poedb.tw/us/Nimis, https://poedb.tw/us/Doryanis_Prototype.
+
+- Original Sin: elemental hit damage becomes Magic; nearby enemies have zero Magic resistance against the wearer. Physical and poison damage remain separate.
+- Svalinn: two block rolls, with the chance capped at 65% before rolling (87.75% effective at that cap). No nova or triggered spell.
+- Replica Dreamfeather: +1% attack damage per 100 Defense; flat weapon damage, attack speed, flat Defense and accuracy.
+- Rathpith Globe: +3% spell damage per 100 maximum life, +10% life, casting speed and block. Successful damaging spell casts sacrifice 10% current life, minimum one life. No permanent base-life writes.
+- Aegis Aurora: block refreshes a non-stacking five-second hit barrier equal to 2% Defense; increased Defense, all resistances, maximum cold resistance and block.
+- Nimis: supported ordinary flying missiles shoot randomly and return once toward the wearer position at turnaround, carrying their finalized damage. Complex/ground projectiles, Unity, Big Shot, Split Arrow, private hit helpers and already-returning Multiple Shot remain excluded. Return lifetime is derived from distance/velocity and bounded; no recursive return. Dexterity and lightning resistance.
+- Doryani's Prototype: separate Fire, Cold and Lightning armor. Only the named damage type remains; nearby enemies use the wearer's corresponding resistance. Defense replaces resistance against incoming hits of that element. Increased Defense and life. These hit-based adaptations do not replace damage-over-time resistance handling.
+
+Rarity remains the Trial Mythical pool (now 63 active entries). Test mode currently overrides Corpsefire on every difficulty: six guaranteed items from the normal TC plus four from a chained native drop call, exactly one entry for each ID 81â€“90. Turn off `mythicals/test-drops.json` and run Prepare/build to remove the override. Runtime TC bindings are finalized after the other generators.
+
+Native packet layouts and hooks were checked against the supported D2R snapshot. `poe_test.cpp` covers conversion, immunity-stage overrides, three elemental variants, armor/life scaling, barrier expiry, lucky block distribution, projectile exclusions, no recursive return and the extra test-drop route. In-game appearance, prediction and item interactions still require a playtest.
+
+### Mythical playtest fixes (2026-11-25)
+
+Inventory exports now use each item's actual footprint at 98 pixels per cell (49 in lowend) and preserve aspect ratio. The weapon asset directory is singular `weapon`, fixing Dreamfeather's missing icon. Svalinn, Rathpith and Aegis use the native kite/bone/tower shield JSONs from the locally installed game, including their attachment transforms; no generic armor fallback is used for these shields.
+
+The Combat plugin contributes all ten explicit special-effect descriptions through SharedEvents item tooltips. Dreamfeather's Defense-derived bonus is now native physical `damagepercent` on a private aura, so ordinary weapon damage and its character display share the value instead of a hidden post-hit multiplier. Rathpith's calculated bonus is displayed both in its tooltip and as transient unsaved stat 314 in Advanced Stats. Svalinn's 65% cap applies through the shared block-rate calculation as well as its lucky rolls. Tooltip previews use current player Defense/life.
+
+Gull's private shrine states and amplifier are auras. Different shrine types coexist; only the same type refreshes. Gull-created shrines receive their 150% values directly, avoiding reliance on a separate amplifier list; natural shrine amplification remains separate. Duration is 450 seconds. The second Corpsefire test TC no longer requires null native output arguments and uses independent output pointers, so the extra group containing Nimis is attempted with ordinary native drop calls too.
+
+Validation adds native-sized texture byte/dimension checks, shield model path checks, live-value and tooltip contribution tests, lucky cap display calculation, non-null drop-context regression and shrine coexistence tests. Actual client rendering and playtest confirmation remain separate from these automated checks.
+
+### Mythical balance and display follow-up (2026-11-25)
+
+Special-effect tooltip blocks use unique gold at the top of Attributes; unreliable current-value item lines are removed. Rathpith's computed spell bonus is cleared and its state expires on unequip; Dreamfeather contributes to the native Enhanced Physical Attack Damage total, whose Advanced Stats descriptor now renders numerically. All Skills is also exposed. Original Sin includes elemental spell hits (tested explicitly).
+
+Gull's kill-granted buffs last 60 seconds base, 90 seconds with the helmet. Natural shrines retain their own duration and the helmet's multiplier. Svalinn, Aegis, Rathpith, Original Sin and Replica Dreamfeather use the new requested rolls in poe_data.py; defense rolls are flat added defense. Existing saved items keep their generated affixes, so new drops are needed for new rolls.
+
+With mythical test drops enabled, Blood Raven's normal, champion, unique and desecrated TC fields in every difficulty directly select the four-item Nimis / Fire, Cold, Lightning Prototype test class. Corpsefire retains the first six items; the unreliable second drop call is removed. No native stat IDs or saved widths are added or changed. Runtime game validation remains outstanding.
+
+### Prototype aura and Nimis follow-up (2026-11-25)
+
+Doryani now applies only its nearby resistance-sharing mechanic: a timed, nonstacking monster aura sets the matching resistance to the wearer's effective resistance. Each pulse subtracts its own old contribution before computing the new delta; leaving range, death or unequipping clears it. Overlapping same-element wearers use the lower resistance. Ordinary physical attacks and other damage channels remain intact; the former damage restriction and incoming armor replacement are removed. Three variants add +3 skills, 15–25% corresponding elemental skill damage, 15–25% FCR and 35–50 all attributes.
+
+Nimis gets 35–50% enhanced damage, 80–100 Dexterity, 15–25 all resistances, 3–5% life/mana steal and 25–35% attack rating. Its tooltip is simply “Projectiles return to you”. Random outbound spawns use explicit absolute-target flags and server-published missile visuals instead of relying on client aim prediction. Return recursion remains guarded. Shared tooltip contributions use raw legacy byte FF for inline color escapes, not the UTF-8 representation of that character. The top-of-affixes placement remains.
+
+Automated tests cover aura values, no compounding, resistance changes, leaving range/unequip and preservation of physical damage; actual client visual verification remains pending.

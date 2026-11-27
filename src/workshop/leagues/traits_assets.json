@@ -1,0 +1,19 @@
+[
+  "data/global/excel/base/monstats.txt",
+  "data/global/excel/monstats.txt",
+  "data/hd/character/enemy/wsleague0_zombie1_trait1.json",
+  "data/hd/character/enemy/wsleague1_baboon1_trait5.json",
+  "data/hd/character/enemy/wsleague1_brute2_trait5.json",
+  "data/hd/character/enemy/wsleague1_clawviper1_trait5.json",
+  "data/hd/character/enemy/wsleague1_corruptrogue1_trait5.json",
+  "data/hd/character/enemy/wsleague1_fallen1_trait5.json",
+  "data/hd/character/enemy/wsleague1_foulcrow1_trait5.json",
+  "data/hd/character/enemy/wsleague1_goatman1_trait5.json",
+  "data/hd/character/enemy/wsleague1_scarab1_trait5.json",
+  "data/hd/character/enemy/wsleague1_skeleton1_trait5.json",
+  "data/hd/character/enemy/wsleague1_vampire1_trait5.json",
+  "data/hd/character/enemy/wsleague1_wraith1_trait5.json",
+  "data/hd/character/enemy/wsleague1_zombie1_trait5.json",
+  "data/hd/character/monsters.json",
+  "data/local/lng/strings/item-names.json"
+]

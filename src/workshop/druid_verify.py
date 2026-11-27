@@ -36,7 +36,7 @@ print('PASS: Druid stable slots, damage display, morph model, reservations/HUD, 
 for sid in (222,226,231,236,241,246):
  d=ds[skills[sid]['skilldesc']];assert d['descline1']=='13' and d['desccalca1']=='clc1'
 assert skills[221]['calc3'] and skills[221]['Param5']=='5' and skills[221]['petmax']
-assert ds[skills[224]['skilldesc']]['SkillPage']=='1' and ds[skills[221]['skilldesc']]['SkillPage']=='2'
+assert ds[skills[224]['skilldesc']]['SkillPage']=='1' and ds[skills[221]['skilldesc']]['SkillPage']=='3'
 assert skills[230]['EDmgSymPerCalc']==skills[245]['EDmgSymPerCalc']
 assert "fmmp_native_blaze_tag" in skills[240]['DmgSymPerCalc']
 assert ds[skills[230]['skilldesc']]['desccalca5']=='3+lvl/10'
