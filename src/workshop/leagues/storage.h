@@ -29,7 +29,7 @@ struct GroundItem {unsigned id,code;};
 inline std::vector<GroundItem> Ground;
 inline bool currency(unsigned code){
  // All ordinary crafting orbs; trial currencies use their native Materials slots.
- for(const char* orb:{"ka3","oos","ooc","ooa","ooi","ooe","oor","Woa","Wob","Woc","Wod","Woe","Wof","Wog","Wt1","Wt2","Wt3","Wt4","Wt5"})
+ for(const char* orb:{"ka3","oos","ooc","ooa","ooi","ooe","oor","Woa","Wob","Woc","Wod","Woe","Wof","Wog","Wt1","Wt2","Wt3","Wt4","Wt5","pk1","pk2","pk3","ua1","ua2","ua3","ua4","ua5","xa1","xa2","xa3","xa4","xa5","dhn","bey","mbr"})
   if(code==D2RL::Items::MakeItemCode(orb[0],orb[1],orb[2]))return true;
  for(char m='n';m<='p';++m)for(char row='1';row<='4';++row)
   if(code==D2RL::Items::MakeItemCode('L',m,row))return true;

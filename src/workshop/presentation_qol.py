@@ -22,6 +22,15 @@ def install(root):
   h,rows=read(p/'cubemain.txt')
   for r in rows:
    if r.get('output','').split(',')[0]=='bag':r['enabled']='0'
+   if 'UPGRADE CHARM TIER' in r.get('description','') and r.get('input 1')=='bag':
+    r['input 1']='key'
+    r['description']=re.sub(r'Gem Bag \(\d+ Gems?\)', 'Key', r['description'])
+    for field in ('op','param','value'):r[field]=''
+    # Consume the ordinary key, producing only the upgraded charm.
+    r['output']=r['output b'];r['lvl']=r['b lvl'];r['output b']='';r['b lvl']=''
+    for field in list(r):
+     if field.startswith('mod '):r[field]=''
+
   write(p/'cubemain.txt',h,rows);assets.append(folder+'/cubemain.txt')
  for p in (root/'data/local/lng/strings').glob('*.json'):
   rows=json.loads(p.read_text(encoding='utf-8-sig'));changed=False

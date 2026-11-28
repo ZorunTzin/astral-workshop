@@ -6,7 +6,7 @@ int main(){using namespace Arena;
  // Statistical check of the actual extra-roll generator, including fractional tiers.
  for(int tier=1;tier<=5;++tier){Run loot;loot.start(tier,1,9876);int total=0;for(int i=0;i<100000;++i)total+=1+loot.extraLootRolls();assert(std::abs(total-1000*loot.lootRollPercent())<1000);}
  Run speed;speed.wave=1;assert(speed.speedPercent()==20);speed.wave=10;assert(speed.speedPercent()==47);
- Run r;r.start(1,9,123);assert(r.lifePercent()==200&&r.damagePercent()==200&&!r.clear());
+ Run r;r.start(1,9,123);assert(r.lifePercent()==200&&r.damagePercent()==100&&!r.clear());
  r.phase=Phase::Fighting;assert(r.clear()&&!r.clear());auto score=r.score;auto epoch=r.epoch;
  std::set<int> unique;for(auto o:r.offers){unique.insert(int(o.mod));assert(o.tier>=0&&o.tier<5&&o.value>0&&o.reward>0);if(int(o.mod)<3)assert(o.reward==(5<<o.tier));}assert(unique.size()==3);
  assert(!r.choose(3,epoch)&&!r.choose(0,epoch-1));assert(r.choose(0,epoch));assert(!r.choose(1,epoch)&&r.wave==2&&r.score==score);

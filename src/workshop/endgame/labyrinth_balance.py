@@ -8,5 +8,8 @@ def install(root):
   p=Path(root)/folder/'monstats.txt';h,rows=read(p);by={r['Id']:r for r in rows}
   for target,source in SOURCES.items():
    for field in RESISTS:by[target][field]=str(int(by[source][field] or 0)+15)
+   clone=by.get('workshop_modifier_clone_'+by[target]['*hcIdx'])
+   if clone:
+    for field in RESISTS:clone[field]=by[target][field]
   write(p,h,rows)
  print(f'Labyrinth: {len(SOURCES)} monster variants use native Hell resistances +15 points.')

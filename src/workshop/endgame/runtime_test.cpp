@@ -28,10 +28,14 @@ void PortalCraftTests(){
  craftedSeal={};craftedSeal.type=4;void* data=sealData;std::memcpy(craftedSeal.native,&data,8);sealData[0x55]=3;
  TrialCraft::Seal seal;seal.fields={23,5,11,61,0,0,0,0};assert(seal.valid());
  for(int i=0;i<8;++i)craftedSeal.stats[444+i]=seal.fields[i];
- player={};Frame(200);Pending={};portalResult=0;
+ player={};Frame(200);Session=nullptr;Pending={};portalResult=0;
  Open(game,&player,nullptr,0,0,Arena::FirstLevel,nullptr,60,1);assert(!Pending[0].ready);
  portalResult=1;sealData[0x55]=0;Open(game,&player,nullptr,0,0,Arena::FirstLevel,nullptr,60,1);assert(!Pending[0].ready);
+ assert(Open(game,&player,nullptr,0,0,Arena::FirstLevel,nullptr,60,1)==0);
+ Frame(1);Reset(game,1); // New game frame reset permits this map again.
  sealData[0x55]=3;Open(game,&player,nullptr,0,0,Arena::FirstLevel,nullptr,60,1);assert(Pending[0].ready);
+ assert(Open(game,&player,nullptr,0,0,Arena::FirstLevel,nullptr,60,1)==0);
+ assert(Open(game,&player,nullptr,0,0,Arena::FirstLevel+1,nullptr,60,1)==1);
  Arena::Run run;run.start(1,player.id,1);Apply(game,201,run);assert(run.bonuses[0]==150&&run.bonuses[1]==6&&run.bonuses[16]==10);assert(Arena::SealChampion==5);assert(run.rewardBonus==90);assert(!Pending[0].ready);
  run.start(1,player.id,1);Apply(game,201,run);assert(run.rewardBonus==0&&Arena::SealChampion==0);
  puts("PASS: crafted seal portal snapshot only from Cube, success-only transfer, exact tier modifiers, rank chance and one-time consumption.");
@@ -79,7 +83,7 @@ Arena::Enabled=true;Arena::Context=&ctx;void* p=&player;std::memcpy(game+0x2230+
  for(const auto& u:mobs)if(u){int dx=u->x-player.x,dy=u->y-player.y;double distance=std::sqrt(double(dx*dx+dy*dy));assert(distance>=54&&distance<=89&&Arena::SafePosition(u->x,u->y));}
  for(int stat:{67,68,99,102,105})assert(mobs[0]->stats[stat]==20);
  assert(mobs[0]->stats[12]==105&&mobs[0]->stats[13]==2*Progression::ScaleExperience(baseXP,100,1));
- assert(mobs[0]->stats[7]==2000&&mobs[0]->stats[6]==2000);alignas(8) char packet[0x180]{};int damage=100;std::memcpy(packet+0x18,&damage,4);std::memcpy(packet+0x134,&damage,4);Arena::Damage(game,mobs[0].get(),&player,packet);assert(Barbarian::ReadDamage(packet,0x134)==200);
+ assert(mobs[0]->stats[7]==2000&&mobs[0]->stats[6]==2000);alignas(8) char packet[0x180]{};int damage=100;std::memcpy(packet+0x18,&damage,4);std::memcpy(packet+0x134,&damage,4);Arena::Damage(game,mobs[0].get(),&player,packet);assert(Barbarian::ReadDamage(packet,0x134)==100);
 
  MonsterRuntime::AdditionalLootRolls=Arena::NativeLootBonus;
  MonsterRuntime::OriginalDrop=[](void*,void*,void*,unsigned short,std::uintptr_t,std::uintptr_t,std::uintptr_t,std::uintptr_t,std::uintptr_t,std::uintptr_t)->std::uintptr_t{++created;return 77;};

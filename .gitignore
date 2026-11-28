@@ -22,3 +22,6 @@ src/workshop/*.res
 
 # Approved Workshop source artwork
 !src/workshop/art/**/*.png
+
+# Approved original Mythical belt artwork
+!src/workshop/mythicals/original-belts/*.png

@@ -42,3 +42,13 @@ assert "fmmp_native_blaze_tag" in skills[240]['DmgSymPerCalc']
 assert ds[skills[230]['skilldesc']]['desccalca5']=='3+lvl/10'
 assert ds[skills[240]['skilldesc']]['desccalca5']=='3+lvl/10'
 print('PASS: spirit/vine HP formatter, explicit aura lines, Raven hit budget, swapped tree positions and shared spell scaling.')
+
+# Alpha Ravens must not ask for the unlearned Avatar skill on their first AI tick.
+for folder in ('data/global/excel','data/global/excel/base'):
+ p=root/folder;ss={r['skill']:r for r in read(p/'skills.txt')};mm={r['Id']:r for r in read(p/'monstats.txt')}
+ private=mm[ss['Workshop Wild Raven']['summon']]
+ assert private['Id']=='workshopalpharaven' and private['Skill1']=='Shape Shifting'
+ assert ss[private['Skill1']]['Param5']=='5' and ss[private['Skill1']]['Param6']=='0'
+ assert mm['druidhawk']['Skill1']=='Raven'
+ assert mm['wsarenamon2']['Skill5']=='SuccubusBolt' and mm['wsarenamon2']['Sk5mode']=='S2'
+print('PASS: Alpha Raven AI reads Alpha hit budget; ordinary Raven source unchanged; Trial Temptress has native ranged slot.')

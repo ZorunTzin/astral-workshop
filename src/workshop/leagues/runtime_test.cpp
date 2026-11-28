@@ -62,7 +62,7 @@ void storageTests(){
  collect(game,&player);assert(depositCalls==24&&backpack.size()==1);backpack.clear();
 
  // Gems/runes use the same ground-only path; withdrawal never qualifies.
- for(const char* code:{"ka3","oos","ooc","ooa","ooi","ooe","oor","Woa","Wob","Woc","Wod","Woe","Wof","Wog","Wt1","Wt2","Wt3","Wt4","Wt5","r01","r33","gzv","gly","glb","glg","glr","glw","skz","1am"}){
+ for(const char* code:{"ka3","oos","ooc","ooa","ooi","ooe","oor","Woa","Wob","Woc","Wod","Woe","Wof","Wog","Wt1","Wt2","Wt3","Wt4","Wt5","pk1","pk2","pk3","ua1","ua2","ua3","ua4","ua5","xa1","xa2","xa3","xa4","xa5","dhn","bey","mbr","r01","r33","gzv","gly","glb","glg","glr","glw","skz","1am"}){
   unsigned c=D2RL::Items::MakeItemCode(code[0],code[1],code[2]);assert(currency(c));
   auto* u=static_cast<Unit*>(LAlloc(4,c,0,0,game,LRoom(&player),1,0,0,nullptr));backpack.push_back(u->id);
   auto* data=itemData[u->id].data();std::memcpy(reinterpret_cast<unsigned char*>(u)+0x10,&data,8);

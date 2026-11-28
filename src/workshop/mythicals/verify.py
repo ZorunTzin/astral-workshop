@@ -16,8 +16,12 @@ for item in catalog:
  b=base[item['code']];u=uniques[item['key']]
  assert b['spawnable']=='0' and b['rarity']=='0' and b['unique']=='1'
  assert u['spawnable']==('1' if item['id'] in ({r['_ordinal'] for r in ACTIVE}|set(range(81,92))) else '0')
- assert b['normcode']==b['ubercode']==b['ultracode']==item['code']
- assert types[b['type']]['Equiv2']=='myth' and types[b['type']]['TreasureClass']=='0'
+ assert b['ultracode']==item['code']
+ if b.get('belt')=='6':assert (b['normcode'],b['ubercode'])==('lbl','zlb')
+ else:assert not b['normcode'] and not b['ubercode']
+ assert u['disableChronicle']==('0' if u['spawnable']=='1' else '1')
+ myth_type=b['type2'] if b['type']=='belt' else b['type']
+ assert types[myth_type]['Equiv2']=='myth' and types[myth_type]['TreasureClass']=='0'
  assert b['levelreq']=='90' and u['lvl req']=='90' and u['code']==item['code']
  assert 2<=len(item['properties'])<=12 and item['properties'][-1][0]=='droponly'
  assert len({(p[0],p[1]) for p in item['properties'] if p[0]=='oskill'})==sum(p[0]=='oskill' for p in item['properties'])
@@ -66,14 +70,14 @@ for mon in table('monstats'):
   if test_on and mon['Id']=='bloodraven':
    assert all(v=='Ws Mythical Test Poe Extra' for k,v in mon.items() if k.startswith('TreasureClass'));continue
   assert mon['Id'].startswith(('wsarenamon','wsarenaboss')),mon['Id'];allowed.append(mon['Id'])
-assert len(allowed)==28
+assert len(allowed)==31
 test_on=json.loads((Path(__file__).parent/'test-drops.json').read_text()).get('enabled',False)
 for r in table('superuniques'):
  for k,v in r.items():
   if k.startswith('TC') and v:
    assert reaches(v)==(test_on and r['Superunique']=='Corpsefire'),(r.get('Superunique'),v)
 assert tcs['Ws Mythical Test Corpsefire']['Picks']=='-6' and tcs['Ws Mythical Test Corpsefire']['Prob1']=='1'
-chance=tcs['Ws Mythical Chance'];assert chance['Picks']=='1' and chance['NoDrop']=='4999' and chance['Prob1']=='1'
+chance=tcs['Ws Mythical Chance'];assert chance['Picks']=='1' and chance['NoDrop']=='1999' and chance['Prob1']=='1'
 assert tcs['Ws Trial Special']['Picks']=='-2' and tcs['Ws Trial Special']['Item1']=='Ws Trial Special Original'
 assert tcs['Ws Trial Special Original']['Item1']=='Lab Jewelry'
 # All supplied dependency paths live in their own namespace; original assets are not replaced.
@@ -88,7 +92,9 @@ for k,r in tcs.items():
 # Revision regressions: exact identities, proc handlers, tooltip stats and active pool.
 assert len(ACTIVE)==53 and sum(r['_ordinal']>=46 for r in ACTIVE)==7
 for item in catalog:
- if item['id']==9 or 43<=item['id']<81:assert types[base[item['code']]['type']]['Equiv1']=='belt'
+ if item['id']==9 or 43<=item['id']<81:
+  b=base[item['code']];assert b['type']=='belt' and types[b['type2']]['Equiv1']=='belt'
+  assert (b['belt'],b['invwidth'],b['invheight'])==('6','2','1')
  if item['id'] in ({r['_ordinal'] for r in ACTIVE}|set(range(81,92))):assert reaches(item['key'])
  for prop,par,lo,hi in item['properties']:
   if prop in ('hit-skill','kill-skill','gethit-skill','att-skill'):
@@ -110,8 +116,8 @@ for name in ('Blood Empowerment','Celestial Empowerment','Underworld Empowerment
 for rel in assets:
  if rel.startswith('data/hd/items/') and 'workshopmythical' in rel and rel.endswith('.json'):
   j=json.loads((root/rel).read_text());fx=[e for e in j['entities'] if e['name'].startswith('workshop_mythical_glow_')]
-  assert not any(c.get('filename','').endswith('fx_horadric_light.particles') for e in j['entities'] for c in e['components'])
-  assert len(fx)==2 and all(c.get('hardKillOnDestroy') for e in fx for c in e['components'] if c['type']=='VfxDefinitionComponent')
+  assert sum(c.get('filename','').endswith('fx_horadric_light.particles') for e in fx for c in e['components'])==1
+  assert len(fx)==3 and all(c.get('hardKillOnDestroy') for e in fx for c in e['components'] if c['type']=='VfxDefinitionComponent')
 gull=next(i for i in catalog if i['id']==81)
 assert gull['name']=='The Gull' and types[base[gull['code']]['type']]['Equiv1']=='helm'
 assert stats['ws_gull_shrines']['Save Bits']=='1' and stats['ws_gull_shrines']['*ID']=='266'
@@ -177,9 +183,18 @@ assert visible('ws_poe_nimis')=='Shoot additional projectiles in a random direct
 assert visible('ws_poe_sin')=='All your damage becomes magic\nNearby enemies magic resistance is zero'
 assert 'Maximum before' not in visible('ws_poe_svalinn')
 assert visible('ws_poe_rathpith').split('\n')[1]=='Spells cost 10%% of current life'
+# Original belt art uses the native rectangular sprite header, HD and low-end.
+import struct
+for ordinal in (9,*range(43,81)):
+ assert (base[f'Y{ordinal:02d}']['invwidth'],base[f'Y{ordinal:02d}']['invheight'])==('2','1')
+ for suffix,w,h in [('.sprite',196,98),('.lowend.sprite',98,49)]:
+  blob=(root/f'data/hd/global/ui/items/armor/belt/workshopmythical{ordinal:02d}{suffix}').read_bytes()
+  assert struct.unpack('<4sHH8I',blob[:40])==(b'SpA1',31,w,w,h,0,1,0,0,0,0)
+  assert len(blob)==40+w*h*4
+  alpha=blob[43::4];assert min(alpha)==0 and max(alpha)==255
 # Re-running the generator must not change rows, IDs, probabilities, localizations or graphics.
 def hashes():return {p:hashlib.sha256((root/p).read_bytes()).hexdigest() for p in assets}
 before=hashes();install(root);assert hashes()==before,'Generator is not idempotent'
-print('PASS: 92 definitions, save ranges, valid procs, 28 Trial-only monster routes, 184 inventory sprites, mirrored tables and idempotence.')
+print('PASS: 92 definitions, save ranges, valid procs, 31 Trial-only monster routes, 184 inventory sprites, mirrored tables and idempotence.')
 
 

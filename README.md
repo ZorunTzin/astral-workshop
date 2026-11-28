@@ -5,7 +5,7 @@ The game-ready mod payload remains at the repository root. Development files are
 
 ## Current release
 
-Version **0.26.0**: [release notes](docs/RELEASE-0.26.0.md), [Mythical mechanics](src/workshop/mythicals/README.md), [64-variant catalog](src/workshop/mythicals/CATALOG.md) and [live compendium](https://astral-workshop-compendium.chattyactor2.chatgpt.site).
+Version **0.27.0**: [release notes](docs/RELEASE-0.27.0.md), [Mythical mechanics](src/workshop/mythicals/README.md), [64-variant catalog](src/workshop/mythicals/CATALOG.md) and [live compendium](https://astral-workshop-compendium.chattyactor2.chatgpt.site).
 
 Uses the separate **ReimaginedWorkshop-v2** save profile; do not copy legacy saves into it.
 

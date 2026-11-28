@@ -56,7 +56,7 @@ inline void __cdecl SyncChoicePanel(const PluginContext* c,void*) noexcept {
   bool open=ChoicePanels->getPanelInfo(c,ChoicePanel,&info)==Panels::Result::Success&&info.presentationState==Panels::PresentationState::Open;
   if(HiddenEpoch!=view.run.epoch){HiddenEpoch=view.run.epoch;ChoiceHidden=false;}
   DWORD pid=0;GetWindowThreadProcessId(GetForegroundWindow(),&pid);
-  bool down=pid==GetCurrentProcessId()&&(GetAsyncKeyState(VK_CONTROL)&0x8000)&&(GetAsyncKeyState('T')&0x8000);
+  bool down=pid==GetCurrentProcessId()&&(GetAsyncKeyState(VK_CONTROL)&0x8000)&&(GetAsyncKeyState('J')&0x8000);
   if(down&&!ToggleWasDown&&view.visible)ChoiceHidden=!ChoiceHidden;ToggleWasDown=down;
   bool wanted=view.visible&&view.run.phase==Phase::Choice&&view.choiceReady&&!ChoiceHidden;
   if(!wanted){if(open)ChoicePanels->closePanel(c,ChoicePanel);ChoiceShownEpoch=0;ShowActive=false;ActivePage=0;}

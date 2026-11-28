@@ -190,7 +190,7 @@ def install(root):
   groups=[]
   for start in range(0,len(ACTIVE),10):
    entries=[(key(r['_ordinal']),1) for r in ACTIVE[start:start+10]];name='Ws Mythical Pool '+str(start//10);tc(name,1,0,entries);groups.append((name,len(entries)))
-  tc('Ws Mythical Pool',1,0,groups);tc('Ws Mythical Chance',1,4999,[('Ws Mythical Pool',1)])
+  tc('Ws Mythical Pool',1,0,groups);tc('Ws Mythical Chance',1,1999,[('Ws Mythical Pool',1)])
   # Nested inside the existing Trial-special roll: leaves wrapper arity and all old rolls intact.
   old=next(x for x in tcs if x['Treasure Class']=='Ws Trial Special')
   if old['Item1']!='Ws Trial Special Original':
@@ -265,7 +265,9 @@ def install(root):
  gull(root)
  from mythicals.poe_data import install as poe
  poe(root)
- print('Mythicals:',len(ACTIVE),'variants; 1/5000 base Trial loot roll; native stats, procs and imported visuals.')
+ from mythicals.presentation import install as presentation
+ presentation(root)
+ print('Mythicals:',len(ACTIVE),'variants; 0.05% base Trial loot roll; native stats, procs and imported visuals.')
 
 def install_art(root,assets):
  # Art was imported into a private package; no live ESR dependency at build time.

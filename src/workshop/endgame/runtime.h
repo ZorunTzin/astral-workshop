@@ -237,7 +237,7 @@ inline void RecoverMissing(void* player,unsigned now){
  }
 }
 inline void Frame(void* game){
- if(!Enabled||!game)return;unsigned now=Ramp::Frame(game);
+ if(!Enabled||!game)return;unsigned now=Ramp::Frame(game);SealPortal::Reset(game,now);
  if(Game!=game||now<Last){Game=game;Current={};SpawnRecords.clear();RetiredEnemies.clear();Used=0;Next=0;Enemies.clear();ConfirmedDead.clear();{std::lock_guard<std::mutex> lock(DeathMutex);DeathQueue.clear();}PortalCleanupAt=0;Command=0;Publish();}
  Last=now;if(now<Next)return;Next=now+5;
  for(auto it=RetiredEnemies.begin();it!=RetiredEnemies.end();){void* u=Curses::Find(game,1,it->id);if(u){if(static_cast<unsigned*>(u)[1]==unsigned(it->cls)&&std::find(Enemies.begin(),Enemies.end(),it->id)==Enemies.end()&&Barbarian::DeleteUnit)Barbarian::DeleteUnit(game,u);it=RetiredEnemies.erase(it);}else ++it;}

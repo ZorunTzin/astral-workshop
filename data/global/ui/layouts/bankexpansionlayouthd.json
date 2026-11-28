@@ -4804,7 +4804,8 @@
               "width": 98,
               "height": 98
             },
-            "itemCode": "Ln1"
+            "itemCode": "Ln1",
+            "enabled": false
           }
         },
         {
@@ -4817,7 +4818,8 @@
               "width": 98,
               "height": 98
             },
-            "itemCode": "Ln2"
+            "itemCode": "Ln2",
+            "enabled": false
           }
         },
         {
@@ -4830,7 +4832,8 @@
               "width": 98,
               "height": 98
             },
-            "itemCode": "Ln3"
+            "itemCode": "Ln3",
+            "enabled": false
           }
         },
         {
@@ -4843,7 +4846,8 @@
               "width": 98,
               "height": 98
             },
-            "itemCode": "Ln4"
+            "itemCode": "Ln4",
+            "enabled": false
           }
         },
         {
@@ -4856,7 +4860,8 @@
               "width": 98,
               "height": 98
             },
-            "itemCode": "Lo1"
+            "itemCode": "Lo1",
+            "enabled": false
           }
         },
         {
@@ -4869,7 +4874,8 @@
               "width": 98,
               "height": 98
             },
-            "itemCode": "Lo2"
+            "itemCode": "Lo2",
+            "enabled": false
           }
         },
         {
@@ -4882,7 +4888,8 @@
               "width": 98,
               "height": 98
             },
-            "itemCode": "Lo3"
+            "itemCode": "Lo3",
+            "enabled": false
           }
         },
         {
@@ -4895,7 +4902,8 @@
               "width": 98,
               "height": 98
             },
-            "itemCode": "Lo4"
+            "itemCode": "Lo4",
+            "enabled": false
           }
         },
         {
@@ -4908,7 +4916,8 @@
               "width": 98,
               "height": 98
             },
-            "itemCode": "Lp1"
+            "itemCode": "Lp1",
+            "enabled": false
           }
         },
         {
@@ -4921,7 +4930,8 @@
               "width": 98,
               "height": 98
             },
-            "itemCode": "Lp2"
+            "itemCode": "Lp2",
+            "enabled": false
           }
         },
         {
@@ -4934,7 +4944,8 @@
               "width": 98,
               "height": 98
             },
-            "itemCode": "Lp3"
+            "itemCode": "Lp3",
+            "enabled": false
           }
         },
         {
@@ -4947,7 +4958,8 @@
               "width": 98,
               "height": 98
             },
-            "itemCode": "Lp4"
+            "itemCode": "Lp4",
+            "enabled": false
           }
         }
       ]

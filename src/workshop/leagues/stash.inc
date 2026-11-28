@@ -32,10 +32,7 @@ inline void __cdecl tooltip(const PluginContext* ctx,SharedEvents::ItemTooltipEv
  if(length>=event->capacity)return;
  std::memcpy(event->text,text,length+1);event->length=static_cast<unsigned>(length);
 }
-inline bool show(void* widget,bool yes){
- if(!widget)return false;auto fn=reinterpret_cast<void(__fastcall*)(void*,bool)>((*reinterpret_cast<void***>(widget))[10]);
- const unsigned char guard[]={0x88,0x51,0x51,0xc3};if(!fn||std::memcmp(reinterpret_cast<void*>(fn),guard,4))return false;fn(widget,yes);return true;
-}
+#include "stash_visibility.h"
 inline void tick() noexcept {
  __try {
   auto bank=static_cast<unsigned char*>(find(*manager,"BankExpansionLayout"));if(!bank)return;
@@ -45,10 +42,10 @@ inline void tick() noexcept {
   if(*reinterpret_cast<int*>(tabs+0x16c4)!=3)active=false;
   auto group=static_cast<unsigned char*>(child(bank,"advancedstash_materials"));if(!group)return;
   auto nodes=*reinterpret_cast<unsigned char***>(group+0x58);auto count=*reinterpret_cast<size_t*>(group+0x60);if(count>4096)return;
-  for(size_t i=0;i<count;++i){auto n=nodes[i];if(!n)continue;auto name=*reinterpret_cast<const char**>(n+8);if(name)show(n,!std::strncmp(name,"LeagueOrb",9)?active:!active);}
+  for(size_t i=0;i<count;++i){auto n=nodes[i];if(!n)continue;auto name=*reinterpret_cast<const char**>(n+8);if(name)show(n,!std::strncmp(name,"LeagueOrb",9)?active:!active,true);}
   // Materials cube grid begins at y=708 and intercepts rows 3/4 behind our panel.
-  if(*reinterpret_cast<int*>(tabs+0x16c4)==3)show(child(bank,"advancedstash_horadriccube"),!active);
-  show(child(bank,"LeagueBackground"),active);show(child(bank,"LeagueMaterialsBack"),active);
+  if(*reinterpret_cast<int*>(tabs+0x16c4)==3)show(child(bank,"advancedstash_horadriccube"),!active,true);
+  show(child(bank,"LeagueBackground"),active);show(child(bank,"LeagueMaterialsBack"),active,true);
  }__except(EXCEPTION_EXECUTE_HANDLER){active=false;}
 }
 inline void select(const PluginContext* c,void* back) noexcept {

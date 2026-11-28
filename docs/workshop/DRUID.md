@@ -38,3 +38,5 @@ Lycanthropy formulas are embedded in Werewolf/Werebear at the respective form le
 Validation: full existing suite, targeted Druid regression tests, native visual mappings and tooltip data. In-game combat/appearance confirmation remains pending.
 
 0.17.1: Alpha and Avatar tree positions swapped; runtime buff lists carry the correct skill and level for their icons. Native life formatter (13) restores actual pet HP; personal resistances and aura bonuses are distinct. Avatar periodic tornado removed. Public Raven parameters retained for native AI. Shared synergy formulas drive spell hits and UI; physical spell bonus is an unsaved aura stat.
+
+2026-11-27: Avatar description is "Transform into a mighty Golem, granting various bonuses." Alpha summons use a private Raven monster whose AI reads Alpha's Call for its five-hit budget. This removes the accidental dependency on learned Avatar/Raven points; ordinary item-granted Ravens keep their original monster source.

@@ -10,3 +10,8 @@ cl /nologo /std:c++latest /EHsc /O2 /MT /I ..\SDK\include aura_features_test.cpp
 if not "%errorlevel%"=="0" exit /b 1
 aura_features_test.exe
 if not "%errorlevel%"=="0" exit /b 1
+
+cl /nologo /std:c++latest /O2 /EHsc /MT "%~dp0workshop\leagues\stash_visibility_test.cpp" /Fe:"%~dp0workshop\leagues\stash_visibility_test.exe"
+if errorlevel 1 exit /b 1
+"%~dp0workshop\leagues\stash_visibility_test.exe"
+if errorlevel 1 exit /b 1

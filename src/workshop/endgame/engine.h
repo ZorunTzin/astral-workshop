@@ -43,7 +43,7 @@ struct Run {
  int lootRollPercent()const{return stagePercent()*(100+lootBonus())/100;}
  int extraLootRolls(){int bonus=lootRollPercent()-100;return bonus/100+(int((random()>>8)%100)<bonus%100?1:0);}
  int lifePercent()const{return int(std::min(100000.,100*stageScale()*(1+.12*(wave-1))*(1+bonuses[0]/100.)));}
- int damagePercent()const{return int(std::min(100000.,100*stageScale()*(1+.08*(wave-1))*(1+bonuses[1]/100.)));}
+ int damagePercent()const{return int(std::min(50000.,50*stageScale()*(1+.08*(wave-1))*(1+bonuses[1]/100.)));}
  int speedPercent()const{return 20*std::clamp(stage,1,5)+3*std::max(0,wave-1);}
  int count()const{return std::min(72,(10+wave*2+stage*2)*(100+bonuses[int(Mod::MonsterCount)])/100);}
  int lootBonus()const{return std::min(2000,10*std::max(0,wave-1)+20*std::max(0,stage-1)+rewardBonus);}

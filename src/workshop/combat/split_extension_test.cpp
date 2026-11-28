@@ -18,7 +18,7 @@ int main(){
  int begin=0,count=1;
  for(int stage=0;stage<5;++stage){
   int before=created;
-  for(int i=begin;i<begin+count;++i){auto& a=arrows[i];p.missile=a.cls;Amazon::Created(game,&p,&a);Amazon::BeforeTick(game,&a);Amazon::BeforeTick(game,&a);assert(Amazon::Stage(a.cls)==stage&&a.stats[21]==107);assert(a.stats[48]==33&&a.stats[57]==30&&a.stats[56]==75&&a.stats[59]==125);Amazon::MissileHit(game,&a,&targets[stage%2],0);Amazon::MissileHit(game,&a,&targets[stage%2],0);}
+  for(int i=begin;i<begin+count;++i){auto& a=arrows[i];p.missile=a.cls;Amazon::Created(game,&p,&a);Amazon::BeforeTick(game,&a);Amazon::BeforeTick(game,&a);assert(Amazon::Stage(a.cls)==stage&&a.stats[21]==53);assert(a.stats[48]==16&&a.stats[57]==15&&a.stats[56]==75&&a.stats[59]==125);Amazon::MissileHit(game,&a,&targets[stage%2],0);Amazon::MissileHit(game,&a,&targets[stage%2],0);}
   Frame(101+stage);Amazon::Frame(game);
   assert(created-before==(stage<4?count*2:0));begin=before;count*=2;
  }

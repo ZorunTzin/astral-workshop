@@ -130,3 +130,7 @@ Runtime tests cover 100,000 offer selections, no duplicate cards, at most one po
 ## Level-120 progression update
 
 All regular wave monsters, milestone bosses, replacement spawns and Trial goblins use `100 + wave - 1` (native nine-bit transmission safety limit 511). The existing tier/wave life and damage multipliers remain in place. Goblin split stages with zero XP remain zero; terminal children retain their rewards. Player death costs no XP in any difficulty. See `src/workshop/progression/README.md` for the calibrated player curve.
+
+### Follow-up fixes (2026-11-27)
+
+Ctrl+J toggles the modifier menu. Outgoing Trial monster damage is halved at every tier and wave; HP, XP and loot scaling are unchanged. A successful portal opening reserves its map for that game, before entering it. Failed openings remain retryable; other maps and a new game remain available. Trial Temptresses now have SuccubusBolt in the ranged Skill5 slot used by native Succubus AI.

@@ -25,3 +25,7 @@ Every selected card and each starting seal modifier add 10 percentage points to 
 
 ## 0.20.2 visual update
 Trial slots: x620/724/828, y266/370/474; controller y minus212. BackgroundFile[3] points at dedicated Materials artwork with exact existing 98x98 sockets; no non-slot children added. Seven ground model definitions include the Jewel VFX with unique entity IDs and explicit particle dependencies. Names use UTF-8 purple marker U+00FF c;. Slot overlap, native child types, dependencies, names and generated asset preview verified.
+
+### Material tab input (2026-11-27)
+
+Inactive League slots are disabled as well as hidden. Their positions overlap the right side of Trial orbs/seals and several key/statue/shard slots; invisible interactive slots previously intercepted those clicks. Active slots restore both properties through guarded native setters. Decorative backgrounds remain noninteractive. Ground-picked Uber keys, Ancient statues, Worldstone shards and Uber organs now use the existing automatic native deposit route; manual withdrawals are excluded.

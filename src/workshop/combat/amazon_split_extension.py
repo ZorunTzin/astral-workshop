@@ -14,9 +14,9 @@ def install(root):
   skill=next(r for r in ss if r['skill']=='Guided Arrow');d=next(r for r in ds if r['skilldesc']==skill['skilldesc'])
   for i in range(1,6):
    if d.get('dsc2texta'+str(i))=='WorkshopAmazon22_dsc22':d['dsc2calca'+str(i)]='4'
-  d['ddam calc1']='(100+clc4)/3-100'
-  d['desccalca2']='(100+clc4)/3-100'
-  d['desccalca3']='pnma/3';d['desccalcb3']='pxma/3'
+  d['ddam calc1']='(100+clc4)/6-100'
+  d['desccalca2']='(100+clc4)/6-100'
+  d['desccalca3']='pnma/6';d['desccalcb3']='pxma/6'
   skill['cltdofunc']=''
   for suffix in ('','a','b','c'):skill['cltmissile'+suffix]=''
   write(p/'skills.txt',sh,ss)
@@ -30,6 +30,6 @@ def install(root):
  for r in rows:
   if r['Key']=='WorkshopAmazon22Desc':
    for lang in r:
-    if lang not in ('id','Key'):r[lang]='Impact creates two seeking arrows.\nFour split generations:\n1 -> 2 -> 4 -> 8 -> 16.\nAll arrow damage reduced to one third.'
+    if lang not in ('id','Key'):r[lang]='Impact creates two seeking arrows.\nFour split generations:\n1 -> 2 -> 4 -> 8 -> 16.\nAll arrow damage reduced to one sixth.'
  p.write_text(json.dumps(rows,ensure_ascii=False,indent=2),encoding='utf8')
  print('Split Arrow: four splits, 1 -> 2 -> 4 -> 8 -> 16; appended missile',binding)

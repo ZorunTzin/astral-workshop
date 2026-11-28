@@ -1683,7 +1683,7 @@ Ws Mythical Pool 4			1	1024				0	WorkshopMythical40	1	WorkshopMythical41	1	Works
 Ws Mythical Pool 5			1	1024				0	WorkshopMythical69	1	WorkshopMythical74	1	WorkshopMythical79	1	WorkshopMythical81	1	WorkshopMythical82	1	WorkshopMythical83	1	WorkshopMythical84	1	WorkshopMythical85	1	WorkshopMythical86	1	WorkshopMythical87	1										0
 Ws Mythical Pool 6			1	1024				0	WorkshopMythical88	1	WorkshopMythical89	1	WorkshopMythical90	1	WorkshopMythical91	1																						0
 Ws Mythical Pool			1	1024				0	Ws Mythical Pool 0	10	Ws Mythical Pool 1	10	Ws Mythical Pool 2	10	Ws Mythical Pool 3	10	Ws Mythical Pool 4	10	Ws Mythical Pool 5	10	Ws Mythical Pool 6	4																0
-Ws Mythical Chance			1					4999	Ws Mythical Pool	1																												0
+Ws Mythical Chance			1					1999	Ws Mythical Pool	1																												0
 Ws Trial Special Original			1					495	Lab Jewelry	5																												0
 Ws Trial Special			-2					0	Ws Trial Special Original	1	Ws Mythical Chance	1																										0
 Ws Trial Base Act 5 (H) H2H B			-4					0	Act 5 (H) H2H B	1	Ws Trial Runes	1	Workshop Trial Orb Materials	1	Ws Trial Special	1																						0

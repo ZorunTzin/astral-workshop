@@ -240,12 +240,12 @@ def export(root,positions):
         preview.alpha_composite(node_art[kind].resize((size,size),Image.Resampling.LANCZOS),(x-size//2,y-size//2))
     preview.save(dest/"tree-preview.png")
     bars=[(2,0,13,3),(13,3,16,13),(13,15,16,25),(2,25,13,28),(0,15,3,25),(0,3,3,13),(2,12,13,15)]
-    for digit in range(2):
+    for digit in range(3):
         for j,(x1,y1,x2,y2) in enumerate(bars):
             name="vbar" if x2-x1<y2-y1 else "hbar"
             tile=Image.new("RGBA",(x2-x1,y2-y1),"#f1d8a5")
             sprite(name,tile)
-            children.append(widget("ImageWidget",f"Digit{digit}Bar{j}",rect=loc(709+digit*26+x1,769+y1),filename="Workshop\\"+name,visible=False,enabled=False))
+            children.append(widget("ImageWidget",f"Digit{digit}Bar{j}",rect=loc(696+digit*26+x1,769+y1),filename="Workshop\\"+name,visible=False,enabled=False))
     children=[v for v in children if v["name"] not in ("Load",)]
     sprite("unified",preview)
     geometry=['struct VisualNode {float x,y,r; const char* tooltip;}; constexpr VisualNode visualNodes[]={']

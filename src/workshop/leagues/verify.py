@@ -39,6 +39,7 @@ for mode in ('','controller/'):
  children=j['children'];tabs=next(c for c in children if c['name']=='BankTabs')
  assert tabs['fields']['tabCount']==5
  slots=[c for c in next(c for c in children if c['name']=='advancedstash_materials')['children'] if c['name'].startswith('LeagueOrb')]
+ assert all(c['fields'].get('enabled') is False for c in slots), 'Inactive League slots must not intercept Materials input'
  assert len(slots)==12 and sorted(c['fields']['itemCode'] for c in slots)==sorted(codes)
  assert all(c['type']=='AdvancedStashSlotWidget' and c['fields'].get('visible',True)==True for c in slots)
  rects=[c['fields']['rect'] for c in slots]

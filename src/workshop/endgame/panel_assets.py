@@ -50,7 +50,7 @@ def install(root):
       for league,title in enumerate(('Night of the Dead','Breach','Beyond'),1):
        children.append(text(f'LeagueOffer_{slot}_{stage}_{mod}_{tier}_{league}',x+32,-275,586,600,valueText.replace(names[mod],title+' invasion').replace(effects[mod],'Next wave: '+title+' monsters'),False))
      else:children.append(text(f'Offer_{slot}_{stage}_{mod}_{tier}',x+32,-275,586,600,valueText,False))
- children += [widget('ButtonWidget','Finish',rect=dict(x=-400,y=410),filename='Workshop\\trial-finish',pressedFrame=1,disabledFrame=2,hoveredFrame=3,onClickMessage='PanelManager:ClosePanel:TrialFinish'),text('FinishLabel',-370,430,740,70,'FINISH RUN'),text('Hint',-1020,550,2040,60,'Choose one card to begin the next wave. Ctrl+T: hide/show this menu.')]
+ children += [widget('ButtonWidget','Finish',rect=dict(x=-400,y=410),filename='Workshop\\trial-finish',pressedFrame=1,disabledFrame=2,hoveredFrame=3,onClickMessage='PanelManager:ClosePanel:TrialFinish'),text('FinishLabel',-370,430,740,70,'FINISH RUN'),text('Hint',-1020,550,2040,60,'Choose one card to begin the next wave. Ctrl+J: hide/show this menu.')]
  children += [widget('ButtonWidget','ClearLoot',rect=dict(x=-1100,y=-585),filename='Workshop\\trial-active',pressedFrame=1,disabledFrame=2,hoveredFrame=3,onClickMessage='PanelManager:ClosePanel:TrialClearLoot'),text('ClearLootLabel',-1090,-580,400,65,'DELETE GROUND LOOT')]
  children += [widget('ButtonWidget','ActiveToggle',rect=dict(x=680,y=-585),filename='Workshop\\trial-active',pressedFrame=1,disabledFrame=2,hoveredFrame=3,onClickMessage='PanelManager:ClosePanel:TrialActive'),text('ActiveLabel',690,-580,400,65,'ACTIVE MODIFIERS')]
  children.append(text('NextWaveLabel',-1090,-503,270,70,'NEXT WAVE:'))

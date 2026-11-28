@@ -101,7 +101,7 @@ def revise_tables(root,d,skills,descs,props,statrows,stath,ph,text):
 
 def ground_glow(root,assets):
  source=json.loads((Path(__file__).parent/'glow-template.json').read_text(encoding='utf-8-sig'))
- effects=[e for e in source['entities'] if any(c['type']=='VfxDefinitionComponent' for c in e['components']) and not any(c.get('filename','').endswith('fx_horadric_light.particles') for c in e['components'])]
+ effects=[e for e in source['entities'] if any(c['type']=='VfxDefinitionComponent' for c in e['components'])]
  for rel in list(assets):
   if not rel.startswith('data/hd/items/') or not rel.endswith('.json') or 'workshopmythical' not in rel:continue
   p=root/rel;j=json.loads(p.read_text(encoding='utf8'))

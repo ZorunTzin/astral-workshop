@@ -57,7 +57,7 @@ void __cdecl resolveStashProfile(const PluginContext*,void*) noexcept;
 int __fastcall sigilRequiredLevel(void* item,void* player){
     if(item && *static_cast<unsigned*>(item)==4){
         int level=readItemStat(item,pointRequirementStat,0);
-        if(level>0&&level<=99)return level;
+        if(level>0&&level<=120)return level;
     }
     int required=originalRequiredLevel(item,player);
     forgeTooltipSnapshot={};
@@ -86,12 +86,16 @@ void* localPlayerUnit(){
     if(!index||!lookup)return nullptr;
     return lookup(index());
 }
+// Progression supports player levels 1..120; Atlas allocations follow the same 120-point cap.
+constexpr unsigned atlasBudget(int level){
+    return level>0&&level<=120?static_cast<unsigned>(level):0;
+}
 unsigned characterLevel(){
     void* player=localPlayerUnit();if(!player)return 0;
     auto exe=reinterpret_cast<unsigned char*>(GetModuleHandleW(nullptr));
     auto get=reinterpret_cast<int(__fastcall*)(void*,int,unsigned)>(exe+0x2f5020);
     int value=get(player,12,0);
-    return value>0&&value<=100?static_cast<unsigned>(value):0;
+    return atlasBudget(value);
 }
 
 unsigned (*readLevel)()=characterLevel;
@@ -147,7 +151,7 @@ bool valid(const Build& build,bool enforceKeystones=true){
         unsigned n=number(p,i),extra=build.depth[n];
         if(extra>4 || (extra && (!(build[p]&(1u<<i)) || (i>=9 && i<12))))return false;
     }
-    return (!enforceKeystones||keys<=3) && points(build)<=99;
+    return (!enforceKeystones||keys<=3) && points(build)<=120;
 }
 struct InventoryState { ItemHandle sigil{}; unsigned level{},row{},count{}; };
 Inventory::IterationAction inspect(const PluginContext*,const Items::ItemInfo* item,void* data) noexcept {
@@ -264,7 +268,7 @@ void updateNative(const PluginContext* ctx) noexcept {
         if(count>2048)return;
         constexpr unsigned segments[]={0x3f,0x06,0x5b,0x4f,0x66,0x6d,0x7d,0x07,0x7f,0x6f};
         unsigned spent=points(selected),remaining=budget>spent?budget-spent:0;
-        remaining=std::min(remaining,99u);
+        remaining=std::min(remaining,120u);
         unsigned marks=0,digits=0;
         for(size_t j=0;j<count;j++){
             auto widget=children[j];if(!widget)continue;
@@ -281,8 +285,8 @@ void updateNative(const PluginContext* ctx) noexcept {
             }
             if(!std::strncmp(name,"Digit",5)){
                 unsigned digit{},bar{};
-                if(std::sscanf(name,"Digit%uBar%u",&digit,&bar)==2&&digit<2&&bar<7){
-                    visible=bool(segments[digit?remaining%10:remaining/10]&(1u<<bar));change=true;digits++;
+                if(std::sscanf(name,"Digit%uBar%u",&digit,&bar)==2&&digit<3&&bar<7){
+                    visible=bool(segments[(remaining/(digit==0?100:digit==1?10:1))%10]&(1u<<bar));change=true;digits++;
                 }
             }
             if(change){
@@ -298,7 +302,7 @@ void updateNative(const PluginContext* ctx) noexcept {
                 }else ctx->LogError("Unsupported native visibility setter");
             }
         }
-        visualReady=marks==activeNodeCount&&digits==14;
+        visualReady=marks==activeNodeCount&&digits==21;
         char message[100];std::snprintf(message,sizeof(message),"Native update marks=%u digits=%u remaining=%u",marks,digits,remaining);ctx->LogInfo(message);
     }__except(EXCEPTION_EXECUTE_HANDLER){ctx->LogError("Native Astral UI update failed");}
 }

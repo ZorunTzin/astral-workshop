@@ -183,7 +183,7 @@ inline void BeforeTick(void* game,void* missile) noexcept {
   }
   // Scale the finalized payload once, including added elemental damage.
   // Cold/poison duration remains unchanged; descendants inherit this payload.
-  for(int stat:DamageStats)if(stat!=56&&stat!=59)Ramp::SetUnit(missile,stat,Ramp::GetUnit(missile,stat,0)/3,0);
+  for(int stat:DamageStats)if(stat!=56&&stat!=59)Ramp::SetUnit(missile,stat,Ramp::GetUnit(missile,stat,0)/6,0);
   f.scaled=true;
  }
  if(f.stage>=0)return;

@@ -4,7 +4,7 @@
 
 ## Drops and saves
 
-Trial-only in production: one 1:5000 base roll per native Trial loot roll (Players 1). Additional Trial rolls and native NoDrop/Players scaling affect the effective chance per kill. Active variants are equally weighted. Level requirement 90. Test mode in test-drops.json replaces Corpsefire's loot with six guaranteed Mythicals; disabled in published builds. Existing v2 profile retained. New tooltip-only stats use previously unused, unsaved slots 259–261; old saved stat widths are unchanged.
+Trial-only in production: 0.05% (1:2000) per native Trial loot roll (Players 1). Additional Trial rolls and native NoDrop/Players scaling affect the effective chance per kill. Active variants are equally weighted. Level requirement 90. Test mode in test-drops.json replaces Corpsefire's loot with six guaranteed Mythicals; disabled in published builds. Existing v2 profile retained. New tooltip-only stats use previously unused, unsaved slots 259–261; old saved stat widths are unchanged.
 
 Old items keep their rolled properties. Obtain new drops to test the revised skill levels and damage. Base-type, skill implementation, glow and tooltip changes also apply to existing definitions. Move previously misclassified belts out of the boots slot and re-equip as belts.
 
@@ -31,7 +31,7 @@ Might–Renewal, Elements–Resistance, Elements–Renewal, Arcane–Resistance,
 
 ## Remaining adaptations
 
-On-cast source procs use on-kill. Equipped source auras become activatable Workshop auras. SoE AoE becomes maximum mana, skill frequency becomes cast rate, buff effect becomes aura effect, Deadly Strike multiplier/cap become physical damage/attack rating. Separate SoE curse protections become reduced curse duration. Mageblood Renewal gives native 10% maximum life and 15% maximum mana recovery per second; Screams Renewal gives 5% life/s and +400% mana regeneration. Additional native regeneration bonuses can affect effective rates. The SoE belts reuse existing belt art. Complex ESR conditional systems (corruption counts, stat-threshold summons, stacking underworld powers, Soul Engine 1 HP) remain documented adaptations, not full engine ports.
+On-cast source procs use on-kill. Equipped source auras become activatable Workshop auras. SoE AoE becomes maximum mana, skill frequency becomes cast rate, buff effect becomes aura effect, Deadly Strike multiplier/cap become physical damage/attack rating. Separate SoE curse protections become reduced curse duration. Mageblood Renewal gives native 10% maximum life and 15% maximum mana recovery per second; Screams Renewal gives 5% life/s and +400% mana regeneration. Additional native regeneration bonuses can affect effective rates. Headhunter, Mageblood and Screams use original 2x1 belt inventory art. Complex ESR conditional systems (corruption counts, stat-threshold summons, stacking underworld powers, Soul Engine 1 HP) remain documented adaptations, not full engine ports.
 
 ## Verification
 
@@ -50,3 +50,5 @@ Inventory art: gull-art/the-gull.png, generated using built-in image_gen. The gr
 The Gull, Original Sin, Svalinn, Replica Dreamfeather, Rathpith Globe, Aegis Aurora, Nimis and four Doryani’s Prototype variants (Fire, Cold, Lightning, Poison) are in the Trial pool. Blood Raven and Corpsefire have no forced Mythical drops; Corpsefire’s original splash charm remains.
 
 Localized stat labels use the native color parser. Shared tooltip callbacks run after parsing and therefore use the renderer’s U+E07E color selector, avoiding visible color codes and fallback font selection.
+
+Mythical bases are Elite. Active variants explicitly enable the native Chronicle; retired variants remain excluded. Original Headhunter/Mageblood/Screams inventory art is generated from the checked-in transparent PNG sources in original-belts.

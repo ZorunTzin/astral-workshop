@@ -210,6 +210,9 @@ int main(){
     simulatedOrbRequirement=10;assert(sigilRequiredLevel(&itemType,nullptr)==77);simulatedOrbRequirement=0;
     simulatedRequirement=32;itemType=0;assert(sigilRequiredLevel(&itemType,nullptr)==67);
 
+    assert(atlasBudget(1)==1 && atlasBudget(98)==98 && atlasBudget(99)==99);
+    assert(atlasBudget(100)==100 && atlasBudget(104)==104 && atlasBudget(120)==120);
+    assert(atlasBudget(0)==0 && atlasBudget(-1)==0 && atlasBudget(121)==0);
     readLevel=[](){return budget;};
     budget=99;
     ledger=std::filesystem::current_path()/"test-receipts";std::filesystem::create_directories(ledger);
@@ -237,6 +240,11 @@ int main(){
     }
     PluginContext ctx{}; ThreadService svc{};svc.runOnGameThread=enqueueGame;svc.runOnUiThread=enqueueUi;threads=&svc;
     WidgetService widgetMock{};widgetMock.findPanel=noPanel;widgets=&widgetMock;
+    readLevel=[](){return atlasBudget(104);};selected={};selected[0]=1;
+    assert(choose(&ctx,"Reset") && points(selected)==0 && budget==104);
+    assert(choose(&ctx,"Node0") && points(selected)==1 && budget==104);
+    readLevel=[](){return budget;};selected={};
+    std::puts("PASS: level-104 reset restores the 104-point Atlas budget and permits reallocation.");
     Receipt legacy{};legacy.allocation[6]=(15u<<12)|511u;
     legacy.allocation.depth[retiredRoot]=4;
     unsigned oldPoints=points(legacy.allocation);
@@ -346,7 +354,10 @@ int main(){
     Build limit{};limit.fill(511);limit[6]|=14u<<12;
     for(unsigned i=0;i<3;i++)limit.depth[i]=4;
     limit.depth[3]=3;assert(points(limit)==99 && valid(limit));
-    limit.depth[3]++;assert(!valid(limit));
+    limit.depth[3]++;assert(valid(limit));
+    for(unsigned i=4;i<9;i++)limit.depth[i]=4;
+    assert(points(limit)==120 && valid(limit));
+    limit.depth[9]=1;assert(!valid(limit));
     for(unsigned p=0;p<9;p++)for(unsigned k=9;k<12;k++){
         Build build;build.fill(511);build[6]|=14u<<12;build[p]|=1u<<k;
         assert(valid(build) && points(build)==85);
@@ -507,6 +518,6 @@ int main(){
     assert(selected[0]==1); // Unlearning Side returns Outer and its Keystone.
     std::puts("PASS: straight stem prerequisites and descendant point refunds match visible edges.");
     std::puts("PASS: imported Keystone procs, +2 summons, Energy Shield, 11 Life on hit, 20% physical pierce and saved 200-FHR overflow.");
-    std::puts("PASS: all 27 keystones, Apply click without chart, level requirement, persisted receipts, 336 active cluster rank allocations and their effective properties, 99-point cap, one-sigil replacement.");
+    std::puts("PASS: all 27 keystones, Apply click without chart, level requirement, persisted receipts, 336 active cluster rank allocations and their effective properties, 120-point cap, one-sigil replacement.");
     return 0;
 }

@@ -40,7 +40,7 @@ def install(root):
   path=root/'data/global/ui/layouts'/name;j=json.loads(path.read_text(encoding='utf-8-sig'));children=j['children'];children[:]=[c for c in children if not c.get('name','').startswith('League')]
   group=next(c for c in children if c['name']=='advancedstash_materials');group['children']=[c for c in group['children'] if not c.get('name','').startswith('LeagueOrb')]
   for m in range(3):
-   for i in range(4):group['children'].append(dict(type='AdvancedStashSlotWidget',name=f'LeagueOrb{m}{i}',fields=dict(rect=dict(x=350+i*300,y=350+m*120-offset,width=98,height=98),itemCode=CODES[m][i])))
+   for i in range(4):group['children'].append(dict(type='AdvancedStashSlotWidget',name=f'LeagueOrb{m}{i}',fields=dict(rect=dict(x=350+i*300,y=350+m*120-offset,width=98,height=98),itemCode=CODES[m][i],enabled=False)))
   children.insert(children.index(group),dict(type='ImageWidget',name='LeagueBackground',fields=dict(rect=dict(x=80,y=215-offset,width=1560,height=1260),filename='Workshop/leagueBackground',visible=False,enabled=False)))
   for key,label,x,w in [('LeagueTab','League',1064,240),('LeagueMaterialsBack','LeagueBack',670,196)]:
    children.append(dict(type='ButtonWidget',name=key,fields=dict(rect=dict(x=x,y=152-offset,width=w,height=64),filename='Workshop/'+('leagueTab' if label=='League' else 'leagueMaterials'),normalFrame=0,hoveredFrame=1,pressedFrame=2,disabledFrame=3,onClickMessage='PanelManager:ClosePanel:WorkshopStash'+label,visible=label=='League')))
